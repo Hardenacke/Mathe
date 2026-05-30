@@ -275,63 +275,6 @@
                   "pfad": "klasse-7/arithmetik-algebra/terme-und-gleichungen/",
                   "materialien": [
                     {
-                      "id": "lernpfad-terme-und-gleichungen",
-                      "titel": "Lernpfad Terme und Gleichungen",
-                      "kurztitel": "Terme und Gleichungen",
-                      "beschreibung": "Interaktiver Lernpfad zum Aufstellen, Vereinfachen und Auswerten von Termen sowie zum Lösen einfacher Gleichungen.",
-                      "typ": "html",
-                      "format": "HTML",
-                      "materialart": "Lernpfad",
-                      "datei": "index.html",
-                      "pfad": "klasse-7/arithmetik-algebra/terme-und-gleichungen/",
-                      "zielgruppe": {
-                        "fach": "Mathematik",
-                        "jahrgang": "Klasse 7",
-                        "stufe": "Sekundarstufe I"
-                      },
-                      "struktur": {
-                        "fachId": "mathematik",
-                        "klasseId": "klasse-7",
-                        "inhaltsfeldId": "arithmetik-algebra",
-                        "themaId": "terme-und-gleichungen"
-                      },
-                      "fach": "Mathematik",
-                      "klasse": "Klasse 7",
-                      "inhaltsfeld": "Arithmetik / Algebra",
-                      "thema": "Terme und Gleichungen",
-                      "unterthema": "Terme und Gleichungen",
-                      "kompetenzbereich": [
-                        "Arithmetik / Algebra",
-                        "Operieren",
-                        "Problemlösen"
-                      ],
-                      "inhaltlicheSchwerpunkte": [
-                        "Terme",
-                        "Variablen",
-                        "Gleichungen",
-                        "Termumformungen",
-                        "Rechengesetze"
-                      ],
-                      "tags": [
-                        "mathematik",
-                        "klasse-7",
-                        "sekundarstufe-i",
-                        "arithmetik-algebra",
-                        "terme",
-                        "gleichungen",
-                        "variablen",
-                        "lernpfad",
-                        "interaktiv",
-                        "html"
-                      ],
-                      "status": "verfügbar",
-                      "sichtbar": true,
-                      "oeffnenIn": "neuer-tab",
-                      "erstelltAm": "2026-05-30",
-                      "lizenz": "",
-                      "autor": ""
-                    },
-                    {
                       "id": "problemloese",
                       "titel": "Problemlösen mit Termen und Gleichungen",
                       "kurztitel": "Problemlösen",
