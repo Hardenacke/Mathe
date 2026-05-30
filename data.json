@@ -322,7 +322,7 @@
                   "materialien": [
                     {
                       "id": "lernpfad-innenwinkel",
-                      "titel": "Lernpfad Innenwinkelsumme",
+                      "titel": "Lernpfad Innenwinkelsumme im Dreieck",
                       "typ": "html",
                       "format": "HTML",
                       "datei": "lernpfad-innenwinkel.html",
@@ -330,14 +330,63 @@
                       "tags": [
                         "mathematik",
                         "klasse-7",
+                        "sekundarstufe-i",
                         "geometrie",
+                        "dreieck",
+                        "winkel",
                         "innenwinkelsumme",
-                        "html",
-                        "lernpfad"
-                      ]
+                        "lernpfad",
+                        "interaktiv",
+                        "html"
+                      ],
+                      "kurztitel": "Innenwinkelsumme",
+                      "beschreibung": "Interaktiver Lernpfad zur Erarbeitung und Sicherung der Innenwinkelsumme im Dreieck.",
+                      "materialart": "Lernpfad",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 7",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-7",
+                        "inhaltsfeldId": "geometrie",
+                        "themaId": "innenwinkelsumme"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 7",
+                      "inhaltsfeld": "Geometrie",
+                      "thema": "Innenwinkelsumme",
+                      "unterthema": "Innenwinkelsumme im Dreieck",
+                      "kompetenzbereich": [
+                        "Geometrie",
+                        "Argumentieren",
+                        "Problemlösen"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Dreiecke",
+                        "Winkel",
+                        "Innenwinkelsumme",
+                        "Begründen geometrischer Zusammenhänge"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-30",
+                      "lizenz": "",
+                      "autor": ""
                     }
                   ],
-                  "readme": "mathematik/klasse-7/geometrie/innenwinkelsumme/README.md"
+                  "readme": "mathematik/klasse-7/geometrie/innenwinkelsumme/README.md",
+                  "beschreibung": "Materialien zur Innenwinkelsumme in Dreiecken mit Schwerpunkt auf Entdecken, Begründen und Anwenden.",
+                  "tags": [
+                    "mathematik",
+                    "klasse-7",
+                    "geometrie",
+                    "winkel",
+                    "dreieck",
+                    "innenwinkelsumme"
+                  ]
                 },
                 {
                   "id": "kongruenz",
