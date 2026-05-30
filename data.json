@@ -273,12 +273,136 @@
                   "id": "terme-und-gleichungen",
                   "titel": "Terme und Gleichungen",
                   "pfad": "klasse-7/arithmetik-algebra/terme-und-gleichungen/",
-                  "materialien": [],
-                  "readme": "klasse-7/arithmetik-algebra/terme-und-gleichungen/README.md"
+                  "materialien": [
+                    {
+                      "id": "lernpfad-terme-und-gleichungen",
+                      "titel": "Lernpfad Terme und Gleichungen",
+                      "kurztitel": "Terme und Gleichungen",
+                      "beschreibung": "Interaktiver Lernpfad zum Aufstellen, Vereinfachen und Auswerten von Termen sowie zum Lösen einfacher Gleichungen.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "index.html",
+                      "pfad": "klasse-7/arithmetik-algebra/terme-und-gleichungen/",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 7",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-7",
+                        "inhaltsfeldId": "arithmetik-algebra",
+                        "themaId": "terme-und-gleichungen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 7",
+                      "inhaltsfeld": "Arithmetik / Algebra",
+                      "thema": "Terme und Gleichungen",
+                      "unterthema": "Terme und Gleichungen",
+                      "kompetenzbereich": [
+                        "Arithmetik / Algebra",
+                        "Operieren",
+                        "Problemlösen"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Terme",
+                        "Variablen",
+                        "Gleichungen",
+                        "Termumformungen",
+                        "Rechengesetze"
+                      ],
+                      "tags": [
+                        "mathematik",
+                        "klasse-7",
+                        "sekundarstufe-i",
+                        "arithmetik-algebra",
+                        "terme",
+                        "gleichungen",
+                        "variablen",
+                        "lernpfad",
+                        "interaktiv",
+                        "html"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-30",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "termlernspiel",
+                      "titel": "Termlernspiel",
+                      "kurztitel": "Termlernspiel",
+                      "beschreibung": "Interaktives Lernspiel zum Üben von Termen, Variablen und Termumformungen.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernspiel",
+                      "datei": "index.html",
+                      "pfad": "klasse-7/arithmetik-algebra/terme-und-gleichungen/termlernspiel/",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 7",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-7",
+                        "inhaltsfeldId": "arithmetik-algebra",
+                        "themaId": "terme-und-gleichungen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 7",
+                      "inhaltsfeld": "Arithmetik / Algebra",
+                      "thema": "Terme und Gleichungen",
+                      "unterthema": "Termlernspiel",
+                      "kompetenzbereich": [
+                        "Arithmetik / Algebra",
+                        "Operieren",
+                        "Problemlösen"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Terme",
+                        "Variablen",
+                        "Termwerte",
+                        "Termumformungen"
+                      ],
+                      "tags": [
+                        "mathematik",
+                        "klasse-7",
+                        "sekundarstufe-i",
+                        "arithmetik-algebra",
+                        "terme",
+                        "gleichungen",
+                        "variablen",
+                        "lernspiel",
+                        "termlernspiel",
+                        "interaktiv",
+                        "html"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-30",
+                      "lizenz": "",
+                      "autor": ""
+                    }
+                  ],
+                  "readme": "klasse-7/arithmetik-algebra/terme-und-gleichungen/README.md",
+                  "beschreibung": "Materialien zum Aufstellen, Vereinfachen und Auswerten von Termen sowie zum Lösen einfacher Gleichungen.",
+                  "tags": [
+                    "mathematik",
+                    "klasse-7",
+                    "arithmetik-algebra",
+                    "terme",
+                    "gleichungen",
+                    "variablen"
+                  ]
                 }
               ],
               "anzahlThemen": 3,
-              "anzahlMaterialien": 0
+              "anzahlMaterialien": 2
             },
             {
               "id": "funktionen",
@@ -486,7 +610,7 @@
             }
           ],
           "anzahlThemen": 11,
-          "anzahlMaterialien": 2
+          "anzahlMaterialien": 4
         },
         {
           "id": "klasse-8",
@@ -1190,7 +1314,7 @@
         }
       ],
       "anzahlThemen": 87,
-      "anzahlMaterialien": 2
+      "anzahlMaterialien": 4
     }
   ]
 }
