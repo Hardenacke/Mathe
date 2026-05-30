@@ -375,10 +375,65 @@
                       "erstelltAm": "2026-05-30",
                       "lizenz": "",
                       "autor": ""
+                    },
+                    {
+                      "id": "arbeitsblatt-innenwinkelsumme",
+                      "titel": "Arbeitsblatt Innenwinkelsumme im Dreieck",
+                      "kurztitel": "AB Innenwinkelsumme",
+                      "beschreibung": "Arbeitsblatt zur Sicherung und Anwendung der Innenwinkelsumme im Dreieck.",
+                      "typ": "pdf",
+                      "format": "PDF",
+                      "materialart": "Arbeitsblatt",
+                      "datei": "arbeitsblatt-innenwinkelsumme.pdf",
+                      "pfad": "klasse-7/geometrie/innenwinkelsumme/AB-innenwinkel.pdf",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 7",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-7",
+                        "inhaltsfeldId": "geometrie",
+                        "themaId": "innenwinkelsumme"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 7",
+                      "inhaltsfeld": "Geometrie",
+                      "thema": "Innenwinkelsumme",
+                      "unterthema": "Innenwinkelsumme im Dreieck",
+                      "kompetenzbereich": [
+                        "Geometrie",
+                        "Argumentieren",
+                        "Problemlösen"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Dreiecke",
+                        "Winkel",
+                        "Innenwinkelsumme",
+                        "Anwenden geometrischer Zusammenhänge"
+                      ],
+                      "tags": [
+                        "mathematik",
+                        "klasse-7",
+                        "sekundarstufe-i",
+                        "geometrie",
+                        "dreieck",
+                        "winkel",
+                        "innenwinkelsumme",
+                        "arbeitsblatt",
+                        "pdf"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-30",
+                      "lizenz": "",
+                      "autor": ""
                     }
                   ],
                   "readme": "klasse-7/geometrie/innenwinkelsumme/README.md",
-                  "beschreibung": "Materialien zur Innenwinkelsumme in Dreiecken mit Schwerpunkt auf Entdecken, Begründen und Anwenden.",
+                  "beschreibung": "Materialien zur Innenwinkelsumme in Dreiecken mit Schwerpunkt auf Entdecken, Begründen, Sichern und Anwenden.",
                   "tags": [
                     "mathematik",
                     "klasse-7",
@@ -404,7 +459,7 @@
                 }
               ],
               "anzahlThemen": 4,
-              "anzahlMaterialien": 1
+              "anzahlMaterialien": 2
             },
             {
               "id": "stochastik",
@@ -431,7 +486,7 @@
             }
           ],
           "anzahlThemen": 11,
-          "anzahlMaterialien": 1
+          "anzahlMaterialien": 2
         },
         {
           "id": "klasse-8",
@@ -1135,7 +1190,7 @@
         }
       ],
       "anzahlThemen": 87,
-      "anzahlMaterialien": 1
+      "anzahlMaterialien": 2
     }
   ]
 }
