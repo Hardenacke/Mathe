@@ -1,50 +1,50 @@
 {
   "version": "1.0",
   "basePath": "",
-  "beschreibung": "Vorlage für die vollständige GitHub-Pages-Ordnerstruktur. test.html-Dateien werden nicht als Lernmaterial gelistet.",
+  "beschreibung": "Vorlage für die vollständige GitHub-Pages-Ordnerstruktur. Die Klassenordner liegen direkt im Hauptordner neben index.html, style.css und data.json.",
   "faecher": [
     {
       "id": "mathematik",
       "titel": "Mathematik",
-      "pfad": "mathematik/",
+      "pfad": "",
       "klassen": [
         {
           "id": "klasse-5",
           "titel": "Klasse 5",
-          "pfad": "mathematik/klasse-5/",
+          "pfad": "klasse-5/",
           "inhaltsfelder": [
             {
               "id": "arithmetik-algebra",
               "titel": "Arithmetik / Algebra",
-              "pfad": "mathematik/klasse-5/arithmetik-algebra/",
+              "pfad": "klasse-5/arithmetik-algebra/",
               "themen": [
                 {
                   "id": "brueche-und-anteile",
                   "titel": "Brüche und Anteile",
-                  "pfad": "mathematik/klasse-5/arithmetik-algebra/brueche-und-anteile/",
+                  "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-5/arithmetik-algebra/brueche-und-anteile/README.md"
+                  "readme": "klasse-5/arithmetik-algebra/brueche-und-anteile/README.md"
                 },
                 {
                   "id": "groessen-und-einheiten",
                   "titel": "Größen und Einheiten",
-                  "pfad": "mathematik/klasse-5/arithmetik-algebra/groessen-und-einheiten/",
+                  "pfad": "klasse-5/arithmetik-algebra/groessen-und-einheiten/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-5/arithmetik-algebra/groessen-und-einheiten/README.md"
+                  "readme": "klasse-5/arithmetik-algebra/groessen-und-einheiten/README.md"
                 },
                 {
                   "id": "grundrechenarten",
                   "titel": "Grundrechenarten",
-                  "pfad": "mathematik/klasse-5/arithmetik-algebra/grundrechenarten/",
+                  "pfad": "klasse-5/arithmetik-algebra/grundrechenarten/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-5/arithmetik-algebra/grundrechenarten/README.md"
+                  "readme": "klasse-5/arithmetik-algebra/grundrechenarten/README.md"
                 },
                 {
                   "id": "natuerliche-zahlen",
                   "titel": "Natürliche Zahlen",
-                  "pfad": "mathematik/klasse-5/arithmetik-algebra/natuerliche-zahlen/",
+                  "pfad": "klasse-5/arithmetik-algebra/natuerliche-zahlen/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-5/arithmetik-algebra/natuerliche-zahlen/README.md"
+                  "readme": "klasse-5/arithmetik-algebra/natuerliche-zahlen/README.md"
                 }
               ],
               "anzahlThemen": 4,
@@ -53,14 +53,14 @@
             {
               "id": "funktionen",
               "titel": "Funktionen",
-              "pfad": "mathematik/klasse-5/funktionen/",
+              "pfad": "klasse-5/funktionen/",
               "themen": [
                 {
                   "id": "zusammenhaenge-darstellen",
                   "titel": "Zusammenhänge darstellen",
-                  "pfad": "mathematik/klasse-5/funktionen/zusammenhaenge-darstellen/",
+                  "pfad": "klasse-5/funktionen/zusammenhaenge-darstellen/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-5/funktionen/zusammenhaenge-darstellen/README.md"
+                  "readme": "klasse-5/funktionen/zusammenhaenge-darstellen/README.md"
                 }
               ],
               "anzahlThemen": 1,
@@ -69,35 +69,35 @@
             {
               "id": "geometrie",
               "titel": "Geometrie",
-              "pfad": "mathematik/klasse-5/geometrie/",
+              "pfad": "klasse-5/geometrie/",
               "themen": [
                 {
                   "id": "figuren-und-koerper",
                   "titel": "Figuren und Körper",
-                  "pfad": "mathematik/klasse-5/geometrie/figuren-und-koerper/",
+                  "pfad": "klasse-5/geometrie/figuren-und-koerper/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-5/geometrie/figuren-und-koerper/README.md"
+                  "readme": "klasse-5/geometrie/figuren-und-koerper/README.md"
                 },
                 {
                   "id": "koordinatensystem",
                   "titel": "Koordinatensystem",
-                  "pfad": "mathematik/klasse-5/geometrie/koordinatensystem/",
+                  "pfad": "klasse-5/geometrie/koordinatensystem/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-5/geometrie/koordinatensystem/README.md"
+                  "readme": "klasse-5/geometrie/koordinatensystem/README.md"
                 },
                 {
                   "id": "rauminhalte-und-volumen",
                   "titel": "Rauminhalte und Volumen",
-                  "pfad": "mathematik/klasse-5/geometrie/rauminhalte-und-volumen/",
+                  "pfad": "klasse-5/geometrie/rauminhalte-und-volumen/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-5/geometrie/rauminhalte-und-volumen/README.md"
+                  "readme": "klasse-5/geometrie/rauminhalte-und-volumen/README.md"
                 },
                 {
                   "id": "umfang-und-flaecheninhalt",
                   "titel": "Umfang und Flächeninhalt",
-                  "pfad": "mathematik/klasse-5/geometrie/umfang-und-flaecheninhalt/",
+                  "pfad": "klasse-5/geometrie/umfang-und-flaecheninhalt/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-5/geometrie/umfang-und-flaecheninhalt/README.md"
+                  "readme": "klasse-5/geometrie/umfang-und-flaecheninhalt/README.md"
                 }
               ],
               "anzahlThemen": 4,
@@ -106,14 +106,14 @@
             {
               "id": "stochastik",
               "titel": "Stochastik",
-              "pfad": "mathematik/klasse-5/stochastik/",
+              "pfad": "klasse-5/stochastik/",
               "themen": [
                 {
                   "id": "daten-erheben-und-darstellen",
                   "titel": "Daten erheben und darstellen",
-                  "pfad": "mathematik/klasse-5/stochastik/daten-erheben-und-darstellen/",
+                  "pfad": "klasse-5/stochastik/daten-erheben-und-darstellen/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-5/stochastik/daten-erheben-und-darstellen/README.md"
+                  "readme": "klasse-5/stochastik/daten-erheben-und-darstellen/README.md"
                 }
               ],
               "anzahlThemen": 1,
@@ -126,40 +126,40 @@
         {
           "id": "klasse-6",
           "titel": "Klasse 6",
-          "pfad": "mathematik/klasse-6/",
+          "pfad": "klasse-6/",
           "inhaltsfelder": [
             {
               "id": "arithmetik-algebra",
               "titel": "Arithmetik / Algebra",
-              "pfad": "mathematik/klasse-6/arithmetik-algebra/",
+              "pfad": "klasse-6/arithmetik-algebra/",
               "themen": [
                 {
                   "id": "brueche-rechnen",
                   "titel": "Mit Brüchen rechnen",
-                  "pfad": "mathematik/klasse-6/arithmetik-algebra/brueche-rechnen/",
+                  "pfad": "klasse-6/arithmetik-algebra/brueche-rechnen/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-6/arithmetik-algebra/brueche-rechnen/README.md"
+                  "readme": "klasse-6/arithmetik-algebra/brueche-rechnen/README.md"
                 },
                 {
                   "id": "dezimalzahlen",
                   "titel": "Dezimalzahlen",
-                  "pfad": "mathematik/klasse-6/arithmetik-algebra/dezimalzahlen/",
+                  "pfad": "klasse-6/arithmetik-algebra/dezimalzahlen/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-6/arithmetik-algebra/dezimalzahlen/README.md"
+                  "readme": "klasse-6/arithmetik-algebra/dezimalzahlen/README.md"
                 },
                 {
                   "id": "ganze-zahlen",
                   "titel": "Ganze Zahlen",
-                  "pfad": "mathematik/klasse-6/arithmetik-algebra/ganze-zahlen/",
+                  "pfad": "klasse-6/arithmetik-algebra/ganze-zahlen/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-6/arithmetik-algebra/ganze-zahlen/README.md"
+                  "readme": "klasse-6/arithmetik-algebra/ganze-zahlen/README.md"
                 },
                 {
                   "id": "terme-und-variablen-einfach",
                   "titel": "Terme und Variablen einfach",
-                  "pfad": "mathematik/klasse-6/arithmetik-algebra/terme-und-variablen-einfach/",
+                  "pfad": "klasse-6/arithmetik-algebra/terme-und-variablen-einfach/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-6/arithmetik-algebra/terme-und-variablen-einfach/README.md"
+                  "readme": "klasse-6/arithmetik-algebra/terme-und-variablen-einfach/README.md"
                 }
               ],
               "anzahlThemen": 4,
@@ -168,21 +168,21 @@
             {
               "id": "funktionen",
               "titel": "Funktionen",
-              "pfad": "mathematik/klasse-6/funktionen/",
+              "pfad": "klasse-6/funktionen/",
               "themen": [
                 {
                   "id": "proportionale-zusammenhaenge",
                   "titel": "Proportionale Zusammenhänge",
-                  "pfad": "mathematik/klasse-6/funktionen/proportionale-zusammenhaenge/",
+                  "pfad": "klasse-6/funktionen/proportionale-zusammenhaenge/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-6/funktionen/proportionale-zusammenhaenge/README.md"
+                  "readme": "klasse-6/funktionen/proportionale-zusammenhaenge/README.md"
                 },
                 {
                   "id": "tabellen-und-diagramme",
                   "titel": "Tabellen und Diagramme",
-                  "pfad": "mathematik/klasse-6/funktionen/tabellen-und-diagramme/",
+                  "pfad": "klasse-6/funktionen/tabellen-und-diagramme/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-6/funktionen/tabellen-und-diagramme/README.md"
+                  "readme": "klasse-6/funktionen/tabellen-und-diagramme/README.md"
                 }
               ],
               "anzahlThemen": 2,
@@ -191,35 +191,35 @@
             {
               "id": "geometrie",
               "titel": "Geometrie",
-              "pfad": "mathematik/klasse-6/geometrie/",
+              "pfad": "klasse-6/geometrie/",
               "themen": [
                 {
                   "id": "kreis",
                   "titel": "Kreis",
-                  "pfad": "mathematik/klasse-6/geometrie/kreis/",
+                  "pfad": "klasse-6/geometrie/kreis/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-6/geometrie/kreis/README.md"
+                  "readme": "klasse-6/geometrie/kreis/README.md"
                 },
                 {
                   "id": "netze-und-koerper",
                   "titel": "Netze und Körper",
-                  "pfad": "mathematik/klasse-6/geometrie/netze-und-koerper/",
+                  "pfad": "klasse-6/geometrie/netze-und-koerper/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-6/geometrie/netze-und-koerper/README.md"
+                  "readme": "klasse-6/geometrie/netze-und-koerper/README.md"
                 },
                 {
                   "id": "symmetrie",
                   "titel": "Symmetrie",
-                  "pfad": "mathematik/klasse-6/geometrie/symmetrie/",
+                  "pfad": "klasse-6/geometrie/symmetrie/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-6/geometrie/symmetrie/README.md"
+                  "readme": "klasse-6/geometrie/symmetrie/README.md"
                 },
                 {
                   "id": "winkel",
                   "titel": "Winkel",
-                  "pfad": "mathematik/klasse-6/geometrie/winkel/",
+                  "pfad": "klasse-6/geometrie/winkel/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-6/geometrie/winkel/README.md"
+                  "readme": "klasse-6/geometrie/winkel/README.md"
                 }
               ],
               "anzahlThemen": 4,
@@ -228,14 +228,14 @@
             {
               "id": "stochastik",
               "titel": "Stochastik",
-              "pfad": "mathematik/klasse-6/stochastik/",
+              "pfad": "klasse-6/stochastik/",
               "themen": [
                 {
                   "id": "relative-haeufigkeit",
                   "titel": "Relative Häufigkeit",
-                  "pfad": "mathematik/klasse-6/stochastik/relative-haeufigkeit/",
+                  "pfad": "klasse-6/stochastik/relative-haeufigkeit/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-6/stochastik/relative-haeufigkeit/README.md"
+                  "readme": "klasse-6/stochastik/relative-haeufigkeit/README.md"
                 }
               ],
               "anzahlThemen": 1,
@@ -248,33 +248,33 @@
         {
           "id": "klasse-7",
           "titel": "Klasse 7",
-          "pfad": "mathematik/klasse-7/",
+          "pfad": "klasse-7/",
           "inhaltsfelder": [
             {
               "id": "arithmetik-algebra",
               "titel": "Arithmetik / Algebra",
-              "pfad": "mathematik/klasse-7/arithmetik-algebra/",
+              "pfad": "klasse-7/arithmetik-algebra/",
               "themen": [
                 {
                   "id": "prozentrechnung",
                   "titel": "Prozentrechnung",
-                  "pfad": "mathematik/klasse-7/arithmetik-algebra/prozentrechnung/",
+                  "pfad": "klasse-7/arithmetik-algebra/prozentrechnung/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-7/arithmetik-algebra/prozentrechnung/README.md"
+                  "readme": "klasse-7/arithmetik-algebra/prozentrechnung/README.md"
                 },
                 {
                   "id": "rationale-zahlen",
                   "titel": "Rationale Zahlen",
-                  "pfad": "mathematik/klasse-7/arithmetik-algebra/rationale-zahlen/",
+                  "pfad": "klasse-7/arithmetik-algebra/rationale-zahlen/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-7/arithmetik-algebra/rationale-zahlen/README.md"
+                  "readme": "klasse-7/arithmetik-algebra/rationale-zahlen/README.md"
                 },
                 {
                   "id": "terme-und-gleichungen",
                   "titel": "Terme und Gleichungen",
-                  "pfad": "mathematik/klasse-7/arithmetik-algebra/terme-und-gleichungen/",
+                  "pfad": "klasse-7/arithmetik-algebra/terme-und-gleichungen/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-7/arithmetik-algebra/terme-und-gleichungen/README.md"
+                  "readme": "klasse-7/arithmetik-algebra/terme-und-gleichungen/README.md"
                 }
               ],
               "anzahlThemen": 3,
@@ -283,21 +283,21 @@
             {
               "id": "funktionen",
               "titel": "Funktionen",
-              "pfad": "mathematik/klasse-7/funktionen/",
+              "pfad": "klasse-7/funktionen/",
               "themen": [
                 {
                   "id": "lineare-zusammenhaenge",
                   "titel": "Lineare Zusammenhänge",
-                  "pfad": "mathematik/klasse-7/funktionen/lineare-zusammenhaenge/",
+                  "pfad": "klasse-7/funktionen/lineare-zusammenhaenge/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-7/funktionen/lineare-zusammenhaenge/README.md"
+                  "readme": "klasse-7/funktionen/lineare-zusammenhaenge/README.md"
                 },
                 {
                   "id": "proportionale-und-antiproportionale-zuordnungen",
                   "titel": "Proportionale und antiproportionale Zuordnungen",
-                  "pfad": "mathematik/klasse-7/funktionen/proportionale-und-antiproportionale-zuordnungen/",
+                  "pfad": "klasse-7/funktionen/proportionale-und-antiproportionale-zuordnungen/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-7/funktionen/proportionale-und-antiproportionale-zuordnungen/README.md"
+                  "readme": "klasse-7/funktionen/proportionale-und-antiproportionale-zuordnungen/README.md"
                 }
               ],
               "anzahlThemen": 2,
@@ -306,19 +306,19 @@
             {
               "id": "geometrie",
               "titel": "Geometrie",
-              "pfad": "mathematik/klasse-7/geometrie/",
+              "pfad": "klasse-7/geometrie/",
               "themen": [
                 {
                   "id": "dreiecke",
                   "titel": "Dreiecke",
-                  "pfad": "mathematik/klasse-7/geometrie/dreiecke/",
+                  "pfad": "klasse-7/geometrie/dreiecke/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-7/geometrie/dreiecke/README.md"
+                  "readme": "klasse-7/geometrie/dreiecke/README.md"
                 },
                 {
                   "id": "innenwinkelsumme",
                   "titel": "Innenwinkelsumme",
-                  "pfad": "mathematik/klasse-7/geometrie/innenwinkelsumme/",
+                  "pfad": "klasse-7/geometrie/innenwinkelsumme/",
                   "materialien": [
                     {
                       "id": "lernpfad-innenwinkel",
@@ -326,7 +326,7 @@
                       "typ": "html",
                       "format": "HTML",
                       "datei": "lernpfad-innenwinkel.html",
-                      "pfad": "mathematik/klasse-7/geometrie/innenwinkelsumme/lernpfad-innenwinkel.html",
+                      "pfad": "klasse-7/geometrie/innenwinkelsumme/lernpfad-innenwinkel.html",
                       "tags": [
                         "mathematik",
                         "klasse-7",
@@ -377,7 +377,7 @@
                       "autor": ""
                     }
                   ],
-                  "readme": "mathematik/klasse-7/geometrie/innenwinkelsumme/README.md",
+                  "readme": "klasse-7/geometrie/innenwinkelsumme/README.md",
                   "beschreibung": "Materialien zur Innenwinkelsumme in Dreiecken mit Schwerpunkt auf Entdecken, Begründen und Anwenden.",
                   "tags": [
                     "mathematik",
@@ -391,16 +391,16 @@
                 {
                   "id": "kongruenz",
                   "titel": "Kongruenz",
-                  "pfad": "mathematik/klasse-7/geometrie/kongruenz/",
+                  "pfad": "klasse-7/geometrie/kongruenz/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-7/geometrie/kongruenz/README.md"
+                  "readme": "klasse-7/geometrie/kongruenz/README.md"
                 },
                 {
                   "id": "winkel-an-geraden",
                   "titel": "Winkel an Geraden",
-                  "pfad": "mathematik/klasse-7/geometrie/winkel-an-geraden/",
+                  "pfad": "klasse-7/geometrie/winkel-an-geraden/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-7/geometrie/winkel-an-geraden/README.md"
+                  "readme": "klasse-7/geometrie/winkel-an-geraden/README.md"
                 }
               ],
               "anzahlThemen": 4,
@@ -409,21 +409,21 @@
             {
               "id": "stochastik",
               "titel": "Stochastik",
-              "pfad": "mathematik/klasse-7/stochastik/",
+              "pfad": "klasse-7/stochastik/",
               "themen": [
                 {
                   "id": "laplace-experimente",
                   "titel": "Laplace-Experimente",
-                  "pfad": "mathematik/klasse-7/stochastik/laplace-experimente/",
+                  "pfad": "klasse-7/stochastik/laplace-experimente/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-7/stochastik/laplace-experimente/README.md"
+                  "readme": "klasse-7/stochastik/laplace-experimente/README.md"
                 },
                 {
                   "id": "wahrscheinlichkeiten",
                   "titel": "Wahrscheinlichkeiten",
-                  "pfad": "mathematik/klasse-7/stochastik/wahrscheinlichkeiten/",
+                  "pfad": "klasse-7/stochastik/wahrscheinlichkeiten/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-7/stochastik/wahrscheinlichkeiten/README.md"
+                  "readme": "klasse-7/stochastik/wahrscheinlichkeiten/README.md"
                 }
               ],
               "anzahlThemen": 2,
@@ -436,33 +436,33 @@
         {
           "id": "klasse-8",
           "titel": "Klasse 8",
-          "pfad": "mathematik/klasse-8/",
+          "pfad": "klasse-8/",
           "inhaltsfelder": [
             {
               "id": "arithmetik-algebra",
               "titel": "Arithmetik / Algebra",
-              "pfad": "mathematik/klasse-8/arithmetik-algebra/",
+              "pfad": "klasse-8/arithmetik-algebra/",
               "themen": [
                 {
                   "id": "binomische-formeln",
                   "titel": "Binomische Formeln",
-                  "pfad": "mathematik/klasse-8/arithmetik-algebra/binomische-formeln/",
+                  "pfad": "klasse-8/arithmetik-algebra/binomische-formeln/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-8/arithmetik-algebra/binomische-formeln/README.md"
+                  "readme": "klasse-8/arithmetik-algebra/binomische-formeln/README.md"
                 },
                 {
                   "id": "gleichungssysteme",
                   "titel": "Lineare Gleichungssysteme",
-                  "pfad": "mathematik/klasse-8/arithmetik-algebra/gleichungssysteme/",
+                  "pfad": "klasse-8/arithmetik-algebra/gleichungssysteme/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-8/arithmetik-algebra/gleichungssysteme/README.md"
+                  "readme": "klasse-8/arithmetik-algebra/gleichungssysteme/README.md"
                 },
                 {
                   "id": "lineare-gleichungen",
                   "titel": "Lineare Gleichungen",
-                  "pfad": "mathematik/klasse-8/arithmetik-algebra/lineare-gleichungen/",
+                  "pfad": "klasse-8/arithmetik-algebra/lineare-gleichungen/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-8/arithmetik-algebra/lineare-gleichungen/README.md"
+                  "readme": "klasse-8/arithmetik-algebra/lineare-gleichungen/README.md"
                 }
               ],
               "anzahlThemen": 3,
@@ -471,14 +471,14 @@
             {
               "id": "funktionen",
               "titel": "Funktionen",
-              "pfad": "mathematik/klasse-8/funktionen/",
+              "pfad": "klasse-8/funktionen/",
               "themen": [
                 {
                   "id": "lineare-funktionen",
                   "titel": "Lineare Funktionen",
-                  "pfad": "mathematik/klasse-8/funktionen/lineare-funktionen/",
+                  "pfad": "klasse-8/funktionen/lineare-funktionen/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-8/funktionen/lineare-funktionen/README.md"
+                  "readme": "klasse-8/funktionen/lineare-funktionen/README.md"
                 }
               ],
               "anzahlThemen": 1,
@@ -487,28 +487,28 @@
             {
               "id": "geometrie",
               "titel": "Geometrie",
-              "pfad": "mathematik/klasse-8/geometrie/",
+              "pfad": "klasse-8/geometrie/",
               "themen": [
                 {
                   "id": "geometrische-konstruktionen",
                   "titel": "Geometrische Konstruktionen",
-                  "pfad": "mathematik/klasse-8/geometrie/geometrische-konstruktionen/",
+                  "pfad": "klasse-8/geometrie/geometrische-konstruktionen/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-8/geometrie/geometrische-konstruktionen/README.md"
+                  "readme": "klasse-8/geometrie/geometrische-konstruktionen/README.md"
                 },
                 {
                   "id": "kreis-und-winkel",
                   "titel": "Kreis und Winkel",
-                  "pfad": "mathematik/klasse-8/geometrie/kreis-und-winkel/",
+                  "pfad": "klasse-8/geometrie/kreis-und-winkel/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-8/geometrie/kreis-und-winkel/README.md"
+                  "readme": "klasse-8/geometrie/kreis-und-winkel/README.md"
                 },
                 {
                   "id": "vierecke",
                   "titel": "Vierecke",
-                  "pfad": "mathematik/klasse-8/geometrie/vierecke/",
+                  "pfad": "klasse-8/geometrie/vierecke/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-8/geometrie/vierecke/README.md"
+                  "readme": "klasse-8/geometrie/vierecke/README.md"
                 }
               ],
               "anzahlThemen": 3,
@@ -517,21 +517,21 @@
             {
               "id": "stochastik",
               "titel": "Stochastik",
-              "pfad": "mathematik/klasse-8/stochastik/",
+              "pfad": "klasse-8/stochastik/",
               "themen": [
                 {
                   "id": "baumdiagramme",
                   "titel": "Baumdiagramme",
-                  "pfad": "mathematik/klasse-8/stochastik/baumdiagramme/",
+                  "pfad": "klasse-8/stochastik/baumdiagramme/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-8/stochastik/baumdiagramme/README.md"
+                  "readme": "klasse-8/stochastik/baumdiagramme/README.md"
                 },
                 {
                   "id": "pfadregeln",
                   "titel": "Pfadregeln",
-                  "pfad": "mathematik/klasse-8/stochastik/pfadregeln/",
+                  "pfad": "klasse-8/stochastik/pfadregeln/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-8/stochastik/pfadregeln/README.md"
+                  "readme": "klasse-8/stochastik/pfadregeln/README.md"
                 }
               ],
               "anzahlThemen": 2,
@@ -544,26 +544,26 @@
         {
           "id": "klasse-9",
           "titel": "Klasse 9",
-          "pfad": "mathematik/klasse-9/",
+          "pfad": "klasse-9/",
           "inhaltsfelder": [
             {
               "id": "arithmetik-algebra",
               "titel": "Arithmetik / Algebra",
-              "pfad": "mathematik/klasse-9/arithmetik-algebra/",
+              "pfad": "klasse-9/arithmetik-algebra/",
               "themen": [
                 {
                   "id": "potenzen-und-wurzeln",
                   "titel": "Potenzen und Wurzeln",
-                  "pfad": "mathematik/klasse-9/arithmetik-algebra/potenzen-und-wurzeln/",
+                  "pfad": "klasse-9/arithmetik-algebra/potenzen-und-wurzeln/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-9/arithmetik-algebra/potenzen-und-wurzeln/README.md"
+                  "readme": "klasse-9/arithmetik-algebra/potenzen-und-wurzeln/README.md"
                 },
                 {
                   "id": "quadratische-gleichungen",
                   "titel": "Quadratische Gleichungen",
-                  "pfad": "mathematik/klasse-9/arithmetik-algebra/quadratische-gleichungen/",
+                  "pfad": "klasse-9/arithmetik-algebra/quadratische-gleichungen/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-9/arithmetik-algebra/quadratische-gleichungen/README.md"
+                  "readme": "klasse-9/arithmetik-algebra/quadratische-gleichungen/README.md"
                 }
               ],
               "anzahlThemen": 2,
@@ -572,21 +572,21 @@
             {
               "id": "funktionen",
               "titel": "Funktionen",
-              "pfad": "mathematik/klasse-9/funktionen/",
+              "pfad": "klasse-9/funktionen/",
               "themen": [
                 {
                   "id": "exponentielle-funktionen",
                   "titel": "Exponentielle Funktionen",
-                  "pfad": "mathematik/klasse-9/funktionen/exponentielle-funktionen/",
+                  "pfad": "klasse-9/funktionen/exponentielle-funktionen/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-9/funktionen/exponentielle-funktionen/README.md"
+                  "readme": "klasse-9/funktionen/exponentielle-funktionen/README.md"
                 },
                 {
                   "id": "quadratische-funktionen",
                   "titel": "Quadratische Funktionen",
-                  "pfad": "mathematik/klasse-9/funktionen/quadratische-funktionen/",
+                  "pfad": "klasse-9/funktionen/quadratische-funktionen/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-9/funktionen/quadratische-funktionen/README.md"
+                  "readme": "klasse-9/funktionen/quadratische-funktionen/README.md"
                 }
               ],
               "anzahlThemen": 2,
@@ -595,28 +595,28 @@
             {
               "id": "geometrie",
               "titel": "Geometrie",
-              "pfad": "mathematik/klasse-9/geometrie/",
+              "pfad": "klasse-9/geometrie/",
               "themen": [
                 {
                   "id": "aehnlichkeit-und-strahlensaetze",
                   "titel": "Ähnlichkeit und Strahlensätze",
-                  "pfad": "mathematik/klasse-9/geometrie/aehnlichkeit-und-strahlensaetze/",
+                  "pfad": "klasse-9/geometrie/aehnlichkeit-und-strahlensaetze/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-9/geometrie/aehnlichkeit-und-strahlensaetze/README.md"
+                  "readme": "klasse-9/geometrie/aehnlichkeit-und-strahlensaetze/README.md"
                 },
                 {
                   "id": "kreis-und-koerper",
                   "titel": "Kreis und Körper",
-                  "pfad": "mathematik/klasse-9/geometrie/kreis-und-koerper/",
+                  "pfad": "klasse-9/geometrie/kreis-und-koerper/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-9/geometrie/kreis-und-koerper/README.md"
+                  "readme": "klasse-9/geometrie/kreis-und-koerper/README.md"
                 },
                 {
                   "id": "satz-des-pythagoras",
                   "titel": "Satz des Pythagoras",
-                  "pfad": "mathematik/klasse-9/geometrie/satz-des-pythagoras/",
+                  "pfad": "klasse-9/geometrie/satz-des-pythagoras/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-9/geometrie/satz-des-pythagoras/README.md"
+                  "readme": "klasse-9/geometrie/satz-des-pythagoras/README.md"
                 }
               ],
               "anzahlThemen": 3,
@@ -625,21 +625,21 @@
             {
               "id": "stochastik",
               "titel": "Stochastik",
-              "pfad": "mathematik/klasse-9/stochastik/",
+              "pfad": "klasse-9/stochastik/",
               "themen": [
                 {
                   "id": "simulationen",
                   "titel": "Simulationen",
-                  "pfad": "mathematik/klasse-9/stochastik/simulationen/",
+                  "pfad": "klasse-9/stochastik/simulationen/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-9/stochastik/simulationen/README.md"
+                  "readme": "klasse-9/stochastik/simulationen/README.md"
                 },
                 {
                   "id": "statistische-kenngroessen",
                   "titel": "Statistische Kenngrößen",
-                  "pfad": "mathematik/klasse-9/stochastik/statistische-kenngroessen/",
+                  "pfad": "klasse-9/stochastik/statistische-kenngroessen/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-9/stochastik/statistische-kenngroessen/README.md"
+                  "readme": "klasse-9/stochastik/statistische-kenngroessen/README.md"
                 }
               ],
               "anzahlThemen": 2,
@@ -652,26 +652,26 @@
         {
           "id": "klasse-10",
           "titel": "Klasse 10",
-          "pfad": "mathematik/klasse-10/",
+          "pfad": "klasse-10/",
           "inhaltsfelder": [
             {
               "id": "arithmetik-algebra",
               "titel": "Arithmetik / Algebra",
-              "pfad": "mathematik/klasse-10/arithmetik-algebra/",
+              "pfad": "klasse-10/arithmetik-algebra/",
               "themen": [
                 {
                   "id": "exponenten-und-logarithmen",
                   "titel": "Exponenten und Logarithmen",
-                  "pfad": "mathematik/klasse-10/arithmetik-algebra/exponenten-und-logarithmen/",
+                  "pfad": "klasse-10/arithmetik-algebra/exponenten-und-logarithmen/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-10/arithmetik-algebra/exponenten-und-logarithmen/README.md"
+                  "readme": "klasse-10/arithmetik-algebra/exponenten-und-logarithmen/README.md"
                 },
                 {
                   "id": "formeln-und-terme",
                   "titel": "Formeln und Terme",
-                  "pfad": "mathematik/klasse-10/arithmetik-algebra/formeln-und-terme/",
+                  "pfad": "klasse-10/arithmetik-algebra/formeln-und-terme/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-10/arithmetik-algebra/formeln-und-terme/README.md"
+                  "readme": "klasse-10/arithmetik-algebra/formeln-und-terme/README.md"
                 }
               ],
               "anzahlThemen": 2,
@@ -680,21 +680,21 @@
             {
               "id": "funktionen",
               "titel": "Funktionen",
-              "pfad": "mathematik/klasse-10/funktionen/",
+              "pfad": "klasse-10/funktionen/",
               "themen": [
                 {
                   "id": "trigonometrische-funktionen",
                   "titel": "Trigonometrische Funktionen",
-                  "pfad": "mathematik/klasse-10/funktionen/trigonometrische-funktionen/",
+                  "pfad": "klasse-10/funktionen/trigonometrische-funktionen/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-10/funktionen/trigonometrische-funktionen/README.md"
+                  "readme": "klasse-10/funktionen/trigonometrische-funktionen/README.md"
                 },
                 {
                   "id": "wachstumsprozesse",
                   "titel": "Wachstumsprozesse",
-                  "pfad": "mathematik/klasse-10/funktionen/wachstumsprozesse/",
+                  "pfad": "klasse-10/funktionen/wachstumsprozesse/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-10/funktionen/wachstumsprozesse/README.md"
+                  "readme": "klasse-10/funktionen/wachstumsprozesse/README.md"
                 }
               ],
               "anzahlThemen": 2,
@@ -703,21 +703,21 @@
             {
               "id": "geometrie",
               "titel": "Geometrie",
-              "pfad": "mathematik/klasse-10/geometrie/",
+              "pfad": "klasse-10/geometrie/",
               "themen": [
                 {
                   "id": "koerper-berechnen",
                   "titel": "Körper berechnen",
-                  "pfad": "mathematik/klasse-10/geometrie/koerper-berechnen/",
+                  "pfad": "klasse-10/geometrie/koerper-berechnen/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-10/geometrie/koerper-berechnen/README.md"
+                  "readme": "klasse-10/geometrie/koerper-berechnen/README.md"
                 },
                 {
                   "id": "trigonometrie",
                   "titel": "Trigonometrie",
-                  "pfad": "mathematik/klasse-10/geometrie/trigonometrie/",
+                  "pfad": "klasse-10/geometrie/trigonometrie/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-10/geometrie/trigonometrie/README.md"
+                  "readme": "klasse-10/geometrie/trigonometrie/README.md"
                 }
               ],
               "anzahlThemen": 2,
@@ -726,21 +726,21 @@
             {
               "id": "stochastik",
               "titel": "Stochastik",
-              "pfad": "mathematik/klasse-10/stochastik/",
+              "pfad": "klasse-10/stochastik/",
               "themen": [
                 {
                   "id": "bedingte-wahrscheinlichkeit",
                   "titel": "Bedingte Wahrscheinlichkeit",
-                  "pfad": "mathematik/klasse-10/stochastik/bedingte-wahrscheinlichkeit/",
+                  "pfad": "klasse-10/stochastik/bedingte-wahrscheinlichkeit/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-10/stochastik/bedingte-wahrscheinlichkeit/README.md"
+                  "readme": "klasse-10/stochastik/bedingte-wahrscheinlichkeit/README.md"
                 },
                 {
                   "id": "vierfeldertafeln",
                   "titel": "Vierfeldertafeln",
-                  "pfad": "mathematik/klasse-10/stochastik/vierfeldertafeln/",
+                  "pfad": "klasse-10/stochastik/vierfeldertafeln/",
                   "materialien": [],
-                  "readme": "mathematik/klasse-10/stochastik/vierfeldertafeln/README.md"
+                  "readme": "klasse-10/stochastik/vierfeldertafeln/README.md"
                 }
               ],
               "anzahlThemen": 2,
@@ -753,40 +753,40 @@
         {
           "id": "ef",
           "titel": "EF",
-          "pfad": "mathematik/ef/",
+          "pfad": "ef/",
           "inhaltsfelder": [
             {
               "id": "funktionen-und-analysis",
               "titel": "Funktionen und Analysis",
-              "pfad": "mathematik/ef/funktionen-und-analysis/",
+              "pfad": "ef/funktionen-und-analysis/",
               "themen": [
                 {
                   "id": "differentialrechnung-einfuehrung",
                   "titel": "Einführung Differentialrechnung",
-                  "pfad": "mathematik/ef/funktionen-und-analysis/differentialrechnung-einfuehrung/",
+                  "pfad": "ef/funktionen-und-analysis/differentialrechnung-einfuehrung/",
                   "materialien": [],
-                  "readme": "mathematik/ef/funktionen-und-analysis/differentialrechnung-einfuehrung/README.md"
+                  "readme": "ef/funktionen-und-analysis/differentialrechnung-einfuehrung/README.md"
                 },
                 {
                   "id": "funktionen-grundlagen",
                   "titel": "Funktionen Grundlagen",
-                  "pfad": "mathematik/ef/funktionen-und-analysis/funktionen-grundlagen/",
+                  "pfad": "ef/funktionen-und-analysis/funktionen-grundlagen/",
                   "materialien": [],
-                  "readme": "mathematik/ef/funktionen-und-analysis/funktionen-grundlagen/README.md"
+                  "readme": "ef/funktionen-und-analysis/funktionen-grundlagen/README.md"
                 },
                 {
                   "id": "ganzrationale-funktionen",
                   "titel": "Ganzrationale Funktionen",
-                  "pfad": "mathematik/ef/funktionen-und-analysis/ganzrationale-funktionen/",
+                  "pfad": "ef/funktionen-und-analysis/ganzrationale-funktionen/",
                   "materialien": [],
-                  "readme": "mathematik/ef/funktionen-und-analysis/ganzrationale-funktionen/README.md"
+                  "readme": "ef/funktionen-und-analysis/ganzrationale-funktionen/README.md"
                 },
                 {
                   "id": "transformationen",
                   "titel": "Transformationen von Funktionen",
-                  "pfad": "mathematik/ef/funktionen-und-analysis/transformationen/",
+                  "pfad": "ef/funktionen-und-analysis/transformationen/",
                   "materialien": [],
-                  "readme": "mathematik/ef/funktionen-und-analysis/transformationen/README.md"
+                  "readme": "ef/funktionen-und-analysis/transformationen/README.md"
                 }
               ],
               "anzahlThemen": 4,
@@ -795,14 +795,14 @@
             {
               "id": "analytische-geometrie-und-lineare-algebra",
               "titel": "Analytische Geometrie und Lineare Algebra",
-              "pfad": "mathematik/ef/analytische-geometrie-und-lineare-algebra/",
+              "pfad": "ef/analytische-geometrie-und-lineare-algebra/",
               "themen": [
                 {
                   "id": "vektoren-grundlagen",
                   "titel": "Vektoren Grundlagen",
-                  "pfad": "mathematik/ef/analytische-geometrie-und-lineare-algebra/vektoren-grundlagen/",
+                  "pfad": "ef/analytische-geometrie-und-lineare-algebra/vektoren-grundlagen/",
                   "materialien": [],
-                  "readme": "mathematik/ef/analytische-geometrie-und-lineare-algebra/vektoren-grundlagen/README.md"
+                  "readme": "ef/analytische-geometrie-und-lineare-algebra/vektoren-grundlagen/README.md"
                 }
               ],
               "anzahlThemen": 1,
@@ -811,14 +811,14 @@
             {
               "id": "stochastik",
               "titel": "Stochastik",
-              "pfad": "mathematik/ef/stochastik/",
+              "pfad": "ef/stochastik/",
               "themen": [
                 {
                   "id": "daten-und-wahrscheinlichkeiten",
                   "titel": "Daten und Wahrscheinlichkeiten",
-                  "pfad": "mathematik/ef/stochastik/daten-und-wahrscheinlichkeiten/",
+                  "pfad": "ef/stochastik/daten-und-wahrscheinlichkeiten/",
                   "materialien": [],
-                  "readme": "mathematik/ef/stochastik/daten-und-wahrscheinlichkeiten/README.md"
+                  "readme": "ef/stochastik/daten-und-wahrscheinlichkeiten/README.md"
                 }
               ],
               "anzahlThemen": 1,
@@ -831,26 +831,26 @@
         {
           "id": "q1-gk",
           "titel": "Q1 GK",
-          "pfad": "mathematik/q1-gk/",
+          "pfad": "q1-gk/",
           "inhaltsfelder": [
             {
               "id": "funktionen-und-analysis",
               "titel": "Funktionen und Analysis",
-              "pfad": "mathematik/q1-gk/funktionen-und-analysis/",
+              "pfad": "q1-gk/funktionen-und-analysis/",
               "themen": [
                 {
                   "id": "differentialrechnung",
                   "titel": "Differentialrechnung",
-                  "pfad": "mathematik/q1-gk/funktionen-und-analysis/differentialrechnung/",
+                  "pfad": "q1-gk/funktionen-und-analysis/differentialrechnung/",
                   "materialien": [],
-                  "readme": "mathematik/q1-gk/funktionen-und-analysis/differentialrechnung/README.md"
+                  "readme": "q1-gk/funktionen-und-analysis/differentialrechnung/README.md"
                 },
                 {
                   "id": "integralrechnung",
                   "titel": "Integralrechnung",
-                  "pfad": "mathematik/q1-gk/funktionen-und-analysis/integralrechnung/",
+                  "pfad": "q1-gk/funktionen-und-analysis/integralrechnung/",
                   "materialien": [],
-                  "readme": "mathematik/q1-gk/funktionen-und-analysis/integralrechnung/README.md"
+                  "readme": "q1-gk/funktionen-und-analysis/integralrechnung/README.md"
                 }
               ],
               "anzahlThemen": 2,
@@ -859,14 +859,14 @@
             {
               "id": "analytische-geometrie-und-lineare-algebra",
               "titel": "Analytische Geometrie und Lineare Algebra",
-              "pfad": "mathematik/q1-gk/analytische-geometrie-und-lineare-algebra/",
+              "pfad": "q1-gk/analytische-geometrie-und-lineare-algebra/",
               "themen": [
                 {
                   "id": "vektoren-geraden-ebenen",
                   "titel": "Vektoren, Geraden und Ebenen",
-                  "pfad": "mathematik/q1-gk/analytische-geometrie-und-lineare-algebra/vektoren-geraden-ebenen/",
+                  "pfad": "q1-gk/analytische-geometrie-und-lineare-algebra/vektoren-geraden-ebenen/",
                   "materialien": [],
-                  "readme": "mathematik/q1-gk/analytische-geometrie-und-lineare-algebra/vektoren-geraden-ebenen/README.md"
+                  "readme": "q1-gk/analytische-geometrie-und-lineare-algebra/vektoren-geraden-ebenen/README.md"
                 }
               ],
               "anzahlThemen": 1,
@@ -875,14 +875,14 @@
             {
               "id": "stochastik",
               "titel": "Stochastik",
-              "pfad": "mathematik/q1-gk/stochastik/",
+              "pfad": "q1-gk/stochastik/",
               "themen": [
                 {
                   "id": "binomialverteilung",
                   "titel": "Binomialverteilung",
-                  "pfad": "mathematik/q1-gk/stochastik/binomialverteilung/",
+                  "pfad": "q1-gk/stochastik/binomialverteilung/",
                   "materialien": [],
-                  "readme": "mathematik/q1-gk/stochastik/binomialverteilung/README.md"
+                  "readme": "q1-gk/stochastik/binomialverteilung/README.md"
                 }
               ],
               "anzahlThemen": 1,
@@ -895,33 +895,33 @@
         {
           "id": "q1-lk",
           "titel": "Q1 LK",
-          "pfad": "mathematik/q1-lk/",
+          "pfad": "q1-lk/",
           "inhaltsfelder": [
             {
               "id": "funktionen-und-analysis",
               "titel": "Funktionen und Analysis",
-              "pfad": "mathematik/q1-lk/funktionen-und-analysis/",
+              "pfad": "q1-lk/funktionen-und-analysis/",
               "themen": [
                 {
                   "id": "differentialrechnung",
                   "titel": "Differentialrechnung",
-                  "pfad": "mathematik/q1-lk/funktionen-und-analysis/differentialrechnung/",
+                  "pfad": "q1-lk/funktionen-und-analysis/differentialrechnung/",
                   "materialien": [],
-                  "readme": "mathematik/q1-lk/funktionen-und-analysis/differentialrechnung/README.md"
+                  "readme": "q1-lk/funktionen-und-analysis/differentialrechnung/README.md"
                 },
                 {
                   "id": "exponentialfunktionen",
                   "titel": "Exponentialfunktionen",
-                  "pfad": "mathematik/q1-lk/funktionen-und-analysis/exponentialfunktionen/",
+                  "pfad": "q1-lk/funktionen-und-analysis/exponentialfunktionen/",
                   "materialien": [],
-                  "readme": "mathematik/q1-lk/funktionen-und-analysis/exponentialfunktionen/README.md"
+                  "readme": "q1-lk/funktionen-und-analysis/exponentialfunktionen/README.md"
                 },
                 {
                   "id": "integralrechnung",
                   "titel": "Integralrechnung",
-                  "pfad": "mathematik/q1-lk/funktionen-und-analysis/integralrechnung/",
+                  "pfad": "q1-lk/funktionen-und-analysis/integralrechnung/",
                   "materialien": [],
-                  "readme": "mathematik/q1-lk/funktionen-und-analysis/integralrechnung/README.md"
+                  "readme": "q1-lk/funktionen-und-analysis/integralrechnung/README.md"
                 }
               ],
               "anzahlThemen": 3,
@@ -930,21 +930,21 @@
             {
               "id": "analytische-geometrie-und-lineare-algebra",
               "titel": "Analytische Geometrie und Lineare Algebra",
-              "pfad": "mathematik/q1-lk/analytische-geometrie-und-lineare-algebra/",
+              "pfad": "q1-lk/analytische-geometrie-und-lineare-algebra/",
               "themen": [
                 {
                   "id": "lagebeziehungen-und-abstaende",
                   "titel": "Lagebeziehungen und Abstände",
-                  "pfad": "mathematik/q1-lk/analytische-geometrie-und-lineare-algebra/lagebeziehungen-und-abstaende/",
+                  "pfad": "q1-lk/analytische-geometrie-und-lineare-algebra/lagebeziehungen-und-abstaende/",
                   "materialien": [],
-                  "readme": "mathematik/q1-lk/analytische-geometrie-und-lineare-algebra/lagebeziehungen-und-abstaende/README.md"
+                  "readme": "q1-lk/analytische-geometrie-und-lineare-algebra/lagebeziehungen-und-abstaende/README.md"
                 },
                 {
                   "id": "vektoren-geraden-ebenen",
                   "titel": "Vektoren, Geraden und Ebenen",
-                  "pfad": "mathematik/q1-lk/analytische-geometrie-und-lineare-algebra/vektoren-geraden-ebenen/",
+                  "pfad": "q1-lk/analytische-geometrie-und-lineare-algebra/vektoren-geraden-ebenen/",
                   "materialien": [],
-                  "readme": "mathematik/q1-lk/analytische-geometrie-und-lineare-algebra/vektoren-geraden-ebenen/README.md"
+                  "readme": "q1-lk/analytische-geometrie-und-lineare-algebra/vektoren-geraden-ebenen/README.md"
                 }
               ],
               "anzahlThemen": 2,
@@ -953,14 +953,14 @@
             {
               "id": "stochastik",
               "titel": "Stochastik",
-              "pfad": "mathematik/q1-lk/stochastik/",
+              "pfad": "q1-lk/stochastik/",
               "themen": [
                 {
                   "id": "binomialverteilung",
                   "titel": "Binomialverteilung",
-                  "pfad": "mathematik/q1-lk/stochastik/binomialverteilung/",
+                  "pfad": "q1-lk/stochastik/binomialverteilung/",
                   "materialien": [],
-                  "readme": "mathematik/q1-lk/stochastik/binomialverteilung/README.md"
+                  "readme": "q1-lk/stochastik/binomialverteilung/README.md"
                 }
               ],
               "anzahlThemen": 1,
@@ -973,26 +973,26 @@
         {
           "id": "q2-gk",
           "titel": "Q2 GK",
-          "pfad": "mathematik/q2-gk/",
+          "pfad": "q2-gk/",
           "inhaltsfelder": [
             {
               "id": "funktionen-und-analysis",
               "titel": "Funktionen und Analysis",
-              "pfad": "mathematik/q2-gk/funktionen-und-analysis/",
+              "pfad": "q2-gk/funktionen-und-analysis/",
               "themen": [
                 {
                   "id": "anwendungen-der-analysis",
                   "titel": "Anwendungen der Analysis",
-                  "pfad": "mathematik/q2-gk/funktionen-und-analysis/anwendungen-der-analysis/",
+                  "pfad": "q2-gk/funktionen-und-analysis/anwendungen-der-analysis/",
                   "materialien": [],
-                  "readme": "mathematik/q2-gk/funktionen-und-analysis/anwendungen-der-analysis/README.md"
+                  "readme": "q2-gk/funktionen-und-analysis/anwendungen-der-analysis/README.md"
                 },
                 {
                   "id": "funktionsuntersuchung",
                   "titel": "Funktionsuntersuchung",
-                  "pfad": "mathematik/q2-gk/funktionen-und-analysis/funktionsuntersuchung/",
+                  "pfad": "q2-gk/funktionen-und-analysis/funktionsuntersuchung/",
                   "materialien": [],
-                  "readme": "mathematik/q2-gk/funktionen-und-analysis/funktionsuntersuchung/README.md"
+                  "readme": "q2-gk/funktionen-und-analysis/funktionsuntersuchung/README.md"
                 }
               ],
               "anzahlThemen": 2,
@@ -1001,14 +1001,14 @@
             {
               "id": "analytische-geometrie-und-lineare-algebra",
               "titel": "Analytische Geometrie und Lineare Algebra",
-              "pfad": "mathematik/q2-gk/analytische-geometrie-und-lineare-algebra/",
+              "pfad": "q2-gk/analytische-geometrie-und-lineare-algebra/",
               "themen": [
                 {
                   "id": "skalarprodukt-und-winkel",
                   "titel": "Skalarprodukt und Winkel",
-                  "pfad": "mathematik/q2-gk/analytische-geometrie-und-lineare-algebra/skalarprodukt-und-winkel/",
+                  "pfad": "q2-gk/analytische-geometrie-und-lineare-algebra/skalarprodukt-und-winkel/",
                   "materialien": [],
-                  "readme": "mathematik/q2-gk/analytische-geometrie-und-lineare-algebra/skalarprodukt-und-winkel/README.md"
+                  "readme": "q2-gk/analytische-geometrie-und-lineare-algebra/skalarprodukt-und-winkel/README.md"
                 }
               ],
               "anzahlThemen": 1,
@@ -1017,21 +1017,21 @@
             {
               "id": "stochastik",
               "titel": "Stochastik",
-              "pfad": "mathematik/q2-gk/stochastik/",
+              "pfad": "q2-gk/stochastik/",
               "themen": [
                 {
                   "id": "hypothesentests",
                   "titel": "Hypothesentests",
-                  "pfad": "mathematik/q2-gk/stochastik/hypothesentests/",
+                  "pfad": "q2-gk/stochastik/hypothesentests/",
                   "materialien": [],
-                  "readme": "mathematik/q2-gk/stochastik/hypothesentests/README.md"
+                  "readme": "q2-gk/stochastik/hypothesentests/README.md"
                 },
                 {
                   "id": "normalverteilung",
                   "titel": "Normalverteilung",
-                  "pfad": "mathematik/q2-gk/stochastik/normalverteilung/",
+                  "pfad": "q2-gk/stochastik/normalverteilung/",
                   "materialien": [],
-                  "readme": "mathematik/q2-gk/stochastik/normalverteilung/README.md"
+                  "readme": "q2-gk/stochastik/normalverteilung/README.md"
                 }
               ],
               "anzahlThemen": 2,
@@ -1044,33 +1044,33 @@
         {
           "id": "q2-lk",
           "titel": "Q2 LK",
-          "pfad": "mathematik/q2-lk/",
+          "pfad": "q2-lk/",
           "inhaltsfelder": [
             {
               "id": "funktionen-und-analysis",
               "titel": "Funktionen und Analysis",
-              "pfad": "mathematik/q2-lk/funktionen-und-analysis/",
+              "pfad": "q2-lk/funktionen-und-analysis/",
               "themen": [
                 {
                   "id": "anwendungen-der-analysis",
                   "titel": "Anwendungen der Analysis",
-                  "pfad": "mathematik/q2-lk/funktionen-und-analysis/anwendungen-der-analysis/",
+                  "pfad": "q2-lk/funktionen-und-analysis/anwendungen-der-analysis/",
                   "materialien": [],
-                  "readme": "mathematik/q2-lk/funktionen-und-analysis/anwendungen-der-analysis/README.md"
+                  "readme": "q2-lk/funktionen-und-analysis/anwendungen-der-analysis/README.md"
                 },
                 {
                   "id": "funktionsuntersuchung",
                   "titel": "Funktionsuntersuchung",
-                  "pfad": "mathematik/q2-lk/funktionen-und-analysis/funktionsuntersuchung/",
+                  "pfad": "q2-lk/funktionen-und-analysis/funktionsuntersuchung/",
                   "materialien": [],
-                  "readme": "mathematik/q2-lk/funktionen-und-analysis/funktionsuntersuchung/README.md"
+                  "readme": "q2-lk/funktionen-und-analysis/funktionsuntersuchung/README.md"
                 },
                 {
                   "id": "verkettete-funktionen",
                   "titel": "Verkettete Funktionen",
-                  "pfad": "mathematik/q2-lk/funktionen-und-analysis/verkettete-funktionen/",
+                  "pfad": "q2-lk/funktionen-und-analysis/verkettete-funktionen/",
                   "materialien": [],
-                  "readme": "mathematik/q2-lk/funktionen-und-analysis/verkettete-funktionen/README.md"
+                  "readme": "q2-lk/funktionen-und-analysis/verkettete-funktionen/README.md"
                 }
               ],
               "anzahlThemen": 3,
@@ -1079,21 +1079,21 @@
             {
               "id": "analytische-geometrie-und-lineare-algebra",
               "titel": "Analytische Geometrie und Lineare Algebra",
-              "pfad": "mathematik/q2-lk/analytische-geometrie-und-lineare-algebra/",
+              "pfad": "q2-lk/analytische-geometrie-und-lineare-algebra/",
               "themen": [
                 {
                   "id": "abstandsprobleme",
                   "titel": "Abstandsprobleme",
-                  "pfad": "mathematik/q2-lk/analytische-geometrie-und-lineare-algebra/abstandsprobleme/",
+                  "pfad": "q2-lk/analytische-geometrie-und-lineare-algebra/abstandsprobleme/",
                   "materialien": [],
-                  "readme": "mathematik/q2-lk/analytische-geometrie-und-lineare-algebra/abstandsprobleme/README.md"
+                  "readme": "q2-lk/analytische-geometrie-und-lineare-algebra/abstandsprobleme/README.md"
                 },
                 {
                   "id": "skalarprodukt-und-winkel",
                   "titel": "Skalarprodukt und Winkel",
-                  "pfad": "mathematik/q2-lk/analytische-geometrie-und-lineare-algebra/skalarprodukt-und-winkel/",
+                  "pfad": "q2-lk/analytische-geometrie-und-lineare-algebra/skalarprodukt-und-winkel/",
                   "materialien": [],
-                  "readme": "mathematik/q2-lk/analytische-geometrie-und-lineare-algebra/skalarprodukt-und-winkel/README.md"
+                  "readme": "q2-lk/analytische-geometrie-und-lineare-algebra/skalarprodukt-und-winkel/README.md"
                 }
               ],
               "anzahlThemen": 2,
@@ -1102,28 +1102,28 @@
             {
               "id": "stochastik",
               "titel": "Stochastik",
-              "pfad": "mathematik/q2-lk/stochastik/",
+              "pfad": "q2-lk/stochastik/",
               "themen": [
                 {
                   "id": "hypothesentests",
                   "titel": "Hypothesentests",
-                  "pfad": "mathematik/q2-lk/stochastik/hypothesentests/",
+                  "pfad": "q2-lk/stochastik/hypothesentests/",
                   "materialien": [],
-                  "readme": "mathematik/q2-lk/stochastik/hypothesentests/README.md"
+                  "readme": "q2-lk/stochastik/hypothesentests/README.md"
                 },
                 {
                   "id": "normalverteilung",
                   "titel": "Normalverteilung",
-                  "pfad": "mathematik/q2-lk/stochastik/normalverteilung/",
+                  "pfad": "q2-lk/stochastik/normalverteilung/",
                   "materialien": [],
-                  "readme": "mathematik/q2-lk/stochastik/normalverteilung/README.md"
+                  "readme": "q2-lk/stochastik/normalverteilung/README.md"
                 },
                 {
                   "id": "stochastische-prozesse",
                   "titel": "Stochastische Prozesse",
-                  "pfad": "mathematik/q2-lk/stochastik/stochastische-prozesse/",
+                  "pfad": "q2-lk/stochastik/stochastische-prozesse/",
                   "materialien": [],
-                  "readme": "mathematik/q2-lk/stochastik/stochastische-prozesse/README.md"
+                  "readme": "q2-lk/stochastik/stochastische-prozesse/README.md"
                 }
               ],
               "anzahlThemen": 3,
