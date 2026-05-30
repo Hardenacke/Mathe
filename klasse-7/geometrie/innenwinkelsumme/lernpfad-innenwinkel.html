@@ -6,9 +6,10 @@
   <meta name="theme-color" content="#2563eb">
   <title>Lernpfad: Innenwinkelsumme im Dreieck</title>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiKDtYTWVeOuGy" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <!-- KaTeX wird zusätzlich per JavaScript mit Fallback-CDNs geladen und direkt beim Laden gerendert. -->
   <style>
     :root{
       --bg:#f4f7fb; --card:#ffffff; --ink:#172033; --muted:#64748b; --line:#d9e2ef;
@@ -127,6 +128,11 @@
     .footer-nav{display:flex; justify-content:space-between; gap:10px; margin-top:18px; flex-wrap:wrap}
     .badge{font-size:.78rem; font-weight:900; background:#e2e8f0; color:#334155; padding:4px 9px; border-radius:999px; white-space:nowrap}
     .print-only{display:none}
+
+    .math-display{overflow-x:auto; overflow-y:hidden; padding:.15rem 0; max-width:100%;}
+    .math-inline{max-width:100%;}
+    .math-fallback{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background:#fff7ed; border:1px solid #fdba74; border-radius:8px; padding:1px 5px;}
+    .katex{font-size:1.05em;}
     @media (max-width:900px){
       .hero-grid{grid-template-columns:1fr}.span-8,.span-6,.span-4{grid-column:span 12}.topbar-inner{align-items:flex-start}.top-actions{max-width:48%;}
       .two-col{columns:1}.brand small{display:none}
@@ -162,7 +168,7 @@
     <div class="hero">
       <div class="hero-grid">
         <div>
-          <h2>Warum sind es immer \(180^\circ\)?</h2>
+          <h2>Warum sind es immer <span class="katex-inline-math" data-tex="180^\circ">\(180^\circ\)</span>?</h2>
           <p>Du entdeckst die Innenwinkelsumme zuerst mit Papier und Schere. Danach begründest du den Satz mit einer Hilfslinie, Stufenwinkeln und Wechselwinkeln.</p>
         </div>
         <div class="hero-card">
@@ -193,7 +199,7 @@
             <h3>Was sollst du am Ende können?</h3>
             <div class="task">
               <p><strong>Ziel:</strong> Du erklärst, warum in jedem Dreieck gilt:</p>
-              <p class="math-scroll">\[\alpha+\beta+\gamma=180^\circ\]</p>
+              <div class="math-scroll"><div class="katex-display-math" data-tex="\alpha+\beta+\gamma=180^\circ">\[\alpha+\beta+\gamma=180^\circ\]</div></div>
             </div>
             <h4>Dein Lernweg</h4>
             <label class="checkrow"><input type="checkbox" data-progress="start"> Ich weiß, welches Material ich brauche.</label>
@@ -227,8 +233,8 @@
             <div class="task orange">
               <ol>
                 <li>Zeichne ein beliebiges Dreieck auf Papier.</li>
-                <li>Beschrifte die Eckpunkte mit \(A\), \(B\), \(C\).</li>
-                <li>Markiere die Innenwinkel farbig: \(\alpha\) bei \(A\), \(\beta\) bei \(B\), \(\gamma\) bei \(C\).</li>
+                <li>Beschrifte die Eckpunkte mit <span class="katex-inline-math" data-tex="A">\(A\)</span>, <span class="katex-inline-math" data-tex="B">\(B\)</span>, <span class="katex-inline-math" data-tex="C">\(C\)</span>.</li>
+                <li>Markiere die Innenwinkel farbig: <span class="katex-inline-math" data-tex="\alpha">\(\alpha\)</span> bei <span class="katex-inline-math" data-tex="A">\(A\)</span>, <span class="katex-inline-math" data-tex="\beta">\(\beta\)</span> bei <span class="katex-inline-math" data-tex="B">\(B\)</span>, <span class="katex-inline-math" data-tex="\gamma">\(\gamma\)</span> bei <span class="katex-inline-math" data-tex="C">\(C\)</span>.</li>
                 <li>Schneide das Dreieck sauber aus.</li>
               </ol>
             </div>
@@ -258,7 +264,7 @@
             </div>
             <div class="task violet">
               <p><strong>Gemessene Winkel:</strong></p>
-              <p>\(\alpha\approx\) <span id="angA">?</span>°, \(\beta\approx\) <span id="angB">?</span>°, \(\gamma\approx\) <span id="angC">?</span>°</p>
+              <p><span class="katex-inline-math" data-tex="\alpha\approx">\(\alpha\approx\)</span> <span id="angA">?</span>°, <span class="katex-inline-math" data-tex="\beta\approx">\(\beta\approx\)</span> <span id="angB">?</span>°, <span class="katex-inline-math" data-tex="\gamma\approx">\(\gamma\approx\)</span> <span id="angC">?</span>°</p>
               <p><strong>Summe:</strong> <span id="angSum">?</span>°</p>
             </div>
           </div>
@@ -319,7 +325,7 @@
             <button class="warning" id="arrangeBtn">Winkelecken anlegen</button>
             <div class="task green">
               <p>Ergänze deine Vermutung:</p>
-              <p>\(\alpha+\beta+\gamma=\) <input class="inline-input" id="sumGuess" type="number" inputmode="numeric"> \(^\circ\)</p>
+              <p><span class="katex-inline-math" data-tex="\alpha+\beta+\gamma=">\(\alpha+\beta+\gamma=\)</span> <input class="inline-input" id="sumGuess" type="number" inputmode="numeric"> <span class="katex-inline-math" data-tex="^\circ">\(^\circ\)</span></p>
               <button class="small success" onclick="checkSingle('sumGuess',180,'sumGuessFb')">Prüfen</button>
               <div class="feedback" id="sumGuessFb"></div>
             </div>
@@ -335,8 +341,8 @@
             <h3>Vom Experiment zum Satz</h3>
             <div class="task green">
               <p>Die Zerreißprobe führt zu diesem Satz:</p>
-              <p class="math-scroll">\[\boxed{\alpha+\beta+\gamma=180^\circ}\]</p>
-              <p><strong>In Worten:</strong> Die Innenwinkelsumme in jedem Dreieck beträgt \(180^\circ\).</p>
+              <div class="math-scroll"><div class="katex-display-math" data-tex="\boxed{\alpha+\beta+\gamma=180^\circ}">\[\boxed{\alpha+\beta+\gamma=180^\circ}\]</div></div>
+              <p><strong>In Worten:</strong> Die Innenwinkelsumme in jedem Dreieck beträgt <span class="katex-inline-math" data-tex="180^\circ">\(180^\circ\)</span>.</p>
             </div>
             <h4>Warum reicht das Experiment noch nicht als Beweis?</h4>
             <label class="checkrow"><input type="checkbox" class="expCheck" data-correct="true"> Weil man beim Schneiden ungenau arbeiten kann.</label>
@@ -353,7 +359,7 @@
             <p>Schreibe den Merksatz vollständig ab und zeichne ein kleines Dreieck dazu.</p>
             <details>
               <summary>Formulierungshilfe</summary>
-              <p>In jedem Dreieck beträgt die Summe der drei Innenwinkel \(180^\circ\).</p>
+              <p>In jedem Dreieck beträgt die Summe der drei Innenwinkel <span class="katex-inline-math" data-tex="180^\circ">\(180^\circ\)</span>.</p>
             </details>
             <div class="hintbox" data-hints="satz">
               <strong>Tipps</strong>
@@ -372,9 +378,9 @@
             <h3>Begründung mit Hilfslinie</h3>
             <div class="task violet">
               <ol>
-                <li>Zeichne ein Dreieck \(ABC\).</li>
-                <li>Ziehe durch \(C\) eine Gerade \(g\), die parallel zu \(AB\) ist.</li>
-                <li>Übertrage gedanklich \(\alpha\) und \(\beta\) an die Hilfslinie.</li>
+                <li>Zeichne ein Dreieck <span class="katex-inline-math" data-tex="ABC">\(ABC\)</span>.</li>
+                <li>Ziehe durch <span class="katex-inline-math" data-tex="C">\(C\)</span> eine Gerade <span class="katex-inline-math" data-tex="g">\(g\)</span>, die parallel zu <span class="katex-inline-math" data-tex="AB">\(AB\)</span> ist.</li>
+                <li>Übertrage gedanklich <span class="katex-inline-math" data-tex="\alpha">\(\alpha\)</span> und <span class="katex-inline-math" data-tex="\beta">\(\beta\)</span> an die Hilfslinie.</li>
                 <li>Begründe die Gleichheit mit Stufenwinkeln oder Wechselwinkeln.</li>
               </ol>
             </div>
@@ -383,8 +389,8 @@
               <div class="hintlist"></div>
               <button class="small" onclick="nextHint('proof')">Tipp anzeigen</button><span class="cooldown" id="cool-proof"></span>
             </div>
-            <label class="checkrow"><input type="checkbox" data-progress="proof1"> Ich habe die Hilfslinie \(g\parallel AB\) eingezeichnet.</label>
-            <label class="checkrow"><input type="checkbox" data-progress="proof2"> Ich kann erklären, warum \(\alpha\) und \(\beta\) an der Hilfslinie wieder auftauchen.</label>
+            <label class="checkrow"><input type="checkbox" data-progress="proof1"> Ich habe die Hilfslinie <span class="katex-inline-math" data-tex="g\parallel AB">\(g\parallel AB\)</span> eingezeichnet.</label>
+            <label class="checkrow"><input type="checkbox" data-progress="proof2"> Ich kann erklären, warum <span class="katex-inline-math" data-tex="\alpha">\(\alpha\)</span> und <span class="katex-inline-math" data-tex="\beta">\(\beta\)</span> an der Hilfslinie wieder auftauchen.</label>
           </div>
           <div class="card span-6">
             <span class="pill orange">Interaktive Skizze</span>
@@ -438,10 +444,10 @@
             <p>Bringe die Begründung in die richtige Reihenfolge. Trage die Buchstaben ein.</p>
             <div class="task green">
               <p><strong>A:</strong> Die drei Winkel an der Hilfslinie bilden zusammen einen gestreckten Winkel.</p>
-              <p><strong>B:</strong> Durch \(C\) zeichnen wir eine Gerade \(g\), die parallel zu \(AB\) ist.</p>
-              <p><strong>C:</strong> Deshalb gilt \(\alpha+\beta+\gamma=180^\circ\).</p>
+              <p><strong>B:</strong> Durch <span class="katex-inline-math" data-tex="C">\(C\)</span> zeichnen wir eine Gerade <span class="katex-inline-math" data-tex="g">\(g\)</span>, die parallel zu <span class="katex-inline-math" data-tex="AB">\(AB\)</span> ist.</p>
+              <p><strong>C:</strong> Deshalb gilt <span class="katex-inline-math" data-tex="\alpha+\beta+\gamma=180^\circ">\(\alpha+\beta+\gamma=180^\circ\)</span>.</p>
               <p><strong>D:</strong> Wegen der parallelen Geraden sind die entsprechenden Stufen- bzw. Wechselwinkel gleich groß.</p>
-              <p><strong>E:</strong> Die Winkel \(\alpha\) und \(\beta\) können dadurch an die Hilfslinie bei \(C\) übertragen werden.</p>
+              <p><strong>E:</strong> Die Winkel <span class="katex-inline-math" data-tex="\alpha">\(\alpha\)</span> und <span class="katex-inline-math" data-tex="\beta">\(\beta\)</span> können dadurch an die Hilfslinie bei <span class="katex-inline-math" data-tex="C">\(C\)</span> übertragen werden.</p>
             </div>
             <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center">
               <input class="inline-input" maxlength="1" id="ord1" aria-label="Schritt 1">
@@ -457,9 +463,9 @@
           <div class="card span-5">
             <span class="pill violet">Sprachhilfe</span>
             <h3>So kannst du argumentieren</h3>
-            <p>Da \(g\parallel AB\) gilt, sind passende Stufen- oder Wechselwinkel gleich groß.</p>
-            <p>Die Winkel \(\alpha\), \(\gamma\) und \(\beta\) liegen an der Hilfslinie nebeneinander auf einer Geraden.</p>
-            <p>Ein gestreckter Winkel hat \(180^\circ\). Also gilt \(\alpha+\beta+\gamma=180^\circ\).</p>
+            <p>Da <span class="katex-inline-math" data-tex="g\parallel AB">\(g\parallel AB\)</span> gilt, sind passende Stufen- oder Wechselwinkel gleich groß.</p>
+            <p>Die Winkel <span class="katex-inline-math" data-tex="\alpha">\(\alpha\)</span>, <span class="katex-inline-math" data-tex="\gamma">\(\gamma\)</span> und <span class="katex-inline-math" data-tex="\beta">\(\beta\)</span> liegen an der Hilfslinie nebeneinander auf einer Geraden.</p>
+            <p>Ein gestreckter Winkel hat <span class="katex-inline-math" data-tex="180^\circ">\(180^\circ\)</span>. Also gilt <span class="katex-inline-math" data-tex="\alpha+\beta+\gamma=180^\circ">\(\alpha+\beta+\gamma=180^\circ\)</span>.</p>
             <details>
               <summary>Lösung anzeigen</summary>
               <p>Richtige Reihenfolge: <strong>B → D → E → A → C</strong></p>
@@ -478,35 +484,35 @@
           </div>
           <div class="card span-6">
             <h3>Aufgabe 1</h3>
-            <p>In einem Dreieck gilt: \(\alpha=52^\circ\), \(\beta=73^\circ\). Berechne \(\gamma\).</p>
+            <p>In einem Dreieck gilt: <span class="katex-inline-math" data-tex="\alpha=52^\circ">\(\alpha=52^\circ\)</span>, <span class="katex-inline-math" data-tex="\beta=73^\circ">\(\beta=73^\circ\)</span>. Berechne <span class="katex-inline-math" data-tex="\gamma">\(\gamma\)</span>.</p>
             <input type="number" id="a1" inputmode="numeric" placeholder="γ in Grad">
             <button class="small success" onclick="checkSingle('a1',55,'a1Fb')">Prüfen</button>
             <div class="feedback" id="a1Fb"></div>
-            <div class="solution"><strong>Lösung:</strong> \(180^\circ-52^\circ-73^\circ=55^\circ\).</div>
+            <div class="solution"><strong>Lösung:</strong> <span class="katex-inline-math" data-tex="180^\circ-52^\circ-73^\circ=55^\circ">\(180^\circ-52^\circ-73^\circ=55^\circ\)</span>.</div>
           </div>
           <div class="card span-6">
             <h3>Aufgabe 2</h3>
-            <p>In einem Dreieck gilt: \(\alpha=38^\circ\), \(\gamma=91^\circ\). Berechne \(\beta\).</p>
+            <p>In einem Dreieck gilt: <span class="katex-inline-math" data-tex="\alpha=38^\circ">\(\alpha=38^\circ\)</span>, <span class="katex-inline-math" data-tex="\gamma=91^\circ">\(\gamma=91^\circ\)</span>. Berechne <span class="katex-inline-math" data-tex="\beta">\(\beta\)</span>.</p>
             <input type="number" id="a2" inputmode="numeric" placeholder="β in Grad">
             <button class="small success" onclick="checkSingle('a2',51,'a2Fb')">Prüfen</button>
             <div class="feedback" id="a2Fb"></div>
-            <div class="solution"><strong>Lösung:</strong> \(180^\circ-38^\circ-91^\circ=51^\circ\).</div>
+            <div class="solution"><strong>Lösung:</strong> <span class="katex-inline-math" data-tex="180^\circ-38^\circ-91^\circ=51^\circ">\(180^\circ-38^\circ-91^\circ=51^\circ\)</span>.</div>
           </div>
           <div class="card span-6">
             <h3>Aufgabe 3</h3>
-            <p>Ein gleichschenkliges Dreieck hat einen Spitzenwinkel von \(46^\circ\). Berechne einen Basiswinkel.</p>
+            <p>Ein gleichschenkliges Dreieck hat einen Spitzenwinkel von <span class="katex-inline-math" data-tex="46^\circ">\(46^\circ\)</span>. Berechne einen Basiswinkel.</p>
             <input type="number" id="a3" inputmode="numeric" placeholder="Basiswinkel in Grad">
             <button class="small success" onclick="checkSingle('a3',67,'a3Fb')">Prüfen</button>
             <div class="feedback" id="a3Fb"></div>
-            <div class="solution"><strong>Lösung:</strong> \((180^\circ-46^\circ):2=67^\circ\).</div>
+            <div class="solution"><strong>Lösung:</strong> <span class="katex-inline-math" data-tex="(180^\circ-46^\circ):2=67^\circ">\((180^\circ-46^\circ):2=67^\circ\)</span>.</div>
           </div>
           <div class="card span-6">
             <h3>Aufgabe 4</h3>
-            <p>Mia sagt: „Ich habe ein Dreieck mit den Winkeln \(80^\circ\), \(70^\circ\) und \(40^\circ\) gezeichnet.“ Hat Mia recht?</p>
+            <p>Mia sagt: „Ich habe ein Dreieck mit den Winkeln <span class="katex-inline-math" data-tex="80^\circ">\(80^\circ\)</span>, <span class="katex-inline-math" data-tex="70^\circ">\(70^\circ\)</span> und <span class="katex-inline-math" data-tex="40^\circ">\(40^\circ\)</span> gezeichnet.“ Hat Mia recht?</p>
             <textarea id="a4" placeholder="Begründe mit einer Rechnung."></textarea>
             <button class="small success" onclick="checkTextA4()">Prüfen</button>
             <div class="feedback" id="a4Fb"></div>
-            <div class="solution"><strong>Lösung:</strong> \(80^\circ+70^\circ+40^\circ=190^\circ\). Mia hat nicht recht, denn ein Dreieck müsste \(180^\circ\) ergeben.</div>
+            <div class="solution"><strong>Lösung:</strong> <span class="katex-inline-math" data-tex="80^\circ+70^\circ+40^\circ=190^\circ">\(80^\circ+70^\circ+40^\circ=190^\circ\)</span>. Mia hat nicht recht, denn ein Dreieck müsste <span class="katex-inline-math" data-tex="180^\circ">\(180^\circ\)</span> ergeben.</div>
           </div>
           <div class="card span-12">
             <label class="checkrow"><input type="checkbox" data-progress="apply1"> Ich habe die Anwendungsaufgaben bearbeitet und kontrolliert.</label>
@@ -521,8 +527,8 @@
             <span class="pill green">Sicherung</span>
             <h3>Das nehme ich mit</h3>
             <div class="task green">
-              <p class="math-scroll">\[\boxed{\alpha+\beta+\gamma=180^\circ}\]</p>
-              <p>In jedem Dreieck beträgt die Innenwinkelsumme \(180^\circ\).</p>
+              <div class="math-scroll"><div class="katex-display-math" data-tex="\boxed{\alpha+\beta+\gamma=180^\circ}">\[\boxed{\alpha+\beta+\gamma=180^\circ}\]</div></div>
+              <p>In jedem Dreieck beträgt die Innenwinkelsumme <span class="katex-inline-math" data-tex="180^\circ">\(180^\circ\)</span>.</p>
             </div>
             <h4>Reflexion</h4>
             <p>Die Zerreißprobe zeigt mir, dass ...</p>
@@ -554,6 +560,127 @@
 
 <script>
 (function(){
+  // KaTeX-Rendering beim Laden der HTML-Datei.
+  // Alle Formeln stehen als data-tex in expliziten Platzhaltern. Dadurch ist das Rendering
+  // unabhängig von Auto-Render-Delimiter-Problemen und funktioniert zuverlässig auf GitHub Pages.
+  let katexLoadPromise = null;
+  let katexAlreadyRendered = false;
+
+  function loadStylesheetOnce(url){
+    return new Promise(resolve => {
+      const existing = Array.from(document.querySelectorAll('link[rel="stylesheet"]')).some(link => link.href === url);
+      if(existing) return resolve();
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = url;
+      link.onload = resolve;
+      link.onerror = resolve;
+      document.head.appendChild(link);
+    });
+  }
+
+  function loadScriptOnce(url){
+    return new Promise((resolve, reject) => {
+      const existing = Array.from(document.scripts).find(script => script.src === url);
+      if(existing){
+        if(window.katex) return resolve();
+        existing.addEventListener('load', resolve, {once:true});
+        existing.addEventListener('error', () => reject(new Error('Konnte nicht laden: ' + url)), {once:true});
+        return;
+      }
+      const script = document.createElement('script');
+      script.src = url;
+      script.async = true;
+      script.onload = resolve;
+      script.onerror = () => reject(new Error('Konnte nicht laden: ' + url));
+      document.head.appendChild(script);
+    });
+  }
+
+  function ensureKatexLoaded(){
+    if(window.katex) return Promise.resolve();
+    if(katexLoadPromise) return katexLoadPromise;
+
+    const bases = [
+      'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/',
+      'https://unpkg.com/katex@0.16.9/dist/',
+      'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/'
+    ];
+
+    katexLoadPromise = (async () => {
+      let lastError = null;
+      for(const base of bases){
+        try{
+          await loadStylesheetOnce(base + 'katex.min.css');
+          await loadScriptOnce(base + 'katex.min.js');
+          if(window.katex) return true;
+        }catch(error){
+          lastError = error;
+        }
+      }
+      throw lastError || new Error('KaTeX konnte nicht geladen werden.');
+    })();
+    return katexLoadPromise;
+  }
+
+  function renderKatexPlaceholders(root=document){
+    if(!window.katex) return;
+    const items = root.querySelectorAll('.katex-inline-math, .katex-display-math');
+    items.forEach(el => {
+      const tex = el.dataset.tex;
+      if(!tex) return;
+      if(el.dataset.rendered === 'true') return;
+      try{
+        katex.render(tex, el, {
+          displayMode: el.classList.contains('katex-display-math'),
+          throwOnError: false,
+          strict: false,
+          trust: true,
+          output: 'htmlAndMathml',
+          macros: {
+            '\\grad': '^\\circ'
+          }
+        });
+        el.dataset.rendered = 'true';
+        el.classList.add('katex-ok');
+      }catch(error){
+        el.textContent = tex;
+        el.classList.add('math-fallback');
+      }
+    });
+    katexAlreadyRendered = true;
+    document.body.classList.add('math-ready');
+  }
+
+  function showKatexLoadWarning(){
+    if(document.getElementById('katexWarn')) return;
+    const warn = document.createElement('div');
+    warn.id = 'katexWarn';
+    warn.style.cssText = 'position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;background:#fff7ed;border:2px solid #fdba74;border-radius:16px;padding:12px 14px;font-weight:800;color:#9a3412;box-shadow:0 14px 40px rgba(0,0,0,.18)';
+    warn.textContent = 'KaTeX konnte nicht geladen werden. Die Formeln bleiben deshalb als LaTeX sichtbar. Prüfe Internetverbindung oder Schulnetz-Filter für jsDelivr, unpkg oder cdnjs.';
+    document.body.appendChild(warn);
+  }
+
+  function renderMath(){
+    return ensureKatexLoaded()
+      .then(() => renderKatexPlaceholders(document))
+      .catch(error => {
+        console.warn(error);
+        showKatexLoadWarning();
+      });
+  }
+
+  window.renderMath = renderMath;
+
+  // Sofort beim Laden rendern: einmal nach DOMContentLoaded und zusätzlich nach vollständigem Laden.
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', renderMath, {once:true});
+  }else{
+    renderMath();
+  }
+  window.addEventListener('load', renderMath, {once:true});
+
+
   const pages = Array.from(document.querySelectorAll('.page'));
   const tabs = document.getElementById('tabs');
   pages.forEach((p, i)=>{
@@ -757,13 +884,7 @@
   svg.addEventListener('pointercancel', ()=> dragIndex=null);
   redrawTriangle();
 
-  function renderMath(){
-    if(window.renderMathInElement){
-      renderMathInElement(document.body, {delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}], throwOnError:false});
-    }
-  }
-  document.addEventListener('DOMContentLoaded', renderMath);
-  window.addEventListener('load', renderMath);
+
 })();
 </script>
 </body>
