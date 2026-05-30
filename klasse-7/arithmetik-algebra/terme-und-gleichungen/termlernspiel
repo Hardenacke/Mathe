@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Term-Mission – Terme und Variablen</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<style>
+:root{
+  --bg:#f4f8ff;--card:#fff;--ink:#17213f;--muted:#65758d;--line:#dbe7f5;
+  --brand:#5b5cf0;--brand2:#06b6d4;--green:#10b981;--orange:#f97316;--pink:#ec4899;--red:#ef4444;--yellow:#f59e0b;
+  --shadow:0 18px 42px rgba(26,40,82,.12);--radius:26px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial, sans-serif;color:var(--ink);background:
+  radial-gradient(circle at 0 0, rgba(56,189,248,.24), transparent 28%),
+  radial-gradient(circle at 100% 0, rgba(236,72,153,.16), transparent 30%),
+  linear-gradient(180deg,#fbfdff,#eef7ff);min-height:100vh;padding:18px}
+button,input,select{font:inherit}.app{max-width:1220px;margin:0 auto}.hero{position:relative;overflow:hidden;border-radius:34px;padding:26px 28px;background:linear-gradient(135deg,#5b5cf0 0%,#7c4dff 38%,#06b6d4 100%);color:#fff;box-shadow:var(--shadow)}
+.hero:before{content:"";position:absolute;right:-80px;top:-120px;width:310px;height:310px;border-radius:50%;background:rgba(255,255,255,.16)}.hero:after{content:"÷";position:absolute;right:35px;bottom:-42px;font-weight:900;font-size:170px;color:rgba(255,255,255,.12);transform:rotate(-10deg)}
+.hero-row{position:relative;z-index:1;display:flex;justify-content:space-between;gap:18px;align-items:center}.brand{display:flex;gap:14px;align-items:center}.logo{width:58px;height:58px;border-radius:20px;background:#fff;color:var(--brand);display:grid;place-items:center;font-weight:950;font-size:1.6rem;box-shadow:0 12px 30px rgba(0,0,0,.12)}h1{font-size:clamp(2rem,3.6vw,3rem);line-height:1;margin:0;letter-spacing:-.04em}.subtitle{margin:.45rem 0 0;opacity:.94;font-size:1.05rem}.actions{display:flex;gap:10px;flex-wrap:wrap}button{border:0;border-radius:18px;padding:12px 17px;font-weight:850;cursor:pointer;transition:transform .14s ease,filter .14s ease,box-shadow .14s ease;box-shadow:0 10px 22px rgba(20,32,51,.08)}button:hover{transform:translateY(-1px);filter:saturate(1.05)}button:disabled{opacity:.52;cursor:not-allowed;transform:none}.btn-light{background:rgba(255,255,255,.94);color:#243150}.btn-primary{background:linear-gradient(135deg,var(--brand),#8b5cf6);color:#fff}.btn-secondary{background:#eef4ff;color:#2f3f68}.btn-good{background:linear-gradient(135deg,#10b981,#34d399);color:#fff}.btn-danger{background:#fff1f2;color:#a61b4d}.btn-warn{background:#fff7ed;color:#9a3412}.screen{display:none;margin-top:18px}.screen.active{display:block}.grid{display:grid;gap:16px}.setup-layout{grid-template-columns:minmax(0,1.05fr) minmax(330px,.95fr)}.card{position:relative;background:rgba(255,255,255,.96);border:1px solid var(--line);border-radius:28px;padding:20px;box-shadow:0 16px 36px rgba(36,51,89,.08);overflow:hidden}.card:before{content:"";position:absolute;left:16px;right:16px;top:0;height:5px;border-radius:0 0 999px 999px;background:linear-gradient(90deg,#38bdf8,#5b5cf0,#ec4899,#14b8a6)}.section-title{display:flex;gap:12px;align-items:center;margin:0 0 12px;font-size:1.28rem}.badge{min-width:36px;height:36px;border-radius:14px;background:linear-gradient(135deg,#dbeafe,#ede9fe);color:var(--brand);display:grid;place-items:center;font-weight:950}.rules{margin:0;padding-left:1.25rem;line-height:1.6;color:#34405e}.rules li{margin:4px 0}.type-grid,.mode-grid{display:grid;gap:11px}.type-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.option-card{position:relative;display:flex;gap:12px;align-items:flex-start;padding:14px 14px 14px 16px;border:2px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 8px 18px rgba(36,51,89,.05);cursor:pointer;min-height:78px}.option-card:after{content:"";position:absolute;left:0;top:12px;bottom:12px;width:6px;border-radius:999px;background:rgba(91,92,240,.18)}.option-card.selected{border-color:#9ca3ff;background:linear-gradient(180deg,#fff,#f5f7ff);box-shadow:0 0 0 4px rgba(91,92,240,.10)}.option-card strong{display:block}.option-card small{display:block;color:var(--muted);margin-top:2px}.select-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}.field label{display:block;font-weight:850;margin:0 0 6px;color:#33415f}select,input[type=text],input[type=number]{width:100%;border:1px solid #d5e2f3;background:#fff;border-radius:18px;padding:14px 15px;color:var(--ink);font-weight:700}input:focus,select:focus{outline:0;box-shadow:0 0 0 4px rgba(91,92,240,.13);border-color:#a5b4fc}.nickname-display{min-height:64px;border-radius:22px;background:linear-gradient(135deg,#5b5cf0,#8b5cf6,#06b6d4);color:#fff;display:grid;place-items:center;font-size:1.28rem;font-weight:950;margin-bottom:10px}.mini-actions{display:flex;gap:8px;flex-wrap:wrap}.custom-mode-settings{display:none;margin-top:10px;padding:12px;border:1px dashed #c7d2fe;border-radius:20px;background:linear-gradient(180deg,#fff,#f8fbff)}.custom-mode-settings.show{display:block}.game-shell{display:grid;gap:12px;max-width:1120px;margin:auto}.gamebar{position:sticky;top:8px;z-index:15;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;padding:8px;border-radius:24px;background:rgba(255,255,255,.82);backdrop-filter:blur(10px);box-shadow:0 14px 28px rgba(36,51,89,.10)}.stat{background:#fff;border:1px solid #e3edf8;border-radius:18px;padding:10px 12px}.stat span{display:block;font-size:.72rem;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}.stat strong{font-size:1.04rem}.progress-wrap{grid-column:1/-1;height:14px;border-radius:999px;background:#e9f0fb;overflow:hidden}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#10b981,#06b6d4,#5b5cf0);transition:width .28s ease}.task-card{padding:16px}.task-top{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;margin-bottom:12px}.task-top h2{margin:0;font-size:1.36rem}.pill{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border-radius:999px;background:#eef2ff;color:#3730a3;font-weight:900}.task-focus{display:grid;gap:12px;place-items:center;text-align:center;border:2px solid #d7e4ff;border-radius:30px;padding:clamp(18px,2.8vw,30px);min-height:clamp(245px,36vh,400px);background:linear-gradient(180deg,#fbfdff,#fff);box-shadow:0 18px 36px rgba(91,92,240,.09)}.prompt{font-size:clamp(1.24rem,2.4vw,1.75rem);font-weight:950;color:#1f2f55}.word-problem{font-size:clamp(1.05rem,1.8vw,1.32rem);color:#56657c;font-weight:700}.formula-box{width:100%;display:grid;place-items:center;min-height:145px;border-radius:26px;border:1px solid #d9e9ff;background:#fff;box-shadow:inset 0 0 0 4px rgba(234,244,255,.95);overflow:auto;padding:12px}.formula-box .katex{font-size:clamp(1.85rem,4.2vw,3.4rem)}.diagnosis-grid{display:grid;gap:12px;width:100%;max-width:980px;margin:auto}.eq-line{display:grid;grid-template-columns:minmax(115px,1fr) minmax(44px,auto) minmax(115px,1fr) minmax(44px,auto) minmax(90px,.9fr);align-items:center;justify-items:center;gap:8px;width:100%}.eq-line .eq-placeholder{visibility:hidden;min-height:1px}.eq-choice{display:inline-flex;align-items:center;justify-content:center;min-height:50px;width:100%;max-width:100%;padding:8px 10px;border-radius:16px;border:2px solid #dbe7f5;background:#fff;color:#17213f;box-shadow:0 8px 18px rgba(36,51,89,.06);font-weight:900}.eq-choice:hover{border-color:#9ca3ff;background:#f5f7ff}.eq-choice .katex{font-size:clamp(1.25rem,3.1vw,2.35rem)}.eq-static{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:7px 5px;font-weight:950;color:#475569}.eq-static.eq-equals{grid-column:2}.eq-static.eq-bar{grid-column:4;color:#7c3aed;background:#eef2ff;border-radius:12px;padding:7px 10px}.eq-choice.choice-good{border-color:#34d399;background:#ecfdf5;color:#065f46}.eq-choice.choice-bad{border-color:#fb7185;background:#fff1f2;color:#9f1239;animation:shake .22s linear 1}@media(max-width:720px){.eq-line{grid-template-columns:minmax(84px,1fr) 32px minmax(84px,1fr) 32px minmax(64px,.8fr);gap:5px}.eq-choice{min-height:44px;padding:7px 6px}.eq-static{min-height:40px;padding:5px 3px}.eq-choice .katex{font-size:clamp(1.05rem,4.6vw,1.7rem)}}@keyframes shake{0%,100%{transform:translateX(0)}33%{transform:translateX(-3px)}66%{transform:translateX(3px)}}.blank{display:inline-block;border-radius:12px;background:#ffedd5;border:2px dashed #fb923c;padding:.06em .45em;color:#9a3412}.answer-panel{margin-top:12px;padding:14px;border-radius:26px;background:linear-gradient(180deg,#fff,#f7fbff);border:1px solid var(--line)}.answer-area{display:grid;grid-template-columns:minmax(0,1fr) 140px;gap:10px;align-items:end}.answer-area input{font-size:1.16rem;font-weight:850;padding:16px}.keyboard-layout{display:grid;grid-template-columns:minmax(0,2fr) minmax(110px,.8fr);gap:10px;margin-top:10px}.keys-numbers,.keys-ops,.keys-vars{display:grid;gap:8px}.keys-numbers{grid-template-columns:repeat(3,1fr)}.keys-ops{grid-template-columns:repeat(2,1fr)}.keys-vars{grid-template-columns:repeat(4,1fr);margin-top:8px}.key{min-height:48px;border-radius:18px;background:#fff;border:1px solid #dce7f5;color:#1f2f55}.key.op{background:#eef2ff}.key.action{background:#fff7ed;color:#9a3412}.feedback{min-height:50px;border-radius:18px;font-weight:800;padding:13px 14px;margin-top:10px;background:#f8fafc;border:1px solid #e2e8f0}.feedback.good{background:#ecfdf5;border-color:#a7f3d0;color:#065f46}.feedback.bad{background:#fff1f2;border-color:#fecdd3;color:#9f1239}.feedback.warn{background:#fffbeb;border-color:#fde68a;color:#92400e}.hint-box{display:none;border-radius:18px;background:#f8fafc;border:1px solid #e2e8f0;padding:13px;margin-top:10px}.hint-box.show{display:block}.floating-hud{position:fixed;right:12px;top:50%;transform:translate(130%,-50%);opacity:0;pointer-events:none;z-index:99999;display:grid;gap:10px;width:min(150px,36vw);transition:.18s}.app:not(.playing) .floating-hud{display:none}.floating-hud.show{opacity:1;transform:translate(0,-50%)}.hud-chip{display:flex;justify-content:space-between;gap:7px;padding:10px;border-radius:18px;color:#fff;font-weight:950;box-shadow:0 14px 30px rgba(15,23,42,.22)}.hud-time{background:linear-gradient(135deg,#4f46e5,#06b6d4)}.hud-lives{background:linear-gradient(135deg,#ec4899,#f97316)}.hud-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;opacity:.9}.hud-value{font-size:1.04rem;white-space:nowrap}.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.big-score{font-size:3rem;font-weight:950;background:linear-gradient(135deg,#5b5cf0,#06b6d4);-webkit-background-clip:text;background-clip:text;color:transparent}.summary-item{padding:12px;border-radius:18px;background:#f8fbff;border:1px solid #e5edf7;margin-top:8px}.report-table-wrap{overflow:auto;border:1px solid var(--line);border-radius:20px}.report-table{width:100%;border-collapse:collapse;background:#fff}.report-table th,.report-table td{border-bottom:1px solid #edf2f7;padding:9px;text-align:left;vertical-align:top}.report-table th{background:#f5f8ff}.report-math{display:inline-block;max-width:100%;overflow-x:auto;vertical-align:middle}.report-math .katex{font-size:1.08em}.report-answer-cell,.report-solution-cell{min-width:120px}@media(max-width:900px){body{padding:12px}.setup-layout,.result-grid{grid-template-columns:1fr}.gamebar{grid-template-columns:repeat(2,minmax(0,1fr))}.answer-area{grid-template-columns:1fr}.keyboard-layout{grid-template-columns:1fr}.keys-numbers{grid-template-columns:repeat(3,1fr)}}@media(max-width:620px){.hero{padding:22px 18px}.hero-row{flex-direction:column;align-items:flex-start}.type-grid{grid-template-columns:1fr}.select-row{grid-template-columns:1fr}.formula-box .katex{font-size:clamp(1.55rem,7vw,2.5rem)}.keys-vars{grid-template-columns:repeat(2,1fr)}.floating-hud{top:auto;right:8px;bottom:10px;transform:translateX(130%)}.floating-hud.show{transform:translateX(0)}}@media print{body{background:#fff;padding:0}.hero,.setup-card,.game-shell,.floating-hud,.actions,.answer-panel{display:none!important}.screen{display:block!important}.card{box-shadow:none;border:none}.report-table th,.report-table td{font-size:10pt}}
+
+.answer-preview{display:flex;align-items:center;gap:10px;min-height:44px;margin:10px 0 0;padding:10px 12px;border-radius:18px;background:#f8fbff;border:1px solid #dbeafe;color:#243150;font-weight:800}
+.answer-preview.hidden{display:none}
+.answer-preview .preview-label{font-size:.82rem;text-transform:uppercase;letter-spacing:.055em;color:#64748b;white-space:nowrap}
+.answer-preview .preview-math{flex:1;min-width:0;overflow:auto;font-size:1.08rem}
+.answer-preview .katex{font-size:1.28rem}
+
+.mini-frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;line-height:1;margin:0 .06em;font-weight:inherit;}
+.mini-frac>span:first-child{border-bottom:0.08em solid currentColor;padding:0 .18em .04em;}
+.mini-frac>span:last-child{padding:.04em .18em 0;}
+
+
+#answerInput{caret-color:transparent;touch-action:manipulation;-webkit-user-select:none;user-select:none;}
+#answerInput::selection{background:transparent;}
+.answer-area input[readonly]{background:#fff;color:var(--ink);cursor:default;}
+</style>
+
+<style id="term-mission-visual-upgrade">
+:root{
+  --bg:#f5f7ff;
+  --ink:#17213f;
+  --muted:#637089;
+  --line:#d8e4f6;
+  --brand:#5b5cf0;
+  --brand2:#06b6d4;
+  --mint:#10b981;
+  --sun:#f59e0b;
+  --rose:#ec4899;
+  --violet:#8b5cf6;
+  --deep:#111827;
+  --shadow:0 24px 60px rgba(31,41,82,.14);
+}
+html{background:#eef6ff;}
+body{
+  padding:22px;
+  background:
+    radial-gradient(circle at 8% 8%, rgba(56,189,248,.30) 0 0, transparent 27%),
+    radial-gradient(circle at 86% 3%, rgba(236,72,153,.18) 0 0, transparent 27%),
+    radial-gradient(circle at 55% 100%, rgba(16,185,129,.18) 0 0, transparent 30%),
+    linear-gradient(180deg,#fbfdff 0%,#f3f8ff 46%,#edf7ff 100%);
+  background-attachment:fixed;
+}
+.app{max-width:1240px;}
+.hero{
+  border-radius:36px;
+  padding:28px 30px;
+  background:
+    radial-gradient(circle at 20% 25%, rgba(255,255,255,.20), transparent 25%),
+    linear-gradient(135deg,#4f46e5 0%,#7c3aed 43%,#06b6d4 100%);
+  box-shadow:0 28px 70px rgba(67,56,202,.22);
+  border:1px solid rgba(255,255,255,.28);
+}
+.hero:before{width:330px;height:330px;right:-92px;top:-135px;background:rgba(255,255,255,.16);filter:blur(.2px)}
+.hero:after{content:"+ − × ÷";right:24px;bottom:-12px;font-size:42px;letter-spacing:.08em;opacity:.45;color:rgba(255,255,255,.32);transform:rotate(-6deg)}
+.logo{
+  width:66px;height:66px;border-radius:24px;font-size:2rem;
+  color:#4f46e5;background:linear-gradient(180deg,#fff,#eef6ff);
+  box-shadow:0 16px 35px rgba(15,23,42,.18), inset 0 -4px 0 rgba(79,70,229,.10);
+}
+h1{font-size:clamp(2.2rem,4vw,3.35rem);letter-spacing:-.055em;text-shadow:0 2px 18px rgba(15,23,42,.16)}
+.subtitle{font-size:1.08rem;max-width:760px;}
+.hero-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}
+.hero-chips span{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:7px 10px;border-radius:999px;
+  background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.22);
+  color:#fff;font-weight:850;font-size:.84rem;backdrop-filter:blur(10px);
+}
+.actions button{min-height:44px;}
+.btn-light{box-shadow:0 12px 26px rgba(15,23,42,.12)}
+.btn-primary{
+  min-height:58px;border-radius:22px;font-size:1.06rem;
+  background:linear-gradient(135deg,#4f46e5,#7c3aed 52%,#06b6d4);
+  box-shadow:0 18px 34px rgba(79,70,229,.25);
+}
+.btn-good{background:linear-gradient(135deg,#059669,#10b981 58%,#2dd4bf);box-shadow:0 14px 28px rgba(16,185,129,.20)}
+button:hover{transform:translateY(-2px) scale(1.01)}
+.screen.active{animation:tmFadeUp .35s ease both}
+@keyframes tmFadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.card{
+  border-radius:30px;padding:22px;
+  background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(249,252,255,.98));
+  border:1px solid rgba(216,228,246,.92);
+  box-shadow:0 18px 44px rgba(31,41,82,.09);
+}
+.card:before{left:18px;right:18px;height:6px;background:linear-gradient(90deg,#06b6d4,#4f46e5,#8b5cf6,#ec4899,#f97316,#10b981)}
+.section-title{font-size:clamp(1.2rem,2vw,1.45rem);align-items:center}
+.badge{
+  min-width:40px;height:40px;border-radius:16px;
+  background:linear-gradient(135deg,#eef2ff,#e0f2fe);
+  color:#4f46e5;box-shadow:inset 0 0 0 1px rgba(79,70,229,.08),0 10px 18px rgba(79,70,229,.11)
+}
+.rules{font-size:1rem;line-height:1.68;color:#394760}
+.rules li::marker{color:#4f46e5;font-weight:900}
+.type-grid,.mode-grid{gap:12px}
+.option-card{
+  border-radius:22px;min-height:86px;padding:16px 16px 16px 18px;
+  transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease,background .16s ease;
+  overflow:hidden;
+}
+.option-card:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(31,41,82,.10)}
+.option-card:after{width:7px;top:14px;bottom:14px;background:linear-gradient(180deg,#38bdf8,#8b5cf6)}
+.option-card:nth-child(3n+1):after{background:linear-gradient(180deg,#06b6d4,#4f46e5)}
+.option-card:nth-child(3n+2):after{background:linear-gradient(180deg,#f59e0b,#f97316)}
+.option-card:nth-child(3n):after{background:linear-gradient(180deg,#10b981,#06b6d4)}
+.option-card.selected{
+  border-color:#818cf8;background:linear-gradient(180deg,#fff,#f5f7ff);
+  box-shadow:0 0 0 4px rgba(99,102,241,.12),0 16px 34px rgba(79,70,229,.13);
+}
+.option-card.selected::before{
+  content:"✓";position:absolute;right:12px;top:12px;width:27px;height:27px;border-radius:999px;
+  display:grid;place-items:center;background:#4f46e5;color:#fff;font-weight:950;box-shadow:0 8px 18px rgba(79,70,229,.25)
+}
+.option-card strong{font-size:1.03rem;color:#1d2948}
+.option-card small{font-size:.88rem;line-height:1.35}
+select,input[type=text],input[type=number]{border-radius:20px;padding:15px 16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.85)}
+.nickname-display{
+  min-height:74px;border-radius:26px;font-size:1.38rem;
+  background:radial-gradient(circle at 20% 30%,rgba(255,255,255,.28),transparent 26%),linear-gradient(135deg,#4f46e5,#8b5cf6 48%,#06b6d4);
+  box-shadow:0 18px 34px rgba(79,70,229,.22)
+}
+.custom-mode-settings{border-radius:22px;border-color:#c7d2fe;background:linear-gradient(180deg,#ffffff,#f7faff)}
+.playing .hero{padding:13px 18px;border-radius:26px}
+.playing .hero-chips,.playing .subtitle{display:none}
+.playing .logo{width:46px;height:46px;border-radius:17px;font-size:1.35rem}
+.playing h1{font-size:1.32rem}
+.game-shell{gap:14px}
+.gamebar{
+  top:10px;border-radius:28px;padding:10px;gap:10px;
+  background:rgba(255,255,255,.86);border:1px solid rgba(226,236,249,.94);
+  box-shadow:0 18px 40px rgba(31,41,82,.12);
+}
+.stat{border-radius:20px;padding:12px 13px;background:linear-gradient(180deg,#ffffff,#f8fbff)}
+.stat span{font-size:.74rem;color:#64748b}
+.stat strong{font-size:1.12rem;color:#19233f}
+.progress-wrap{height:16px;background:#e8eef9;border:1px solid #dce7f6}
+.progress-fill{background:linear-gradient(90deg,#10b981,#06b6d4,#4f46e5,#8b5cf6)}
+.task-card{padding:18px;border-radius:32px}
+.task-top h2{font-size:clamp(1.45rem,2.4vw,1.8rem)}
+.pill{background:linear-gradient(135deg,#eef2ff,#e0f2fe);color:#3730a3;border:1px solid #dbe4ff}
+.task-focus{
+  position:relative;overflow:hidden;border-radius:34px;padding:clamp(20px,3vw,34px);
+  border:2px solid #dbe8ff;min-height:clamp(260px,38vh,420px);
+  background:
+    linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.88)),
+    linear-gradient(90deg,rgba(79,70,229,.06) 1px,transparent 1px),
+    linear-gradient(rgba(6,182,212,.06) 1px,transparent 1px),
+    linear-gradient(180deg,#fbfdff,#ffffff);
+  background-size:auto,32px 32px,32px 32px,auto;
+}
+.task-focus:before{
+  content:"";position:absolute;inset:auto -10% -38% auto;width:360px;height:360px;border-radius:50%;
+  background:radial-gradient(circle,rgba(91,92,240,.12),transparent 62%);pointer-events:none;
+}
+.prompt{font-size:clamp(1.35rem,2.7vw,1.98rem);color:#17213f;letter-spacing:-.02em;position:relative;z-index:1}
+.word-problem{max-width:900px;font-size:clamp(1.08rem,2vw,1.42rem);line-height:1.45;position:relative;z-index:1}
+.formula-box{
+  position:relative;z-index:1;border-radius:30px;border:1px solid #d5e7ff;min-height:155px;
+  box-shadow:inset 0 0 0 5px rgba(239,247,255,.95),0 14px 28px rgba(31,41,82,.06);
+}
+.formula-box .katex{font-size:clamp(1.95rem,4.6vw,3.75rem)}
+.blank{border-radius:16px;background:#fff7ed;border:2px dashed #fb923c;box-shadow:0 8px 18px rgba(249,115,22,.12)}
+.answer-panel{border-radius:30px;padding:16px;border:1px solid #dce8f8;box-shadow:0 14px 30px rgba(31,41,82,.06)}
+.answer-area{grid-template-columns:minmax(0,1fr) 150px}
+.answer-area input{min-height:58px;border-radius:22px;font-size:1.22rem;background:#fff}
+#checkBtn{min-height:58px;border-radius:22px;font-size:1.03rem}
+.keyboard-layout{gap:12px;margin-top:12px}
+.key{
+  min-height:52px;border-radius:20px;background:linear-gradient(180deg,#fff,#f7fbff);
+  border:1px solid #dce8f7;color:#1d2948;font-weight:900;
+}
+.key:hover{filter:saturate(1.1);box-shadow:0 10px 20px rgba(31,41,82,.09)}
+.key.op{background:linear-gradient(180deg,#eef2ff,#e0e7ff);color:#3730a3}
+.key.action{background:linear-gradient(180deg,#fff7ed,#ffedd5);color:#9a3412}
+.feedback{border-radius:22px;min-height:54px;font-size:1.02rem}
+.feedback.good{box-shadow:0 0 0 4px rgba(16,185,129,.10)}
+.feedback.bad{box-shadow:0 0 0 4px rgba(239,68,68,.10)}
+.hint-box{border-radius:22px;background:#fbfdff}
+.floating-hud .hud-chip{border:1px solid rgba(255,255,255,.34);backdrop-filter:blur(10px)}
+.result-grid .card{min-height:220px}
+.big-score{font-size:clamp(3rem,8vw,5rem)}
+.summary-item{border-radius:20px;background:linear-gradient(180deg,#fff,#f8fbff)}
+.report-table-wrap{box-shadow:0 12px 28px rgba(31,41,82,.06)}
+.report-table th{background:#eef5ff;color:#1d2948}
+@media(max-width:900px){
+  body{padding:14px}.hero{padding:23px 20px}.hero-row{align-items:flex-start}.actions{justify-content:flex-start}
+  .gamebar{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .answer-area{grid-template-columns:1fr}.answer-area button{width:100%}
+}
+@media(max-width:620px){
+  body{padding:10px}.hero{border-radius:28px;padding:20px 16px}.hero-row{gap:14px}.brand{align-items:flex-start}.logo{width:56px;height:56px}
+  .hero-chips span{font-size:.78rem;padding:6px 8px}.card{padding:18px;border-radius:26px}.option-card{min-height:76px}
+  .gamebar{padding:7px;gap:7px}.stat{padding:9px}.stat strong{font-size:1rem}
+  .task-focus{border-radius:28px;min-height:235px}.formula-box{min-height:130px}.key{min-height:48px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+@media print{body{background:#fff}.hero-chips{display:none!important}}
+</style>
+
+
+<style id="fixed-status-upgrade">
+  /* Statusleiste im Spiel fixieren, damit Modus, Aufgabe, Zeit, Leben und Punkte beim Scrollen sichtbar bleiben. */
+  .app.playing .gamebar{
+    position:fixed !important;
+    top:10px;
+    left:50%;
+    transform:translateX(-50%);
+    width:min(1120px, calc(100vw - 24px));
+    z-index:100000;
+    border:1px solid rgba(219,231,245,.95);
+    background:rgba(255,255,255,.92);
+    box-shadow:0 18px 42px rgba(15,23,42,.16);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+  }
+  .app.playing #gameScreen .game-shell{
+    padding-top:112px;
+  }
+  .app.playing .task-card{
+    scroll-margin-top:132px;
+  }
+  .app.playing .task-focus{
+    scroll-margin-top:132px;
+  }
+  /* Die Randanzeige bleibt als zusätzliche Orientierung erhalten, sobald weit gescrollt wird. */
+  .app.playing .floating-hud.show{
+    opacity:1;
+  }
+  @media(max-width:900px){
+    .app.playing .gamebar{
+      top:8px;
+      width:calc(100vw - 18px);
+    }
+    .app.playing #gameScreen .game-shell{
+      padding-top:178px;
+    }
+    .app.playing .task-card,
+    .app.playing .task-focus{
+      scroll-margin-top:198px;
+    }
+  }
+  @media(max-width:620px){
+    .app.playing .gamebar{
+      top:6px;
+      width:calc(100vw - 14px);
+      border-radius:20px;
+    }
+    .app.playing #gameScreen .game-shell{
+      padding-top:210px;
+    }
+    .app.playing .task-card,
+    .app.playing .task-focus{
+      scroll-margin-top:230px;
+    }
+    .app.playing .gamebar .stat{
+      padding:8px 9px;
+    }
+  }
+  @media print{
+    .app.playing .gamebar{position:static!important;transform:none!important;width:auto!important;}
+    .app.playing #gameScreen .game-shell{padding-top:0!important;}
+  }
+</style>
+
+</head>
+<body>
+<div class="app" id="app">
+  <header class="hero">
+    <div class="hero-row">
+      <div class="brand"><div class="logo">∑</div><div><h1>Term-Mission</h1><p class="subtitle">Sammle Punkte, schütze deine Leben und meistere Terme.</p><div class="hero-chips"><span>🎯 Aufgaben wählen</span><span>⏱️ Timer</span><span>❤️ Leben</span><span>📄 Ergebnis-PDF</span></div></div></div>
+      <div class="actions"><button class="btn-light" id="fullscreenBtn" type="button">⛶ Vollbild</button><button class="btn-light" id="homeBtn" type="button">🏠 Start</button></div>
+    </div>
+  </header>
+  <div class="floating-hud" id="floatingHud" aria-live="polite"><div class="hud-chip hud-time"><span class="hud-label">Zeit</span><span class="hud-value" id="floatingTimeStat">∞</span></div><div class="hud-chip hud-lives"><span class="hud-label">Leben</span><span class="hud-value" id="floatingLivesStat">5</span></div></div>
+  <main>
+    <section class="screen active" id="setupScreen">
+      <div class="setup-layout grid">
+        <div class="grid">
+          <article class="card setup-card">
+            <h2 class="section-title"><span class="badge">1</span>Schnell starten</h2>
+            <ol class="rules">
+              <li>Wähle deine Aufgaben und einen Spielmodus.</li>
+              <li>Gib deine Antwort ein und tippe auf <strong>Prüfen</strong>.</li>
+              <li><strong>Jede falsche Antwort kostet sofort 1 Leben.</strong></li>
+              <li>Läuft die Zeit ab, verlierst du ebenfalls 1 Leben.</li>
+              <li>Bei 0 Leben ist das Spiel beendet.</li>
+            </ol>
+          </article>
+          <article class="card setup-card">
+            <h2 class="section-title"><span class="badge">2</span>Aufgaben auswählen</h2>
+            <div class="mini-actions"><button class="btn-secondary" id="selectAllBtn" type="button">✓ Alle auswählen</button><button class="btn-secondary" id="clearTypesBtn" type="button">Auswahl leeren</button></div>
+            <div class="type-grid" id="typeGrid"></div>
+          </article>
+        </div>
+        <div class="grid">
+          <article class="card setup-card">
+            <h2 class="section-title"><span class="badge">3</span>Name</h2>
+            <div class="nickname-display" id="nicknameDisplay">Mutiger Fuchs</div>
+            <div class="mini-actions"><button class="btn-secondary" id="rollNicknameBtn" type="button">🎲 Zufallsname</button><button class="btn-secondary" id="rollAdjectiveBtn" type="button">✨ Adjektiv</button><button class="btn-secondary" id="rollNounBtn" type="button">🧩 Nomen</button></div>
+          </article>
+          <article class="card setup-card">
+            <h2 class="section-title"><span class="badge">4</span>Spielmodus</h2>
+            <div class="mode-grid" id="modeGrid">
+              <label class="option-card selected" data-mode-card="training"><input type="radio" name="mode" value="training" checked><span><strong>Training</strong><small>ohne Zeitdruck, 5 Leben</small></span></label>
+              <label class="option-card" data-mode-card="check"><input type="radio" name="mode" value="check"><span><strong>Könnens-Check</strong><small>30 Sekunden je Aufgabe, 5 Leben</small></span></label>
+              <label class="option-card" data-mode-card="custom"><input type="radio" name="mode" value="custom"><span><strong>Eigene Challenge</strong><small>Zeit und Leben selbst einstellen</small></span></label>
+            </div>
+            <div class="custom-mode-settings" id="customModeSettings"><div class="select-row"><div class="field"><label for="customSecondsInput">Zeit pro Aufgabe</label><input id="customSecondsInput" type="number" min="15" max="180" step="5" value="60"></div><div class="field"><label for="customLivesInput">Leben</label><input id="customLivesInput" type="number" min="1" max="10" step="1" value="5"></div></div></div>
+            <div class="select-row"><div class="field"><label for="difficultySelect">Schwierigkeit</label><select id="difficultySelect"><option value="easy">leicht</option><option value="medium" selected>mittel</option><option value="hard">anspruchsvoll</option></select></div><div class="field"><label for="taskCountSelect">Aufgaben</label><select id="taskCountSelect"><option>8</option><option selected>10</option><option>12</option><option>15</option></select></div></div>
+            <button class="btn-primary" id="startGameBtn" type="button" style="width:100%;margin-top:14px">🚀 Spiel starten</button>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="screen" id="gameScreen">
+      <div class="game-shell">
+        <div class="gamebar" id="gamebar"><div class="stat"><span>Modus</span><strong id="modeSummary">Training</strong></div><div class="stat"><span>Aufgabe</span><strong id="taskStat">1/10</strong></div><div class="stat"><span>Zeit</span><strong id="timeStat">∞</strong></div><div class="stat"><span>Leben</span><strong id="livesStat">❤️❤️❤️❤️❤️</strong></div><div class="stat"><span>Punkte</span><strong id="scoreStat">0</strong></div><div class="progress-wrap"><div class="progress-fill" id="progressFill"></div></div></div>
+        <article class="card task-card">
+          <div class="task-top"><div><h2 id="taskTypeTitle">Aufgabe</h2><span class="pill" id="difficultyPill">mittel</span></div><button class="btn-secondary" id="hintBtn" type="button">💡 Tipp</button></div>
+          <div class="task-focus" id="taskFocus"><div class="prompt" id="taskPrompt">Berechne.</div><div class="word-problem" id="taskText"></div><div class="formula-box"><div id="taskFormula"></div></div></div>
+          <div class="answer-panel"><form class="answer-area" id="answerForm" autocomplete="off"><input id="answerInput" type="text" inputmode="none" readonly aria-readonly="true" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="z. B. 3x+5, 6/x, Bruch{6}{x} oder x=7"><button class="btn-good" id="checkBtn" type="submit">✓ Prüfen</button></form><div class="answer-preview hidden" id="answerPreview" aria-live="polite"><span class="preview-label">Vorschau</span><div class="preview-math" id="answerPreviewMath"></div></div><div class="keyboard-layout"><div><div class="keys-numbers" id="numberKeys"></div><div class="keys-vars" id="varKeys"></div></div><div class="keys-ops" id="opKeys"></div></div><div class="feedback" id="feedback">Antwort eingeben und prüfen.</div><div class="hint-box" id="hintBox"></div></div>
+        </article>
+      </div>
+    </section>
+    <section class="screen" id="resultScreen"><article class="card"><h2 class="section-title"><span class="badge">✓</span>Auswertung</h2><div class="result-grid"><div><div class="big-score" id="finalScore">0</div><p id="finalMessage">Gut gemacht!</p><div class="summary-item"><strong>Name:</strong> <span id="reportName"></span></div><div class="summary-item"><strong>Modus:</strong> <span id="reportMode"></span></div></div><div><div class="summary-item"><strong>Richtig:</strong> <span id="reportRight"></span></div><div class="summary-item"><strong>Verbleibende Leben:</strong> <span id="reportLives"></span></div><div class="summary-item"><strong>Zeit:</strong> <span id="reportTime"></span></div></div></div><div class="actions" style="margin:14px 0"><button class="btn-primary" id="sameSettingsBtn" type="button">Nochmal mit gleichen Einstellungen</button><button class="btn-secondary" id="playAgainBtn" type="button">Neu einstellen</button><button class="btn-light" id="printPdfBtn" type="button">Als PDF speichern</button></div><div class="report-table-wrap"><table class="report-table"><thead><tr><th>#</th><th>Aufgabe</th><th>Deine Antwort</th><th>Lösung</th><th>Ergebnis</th></tr></thead><tbody id="reportBody"></tbody></table></div></article></section>
+  </main>
+</div>
+<script>
+(function(){
+const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
+const TYPES=[
+ {id:'regeln',label:'Rechenregeln',desc:'Minusklammer, Kommutativgesetz, Distributivgesetz'},
+ {id:'aufstellen',label:'Terme aufstellen',desc:'Texte in Terme übersetzen'},
+ {id:'vereinfachen',label:'Terme vereinfachen',desc:'gleichartige Teile zusammenfassen'},
+ {id:'ausmult',label:'Ausmultiplizieren',desc:'Distributivgesetz anwenden'},
+ {id:'ausklammern',label:'Ausklammern',desc:'gemeinsame Faktoren erkennen'},
+ {id:'einsetzen',label:'Einsetzen',desc:'Zahlenwerte berechnen'},
+ {id:'gleichungen',label:'Gleichungen lösen',desc:'Äquivalenzumformungen'},
+ {id:'bruchterme',label:'Bruchterme',desc:'x steht im Nenner'},
+ {id:'bruchdefinition',label:'Definitionsbereich Bruchterme',desc:'ausgeschlossene x-Werte erkennen'},
+ {id:'bruchgleichungen',label:'Bruchgleichungen lösen',desc:'z. B. 2/x = 4 lösen'},
+ {id:'bruchgleichungsfehler',label:'Bruchgleichung-Fehlerdiagnose',desc:'Fehler in Umformung antippen'},
+ {id:'fehlerdiagnose',label:'Fehlerdiagnose',desc:'falschen Äquivalenzschritt antippen'},
+ {id:'prozent',label:'Bruch → Prozent',desc:'Brüche umwandeln'}
+];
+const MODE={training:{label:'Training',lives:5,seconds:null,points:10},check:{label:'Könnens-Check',lives:5,seconds:30,points:15},custom:{label:'Eigene Challenge',lives:5,seconds:60,points:15}};
+const ADJ=['Mutiger','Schlauer','Flotter','Flinker','Bunter','Starker','Neugieriger','Cleverer','Frecher','Heller'];
+const NOUN=['Fuchs','Panda','Drache','Otter','Tiger','Falke','Igel','Luchs','Delfin','Koala'];
+const state={config:null,screen:'setup',index:0,lives:5,score:0,right:0,remaining:null,timer:null,current:null,records:[],taskStart:0,nickname:{adj:'Mutiger',noun:'Fuchs'}};
+function clamp(v,min,max,fb){v=parseInt(v,10);return Number.isFinite(v)?Math.min(max,Math.max(min,v)):fb}
+function modeInfo(config=state.config){let m=Object.assign({},MODE[config?.mode||'training']||MODE.training); if(config?.mode==='custom'){m.lives=clamp(config.customLives,1,10,5);m.seconds=clamp(config.customSeconds,15,180,60)} return m}
+function rand(a,b){a=Math.round(a);b=Math.round(b);return Math.floor(Math.random()*(b-a+1))+a} function choice(a){return a[Math.floor(Math.random()*a.length)]} function signed(a,b){let n=rand(a,b);return Math.random()<.5?-n:n}
+function rangeForDifficulty(d){
+ const base=d==='easy'?{c:5,n:8}:d==='hard'?{c:14,n:20}:{c:9,n:14};
+ const solved=Math.max(0,state.right||0);
+ // Langsames, stetiges Wachstum: Die Zahlen werden nach und nach größer, ohne sprunghaft schwer zu werden.
+ const soft=Math.floor(Math.sqrt(solved)*2);
+ const wide=Math.floor(Math.sqrt(solved)*3);
+ return {c:base.c+soft,n:base.n+wide,g:soft,solved};
+}
+function linear(a,b){let x=a===1?'x':a===-1?'-x':a+'x'; if(b===0)return x; return b>0?x+'+'+b:x+b}
+function texLinear(a,b){let x=a===1?'x':a===-1?'-x':a+'x'; if(b===0)return x; return b>0?x+'+'+b:x+b}
+function shuffleCopy(arr){arr=arr.slice();for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}return arr}
+function xTerm(a){if(a===0)return ''; if(a===1)return 'x'; if(a===-1)return '-x'; return a+'x'}
+function joinTerms(parts){parts=shuffleCopy(parts.filter(p=>p!==''&&p!==0&&p!=='0').map(String)); if(!parts.length)return '0'; return parts.map((p,i)=>i===0?p:(p.startsWith('-')?p:'+'+p)).join('')}
+function commLinear(a,b){return joinTerms([xTerm(a),String(b)])}
+function commInner(a,b){return Math.random()<.5?`${a}x+${b}`:`${b}+${a}x`}
+function commMul(factor,inner){return Math.random()<.5?`${factor}(${inner})`:`(${inner})\\cdot ${factor}`}
+function commFracSum(a,b){return Math.random()<.5?`\\frac{${a}}{x}+\\frac{${b}}{x}`:`\\frac{${b}}{x}+\\frac{${a}}{x}`}
+function gcdNum(a,b){a=Math.abs(a);b=Math.abs(b);while(b){const t=a%b;a=b;b=t}return a||1}
+function fracTex(n,d){const g=gcdNum(n,d);n=n/g;d=d/g;if(d===1)return String(n);return `\\frac{${n}}{${d}}`}
+function fracInput(n,d){const g=gcdNum(n,d);n=n/g;d=d/g;if(d===1)return String(n);return `${n}/${d}`}
+function init(){renderTypeGrid();renderKeys();bind();rollName();updateModeCards();show('setup')}
+function renderTypeGrid(){const g=$('#typeGrid');g.innerHTML=TYPES.map(t=>`<label class="option-card selected" data-type-card="${t.id}"><input type="checkbox" value="${t.id}" checked><span><strong>${t.label}</strong><small>${t.desc}</small></span></label>`).join('')}
+function renderKeys(){const nums=['7','8','9','4','5','6','1','2','3','0',',','.']; $('#numberKeys').innerHTML=nums.map(v=>`<button class="key" type="button" data-insert="${v}">${v}</button>`).join(''); const ops=['+','−','·',':','=','≠','(',')','%','⌫','C','✓']; $('#opKeys').innerHTML=ops.map(v=>`<button class="key ${['⌫','C','✓'].includes(v)?'action':'op'}" type="button" data-insert="${v}">${v}</button>`).join(''); const vars=['x','x²','²','Bruch{}{}']; $('#varKeys').innerHTML=vars.map(v=>{const label=v==='Bruch{}{}'?'Bruch{□}{□}':v;return `<button class="key" type="button" data-insert="${v}">${label}</button>`}).join('')}
+function bind(){
+ $('#fullscreenBtn').addEventListener('click',openFull); $('#homeBtn').addEventListener('click',()=>show('setup')); $('#selectAllBtn').addEventListener('click',()=>{$$('#typeGrid input').forEach(i=>i.checked=true);updateTypeCards()}); $('#clearTypesBtn').addEventListener('click',()=>{$$('#typeGrid input').forEach(i=>i.checked=false);updateTypeCards()}); $('#rollNicknameBtn').addEventListener('click',rollName); $('#rollAdjectiveBtn').addEventListener('click',()=>rollName('adj')); $('#rollNounBtn').addEventListener('click',()=>rollName('noun')); $('#modeGrid').addEventListener('change',updateModeCards); $('#typeGrid').addEventListener('change',updateTypeCards); $('#startGameBtn').addEventListener('click',startFromSetup); $('#answerForm').addEventListener('submit',e=>{e.preventDefault();checkAnswer()}); $('#hintBtn').addEventListener('click',showHint); $('#sameSettingsBtn').addEventListener('click',()=>startGame(state.config)); $('#playAgainBtn').addEventListener('click',()=>show('setup')); $('#printPdfBtn').addEventListener('click',()=>window.print());
+ ['customSecondsInput','customLivesInput'].forEach(id=>{const el=$('#'+id);el.addEventListener('change',()=>{el.value=id.includes('Seconds')?clamp(el.value,15,180,60):clamp(el.value,1,10,5)})});
+ document.addEventListener('click',e=>{let b=e.target.closest('.key'); if(!b)return; keyInput(b.dataset.insert)}); $('#answerInput').addEventListener('input',updateAnswerPreview); setupAnswerInputNoKeyboard();
+ document.addEventListener('click',e=>{const b=e.target.closest('[data-diag-choice]'); if(!b)return; handleDiagnosisClick(b)});
+ window.addEventListener('scroll',updateHud,{passive:true}); document.addEventListener('scroll',updateHud,{passive:true,capture:true}); window.addEventListener('resize',updateHud); window.addEventListener('orientationchange',()=>setTimeout(updateHud,120));
+}
+
+function setupAnswerInputNoKeyboard(){
+ const input=$('#answerInput');
+ if(!input)return;
+ input.setAttribute('readonly','readonly');
+ input.setAttribute('inputmode','none');
+ input.setAttribute('aria-readonly','true');
+ input.setAttribute('autocomplete','off');
+ input.setAttribute('autocapitalize','off');
+ input.setAttribute('spellcheck','false');
+ const blockNativeKeyboard=e=>{
+  // iPad/Safari and Google-Sites-iframes may still try to focus text inputs.
+  // Preventing the pointer/touch focus keeps the system keyboard closed;
+  // the custom math keyboard below remains fully usable.
+  if(e && typeof e.preventDefault==='function') e.preventDefault();
+  input.blur();
+ };
+ ['pointerdown','touchstart','mousedown','focus'].forEach(evt=>{
+  input.addEventListener(evt,blockNativeKeyboard,{passive:false});
+ });
+}
+function updateTypeCards(){$$('[data-type-card]').forEach(c=>c.classList.toggle('selected',c.querySelector('input').checked))}
+function updateModeCards(){$$('[data-mode-card]').forEach(c=>c.classList.toggle('selected',c.querySelector('input').checked)); const m=($$("input[name='mode']").find(r=>r.checked)||{}).value; $('#customModeSettings').classList.toggle('show',m==='custom')}
+function rollName(part){if(!part||part==='adj')state.nickname.adj=choice(ADJ); if(!part||part==='noun')state.nickname.noun=choice(NOUN); $('#nicknameDisplay').textContent=state.nickname.adj+' '+state.nickname.noun}
+function startFromSetup(){let types=$$('#typeGrid input:checked').map(i=>i.value); if(!types.length){alert('Wähle mindestens einen Aufgabentyp aus.');return} const mode=($$("input[name='mode']").find(r=>r.checked)||{}).value||'training'; const cfg={types,mode,difficulty:$('#difficultySelect').value,total:parseInt($('#taskCountSelect').value,10),studentName:$('#nicknameDisplay').textContent,customSeconds:clamp($('#customSecondsInput').value,15,180,60),customLives:clamp($('#customLivesInput').value,1,10,5)}; startGame(cfg)}
+function startGame(cfg){stopTimer();state.config=Object.assign({},cfg);state.index=0;state.score=0;state.right=0;state.records=[];state.lives=modeInfo(cfg).lives;state.remaining=modeInfo(cfg).seconds;show('game');nextTask()}
+function show(name){state.screen=name;$$('.screen').forEach(s=>s.classList.remove('active'));$('#'+name+'Screen').classList.add('active');$('#app').classList.toggle('playing',name==='game');if(name==='setup'){updateTypeCards();updateModeCards()} setTimeout(updateHud,80); window.scrollTo({top:0,behavior:'smooth'})}
+function nextTask(){stopTimer();if(state.index>=state.config.total||state.lives<=0){finish();return} state.index++; state.current=generate(choice(state.config.types),state.config.difficulty); state.taskStart=Date.now(); $('#taskTypeTitle').textContent=state.current.type; $('#difficultyPill').textContent=state.config.difficulty==='easy'?'leicht':state.config.difficulty==='hard'?'anspruchsvoll':'mittel'; $('#taskPrompt').textContent=state.current.prompt; $('#taskText').textContent=state.current.text||''; $('#taskFormula').innerHTML=state.current.latex; renderLatexIn($('#taskFormula')); $('#answerInput').value=''; updateAnswerPreview(); $('#answerInput').disabled=state.current.kind==='click'; $('#checkBtn').disabled=state.current.kind==='click'; $('#feedback').className='feedback'; $('#feedback').textContent=state.current.kind==='click'?'Tippe die fehlerhafte Stelle an.':'Antwort eingeben und prüfen.'; $('#hintBox').className='hint-box'; updateStats(); startTimer(); setTimeout(()=>{ const ai=$('#answerInput'); if(ai) ai.blur(); },100)}
+function updateStats(){const mi=modeInfo();const t=mi.seconds?state.remaining+'s':'∞';const lives='❤️'.repeat(Math.max(0,state.lives))||'0';$('#modeSummary').textContent=mi.label;$('#taskStat').textContent=state.index+'/'+state.config.total;$('#timeStat').textContent=t;$('#livesStat').textContent=lives;$('#scoreStat').textContent=state.score;$('#floatingTimeStat').textContent=t;$('#floatingLivesStat').textContent=lives;$('#progressFill').style.width=Math.max(0,(state.index-1)/state.config.total*100)+'%'; updateHud()}
+function startTimer(){const seconds=modeInfo().seconds;if(!seconds)return;state.remaining=seconds;updateStats();state.timer=setInterval(()=>{state.remaining--;updateStats();if(state.remaining<=0){stopTimer();wrong('Zeit abgelaufen. Du verlierst 1 Leben.','') }},1000)}
+function stopTimer(){if(state.timer){clearInterval(state.timer);state.timer=null}}
+function elapsed(){return Math.max(0,Math.round((Date.now()-state.taskStart)/1000))}
+function checkAnswer(){if(!state.current)return;const input=$('#answerInput').value.trim(); if(!input){feedback('Antwort eingeben.','warn');return} const ok=check(input,state.current); if(ok){stopTimer();const gain=modeInfo().points;state.score+=gain;state.right++;record(input,true);feedback('Richtig! Nächste Aufgabe kommt.','good');$('#checkBtn').disabled=true;setTimeout(nextTask,650)} else wrong('Leider nicht richtig. Du verlierst 1 Leben.',input)}
+function handleDiagnosisClick(btn){if(!state.current||state.current.kind!=='click')return;const choice=btn.dataset.diagChoice;const label=btn.dataset.label||choice;$$('[data-diag-choice]').forEach(b=>b.disabled=true);if(choice===state.current.expected){btn.classList.add('choice-good');stopTimer();state.score+=modeInfo().points;state.right++;record(label,true);feedback('Richtig! Du hast den Fehler gefunden.','good');setTimeout(nextTask,800)}else{btn.classList.add('choice-bad');wrong('Das ist nicht die fehlerhafte Stelle. Du verlierst 1 Leben.',label)}}
+function wrong(msg,input){stopTimer();state.lives--;record(input,false);feedback(msg,'bad');updateStats();$('#checkBtn').disabled=true;if(state.lives<=0){setTimeout(finish,850)}else{setTimeout(nextTask,950)}}
+function record(input,ok){state.records.push({nr:state.index,type:state.current.type,task:strip(state.current.latex),answer:input||'—',expected:state.current.label||state.current.expected,ok,seconds:elapsed()})}
+function feedback(t,k){$('#feedback').className='feedback '+k;$('#feedback').textContent=t}
+function showHint(){if(!state.current)return;$('#hintBox').className='hint-box show';$('#hintBox').innerHTML='<strong>Tipp:</strong> '+choice(state.current.hints||['Schau dir zuerst die Rechenzeichen genau an.'])}
+function generate(type,d){const r=rangeForDifficulty(d); if(type==='regeln')return genRegel(r); if(type==='aufstellen')return genAufstellen(r); if(type==='vereinfachen')return genVereinfachen(r); if(type==='ausmult')return genAusmult(r); if(type==='ausklammern')return genAusklammern(r); if(type==='einsetzen')return genEinsetzen(r); if(type==='gleichungen')return genGleichung(r); if(type==='bruchterme')return genBruchterm(r); if(type==='bruchdefinition')return genBruchDefinition(r); if(type==='bruchgleichungen')return genBruchgleichung(r); if(type==='bruchgleichungsfehler')return genBruchgleichungFehler(r); if(type==='fehlerdiagnose')return genFehlerdiagnose(r); if(type==='prozent')return genProzent(r); return genVereinfachen(r)}
+function task(type,prompt,text,latex,kind,expected,hints,label){return{type,prompt,text,latex,kind,expected,hints,label}}
+function genRegel(r){const a=rand(2,r.c),b=rand(2,r.n);if(Math.random()<.5){const inner=Math.random()<.5?`(${a}x+${b})`:`(${b}+${a}x)`;return task('Rechenregeln','Wende die Minusklammerregel an.','',`-${tex(inner)}`,'expr',`${-a}x-${b}`,['Vor der Klammer steht ein Minus: beide Vorzeichen ändern.'])} const inner=Math.random()<.5?`x+${b}`:`${b}+x`; const shown=Math.random()<.5?`${a}(${inner})`:`(${inner})\\cdot ${a}`;return task('Rechenregeln','Nutze das Distributivgesetz.','',tex(shown),'expr',`${a}x+${a*b}`,['Multipliziere den Faktor mit jedem Summanden.','Beim Kommutativgesetz darf die Reihenfolge vertauscht sein.'])}
+function genAufstellen(r){const a=rand(2,r.c),b=rand(1,r.n);return Math.random()<.5?task('Term aufstellen','Stelle einen Term auf.',`Das ${a}-Fache von x wird um ${b} vergrößert.`,tex('?'),'expr',`${a}x+${b}`,['Das Vielfache ist der x-Teil.']):task('Bruchterm aufstellen','Stelle den Bruchterm auf.',`Eine Menge von ${a*b} wird gleichmäßig auf x Gruppen verteilt.`,spanBlank(),'rational',`${a*b}/x`,['Beim Verteilen steht x im Nenner.'],`\\frac{${a*b}}{x}`)}
+function genVereinfachen(r){let a=signed(1,r.c),b=signed(1,r.n),c=signed(1,r.c),d=signed(1,r.n);const shown=joinTerms([xTerm(a),String(b),xTerm(c),String(d)]);return task('Terme vereinfachen','Fasse vollständig zusammen.','',tex(shown),'expr',linear(a+c,b+d),['Fasse x-Terme und Zahlen getrennt zusammen.','Die Reihenfolge der Summanden kann vertauscht sein.'])}
+function genAusmult(r){const k=rand(2,r.c),a=rand(1,Math.max(5,r.c-2)),b=rand(1,r.n);const inner=commInner(a,b);return task('Ausmultiplizieren','Multipliziere aus.','',tex(commMul(k,inner)),'expr',linear(k*a,k*b),['Multipliziere jeden Teil in der Klammer mit dem Faktor.','Der Faktor kann vor oder hinter der Klammer stehen.'])}
+function genAusklammern(r){const k=rand(2,r.c),a=rand(1,Math.max(5,r.c-2)),b=rand(1,r.n);const shown=joinTerms([`${k*a}x`,String(k*b)]);const inner=commInner(a,b);return task('Ausklammern','Klammere den gemeinsamen Faktor aus.','',tex(shown),'factor',`${k}*(${a}x+${b})`,['Suche den größten gemeinsamen Faktor der Zahlen.','Im Term können Zahlenteil und x-Teil vertauscht sein.'],`${k}(${inner})`)}
+function genEinsetzen(r){const a=rand(1,r.c),b=signed(1,r.n),x=rand(-(3+r.g),5+r.g);return task('Einsetzen','Setze den Wert für x ein und berechne.',`x = ${x}`,tex(commLinear(a,b)),'num',a*x+b,['Ersetze x durch die angegebene Zahl.','Achte darauf: Die Zahl und der x-Term können vertauscht sein.'])}
+function genGleichung(r){const a=rand(2,r.c),x=rand(-(5+r.g),8+r.g),b=signed(1,r.n),c=a*x+b;const lhs=commLinear(a,b);const eq=Math.random()<.5?`${lhs}=${c}`:`${c}=${lhs}`;return task('Gleichung lösen','Löse die Gleichung.','',tex(eq),'equation',x,['Forme so um, dass x allein steht.','Auch die Seiten der Gleichung können vertauscht sein.'],`x=${x}`)}
+function genBruchterm(r){const a=rand(1,r.n),b=rand(1,r.n);return task('Bruchterm','Fasse zusammen.','',tex(`\\frac{${a}}{x}+\\frac{${b}}{x}`),'rational',`${a+b}/x`,['Gleicher Nenner: Addiere die Zähler, x bleibt im Nenner.'],`\\frac{${a+b}}{x}`)}
+function genBruchDefinition(r){
+ const variant=choice(['zero','shift','shiftCoeff','product']);
+ if(variant==='zero'){
+  const z=rand(2,r.n);
+  return task('Definitionsbereich Bruchterm','Welchen x-Wert muss man ausschließen?','Der Nenner darf nicht 0 werden.',tex(`\\frac{${z}}{x}`),'excluded',0,[
+   'Suche den Nenner.',
+   'Der Nenner x darf nicht 0 sein.'
+  ],'x\\neq 0')
+ }
+ const a=rand(1,r.n);
+ if(variant==='shift'){
+  return task('Definitionsbereich Bruchterm','Welchen x-Wert muss man ausschließen?','Der Nenner darf nicht 0 werden.',tex(`\\frac{1}{x-${a}}`),'excluded',a,[
+   `Setze den Nenner gleich 0: x-${a}=0.`,
+   `Also ist x=${a} ausgeschlossen.`
+  ],`x\\neq ${a}`)
+ }
+ if(variant==='shiftCoeff'){
+  const z=rand(2,r.n);
+  return task('Definitionsbereich Bruchterm','Welchen x-Wert muss man ausschließen?','Der Nenner darf nicht 0 werden.',tex(`\\frac{${z}}{x-${a}}`),'excluded',a,[
+   `Der Zähler ${z} ist hier nicht entscheidend.`,
+   `Nur der Nenner x-${a} darf nicht 0 werden.`
+  ],`x\\neq ${a}`)
+ }
+ const k=rand(2,5+r.g);
+ return task('Definitionsbereich Bruchterm','Welchen x-Wert muss man ausschließen?','Der Nenner darf nicht 0 werden.',tex(`\\frac{1}{${k}\\cdot(x-${a})}`),'excluded',a,[
+  `Das Produkt im Nenner wird 0, wenn x-${a}=0 ist.`,
+  `Daher ist x=${a} ausgeschlossen.`
+ ],`x\\neq ${a}`)
+}
+function genBruchgleichung(r){
+ const variant=choice(['reciprocal','reciprocalSwap','integer']);
+ if(variant==='integer'){
+  const x=rand(2,9+r.g),b=rand(2,8+r.g),a=x*b;
+  return task('Bruchgleichung','Löse die Bruchgleichung.','',tex(`\\frac{${a}}{x}=${b}`),'equation',x,['Multipliziere mit x und teile anschließend durch die Zahl vor x.'],`x=${x}`)
+ }
+ const a=rand(1,12+r.n-14),b=rand(2,9+r.g);
+ const expected=a/b;
+ const label=`x=${fracTex(a,b)}`;
+ const equation=variant==='reciprocalSwap'?`${b}=\\frac{${a}}{x}`:`\\frac{${a}}{x}=${b}`;
+ return task('Bruchgleichung','Löse die Bruchgleichung.','',tex(equation),'equation',expected,[
+  'Multipliziere zuerst mit x.',
+  `Teile danach durch ${b}: x=${fracTex(a,b)}.`
+ ],label)
+}
+function genBruchgleichungFehler(r){
+ const a=rand(1,12+r.n-14),b=rand(2,9+r.g);
+ const correct=fracTex(a,b);
+ const wrong=choice([a,b,a*b]);
+ const html=diag([
+  [chip('start',`\\frac{${a}}{x}`),chip('eq1','='),chip('right',`${b}`),chip('bar1','|'),chip('op1',`\\cdot x`)],
+  [chip('left2',`${a}`),chip('eq2','='),chip('right2',`${b}x`),chip('bar2','|'),chip('op2',`:${b}`)],
+  [chip('left3','x'),stat('='),chip('wrong',`${wrong}`,'Hier wurde nicht durch die Zahl rechts geteilt bzw. der Bruch wurde falsch gebildet.')]
+ ]);
+ return task('Bruchgleichung-Fehlerdiagnose','Tippe den fehlerhaften Teil an.','Eine Bruchgleichung wurde vollständig umgeformt. Ein Schritt enthält einen Fehler.',html,'click','wrong',[
+  'Nach dem Multiplizieren mit x steht die Variable rechts im Produkt.',
+  `Am Ende muss durch ${b} geteilt werden: x=${correct}.`
+ ],`richtig wäre x=${correct}`)
+}
+function genFehlerdiagnose(r){const variant=choice(['minus','divide','fraction','reciprocal','swap']);
+ if(variant==='minus'){
+  const a=rand(2,r.c),b=rand(2,r.n),x=rand(2,8+r.g),c=a*x+b,wrong=c+b,correct=c-b;
+  const html=diag([[chip('lhs1',`${a}x+${b}`),stat('='),chip('rhs1',`${c}`),stat('|'),chip('op1',`-${b}`)],[chip('lhs2',`${a}x`),stat('='),chip('wrong',`${wrong}`,'Hier wurde rechts addiert statt subtrahiert.')]]);
+  return task('Fehlerdiagnose','Tippe den fehlerhaften Teil an.','Eine Äquivalenzumformung ist falsch ausgeführt.',html,'click','wrong',['Bei | - b musst du b auf beiden Seiten subtrahieren.'],`richtig wäre ${correct}`)
+ }
+ if(variant==='divide'){
+  const a=rand(2,r.c),x=rand(2,9+r.g),c=a*x,wrong=c-a;
+  const html=diag([[chip('lhs1',`${a}x`),stat('='),chip('rhs1',`${c}`),stat('|'),chip('op1',`:${a}`)],[chip('lhs2','x'),stat('='),chip('wrong',`${wrong}`,'Hier wurde subtrahiert statt geteilt.')]]);
+  return task('Fehlerdiagnose','Tippe den fehlerhaften Teil an.','Eine Äquivalenzumformung ist falsch ausgeführt.',html,'click','wrong',['Bei | : a musst du die rechte Seite durch a teilen.'],`richtig wäre ${x}`)
+ }
+ if(variant==='fraction'){
+  const b=rand(2,8+r.g),a=rand(1,r.n),c=rand(2,8+r.g),wrong=c;
+  const html=diag([[chip('lhs1',`\\frac{x+${a}}{${b}}`),stat('='),chip('rhs1',`${c}`),stat('|'),chip('op1',`\\cdot ${b}`)],[chip('lhs2',`x+${a}`),stat('='),chip('wrong',`${wrong}`,'Die rechte Seite wurde nicht mit dem Nenner multipliziert.')]]);
+  return task('Fehlerdiagnose','Tippe den fehlerhaften Teil an.','Eine Bruchgleichung wurde falsch umgeformt.',html,'click','wrong',['Beim Multiplizieren mit dem Nenner muss jede Seite multipliziert werden.'],`richtig wäre ${c*b}`)
+ }
+ if(variant==='reciprocal'){
+  return genBruchgleichungFehler(r)
+ }
+ const a=rand(2,r.c),b=rand(2,r.n),x=rand(2,8+r.g),c=a*x-b,wrong=c+b;
+ const html=diag([[chip('lhs1',`${a}x-${b}`),stat('='),chip('rhs1',`${c}`),stat('|'),chip('op1',`+${b}`)],[chip('lhs2',`${a}x`),stat('='),chip('wrong',`${wrong}`,'Hier steht der falsche neue Wert auf der rechten Seite.')],[chip('lhs3','x'),stat('='),chip('rhs3',`\\frac{${wrong}}{${a}}`)]]);
+ return task('Fehlerdiagnose','Tippe den fehlerhaften Teil an.','Eine Äquivalenzumformung enthält einen Fehler.',html,'click','wrong',['Prüfe zuerst die Zeile direkt nach der Umformung.'],`richtig wäre ${c+b}`)
+}
+function diag(lines){return `<div class="diagnosis-grid">${lines.map(line=>{const padded=line.slice();while(padded.length<5)padded.push('<span class="eq-placeholder"></span>');return `<div class="eq-line">${padded.join('')}</div>`}).join('')}</div>`}
+function chip(id,latex,label){return `<button class="eq-choice" type="button" data-diag-choice="${id}" data-label="${escapeHtml(label||latex)}"><span data-tex="${escapeHtml(latex)}"></span></button>`}
+function stat(latex){const cls=latex==='='?'eq-static eq-equals':(latex==='|'?'eq-static eq-bar':'eq-static');return `<span class="${cls}"><span data-tex="${escapeHtml(latex)}"></span></span>`}
+function genProzent(r){const pairs=[[1,2,50],[1,4,25],[3,4,75],[1,5,20],[2,5,40],[3,5,60],[1,10,10],[7,10,70]];let [a,b,p]=choice(pairs);const factor=rand(1,Math.max(1,1+Math.floor((r.g||0)/2)));a*=factor;b*=factor;return task('Bruch → Prozent','Wandle in Prozent um.','',tex(`\\frac{${a}}{${b}}`),'percent',p,['Erweitere den Bruch auf Hundertstel.'],p+'%')}
+function tex(s){s=String(s||'').replace(/\f/g,'\\frac');return `<span data-tex="${escapeHtml(s)}"></span>`} function spanBlank(){return '<span class="blank">?</span>'}
+function renderLatexIn(root=document){root.querySelectorAll('[data-tex]').forEach(el=>{const s=el.dataset.tex||''; if(window.katex){try{katex.render(s,el,{throwOnError:false,displayMode:false,strict:'ignore'});el.dataset.rendered='1';return}catch(e){renderLatexFallback(s,el);return}} renderLatexFallback(s,el)})}
+function renderLatexFallback(latex,el){
+ const safe=String(latex||'');
+ if(/\\frac|\\cdot|\\square/.test(safe)){
+  el.innerHTML=latexToMiniHtml(safe);
+  el.dataset.rendered='fallback';
+ }else{
+  el.textContent=safe;
+ }
+}
+function latexToMiniHtml(latex){
+ let s=escapeHtml(String(latex||''));
+ s=s.replace(/\\dfrac/g,'\\frac').replace(/\\tfrac/g,'\\frac');
+ s=s.replace(/\\cdot/g,'·').replace(/\\square/g,'□');
+ s=s.replace(/\\frac\{([^{}]+)\}\{([^{}]+)\}/g,(m,a,b)=>`<span class="mini-frac"><span>${a}</span><span>${b}</span></span>`);
+ return s;
+}
+
+function normalizeBruchToken(raw){
+ return String(raw||'').replace(/bruch\s*\{/gi,'\\frac{');
+}
+function updateAnswerPreview(){
+ const input=$('#answerInput'),box=$('#answerPreview'),math=$('#answerPreviewMath');
+ if(!input||!box||!math)return;
+ const raw=input.value.trim();
+ if(!/bruch\s*\{/i.test(raw) && !raw.includes('\\frac')){box.classList.add('hidden');math.textContent='';return}
+ let latex=normalizeBruchToken(raw);
+ latex=latex.replace(/\\frac\{\}\{\}/g,'\\frac{\\square}{\\square}');
+ latex=latex.replace(/\\frac\{([^{}]*)\}\{([^{}]*)\}/g,(m,a,b)=>`\\frac{${a||'\\square'}}{${b||'\\square'}}`);
+ latex=latex.replace(/\*/g,'\\cdot ');
+ box.classList.remove('hidden');math.textContent='';
+ if(window.katex){try{katex.render(latex,math,{throwOnError:false,strict:false,displayMode:false})}catch(e){math.textContent=latex}}
+ else math.textContent=latex;
+}
+function ensureKatexRendered(){let tries=0;const run=()=>{renderLatexIn(document);tries++;if(!window.katex&&tries<25)setTimeout(run,120)};run()}
+function norm(raw){let s=normalizeBruchToken(raw).trim().toLowerCase().replace(/\\dfrac/g,'\\frac').replace(/\\tfrac/g,'\\frac').replace(/−/g,'-').replace(/[·×]/g,'*').replace(/:/g,'/').replace(/,/g,'.').replace(/\s+/g,'');s=s.replace(/\\frac\{([^{}]+)\}\{([^{}]+)\}/g,'(($1)/($2))');s=s.replace(/x²/g,'x^2').replace(/\^2/g,'**2');s=s.replace(/(\d)(x)/g,'$1*$2').replace(/\)(\d|x)/g,')*$1').replace(/(\d|x)\(/g,'$1*(');return s}
+function val(expr,x){let s=norm(expr);if(!/^[0-9x+\-*/().=]+$/.test(s))throw 0;return Function('x','return '+s)(x)}
+function exprEq(a,b){try{for(let x of [-5,-2,1,2,3,5,7]){if(Math.abs(val(a,x)-val(b,x))>1e-7)return false}return true}catch(e){return false}}
+function scalarNumber(raw){
+ let s=String(raw||'').trim().toLowerCase();
+ if(s.includes('=')){
+  const parts=s.split('=').map(p=>p.trim());
+  if(parts.length===2){
+   const leftHasX=/x/.test(norm(parts[0]));
+   const rightHasX=/x/.test(norm(parts[1]));
+   if(leftHasX&&!rightHasX)s=parts[1];
+   else if(!leftHasX&&rightHasX)s=parts[0];
+   else s=parts[1];
+  }
+ }
+ s=s.replace(/^x\s*=/,'');
+ try{const normalized=norm(s); if(/x/.test(normalized))return NaN; return val(s,2)}catch(e){return NaN}
+}
+function numEq(a,b){const av=scalarNumber(a),bv=scalarNumber(b);return Number.isFinite(av)&&Number.isFinite(bv)&&Math.abs(av-bv)<1e-7}
+function hasXDenom(s){s=normalizeBruchToken(s).toLowerCase().replace(/\s+/g,'');return /\\frac\{[^{}]+\}\{[^{}]*x[^{}]*\}/.test(s)||/\/(\(?[^)]*x[^)]*\)?)/.test(norm(s))}
+function excludedValueEq(input,expected){
+ let s=String(input||'').trim().toLowerCase();
+ if(!s)return false;
+ s=s.replace(/−/g,'-').replace(/,/g,'.').replace(/\s+/g,'');
+ s=s.replace(/ungleich|nichtgleich|not=/g,'≠');
+ if(s.includes('!='))s=s.split('!=').pop();
+ else if(s.includes('≠'))s=s.split('≠').pop();
+ else if(s.includes('=/'))s=s.split('=/').pop();
+ else if(s.includes('='))s=s.split('=').pop();
+ try{return numEq(s,expected)}catch(e){return false}
+}
+function check(input,t){if(t.kind==='click')return input===t.expected; if(t.kind==='num')return numEq(input,t.expected); if(t.kind==='excluded')return excludedValueEq(input,t.expected); if(t.kind==='equation')return numEq(input,t.expected)||numEq(input.replace(/^x=/,''),t.expected); if(t.kind==='percent')return numEq(input.replace('%',''),t.expected); if(t.kind==='rational')return hasXDenom(input)&&exprEq(input,t.expected); if(t.kind==='factor')return /\(|\)/.test(input)&&exprEq(input,t.expected); return exprEq(input,t.expected)}
+function strip(html){let d=document.createElement('div');d.innerHTML=html;return d.textContent||d.innerText||''} function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function keyInput(v){
+ const input=$('#answerInput');
+ if(!input)return;
+ if(v==='✓'){checkAnswer();return}
+ if(v==='C'){input.value='';try{input.setSelectionRange(0,0)}catch(e){};input.blur();updateAnswerPreview();return}
+ if(v==='⌫'){input.value=input.value.slice(0,-1);try{input.setSelectionRange(input.value.length,input.value.length)}catch(e){};input.blur();updateAnswerPreview();return}
+ if(v==='·')v='*'; if(v===':')v='/'; if(v==='−')v='-'; if(v==='x²')v='x^2'; if(v==='²')v='^2';
+ const start=input.selectionStart??input.value.length,end=input.selectionEnd??input.value.length;
+ if(v==='Bruch{}{}'){
+   const bruch='Bruch{}{}';
+   input.value=input.value.slice(0,start)+bruch+input.value.slice(end);
+   const cursor=start+6;
+   try{input.setSelectionRange(cursor,cursor)}catch(e){};input.blur();
+   updateAnswerPreview();
+   return;
+ }
+ input.value=input.value.slice(0,start)+v+input.value.slice(end);
+ try{input.setSelectionRange(start+v.length,start+v.length)}catch(e){};input.blur();
+ updateAnswerPreview();
+}
+
+function reportValueHtml(value, cls='report-math'){
+ const raw=String(value??'').trim();
+ if(!raw||raw==='—')return escapeHtml(raw||'—');
+ const split=splitReportTextAndMath(raw);
+ if(split){
+  return `${escapeHtml(split.text)} <span class="${cls}" data-tex="${escapeHtml(toReportLatex(split.math))}"></span>`;
+ }
+ return `<span class="${cls}" data-tex="${escapeHtml(toReportLatex(raw))}"></span>`;
+}
+function splitReportTextAndMath(raw){
+ const patterns=['richtig wäre','richtig:','lösung:','loesung:'];
+ const lower=raw.toLowerCase();
+ for(const p of patterns){
+  const i=lower.indexOf(p);
+  if(i>=0){
+   const text=raw.slice(0,i+p.length).trim();
+   const math=raw.slice(i+p.length).trim();
+   if(math)return {text,math};
+  }
+ }
+ return null;
+}
+function toReportLatex(raw){
+ let s=String(raw??'').trim();
+ if(!s)return '';
+ s=normalizeBruchToken(s);
+ s=s.replace(/−/g,'-').replace(/[·×]/g,'\\cdot ').replace(/:/g,'/').replace(/\*/g,'\\cdot ');
+ s=s.replace(/,/g,'.');
+ // x=1/2 oder 1/2=x sauber als Bruch anzeigen.
+ s=s.replace(/(^|[=+\-\s])(-?\d+)\/(-?\d+)(?=$|[+\-\s])/g,(m,p,a,b)=>`${p}\\frac{${a}}{${b}}`);
+ // Einfache Terme a/x oder a/(x) als Bruch anzeigen.
+ s=s.replace(/(^|[=+\-\s])(-?\d+)\/\(?x\)?/g,(m,p,a)=>`${p}\\frac{${a}}{x}`);
+ s=s.replace(/\\frac\{\}\{\}/g,'\\frac{\\square}{\\square}');
+ s=s.replace(/\\frac\{([^{}]*)\}\{([^{}]*)\}/g,(m,a,b)=>`\\frac{${a||'\\square'}}{${b||'\\square'}}`);
+ s=s.replace(/x\\neq\s*(-?\d+)/g,'x\\neq $1').replace(/x≠\s*(-?\d+)/g,'x\\neq $1');
+ s=s.replace(/x\^2/g,'x^2');
+ return s;
+}
+
+function finish(){
+ stopTimer();
+ $('#progressFill').style.width='100%';
+ show('result');
+ $('#finalScore').textContent=state.score+' Punkte';
+ $('#finalMessage').textContent=state.lives<=0?'Keine Leben mehr – du kannst es direkt noch einmal versuchen.':'Runde beendet – gut gemacht!';
+ $('#reportName').textContent=state.config.studentName;
+ $('#reportMode').textContent=modeInfo().label;
+ $('#reportRight').textContent=state.right+' von '+state.config.total;
+ $('#reportLives').textContent=state.lives;
+ $('#reportTime').textContent=new Date().toLocaleString('de-DE');
+ $('#reportBody').innerHTML=state.records.map(r=>`<tr><td>${r.nr}</td><td><strong>${escapeHtml(r.type)}</strong><br>${escapeHtml(r.task)}</td><td class="report-answer-cell">${reportValueHtml(r.answer,'report-math report-answer')}</td><td class="report-solution-cell">${reportValueHtml(r.expected,'report-math report-solution')}</td><td>${r.ok?'✅ richtig':'❌ falsch'}<br>${r.seconds}s</td></tr>`).join('');
+ renderLatexIn($('#reportBody'));
+ setTimeout(()=>renderLatexIn($('#reportBody')),120);
+}
+function updateHud(){const hud=$('#floatingHud'),bar=$('#gamebar');if(!hud||!bar||state.screen!=='game'){hud?.classList.remove('show');return}const r=bar.getBoundingClientRect();const visible=r.bottom>6&&r.top<innerHeight-6;const scrolled=(window.scrollY||document.documentElement.scrollTop||0)>220;hud.classList.toggle('show',!visible||scrolled)}
+function openFull(){const clone=document.documentElement.outerHTML;const blob=new Blob([clone],{type:'text/html'});const url=URL.createObjectURL(blob);window.open(url,'_blank','noopener,noreferrer')}
+window.addEventListener('DOMContentLoaded',()=>{init();ensureKatexRendered()});window.addEventListener('load',ensureKatexRendered);
+})();
+</script>
+</body>
+</html>
