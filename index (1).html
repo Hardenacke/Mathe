@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digitale Lernplattform</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Ergänzende Styles für die dynamische Navigation.
+       Das vorhandene style.css kann weiter genutzt werden. */
+
+    .topbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .home-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 800;
+      color: var(--color-primary-dark, #1d4ed8);
+      text-decoration: none;
+    }
+
+    .home-link:hover {
+      text-decoration: underline;
+    }
+
+    .path-note {
+      margin: 0.25rem 0 0;
+      color: var(--color-muted, #64748b);
+      font-size: 0.92rem;
+      word-break: break-word;
+    }
+
+    .level-badge {
+      display: inline-flex;
+      width: fit-content;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      background: var(--color-primary-soft, #dbeafe);
+      color: var(--color-primary-dark, #1d4ed8);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .card-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      align-items: center;
+      margin-top: auto;
+    }
+
+    .material-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 1rem;
+      border: 1px solid var(--color-border, #d7dee9);
+      border-radius: var(--radius-md, 16px);
+      background: var(--color-surface, #fff);
+      box-shadow: var(--shadow-card, 0 8px 20px rgba(15, 23, 42, 0.07));
+    }
+
+    .material-card h3 {
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .material-card p {
+      margin: 0.25rem 0 0;
+      color: var(--color-muted, #64748b);
+      font-size: 0.92rem;
+      word-break: break-word;
+    }
+
+    .material-type {
+      display: inline-flex;
+      width: fit-content;
+      padding: 0.25rem 0.5rem;
+      border-radius: 999px;
+      background: var(--color-surface-soft, #f8fafc);
+      border: 1px solid var(--color-border, #d7dee9);
+      color: var(--color-muted, #64748b);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .material-stack {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .search-area {
+      display: grid;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .search-results {
+      display: none;
+      gap: 0.75rem;
+      margin: 0 0 1rem;
+      padding: 1rem;
+      border: 1px solid var(--color-border, #d7dee9);
+      border-radius: var(--radius-md, 16px);
+      background: var(--color-surface-soft, #f8fafc);
+    }
+
+    .search-results.is-visible {
+      display: grid;
+    }
+
+    .small-link {
+      color: var(--color-primary-dark, #1d4ed8);
+      font-weight: 750;
+      text-decoration: none;
+    }
+
+    .small-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 720px) {
+      .material-card {
+        grid-template-columns: 1fr;
+      }
+
+      .material-card .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero compact">
+    <div class="hero-content">
+      <p class="eyebrow">Digitale Lernplattform</p>
+      <h1>Materialübersicht</h1>
+      <p class="subtitle">
+        Willkommen! Wähle eine Klasse oder Stufe aus und klicke dich über Inhaltsfelder und Themen
+        bis zu den Lernpfaden, Quizzen, Arbeitsblättern und PDFs.
+      </p>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="panel">
+      <div class="topbar">
+        <a class="home-link" href="#/">⌂ Startseite</a>
+        <span id="statusInfo" class="tag">Daten werden geladen …</span>
+      </div>
+
+      <nav id="breadcrumb" class="breadcrumb" aria-label="Pfadnavigation"></nav>
+
+      <div class="search-area">
+        <label for="searchInput" class="section-title" style="margin:0;">Materialien durchsuchen</label>
+        <input
+          id="searchInput"
+          class="search-field"
+          type="search"
+          placeholder="Suchbegriff eingeben, z. B. Innenwinkel, Quiz, Lernpfad …"
+          autocomplete="off"
+        />
+        <div id="searchResults" class="search-results"></div>
+      </div>
+
+      <div id="app" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Die Übersicht wird automatisch aus der Datei <strong>data.json</strong> erzeugt.
+  </footer>
+
+  <script>
+    const DATA_URL = "data.json";
+
+    let DATA = null;
+    let MATERIAL_INDEX = [];
+
+    const app = document.getElementById("app");
+    const breadcrumb = document.getElementById("breadcrumb");
+    const statusInfo = document.getElementById("statusInfo");
+    const searchInput = document.getElementById("searchInput");
+    const searchResults = document.getElementById("searchResults");
+
+    function normalizePath(path) {
+      return String(path || "")
+        .replace(/^\/+/, "")
+        .replace(/\/{2,}/g, "/");
+    }
+
+    function joinPath(base, path) {
+      const cleanBase = normalizePath(base || "");
+      const cleanPath = normalizePath(path || "");
+      if (!cleanBase) return cleanPath;
+      if (!cleanPath) return cleanBase;
+      return `${cleanBase.replace(/\/$/, "")}/${cleanPath}`;
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function slugParts() {
+      return location.hash
+        .replace(/^#\/?/, "")
+        .split("/")
+        .map(part => decodeURIComponent(part.trim()))
+        .filter(Boolean);
+    }
+
+    function toHash(...parts) {
+      const clean = parts.filter(Boolean).map(part => encodeURIComponent(part));
+      return "#/" + clean.join("/");
+    }
+
+    function setStatus() {
+      const fachCount = DATA?.faecher?.length || 0;
+      const klasseCount = (DATA?.faecher || []).reduce((sum, fach) => sum + (fach.klassen || []).length, 0);
+      const materialCount = MATERIAL_INDEX.length;
+      statusInfo.textContent = `${fachCount} Fach · ${klasseCount} Klassen/Stufen · ${materialCount} Materialien`;
+    }
+
+    function collectMaterials() {
+      MATERIAL_INDEX = [];
+
+      for (const fach of DATA?.faecher || []) {
+        for (const klasse of fach.klassen || []) {
+          for (const feld of klasse.inhaltsfelder || []) {
+            for (const thema of feld.themen || []) {
+              collectMaterialsFromTopic({ fach, klasse, feld, thema, ancestors: [thema] });
+            }
+          }
+        }
+      }
+    }
+
+    function collectMaterialsFromTopic({ fach, klasse, feld, thema, ancestors }) {
+      for (const mat of thema.materialien || []) {
+        MATERIAL_INDEX.push({
+          fach,
+          klasse,
+          feld,
+          thema,
+          ancestors,
+          material: mat,
+          searchText: [
+            fach.titel, klasse.titel, feld.titel,
+            ...ancestors.map(a => a.titel),
+            mat.titel, mat.typ, mat.format, mat.datei, mat.pfad,
+            ...(mat.tags || [])
+          ].join(" ").toLowerCase()
+        });
+      }
+
+      for (const child of thema.unterthemen || []) {
+        collectMaterialsFromTopic({
+          fach,
+          klasse,
+          feld,
+          thema: child,
+          ancestors: [...ancestors, child]
+        });
+      }
+    }
+
+    function findFach() {
+      return DATA?.faecher?.[0] || null;
+    }
+
+    function findKlasse(id) {
+      const fach = findFach();
+      return (fach?.klassen || []).find(klasse => klasse.id === id) || null;
+    }
+
+    function findFeld(klasse, id) {
+      return (klasse?.inhaltsfelder || []).find(feld => feld.id === id) || null;
+    }
+
+    function findTopicRecursive(themen, ids, index = 0) {
+      if (!Array.isArray(themen) || index >= ids.length) return null;
+      const topic = themen.find(item => item.id === ids[index]);
+      if (!topic) return null;
+      if (index === ids.length - 1) return topic;
+      return findTopicRecursive(topic.unterthemen || [], ids, index + 1);
+    }
+
+    function renderBreadcrumb(parts) {
+      const crumbs = [`<a href="#/">Startseite</a>`];
+
+      if (parts[0]) {
+        const klasse = findKlasse(parts[0]);
+        crumbs.push(`<a href="${toHash(parts[0])}">${escapeHtml(klasse?.titel || parts[0])}</a>`);
+      }
+
+      if (parts[0] && parts[1]) {
+        const klasse = findKlasse(parts[0]);
+        const feld = findFeld(klasse, parts[1]);
+        crumbs.push(`<a href="${toHash(parts[0], parts[1])}">${escapeHtml(feld?.titel || parts[1])}</a>`);
+      }
+
+      if (parts.length > 2) {
+        const klasse = findKlasse(parts[0]);
+        const feld = findFeld(klasse, parts[1]);
+        let currentTopics = feld?.themen || [];
+        const topicParts = parts.slice(2);
+
+        topicParts.forEach((topicId, idx) => {
+          const topic = currentTopics.find(item => item.id === topicId);
+          const href = toHash(parts[0], parts[1], ...topicParts.slice(0, idx + 1));
+          crumbs.push(`<a href="${href}">${escapeHtml(topic?.titel || topicId)}</a>`);
+          currentTopics = topic?.unterthemen || [];
+        });
+      }
+
+      breadcrumb.innerHTML = crumbs.join("");
+    }
+
+    function renderStart() {
+      const fach = findFach();
+      const klassen = fach?.klassen || [];
+
+      renderBreadcrumb([]);
+
+      app.innerHTML = `
+        <h2 class="section-title">Klassen und Stufen</h2>
+        <p class="section-text">
+          Wähle zunächst eine Klasse oder Kursstufe aus. Anschließend gelangst du zu den passenden
+          Inhaltsfeldern, Themen und Materialien.
+        </p>
+        <div class="grid">
+          ${klassen.map(klasse => `
+            <a class="card" href="${toHash(klasse.id)}">
+              <span class="level-badge">${escapeHtml(fach?.titel || "Fach")}</span>
+              <h3 class="card-title">${escapeHtml(klasse.titel)}</h3>
+              <p class="card-text">
+                ${escapeHtml(klasse.anzahlThemen ?? 0)} Themen ·
+                ${escapeHtml(klasse.anzahlMaterialien ?? 0)} Materialien
+              </p>
+              <div class="card-row">
+                <span class="tag">Zur Übersicht</span>
+              </div>
+            </a>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderKlasse(klasseId) {
+      const klasse = findKlasse(klasseId);
+      if (!klasse) return renderNotFound();
+
+      renderBreadcrumb([klasseId]);
+
+      app.innerHTML = `
+        <h2 class="section-title">${escapeHtml(klasse.titel)}</h2>
+        <p class="section-text">
+          Wähle ein Inhaltsfeld aus, um zu den darunterliegenden Themen und Materialien zu gelangen.
+        </p>
+        <div class="grid">
+          ${(klasse.inhaltsfelder || []).map(feld => `
+            <a class="card" href="${toHash(klasse.id, feld.id)}">
+              <span class="level-badge">Inhaltsfeld</span>
+              <h3 class="card-title">${escapeHtml(feld.titel)}</h3>
+              <p class="card-text">
+                ${escapeHtml(feld.anzahlThemen ?? 0)} Themen ·
+                ${escapeHtml(feld.anzahlMaterialien ?? 0)} Materialien
+              </p>
+              <p class="path-note">${escapeHtml(feld.pfad || "")}</p>
+            </a>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderFeld(klasseId, feldId) {
+      const klasse = findKlasse(klasseId);
+      const feld = findFeld(klasse, feldId);
+      if (!klasse || !feld) return renderNotFound();
+
+      renderBreadcrumb([klasseId, feldId]);
+
+      app.innerHTML = `
+        <h2 class="section-title">${escapeHtml(feld.titel)}</h2>
+        <p class="section-text">
+          Wähle ein Thema aus. In den Themenordnern findest du anschließend die zugeordneten Lernmaterialien.
+        </p>
+        <div class="grid">
+          ${(feld.themen || []).map(thema => renderTopicCard(thema, [klasse.id, feld.id])) .join("")}
+        </div>
+      `;
+    }
+
+    function renderTopic(klasseId, feldId, topicIds) {
+      const klasse = findKlasse(klasseId);
+      const feld = findFeld(klasse, feldId);
+      const thema = findTopicRecursive(feld?.themen || [], topicIds);
+
+      if (!klasse || !feld || !thema) return renderNotFound();
+
+      renderBreadcrumb([klasseId, feldId, ...topicIds]);
+
+      const childTopics = thema.unterthemen || [];
+      const materialien = thema.materialien || [];
+
+      app.innerHTML = `
+        <h2 class="section-title">${escapeHtml(thema.titel)}</h2>
+        <p class="section-text">
+          ${childTopics.length > 0
+            ? "Wähle ein Unterthema oder öffne direkt eines der verfügbaren Materialien."
+            : "Öffne eines der verfügbaren Materialien."
+          }
+        </p>
+        <p class="path-note">${escapeHtml(thema.pfad || "")}</p>
+
+        ${childTopics.length > 0 ? `
+          <h3 class="section-title" style="font-size:1.25rem;margin-top:1.5rem;">Unterthemen</h3>
+          <div class="grid">
+            ${childTopics.map(child => renderTopicCard(child, [klasse.id, feld.id, ...topicIds])).join("")}
+          </div>
+        ` : ""}
+
+        <h3 class="section-title" style="font-size:1.25rem;margin-top:1.5rem;">Materialien</h3>
+        ${materialien.length > 0 ? `
+          <div class="material-stack">
+            ${materialien.map(mat => renderMaterialCard(mat)).join("")}
+          </div>
+        ` : `
+          <div class="empty-state">
+            Für dieses Thema ist in der data.json noch kein Lernmaterial eingetragen.
+          </div>
+        `}
+      `;
+    }
+
+    function renderTopicCard(thema, parentParts) {
+      const materialCount = countMaterials(thema);
+      const childCount = (thema.unterthemen || []).length;
+
+      return `
+        <a class="card" href="${toHash(...parentParts, thema.id)}">
+          <span class="level-badge">Thema</span>
+          <h3 class="card-title">${escapeHtml(thema.titel)}</h3>
+          <p class="card-text">
+            ${escapeHtml(childCount)} Unterthemen · ${escapeHtml(materialCount)} Materialien
+          </p>
+          <p class="path-note">${escapeHtml(thema.pfad || "")}</p>
+        </a>
+      `;
+    }
+
+    function countMaterials(thema) {
+      let count = (thema.materialien || []).length;
+      for (const child of thema.unterthemen || []) {
+        count += countMaterials(child);
+      }
+      return count;
+    }
+
+    function renderMaterialCard(mat) {
+      const basePath = DATA?.basePath || "";
+      const href = joinPath(basePath, mat.pfad || mat.datei || "");
+      const typeLabel = mat.format || (mat.typ || "Material").toUpperCase();
+      const openLabel = mat.typ === "pdf" ? "PDF öffnen" : "Material öffnen";
+
+      return `
+        <article class="material-card">
+          <div>
+            <span class="material-type">${escapeHtml(typeLabel)}</span>
+            <h3>${escapeHtml(mat.titel || mat.datei || "Material")}</h3>
+            <p>${escapeHtml(href)}</p>
+          </div>
+          <a class="button" href="${escapeHtml(href)}" target="_blank" rel="noopener">
+            ${escapeHtml(openLabel)}
+          </a>
+        </article>
+      `;
+    }
+
+    function renderNotFound() {
+      renderBreadcrumb([]);
+      app.innerHTML = `
+        <div class="empty-state">
+          Der gewählte Bereich wurde in der data.json nicht gefunden.
+          <br />
+          <a class="small-link" href="#/">Zurück zur Startseite</a>
+        </div>
+      `;
+    }
+
+    function renderSearch() {
+      const query = searchInput.value.trim().toLowerCase();
+
+      if (!query) {
+        searchResults.classList.remove("is-visible");
+        searchResults.innerHTML = "";
+        return;
+      }
+
+      const results = MATERIAL_INDEX
+        .filter(item => item.searchText.includes(query))
+        .slice(0, 12);
+
+      searchResults.classList.add("is-visible");
+
+      if (results.length === 0) {
+        searchResults.innerHTML = `<div class="empty-state">Keine Materialien gefunden.</div>`;
+        return;
+      }
+
+      searchResults.innerHTML = `
+        <strong>Suchergebnisse</strong>
+        <div class="material-stack">
+          ${results.map(item => {
+            const basePath = DATA?.basePath || "";
+            const href = joinPath(basePath, item.material.pfad || item.material.datei || "");
+            const navHref = toHash(
+              item.klasse.id,
+              item.feld.id,
+              ...item.ancestors.map(topic => topic.id)
+            );
+
+            return `
+              <article class="material-card">
+                <div>
+                  <span class="material-type">${escapeHtml(item.material.format || item.material.typ || "Material")}</span>
+                  <h3>${escapeHtml(item.material.titel)}</h3>
+                  <p>
+                    ${escapeHtml(item.klasse.titel)} ·
+                    ${escapeHtml(item.feld.titel)} ·
+                    ${escapeHtml(item.ancestors.map(topic => topic.titel).join(" › "))}
+                  </p>
+                  <p>
+                    <a class="small-link" href="${navHref}">Zum Themenordner</a>
+                  </p>
+                </div>
+                <a class="button" href="${escapeHtml(href)}" target="_blank" rel="noopener">
+                  Öffnen
+                </a>
+              </article>
+            `;
+          }).join("")}
+        </div>
+      `;
+    }
+
+    function renderRoute() {
+      if (!DATA) return;
+
+      const parts = slugParts();
+
+      if (parts.length === 0) return renderStart();
+      if (parts.length === 1) return renderKlasse(parts[0]);
+      if (parts.length === 2) return renderFeld(parts[0], parts[1]);
+
+      return renderTopic(parts[0], parts[1], parts.slice(2));
+    }
+
+    async function init() {
+      try {
+        const response = await fetch(DATA_URL, { cache: "no-store" });
+
+        if (!response.ok) {
+          throw new Error(`data.json konnte nicht geladen werden. Status: ${response.status}`);
+        }
+
+        DATA = await response.json();
+        collectMaterials();
+        setStatus();
+        renderRoute();
+      } catch (error) {
+        statusInfo.textContent = "Fehler beim Laden";
+        breadcrumb.innerHTML = "";
+        app.innerHTML = `
+          <div class="empty-state">
+            <strong>Die Datei data.json konnte nicht geladen werden.</strong>
+            <br />
+            Prüfe, ob <code>index.html</code>, <code>style.css</code> und <code>data.json</code>
+            gemeinsam im Hauptordner deines GitHub-Pages-Repositories liegen.
+            <br /><br />
+            ${escapeHtml(error.message)}
+          </div>
+        `;
+      }
+    }
+
+    window.addEventListener("hashchange", renderRoute);
+    searchInput.addEventListener("input", renderSearch);
+
+    init();
+  </script>
+</body>
+</html>
