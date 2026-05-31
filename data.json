@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "basePath": "",
-  "beschreibung": "Vorlage für die vollständige GitHub-Pages-Ordnerstruktur. Die Klassenordner liegen direkt im Hauptordner neben index.html, style.css und data.json.",
+  "beschreibung": "GitHub-Pages-Struktur mit alltagstauglichen Themenübersichten für Klasse 5 bis 10 sowie EF, Q1 und Q2. In der Qualifikationsphase liegen Grundkurs und Leistungskurs innerhalb der Ordner q1/ beziehungsweise q2/.",
   "faecher": [
     {
       "id": "mathematik",
@@ -14,114 +14,182 @@
           "pfad": "klasse-5/",
           "inhaltsfelder": [
             {
-              "id": "arithmetik-algebra",
-              "titel": "Arithmetik / Algebra",
-              "pfad": "klasse-5/arithmetik-algebra/",
+              "id": "zahlen-und-groessen",
+              "titel": "Zahlen und Größen",
+              "pfad": "klasse-5/zahlen-und-groessen/",
+              "beschreibung": "Alltagstauglicher Bereich für Zahlen, Rechenverfahren, Größen und Einheiten.",
               "themen": [
                 {
-                  "id": "brueche-und-anteile",
-                  "titel": "Brüche und Anteile",
-                  "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/",
+                  "id": "zahlen-und-groessen-kennenlernen",
+                  "titel": "Zahlen und Größen kennenlernen",
+                  "pfad": "klasse-5/zahlen-und-groessen/zahlen-und-groessen-kennenlernen/",
+                  "beschreibung": "Einstieg in natürliche Zahlen, Stellenwertsystem, Grundrechenarten und den Umgang mit Größen und Einheiten.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Grundrechenarten",
+                    "Darstellung in der Stellenwerttafel",
+                    "Größen und Einheiten",
+                    "Zahlen lesen, ordnen und darstellen"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-5/arithmetik-algebra/brueche-und-anteile/README.md"
+                  "tags": [
+                    "klasse-5",
+                    "zahlen",
+                    "groessen",
+                    "stellenwerttafel",
+                    "grundrechenarten"
+                  ]
                 },
                 {
-                  "id": "groessen-und-einheiten",
-                  "titel": "Größen und Einheiten",
-                  "pfad": "klasse-5/arithmetik-algebra/groessen-und-einheiten/",
+                  "id": "rechnen-mit-natuerlichen-zahlen",
+                  "titel": "Rechnen mit natürlichen Zahlen",
+                  "pfad": "klasse-5/zahlen-und-groessen/rechnen-mit-natuerlichen-zahlen/",
+                  "beschreibung": "Sicheres Rechnen mit natürlichen Zahlen, schriftliche Verfahren und grundlegende Rechengesetze.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Grundrechenarten",
+                    "Schriftliche Rechenverfahren",
+                    "Rechengesetze",
+                    "Primfaktorzerlegung",
+                    "Rechenterme"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-5/arithmetik-algebra/groessen-und-einheiten/README.md"
+                  "tags": [
+                    "klasse-5",
+                    "natuerliche-zahlen",
+                    "rechnen",
+                    "rechengesetze",
+                    "primfaktorzerlegung",
+                    "terme"
+                  ]
                 },
                 {
-                  "id": "grundrechenarten",
-                  "titel": "Grundrechenarten",
-                  "pfad": "klasse-5/arithmetik-algebra/grundrechenarten/",
+                  "id": "brueche-verstehen",
+                  "titel": "Brüche verstehen",
+                  "pfad": "klasse-5/zahlen-und-groessen/brueche-verstehen/",
+                  "beschreibung": "Grundvorstellungen zu Brüchen aufbauen und Brüche in verschiedenen Darstellungen nutzen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Grundvorstellungen von Brüchen",
+                    "Anteile",
+                    "Kürzen und Erweitern",
+                    "Erweiterung des Zahlenbereichs auf positive rationale Zahlen",
+                    "Darstellungsformen: Zahlenstrahl, Wortform, Bruch und Prozentzahl"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-5/arithmetik-algebra/grundrechenarten/README.md"
-                },
-                {
-                  "id": "natuerliche-zahlen",
-                  "titel": "Natürliche Zahlen",
-                  "pfad": "klasse-5/arithmetik-algebra/natuerliche-zahlen/",
-                  "materialien": [],
-                  "readme": "klasse-5/arithmetik-algebra/natuerliche-zahlen/README.md"
+                  "tags": [
+                    "klasse-5",
+                    "brueche",
+                    "anteile",
+                    "kuerzen",
+                    "erweitern",
+                    "prozentzahl",
+                    "zahlenstrahl"
+                  ]
                 }
               ],
-              "anzahlThemen": 4,
-              "anzahlMaterialien": 0
-            },
-            {
-              "id": "funktionen",
-              "titel": "Funktionen",
-              "pfad": "klasse-5/funktionen/",
-              "themen": [
-                {
-                  "id": "zusammenhaenge-darstellen",
-                  "titel": "Zusammenhänge darstellen",
-                  "pfad": "klasse-5/funktionen/zusammenhaenge-darstellen/",
-                  "materialien": [],
-                  "readme": "klasse-5/funktionen/zusammenhaenge-darstellen/README.md"
-                }
+              "tags": [
+                "klasse-5",
+                "zahlen-und-groessen"
               ],
-              "anzahlThemen": 1,
+              "anzahlThemen": 3,
               "anzahlMaterialien": 0
             },
             {
               "id": "geometrie",
               "titel": "Geometrie",
               "pfad": "klasse-5/geometrie/",
+              "beschreibung": "Alltagstauglicher Bereich für ebene Figuren, Symmetrie, Flächen und Maßstab.",
               "themen": [
                 {
-                  "id": "figuren-und-koerper",
-                  "titel": "Figuren und Körper",
-                  "pfad": "klasse-5/geometrie/figuren-und-koerper/",
+                  "id": "symmetrie-und-ebene-figuren",
+                  "titel": "Symmetrie und ebene Figuren",
+                  "pfad": "klasse-5/geometrie/symmetrie-und-ebene-figuren/",
+                  "beschreibung": "Ebene Figuren untersuchen, Lagebeziehungen beschreiben und symmetrische Abbildungen erkennen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Ebene Figuren",
+                    "Symmetrie",
+                    "Lagebeziehungen",
+                    "Abbildungen"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-5/geometrie/figuren-und-koerper/README.md"
+                  "tags": [
+                    "klasse-5",
+                    "geometrie",
+                    "symmetrie",
+                    "ebene-figuren",
+                    "lagebeziehungen",
+                    "abbildungen"
+                  ]
                 },
                 {
-                  "id": "koordinatensystem",
-                  "titel": "Koordinatensystem",
-                  "pfad": "klasse-5/geometrie/koordinatensystem/",
+                  "id": "flaechen-und-massstab",
+                  "titel": "Flächen und Maßstab",
+                  "pfad": "klasse-5/geometrie/flaechen-und-massstab/",
+                  "beschreibung": "Umfang und Flächeninhalt ebener Figuren berechnen und Größenbeziehungen mit dem Maßstab beschreiben.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Umfang ebener Figuren",
+                    "Flächeninhalt ebener Figuren",
+                    "Größen und Einheiten bei Flächeninhalten",
+                    "Zusammenhang zwischen Größen",
+                    "Maßstab"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-5/geometrie/koordinatensystem/README.md"
-                },
-                {
-                  "id": "rauminhalte-und-volumen",
-                  "titel": "Rauminhalte und Volumen",
-                  "pfad": "klasse-5/geometrie/rauminhalte-und-volumen/",
-                  "materialien": [],
-                  "readme": "klasse-5/geometrie/rauminhalte-und-volumen/README.md"
-                },
-                {
-                  "id": "umfang-und-flaecheninhalt",
-                  "titel": "Umfang und Flächeninhalt",
-                  "pfad": "klasse-5/geometrie/umfang-und-flaecheninhalt/",
-                  "materialien": [],
-                  "readme": "klasse-5/geometrie/umfang-und-flaecheninhalt/README.md"
+                  "tags": [
+                    "klasse-5",
+                    "geometrie",
+                    "flaechen",
+                    "umfang",
+                    "flaecheninhalt",
+                    "massstab"
+                  ]
                 }
               ],
-              "anzahlThemen": 4,
+              "tags": [
+                "klasse-5",
+                "geometrie"
+              ],
+              "anzahlThemen": 2,
               "anzahlMaterialien": 0
             },
             {
-              "id": "stochastik",
-              "titel": "Stochastik",
-              "pfad": "klasse-5/stochastik/",
+              "id": "koerper-und-volumen",
+              "titel": "Körper und Volumen",
+              "pfad": "klasse-5/koerper-und-volumen/",
+              "beschreibung": "Alltagstauglicher Bereich für räumliche Körper und Volumen.",
               "themen": [
                 {
-                  "id": "daten-erheben-und-darstellen",
-                  "titel": "Daten erheben und darstellen",
-                  "pfad": "klasse-5/stochastik/daten-erheben-und-darstellen/",
+                  "id": "koerper-und-volumen",
+                  "titel": "Körper und Volumen",
+                  "pfad": "klasse-5/koerper-und-volumen/koerper-und-volumen/",
+                  "beschreibung": "Körper kennenlernen, vergleichen und Volumen als Größe erfassen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Körper: Quader, Pyramide, Zylinder und Kegel",
+                    "Körper beschreiben und unterscheiden",
+                    "Größen und Einheiten bei Volumen",
+                    "Volumen vergleichen und bestimmen"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-5/stochastik/daten-erheben-und-darstellen/README.md"
+                  "tags": [
+                    "klasse-5",
+                    "koerper",
+                    "volumen",
+                    "quader",
+                    "pyramide",
+                    "zylinder",
+                    "kegel"
+                  ]
                 }
+              ],
+              "tags": [
+                "klasse-5",
+                "koerper",
+                "volumen"
               ],
               "anzahlThemen": 1,
               "anzahlMaterialien": 0
             }
           ],
-          "anzahlThemen": 10,
-          "anzahlMaterialien": 0
+          "anzahlThemen": 6,
+          "anzahlMaterialien": 0,
+          "beschreibung": "Alltagstaugliche Übersicht der Themen in Klasse 5."
         },
         {
           "id": "klasse-6",
@@ -129,121 +197,207 @@
           "pfad": "klasse-6/",
           "inhaltsfelder": [
             {
-              "id": "arithmetik-algebra",
-              "titel": "Arithmetik / Algebra",
-              "pfad": "klasse-6/arithmetik-algebra/",
+              "id": "zahlen-und-groessen",
+              "titel": "Zahlen und Größen",
+              "pfad": "klasse-6/zahlen-und-groessen/",
+              "beschreibung": "Alltagstauglicher Bereich für Brüche, Dezimalzahlen, Rechenoperationen, Größenbeziehungen und ganze Zahlen.",
               "themen": [
                 {
-                  "id": "brueche-rechnen",
-                  "titel": "Mit Brüchen rechnen",
-                  "pfad": "klasse-6/arithmetik-algebra/brueche-rechnen/",
+                  "id": "brueche",
+                  "titel": "Brüche",
+                  "pfad": "klasse-6/zahlen-und-groessen/brueche/",
+                  "beschreibung": "Brüche als Anteile und Zahlen verstehen und flexibel darstellen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Grundvorstellungen von Brüchen",
+                    "Anteile",
+                    "Kürzen und Erweitern",
+                    "Positive rationale Zahlen",
+                    "Darstellungsformen: Zahlenstrahl, Wortform, Bruch und Prozentzahl"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-6/arithmetik-algebra/brueche-rechnen/README.md"
+                  "tags": [
+                    "klasse-6",
+                    "brueche",
+                    "anteile",
+                    "kuerzen",
+                    "erweitern",
+                    "rationale-zahlen"
+                  ]
                 },
                 {
-                  "id": "dezimalzahlen",
-                  "titel": "Dezimalzahlen",
-                  "pfad": "klasse-6/arithmetik-algebra/dezimalzahlen/",
+                  "id": "brueche-in-dezimalschreibweise",
+                  "titel": "Brüche in Dezimalschreibweise",
+                  "pfad": "klasse-6/zahlen-und-groessen/brueche-in-dezimalschreibweise/",
+                  "beschreibung": "Brüche als Dezimalzahlen darstellen und endliche sowie periodische Dezimalzahlen unterscheiden.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Dezimalschreibweise",
+                    "Endliche Dezimalzahlen",
+                    "Periodische Dezimalzahlen",
+                    "Darstellung von Dezimalzahlen",
+                    "Umwandlung zwischen Bruch und Dezimalzahl"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-6/arithmetik-algebra/dezimalzahlen/README.md"
+                  "tags": [
+                    "klasse-6",
+                    "dezimalzahlen",
+                    "brueche",
+                    "dezimalschreibweise",
+                    "periodisch"
+                  ]
                 },
                 {
-                  "id": "ganze-zahlen",
-                  "titel": "Ganze Zahlen",
-                  "pfad": "klasse-6/arithmetik-algebra/ganze-zahlen/",
+                  "id": "addieren-und-subtrahieren",
+                  "titel": "Addieren und Subtrahieren",
+                  "pfad": "klasse-6/zahlen-und-groessen/addieren-und-subtrahieren/",
+                  "beschreibung": "Brüche und Dezimalzahlen sicher addieren und subtrahieren.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Addition einfacher Brüche",
+                    "Subtraktion einfacher Brüche",
+                    "Addition endlicher Dezimalzahlen",
+                    "Subtraktion endlicher Dezimalzahlen"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-6/arithmetik-algebra/ganze-zahlen/README.md"
+                  "tags": [
+                    "klasse-6",
+                    "brueche",
+                    "dezimalzahlen",
+                    "addieren",
+                    "subtrahieren"
+                  ]
                 },
                 {
-                  "id": "terme-und-variablen-einfach",
-                  "titel": "Terme und Variablen einfach",
-                  "pfad": "klasse-6/arithmetik-algebra/terme-und-variablen-einfach/",
+                  "id": "multiplizieren-und-dividieren",
+                  "titel": "Multiplizieren und Dividieren",
+                  "pfad": "klasse-6/zahlen-und-groessen/multiplizieren-und-dividieren/",
+                  "beschreibung": "Brüche und Dezimalzahlen sicher multiplizieren und dividieren.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Multiplikation einfacher Brüche",
+                    "Division einfacher Brüche",
+                    "Multiplikation endlicher Dezimalzahlen",
+                    "Division endlicher Dezimalzahlen"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-6/arithmetik-algebra/terme-und-variablen-einfach/README.md"
+                  "tags": [
+                    "klasse-6",
+                    "brueche",
+                    "dezimalzahlen",
+                    "multiplizieren",
+                    "dividieren"
+                  ]
+                },
+                {
+                  "id": "beziehungen-zwischen-zahlen-und-groessen",
+                  "titel": "Beziehungen zwischen Zahlen und Größen",
+                  "pfad": "klasse-6/zahlen-und-groessen/beziehungen-zwischen-zahlen-und-groessen/",
+                  "beschreibung": "Zusammenhänge zwischen Größen darstellen, mit dem Dreisatz arbeiten und ganze Zahlen einführen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Zusammenhänge zwischen Größen",
+                    "Darstellungen in Diagrammen, Tabellen und Wortformen",
+                    "Dreisatz",
+                    "Erweiterung des Zahlenbereichs auf ganze Zahlen"
+                  ],
+                  "materialien": [],
+                  "tags": [
+                    "klasse-6",
+                    "groessen",
+                    "diagramme",
+                    "tabellen",
+                    "dreisatz",
+                    "ganze-zahlen"
+                  ]
                 }
               ],
-              "anzahlThemen": 4,
-              "anzahlMaterialien": 0
-            },
-            {
-              "id": "funktionen",
-              "titel": "Funktionen",
-              "pfad": "klasse-6/funktionen/",
-              "themen": [
-                {
-                  "id": "proportionale-zusammenhaenge",
-                  "titel": "Proportionale Zusammenhänge",
-                  "pfad": "klasse-6/funktionen/proportionale-zusammenhaenge/",
-                  "materialien": [],
-                  "readme": "klasse-6/funktionen/proportionale-zusammenhaenge/README.md"
-                },
-                {
-                  "id": "tabellen-und-diagramme",
-                  "titel": "Tabellen und Diagramme",
-                  "pfad": "klasse-6/funktionen/tabellen-und-diagramme/",
-                  "materialien": [],
-                  "readme": "klasse-6/funktionen/tabellen-und-diagramme/README.md"
-                }
+              "tags": [
+                "klasse-6",
+                "zahlen-und-groessen"
               ],
-              "anzahlThemen": 2,
+              "anzahlThemen": 5,
               "anzahlMaterialien": 0
             },
             {
               "id": "geometrie",
               "titel": "Geometrie",
               "pfad": "klasse-6/geometrie/",
+              "beschreibung": "Alltagstauglicher Bereich für Muster, Figuren, Koordinaten und geometrische Abbildungen.",
               "themen": [
                 {
-                  "id": "kreis",
-                  "titel": "Kreis",
-                  "pfad": "klasse-6/geometrie/kreis/",
+                  "id": "muster-und-figuren",
+                  "titel": "Muster und Figuren",
+                  "pfad": "klasse-6/geometrie/muster-und-figuren/",
+                  "beschreibung": "Muster und Figuren beschreiben, zeichnen und durch Abbildungen untersuchen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Ebene Figuren",
+                    "Kreise",
+                    "Winkel",
+                    "Strecken und Geraden",
+                    "Kartesische Koordinaten",
+                    "Zeichnungen",
+                    "Abbildungen: Verschiebungen, Drehungen, Punktspiegelungen und Achsenspiegelungen"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-6/geometrie/kreis/README.md"
-                },
-                {
-                  "id": "netze-und-koerper",
-                  "titel": "Netze und Körper",
-                  "pfad": "klasse-6/geometrie/netze-und-koerper/",
-                  "materialien": [],
-                  "readme": "klasse-6/geometrie/netze-und-koerper/README.md"
-                },
-                {
-                  "id": "symmetrie",
-                  "titel": "Symmetrie",
-                  "pfad": "klasse-6/geometrie/symmetrie/",
-                  "materialien": [],
-                  "readme": "klasse-6/geometrie/symmetrie/README.md"
-                },
-                {
-                  "id": "winkel",
-                  "titel": "Winkel",
-                  "pfad": "klasse-6/geometrie/winkel/",
-                  "materialien": [],
-                  "readme": "klasse-6/geometrie/winkel/README.md"
+                  "tags": [
+                    "klasse-6",
+                    "geometrie",
+                    "muster",
+                    "figuren",
+                    "kreis",
+                    "winkel",
+                    "koordinaten",
+                    "abbildungen"
+                  ]
                 }
               ],
-              "anzahlThemen": 4,
+              "tags": [
+                "klasse-6",
+                "geometrie"
+              ],
+              "anzahlThemen": 1,
               "anzahlMaterialien": 0
             },
             {
-              "id": "stochastik",
-              "titel": "Stochastik",
-              "pfad": "klasse-6/stochastik/",
+              "id": "daten",
+              "titel": "Daten",
+              "pfad": "klasse-6/daten/",
+              "beschreibung": "Alltagstauglicher Bereich für Daten, Diagramme und statistische Kenngrößen.",
               "themen": [
                 {
-                  "id": "relative-haeufigkeit",
-                  "titel": "Relative Häufigkeit",
-                  "pfad": "klasse-6/stochastik/relative-haeufigkeit/",
+                  "id": "daten-erheben-und-auswerten",
+                  "titel": "Daten erheben und auswerten",
+                  "pfad": "klasse-6/daten/daten-erheben-und-auswerten/",
+                  "beschreibung": "Daten sammeln, darstellen und mithilfe von Kenngrößen auswerten.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Urlisten und Strichlisten",
+                    "Klasseneinteilungen",
+                    "Säulendiagramme und Kreisdiagramme",
+                    "Boxplots",
+                    "Absolute und relative Häufigkeiten",
+                    "Kenngrößen: arithmetisches Mittel, Median, Spannweite und Quartile"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-6/stochastik/relative-haeufigkeit/README.md"
+                  "tags": [
+                    "klasse-6",
+                    "daten",
+                    "statistik",
+                    "diagramme",
+                    "boxplot",
+                    "haeufigkeit",
+                    "median",
+                    "quartile"
+                  ]
                 }
+              ],
+              "tags": [
+                "klasse-6",
+                "daten",
+                "statistik"
               ],
               "anzahlThemen": 1,
               "anzahlMaterialien": 0
             }
           ],
-          "anzahlThemen": 11,
-          "anzahlMaterialien": 0
+          "anzahlThemen": 7,
+          "anzahlMaterialien": 0,
+          "beschreibung": "Alltagstaugliche Übersicht der Themen in Klasse 6."
         },
         {
           "id": "klasse-7",
@@ -251,29 +405,181 @@
           "pfad": "klasse-7/",
           "inhaltsfelder": [
             {
-              "id": "arithmetik-algebra",
-              "titel": "Arithmetik / Algebra",
-              "pfad": "klasse-7/arithmetik-algebra/",
+              "id": "zahlen-und-rechnen",
+              "titel": "Zahlen und Rechnen",
+              "pfad": "klasse-7/zahlen-und-rechnen/",
+              "beschreibung": "Alltagstauglicher Bereich für rationale Zahlen und Rechenregeln.",
               "themen": [
                 {
-                  "id": "prozentrechnung",
-                  "titel": "Prozentrechnung",
-                  "pfad": "klasse-7/arithmetik-algebra/prozentrechnung/",
+                  "id": "rechnen-mit-rationalen-zahlen",
+                  "titel": "Rechnen mit rationalen Zahlen",
+                  "pfad": "klasse-7/zahlen-und-rechnen/rechnen-mit-rationalen-zahlen/",
+                  "beschreibung": "Rationale Zahlen verstehen und mit positiven sowie negativen Zahlen sicher rechnen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Zahlenbereichserweiterung zu rationalen Zahlen",
+                    "Vorzeichenregeln",
+                    "Rechengesetze für rationale Zahlen",
+                    "Rechenregeln sicher anwenden"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-7/arithmetik-algebra/prozentrechnung/README.md"
+                  "tags": [
+                    "klasse-7",
+                    "rationale-zahlen",
+                    "vorzeichenregeln",
+                    "rechengesetze"
+                  ]
+                }
+              ],
+              "tags": [
+                "klasse-7",
+                "zahlen-und-rechnen"
+              ],
+              "anzahlThemen": 1,
+              "anzahlMaterialien": 0
+            },
+            {
+              "id": "zuordnungen-prozent-und-zins",
+              "titel": "Zuordnungen, Prozent und Zins",
+              "pfad": "klasse-7/zuordnungen-prozent-und-zins/",
+              "beschreibung": "Alltagstauglicher Bereich für Zuordnungen, Dreisatz, Prozentrechnung und Zinsrechnung.",
+              "themen": [
+                {
+                  "id": "zuordnungen",
+                  "titel": "Zuordnungen",
+                  "pfad": "klasse-7/zuordnungen-prozent-und-zins/zuordnungen/",
+                  "beschreibung": "Proportionale und antiproportionale Zuordnungen erkennen, darstellen und berechnen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Proportionale Zuordnungen",
+                    "Antiproportionale Zuordnungen",
+                    "Zuordnungsvorschriften",
+                    "Graphen, Tabellen und Wortformen",
+                    "Quotientengleichheit",
+                    "Proportionalitätsfaktor",
+                    "Produktgleichheit",
+                    "Antiproportionalitätskonstante",
+                    "Dreisatz"
+                  ],
+                  "materialien": [],
+                  "tags": [
+                    "klasse-7",
+                    "zuordnungen",
+                    "proportional",
+                    "antiproportional",
+                    "dreisatz"
+                  ]
                 },
                 {
-                  "id": "rationale-zahlen",
-                  "titel": "Rationale Zahlen",
-                  "pfad": "klasse-7/arithmetik-algebra/rationale-zahlen/",
+                  "id": "prozent-und-zinsrechnung",
+                  "titel": "Prozent- und Zinsrechnung",
+                  "pfad": "klasse-7/zuordnungen-prozent-und-zins/prozent-und-zinsrechnung/",
+                  "beschreibung": "Prozentuale Zusammenhänge, Wachstumsfaktoren und Zinseszins berechnen und mit Excel umsetzen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Grundwert",
+                    "Prozentwert",
+                    "Prozentsatz",
+                    "Prozentuale Veränderungen",
+                    "Wachstumsfaktor",
+                    "Zinseszins",
+                    "Umsetzung von Zinseszins in Excel"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-7/arithmetik-algebra/rationale-zahlen/README.md"
-                },
+                  "tags": [
+                    "klasse-7",
+                    "prozentrechnung",
+                    "zinsrechnung",
+                    "zinseszins",
+                    "wachstumsfaktor",
+                    "excel"
+                  ]
+                }
+              ],
+              "tags": [
+                "klasse-7",
+                "zuordnungen",
+                "prozent",
+                "zins"
+              ],
+              "anzahlThemen": 2,
+              "anzahlMaterialien": 0
+            },
+            {
+              "id": "terme-und-gleichungen",
+              "titel": "Terme und Gleichungen",
+              "pfad": "klasse-7/arithmetik-algebra/",
+              "beschreibung": "Alltagstauglicher Bereich für Terme, Variablen, Termumformungen und Gleichungen.",
+              "themen": [
                 {
                   "id": "terme-und-gleichungen",
                   "titel": "Terme und Gleichungen",
                   "pfad": "klasse-7/arithmetik-algebra/terme-und-gleichungen/",
+                  "beschreibung": "Terme mit Variablen verstehen, umformen und Gleichungen algebraisch sowie grafisch lösen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Terme und Variablen mit einer Veränderlichen",
+                    "Variablen als Veränderliche, Platzhalter und Unbekannte",
+                    "Termumformungen",
+                    "Algebraische Lösungsverfahren",
+                    "Grafische Lösungsverfahren",
+                    "Lineare Gleichungen",
+                    "Elementare Gleichungen"
+                  ],
                   "materialien": [
+                    {
+                      "id": "lernpfad-terme-und-gleichungen",
+                      "titel": "Lernpfad Terme und Gleichungen",
+                      "kurztitel": "Terme und Gleichungen",
+                      "beschreibung": "Interaktiver Lernpfad zum Aufstellen, Vereinfachen und Auswerten von Termen sowie zum Lösen einfacher Gleichungen.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "index.html",
+                      "pfad": "klasse-7/arithmetik-algebra/terme-und-gleichungen/",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 7",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-7",
+                        "inhaltsfeldId": "arithmetik-algebra",
+                        "themaId": "terme-und-gleichungen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 7",
+                      "inhaltsfeld": "Arithmetik / Algebra",
+                      "thema": "Terme und Gleichungen",
+                      "unterthema": "Terme und Gleichungen",
+                      "kompetenzbereich": [
+                        "Arithmetik / Algebra",
+                        "Operieren",
+                        "Problemlösen"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Terme",
+                        "Variablen",
+                        "Gleichungen",
+                        "Termumformungen",
+                        "Rechengesetze"
+                      ],
+                      "tags": [
+                        "mathematik",
+                        "klasse-7",
+                        "sekundarstufe-i",
+                        "arithmetik-algebra",
+                        "terme",
+                        "gleichungen",
+                        "variablen",
+                        "lernpfad",
+                        "interaktiv",
+                        "html"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-30",
+                      "lizenz": "",
+                      "autor": ""
+                    },
                     {
                       "id": "problemloese",
                       "titel": "Problemlösen mit Termen und Gleichungen",
@@ -341,7 +647,7 @@
                       "format": "HTML",
                       "materialart": "Lernspiel",
                       "datei": "index.html",
-                      "pfad": "klasse-7/arithmetik-algebra/terme-und-gleichungen/termlernspiel.html",
+                      "pfad": "klasse-7/arithmetik-algebra/terme-und-gleichungen/termlernspiel/",
                       "zielgruppe": {
                         "fach": "Mathematik",
                         "jahrgang": "Klasse 7",
@@ -390,61 +696,42 @@
                       "autor": ""
                     }
                   ],
-                  "readme": "klasse-7/arithmetik-algebra/terme-und-gleichungen/README.md",
-                  "beschreibung": "Materialien zum Aufstellen, Vereinfachen und Auswerten von Termen sowie zum Lösen und Anwenden einfacher Gleichungen.",
                   "tags": [
-                    "mathematik",
                     "klasse-7",
-                    "arithmetik-algebra",
                     "terme",
                     "gleichungen",
                     "variablen",
-                    "problemlösen"
+                    "termumformungen",
+                    "lineare-gleichungen"
                   ]
                 }
               ],
-              "anzahlThemen": 3,
+              "tags": [
+                "klasse-7",
+                "terme-und-gleichungen"
+              ],
+              "anzahlThemen": 1,
               "anzahlMaterialien": 3
             },
             {
-              "id": "funktionen",
-              "titel": "Funktionen",
-              "pfad": "klasse-7/funktionen/",
-              "themen": [
-                {
-                  "id": "lineare-zusammenhaenge",
-                  "titel": "Lineare Zusammenhänge",
-                  "pfad": "klasse-7/funktionen/lineare-zusammenhaenge/",
-                  "materialien": [],
-                  "readme": "klasse-7/funktionen/lineare-zusammenhaenge/README.md"
-                },
-                {
-                  "id": "proportionale-und-antiproportionale-zuordnungen",
-                  "titel": "Proportionale und antiproportionale Zuordnungen",
-                  "pfad": "klasse-7/funktionen/proportionale-und-antiproportionale-zuordnungen/",
-                  "materialien": [],
-                  "readme": "klasse-7/funktionen/proportionale-und-antiproportionale-zuordnungen/README.md"
-                }
-              ],
-              "anzahlThemen": 2,
-              "anzahlMaterialien": 0
-            },
-            {
               "id": "geometrie",
-              "titel": "Geometrie",
+              "titel": "Konstruieren und Argumentieren",
               "pfad": "klasse-7/geometrie/",
+              "beschreibung": "Alltagstauglicher Bereich für geometrische Sätze, Winkel, Kongruenz und Dreieckskonstruktionen.",
               "themen": [
                 {
-                  "id": "dreiecke",
-                  "titel": "Dreiecke",
-                  "pfad": "klasse-7/geometrie/dreiecke/",
-                  "materialien": [],
-                  "readme": "klasse-7/geometrie/dreiecke/README.md"
-                },
-                {
-                  "id": "innenwinkelsumme",
-                  "titel": "Innenwinkelsumme",
-                  "pfad": "klasse-7/geometrie/innenwinkelsumme/",
+                  "id": "konstruieren-und-argumentieren",
+                  "titel": "Konstruieren und Argumentieren",
+                  "pfad": "klasse-7/geometrie/konstruieren-und-argumentieren/",
+                  "beschreibung": "Geometrische Sätze nutzen, Dreiecke konstruieren und mathematisch argumentieren.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Geometrische Sätze",
+                    "Scheitelwinkel, Stufenwinkel und Wechselwinkel",
+                    "Innenwinkelsumme und Außenwinkelsatz",
+                    "Basiswinkelsatz",
+                    "Kongruenzsätze",
+                    "Konstruktion von Dreiecken"
+                  ],
                   "materialien": [
                     {
                       "id": "lernpfad-innenwinkel",
@@ -558,61 +845,69 @@
                       "autor": ""
                     }
                   ],
-                  "readme": "klasse-7/geometrie/innenwinkelsumme/README.md",
-                  "beschreibung": "Materialien zur Innenwinkelsumme in Dreiecken mit Schwerpunkt auf Entdecken, Begründen, Sichern und Anwenden.",
                   "tags": [
-                    "mathematik",
                     "klasse-7",
                     "geometrie",
                     "winkel",
-                    "dreieck",
-                    "innenwinkelsumme"
+                    "innenwinkelsumme",
+                    "kongruenz",
+                    "dreieckskonstruktion",
+                    "argumentieren"
                   ]
-                },
-                {
-                  "id": "kongruenz",
-                  "titel": "Kongruenz",
-                  "pfad": "klasse-7/geometrie/kongruenz/",
-                  "materialien": [],
-                  "readme": "klasse-7/geometrie/kongruenz/README.md"
-                },
-                {
-                  "id": "winkel-an-geraden",
-                  "titel": "Winkel an Geraden",
-                  "pfad": "klasse-7/geometrie/winkel-an-geraden/",
-                  "materialien": [],
-                  "readme": "klasse-7/geometrie/winkel-an-geraden/README.md"
                 }
               ],
-              "anzahlThemen": 4,
+              "tags": [
+                "klasse-7",
+                "geometrie",
+                "konstruieren",
+                "argumentieren"
+              ],
+              "anzahlThemen": 1,
               "anzahlMaterialien": 2
             },
             {
-              "id": "stochastik",
-              "titel": "Stochastik",
-              "pfad": "klasse-7/stochastik/",
+              "id": "wahrscheinlichkeit",
+              "titel": "Wahrscheinlichkeit",
+              "pfad": "klasse-7/wahrscheinlichkeit/",
+              "beschreibung": "Alltagstauglicher Bereich für Zufallsexperimente, Baumdiagramme und Wahrscheinlichkeiten.",
               "themen": [
                 {
-                  "id": "laplace-experimente",
-                  "titel": "Laplace-Experimente",
-                  "pfad": "klasse-7/stochastik/laplace-experimente/",
+                  "id": "wahrscheinlichkeit",
+                  "titel": "Wahrscheinlichkeit",
+                  "pfad": "klasse-7/wahrscheinlichkeit/wahrscheinlichkeit/",
+                  "beschreibung": "Zufallsexperimente beschreiben, Wahrscheinlichkeiten bestimmen und Baumdiagramme nutzen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Zufallsexperimente",
+                    "Ein- und zweistufige Zufallsexperimente",
+                    "Baumdiagramme",
+                    "Empirisches Gesetz der großen Zahlen",
+                    "Laplace-Wahrscheinlichkeiten",
+                    "Pfadregeln",
+                    "Begriffe: Ergebnis, Ereignis und Wahrscheinlichkeit"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-7/stochastik/laplace-experimente/README.md"
-                },
-                {
-                  "id": "wahrscheinlichkeiten",
-                  "titel": "Wahrscheinlichkeiten",
-                  "pfad": "klasse-7/stochastik/wahrscheinlichkeiten/",
-                  "materialien": [],
-                  "readme": "klasse-7/stochastik/wahrscheinlichkeiten/README.md"
+                  "tags": [
+                    "klasse-7",
+                    "wahrscheinlichkeit",
+                    "zufallsexperiment",
+                    "baumdiagramm",
+                    "laplace",
+                    "pfadregeln"
+                  ]
                 }
               ],
-              "anzahlThemen": 2,
+              "tags": [
+                "klasse-7",
+                "wahrscheinlichkeit",
+                "stochastik"
+              ],
+              "anzahlThemen": 1,
               "anzahlMaterialien": 0
             }
           ],
-          "anzahlThemen": 11,
-          "anzahlMaterialien": 5
+          "anzahlThemen": 6,
+          "anzahlMaterialien": 5,
+          "beschreibung": "Alltagstaugliche Übersicht der Themen in Klasse 7."
         },
         {
           "id": "klasse-8",
@@ -620,107 +915,209 @@
           "pfad": "klasse-8/",
           "inhaltsfelder": [
             {
-              "id": "arithmetik-algebra",
-              "titel": "Arithmetik / Algebra",
-              "pfad": "klasse-8/arithmetik-algebra/",
+              "id": "wahrscheinlichkeit",
+              "titel": "Wahrscheinlichkeit",
+              "pfad": "klasse-8/wahrscheinlichkeit/",
+              "beschreibung": "Alltagstauglicher Bereich für Zufall, Baumdiagramme und Wahrscheinlichkeiten.",
               "themen": [
                 {
-                  "id": "binomische-formeln",
-                  "titel": "Binomische Formeln",
-                  "pfad": "klasse-8/arithmetik-algebra/binomische-formeln/",
+                  "id": "stochastik",
+                  "titel": "Stochastik",
+                  "pfad": "klasse-8/wahrscheinlichkeit/stochastik/",
+                  "beschreibung": "Zufallsexperimente untersuchen, Wahrscheinlichkeiten bestimmen und Baumdiagramme nutzen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Zufallsexperimente",
+                    "Ein- und zweistufige Zufallsexperimente",
+                    "Baumdiagramme",
+                    "Empirisches Gesetz der großen Zahlen",
+                    "Laplace-Wahrscheinlichkeiten",
+                    "Pfadregeln",
+                    "Begriffe: Ergebnis, Ereignis und Wahrscheinlichkeit"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-8/arithmetik-algebra/binomische-formeln/README.md"
-                },
-                {
-                  "id": "gleichungssysteme",
-                  "titel": "Lineare Gleichungssysteme",
-                  "pfad": "klasse-8/arithmetik-algebra/gleichungssysteme/",
-                  "materialien": [],
-                  "readme": "klasse-8/arithmetik-algebra/gleichungssysteme/README.md"
-                },
-                {
-                  "id": "lineare-gleichungen",
-                  "titel": "Lineare Gleichungen",
-                  "pfad": "klasse-8/arithmetik-algebra/lineare-gleichungen/",
-                  "materialien": [],
-                  "readme": "klasse-8/arithmetik-algebra/lineare-gleichungen/README.md"
+                  "tags": [
+                    "klasse-8",
+                    "stochastik",
+                    "wahrscheinlichkeit",
+                    "zufallsexperiment",
+                    "baumdiagramm",
+                    "laplace",
+                    "pfadregeln"
+                  ]
                 }
               ],
-              "anzahlThemen": 3,
+              "tags": [
+                "klasse-8",
+                "wahrscheinlichkeit",
+                "stochastik"
+              ],
+              "anzahlThemen": 1,
               "anzahlMaterialien": 0
             },
             {
               "id": "funktionen",
-              "titel": "Funktionen",
+              "titel": "Lineare Funktionen",
               "pfad": "klasse-8/funktionen/",
+              "beschreibung": "Alltagstauglicher Bereich für lineare Zusammenhänge.",
               "themen": [
                 {
                   "id": "lineare-funktionen",
                   "titel": "Lineare Funktionen",
                   "pfad": "klasse-8/funktionen/lineare-funktionen/",
+                  "beschreibung": "Lineare Zusammenhänge in Term, Graph, Tabelle und Sprache darstellen und interpretieren.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Funktionsterm",
+                    "Graph",
+                    "Tabelle",
+                    "Wortform",
+                    "Achsenabschnitte",
+                    "Steigung und Steigungsdreieck"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-8/funktionen/lineare-funktionen/README.md"
+                  "tags": [
+                    "klasse-8",
+                    "lineare-funktionen",
+                    "funktionsterm",
+                    "graph",
+                    "tabelle",
+                    "steigung",
+                    "steigungsdreieck"
+                  ]
                 }
               ],
+              "tags": [
+                "klasse-8",
+                "funktionen",
+                "lineare-funktionen"
+              ],
               "anzahlThemen": 1,
+              "anzahlMaterialien": 0
+            },
+            {
+              "id": "terme-und-gleichungen",
+              "titel": "Terme und Gleichungen",
+              "pfad": "klasse-8/terme-und-gleichungen/",
+              "beschreibung": "Alltagstauglicher Bereich für Terme, Variablen, binomische Formeln und lineare Gleichungssysteme.",
+              "themen": [
+                {
+                  "id": "terme-mit-mehreren-variablen",
+                  "titel": "Terme mit mehreren Variablen",
+                  "pfad": "klasse-8/terme-und-gleichungen/terme-mit-mehreren-variablen/",
+                  "beschreibung": "Terme mit mehreren Variablen verstehen, umformen und Rechengesetze sicher anwenden.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Terme und Variablen",
+                    "Variablen als Veränderliche, Platzhalter und Unbekannte",
+                    "Termumformungen",
+                    "Gesetze und Regeln",
+                    "Binomische Formeln"
+                  ],
+                  "materialien": [],
+                  "tags": [
+                    "klasse-8",
+                    "terme",
+                    "variablen",
+                    "termumformungen",
+                    "binomische-formeln"
+                  ]
+                },
+                {
+                  "id": "lineare-gleichungssysteme",
+                  "titel": "Lineare Gleichungssysteme",
+                  "pfad": "klasse-8/terme-und-gleichungen/lineare-gleichungssysteme/",
+                  "beschreibung": "Lineare Gleichungssysteme mit zwei Variablen algebraisch und graphisch lösen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Lösungsverfahren",
+                    "Algebraische Lösungsverfahren",
+                    "Graphische Lösungsverfahren",
+                    "Lineare Gleichungssysteme mit zwei Variablen"
+                  ],
+                  "materialien": [],
+                  "tags": [
+                    "klasse-8",
+                    "gleichungssysteme",
+                    "lineare-gleichungssysteme",
+                    "algebraisch",
+                    "graphisch"
+                  ]
+                }
+              ],
+              "tags": [
+                "klasse-8",
+                "terme",
+                "gleichungen"
+              ],
+              "anzahlThemen": 2,
               "anzahlMaterialien": 0
             },
             {
               "id": "geometrie",
               "titel": "Geometrie",
               "pfad": "klasse-8/geometrie/",
+              "beschreibung": "Alltagstauglicher Bereich für Flächen, Kreise, Dreiecke und Konstruktionen.",
               "themen": [
                 {
-                  "id": "geometrische-konstruktionen",
-                  "titel": "Geometrische Konstruktionen",
-                  "pfad": "klasse-8/geometrie/geometrische-konstruktionen/",
+                  "id": "flaechen",
+                  "titel": "Flächen",
+                  "pfad": "klasse-8/geometrie/flaechen/",
+                  "beschreibung": "Flächeninhalte und Umfänge ebener Figuren berechnen und zusammengesetzte Figuren untersuchen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Umfang von Dreiecken, Vierecken und zusammengesetzten Figuren",
+                    "Flächeninhalt von Dreiecken, Vierecken und zusammengesetzten Figuren",
+                    "Höhe und Grundseite",
+                    "Zerlegen und Ergänzen von Figuren"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-8/geometrie/geometrische-konstruktionen/README.md"
+                  "tags": [
+                    "klasse-8",
+                    "geometrie",
+                    "flaechen",
+                    "umfang",
+                    "flaecheninhalt",
+                    "dreiecke",
+                    "vierecke"
+                  ]
                 },
                 {
-                  "id": "kreis-und-winkel",
-                  "titel": "Kreis und Winkel",
-                  "pfad": "klasse-8/geometrie/kreis-und-winkel/",
+                  "id": "kreise-und-dreiecke",
+                  "titel": "Kreise und Dreiecke",
+                  "pfad": "klasse-8/geometrie/kreise-und-dreiecke/",
+                  "beschreibung": "Dreiecke und Kreise konstruieren, besondere Linien untersuchen und den Satz des Thales anwenden.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Geometrische Sätze",
+                    "Satz des Thales",
+                    "Konstruktionen",
+                    "Mittelsenkrechte",
+                    "Seitenhalbierende",
+                    "Winkelhalbierende",
+                    "Inkreis",
+                    "Umkreis",
+                    "Thaleskreis"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-8/geometrie/kreis-und-winkel/README.md"
-                },
-                {
-                  "id": "vierecke",
-                  "titel": "Vierecke",
-                  "pfad": "klasse-8/geometrie/vierecke/",
-                  "materialien": [],
-                  "readme": "klasse-8/geometrie/vierecke/README.md"
+                  "tags": [
+                    "klasse-8",
+                    "geometrie",
+                    "kreis",
+                    "dreieck",
+                    "thales",
+                    "mittelsenkrechte",
+                    "winkelhalbierende",
+                    "umkreis",
+                    "inkreis"
+                  ]
                 }
               ],
-              "anzahlThemen": 3,
-              "anzahlMaterialien": 0
-            },
-            {
-              "id": "stochastik",
-              "titel": "Stochastik",
-              "pfad": "klasse-8/stochastik/",
-              "themen": [
-                {
-                  "id": "baumdiagramme",
-                  "titel": "Baumdiagramme",
-                  "pfad": "klasse-8/stochastik/baumdiagramme/",
-                  "materialien": [],
-                  "readme": "klasse-8/stochastik/baumdiagramme/README.md"
-                },
-                {
-                  "id": "pfadregeln",
-                  "titel": "Pfadregeln",
-                  "pfad": "klasse-8/stochastik/pfadregeln/",
-                  "materialien": [],
-                  "readme": "klasse-8/stochastik/pfadregeln/README.md"
-                }
+              "tags": [
+                "klasse-8",
+                "geometrie"
               ],
               "anzahlThemen": 2,
               "anzahlMaterialien": 0
             }
           ],
-          "anzahlThemen": 9,
-          "anzahlMaterialien": 0
+          "anzahlThemen": 6,
+          "anzahlMaterialien": 0,
+          "beschreibung": "Alltagstaugliche Übersicht der Themen in Klasse 8."
         },
         {
           "id": "klasse-9",
@@ -728,107 +1125,215 @@
           "pfad": "klasse-9/",
           "inhaltsfelder": [
             {
-              "id": "arithmetik-algebra",
-              "titel": "Arithmetik / Algebra",
-              "pfad": "klasse-9/arithmetik-algebra/",
+              "id": "zahlen-und-rechnen",
+              "titel": "Reelle Zahlen und Potenzen",
+              "pfad": "klasse-9/zahlen-und-rechnen/",
+              "beschreibung": "Alltagstauglicher Bereich für reelle Zahlen, Wurzeln, Potenzen und Prozentzusammenhänge.",
               "themen": [
                 {
-                  "id": "potenzen-und-wurzeln",
-                  "titel": "Potenzen und Wurzeln",
-                  "pfad": "klasse-9/arithmetik-algebra/potenzen-und-wurzeln/",
+                  "id": "reelle-zahlen",
+                  "titel": "Reelle Zahlen",
+                  "pfad": "klasse-9/zahlen-und-rechnen/reelle-zahlen/",
+                  "beschreibung": "Die reellen Zahlen und Wurzeln als Erweiterung des Zahlenbereichs verstehen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Zahlenbereichserweiterung zu reellen Zahlen",
+                    "Begriffsbildung: Wurzeln",
+                    "Gesetze und Regeln: Wurzelgesetze",
+                    "Lösungsverfahren und Algorithmen",
+                    "Algorithmische Näherungsverfahren"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-9/arithmetik-algebra/potenzen-und-wurzeln/README.md"
+                  "tags": [
+                    "klasse-9",
+                    "reelle-zahlen",
+                    "wurzeln",
+                    "wurzelgesetze",
+                    "naeherungsverfahren"
+                  ]
                 },
                 {
-                  "id": "quadratische-gleichungen",
-                  "titel": "Quadratische Gleichungen",
-                  "pfad": "klasse-9/arithmetik-algebra/quadratische-gleichungen/",
+                  "id": "prozente-potenzen-und-potenzgesetze",
+                  "titel": "Prozente, Potenzen und Potenzgesetze",
+                  "pfad": "klasse-9/zahlen-und-rechnen/prozente-potenzen-und-potenzgesetze/",
+                  "beschreibung": "Potenzen verstehen, Potenzgesetze anwenden und prozentuale Zusammenhänge nutzen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Begriffsbildung: Potenzen",
+                    "Gesetze und Regeln: Potenzgesetze",
+                    "Prozentuale Zusammenhänge",
+                    "Rechnen mit Potenzen"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-9/arithmetik-algebra/quadratische-gleichungen/README.md"
+                  "tags": [
+                    "klasse-9",
+                    "potenzen",
+                    "potenzgesetze",
+                    "prozente"
+                  ]
                 }
+              ],
+              "tags": [
+                "klasse-9",
+                "zahlen-und-rechnen"
               ],
               "anzahlThemen": 2,
               "anzahlMaterialien": 0
             },
             {
               "id": "funktionen",
-              "titel": "Funktionen",
+              "titel": "Quadratische Funktionen",
               "pfad": "klasse-9/funktionen/",
+              "beschreibung": "Alltagstauglicher Bereich für Parabeln und quadratische Funktionen.",
               "themen": [
-                {
-                  "id": "exponentielle-funktionen",
-                  "titel": "Exponentielle Funktionen",
-                  "pfad": "klasse-9/funktionen/exponentielle-funktionen/",
-                  "materialien": [],
-                  "readme": "klasse-9/funktionen/exponentielle-funktionen/README.md"
-                },
                 {
                   "id": "quadratische-funktionen",
                   "titel": "Quadratische Funktionen",
                   "pfad": "klasse-9/funktionen/quadratische-funktionen/",
+                  "beschreibung": "Quadratische Funktionen in verschiedenen Darstellungen untersuchen und anwenden.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Term in Normalform, Scheitelpunktform und faktorisierter Form",
+                    "Graph",
+                    "Tabelle",
+                    "Scheitelpunkt",
+                    "Symmetrie",
+                    "Öffnung",
+                    "Nullstellen und y-Achsenabschnitt",
+                    "Transformation der Normalparabel",
+                    "Extremwertprobleme"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-9/funktionen/quadratische-funktionen/README.md"
+                  "tags": [
+                    "klasse-9",
+                    "quadratische-funktionen",
+                    "parabel",
+                    "scheitelpunkt",
+                    "nullstellen",
+                    "normalparabel",
+                    "extremwertprobleme"
+                  ]
                 }
               ],
-              "anzahlThemen": 2,
+              "tags": [
+                "klasse-9",
+                "funktionen",
+                "quadratische-funktionen"
+              ],
+              "anzahlThemen": 1,
               "anzahlMaterialien": 0
             },
             {
               "id": "geometrie",
-              "titel": "Geometrie",
+              "titel": "Kreise und Körper",
               "pfad": "klasse-9/geometrie/",
+              "beschreibung": "Alltagstauglicher Bereich für Kreise, Körper und den Satz des Pythagoras.",
               "themen": [
                 {
-                  "id": "aehnlichkeit-und-strahlensaetze",
-                  "titel": "Ähnlichkeit und Strahlensätze",
-                  "pfad": "klasse-9/geometrie/aehnlichkeit-und-strahlensaetze/",
+                  "id": "kreise-prismen-und-zylinder",
+                  "titel": "Kreise, Prismen und Zylinder",
+                  "pfad": "klasse-9/geometrie/kreise-prismen-und-zylinder/",
+                  "beschreibung": "Kreise, Kreisteile, Prismen und Zylinder berechnen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Kreis: Umfang und Flächeninhalt",
+                    "Kreisbogen",
+                    "Kreissektor",
+                    "Tangente",
+                    "Körper: Zylinder und Prisma",
+                    "Oberflächeninhalt",
+                    "Volumen"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-9/geometrie/aehnlichkeit-und-strahlensaetze/README.md"
+                  "tags": [
+                    "klasse-9",
+                    "geometrie",
+                    "kreis",
+                    "kreisbogen",
+                    "kreissektor",
+                    "tangente",
+                    "zylinder",
+                    "prisma",
+                    "volumen"
+                  ]
                 },
                 {
-                  "id": "kreis-und-koerper",
-                  "titel": "Kreis und Körper",
-                  "pfad": "klasse-9/geometrie/kreis-und-koerper/",
+                  "id": "pythagoras-und-koerper",
+                  "titel": "Pythagoras und Berechnung von Körpern",
+                  "pfad": "klasse-9/geometrie/pythagoras-und-koerper/",
+                  "beschreibung": "Den Satz des Pythagoras anwenden und Oberflächen sowie Volumina besonderer Körper berechnen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Geometrischer Satz: Satz des Pythagoras",
+                    "Körperoberfläche und Volumen von Pyramiden",
+                    "Körperoberfläche und Volumen von Kegeln",
+                    "Körperoberfläche und Volumen von Kugeln"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-9/geometrie/kreis-und-koerper/README.md"
-                },
-                {
-                  "id": "satz-des-pythagoras",
-                  "titel": "Satz des Pythagoras",
-                  "pfad": "klasse-9/geometrie/satz-des-pythagoras/",
-                  "materialien": [],
-                  "readme": "klasse-9/geometrie/satz-des-pythagoras/README.md"
+                  "tags": [
+                    "klasse-9",
+                    "pythagoras",
+                    "koerper",
+                    "pyramide",
+                    "kegel",
+                    "kugel",
+                    "oberflaeche",
+                    "volumen"
+                  ]
                 }
               ],
-              "anzahlThemen": 3,
-              "anzahlMaterialien": 0
-            },
-            {
-              "id": "stochastik",
-              "titel": "Stochastik",
-              "pfad": "klasse-9/stochastik/",
-              "themen": [
-                {
-                  "id": "simulationen",
-                  "titel": "Simulationen",
-                  "pfad": "klasse-9/stochastik/simulationen/",
-                  "materialien": [],
-                  "readme": "klasse-9/stochastik/simulationen/README.md"
-                },
-                {
-                  "id": "statistische-kenngroessen",
-                  "titel": "Statistische Kenngrößen",
-                  "pfad": "klasse-9/stochastik/statistische-kenngroessen/",
-                  "materialien": [],
-                  "readme": "klasse-9/stochastik/statistische-kenngroessen/README.md"
-                }
+              "tags": [
+                "klasse-9",
+                "geometrie",
+                "kreise",
+                "koerper"
               ],
               "anzahlThemen": 2,
               "anzahlMaterialien": 0
+            },
+            {
+              "id": "daten-und-wahrscheinlichkeiten",
+              "titel": "Daten und Wahrscheinlichkeiten",
+              "pfad": "klasse-9/daten-und-wahrscheinlichkeiten/",
+              "beschreibung": "Alltagstauglicher Bereich für Statistik und Wahrscheinlichkeiten.",
+              "themen": [
+                {
+                  "id": "daten-und-wahrscheinlichkeiten",
+                  "titel": "Daten und Wahrscheinlichkeiten",
+                  "pfad": "klasse-9/daten-und-wahrscheinlichkeiten/daten-und-wahrscheinlichkeiten/",
+                  "beschreibung": "Daten kritisch darstellen und Wahrscheinlichkeiten auch bei mehrstufigen Zufallsexperimenten untersuchen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Statistische Daten erheben",
+                    "Daten in Diagrammen darstellen",
+                    "Manipulation von Diagrammen und Daten",
+                    "Wahrscheinlichkeiten und Zufallsexperimente",
+                    "Bedingte Wahrscheinlichkeiten",
+                    "Stochastische Unabhängigkeit",
+                    "Vierfeldertafel",
+                    "Baumdiagramme",
+                    "Pfadregeln"
+                  ],
+                  "materialien": [],
+                  "tags": [
+                    "klasse-9",
+                    "daten",
+                    "wahrscheinlichkeit",
+                    "diagramme",
+                    "manipulation",
+                    "bedingte-wahrscheinlichkeit",
+                    "vierfeldertafel",
+                    "baumdiagramm"
+                  ]
+                }
+              ],
+              "tags": [
+                "klasse-9",
+                "daten",
+                "wahrscheinlichkeit",
+                "stochastik"
+              ],
+              "anzahlThemen": 1,
+              "anzahlMaterialien": 0
             }
           ],
-          "anzahlThemen": 9,
-          "anzahlMaterialien": 0
+          "anzahlThemen": 6,
+          "anzahlMaterialien": 0,
+          "beschreibung": "Alltagstaugliche Übersicht der Themen in Klasse 9."
         },
         {
           "id": "klasse-10",
@@ -836,100 +1341,257 @@
           "pfad": "klasse-10/",
           "inhaltsfelder": [
             {
-              "id": "arithmetik-algebra",
-              "titel": "Arithmetik / Algebra",
-              "pfad": "klasse-10/arithmetik-algebra/",
+              "id": "daten-und-wahrscheinlichkeiten",
+              "titel": "Daten und Wahrscheinlichkeiten",
+              "pfad": "klasse-10/daten-und-wahrscheinlichkeiten/",
+              "beschreibung": "Alltagstauglicher Bereich für Daten, Diagramme und Wahrscheinlichkeiten.",
               "themen": [
                 {
-                  "id": "exponenten-und-logarithmen",
-                  "titel": "Exponenten und Logarithmen",
-                  "pfad": "klasse-10/arithmetik-algebra/exponenten-und-logarithmen/",
+                  "id": "daten-und-wahrscheinlichkeiten",
+                  "titel": "Daten und Wahrscheinlichkeiten",
+                  "pfad": "klasse-10/daten-und-wahrscheinlichkeiten/daten-und-wahrscheinlichkeiten/",
+                  "beschreibung": "Daten und Wahrscheinlichkeiten vertiefen und kritisch auswerten.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Statistische Daten erheben",
+                    "Daten in Diagrammen darstellen",
+                    "Manipulation von Diagrammen und Daten",
+                    "Wahrscheinlichkeiten und Zufallsexperimente",
+                    "Bedingte Wahrscheinlichkeiten",
+                    "Stochastische Unabhängigkeit",
+                    "Vierfeldertafel",
+                    "Baumdiagramme",
+                    "Pfadregeln"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-10/arithmetik-algebra/exponenten-und-logarithmen/README.md"
-                },
-                {
-                  "id": "formeln-und-terme",
-                  "titel": "Formeln und Terme",
-                  "pfad": "klasse-10/arithmetik-algebra/formeln-und-terme/",
-                  "materialien": [],
-                  "readme": "klasse-10/arithmetik-algebra/formeln-und-terme/README.md"
+                  "tags": [
+                    "klasse-10",
+                    "daten",
+                    "wahrscheinlichkeit",
+                    "stochastik",
+                    "bedingte-wahrscheinlichkeit",
+                    "vierfeldertafel"
+                  ]
                 }
               ],
-              "anzahlThemen": 2,
+              "tags": [
+                "klasse-10",
+                "daten",
+                "wahrscheinlichkeit"
+              ],
+              "anzahlThemen": 1,
               "anzahlMaterialien": 0
             },
             {
-              "id": "funktionen",
-              "titel": "Funktionen",
-              "pfad": "klasse-10/funktionen/",
+              "id": "quadratische-gleichungen-und-funktionen",
+              "titel": "Quadratische Gleichungen und Funktionen",
+              "pfad": "klasse-10/quadratische-gleichungen-und-funktionen/",
+              "beschreibung": "Alltagstauglicher Bereich für quadratische Gleichungen und quadratische Funktionen.",
               "themen": [
                 {
-                  "id": "trigonometrische-funktionen",
-                  "titel": "Trigonometrische Funktionen",
-                  "pfad": "klasse-10/funktionen/trigonometrische-funktionen/",
+                  "id": "quadratische-gleichungen",
+                  "titel": "Quadratische Gleichungen",
+                  "pfad": "klasse-10/quadratische-gleichungen-und-funktionen/quadratische-gleichungen/",
+                  "beschreibung": "Quadratische Gleichungen mit verschiedenen Verfahren lösen und passende Verfahren auswählen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Lösungsverfahren für quadratische Gleichungen",
+                    "Ausklammern",
+                    "Wurzelziehen",
+                    "Faktorisieren",
+                    "Quadratische Ergänzung",
+                    "p-q-Formel",
+                    "Satz von Vieta"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-10/funktionen/trigonometrische-funktionen/README.md"
+                  "tags": [
+                    "klasse-10",
+                    "quadratische-gleichungen",
+                    "ausklammern",
+                    "wurzelziehen",
+                    "faktorisieren",
+                    "pq-formel",
+                    "vieta"
+                  ]
                 },
                 {
-                  "id": "wachstumsprozesse",
-                  "titel": "Wachstumsprozesse",
-                  "pfad": "klasse-10/funktionen/wachstumsprozesse/",
+                  "id": "quadratische-funktionen",
+                  "titel": "Quadratische Funktionen",
+                  "pfad": "klasse-10/quadratische-gleichungen-und-funktionen/quadratische-funktionen/",
+                  "beschreibung": "Quadratische Funktionen vertiefen und in verschiedenen Darstellungen nutzen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Term in Normalform, Scheitelpunktform und faktorisierter Form",
+                    "Graph",
+                    "Tabelle",
+                    "Scheitelpunkt",
+                    "Symmetrie",
+                    "Öffnung",
+                    "Nullstellen und y-Achsenabschnitt",
+                    "Transformation der Normalparabel",
+                    "Extremwertprobleme"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-10/funktionen/wachstumsprozesse/README.md"
+                  "tags": [
+                    "klasse-10",
+                    "quadratische-funktionen",
+                    "parabel",
+                    "scheitelpunkt",
+                    "nullstellen",
+                    "normalparabel",
+                    "extremwertprobleme"
+                  ]
                 }
+              ],
+              "tags": [
+                "klasse-10",
+                "quadratische-gleichungen",
+                "quadratische-funktionen"
               ],
               "anzahlThemen": 2,
               "anzahlMaterialien": 0
             },
             {
               "id": "geometrie",
-              "titel": "Geometrie",
+              "titel": "Ähnlichkeit und Trigonometrie",
               "pfad": "klasse-10/geometrie/",
+              "beschreibung": "Alltagstauglicher Bereich für Ähnlichkeit, Strahlensätze und Trigonometrie.",
               "themen": [
                 {
-                  "id": "koerper-berechnen",
-                  "titel": "Körper berechnen",
-                  "pfad": "klasse-10/geometrie/koerper-berechnen/",
+                  "id": "aehnlichkeit",
+                  "titel": "Ähnlichkeit",
+                  "pfad": "klasse-10/geometrie/aehnlichkeit/",
+                  "beschreibung": "Ähnliche Figuren, zentrische Streckungen und Strahlensätze untersuchen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Geometrische Abbildungen",
+                    "Lagebeziehungen",
+                    "Zentrische Streckung",
+                    "Abbildungen",
+                    "Strahlensätze"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-10/geometrie/koerper-berechnen/README.md"
+                  "tags": [
+                    "klasse-10",
+                    "aehnlichkeit",
+                    "zentrische-streckung",
+                    "strahlensaetze",
+                    "abbildungen"
+                  ]
                 },
                 {
                   "id": "trigonometrie",
                   "titel": "Trigonometrie",
                   "pfad": "klasse-10/geometrie/trigonometrie/",
+                  "beschreibung": "Sinus, Kosinus und Tangens in Dreiecken anwenden und mit dem Kosinussatz arbeiten.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Geometrischer Satz: Kosinussatz",
+                    "Sinus",
+                    "Kosinus",
+                    "Tangens",
+                    "Berechnungen in Dreiecken"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-10/geometrie/trigonometrie/README.md"
+                  "tags": [
+                    "klasse-10",
+                    "trigonometrie",
+                    "sinus",
+                    "kosinus",
+                    "tangens",
+                    "kosinussatz"
+                  ]
                 }
+              ],
+              "tags": [
+                "klasse-10",
+                "geometrie",
+                "aehnlichkeit",
+                "trigonometrie"
               ],
               "anzahlThemen": 2,
               "anzahlMaterialien": 0
             },
             {
-              "id": "stochastik",
-              "titel": "Stochastik",
-              "pfad": "klasse-10/stochastik/",
+              "id": "exponentielles-wachstum",
+              "titel": "Exponentielles Wachstum",
+              "pfad": "klasse-10/exponentielles-wachstum/",
+              "beschreibung": "Alltagstauglicher Bereich für exponentielle Funktionen, Wachstum und Logarithmen.",
               "themen": [
                 {
-                  "id": "bedingte-wahrscheinlichkeit",
-                  "titel": "Bedingte Wahrscheinlichkeit",
-                  "pfad": "klasse-10/stochastik/bedingte-wahrscheinlichkeit/",
+                  "id": "exponentielles-wachstum",
+                  "titel": "Exponentielles Wachstum",
+                  "pfad": "klasse-10/exponentielles-wachstum/exponentielles-wachstum/",
+                  "beschreibung": "Exponentielle Funktionen zur Beschreibung von Wachstum und Zerfall nutzen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Lösungsverfahren für exponentielle Gleichungen der Form b^x = c",
+                    "Systematisches Probieren",
+                    "Logarithmieren",
+                    "Exponentielle Funktion f(x) = a · q^x mit a > 0 und q > 0",
+                    "Terme",
+                    "Graphen",
+                    "Tabellen",
+                    "Wachstum",
+                    "Anfangswert",
+                    "Wachstumsfaktor beziehungsweise Wachstumsrate",
+                    "Verdopplungszeit beziehungsweise Halbwertszeit",
+                    "Langfristige Entwicklung"
+                  ],
                   "materialien": [],
-                  "readme": "klasse-10/stochastik/bedingte-wahrscheinlichkeit/README.md"
-                },
-                {
-                  "id": "vierfeldertafeln",
-                  "titel": "Vierfeldertafeln",
-                  "pfad": "klasse-10/stochastik/vierfeldertafeln/",
-                  "materialien": [],
-                  "readme": "klasse-10/stochastik/vierfeldertafeln/README.md"
+                  "tags": [
+                    "klasse-10",
+                    "exponentielles-wachstum",
+                    "exponentialfunktion",
+                    "logarithmieren",
+                    "wachstumsfaktor",
+                    "halbwertszeit"
+                  ]
                 }
               ],
-              "anzahlThemen": 2,
+              "tags": [
+                "klasse-10",
+                "exponentielles-wachstum",
+                "exponentialfunktionen"
+              ],
+              "anzahlThemen": 1,
+              "anzahlMaterialien": 0
+            },
+            {
+              "id": "trigonometrische-funktionen",
+              "titel": "Trigonometrische Funktionen",
+              "pfad": "klasse-10/trigonometrische-funktionen/",
+              "beschreibung": "Alltagstauglicher Bereich für Sinusfunktionen und periodische Vorgänge.",
+              "themen": [
+                {
+                  "id": "trigonometrische-funktionen",
+                  "titel": "Trigonometrische Funktionen",
+                  "pfad": "klasse-10/trigonometrische-funktionen/trigonometrische-funktionen/",
+                  "beschreibung": "Trigonometrische Funktionen als Modelle für periodische Vorgänge verstehen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Sinusfunktion",
+                    "Funktion f(x) = a · sin(b · x)",
+                    "Darstellung als Term",
+                    "Darstellung als Graph",
+                    "Bogenmaß",
+                    "Modellierung periodischer Vorgänge"
+                  ],
+                  "materialien": [],
+                  "tags": [
+                    "klasse-10",
+                    "trigonometrische-funktionen",
+                    "sinusfunktion",
+                    "bogenmass",
+                    "periodische-vorgaenge"
+                  ]
+                }
+              ],
+              "tags": [
+                "klasse-10",
+                "trigonometrische-funktionen",
+                "sinusfunktion"
+              ],
+              "anzahlThemen": 1,
               "anzahlMaterialien": 0
             }
           ],
-          "anzahlThemen": 8,
-          "anzahlMaterialien": 0
+          "anzahlThemen": 7,
+          "anzahlMaterialien": 0,
+          "beschreibung": "Alltagstaugliche Übersicht der Themen in Klasse 10."
         },
         {
           "id": "ef",
@@ -940,211 +1602,306 @@
               "id": "funktionen-und-analysis",
               "titel": "Funktionen und Analysis",
               "pfad": "ef/funktionen-und-analysis/",
+              "beschreibung": "Grundlagen zu Funktionen und Einstieg in die Analysis.",
               "themen": [
                 {
-                  "id": "differentialrechnung-einfuehrung",
-                  "titel": "Einführung Differentialrechnung",
-                  "pfad": "ef/funktionen-und-analysis/differentialrechnung-einfuehrung/",
+                  "id": "funktionen-und-darstellungen",
+                  "titel": "Funktionen und Darstellungen",
+                  "pfad": "ef/funktionen-und-analysis/funktionen-und-darstellungen/",
+                  "beschreibung": "Funktionen in verschiedenen Darstellungen untersuchen und Transformationen beschreiben.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Funktionsterm, Graph, Tabelle und Wortform",
+                    "Eigenschaften von Funktionen",
+                    "Ganzrationale Funktionen",
+                    "Transformationen von Funktionen",
+                    "Nullstellen, Achsenabschnitte und Symmetrie"
+                  ],
                   "materialien": [],
-                  "readme": "ef/funktionen-und-analysis/differentialrechnung-einfuehrung/README.md"
+                  "tags": [
+                    "ef",
+                    "funktionen",
+                    "graph",
+                    "tabelle",
+                    "transformationen",
+                    "ganzrationale-funktionen"
+                  ]
                 },
                 {
-                  "id": "funktionen-grundlagen",
-                  "titel": "Funktionen Grundlagen",
-                  "pfad": "ef/funktionen-und-analysis/funktionen-grundlagen/",
+                  "id": "einfuehrung-differentialrechnung",
+                  "titel": "Einführung in die Differentialrechnung",
+                  "pfad": "ef/funktionen-und-analysis/einfuehrung-differentialrechnung/",
+                  "beschreibung": "Den Ableitungsbegriff aus Änderungsraten und Tangentensteigungen entwickeln.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Mittlere und lokale Änderungsrate",
+                    "Sekanten- und Tangentensteigung",
+                    "Ableitungsbegriff",
+                    "Ableitungsfunktion",
+                    "Anwendungen der Ableitung"
+                  ],
                   "materialien": [],
-                  "readme": "ef/funktionen-und-analysis/funktionen-grundlagen/README.md"
-                },
-                {
-                  "id": "ganzrationale-funktionen",
-                  "titel": "Ganzrationale Funktionen",
-                  "pfad": "ef/funktionen-und-analysis/ganzrationale-funktionen/",
-                  "materialien": [],
-                  "readme": "ef/funktionen-und-analysis/ganzrationale-funktionen/README.md"
-                },
-                {
-                  "id": "transformationen",
-                  "titel": "Transformationen von Funktionen",
-                  "pfad": "ef/funktionen-und-analysis/transformationen/",
-                  "materialien": [],
-                  "readme": "ef/funktionen-und-analysis/transformationen/README.md"
+                  "tags": [
+                    "ef",
+                    "differentialrechnung",
+                    "ableitung",
+                    "tangente",
+                    "aenderungsrate"
+                  ]
                 }
               ],
-              "anzahlThemen": 4,
-              "anzahlMaterialien": 0
-            },
-            {
-              "id": "analytische-geometrie-und-lineare-algebra",
-              "titel": "Analytische Geometrie und Lineare Algebra",
-              "pfad": "ef/analytische-geometrie-und-lineare-algebra/",
-              "themen": [
-                {
-                  "id": "vektoren-grundlagen",
-                  "titel": "Vektoren Grundlagen",
-                  "pfad": "ef/analytische-geometrie-und-lineare-algebra/vektoren-grundlagen/",
-                  "materialien": [],
-                  "readme": "ef/analytische-geometrie-und-lineare-algebra/vektoren-grundlagen/README.md"
-                }
-              ],
-              "anzahlThemen": 1,
-              "anzahlMaterialien": 0
-            },
-            {
-              "id": "stochastik",
-              "titel": "Stochastik",
-              "pfad": "ef/stochastik/",
-              "themen": [
-                {
-                  "id": "daten-und-wahrscheinlichkeiten",
-                  "titel": "Daten und Wahrscheinlichkeiten",
-                  "pfad": "ef/stochastik/daten-und-wahrscheinlichkeiten/",
-                  "materialien": [],
-                  "readme": "ef/stochastik/daten-und-wahrscheinlichkeiten/README.md"
-                }
-              ],
-              "anzahlThemen": 1,
-              "anzahlMaterialien": 0
-            }
-          ],
-          "anzahlThemen": 6,
-          "anzahlMaterialien": 0
-        },
-        {
-          "id": "q1-gk",
-          "titel": "Q1 GK",
-          "pfad": "q1-gk/",
-          "inhaltsfelder": [
-            {
-              "id": "funktionen-und-analysis",
-              "titel": "Funktionen und Analysis",
-              "pfad": "q1-gk/funktionen-und-analysis/",
-              "themen": [
-                {
-                  "id": "differentialrechnung",
-                  "titel": "Differentialrechnung",
-                  "pfad": "q1-gk/funktionen-und-analysis/differentialrechnung/",
-                  "materialien": [],
-                  "readme": "q1-gk/funktionen-und-analysis/differentialrechnung/README.md"
-                },
-                {
-                  "id": "integralrechnung",
-                  "titel": "Integralrechnung",
-                  "pfad": "q1-gk/funktionen-und-analysis/integralrechnung/",
-                  "materialien": [],
-                  "readme": "q1-gk/funktionen-und-analysis/integralrechnung/README.md"
-                }
+              "tags": [
+                "ef",
+                "funktionen-und-analysis"
               ],
               "anzahlThemen": 2,
               "anzahlMaterialien": 0
             },
             {
-              "id": "analytische-geometrie-und-lineare-algebra",
-              "titel": "Analytische Geometrie und Lineare Algebra",
-              "pfad": "q1-gk/analytische-geometrie-und-lineare-algebra/",
+              "id": "analytische-geometrie",
+              "titel": "Analytische Geometrie",
+              "pfad": "ef/analytische-geometrie/",
+              "beschreibung": "Grundlagen der vektoriellen Geometrie.",
               "themen": [
                 {
-                  "id": "vektoren-geraden-ebenen",
-                  "titel": "Vektoren, Geraden und Ebenen",
-                  "pfad": "q1-gk/analytische-geometrie-und-lineare-algebra/vektoren-geraden-ebenen/",
+                  "id": "vektoren-grundlagen",
+                  "titel": "Vektoren Grundlagen",
+                  "pfad": "ef/analytische-geometrie/vektoren-grundlagen/",
+                  "beschreibung": "Vektoren als Werkzeug zur Beschreibung geometrischer Situationen kennenlernen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Vektoren als Verschiebungen",
+                    "Betrag und Richtung",
+                    "Vektoraddition und Skalarmultiplikation",
+                    "Punkte und Vektoren im Koordinatensystem",
+                    "Kollinearität"
+                  ],
                   "materialien": [],
-                  "readme": "q1-gk/analytische-geometrie-und-lineare-algebra/vektoren-geraden-ebenen/README.md"
+                  "tags": [
+                    "ef",
+                    "vektoren",
+                    "koordinatensystem",
+                    "kollinearitaet"
+                  ]
                 }
+              ],
+              "tags": [
+                "ef",
+                "analytische-geometrie",
+                "vektoren"
               ],
               "anzahlThemen": 1,
               "anzahlMaterialien": 0
             },
             {
-              "id": "stochastik",
-              "titel": "Stochastik",
-              "pfad": "q1-gk/stochastik/",
+              "id": "daten-und-wahrscheinlichkeiten",
+              "titel": "Daten und Wahrscheinlichkeiten",
+              "pfad": "ef/daten-und-wahrscheinlichkeiten/",
+              "beschreibung": "Grundlagen zu Daten und Wahrscheinlichkeiten.",
               "themen": [
                 {
-                  "id": "binomialverteilung",
-                  "titel": "Binomialverteilung",
-                  "pfad": "q1-gk/stochastik/binomialverteilung/",
+                  "id": "daten-und-wahrscheinlichkeiten",
+                  "titel": "Daten und Wahrscheinlichkeiten",
+                  "pfad": "ef/daten-und-wahrscheinlichkeiten/daten-und-wahrscheinlichkeiten/",
+                  "beschreibung": "Grundlagen aus Statistik und Wahrscheinlichkeitsrechnung sichern und vertiefen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Daten auswerten",
+                    "Diagramme und Kenngrößen",
+                    "Zufallsexperimente",
+                    "Wahrscheinlichkeiten",
+                    "Baumdiagramme und Pfadregeln"
+                  ],
                   "materialien": [],
-                  "readme": "q1-gk/stochastik/binomialverteilung/README.md"
+                  "tags": [
+                    "ef",
+                    "daten",
+                    "wahrscheinlichkeit",
+                    "baumdiagramm",
+                    "pfadregeln"
+                  ]
                 }
+              ],
+              "tags": [
+                "ef",
+                "daten",
+                "wahrscheinlichkeit"
               ],
               "anzahlThemen": 1,
               "anzahlMaterialien": 0
             }
           ],
           "anzahlThemen": 4,
-          "anzahlMaterialien": 0
+          "anzahlMaterialien": 0,
+          "beschreibung": "Alltagstaugliche Übersicht der Themen in der Einführungsphase."
         },
         {
-          "id": "q1-lk",
-          "titel": "Q1 LK",
-          "pfad": "q1-lk/",
+          "id": "q1",
+          "titel": "Q1",
+          "pfad": "q1/",
+          "beschreibung": "Oberstufenstruktur für die Q1 mit Grundkurs und Leistungskurs.",
           "inhaltsfelder": [
             {
-              "id": "funktionen-und-analysis",
-              "titel": "Funktionen und Analysis",
-              "pfad": "q1-lk/funktionen-und-analysis/",
+              "id": "grundkurs",
+              "titel": "Grundkurs",
+              "pfad": "q1/grundkurs/",
+              "beschreibung": "Themen der Q1 für den Grundkurs.",
               "themen": [
                 {
-                  "id": "differentialrechnung",
-                  "titel": "Differentialrechnung",
-                  "pfad": "q1-lk/funktionen-und-analysis/differentialrechnung/",
+                  "id": "differentialrechnung-und-funktionsuntersuchung",
+                  "titel": "Differentialrechnung und Funktionsuntersuchung",
+                  "pfad": "q1/grundkurs/differentialrechnung-und-funktionsuntersuchung/",
+                  "beschreibung": "Funktionen mithilfe der Ableitung untersuchen und Ergebnisse im Sachkontext deuten.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Ableitungsregeln",
+                    "Produktregel in geeigneten Grundkurs-Kontexten",
+                    "Funktionsuntersuchung",
+                    "Monotonie und Extrempunkte",
+                    "Wendepunkte und Krümmungsverhalten",
+                    "Sachkontexte und Modellieren"
+                  ],
                   "materialien": [],
-                  "readme": "q1-lk/funktionen-und-analysis/differentialrechnung/README.md"
-                },
-                {
-                  "id": "exponentialfunktionen",
-                  "titel": "Exponentialfunktionen",
-                  "pfad": "q1-lk/funktionen-und-analysis/exponentialfunktionen/",
-                  "materialien": [],
-                  "readme": "q1-lk/funktionen-und-analysis/exponentialfunktionen/README.md"
+                  "tags": [
+                    "q1",
+                    "grundkurs",
+                    "analysis",
+                    "differentialrechnung",
+                    "funktionsuntersuchung"
+                  ],
+                  "kurs": "Grundkurs"
                 },
                 {
                   "id": "integralrechnung",
                   "titel": "Integralrechnung",
-                  "pfad": "q1-lk/funktionen-und-analysis/integralrechnung/",
+                  "pfad": "q1/grundkurs/integralrechnung/",
+                  "beschreibung": "Integrale als Flächeninhalte und rekonstruierte Bestände verstehen und anwenden.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Rekonstruktion von Beständen aus Änderungsraten",
+                    "Bestimmtes Integral",
+                    "Flächeninhalte",
+                    "Stammfunktionen",
+                    "Hauptsatz der Differential- und Integralrechnung",
+                    "Anwendungen in Sachkontexten"
+                  ],
                   "materialien": [],
-                  "readme": "q1-lk/funktionen-und-analysis/integralrechnung/README.md"
+                  "tags": [
+                    "q1",
+                    "grundkurs",
+                    "analysis",
+                    "integralrechnung",
+                    "stammfunktion"
+                  ],
+                  "kurs": "Grundkurs"
+                },
+                {
+                  "id": "exponentialfunktionen-und-wachstum",
+                  "titel": "Exponentialfunktionen und Wachstum",
+                  "pfad": "q1/grundkurs/exponentialfunktionen-und-wachstum/",
+                  "beschreibung": "Exponentialfunktionen zur Beschreibung von Wachstum und Zerfall nutzen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Natürliche Exponentialfunktion",
+                    "Exponentialfunktionen in Sachkontexten",
+                    "Ableitung von Exponentialfunktionen",
+                    "Wachstums- und Zerfallsprozesse",
+                    "Modellieren mit Funktionen"
+                  ],
+                  "materialien": [],
+                  "tags": [
+                    "q1",
+                    "grundkurs",
+                    "analysis",
+                    "exponentialfunktionen",
+                    "wachstum"
+                  ],
+                  "kurs": "Grundkurs"
                 }
+              ],
+              "tags": [
+                "q1",
+                "grundkurs"
               ],
               "anzahlThemen": 3,
               "anzahlMaterialien": 0
             },
             {
-              "id": "analytische-geometrie-und-lineare-algebra",
-              "titel": "Analytische Geometrie und Lineare Algebra",
-              "pfad": "q1-lk/analytische-geometrie-und-lineare-algebra/",
+              "id": "leistungskurs",
+              "titel": "Leistungskurs",
+              "pfad": "q1/leistungskurs/",
+              "beschreibung": "Themen der Q1 für den Leistungskurs.",
               "themen": [
                 {
-                  "id": "lagebeziehungen-und-abstaende",
-                  "titel": "Lagebeziehungen und Abstände",
-                  "pfad": "q1-lk/analytische-geometrie-und-lineare-algebra/lagebeziehungen-und-abstaende/",
+                  "id": "differentialrechnung-und-vertiefte-funktionsuntersuchung",
+                  "titel": "Differentialrechnung und vertiefte Funktionsuntersuchung",
+                  "pfad": "q1/leistungskurs/differentialrechnung-und-vertiefte-funktionsuntersuchung/",
+                  "beschreibung": "Funktionen vertieft analysieren, ableiten und in komplexeren Zusammenhängen untersuchen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Ableitungsregeln",
+                    "Produktregel, Kettenregel und weitere Ableitungsverfahren",
+                    "Vertiefte Funktionsuntersuchung",
+                    "Monotonie, Extrempunkte und Wendepunkte",
+                    "Krümmungsverhalten",
+                    "Parameter und Funktionsscharen",
+                    "Optimierungsprobleme"
+                  ],
                   "materialien": [],
-                  "readme": "q1-lk/analytische-geometrie-und-lineare-algebra/lagebeziehungen-und-abstaende/README.md"
+                  "tags": [
+                    "q1",
+                    "leistungskurs",
+                    "analysis",
+                    "differentialrechnung",
+                    "funktionsscharen",
+                    "optimierung"
+                  ],
+                  "kurs": "Leistungskurs"
                 },
                 {
-                  "id": "vektoren-geraden-ebenen",
-                  "titel": "Vektoren, Geraden und Ebenen",
-                  "pfad": "q1-lk/analytische-geometrie-und-lineare-algebra/vektoren-geraden-ebenen/",
+                  "id": "integralrechnung",
+                  "titel": "Integralrechnung",
+                  "pfad": "q1/leistungskurs/integralrechnung/",
+                  "beschreibung": "Integrale vertieft deuten, berechnen und in Anwendungen nutzen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Bestimmtes Integral",
+                    "Flächeninhalte",
+                    "Stammfunktionen",
+                    "Hauptsatz der Differential- und Integralrechnung",
+                    "Integralfunktionen",
+                    "Anwendungen und Rekonstruktion"
+                  ],
                   "materialien": [],
-                  "readme": "q1-lk/analytische-geometrie-und-lineare-algebra/vektoren-geraden-ebenen/README.md"
-                }
-              ],
-              "anzahlThemen": 2,
-              "anzahlMaterialien": 0
-            },
-            {
-              "id": "stochastik",
-              "titel": "Stochastik",
-              "pfad": "q1-lk/stochastik/",
-              "themen": [
+                  "tags": [
+                    "q1",
+                    "leistungskurs",
+                    "analysis",
+                    "integralrechnung",
+                    "integralfunktion"
+                  ],
+                  "kurs": "Leistungskurs"
+                },
                 {
-                  "id": "binomialverteilung",
-                  "titel": "Binomialverteilung",
-                  "pfad": "q1-lk/stochastik/binomialverteilung/",
+                  "id": "exponentialfunktionen-und-wachstum",
+                  "titel": "Exponentialfunktionen und Wachstum",
+                  "pfad": "q1/leistungskurs/exponentialfunktionen-und-wachstum/",
+                  "beschreibung": "Exponentialfunktionen im Leistungskurs vertieft analysieren und modellieren.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Natürliche Exponentialfunktion",
+                    "Verkettete Exponentialfunktionen",
+                    "Ableitungen und Integrale von Exponentialfunktionen",
+                    "Wachstums- und Zerfallsmodelle",
+                    "Parameter in Wachstumsmodellen"
+                  ],
                   "materialien": [],
-                  "readme": "q1-lk/stochastik/binomialverteilung/README.md"
+                  "tags": [
+                    "q1",
+                    "leistungskurs",
+                    "analysis",
+                    "exponentialfunktionen",
+                    "wachstum",
+                    "parameter"
+                  ],
+                  "kurs": "Leistungskurs"
                 }
               ],
-              "anzahlThemen": 1,
+              "tags": [
+                "q1",
+                "leistungskurs"
+              ],
+              "anzahlThemen": 3,
               "anzahlMaterialien": 0
             }
           ],
@@ -1152,170 +1909,293 @@
           "anzahlMaterialien": 0
         },
         {
-          "id": "q2-gk",
-          "titel": "Q2 GK",
-          "pfad": "q2-gk/",
+          "id": "q2",
+          "titel": "Q2",
+          "pfad": "q2/",
+          "beschreibung": "Oberstufenstruktur für die Q2 mit Grundkurs und Leistungskurs.",
           "inhaltsfelder": [
             {
-              "id": "funktionen-und-analysis",
-              "titel": "Funktionen und Analysis",
-              "pfad": "q2-gk/funktionen-und-analysis/",
+              "id": "grundkurs",
+              "titel": "Grundkurs",
+              "pfad": "q2/grundkurs/",
+              "beschreibung": "Themen der Q2 für den Grundkurs.",
               "themen": [
                 {
-                  "id": "anwendungen-der-analysis",
-                  "titel": "Anwendungen der Analysis",
-                  "pfad": "q2-gk/funktionen-und-analysis/anwendungen-der-analysis/",
+                  "id": "vektoren-geraden-ebenen",
+                  "titel": "Vektoren, Geraden und Ebenen",
+                  "pfad": "q2/grundkurs/vektoren-geraden-ebenen/",
+                  "beschreibung": "Geraden und Ebenen mithilfe von Vektoren darstellen, schneiden und untersuchen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Parameterform von Geraden und Ebenen",
+                    "Koordinatenform von Ebenen",
+                    "Normalenvektor",
+                    "Schnittwinkel zwischen Geraden, Geraden und Ebenen sowie Ebenen",
+                    "Schnittpunkte zwischen Geraden und Ebenen",
+                    "Lineare Gleichungssysteme"
+                  ],
                   "materialien": [],
-                  "readme": "q2-gk/funktionen-und-analysis/anwendungen-der-analysis/README.md"
+                  "tags": [
+                    "q2",
+                    "grundkurs",
+                    "analytische-geometrie",
+                    "vektoren",
+                    "geraden",
+                    "ebenen",
+                    "parameterform",
+                    "koordinatenform"
+                  ],
+                  "kurs": "Grundkurs"
                 },
                 {
-                  "id": "funktionsuntersuchung",
-                  "titel": "Funktionsuntersuchung",
-                  "pfad": "q2-gk/funktionen-und-analysis/funktionsuntersuchung/",
+                  "id": "daten-und-wahrscheinlichkeiten",
+                  "titel": "Daten und Wahrscheinlichkeiten",
+                  "pfad": "q2/grundkurs/daten-und-wahrscheinlichkeiten/",
+                  "beschreibung": "Mehrstufige Zufallsexperimente und diskrete Zufallsgrößen untersuchen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Mehrstufige Zufallsexperimente",
+                    "Urnenmodelle",
+                    "Baumdiagramme",
+                    "Vierfeldertafel",
+                    "Bedingte Wahrscheinlichkeiten",
+                    "Pfadregeln",
+                    "Kenngrößen: Erwartungswert, Varianz und Standardabweichung",
+                    "Diskrete Zufallsgrößen",
+                    "Wahrscheinlichkeitsverteilungen und Kenngrößen"
+                  ],
                   "materialien": [],
-                  "readme": "q2-gk/funktionen-und-analysis/funktionsuntersuchung/README.md"
+                  "tags": [
+                    "q2",
+                    "grundkurs",
+                    "stochastik",
+                    "daten",
+                    "wahrscheinlichkeit",
+                    "baumdiagramm",
+                    "vierfeldertafel"
+                  ],
+                  "kurs": "Grundkurs"
+                },
+                {
+                  "id": "binomialverteilung",
+                  "titel": "Binomialverteilung",
+                  "pfad": "q2/grundkurs/binomialverteilung/",
+                  "beschreibung": "Binomialverteilungen erkennen, berechnen und mithilfe von Kenngrößen sowie Histogrammen beschreiben.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Diskrete Zufallsgrößen",
+                    "Wahrscheinlichkeitsverteilungen und Kenngrößen",
+                    "Binomialverteilung",
+                    "Kenngrößen der Binomialverteilung",
+                    "Histogramme"
+                  ],
+                  "materialien": [],
+                  "tags": [
+                    "q2",
+                    "grundkurs",
+                    "stochastik",
+                    "binomialverteilung",
+                    "histogramm"
+                  ],
+                  "kurs": "Grundkurs"
+                },
+                {
+                  "id": "wiederholung-zentralabitur",
+                  "titel": "Wiederholung und Vorbereitung auf das Zentralabitur",
+                  "pfad": "q2/grundkurs/wiederholung-zentralabitur/",
+                  "beschreibung": "Wiederholende Prüfungsvorbereitung mit abiturähnlichen Aufgaben.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Wiederholung zentraler Inhalte aus Analysis",
+                    "Wiederholung analytische Geometrie",
+                    "Wiederholung Stochastik",
+                    "Prüfungsaufgaben im Stil des Zentralabiturs",
+                    "Strategien zur Bearbeitung komplexer Aufgaben"
+                  ],
+                  "materialien": [],
+                  "tags": [
+                    "q2",
+                    "grundkurs",
+                    "abitur",
+                    "wiederholung",
+                    "pruefungsaufgaben"
+                  ],
+                  "kurs": "Grundkurs"
                 }
               ],
-              "anzahlThemen": 2,
+              "tags": [
+                "q2",
+                "grundkurs"
+              ],
+              "anzahlThemen": 4,
               "anzahlMaterialien": 0
             },
             {
-              "id": "analytische-geometrie-und-lineare-algebra",
-              "titel": "Analytische Geometrie und Lineare Algebra",
-              "pfad": "q2-gk/analytische-geometrie-und-lineare-algebra/",
+              "id": "leistungskurs",
+              "titel": "Leistungskurs",
+              "pfad": "q2/leistungskurs/",
+              "beschreibung": "Themen der Q2 für den Leistungskurs.",
               "themen": [
                 {
-                  "id": "skalarprodukt-und-winkel",
-                  "titel": "Skalarprodukt und Winkel",
-                  "pfad": "q2-gk/analytische-geometrie-und-lineare-algebra/skalarprodukt-und-winkel/",
+                  "id": "vektoren-geraden-ebenen",
+                  "titel": "Vektoren, Geraden und Ebenen",
+                  "pfad": "q2/leistungskurs/vektoren-geraden-ebenen/",
+                  "beschreibung": "Geraden und Ebenen vektoriell darstellen und rechnerisch untersuchen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Parameterform von Geraden und Ebenen",
+                    "Koordinatenform von Ebenen",
+                    "Normalenvektor",
+                    "Schnittwinkel zwischen Geraden, Geraden und Ebenen sowie Ebenen",
+                    "Schnittpunkte zwischen Geraden und Ebenen",
+                    "Lineare Gleichungssysteme"
+                  ],
                   "materialien": [],
-                  "readme": "q2-gk/analytische-geometrie-und-lineare-algebra/skalarprodukt-und-winkel/README.md"
-                }
-              ],
-              "anzahlThemen": 1,
-              "anzahlMaterialien": 0
-            },
-            {
-              "id": "stochastik",
-              "titel": "Stochastik",
-              "pfad": "q2-gk/stochastik/",
-              "themen": [
-                {
-                  "id": "hypothesentests",
-                  "titel": "Hypothesentests",
-                  "pfad": "q2-gk/stochastik/hypothesentests/",
-                  "materialien": [],
-                  "readme": "q2-gk/stochastik/hypothesentests/README.md"
+                  "tags": [
+                    "q2",
+                    "leistungskurs",
+                    "analytische-geometrie",
+                    "vektoren",
+                    "geraden",
+                    "ebenen",
+                    "parameterform",
+                    "koordinatenform"
+                  ],
+                  "kurs": "Leistungskurs"
                 },
                 {
-                  "id": "normalverteilung",
-                  "titel": "Normalverteilung",
-                  "pfad": "q2-gk/stochastik/normalverteilung/",
+                  "id": "lagebeziehungen-und-abstandsberechnung",
+                  "titel": "Lagebeziehungen und Abstandsberechnung",
+                  "pfad": "q2/leistungskurs/lagebeziehungen-und-abstandsberechnung/",
+                  "beschreibung": "Lagebeziehungen und Abstände im Raum für alle Kombinationen aus Punkten, Geraden und Ebenen untersuchen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Lagebeziehungen zwischen Punkten, Geraden und Ebenen",
+                    "Abstände zwischen Punkten, Geraden und Ebenen",
+                    "Alle Kombinationen aus Punkt, Gerade und Ebene",
+                    "Lotfußpunkte und kürzeste Verbindungen",
+                    "Geometrische Interpretation der Ergebnisse"
+                  ],
                   "materialien": [],
-                  "readme": "q2-gk/stochastik/normalverteilung/README.md"
+                  "tags": [
+                    "q2",
+                    "leistungskurs",
+                    "analytische-geometrie",
+                    "lagebeziehungen",
+                    "abstaende"
+                  ],
+                  "kurs": "Leistungskurs"
+                },
+                {
+                  "id": "daten-und-wahrscheinlichkeiten",
+                  "titel": "Daten und Wahrscheinlichkeiten",
+                  "pfad": "q2/leistungskurs/daten-und-wahrscheinlichkeiten/",
+                  "beschreibung": "Mehrstufige Zufallsexperimente und diskrete Zufallsgrößen untersuchen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Mehrstufige Zufallsexperimente",
+                    "Urnenmodelle",
+                    "Baumdiagramme",
+                    "Vierfeldertafel",
+                    "Bedingte Wahrscheinlichkeiten",
+                    "Pfadregeln",
+                    "Kenngrößen: Erwartungswert, Varianz und Standardabweichung",
+                    "Diskrete Zufallsgrößen",
+                    "Wahrscheinlichkeitsverteilungen und Kenngrößen"
+                  ],
+                  "materialien": [],
+                  "tags": [
+                    "q2",
+                    "leistungskurs",
+                    "stochastik",
+                    "daten",
+                    "wahrscheinlichkeit",
+                    "baumdiagramm",
+                    "vierfeldertafel"
+                  ],
+                  "kurs": "Leistungskurs"
+                },
+                {
+                  "id": "binomialverteilung",
+                  "titel": "Binomialverteilung",
+                  "pfad": "q2/leistungskurs/binomialverteilung/",
+                  "beschreibung": "Binomialverteilungen inklusive Binomialkoeffizienten vertieft untersuchen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Diskrete Zufallsgrößen",
+                    "Wahrscheinlichkeitsverteilungen und Kenngrößen",
+                    "Binomialverteilung",
+                    "Kenngrößen der Binomialverteilung",
+                    "Histogramme",
+                    "Binomialkoeffizienten"
+                  ],
+                  "materialien": [],
+                  "tags": [
+                    "q2",
+                    "leistungskurs",
+                    "stochastik",
+                    "binomialverteilung",
+                    "histogramm",
+                    "binomialkoeffizienten"
+                  ],
+                  "kurs": "Leistungskurs"
+                },
+                {
+                  "id": "prognose-konfidenz-normalverteilung",
+                  "titel": "Prognoseintervalle, Konfidenzintervalle und Normalverteilung",
+                  "pfad": "q2/leistungskurs/prognose-konfidenz-normalverteilung/",
+                  "beschreibung": "Normalverteilung, Intervalle und statistische Beurteilungen im Leistungskurs vertiefen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Normalverteilung mit Sigma-Regeln",
+                    "Beurteilung von Statistik",
+                    "Prognoseintervalle",
+                    "Konfidenzintervalle",
+                    "Stichprobenumfang",
+                    "Normalverteilung: Dichtefunktion",
+                    "Gaußsche Glockenkurve",
+                    "Parameter μ und σ",
+                    "Graphen der Verteilungsfunktion"
+                  ],
+                  "materialien": [],
+                  "tags": [
+                    "q2",
+                    "leistungskurs",
+                    "stochastik",
+                    "normalverteilung",
+                    "sigma-regeln",
+                    "prognoseintervalle",
+                    "konfidenzintervalle"
+                  ],
+                  "kurs": "Leistungskurs"
+                },
+                {
+                  "id": "wiederholung-zentralabitur",
+                  "titel": "Wiederholung und Vorbereitung auf das Zentralabitur",
+                  "pfad": "q2/leistungskurs/wiederholung-zentralabitur/",
+                  "beschreibung": "Wiederholende Prüfungsvorbereitung mit abiturähnlichen Aufgaben.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Wiederholung zentraler Inhalte aus Analysis",
+                    "Wiederholung analytische Geometrie",
+                    "Wiederholung Stochastik",
+                    "Prüfungsaufgaben im Stil des Zentralabiturs",
+                    "Strategien zur Bearbeitung komplexer Aufgaben"
+                  ],
+                  "materialien": [],
+                  "tags": [
+                    "q2",
+                    "leistungskurs",
+                    "abitur",
+                    "wiederholung",
+                    "pruefungsaufgaben"
+                  ],
+                  "kurs": "Leistungskurs"
                 }
               ],
-              "anzahlThemen": 2,
+              "tags": [
+                "q2",
+                "leistungskurs"
+              ],
+              "anzahlThemen": 6,
               "anzahlMaterialien": 0
             }
           ],
-          "anzahlThemen": 5,
-          "anzahlMaterialien": 0
-        },
-        {
-          "id": "q2-lk",
-          "titel": "Q2 LK",
-          "pfad": "q2-lk/",
-          "inhaltsfelder": [
-            {
-              "id": "funktionen-und-analysis",
-              "titel": "Funktionen und Analysis",
-              "pfad": "q2-lk/funktionen-und-analysis/",
-              "themen": [
-                {
-                  "id": "anwendungen-der-analysis",
-                  "titel": "Anwendungen der Analysis",
-                  "pfad": "q2-lk/funktionen-und-analysis/anwendungen-der-analysis/",
-                  "materialien": [],
-                  "readme": "q2-lk/funktionen-und-analysis/anwendungen-der-analysis/README.md"
-                },
-                {
-                  "id": "funktionsuntersuchung",
-                  "titel": "Funktionsuntersuchung",
-                  "pfad": "q2-lk/funktionen-und-analysis/funktionsuntersuchung/",
-                  "materialien": [],
-                  "readme": "q2-lk/funktionen-und-analysis/funktionsuntersuchung/README.md"
-                },
-                {
-                  "id": "verkettete-funktionen",
-                  "titel": "Verkettete Funktionen",
-                  "pfad": "q2-lk/funktionen-und-analysis/verkettete-funktionen/",
-                  "materialien": [],
-                  "readme": "q2-lk/funktionen-und-analysis/verkettete-funktionen/README.md"
-                }
-              ],
-              "anzahlThemen": 3,
-              "anzahlMaterialien": 0
-            },
-            {
-              "id": "analytische-geometrie-und-lineare-algebra",
-              "titel": "Analytische Geometrie und Lineare Algebra",
-              "pfad": "q2-lk/analytische-geometrie-und-lineare-algebra/",
-              "themen": [
-                {
-                  "id": "abstandsprobleme",
-                  "titel": "Abstandsprobleme",
-                  "pfad": "q2-lk/analytische-geometrie-und-lineare-algebra/abstandsprobleme/",
-                  "materialien": [],
-                  "readme": "q2-lk/analytische-geometrie-und-lineare-algebra/abstandsprobleme/README.md"
-                },
-                {
-                  "id": "skalarprodukt-und-winkel",
-                  "titel": "Skalarprodukt und Winkel",
-                  "pfad": "q2-lk/analytische-geometrie-und-lineare-algebra/skalarprodukt-und-winkel/",
-                  "materialien": [],
-                  "readme": "q2-lk/analytische-geometrie-und-lineare-algebra/skalarprodukt-und-winkel/README.md"
-                }
-              ],
-              "anzahlThemen": 2,
-              "anzahlMaterialien": 0
-            },
-            {
-              "id": "stochastik",
-              "titel": "Stochastik",
-              "pfad": "q2-lk/stochastik/",
-              "themen": [
-                {
-                  "id": "hypothesentests",
-                  "titel": "Hypothesentests",
-                  "pfad": "q2-lk/stochastik/hypothesentests/",
-                  "materialien": [],
-                  "readme": "q2-lk/stochastik/hypothesentests/README.md"
-                },
-                {
-                  "id": "normalverteilung",
-                  "titel": "Normalverteilung",
-                  "pfad": "q2-lk/stochastik/normalverteilung/",
-                  "materialien": [],
-                  "readme": "q2-lk/stochastik/normalverteilung/README.md"
-                },
-                {
-                  "id": "stochastische-prozesse",
-                  "titel": "Stochastische Prozesse",
-                  "pfad": "q2-lk/stochastik/stochastische-prozesse/",
-                  "materialien": [],
-                  "readme": "q2-lk/stochastik/stochastische-prozesse/README.md"
-                }
-              ],
-              "anzahlThemen": 3,
-              "anzahlMaterialien": 0
-            }
-          ],
-          "anzahlThemen": 8,
+          "anzahlThemen": 10,
           "anzahlMaterialien": 0
         }
       ],
-      "anzahlThemen": 87,
+      "anzahlThemen": 58,
       "anzahlMaterialien": 5
     }
   ]
