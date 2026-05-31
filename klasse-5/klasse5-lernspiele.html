@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mathe-Quest Klasse 5 – Lernspiele</title>
+  <style>
+
+    :root{
+      --bg:#fff8ed;
+      --ink:#183153;
+      --muted:#64748b;
+      --card:#ffffff;
+      --line:#dbe4f0;
+      --good:#16a34a;
+      --bad:#dc2626;
+      --warn:#f59e0b;
+      --blue:#2563eb;
+      --violet:#7c3aed;
+      --pink:#db2777;
+      --teal:#0f766e;
+      --orange:#ea580c;
+      --shadow:0 18px 40px rgba(42,62,101,.13);
+      --shadow-soft:0 10px 24px rgba(42,62,101,.10);
+      --radius:28px;
+      --focus:0 0 0 4px rgba(37,99,235,.18);
+      --paper:#fffdf8;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#fff8ed;}
+    body{min-height:100vh;background:
+      radial-gradient(circle at 12% 8%, rgba(255,211,130,.65), transparent 25%),
+      radial-gradient(circle at 88% 12%, rgba(147,197,253,.55), transparent 28%),
+      radial-gradient(circle at 18% 88%, rgba(196,181,253,.46), transparent 27%),
+      linear-gradient(180deg,#fff8ed 0%,#f0f9ff 48%,#fff7ed 100%);
+      overflow-x:hidden;}
+    body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.46;background-image:
+      radial-gradient(circle at 14px 14px, rgba(37,99,235,.12) 0 2px, transparent 2.5px),
+      radial-gradient(circle at 38px 42px, rgba(234,88,12,.10) 0 2px, transparent 2.5px);
+      background-size:72px 72px;mask-image:linear-gradient(180deg,black,transparent 78%);}
+    button{font:inherit}
+    .app{min-height:100vh;display:flex;flex-direction:column;}
+    .topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 18px;background:rgba(255,255,255,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(203,213,225,.78);box-shadow:0 8px 28px rgba(15,23,42,.07)}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .brand-badge{width:52px;height:52px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(145deg,#2563eb,#7c3aed 56%,#db2777);color:#fff;font-size:29px;box-shadow:0 14px 26px rgba(67,56,202,.28);border:2px solid rgba(255,255,255,.75);transform:rotate(-4deg)}
+    .brand h1{font-size:1.08rem;line-height:1.1;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:-.02em}
+    .brand p{margin:3px 0 0;font-size:.84rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .profile{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:8px 12px;background:rgba(255,255,255,.88);border:1px solid rgba(203,213,225,.95);font-weight:850;font-size:.88rem;white-space:nowrap;box-shadow:0 4px 12px rgba(15,23,42,.06)}
+    .pill.avatar{cursor:pointer;background:linear-gradient(135deg,#fef3c7,#fff7ed);border-color:#fde68a;}
+    .pill button{all:unset;cursor:pointer}
+    .main{width:min(1190px,100%);margin:0 auto;padding:24px;flex:1}
+    .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;margin-bottom:22px}
+    .hero-card{border-radius:34px;background:linear-gradient(135deg,#1d4ed8 0%,#6d28d9 54%,#db2777 100%);color:white;padding:32px;box-shadow:0 24px 55px rgba(75,85,189,.25);overflow:hidden;position:relative;min-height:246px;border:2px solid rgba(255,255,255,.28)}
+    .hero-card:before{content:"";position:absolute;inset:16px;border-radius:28px;border:2px dashed rgba(255,255,255,.23);pointer-events:none}
+    .hero-card:after{content:"🐉  🦊  🧊";position:absolute;right:22px;bottom:18px;font-size:54px;letter-spacing:8px;opacity:.26;filter:drop-shadow(0 8px 10px rgba(15,23,42,.16))}
+    .hero-card h2{position:relative;margin:0 0 10px;font-size:clamp(1.75rem,4vw,3.35rem);letter-spacing:-.055em;max-width:740px;text-shadow:0 3px 12px rgba(0,0,0,.15)}
+    .hero-card p{position:relative;margin:0;font-size:1.06rem;line-height:1.58;max-width:76ch;color:rgba(255,255,255,.94)}
+    .progress-card{background:rgba(255,255,255,.92);border:1px solid rgba(219,228,240,.96);border-radius:34px;padding:20px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .progress-card:before{content:"";position:absolute;left:0;right:0;top:0;height:9px;background:linear-gradient(90deg,#22c55e,#38bdf8,#a78bfa,#f472b6)}
+    .progress-card h3{margin:8px 0 10px;font-size:1.08rem}
+    .bar{height:18px;border-radius:999px;background:#e2e8f0;overflow:hidden;border:1px solid #cbd5e1;box-shadow:inset 0 2px 5px rgba(15,23,42,.08)}
+    .bar > div{height:100%;background:linear-gradient(90deg,#22c55e,#06b6d4,#7c3aed,#db2777);width:0%;transition:.45s width ease;box-shadow:0 0 12px rgba(37,99,235,.28)}
+    .tiny{font-size:.83rem;color:var(--muted);line-height:1.45}
+    .section-title{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:20px 0 12px}
+    .section-title h2{font-size:1.28rem;margin:0;letter-spacing:-.025em}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .game-card{position:relative;overflow:hidden;border:1px solid rgba(203,213,225,.95);border-radius:30px;background:linear-gradient(180deg,#ffffff 0%,#fffdf8 100%);box-shadow:var(--shadow-soft);padding:16px;display:flex;flex-direction:column;gap:12px;min-height:296px;transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease}
+    .game-card:hover{transform:translateY(-5px);box-shadow:0 22px 48px rgba(42,62,101,.18);border-color:color-mix(in srgb,var(--accent,#2563eb) 38%,#dbe4f0)}
+    .game-card:before{content:"";position:absolute;inset:0 0 auto;height:12px;background:linear-gradient(90deg,var(--accent,#2563eb),color-mix(in srgb,var(--accent,#2563eb) 60%,#fff));}
+    .game-card:after{content:"";position:absolute;right:-44px;top:20px;width:118px;height:118px;border-radius:50%;background:var(--soft,#dbeafe);opacity:.46;z-index:0}
+    .mission-top{display:flex;align-items:center;justify-content:space-between;gap:10px;position:relative;z-index:1;margin-top:4px}
+    .mission-chip{font-size:.76rem;font-weight:900;letter-spacing:.02em;text-transform:uppercase;border-radius:999px;padding:7px 10px;background:var(--soft,#dbeafe);color:color-mix(in srgb,var(--accent,#2563eb) 74%,#10213c);border:1px solid color-mix(in srgb,var(--accent,#2563eb) 25%,#ffffff)}
+    .game-card .icon{width:58px;height:58px;border-radius:22px;display:grid;place-items:center;font-size:33px;background:linear-gradient(135deg,var(--soft,#dbeafe),#fff);border:1px solid color-mix(in srgb,var(--accent,#2563eb) 20%,#fff);box-shadow:0 8px 18px rgba(15,23,42,.08);position:relative;z-index:1}
+    .game-card h3{margin:0;font-size:1.17rem;letter-spacing:-.02em;position:relative;z-index:1}
+    .game-card p{margin:0;color:var(--muted);font-size:.92rem;line-height:1.43;position:relative;z-index:1}
+    .mission-art{width:100%;border:1px solid rgba(203,213,225,.92);border-radius:24px;background:linear-gradient(180deg,#ffffff,#fbfdff);overflow:hidden;box-shadow:0 6px 16px rgba(15,23,42,.06);position:relative;z-index:1}
+    .mission-art:after{content:"";position:absolute;inset:0;border-radius:24px;box-shadow:inset 0 0 0 2px rgba(255,255,255,.6);pointer-events:none}
+    .mission-art svg{display:block;width:100%;height:auto}
+    .game-card .mission-art{aspect-ratio:16/9;display:grid;place-items:center;margin-top:2px}
+    .game-card .mission-art svg{width:100%;height:100%}
+    .mission-art-large{margin-top:14px;max-height:300px;border-width:2px}
+    .mission-art-large svg{max-height:300px}
+    .mini-progress{height:10px;border-radius:999px;background:#e2e8f0;overflow:hidden;border:1px solid #cbd5e1;position:relative;z-index:1}
+    .mini-progress span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent,#2563eb),#22c55e)}
+    .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;position:relative;z-index:1}
+    .tag{font-size:.74rem;font-weight:850;border-radius:999px;padding:6px 9px;background:#f8fafc;color:#334155;border:1px solid #e2e8f0}
+    .primary,.secondary,.ghost{border:0;border-radius:18px;padding:12px 15px;font-weight:900;cursor:pointer;transition:.18s transform ease,.18s filter ease,.18s box-shadow ease;min-height:46px;position:relative;z-index:1}
+    .primary{background:linear-gradient(135deg,var(--accent,#2563eb),#7c3aed);color:#fff;box-shadow:0 12px 22px rgba(37,99,235,.20);border:1px solid rgba(255,255,255,.25)}
+    .secondary{background:#fff;border:1px solid var(--line);color:#1e293b;box-shadow:0 6px 14px rgba(15,23,42,.07)}
+    .ghost{background:#f8fafc;border:1px solid var(--line);color:#334155;box-shadow:0 4px 12px rgba(15,23,42,.05)}
+    .primary:hover,.secondary:hover,.ghost:hover{filter:saturate(1.08);transform:translateY(-1px)}
+    .primary:active,.secondary:active,.ghost:active,.answer:active{transform:scale(.985)}
+    .primary:focus-visible,.secondary:focus-visible,.ghost:focus-visible,.answer:focus-visible{outline:none;box-shadow:var(--focus)}
+
+    .intro-screen{display:none}
+    .intro-card{border-radius:34px;background:rgba(255,255,255,.95);border:1px solid rgba(203,213,225,.95);box-shadow:var(--shadow);overflow:hidden;position:relative}
+    .intro-card:before{content:"";position:absolute;inset:0 0 auto;height:12px;background:linear-gradient(90deg,var(--accent,#2563eb),color-mix(in srgb,var(--accent,#2563eb) 45%,#fff));z-index:2}
+    .intro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:0;align-items:stretch}
+    .intro-art{min-height:420px;background:linear-gradient(180deg,var(--soft,#dbeafe),#ffffff);display:grid;place-items:center;padding:22px;border-right:1px solid rgba(203,213,225,.85)}
+    .intro-art .mission-art{width:min(100%,760px);border-radius:30px;box-shadow:0 18px 40px rgba(15,23,42,.14);background:#fff}
+    .intro-art .mission-art img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+    .intro-content{padding:34px;display:flex;flex-direction:column;gap:16px;justify-content:center;background:linear-gradient(180deg,#ffffff,#fffdf8)}
+    .intro-kicker{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;border-radius:999px;padding:8px 12px;background:var(--soft,#dbeafe);color:color-mix(in srgb,var(--accent,#2563eb) 74%,#10213c);font-size:.84rem;font-weight:950;border:1px solid color-mix(in srgb,var(--accent,#2563eb) 24%,#fff)}
+    .intro-content h2{margin:0;font-size:clamp(1.85rem,4vw,3rem);line-height:1.04;letter-spacing:-.055em;color:var(--ink)}
+    .intro-subtitle{margin:0;color:#475569;line-height:1.52;font-weight:600}
+    .story-box{border-radius:24px;padding:18px 20px;background:linear-gradient(135deg,#fff7ed,#ffffff);border:1px solid #fed7aa;box-shadow:0 8px 18px rgba(15,23,42,.05)}
+    .story-box h3{margin:0 0 8px;font-size:1.05rem}
+    .story-box p{margin:0;color:#334155;line-height:1.62;font-size:1rem}
+    .intro-goal{display:grid;gap:8px;border-radius:22px;padding:16px;background:#f8fafc;border:1px solid #e2e8f0;color:#334155;line-height:1.45}
+    .intro-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+    .mission-art img{display:block;width:100%;height:100%;object-fit:cover}
+    .game-card .mission-art img{aspect-ratio:16/9;object-fit:cover}
+    .mission-art-large img{max-height:300px;object-fit:cover;aspect-ratio:4/3}
+
+    .game-screen{display:none}
+    .game-shell{display:grid;grid-template-columns:1fr 330px;gap:18px;align-items:start}
+    .question-card{background:rgba(255,255,255,.94);border:1px solid rgba(203,213,225,.95);border-radius:34px;box-shadow:var(--shadow);overflow:hidden}
+    .game-head{padding:22px;border-bottom:1px solid var(--line);background:linear-gradient(135deg,var(--soft,#dbeafe),#ffffff);position:relative;overflow:hidden}
+    .game-head:after{content:"";position:absolute;right:-70px;top:-70px;width:190px;height:190px;border-radius:50%;background:rgba(255,255,255,.55);pointer-events:none}
+    .game-head-top{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:10px;position:relative;z-index:1}
+    .game-head h2{margin:0;font-size:1.7rem;letter-spacing:-.035em;position:relative;z-index:1}
+    .mission{margin:7px 0 0;color:#334155;line-height:1.48;position:relative;z-index:1;font-weight:560}
+    .stats-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px;position:relative;z-index:1}
+    .floating-hud{position:fixed;right:14px;top:50%;transform:translate(145%,-50%);z-index:76;display:grid;gap:8px;pointer-events:none;transition:transform .25s ease,opacity .25s ease;opacity:0}
+    .floating-hud.show{transform:translate(0,-50%);opacity:1}
+    .floating-chip{display:flex;align-items:center;justify-content:center;gap:7px;min-width:118px;border-radius:20px;padding:12px 14px;background:rgba(24,49,83,.94);color:#fff;font-weight:950;box-shadow:0 16px 36px rgba(15,23,42,.26);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(10px)}
+    .floating-label{font-size:.74rem;opacity:.78;font-weight:800}
+    .stat{border-radius:999px;background:rgba(255,255,255,.82);border:1px solid rgba(148,163,184,.45);padding:8px 11px;font-size:.82rem;font-weight:900;box-shadow:0 4px 10px rgba(15,23,42,.04)}
+    .question-body{padding:22px;display:grid;gap:16px;background:linear-gradient(180deg,#fff,#fffdf8)}
+    .prompt{font-size:1.42rem;line-height:1.38;font-weight:900;margin:0;letter-spacing:-.025em}
+    .task-meta{display:flex;gap:8px;flex-wrap:wrap}
+    .visual{min-height:78px;display:grid;place-items:center;border:2px dashed #cbd5e1;border-radius:24px;background:linear-gradient(180deg,#f8fafc,#ffffff);padding:13px;overflow:auto}
+    .visual:empty{display:none}
+    .answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .answer{border:2px solid #dbe4f0;background:#fff;border-radius:22px;padding:15px;min-height:66px;font-size:1.13rem;font-weight:900;cursor:pointer;transition:.18s ease;box-shadow:0 8px 18px rgba(15,23,42,.07)}
+    .answer:hover{border-color:#93c5fd;transform:translateY(-2px);box-shadow:0 12px 22px rgba(37,99,235,.12)}
+    .answer.correct{border-color:var(--good);background:linear-gradient(135deg,#dcfce7,#f0fdf4);color:#14532d;box-shadow:0 10px 22px rgba(22,163,74,.15)}
+    .answer.wrong{border-color:var(--bad);background:linear-gradient(135deg,#fee2e2,#fff7f7);color:#7f1d1d;box-shadow:0 10px 22px rgba(220,38,38,.13)}
+    .answer.dim{opacity:.56}
+    .feedback{border-radius:24px;padding:17px;border:1px solid var(--line);display:none;line-height:1.48;box-shadow:0 8px 18px rgba(15,23,42,.06)}
+    .feedback.good{display:block;background:linear-gradient(135deg,#dcfce7,#f0fdf4);border-color:#86efac;color:#14532d}
+    .feedback.bad{display:block;background:linear-gradient(135deg,#fee2e2,#fff7f7);border-color:#fecaca;color:#7f1d1d}
+    .feedback h3{margin:0 0 6px;font-size:1.06rem}
+    .controls{display:flex;gap:10px;flex-wrap:wrap}
+    .side{display:grid;gap:14px}
+    .side-card{background:rgba(255,255,255,.92);border:1px solid rgba(203,213,225,.95);border-radius:26px;padding:16px;box-shadow:var(--shadow-soft);overflow:hidden;position:relative}
+    .side-card:before{content:"";position:absolute;left:0;top:0;right:0;height:6px;background:linear-gradient(90deg,var(--accent,#2563eb),#a78bfa);opacity:.78}
+    .side-card h3{margin:6px 0 10px;font-size:1.03rem;letter-spacing:-.015em}
+    .characters{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .char{border:1px solid var(--line);background:linear-gradient(180deg,#ffffff,#f8fafc);border-radius:20px;padding:10px;text-align:center;cursor:pointer;min-height:90px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;position:relative;box-shadow:0 5px 12px rgba(15,23,42,.05);transition:.18s ease}
+    .char:hover:not(.locked){transform:translateY(-2px)}
+    .char.locked{filter:grayscale(1);opacity:.45;cursor:not-allowed}
+    .char.active{border-color:#2563eb;background:linear-gradient(180deg,#dbeafe,#eff6ff);box-shadow:var(--focus)}
+    .char .emoji{font-size:31px}.char .name{font-size:.72rem;font-weight:900;line-height:1.1}.char .lock{position:absolute;top:6px;right:8px;font-size:14px}
+    .tips{font-size:.94rem;line-height:1.46;color:#334155;background:linear-gradient(180deg,#f8fafc,#fff);border:1px solid var(--line);border-radius:18px;padding:12px;min-height:56px}
+    .history{display:grid;gap:7px;max-height:220px;overflow:auto}
+    .hist{display:flex;align-items:center;gap:8px;font-size:.84rem;padding:8px;border-radius:14px;background:#f8fafc;border:1px solid #e2e8f0}
+    .end-card{background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:34px;box-shadow:var(--shadow);padding:28px;text-align:center;display:none}
+    .end-card h2{font-size:2.1rem;margin:.2rem 0;letter-spacing:-.035em}.end-card p{color:var(--muted);line-height:1.5}
+    .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(140%);z-index:80;border-radius:20px;background:#183153;color:white;padding:14px 17px;font-weight:900;box-shadow:var(--shadow);transition:.3s ease;max-width:min(92vw,560px);text-align:center;border:1px solid rgba(255,255,255,.16)}
+    .toast.show{transform:translateX(-50%) translateY(0)}
+    .confetti{pointer-events:none;position:fixed;inset:0;z-index:70;overflow:hidden}.confetti i{position:absolute;width:10px;height:18px;top:-30px;background:#2563eb;animation:fall 1100ms ease-out forwards;transform:rotate(0deg)}
+    @keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.15}}
+    @keyframes pulseGood{0%{box-shadow:0 0 0 0 rgba(34,197,94,.6)}70%{box-shadow:0 0 0 14px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+    @keyframes shake{10%,90%{transform:translateX(-1px)}20%,80%{transform:translateX(2px)}30%,50%,70%{transform:translateX(-4px)}40%,60%{transform:translateX(4px)}}
+    .pulse-good{animation:pulseGood .7s ease}.shake{animation:shake .45s ease}
+    .frac{display:inline-grid;grid-template-rows:auto auto auto;vertical-align:middle;align-items:center;text-align:center;font-weight:900}.frac .line{height:2px;background:currentColor;margin:1px 0;min-width:20px}
+    svg{max-width:100%;height:auto}.svg-label{font:800 14px system-ui, sans-serif;fill:#1e293b}.svg-small{font:800 12px system-ui, sans-serif;fill:#475569}
+    .footer-note{margin-top:20px;color:var(--muted);font-size:.86rem;line-height:1.48;background:rgba(255,255,255,.62);border:1px solid rgba(203,213,225,.75);border-radius:18px;padding:12px 14px}
+
+    @media (max-width: 980px){.intro-grid{grid-template-columns:1fr}.intro-art{border-right:0;border-bottom:1px solid rgba(203,213,225,.85);min-height:auto}.intro-content{padding:24px}.intro-art .mission-art{width:min(100%,680px)}}
+    @media (max-width: 700px){.intro-art{padding:14px}.intro-content{padding:20px}.intro-actions{flex-direction:column}.intro-actions button{width:100%}.story-box p{font-size:.96rem}}
+
+    @media (max-width: 980px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.game-shell{grid-template-columns:1fr}.side{grid-template-columns:1fr 1fr}.characters{grid-template-columns:repeat(6,1fr)}}
+    @media (max-width: 700px){.main{padding:14px}.topbar{align-items:flex-start}.brand h1{font-size:.96rem}.profile{gap:5px}.pill{font-size:.76rem;padding:6px 8px}.hero-card{padding:24px;min-height:230px}.hero-card:after{font-size:40px}.grid{grid-template-columns:1fr}.answers{grid-template-columns:1fr}.side{grid-template-columns:1fr}.characters{grid-template-columns:repeat(3,1fr)}.prompt{font-size:1.18rem}.game-head h2{font-size:1.3rem}.floating-hud{right:8px;top:auto;bottom:86px;transform:translateX(145%)}.floating-hud.show{transform:translateX(0)}.floating-chip{min-width:102px;padding:10px 11px;font-size:.9rem}}
+    @media print{.topbar,.controls,.side,.toast,.floating-hud{display:none}.main{max-width:100%;padding:0}.question-card,.hero-card,.progress-card,.game-card{box-shadow:none}}
+
+  </style>
+</head>
+<body>
+<div class="app" id="app">
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-badge" id="brandAvatar">🐉</div>
+      <div>
+        <h1>Mathe-Quest Klasse 5</h1>
+        <p>Sechs Lernspiele mit Missionen, Figuren und Sofort-Feedback</p>
+      </div>
+    </div>
+    <div class="profile" aria-label="Spielstand">
+      <span class="pill avatar" id="avatarPill" title="Figur wechseln">🐉 Zahlendrache</span>
+      <span class="pill">⭐ <span id="xpCount">0</span> XP</span>
+      <span class="pill">🪙 <span id="coinCount">0</span></span>
+      <span class="pill">🏆 <span id="trophyCount">0</span>/6</span>
+      <button class="ghost" id="fullscreenBtn">Vollbild</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <section id="hubScreen">
+      <div class="hero">
+        <div class="hero-card">
+          <h2>Starte deine Mathe-Abenteuerreise!</h2>
+          <p>Wähle eine Mission, löse Aufgaben, sammle XP und Münzen und schalte neue Begleiter frei. Nach einer richtigen Antwort geht es direkt weiter. Bei Fehlern bekommst du sofort eine verständliche Erklärung und die richtige Lösung.</p>
+        </div>
+        <aside class="progress-card">
+          <h3>Dein Fortschritt</h3>
+          <div class="bar" aria-hidden="true"><div id="globalProgress"></div></div>
+          <p class="tiny" id="progressText">Noch keine Mission abgeschlossen.</p>
+          <div class="section-title"><h2>Charaktere</h2><span class="tiny">Klick zum Wechseln</span></div>
+          <div class="characters" id="characterGrid"></div>
+        </aside>
+      </div>
+      <div class="section-title">
+        <h2>Lernspiele der Klasse 5</h2>
+        <span class="tiny">Die Schwierigkeit steigt langsam mit deinem Erfolg.</span>
+      </div>
+      <div class="grid" id="gameGrid"></div>
+      <p class="footer-note">Hinweis: Das Spiel speichert nur lokal auf diesem Gerät Fortschritt, XP und freigeschaltete Figuren. Es werden keine Namen oder Daten übertragen.</p>
+    </section>
+
+
+    <section id="introScreen" class="intro-screen">
+      <article class="intro-card" id="introCard">
+        <div class="intro-grid">
+          <div class="intro-art" id="introArt" aria-label="Missionsvisualisierung"></div>
+          <div class="intro-content">
+            <span class="intro-kicker" id="introGuide">Mission</span>
+            <h2 id="introTitle"></h2>
+            <p class="intro-subtitle" id="introSubtitle"></p>
+            <div class="story-box">
+              <h3>Die Geschichte</h3>
+              <p id="introStory"></p>
+            </div>
+            <div class="intro-goal">
+              <strong>Dein Auftrag</strong>
+              <span id="introGoal"></span>
+              <div class="tags" id="introTags"></div>
+            </div>
+            <div class="intro-actions">
+              <button class="secondary" id="introBackBtn">← Zur Übersicht</button>
+              <button class="primary" id="introStartBtn">Mission jetzt starten</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="gameScreen" class="game-screen">
+      <div class="game-shell">
+        <article class="question-card" id="questionCard">
+          <div class="game-head" id="gameHead">
+            <div class="game-head-top">
+              <button class="secondary" id="backBtn">← Zur Übersicht</button>
+              <span class="stat" id="gameBadge">Mission</span>
+            </div>
+            <h2 id="gameTitle"></h2>
+            <p class="mission" id="gameMission"></p>
+            <div class="mission-art mission-art-large" id="gameArt" aria-label="Ruhige Missionsvisualisierung"></div>
+            <div class="stats-row" id="statsRow">
+              <span class="stat">❤️ Leben: <span id="hearts">5</span></span>
+              <span class="stat">⏱️ Tipp: <span id="hintTimer">bereit</span></span>
+              <span class="stat">✅ Richtig: <span id="sessionCorrect">0</span></span>
+              <span class="stat">🔥 Serie: <span id="streak">0</span></span>
+              <span class="stat">🎚️ Schwierigkeit: <span id="difficulty">1</span></span>
+            </div>
+          </div>
+          <div class="question-body" id="questionBody">
+            <div class="task-meta"><span class="tag" id="taskType">Aufgabe</span><span class="tag" id="taskGoal">Kompetenz</span></div>
+            <p class="prompt" id="prompt"></p>
+            <div class="visual" id="visual"></div>
+            <div class="answers" id="answers"></div>
+            <div class="feedback" id="feedback"></div>
+            <div class="controls">
+              <button class="ghost" id="tipBtn">Tippkarte</button>
+              <button class="primary" id="nextBtn" disabled>Nächste Aufgabe</button>
+            </div>
+          </div>
+        </article>
+        <aside class="side">
+          <div class="side-card">
+            <h3>Mission-Regeln</h3>
+            <p class="tiny" id="gameRules"></p>
+          </div>
+          <div class="side-card">
+            <h3>Tippkarten</h3>
+            <div class="tips" id="tipsBox">Du kannst eine Tippkarte öffnen. Die nächste Tippkarte ist nach 30 Sekunden verfügbar.</div>
+          </div>
+          <div class="side-card">
+            <h3>Freischaltungen</h3>
+            <div class="characters" id="sideCharacterGrid"></div>
+          </div>
+          <div class="side-card">
+            <h3>Aufgaben-Verlauf</h3>
+            <div class="history" id="history"></div>
+          </div>
+        </aside>
+      </div>
+      <div class="end-card" id="endCard"></div>
+    </section>
+  </main>
+  <div class="floating-hud" id="floatingHud" aria-live="polite" aria-label="Leben und Tipp-Timer">
+    <div class="floating-chip"><span class="floating-label">Leben</span> ❤️ <span id="floatingHearts">5</span></div>
+    <div class="floating-chip"><span class="floating-label">Tipp</span> ⏱️ <span id="floatingTimer">bereit</span></div>
+  </div>
+  <div class="toast" id="toast"></div>
+  <div class="confetti" id="confetti"></div>
+</div>
+
+<script>
+(() => {
+  "use strict";
+
+  const KEY = "matheQuestKlasse5_v1";
+  const characters = [
+    {emoji:"🐉", name:"Zahlendrache", unlock:"Startfigur", xp:0},
+    {emoji:"🦉", name:"Einheits-Eule", unlock:"80 XP", xp:80},
+    {emoji:"🦊", name:"Bruch-Fuchs", unlock:"180 XP", xp:180},
+    {emoji:"🪞", name:"Spiegel-Luchs", unlock:"300 XP", xp:300},
+    {emoji:"🧭", name:"Maßstab-Maulwurf", unlock:"430 XP", xp:430},
+    {emoji:"🧊", name:"Kubus-Krake", unlock:"600 XP", xp:600}
+  ];
+
+  const configs = [
+    {
+      id:"zahlen-groessen", accent:"#2563eb", soft:"#dbeafe", icon:"🔢",
+      guideIndex:0, story:"Im Zahlenwald sind die Zahlenschätze durcheinandergeraten. Der Zahlendrache findet Edelsteine, Messbänder und Stellenwert-Blöcke, aber er weiß nicht mehr, was wohin gehört. Hilf ihm, Zahlen zu ordnen, Stellenwerte zu erkennen und passende Einheiten zu nutzen.",
+      title:"Zahlen-Expedition", path:"klasse-5/zahlen-und-groessen/zahlen-und-groessen-kennenlernen/",
+      subtitle:"Natürliche Zahlen, Stellenwerttafel, Einheiten und Zahlen ordnen.",
+      mission:"Hilf dem Zahlendrachen, verlorene Zahlenschätze zu sortieren: Lies Zahlen, erkenne Stellenwerte, vergleiche Größen und wandle einfache Einheiten um.",
+      goal:"Zahlen darstellen, ordnen und passende Einheiten nutzen",
+      tags:["Stellenwert", "Ordnen", "Einheiten", "Schätzen"],
+      rules:"Du hast 5 Leben. Nach 8 richtigen Antworten erhältst du den Themenpokal. Bei Fehlern erscheint die richtige Lösung mit Rechenweg.",
+      gen: genNumbers
+    },
+    {
+      id:"rechnen", accent:"#ea580c", soft:"#ffedd5", icon:"🚀",
+      guideIndex:1, story:"Auf der Rechen-Startrampe wartet die Einheits-Eule mit drei Raketen. Jede Rakete startet nur, wenn die Rechenkacheln richtig eingestellt sind. Löse die Aufgaben, prüfe geschickt mit Rechenstrategien und bring die Raketen sicher in die Luft.",
+      title:"Rechen-Raketen", path:"klasse-5/zahlen-und-groessen/rechnen-mit-natuerlichen-zahlen/",
+      subtitle:"Grundrechenarten, Rechengesetze, Terme, Teilbarkeit und Primfaktoren.",
+      mission:"Starte Raketen mit sicheren Rechnungen: Nutze Kopfstrategien, schriftliche Ideen, Rechengesetze und Teilbarkeitsregeln.",
+      goal:"Rechenwege auswählen, Terme berechnen und Rechengesetze nutzen",
+      tags:["+ − · :", "Rechengesetze", "Primfaktoren", "Terme"],
+      rules:"Antwortkarten statt Tastatur. Je länger deine richtige Serie ist, desto mehr XP bekommst du. Schwierige Aufgaben kommen erst nach und nach.",
+      gen: genArithmetic
+    },
+    {
+      id:"brueche", accent:"#db2777", soft:"#fce7f3", icon:"🍕",
+      guideIndex:2, story:"In der Bruch-Pizzeria möchte der Bruch-Fuchs alle Gäste fair bedienen. Manche Pizzen sind halbiert, andere geviertelt oder in noch mehr Stücke geteilt. Hilf ihm, Anteile zu erkennen, Brüche zu vergleichen und gerecht zu verteilen.",
+      title:"Bruch-Pizzeria", path:"klasse-5/zahlen-und-groessen/brueche-verstehen/",
+      subtitle:"Anteile, Bruchteile, Kürzen, Erweitern und Darstellungswechsel.",
+      mission:"In der Pizzeria müssen Stücke gerecht verteilt werden. Erkenne Anteile, vereinfache Brüche und wechsle zwischen Bild, Bruch und Prozentzahl.",
+      goal:"Brüche als Anteil, Zahl und Operator deuten",
+      tags:["Anteile", "Kürzen", "Erweitern", "Zahlenstrahl"],
+      rules:"Bilder und Bruchbalken helfen dir. Fehler sind Trainingschancen: Die Erklärung zeigt immer, welche Einteilung gemeint ist.",
+      gen: genFractions
+    },
+    {
+      id:"symmetrie", accent:"#7c3aed", soft:"#ede9fe", icon:"🪞",
+      guideIndex:3, story:"In der Spiegel-Stadt flackern die Spiegel-Portale. Der Spiegel-Luchs entdeckt, dass einige Formen nicht mehr genau zusammenpassen. Finde Symmetrieachsen, erkenne Figuren und entscheide, welche Linien parallel, senkrecht oder gespiegelt sind.",
+      title:"Spiegel-Stadt", path:"klasse-5/geometrie/symmetrie-und-ebene-figuren/",
+      subtitle:"Ebene Figuren, Symmetrie, Lagebeziehungen und Abbildungen.",
+      mission:"Repariere Spiegel-Portale in der Stadt: Erkenne Figuren, Symmetrieachsen und einfache Lagebeziehungen.",
+      goal:"Figuren beschreiben und symmetrische Abbildungen erkennen",
+      tags:["Figuren", "Symmetrie", "Parallel", "Senkrecht"],
+      rules:"Du entscheidest durch Antippen. Bei falscher Wahl wird erklärt, welches Merkmal zur richtigen Figur führt.",
+      gen: genSymmetry
+    },
+    {
+      id:"flaechen", accent:"#0f766e", soft:"#ccfbf1", icon:"🧭",
+      guideIndex:4, story:"Im Bauplan-Büro plant der Maßstab-Maulwurf neue Zimmer, Wege und kleine Gärten. Damit alles passt, müssen Längen, Flächen und Maßstäbe stimmen. Zähle Kästchen, zerlege Figuren und rechne sorgfältig wie ein echter Planer.",
+      title:"Bauplan-Büro", path:"klasse-5/geometrie/flaechen-und-massstab/",
+      subtitle:"Umfang, Flächeninhalt, Flächeneinheiten, zusammengesetzte Figuren und Maßstab.",
+      mission:"Plane Zimmer, Gärten und Schatzkarten: Berechne Umfang und Fläche, zerlege Figuren und deute Maßstäbe.",
+      goal:"Umfang und Flächeninhalt bestimmen und Größenbeziehungen nutzen",
+      tags:["Umfang", "Fläche", "Einheiten", "Maßstab"],
+      rules:"Bei Flächenaufgaben wird oft ein Raster angezeigt. Zähle, zerlege oder rechne mit Rechtecken.",
+      gen: genAreaScale
+    },
+    {
+      id:"volumen", accent:"#0284c7", soft:"#e0f2fe", icon:"🧊",
+      guideIndex:5, story:"Im Würfel-Labor baut die Kubus-Krake Türme, Quader und Würfelkörper. Einige Bauwerke sehen ähnlich aus, haben aber verschieden viel Raum. Zähle Einheitswürfel, vergleiche Volumen und erkenne die Körper im Labor.",
+      title:"Würfel-Labor", path:"klasse-5/koerper-und-volumen/koerper-und-volumen/",
+      subtitle:"Körper erkennen, beschreiben, Volumeneinheiten nutzen und Volumen vergleichen.",
+      mission:"Baue Körper im Würfel-Labor: Beschreibe Körper, zähle Würfel, berechne Quader und wandle einfache Volumeneinheiten um.",
+      goal:"Körper unterscheiden und Volumen als Größe erfassen",
+      tags:["Körper", "Quader", "Würfel", "Volumen"],
+      rules:"Bei Pyramiden, Kegeln und Zylindern geht es nur ums Erkennen/Beschreiben. Volumen wird mit Würfeln, Würfeln und Quadern bestimmt.",
+      gen: genVolume
+    }
+  ];
+
+  let state = load();
+  let current = null;
+  let currentIntroId = null;
+
+  const $ = (id) => document.getElementById(id);
+  const els = {
+    hub: $("hubScreen"), intro: $("introScreen"), game: $("gameScreen"), gameGrid: $("gameGrid"), characterGrid: $("characterGrid"), sideCharacterGrid: $("sideCharacterGrid"),
+    introTitle: $("introTitle"), introSubtitle: $("introSubtitle"), introArt: $("introArt"), introStory: $("introStory"), introGoal: $("introGoal"), introGuide: $("introGuide"), introTags: $("introTags"), introBackBtn: $("introBackBtn"), introStartBtn: $("introStartBtn"),
+    xp: $("xpCount"), coins: $("coinCount"), trophies: $("trophyCount"), avatarPill: $("avatarPill"), brandAvatar: $("brandAvatar"), progress: $("globalProgress"), progressText: $("progressText"),
+    gameTitle: $("gameTitle"), gameMission: $("gameMission"), gameArt: $("gameArt"), gameRules: $("gameRules"), gameHead: $("gameHead"), gameBadge: $("gameBadge"), statsRow: $("statsRow"),
+    hearts: $("hearts"), hintTimer: $("hintTimer"), sessionCorrect: $("sessionCorrect"), streak: $("streak"), difficulty: $("difficulty"), taskType: $("taskType"), taskGoal: $("taskGoal"),
+    prompt: $("prompt"), visual: $("visual"), answers: $("answers"), feedback: $("feedback"), tipBtn: $("tipBtn"), nextBtn: $("nextBtn"), tipsBox: $("tipsBox"), history: $("history"), questionCard: $("questionCard"), endCard: $("endCard"), floatingHud: $("floatingHud"), floatingHearts: $("floatingHearts"), floatingTimer: $("floatingTimer"), toast: $("toast"), confetti: $("confetti")
+  };
+
+  document.addEventListener("DOMContentLoaded", init);
+
+  function init(){
+    $("fullscreenBtn").addEventListener("click", () => {
+      const el = document.documentElement;
+      if(!document.fullscreenElement && el.requestFullscreen){ el.requestFullscreen().catch(()=>{}); }
+      else if(document.exitFullscreen){ document.exitFullscreen().catch(()=>{}); }
+    });
+    $("backBtn").addEventListener("click", backToHub);
+    els.introBackBtn.addEventListener("click", backToHub);
+    els.introStartBtn.addEventListener("click", () => { if(currentIntroId) startGame(currentIntroId); });
+    els.nextBtn.addEventListener("click", nextQuestion);
+    els.tipBtn.addEventListener("click", showTip);
+    els.avatarPill.addEventListener("click", () => { els.characterGrid.scrollIntoView({behavior:"smooth", block:"center"}); });
+    window.addEventListener("scroll", updateFloatingHud, {passive:true});
+    window.addEventListener("resize", updateFloatingHud);
+    setInterval(updateFloatingHud, 500);
+    renderHub();
+  }
+
+  function load(){
+    try{
+      const raw = localStorage.getItem(KEY);
+      if(raw) return normalize(JSON.parse(raw));
+    }catch(e){}
+    return normalize({xp:0, coins:0, avatar:0, unlocked:[0], trophies:{}, stats:{}});
+  }
+  function normalize(s){
+    s.xp = Number(s.xp || 0); s.coins = Number(s.coins || 0); s.avatar = Number(s.avatar || 0);
+    s.unlocked = Array.isArray(s.unlocked) ? s.unlocked : [0];
+    if(!s.unlocked.includes(0)) s.unlocked.push(0);
+    s.trophies = s.trophies || {}; s.stats = s.stats || {};
+    configs.forEach(c => { if(!s.stats[c.id]) s.stats[c.id] = {asked:0, correct:0, bestStreak:0}; });
+    return s;
+  }
+  function save(){ localStorage.setItem(KEY, JSON.stringify(state)); renderProfile(); }
+
+  function renderProfile(){
+    unlockByXp(false);
+    const ch = characters[state.avatar] || characters[0];
+    els.xp.textContent = state.xp;
+    els.coins.textContent = state.coins;
+    els.trophies.textContent = Object.keys(state.trophies).length;
+    els.avatarPill.textContent = `${ch.emoji} ${ch.name}`;
+    els.brandAvatar.textContent = ch.emoji;
+    const pct = Math.min(100, Math.round((Object.keys(state.trophies).length / configs.length) * 100));
+    els.progress.style.width = pct + "%";
+    els.progressText.textContent = pct === 100 ? "Alle Themenpokale gesammelt!" : `${Object.keys(state.trophies).length} von ${configs.length} Themenpokalen gesammelt. Nächstes Figuren-Ziel: ${nextUnlockText()}.`;
+    renderCharacters(els.characterGrid);
+    renderCharacters(els.sideCharacterGrid);
+  }
+  function nextUnlockText(){
+    const next = characters.find((c,i) => !state.unlocked.includes(i));
+    return next ? `${next.name} bei ${next.xp} XP` : "alle Figuren frei";
+  }
+  function renderCharacters(target){
+    if(!target) return;
+    target.innerHTML = characters.map((c,i)=>{
+      const unlocked = state.unlocked.includes(i);
+      const active = state.avatar === i;
+      return `<button class="char ${unlocked?'':'locked'} ${active?'active':''}" data-char="${i}" ${unlocked?'':'disabled'} title="${unlocked?'Figur wählen':'Freischaltung: '+c.unlock}">
+        <span class="emoji">${c.emoji}</span><span class="name">${c.name}</span>${unlocked?'':`<span class="lock">🔒</span>`}
+      </button>`;
+    }).join("");
+    target.querySelectorAll(".char:not(.locked)").forEach(btn => btn.addEventListener("click", () => {
+      state.avatar = Number(btn.dataset.char); save(); toast(`${characters[state.avatar].emoji} ${characters[state.avatar].name} begleitet dich jetzt.`);
+    }));
+  }
+  function unlockByXp(announce=true){
+    characters.forEach((c,i)=>{
+      if(state.xp >= c.xp && !state.unlocked.includes(i)){
+        state.unlocked.push(i);
+        if(announce) toast(`Neue Figur freigeschaltet: ${c.emoji} ${c.name}!`);
+      }
+    });
+  }
+  function renderHub(){
+    els.gameGrid.innerHTML = configs.map((c,idx) => {
+      const st = state.stats[c.id] || {asked:0, correct:0};
+      const trophy = state.trophies[c.id] ? "🏆" : "";
+      const percent = Math.min(100, Math.round((st.correct/8)*100));
+      return `<article class="game-card" style="--accent:${c.accent};--soft:${c.soft}">
+        <div class="mission-top"><div class="icon">${c.icon}</div><span class="mission-chip">Mission ${idx+1}</span></div>
+        <div class="mission-art">${missionArt(c.id)}</div>
+        <h3>${trophy} ${c.title}</h3>
+        <p>${c.subtitle}</p>
+        <div class="mini-progress" aria-label="Missionsfortschritt"><span style="width:${percent}%"></span></div>
+        <div class="tags">${c.tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div>
+        <p class="tiny">Bisher richtig: <strong>${st.correct}</strong> von 8 für den Pokal · Aufgaben: <strong>${st.asked}</strong></p>
+        <button class="primary" style="--accent:${c.accent}" data-start="${c.id}">Bild & Geschichte</button>
+      </article>`;
+    }).join("");
+    els.gameGrid.querySelectorAll("[data-start]").forEach(btn => btn.addEventListener("click", () => showMissionIntro(btn.dataset.start)));
+    renderProfile();
+  }
+
+
+  function showMissionIntro(id){
+    const cfg = configs.find(c => c.id === id);
+    if(!cfg) return;
+    current = null;
+    currentIntroId = id;
+    document.documentElement.style.setProperty("--accent", cfg.accent);
+    document.documentElement.style.setProperty("--soft", cfg.soft);
+    els.hub.style.display = "none";
+    els.game.style.display = "none";
+    els.intro.style.display = "block";
+    if(els.floatingHud) els.floatingHud.classList.remove("show");
+    const guide = characters[cfg.guideIndex ?? 0] || characters[0];
+    els.introGuide.textContent = `${guide.emoji} ${guide.name} begleitet dich`;
+    els.introTitle.textContent = cfg.title;
+    els.introSubtitle.textContent = cfg.subtitle;
+    els.introArt.innerHTML = missionArt(cfg.id, "intro");
+    els.introStory.textContent = cfg.story || cfg.mission;
+    els.introGoal.textContent = cfg.mission;
+    els.introTags.innerHTML = cfg.tags.map(t=>`<span class="tag">${escapeHtml(t)}</span>`).join("");
+    els.introStartBtn.style.setProperty("--accent", cfg.accent);
+    els.introStartBtn.textContent = "Mission jetzt starten";
+    window.scrollTo({top:0, behavior:"smooth"});
+  }
+
+  function startGame(id){
+    const cfg = configs.find(c => c.id === id);
+    current = {cfg, hearts:5, sessionAsked:0, sessionCorrect:0, streak:0, history:[], question:null, answered:false, hintIndex:0, hintUnlock:0};
+    document.documentElement.style.setProperty("--accent", cfg.accent);
+    document.documentElement.style.setProperty("--soft", cfg.soft);
+    els.hub.style.display = "none";
+    if(els.intro) els.intro.style.display = "none";
+    els.game.style.display = "block";
+    els.endCard.style.display = "none";
+    els.questionCard.style.display = "block";
+    els.gameTitle.textContent = cfg.title;
+    els.gameMission.textContent = cfg.mission;
+    els.gameArt.innerHTML = missionArt(cfg.id);
+    els.gameRules.textContent = cfg.rules;
+    els.gameBadge.textContent = cfg.path;
+    els.gameHead.style.background = `linear-gradient(135deg, ${cfg.soft}, #ffffff)`;
+    updateSessionUI();
+    nextQuestion();
+    updateFloatingHud();
+    window.scrollTo({top:0, behavior:"smooth"});
+  }
+  function backToHub(){
+    current = null;
+    currentIntroId = null;
+    if(els.intro) els.intro.style.display = "none";
+    els.game.style.display = "none";
+    els.hub.style.display = "block";
+    if(els.floatingHud) els.floatingHud.classList.remove("show");
+    renderHub();
+    window.scrollTo({top:0, behavior:"smooth"});
+  }
+  function updateSessionUI(){
+    if(!current) return;
+    els.hearts.textContent = current.hearts;
+    refreshHintDisplay();
+    els.sessionCorrect.textContent = current.sessionCorrect;
+    els.streak.textContent = current.streak;
+    els.difficulty.textContent = getDifficulty();
+    els.history.innerHTML = current.history.slice(-8).reverse().map(h => `<div class="hist"><span>${h.ok?'✅':'❌'}</span><span>${escapeHtml(h.label)}</span></div>`).join("") || `<div class="tiny">Noch keine Aufgabe bearbeitet.</div>`;
+    renderProfile();
+  }
+  function getDifficulty(){ return Math.min(3, 1 + Math.floor((current?.sessionCorrect || 0) / 4)); }
+
+  function nextQuestion(){
+    if(!current) return;
+    if(current.hearts <= 0) return showEnd(false);
+    if(current.sessionCorrect >= 8 && !state.trophies[current.cfg.id]){
+      state.trophies[current.cfg.id] = true;
+      state.xp += 30; state.coins += 12;
+      save(); confetti(); toast(`Themenpokal gewonnen: ${current.cfg.title}!`);
+    }
+    current.answered = false; current.hintIndex = 0; current.hintUnlock = 0;
+    const diff = getDifficulty();
+    current.question = current.cfg.gen(diff, current);
+    current.sessionAsked++;
+    state.stats[current.cfg.id].asked++;
+    save();
+    renderQuestion();
+    updateSessionUI();
+  }
+  function renderQuestion(){
+    const q = current.question;
+    els.taskType.textContent = q.type;
+    els.taskGoal.textContent = current.cfg.goal;
+    els.prompt.innerHTML = q.prompt;
+    els.visual.innerHTML = q.visual || "";
+    els.feedback.className = "feedback";
+    els.feedback.innerHTML = "";
+    els.nextBtn.disabled = true;
+    els.nextBtn.textContent = "Nächste Aufgabe";
+    els.tipsBox.textContent = "Du kannst eine Tippkarte öffnen. Die nächste Tippkarte ist nach 30 Sekunden verfügbar.";
+    els.tipBtn.disabled = false;
+    els.tipBtn.textContent = "Tippkarte";
+    refreshHintDisplay();
+    els.answers.innerHTML = q.options.map((o,i) => `<button class="answer" data-value="${escapeAttr(o.value)}">${o.label}</button>`).join("");
+    els.answers.querySelectorAll(".answer").forEach(btn => btn.addEventListener("click", () => choose(btn.dataset.value, btn)));
+  }
+  function choose(value, btn){
+    if(!current || current.answered) return;
+    const q = current.question;
+    current.answered = true;
+    const ok = String(value) === String(q.answer);
+    els.answers.querySelectorAll(".answer").forEach(b => {
+      b.disabled = true;
+      if(String(b.dataset.value) === String(q.answer)) b.classList.add("correct");
+      else b.classList.add("dim");
+    });
+    if(!ok) btn.classList.add("wrong");
+    const xpGain = ok ? 10 + getDifficulty()*4 + Math.min(8, current.streak*2) : 2;
+    if(ok){
+      current.sessionCorrect++; current.streak++; state.stats[current.cfg.id].correct++; state.stats[current.cfg.id].bestStreak = Math.max(state.stats[current.cfg.id].bestStreak, current.streak);
+      state.xp += xpGain; state.coins += 2 + getDifficulty();
+      els.feedback.className = "feedback good";
+      els.feedback.innerHTML = `<h3>Richtig! +${xpGain} XP</h3><p><strong>Lösung:</strong> ${q.solution}</p><p>${q.explanation}</p>`;
+      els.questionCard.classList.remove("shake"); void els.questionCard.offsetWidth; els.questionCard.classList.add("pulse-good");
+      if(current.streak >= 3) confetti(16);
+    } else {
+      current.hearts--; current.streak = 0; state.xp += xpGain;
+      els.feedback.className = "feedback bad";
+      els.feedback.innerHTML = `<h3>Noch nicht richtig. +${xpGain} Trainings-XP</h3><p><strong>Richtige Lösung:</strong> ${q.solution}</p><p>${q.explanation}</p>`;
+      els.questionCard.classList.remove("pulse-good"); void els.questionCard.offsetWidth; els.questionCard.classList.add("shake");
+    }
+    current.history.push({ok, label:q.short || strip(q.prompt).slice(0,56)});
+    unlockByXp(true);
+    save();
+    updateSessionUI();
+    els.tipBtn.disabled = true;
+    if(ok){
+      els.nextBtn.disabled = true;
+      els.nextBtn.textContent = "Nächste Aufgabe startet ...";
+      setTimeout(() => {
+        if(current && current.answered){
+          if(current.hearts <= 0) showEnd(false);
+          else nextQuestion();
+        }
+      }, 650);
+    }else{
+      els.nextBtn.disabled = false;
+      els.nextBtn.textContent = current.hearts <= 0 ? "Auswertung anzeigen" : "Nächste Aufgabe";
+    }
+    refreshHintDisplay();
+    updateFloatingHud();
+  }
+
+  function getHintTimerText(){
+    if(!current || current.answered) return "bereit";
+    if(current.hintIndex === 0) return "bereit";
+    if(!current.hintUnlock || Date.now() >= current.hintUnlock) return current.hintIndex >= (current.question?.hints?.length || 0) ? "fertig" : "bereit";
+    return Math.ceil((current.hintUnlock-Date.now())/1000) + "s";
+  }
+  function refreshHintDisplay(){
+    const txt = getHintTimerText();
+    if(els.hintTimer) els.hintTimer.textContent = txt;
+    if(els.floatingHearts) els.floatingHearts.textContent = current ? current.hearts : "5";
+    if(els.floatingTimer) els.floatingTimer.textContent = txt;
+  }
+  function updateFloatingHud(){
+    if(!els.floatingHud) return;
+    if(!current || els.game.style.display !== "block"){
+      els.floatingHud.classList.remove("show");
+      return;
+    }
+    refreshHintDisplay();
+    const rect = els.statsRow ? els.statsRow.getBoundingClientRect() : {bottom:0};
+    const hidden = rect.bottom < 8;
+    els.floatingHud.classList.toggle("show", hidden);
+  }
+
+  function showTip(){
+    if(!current || current.answered) return;
+    const q = current.question;
+    const now = Date.now();
+    if(current.hintIndex > 0 && now < current.hintUnlock){
+      const sec = Math.ceil((current.hintUnlock-now)/1000);
+      els.tipBtn.textContent = `Noch ${sec}s`;
+      setTimeout(() => { if(current && !current.answered) els.tipBtn.textContent = "Nächste Tippkarte"; }, 1000);
+      return;
+    }
+    const hints = q.hints || [];
+    if(current.hintIndex >= hints.length){
+      els.tipsBox.textContent = "Mehr Tippkarten gibt es zu dieser Aufgabe nicht.";
+      els.tipBtn.disabled = true;
+      return;
+    }
+    els.tipsBox.innerHTML = `<strong>Tipp ${current.hintIndex + 1}:</strong> ${hints[current.hintIndex]}`;
+    current.hintIndex++;
+    if(current.hintIndex < hints.length){
+      current.hintUnlock = Date.now() + 30000;
+      let remain = 30;
+      els.tipBtn.disabled = true;
+      els.tipBtn.textContent = `Nächster Tipp in ${remain}s`;
+      const timer = setInterval(() => {
+        if(!current || current.answered){ clearInterval(timer); refreshHintDisplay(); return; }
+        refreshHintDisplay();
+        remain--;
+        els.tipBtn.textContent = `Nächster Tipp in ${remain}s`;
+        if(remain <= 0){ clearInterval(timer); els.tipBtn.disabled = false; els.tipBtn.textContent = "Nächste Tippkarte"; }
+      },1000);
+      refreshHintDisplay();
+    }else{
+      els.tipBtn.disabled = true;
+      els.tipBtn.textContent = "Alle Tipps geöffnet";
+    }
+  }
+  function showEnd(){
+    els.questionCard.style.display = "none";
+    els.endCard.style.display = "block";
+    const won = current.sessionCorrect >= 8;
+    els.endCard.innerHTML = `<h2>${won ? "🏆 Mission geschafft!" : "💪 Training beendet"}</h2>
+      <p>Du hast <strong>${current.sessionCorrect}</strong> Aufgaben richtig gelöst und <strong>${state.xp}</strong> Gesamt-XP gesammelt.</p>
+      <div class="controls" style="justify-content:center">
+        <button class="primary" id="againBtn">Noch einmal spielen</button>
+        <button class="secondary" id="endBackBtn">Zur Übersicht</button>
+      </div>`;
+    $("againBtn").addEventListener("click", () => startGame(current.cfg.id));
+    $("endBackBtn").addEventListener("click", backToHub);
+  }
+
+
+  // ---------- Ruhige Missionsvisualisierungen mit den Missionscharakteren ----------
+  // Die Bilddateien liegen im gleichen GitHub-Ordner wie diese HTML-Datei.
+  const missionImages = {
+    "zahlen-groessen": "zahlen-groessen.webp",
+    "rechnen": "rechnen.webp",
+    "brueche": "brueche.webp",
+    "symmetrie": "symmetrie.webp",
+    "flaechen": "flaechen.webp",
+    "volumen": "volumen.webp"
+  };
+  const missionImageAlts = {"zahlen-groessen": "Zahlendrache sortiert Zahlenschätze und Stellenwert-Blöcke im Wald.", "rechnen": "Einheits-Eule begleitet Rechen-Raketen mit Rechenzeichen auf der Startrampe.", "brueche": "Bruch-Fuchs teilt Pizzen in gleiche Stücke und legt Bruchteile auf Teller.", "symmetrie": "Spiegel-Luchs steht in einer symmetrischen Stadt mit Spiegel-Portalen.", "flaechen": "Maßstab-Maulwurf zeichnet einen Bauplan mit Raster, Lineal und Modellgarten.", "volumen": "Kubus-Krake baut mit Einheitswürfeln Türme, Quader und Würfelkörper."};
+
+  function missionArt(id, variant="card"){
+    const src = missionImages[id];
+    const alt = missionImageAlts[id] || "Missionsvisualisierung";
+    if(src) return `<img class="mission-img mission-img-${variant}" src="${src}" alt="${escapeAttr(alt)}" loading="eager" decoding="async">`;
+    return `<div class="mission-placeholder" aria-label="${escapeAttr(alt)}">✨</div>`;
+  }
+
+  function genNumbers(diff){
+    const types = ["stellenwert", "zahlbauen", "ordnen", "einheiten", "runden", "zahlenstrahl"];
+    return pickType(types, {
+      stellenwert(){
+        const max = diff===1 ? 9999 : diff===2 ? 99999 : 999999;
+        const n = rand(1000, max);
+        const places = [[1,"Einer"],[10,"Zehner"],[100,"Hunderter"],[1000,"Tausender"]];
+        if(diff>1) places.push([10000,"Zehntausender"]); if(diff>2) places.push([100000,"Hunderttausender"]);
+        const [p,name] = choice(places.filter(([p]) => p <= n));
+        const digit = Math.floor(n / p) % 10;
+        const wrong = [digit+1, digit-1, Math.floor(n/(p*10))%10, Math.floor(n/(Math.max(1,p/10)))%10].map(x => ((x%10)+10)%10);
+        return task("Stellenwert", `Welche Ziffer steht bei <strong>${fmt(n)}</strong> an der <strong>${name}stelle</strong>?`, placeValueSvg(n,p), String(digit), wrong.map(String), `Die Ziffer ist <strong>${digit}</strong>.`, `Schaue in der Stellenwerttafel genau auf die Spalte „${name}“.`, [`Schreibe die Zahl stellengerecht auf.`, `Von rechts zählen: Einer, Zehner, Hunderter, Tausender, ...`]);
+      },
+      zahlbauen(){
+        const th = rand(1, diff===1?8: diff===2?25:75), h=rand(0,9), z=rand(0,9), e=rand(0,9);
+        const n = th*1000 + h*100 + z*10 + e;
+        const wrong = [th*1000+h*10+z*100+e, th*100+h*1000+z*10+e, th*1000+h*100+e*10+z, n+100];
+        return task("Zahl darstellen", `Welche Zahl hat <strong>${th}</strong> Tausender, <strong>${h}</strong> Hunderter, <strong>${z}</strong> Zehner und <strong>${e}</strong> Einer?`, placeValueBuildSvg(th,h,z,e), fmt(n), wrong.map(fmt), `Die Zahl ist <strong>${fmt(n)}</strong>.`, `Setze jede Ziffer in ihre passende Stelle: T-H-Z-E.`, [`Tausender stehen ganz links vor den Hunderten.`, `Rechne: ${th}·1000 + ${h}·100 + ${z}·10 + ${e}.`]);
+      },
+      ordnen(){
+        const base = rand(diff===1?100:1000, diff===1?900:diff===2?9000:90000);
+        const nums = uniqueNums([base, base+rand(1,85), base-rand(1,85), base+rand(90,260)]).slice(0,4);
+        while(nums.length<4) nums.push(base+rand(-300,300));
+        const largest = Math.max(...nums), smallest = Math.min(...nums);
+        const askLargest = Math.random()>.4;
+        return task("Zahlen ordnen", `Welche Zahl ist die <strong>${askLargest?"größte":"kleinste"}</strong>?`, numberLineSvg(nums), fmt(askLargest?largest:smallest), nums.filter(x=>x!==(askLargest?largest:smallest)).map(fmt), `Gesucht ist <strong>${fmt(askLargest?largest:smallest)}</strong>.`, `${askLargest?"Die größte Zahl liegt auf dem Zahlenstrahl am weitesten rechts":"Die kleinste Zahl liegt auf dem Zahlenstrahl am weitesten links"}.`, [`Vergleiche zuerst die Anzahl der Stellen.`, `Sind gleich viele Stellen vorhanden, vergleiche von links nach rechts.`]);
+      },
+      einheiten(){
+        const cases = [
+          [rand(2,9),"m","cm",100,"Längen"], [rand(2,8),"kg","g",1000,"Massen"], [rand(3,12),"€","ct",100,"Geld"], [rand(2,6),"h","min",60,"Zeit"]
+        ];
+        if(diff>1) cases.push([rand(12,90),"dm","cm",10,"Längen"], [rand(2,9),"km","m",1000,"Längen"]);
+        const [a,from,to,factor,label] = choice(cases); const correct = a*factor;
+        return task("Einheiten", `Wandle um: <strong>${a} ${from} = ? ${to}</strong>`, unitSvg(from,to,factor), `${fmt(correct)} ${to}`, [`${fmt(correct/factor)} ${to}`, `${fmt(correct+factor)} ${to}`, `${fmt(Math.max(1,correct-factor))} ${to}`, `${fmt(correct*10)} ${to}`], `<strong>${a} ${from} = ${fmt(correct)} ${to}</strong>.`, `Bei ${label} gilt hier: 1 ${from} = ${factor} ${to}. Also ${a} · ${factor} = ${correct}.`, [`Suche zuerst den Umrechnungsfaktor.`, `Von der größeren zur kleineren Einheit wird multipliziert.`]);
+      },
+      runden(){
+        const n = rand(diff===1?120:1200, diff===1?980:diff===2?9800:98000);
+        const p = diff===1 ? choice([10,100]) : choice([10,100,1000]);
+        const rounded = Math.round(n/p)*p;
+        return task("Runden", `Runde <strong>${fmt(n)}</strong> auf ${p===10?"Zehner":p===100?"Hunderter":"Tausender"}.`, roundSvg(n,p), fmt(rounded), [rounded+p, rounded-p, n, Math.floor(n/p)*p].map(fmt), `<strong>${fmt(n)} ≈ ${fmt(rounded)}</strong>.`, `Beim Runden entscheidest du mit der nächsten Stelle: 5 oder mehr → aufrunden, sonst abrunden.`, [`Markiere die Stelle, auf die gerundet werden soll.`, `Schaue auf die Ziffer direkt rechts daneben.`]);
+      },
+      zahlenstrahl(){
+        const step = choice(diff===1?[10,20,50]:[25,50,100]);
+        const start = rand(1,9)*step;
+        const pos = rand(1,4); const correct = start + pos*step;
+        return task("Zahlenstrahl", `Welche Zahl gehört zum markierten Punkt?`, markedNumberLineSvg(start, step, pos), fmt(correct), [correct-step, correct+step, correct+2*step, start+rand(1,4)*step+5].map(fmt), `Der Punkt steht bei <strong>${fmt(correct)}</strong>.`, `Jeder Schritt auf dem Zahlenstrahl ist ${step} groß. Vom Start aus gehst du ${pos} Schritte weiter.`, [`Bestimme zuerst die Schrittweite.`, `Addiere die Schrittweite für jeden Sprung nach rechts.`]);
+      }
+    });
+  }
+
+  function genArithmetic(diff){
+    const types = ["kopfrechnen", "term", "gesetz", "teiler", "prim", "umkehr"];
+    return pickType(types, {
+      kopfrechnen(){
+        const op = choice(["+","−","·",":"]); let a,b,correct,ex;
+        if(op==="+"){a=rand(100, diff===1?899:9999); b=rand(60,diff===1?500:3000); correct=a+b; ex=`${fmt(a)} + ${fmt(b)} = ${fmt(correct)}`;}
+        else if(op==="−"){a=rand(300,diff===1?999:9999); b=rand(50, Math.min(a-1,diff===1?500:4000)); correct=a-b; ex=`${fmt(a)} − ${fmt(b)} = ${fmt(correct)}`;}
+        else if(op==="·"){a=rand(6,diff===1?15:diff===2?30:80); b=rand(3,diff===1?12:25); correct=a*b; ex=`${a} · ${b} = ${fmt(correct)}`;}
+        else {b=rand(3,diff===1?12:20); correct=rand(4,diff===1?15:35); a=b*correct; ex=`${fmt(a)} : ${b} = ${fmt(correct)}`;}
+        return task("Grundrechenarten", `Berechne: <strong>${fmt(a)} ${op} ${fmt(b)}</strong>`, rocketSvg(op), fmt(correct), [correct+10, correct-10, correct+b, Math.abs(correct-b)].map(fmt), `<strong>${ex}</strong>.`, `Achte auf das Rechenzeichen und prüfe dein Ergebnis mit einer Gegenrechnung.`, [`Schätze zuerst grob.`, `Nutze die Umkehraufgabe zur Kontrolle.`]);
+      },
+      term(){
+        const a=rand(2,9+diff*3), b=rand(2,9+diff*4), c=rand(2,15+diff*4);
+        const variant = choice([0,1,2]);
+        let prompt, correct, ex;
+        if(variant===0){correct=a+b*c; prompt=`Berechne den Term: <strong>${a} + ${b} · ${c}</strong>`; ex=`Punkt vor Strich: zuerst ${b} · ${c} = ${b*c}, dann + ${a} = ${correct}.`;}
+        else if(variant===1){correct=(a+b)*c; prompt=`Berechne den Term: <strong>(${a} + ${b}) · ${c}</strong>`; ex=`Klammer zuerst: ${a}+${b}=${a+b}, dann ${a+b}·${c}=${correct}.`;}
+        else{correct=a*b-c; prompt=`Berechne den Term: <strong>${a} · ${b} − ${c}</strong>`; ex=`Zuerst ${a} · ${b} = ${a*b}, dann ${a*b} − ${c} = ${correct}.`;}
+        return task("Rechenterme", prompt, termSvg(), fmt(correct), [a+(b*c), (a+b)*c, correct+c, correct+1].map(fmt), `<strong>${fmt(correct)}</strong>.`, ex, [`Punktrechnung kommt vor Strichrechnung.`, `Klammern werden immer zuerst berechnet.`]);
+      },
+      gesetz(){
+        const a = choice([25,50,125,4,8]); const b=rand(6,18); const c=choice([4,8,20,40,100]);
+        const correct = a*b*c;
+        return task("Rechengesetze", `Welche Rechnung nutzt eine <strong>vorteilhafte Strategie</strong> für <strong>${a} · ${b} · ${c}</strong>?`, lawSvg(), `(${a} · ${c}) · ${b} = ${fmt(correct)}`, [`(${a} + ${c}) · ${b} = ${fmt((a+c)*b)}`, `${a} · (${b}+${c}) = ${fmt(a*(b+c))}`, `${a}+${b}+${c} = ${fmt(a+b+c)}`], `<strong>(${a} · ${c}) · ${b} = ${fmt(correct)}</strong>.`, `Beim Multiplizieren darfst du Faktoren vertauschen und geschickt klammern. ${a} · ${c} ist hier besonders einfach.`, [`Bei Multiplikation darf man Faktoren tauschen.`, `Suche zuerst ein Paar, das eine runde Zahl ergibt.`]);
+      },
+      teiler(){
+        const rules = [2,3,4,5,10]; const div = choice(rules);
+        const n = rand(100, diff===1?999:9999); const ok = n % div === 0;
+        return task("Teilbarkeit", `Ist <strong>${fmt(n)}</strong> durch <strong>${div}</strong> teilbar?`, divisorSvg(div), ok?"Ja":"Nein", [ok?"Nein":"Ja", "Nur mit Rest 1", "Das kann man nicht prüfen"], `<strong>${ok?"Ja":"Nein"}</strong>.`, div===3?`Quersumme: ${digits(n).join("+")} = ${sumDigits(n)}. ${sumDigits(n)} ist ${sumDigits(n)%3===0?"":"nicht "}durch 3 teilbar.`: div===4?`Die letzten zwei Ziffern entscheiden: ${String(n).slice(-2)} ist ${Number(String(n).slice(-2))%4===0?"":"nicht "}durch 4 teilbar.`:`Prüfe die Endziffer: Für ${div} ${div===2?"muss sie gerade sein":div===5?"muss sie 0 oder 5 sein":"muss sie 0 sein"}.`, [`Erinnere dich an die passende Teilbarkeitsregel.`, div===3?`Bilde die Quersumme.`:`Schaue auf die letzte Ziffer${div===4?"n":""}.`]);
+      },
+      prim(){
+        const choices = diff===1 ? [18,24,30,36,40,45] : diff===2 ? [48,54,60,72,84,90] : [96,108,120,144,180];
+        const n = choice(choices); const f = primeFactors(n); const correct = factorString(f);
+        const wrong = [factorString({...f,2:(f[2]||0)+1}), factorString({...f,3:Math.max(0,(f[3]||0)-1)}), `${n} = ${Object.keys(f).join(" · ")}`, `${n} = ${n} · 1`];
+        return task("Primfaktorzerlegung", `Welche Primfaktorzerlegung passt zu <strong>${n}</strong>?`, primeSvg(n), `${n} = ${correct}`, wrong, `<strong>${n} = ${correct}</strong>.`, `Zerlege die Zahl schrittweise durch Primzahlen. Prüfe am Ende durch Multiplizieren.`, [`Teile so lange wie möglich durch 2, dann durch 3, dann durch 5 usw.`, `Primzahlen haben genau zwei Teiler: 1 und sich selbst.`]);
+      },
+      umkehr(){
+        const x=rand(3,diff===1?15:40), m=rand(2,10+diff), add=rand(4,30); const result=x*m+add;
+        return task("Umkehraufgabe", `Ich denke mir eine Zahl. Ich multipliziere sie mit <strong>${m}</strong> und addiere <strong>${add}</strong>. Ergebnis: <strong>${result}</strong>. Welche Zahl war es?`, inverseSvg(), String(x), [x+1, x-1, result-add, Math.floor(result/m)].map(String), `Die Zahl war <strong>${x}</strong>.`, `Arbeite rückwärts: ${result} − ${add} = ${result-add}. Dann ${result-add} : ${m} = ${x}.`, [`Gehe die Rechenschritte rückwärts.`, `Rückwärts wird aus „+ ${add}“ ein „− ${add}“ und aus „· ${m}“ ein „: ${m}“ .`]);
+      }
+    });
+  }
+
+  function genFractions(diff){
+    const types = ["anteil", "kuerzen", "erweitern", "vergleich", "zahlstrahl", "prozent"];
+    return pickType(types, {
+      anteil(){
+        const den = choice([2,3,4,5,6,8]); const whole = den * rand(2, diff===1?8:15); const num = rand(1, den-1); const correct = whole/den*num;
+        return task("Anteile", `Wie viel ist <strong>${frac(num,den)}</strong> von <strong>${whole}</strong>?`, fractionSvg(num,den), String(correct), [whole/den, correct+den, Math.max(1,correct-den), whole-num].map(String), `<strong>${frac(num,den)} von ${whole} = ${correct}</strong>.`, `Ein ${den}-tel von ${whole} ist ${whole}:${den}=${whole/den}. Davon nimmst du ${num}: ${whole/den}·${num}=${correct}.`, [`Teile zuerst das Ganze durch den Nenner.`, `Multipliziere danach mit dem Zähler.`]);
+      },
+      kuerzen(){
+        const den0 = choice([4,6,8,10,12,15,16,20]); const num0 = rand(1, den0-1); const g = gcd(num0,den0); const num = g===1?2: num0, den = g===1?4:den0; const gg = gcd(num,den); const cn=num/gg, cd=den/gg;
+        return task("Kürzen", `Kürze den Bruch <strong>${frac(num,den)}</strong> vollständig.`, fractionSvg(num,den), frac(cn,cd), [frac(num+1,den), frac(num,den/gg||den), frac(cn,den), frac(num*2,den*2)], `<strong>${frac(num,den)} = ${frac(cn,cd)}</strong>.`, `Zähler und Nenner werden durch ${gg} geteilt: ${num}:${gg}=${cn}, ${den}:${gg}=${cd}.`, [`Suche eine Zahl, durch die Zähler und Nenner teilbar sind.`, `Beim Kürzen bleibt der Anteil gleich, nur die Einteilung wird gröber.`]);
+      },
+      erweitern(){
+        const den = choice([2,3,4,5,6]); const num=rand(1,den-1); const k=choice(diff===1?[2,3,4]:[2,3,4,5,6]); const correct=frac(num*k, den*k);
+        return task("Erweitern", `Erweitere <strong>${frac(num,den)}</strong> mit <strong>${k}</strong>.`, fractionSvg(num,den), correct, [frac(num+k,den+k), frac(num*k,den), frac(num,den*k), frac(num*k+1,den*k)], `<strong>${frac(num,den)} = ${correct}</strong>.`, `Beim Erweitern multiplizierst du Zähler und Nenner mit ${k}.`, [`Zähler und Nenner werden beide verändert.`, `Multipliziere oben und unten mit ${k}.`]);
+      },
+      vergleich(){
+        const den = choice([5,6,8,10,12]); const a=rand(1,den-2), b=rand(a+1,den-1); const bigger=frac(b,den);
+        return task("Brüche vergleichen", `Welcher Bruch ist größer?`, compareFractionsSvg(a,den,b,den), bigger, [frac(a,den), frac(a,den+1), frac(b-1,den), "beide gleich groß"], `<strong>${bigger}</strong> ist größer.`, `Bei gleichem Nenner ist der Bruch mit dem größeren Zähler größer: ${b} > ${a}.`, [`Vergleiche zuerst die Nenner.`, `Sind die Nenner gleich, entscheidet der Zähler.`]);
+      },
+      zahlstrahl(){
+        const den = choice([4,5,6,8,10]); const num=rand(1,den-1); const correct=frac(num,den);
+        return task("Zahlenstrahl", `Welcher Bruch liegt am markierten Punkt?`, fractionLineSvg(num,den), correct, [frac(num+1,den), frac(Math.max(1,num-1),den), frac(num,den+1), frac(den-num,den)], `Der Punkt liegt bei <strong>${correct}</strong>.`, `Die Strecke von 0 bis 1 ist in ${den} gleich große Teile geteilt. Der Punkt ist beim ${num}. Teilstrich.`, [`Zähle die gleich großen Abschnitte zwischen 0 und 1.`, `Der Nenner ist die Anzahl aller Teile, der Zähler die Position des Punktes.`]);
+      },
+      prozent(){
+        const pairs = [[1,2,50],[1,4,25],[3,4,75],[1,5,20],[1,10,10],[1,100,1]]; if(diff>1) pairs.push([2,5,40],[3,5,60]);
+        const [n,d,p] = choice(pairs);
+        return task("Darstellungswechsel", `Welche Prozentzahl passt zu <strong>${frac(n,d)}</strong>?`, fractionSvg(n,d), `${p} %`, [`${d} %`, `${n*10} %`, `${100-p} %`, `${p/10} %`], `<strong>${frac(n,d)} = ${p} %</strong>.`, `Prozent bedeutet „von 100“. ${frac(n,d)} entspricht ${p} von 100 Teilen.`, [`Denke an bekannte Brüche: ${frac(1,2)}=50 %, ${frac(1,4)}=25 %.`, `Erweitere den Bruch auf den Nenner 100, wenn es geht.`]);
+      }
+    });
+  }
+
+  function genSymmetry(diff){
+    const types = ["figur", "achsen", "lage", "spiegeln", "eigenschaft", "muster"];
+    return pickType(types, {
+      figur(){
+        const data = choice([
+          ["vier gleich lange Seiten und vier rechte Winkel", "Quadrat", "Rechteck", "Dreieck", "Kreis"],
+          ["drei Seiten und drei Ecken", "Dreieck", "Quadrat", "Rechteck", "Kreis"],
+          ["keine Ecken und keine Seiten", "Kreis", "Dreieck", "Quadrat", "Strecke"],
+          ["gegenüberliegende Seiten gleich lang und vier rechte Winkel", "Rechteck", "Kreis", "Dreieck", "Raute"]
+        ]);
+        return task("Figuren erkennen", `Welche Figur hat <strong>${data[0]}</strong>?`, shapesSvg(), data[1], data.slice(2), `<strong>${data[1]}</strong>.`, `Die genannten Eigenschaften beschreiben genau diese Figur.`, [`Achte auf Seiten, Ecken und rechte Winkel.`, `Vergleiche jede Antwort mit allen Eigenschaften.`]);
+      },
+      achsen(){
+        const cases = [["Quadrat",4,"square"],["Rechteck",2,"rect"],["Kreis", "unendlich viele", "circle"],["gleichseitiges Dreieck",3,"tri"],["allgemeines Parallelogramm",0,"para"]];
+        const [name,ans,shape]=choice(cases);
+        return task("Symmetrieachsen", `Wie viele Symmetrieachsen hat ein <strong>${name}</strong>?`, symmetrySvg(shape), String(ans), ["0","1","2","3","4","unendlich viele"].filter(x=>x!==String(ans)).slice(0,4), `<strong>${ans}</strong>.`, `Eine Symmetrieachse teilt eine Figur so, dass beide Seiten beim Falten genau übereinanderliegen.`, [`Stell dir vor, du faltest die Figur an einer Linie.`, `Nur Faltlinien zählen, bei denen beide Hälften genau passen.`]);
+      },
+      lage(){
+        const cases = [["Schienen eines geraden Bahngleises", "parallel"], ["eine Tischkante und ein Tischbein", "senkrecht"], ["zwei Straßen, die sich kreuzen, aber keinen rechten Winkel bilden", "schneiden sich"], ["zwei Strecken, die genau aufeinanderliegen", "deckungsgleich"]];
+        const [desc,ans]=choice(cases);
+        return task("Lagebeziehungen", `Welche Lagebeziehung passt? <strong>${desc}</strong>`, linesSvg(ans), ans, ["parallel","senkrecht","schneiden sich","deckungsgleich"].filter(x=>x!==ans), `<strong>${ans}</strong>.`, `Die Beschreibung passt zu dieser Lagebeziehung.`, [`Parallel bedeutet: gleicher Abstand, kein Schnittpunkt.`, `Senkrecht bedeutet: Schnitt im rechten Winkel.`]);
+      },
+      spiegeln(){
+        const d = rand(1, diff===1?4:7);
+        return task("Spiegelung", `Ein Punkt liegt <strong>${d}</strong> Kästchen rechts von der Spiegelachse. Wo liegt sein Spiegelpunkt?`, mirrorSvg(d), `${d} Kästchen links`, [`${d} Kästchen rechts`, `${d+1} Kästchen links`, `${Math.max(1,d-1)} Kästchen links`, `auf der Spiegelachse`], `<strong>${d} Kästchen links</strong>.`, `Beim Spiegeln bleibt der Abstand zur Spiegelachse gleich, nur die Seite wechselt.`, [`Der Spiegelpunkt hat denselben Abstand zur Achse.`, `Rechts wird links, links wird rechts.`]);
+      },
+      eigenschaft(){
+        const cases = [["Quadrat", "Alle Seiten sind gleich lang.", "Es hat genau drei Ecken.", "Es hat keine rechten Winkel.", "Es ist rund."], ["Rechteck", "Gegenüberliegende Seiten sind gleich lang.", "Alle Seiten müssen verschieden lang sein.", "Es hat drei Seiten.", "Es hat keine Symmetrieachse."], ["Dreieck", "Es hat drei Ecken.", "Es hat vier Seiten.", "Es hat immer vier rechte Winkel.", "Es ist ein Körper."]];
+        const [fig,ans,...wr]=choice(cases);
+        return task("Eigenschaften", `Welche Aussage über <strong>${fig}</strong> stimmt?`, propertySvg(fig), ans, wr, `<strong>${ans}</strong>`, `Diese Aussage beschreibt ein sicheres Merkmal der Figur.`, [`Zähle Seiten und Ecken.`, `Prüfe, ob die Aussage wirklich immer gilt.`]);
+      },
+      muster(){
+        const ok = Math.random()>.5;
+        const name = ok ? "achsensymmetrisch" : "nicht achsensymmetrisch";
+        return task("Muster prüfen", `Ist das Muster achsensymmetrisch?`, patternSvg(ok), ok?"Ja":"Nein", [ok?"Nein":"Ja", "Nur bei Drehung", "Das ist ein Körper"], `<strong>${ok?"Ja":"Nein"}</strong>.`, ok?`Links und rechts der Achse passen genau zusammen.`:`Mindestens ein Feld passt auf der anderen Seite nicht.` , [`Vergleiche jedes Kästchen mit seinem Spiegelkästchen.`, `Eine einzige Abweichung reicht: Dann ist es nicht achsensymmetrisch.`]);
+      }
+    });
+  }
+
+  function genAreaScale(diff){
+    const types = ["umfang", "flaeche", "zusammengesetzt", "einheiten", "massstab", "vergleich"];
+    return pickType(types, {
+      umfang(){
+        const a=rand(3, diff===1?12:28), b=rand(2, diff===1?10:20); const u=2*(a+b);
+        return task("Umfang", `Ein Rechteck ist <strong>${a} cm</strong> lang und <strong>${b} cm</strong> breit. Wie groß ist der Umfang?`, rectangleSvg(a,b), `${u} cm`, [`${a*b} cm`, `${a+b} cm`, `${2*a+b} cm`, `${u} cm²`], `<strong>U = 2·${a} + 2·${b} = ${u} cm</strong>.`, `Der Umfang ist die Länge des Randes. Beim Rechteck gibt es jede Seitenlänge zweimal.`, [`Umfang bedeutet: einmal außen herum.`, `Addiere alle vier Seiten.`]);
+      },
+      flaeche(){
+        const a=rand(3, diff===1?10:18), b=rand(2,diff===1?8:14); const A=a*b;
+        return task("Flächeninhalt", `Ein Rechteck ist <strong>${a} cm</strong> lang und <strong>${b} cm</strong> breit. Wie groß ist der Flächeninhalt?`, gridRectSvg(a,b), `${A} cm²`, [`${2*(a+b)} cm²`, `${a+b} cm²`, `${A} cm`, `${A+a} cm²`], `<strong>A = ${a} · ${b} = ${A} cm²</strong>.`, `Der Flächeninhalt zählt, wie viele Quadratzentimeter in das Rechteck passen.`, [`Fläche wird in Quadrateinheiten gemessen.`, `Beim Rechteck: Länge · Breite.`]);
+      },
+      zusammengesetzt(){
+        const w=rand(4, diff===1?6:8), h=rand(4, diff===1?6:8), cutW=rand(1,Math.floor(w/2)), cutH=rand(1,Math.floor(h/2)); const area=w*h-cutW*cutH;
+        return task("Zerlegen und Ergänzen", `Wie groß ist die markierte Fläche? Ein Kästchen ist <strong>1 cm²</strong>.`, compoundSvg(w,h,cutW,cutH), `${area} cm²`, [`${w*h} cm²`, `${area+cutW*cutH} cm²`, `${area-1} cm²`, `${2*(w+h)} cm²`], `<strong>${area} cm²</strong>.`, `Ergänze zum großen Rechteck: ${w}·${h}=${w*h}. Entfernt sind ${cutW}·${cutH}=${cutW*cutH}. Also ${w*h}−${cutW*cutH}=${area}.`, [`Zähle Kästchen oder zerlege in Rechtecke.`, `Großes Rechteck minus fehlende Ecke ist oft schnell.`]);
+      },
+      einheiten(){
+        const cases = [[1,"dm²",100,"cm²"],[2,"dm²",200,"cm²"],[3,"m²",30000,"cm²"],[4,"m²",400,"dm²"]];
+        const [a,from,correct,to]=choice(diff===1?cases.slice(0,2):cases);
+        return task("Flächeneinheiten", `Wandle um: <strong>${a} ${from} = ? ${to}</strong>`, areaUnitSvg(from,to), `${fmt(correct)} ${to}`, [`${fmt(correct/10)} ${to}`, `${fmt(correct*10)} ${to}`, `${fmt(correct+100)} ${to}`, `${a*10} ${to}`], `<strong>${a} ${from} = ${fmt(correct)} ${to}</strong>.`, `Bei Flächeneinheiten wird pro Schritt mit 100 umgerechnet, weil Länge und Breite umgerechnet werden.`, [`Achtung: Bei Fläche reicht nicht mal 10.`, `1 dm² = 100 cm² und 1 m² = 100 dm².`]);
+      },
+      massstab(){
+        const plan=rand(2, diff===1?8:15); const factor=choice([2,5,10,20,50]); const real=plan*factor;
+        return task("Maßstab", `Auf einem Plan bedeutet <strong>1 cm</strong> in Wirklichkeit <strong>${factor} m</strong>. Wie lang sind <strong>${plan} cm</strong> im Plan in Wirklichkeit?`, scaleSvg(plan,factor), `${real} m`, [`${plan+factor} m`, `${factor} m`, `${real} cm`, `${Math.floor(real/factor)} m`], `<strong>${plan} · ${factor} = ${real} m</strong>.`, `Jeder Zentimeter im Plan steht für ${factor} Meter in Wirklichkeit.`, [`Suche, wofür 1 cm steht.`, `Multipliziere mit der Anzahl der Zentimeter im Plan.`]);
+      },
+      vergleich(){
+        const a=rand(3,8+diff), b=rand(3,8+diff), c=a+1, d=Math.max(2,b-1); const A=a*b, B=c*d; const ans=A>B?"Figur A":A<B?"Figur B":"beide gleich groß";
+        return task("Flächen vergleichen", `Welche rechteckige Figur hat den größeren Flächeninhalt?`, compareRectSvg(a,b,c,d), ans, ["Figur A","Figur B","beide gleich groß"].filter(x=>x!==ans), `<strong>${ans}</strong>.`, `A: ${a}·${b}=${A}. B: ${c}·${d}=${B}. Vergleiche die beiden Flächeninhalte.`, [`Berechne nicht den Umfang, sondern die Fläche.`, `Rechteckfläche = Länge · Breite.`]);
+      }
+    });
+  }
+
+  function genVolume(diff){
+    const types = ["koerper", "quader", "wuerfel", "einheiten", "vergleich", "beschreibung"];
+    return pickType(types, {
+      koerper(){
+        const cases = [["6 rechteckige Flächen, gegenüberliegende Flächen gleich groß", "Quader"], ["6 gleich große quadratische Flächen", "Würfel"], ["2 Kreisflächen und eine gekrümmte Mantelfläche", "Zylinder"], ["eine Spitze und eine kreisförmige Grundfläche", "Kegel"], ["eine Spitze und eine vieleckige Grundfläche", "Pyramide"]];
+        const [desc,ans]=choice(cases);
+        return task("Körper erkennen", `Welcher Körper passt zur Beschreibung: <strong>${desc}</strong>?`, bodiesSvg(ans), ans, ["Quader","Würfel","Zylinder","Kegel","Pyramide"].filter(x=>x!==ans).slice(0,4), `<strong>${ans}</strong>.`, `Die Beschreibung nennt typische Flächen und Formen des Körpers.`, [`Achte auf Grundfläche, Spitze und gekrümmte Flächen.`, `Quader und Würfel haben nur ebene Vierecksflächen.`]);
+      },
+      quader(){
+        const a=rand(2, diff===1?5:8), b=rand(2,diff===1?5:7), c=rand(2,diff===1?4:6); const V=a*b*c;
+        return task("Volumen Quader", `Ein Quader ist <strong>${a}</strong> Würfel lang, <strong>${b}</strong> Würfel breit und <strong>${c}</strong> Würfel hoch. Wie viele Einheitswürfel passen hinein?`, cuboidSvg(a,b,c), `${V} Würfel`, [`${a+b+c} Würfel`, `${2*(a+b+c)} Würfel`, `${a*b} Würfel`, `${V+a} Würfel`], `<strong>V = ${a} · ${b} · ${c} = ${V}</strong> Würfel.`, `Du kannst Schichten denken: Eine Schicht hat ${a}·${b}=${a*b} Würfel. Davon gibt es ${c} Schichten.`, [`Berechne zuerst eine Grundschicht.`, `Volumen des Quaders: Länge · Breite · Höhe.`]);
+      },
+      wuerfel(){
+        const a=rand(2, diff===1?6:10); const V=a*a*a;
+        return task("Volumen Würfel", `Ein Würfel hat eine Kantenlänge von <strong>${a} cm</strong>. Wie groß ist sein Volumen?`, cubeSvg(a), `${V} cm³`, [`${a*a} cm³`, `${6*a*a} cm³`, `${3*a} cm³`, `${V} cm²`], `<strong>V = ${a} · ${a} · ${a} = ${V} cm³</strong>.`, `Beim Würfel sind Länge, Breite und Höhe gleich lang.`, [`Volumen wird in Kubikeinheiten gemessen.`, `Rechne Kantenlänge · Kantenlänge · Kantenlänge.`]);
+      },
+      einheiten(){
+        const cases = [[1,"dm³",1000,"cm³"],[2,"dm³",2000,"cm³"],[3,"m³",3000,"dm³"],[4,"l",4000,"ml"]];
+        const [a,from,correct,to] = choice(diff===1?cases.slice(0,2):cases);
+        return task("Volumeneinheiten", `Wandle um: <strong>${a} ${from} = ? ${to}</strong>`, volumeUnitSvg(from,to), `${fmt(correct)} ${to}`, [`${fmt(correct/10)} ${to}`, `${fmt(correct/100)} ${to}`, `${fmt(correct+1000)} ${to}`, `${a*100} ${to}`], `<strong>${a} ${from} = ${fmt(correct)} ${to}</strong>.`, `Bei Volumen ist ein Schritt oft Faktor 1000: 1 dm³ = 1000 cm³ und 1 m³ = 1000 dm³.`, [`Denk an den großen Würfel aus 10·10·10 kleinen Würfeln.`, `10 · 10 · 10 = 1000.`]);
+      },
+      vergleich(){
+        const a=rand(2,6), b=rand(2,6), c=rand(2,6), x=rand(2,6), y=rand(2,6), z=rand(2,6); const A=a*b*c, B=x*y*z; const ans=A>B?"Quader A":A<B?"Quader B":"beide gleich groß";
+        return task("Volumen vergleichen", `Welcher Quader hat das größere Volumen?`, compareCuboidsSvg(a,b,c,x,y,z), ans, ["Quader A","Quader B","beide gleich groß"].filter(t=>t!==ans), `<strong>${ans}</strong>.`, `A: ${a}·${b}·${c}=${A}. B: ${x}·${y}·${z}=${B}.`, [`Berechne beide Volumina.`, `Vergleiche die Anzahl der Einheitswürfel.`]);
+      },
+      beschreibung(){
+        const cases = [["Quader", "Er hat 8 Ecken, 12 Kanten und 6 Flächen."], ["Würfel", "Alle 12 Kanten sind gleich lang."], ["Zylinder", "Er hat zwei Kreisflächen."], ["Kegel", "Er hat genau eine Spitze."], ["Pyramide", "Seitenflächen laufen in einer Spitze zusammen."]];
+        const [body,ans] = choice(cases);
+        return task("Körper beschreiben", `Welche Aussage über <strong>${body}</strong> stimmt?`, bodiesSvg(body), ans, cases.map(x=>x[1]).filter(x=>x!==ans).slice(0,4), `<strong>${ans}</strong>`, `Diese Aussage beschreibt ein typisches Merkmal des Körpers ${body}.`, [`Denke an Ecken, Kanten und Flächen.`, `Runde Körper haben oft gekrümmte Flächen.`]);
+      }
+    });
+  }
+
+  // ---------- Task helpers ----------
+  function task(type, prompt, visual, correct, wrongs, solution, explanation, hints){
+    const opts = makeOptions(correct, wrongs);
+    return {type, prompt, visual, options: opts, answer: String(correct), solution, explanation, hints, short:type};
+  }
+  function makeOptions(correct, wrongs){
+    const arr = [String(correct), ...wrongs.map(String)].filter(v => v !== "undefined" && v !== "NaN");
+    const seen = [];
+    arr.forEach(v => { if(!seen.includes(v)) seen.push(v); });
+    let n=1;
+    while(seen.length<4){ seen.push(String(Number.parseInt(String(correct).replace(/\D/g,""),10)+n || n)); n++; }
+    return shuffle(seen.slice(0,4).map(v => ({label:v, value:v})));
+  }
+  function pickType(types, map){ return map[choice(types)](); }
+  function rand(min,max){ return Math.floor(Math.random()*(max-min+1))+min; }
+  function choice(a){ return a[Math.floor(Math.random()*a.length)]; }
+  function shuffle(a){ return [...a].sort(()=>Math.random()-.5); }
+  function fmt(n){ return Number(n).toLocaleString("de-DE"); }
+  function gcd(a,b){ a=Math.abs(a); b=Math.abs(b); while(b){[a,b]=[b,a%b];} return a||1; }
+  function digits(n){ return String(Math.abs(n)).split("").map(Number); }
+  function sumDigits(n){ return digits(n).reduce((a,b)=>a+b,0); }
+  function primeFactors(n){ const f={}; let d=2; while(n>1){ while(n%d===0){f[d]=(f[d]||0)+1; n/=d;} d++; } return f; }
+  function factorString(f){ return Object.entries(f).filter(([p,e])=>e>0).map(([p,e]) => e>1 ? `${p}<sup>${e}</sup>` : p).join(" · ") || "1"; }
+  function uniqueNums(a){ return [...new Set(a)]; }
+  function frac(n,d){ return `<span class="frac"><span>${n}</span><span class="line"></span><span>${d}</span></span>`; }
+  function strip(html){ const div=document.createElement("div"); div.innerHTML=html; return div.textContent || div.innerText || ""; }
+  function escapeHtml(s){ return String(s).replace(/[&<>"]/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[m])); }
+  function escapeAttr(s){ return escapeHtml(s).replace(/'/g,"&#39;"); }
+  function toast(msg){ els.toast.textContent = msg; els.toast.classList.add("show"); setTimeout(()=>els.toast.classList.remove("show"), 2600); }
+  function confetti(count=28){
+    els.confetti.innerHTML = "";
+    const colors=["#2563eb","#22c55e","#f59e0b","#db2777","#7c3aed"];
+    for(let i=0;i<count;i++){
+      const p=document.createElement("i"); p.style.left=Math.random()*100+"vw"; p.style.background=choice(colors); p.style.animationDelay=(Math.random()*250)+"ms"; p.style.transform=`rotate(${Math.random()*180}deg)`; els.confetti.appendChild(p);
+    }
+    setTimeout(()=>els.confetti.innerHTML="", 1500);
+  }
+
+  // ---------- SVG helpers ----------
+  function placeValueSvg(n,p){
+    const names=["HT","ZT","T","H","Z","E"]; const s=String(n).padStart(6," ");
+    const idx = {100000:0,10000:1,1000:2,100:3,10:4,1:5}[p];
+    return `<svg viewBox="0 0 420 90" role="img" aria-label="Stellenwerttafel"><rect width="420" height="90" rx="16" fill="#fff" stroke="#cbd5e1"/>${names.map((nm,i)=>`<rect x="${i*70}" y="0" width="70" height="90" fill="${i===idx?'#dbeafe':'transparent'}" stroke="#e2e8f0"/><text x="${i*70+35}" y="28" text-anchor="middle" class="svg-small">${nm}</text><text x="${i*70+35}" y="62" text-anchor="middle" class="svg-label">${s[i]||''}</text>`).join("")}</svg>`;
+  }
+  function placeValueBuildSvg(t,h,z,e){ return `<svg viewBox="0 0 420 90"><rect width="420" height="90" rx="16" fill="#fff" stroke="#cbd5e1"/>${[["T",t],["H",h],["Z",z],["E",e]].map((x,i)=>`<rect x="${i*105}" y="0" width="105" height="90" fill="${i%2?'#f8fafc':'#dbeafe'}" stroke="#e2e8f0"/><text x="${i*105+52}" y="30" text-anchor="middle" class="svg-small">${x[0]}</text><text x="${i*105+52}" y="64" text-anchor="middle" class="svg-label">${x[1]}</text>`).join("")}</svg>`; }
+  function numberLineSvg(nums){ const min=Math.min(...nums), max=Math.max(...nums); return `<svg viewBox="0 0 460 90"><line x1="30" y1="50" x2="430" y2="50" stroke="#334155" stroke-width="3"/>${nums.map(n=>{const x=30+(n-min)/(max-min||1)*400;return `<circle cx="${x}" cy="50" r="7" fill="#2563eb"/><text x="${x}" y="78" text-anchor="middle" class="svg-small">${fmt(n)}</text>`}).join("")}</svg>`; }
+  function unitSvg(from,to,factor){ return `<svg viewBox="0 0 430 80"><rect x="18" y="18" width="120" height="44" rx="14" fill="#dbeafe"/><rect x="292" y="18" width="120" height="44" rx="14" fill="#dcfce7"/><text x="78" y="46" text-anchor="middle" class="svg-label">${from}</text><text x="352" y="46" text-anchor="middle" class="svg-label">${to}</text><path d="M150 40 H278" stroke="#334155" stroke-width="4" marker-end="url(#a)"/><text x="214" y="28" text-anchor="middle" class="svg-small">· ${factor}</text><defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker></defs></svg>`; }
+  function roundSvg(n,p){ const low=Math.floor(n/p)*p, high=low+p; return markedNumberLineSvg(low,p, Math.round((n-low)/p*4), `${fmt(low)}`, `${fmt(high)}`, true); }
+  function markedNumberLineSvg(start,step,pos,l1,l2,raw=false){ const ticks=5; const x=40+pos*(380/ticks); return `<svg viewBox="0 0 460 100"><line x1="40" y1="55" x2="420" y2="55" stroke="#334155" stroke-width="3"/>${Array.from({length:ticks+1},(_,i)=>`<line x1="${40+i*(380/ticks)}" y1="45" x2="${40+i*(380/ticks)}" y2="65" stroke="#334155"/><text x="${40+i*(380/ticks)}" y="87" text-anchor="middle" class="svg-small">${raw ? (i===0?l1:i===ticks?l2:'') : fmt(start+i*step)}</text>`).join("")}<circle cx="${x}" cy="55" r="10" fill="#db2777"/><text x="${x}" y="30" text-anchor="middle" class="svg-label">?</text></svg>`; }
+  function rocketSvg(op){ return `<svg viewBox="0 0 420 100"><path d="M70 55 C120 10 245 10 340 54 C245 98 120 98 70 55Z" fill="#ffedd5" stroke="#fb923c" stroke-width="3"/><text x="205" y="62" text-anchor="middle" style="font:900 34px system-ui;fill:#9a3412">${op}</text><circle cx="330" cy="54" r="16" fill="#dbeafe" stroke="#2563eb"/></svg>`; }
+  function termSvg(){ return `<svg viewBox="0 0 420 90"><rect x="30" y="18" width="360" height="54" rx="18" fill="#f8fafc" stroke="#cbd5e1"/><text x="210" y="53" text-anchor="middle" class="svg-label">Klammer → Punkt → Strich</text></svg>`; }
+  function lawSvg(){ return `<svg viewBox="0 0 420 90"><circle cx="115" cy="45" r="27" fill="#dcfce7"/><circle cx="210" cy="45" r="27" fill="#dbeafe"/><circle cx="305" cy="45" r="27" fill="#fef3c7"/><path d="M145 45 H180 M240 45 H275" stroke="#334155" stroke-width="3"/><text x="210" y="80" text-anchor="middle" class="svg-small">Tauschen und geschickt klammern</text></svg>`; }
+  function divisorSvg(d){ return `<svg viewBox="0 0 420 90"><rect x="60" y="22" width="300" height="46" rx="18" fill="#f8fafc" stroke="#cbd5e1"/><text x="210" y="53" text-anchor="middle" class="svg-label">Teilbarkeitsregel für ${d}</text></svg>`; }
+  function primeSvg(n){ return `<svg viewBox="0 0 420 90"><text x="210" y="38" text-anchor="middle" class="svg-label">${n}</text><path d="M210 45 v22 M150 67 h120" stroke="#334155" stroke-width="3"/><text x="150" y="84" text-anchor="middle" class="svg-small">Primzahl</text><text x="270" y="84" text-anchor="middle" class="svg-small">Rest zerlegen</text></svg>`; }
+  function inverseSvg(){ return `<svg viewBox="0 0 420 90"><path d="M70 45 H350" stroke="#334155" stroke-width="4" marker-end="url(#arr1)"/><path d="M350 65 H70" stroke="#7c3aed" stroke-width="4" marker-end="url(#arr2)"/><text x="210" y="30" text-anchor="middle" class="svg-small">vorwärts rechnen</text><text x="210" y="84" text-anchor="middle" class="svg-small">rückwärts lösen</text><defs><marker id="arr1" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker><marker id="arr2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#7c3aed"/></marker></defs></svg>`; }
+  function fractionSvg(num,den){ const w=360/den; return `<svg viewBox="0 0 420 90"><rect x="30" y="28" width="360" height="34" rx="10" fill="#fff" stroke="#cbd5e1"/>${Array.from({length:den},(_,i)=>`<rect x="${30+i*w}" y="28" width="${w}" height="34" fill="${i<num?'#f9a8d4':'transparent'}" stroke="#cbd5e1"/>`).join("")}<text x="210" y="82" text-anchor="middle" class="svg-small">${num} von ${den} Teilen markiert</text></svg>`; }
+  function compareFractionsSvg(a,d,b,e){ return `<svg viewBox="0 0 420 120"><text x="110" y="20" text-anchor="middle" class="svg-small">${a}/${d}</text><g transform="translate(0,10) scale(.48)">${fractionSvg(a,d).replace('<svg viewBox="0 0 420 90">','')}</g><text x="310" y="20" text-anchor="middle" class="svg-small">${b}/${e}</text><g transform="translate(200,10) scale(.48)">${fractionSvg(b,e).replace('<svg viewBox="0 0 420 90">','')}</g></svg>`; }
+  function fractionLineSvg(num,den){ return `<svg viewBox="0 0 460 100"><line x1="40" y1="55" x2="420" y2="55" stroke="#334155" stroke-width="3"/>${Array.from({length:den+1},(_,i)=>`<line x1="${40+i*(380/den)}" y1="45" x2="${40+i*(380/den)}" y2="65" stroke="#334155"/><text x="${40+i*(380/den)}" y="87" text-anchor="middle" class="svg-small">${i===0?'0':i===den?'1':''}</text>`).join("")}<circle cx="${40+num*(380/den)}" cy="55" r="10" fill="#db2777"/><text x="${40+num*(380/den)}" y="31" text-anchor="middle" class="svg-label">?</text></svg>`; }
+  function shapesSvg(){ return `<svg viewBox="0 0 420 120"><rect x="40" y="30" width="58" height="58" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/><rect x="130" y="38" width="92" height="44" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/><polygon points="275,30 235,90 315,90" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/><circle cx="365" cy="60" r="31" fill="#fce7f3" stroke="#db2777" stroke-width="3"/></svg>`; }
+  function symmetrySvg(shape){ const shapeSvg = {square:'<rect x="160" y="25" width="90" height="90" fill="#ede9fe" stroke="#7c3aed" stroke-width="3"/>',rect:'<rect x="130" y="40" width="160" height="60" fill="#ede9fe" stroke="#7c3aed" stroke-width="3"/>',circle:'<circle cx="210" cy="70" r="48" fill="#ede9fe" stroke="#7c3aed" stroke-width="3"/>',tri:'<polygon points="210,25 150,115 270,115" fill="#ede9fe" stroke="#7c3aed" stroke-width="3"/>',para:'<polygon points="150,40 285,40 250,100 115,100" fill="#ede9fe" stroke="#7c3aed" stroke-width="3"/>'}; return `<svg viewBox="0 0 420 140">${shapeSvg[shape]||shapeSvg.square}<line x1="210" y1="15" x2="210" y2="125" stroke="#64748b" stroke-width="2" stroke-dasharray="5 5"/></svg>`; }
+  function linesSvg(kind){ if(kind==="parallel") return `<svg viewBox="0 0 420 90"><line x1="60" y1="30" x2="360" y2="30" stroke="#334155" stroke-width="5"/><line x1="60" y1="60" x2="360" y2="60" stroke="#334155" stroke-width="5"/></svg>`; if(kind==="senkrecht") return `<svg viewBox="0 0 420 90"><line x1="210" y1="15" x2="210" y2="75" stroke="#334155" stroke-width="5"/><line x1="100" y1="45" x2="320" y2="45" stroke="#334155" stroke-width="5"/><path d="M210 45 h22 v22" fill="none" stroke="#dc2626" stroke-width="3"/></svg>`; return `<svg viewBox="0 0 420 90"><line x1="90" y1="20" x2="330" y2="75" stroke="#334155" stroke-width="5"/><line x1="110" y1="75" x2="310" y2="20" stroke="#334155" stroke-width="5"/></svg>`; }
+  function mirrorSvg(d){ return `<svg viewBox="0 0 420 120"><line x1="210" y1="15" x2="210" y2="105" stroke="#7c3aed" stroke-width="4" stroke-dasharray="8 8"/><circle cx="${210+d*20}" cy="60" r="10" fill="#db2777"/><circle cx="${210-d*20}" cy="60" r="10" fill="#22c55e" opacity=".35"/><text x="210" y="113" text-anchor="middle" class="svg-small">Spiegelachse</text>${Array.from({length:17},(_,i)=>`<line x1="${50+i*20}" y1="20" x2="${50+i*20}" y2="100" stroke="#e2e8f0"/>`).join("")}</svg>`; }
+  function propertySvg(fig){ return shapesSvg(); }
+  function patternSvg(ok){ const cells = ok? [[1,1],[2,1],[1,2],[2,2],[0,3],[3,3]] : [[1,1],[2,1],[1,2],[3,2],[0,3],[3,3]]; return `<svg viewBox="0 0 220 180"><line x1="110" y1="10" x2="110" y2="170" stroke="#7c3aed" stroke-width="4" stroke-dasharray="7 7"/>${Array.from({length:4},(_,x)=>Array.from({length:4},(_,y)=>`<rect x="${30+x*40}" y="${10+y*40}" width="38" height="38" fill="${cells.some(c=>c[0]===x&&c[1]===y)?'#ddd6fe':'#fff'}" stroke="#cbd5e1"/>`).join("")).join("")}</svg>`; }
+  function rectangleSvg(a,b){ return `<svg viewBox="0 0 420 160"><rect x="90" y="35" width="240" height="90" fill="#ccfbf1" stroke="#0f766e" stroke-width="4"/><text x="210" y="28" text-anchor="middle" class="svg-label">${a} cm</text><text x="345" y="84" class="svg-label">${b} cm</text></svg>`; }
+  function gridRectSvg(a,b){ const cell=18, w=Math.min(a,14), h=Math.min(b,8); return `<svg viewBox="0 0 ${w*cell+70} ${h*cell+60}"><text x="${w*cell/2+30}" y="18" text-anchor="middle" class="svg-small">${a} cm</text><text x="${w*cell+45}" y="${h*cell/2+35}" class="svg-small">${b} cm</text>${Array.from({length:w},(_,i)=>Array.from({length:h},(_,j)=>`<rect x="${30+i*cell}" y="${30+j*cell}" width="${cell}" height="${cell}" fill="#ccfbf1" stroke="#99f6e4"/>`).join("")).join("")}</svg>`; }
+  function compoundSvg(w,h,cw,ch){ const cell=28; return `<svg viewBox="0 0 ${w*cell+40} ${h*cell+40}">${Array.from({length:w},(_,i)=>Array.from({length:h},(_,j)=>{ const cut=i>=w-cw && j<ch; return `<rect x="${20+i*cell}" y="${20+j*cell}" width="${cell}" height="${cell}" fill="${cut?'#fff':'#ccfbf1'}" stroke="#94a3b8"/>`; }).join("")).join("")}</svg>`; }
+  function areaUnitSvg(from,to){ return `<svg viewBox="0 0 420 90"><rect x="80" y="20" width="60" height="60" fill="#ccfbf1" stroke="#0f766e"/><rect x="280" y="20" width="60" height="60" fill="#dcfce7" stroke="#16a34a"/><path d="M155 50 H265" stroke="#334155" stroke-width="4" marker-end="url(#aa)"/><text x="210" y="35" text-anchor="middle" class="svg-small">Fläche</text><text x="110" y="88" text-anchor="middle" class="svg-small">${from}</text><text x="310" y="88" text-anchor="middle" class="svg-small">${to}</text><defs><marker id="aa" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker></defs></svg>`; }
+  function scaleSvg(plan,factor){ return `<svg viewBox="0 0 420 110"><path d="M70 70 H350" stroke="#0f766e" stroke-width="8"/><line x1="70" y1="55" x2="70" y2="85" stroke="#334155"/><line x1="350" y1="55" x2="350" y2="85" stroke="#334155"/><text x="210" y="45" text-anchor="middle" class="svg-label">Planstrecke</text><text x="210" y="100" text-anchor="middle" class="svg-small">1 cm → ${factor} m</text></svg>`; }
+  function compareRectSvg(a,b,c,d){ return `<svg viewBox="0 0 420 170"><text x="110" y="25" text-anchor="middle" class="svg-label">A: ${a}×${b}</text><rect x="50" y="40" width="${a*12}" height="${b*12}" fill="#ccfbf1" stroke="#0f766e" stroke-width="3"/><text x="310" y="25" text-anchor="middle" class="svg-label">B: ${c}×${d}</text><rect x="250" y="40" width="${c*12}" height="${d*12}" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/></svg>`; }
+  function bodiesSvg(name){ return `<svg viewBox="0 0 420 150"><text x="210" y="24" text-anchor="middle" class="svg-label">${name}</text><g transform="translate(160,40)">${name==="Zylinder"?'<ellipse cx="50" cy="18" rx="45" ry="16" fill="#e0f2fe" stroke="#0284c7"/><rect x="5" y="18" width="90" height="70" fill="#e0f2fe" stroke="#0284c7"/><ellipse cx="50" cy="88" rx="45" ry="16" fill="#bae6fd" stroke="#0284c7"/>':name==="Kegel"?'<ellipse cx="50" cy="88" rx="50" ry="17" fill="#bae6fd" stroke="#0284c7"/><path d="M0 88 L50 8 L100 88" fill="#e0f2fe" stroke="#0284c7"/>':name==="Pyramide"?'<polygon points="10,95 90,95 65,115 0,115" fill="#e0f2fe" stroke="#0284c7"/><path d="M10 95 L50 10 L90 95 M50 10 L65 115 M50 10 L0 115" fill="none" stroke="#0284c7"/>':name==="Würfel"?'<rect x="20" y="35" width="70" height="70" fill="#dbeafe" stroke="#2563eb"/><path d="M20 35 L45 15 H115 L90 35 M90 35 V105 L115 85 V15" fill="#bfdbfe" stroke="#2563eb"/>':'<rect x="5" y="45" width="110" height="55" fill="#dbeafe" stroke="#2563eb"/><path d="M5 45 L35 20 H145 L115 45 M115 45 V100 L145 75 V20" fill="#bfdbfe" stroke="#2563eb"/>'}</g></svg>`; }
+  function cuboidSvg(a,b,c){ return `<svg viewBox="0 0 420 170"><rect x="115" y="70" width="160" height="70" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/><path d="M115 70 L155 35 H315 L275 70 M275 70 V140 L315 105 V35" fill="#bfdbfe" stroke="#2563eb" stroke-width="3"/><text x="195" y="160" text-anchor="middle" class="svg-small">${a} lang</text><text x="310" y="125" class="svg-small">${b} breit</text><text x="92" y="105" class="svg-small">${c} hoch</text></svg>`; }
+  function cubeSvg(a){ return `<svg viewBox="0 0 420 160"><rect x="155" y="55" width="80" height="80" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/><path d="M155 55 L190 25 H270 L235 55 M235 55 V135 L270 105 V25" fill="#bfdbfe" stroke="#2563eb" stroke-width="3"/><text x="195" y="153" text-anchor="middle" class="svg-small">${a} cm</text></svg>`; }
+  function volumeUnitSvg(from,to){ return `<svg viewBox="0 0 420 110"><g transform="translate(95,25)"><rect width="55" height="55" fill="#dbeafe" stroke="#2563eb"/><path d="M0 0 L20 -15 H75 L55 0 M55 0 V55 L75 40 V-15" fill="#bfdbfe" stroke="#2563eb"/></g><path d="M190 50 H270" stroke="#334155" stroke-width="4" marker-end="url(#vv)"/><g transform="translate(300,37) scale(.42)"><rect width="55" height="55" fill="#dcfce7" stroke="#16a34a"/><path d="M0 0 L20 -15 H75 L55 0 M55 0 V55 L75 40 V-15" fill="#bbf7d0" stroke="#16a34a"/></g><text x="123" y="100" text-anchor="middle" class="svg-small">${from}</text><text x="323" y="100" text-anchor="middle" class="svg-small">${to}</text><defs><marker id="vv" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker></defs></svg>`; }
+  function compareCuboidsSvg(a,b,c,x,y,z){ return `<svg viewBox="0 0 420 180"><text x="115" y="25" text-anchor="middle" class="svg-label">A: ${a}×${b}×${c}</text><g transform="translate(-55,10) scale(.75)">${cuboidSvg(a,b,c).replace('<svg viewBox="0 0 420 170">','')}</g><text x="315" y="25" text-anchor="middle" class="svg-label">B: ${x}×${y}×${z}</text><g transform="translate(145,10) scale(.75)">${cuboidSvg(x,y,z).replace('<svg viewBox="0 0 420 170">','')}</g></svg>`; }
+})();
+</script>
+</body>
+</html>
