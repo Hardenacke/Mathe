@@ -1142,7 +1142,254 @@
                     "Lösungsverfahren und Algorithmen",
                     "Algorithmische Näherungsverfahren"
                   ],
-                  "materialien": [],
+                  "materialien": [
+                    {
+                      "id": "einfuehrung-irrationale-zahlen",
+                      "titel": "Einführung: Irrationale Zahlen und Wurzeln",
+                      "kurztitel": "Irrationale Zahlen und Wurzeln",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Einführung: Irrationale Zahlen und Wurzeln. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "einfuehrung-irrationale-zahlen.html",
+                      "pfad": "klasse-9/zahlen-und-rechnen/reelle-zahlen/einfuehrung-irrationale-zahlen.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "zahlen-und-rechnen",
+                        "themaId": "reelle-zahlen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Reelle Zahlen und Potenzen",
+                      "thema": "Reelle Zahlen",
+                      "unterthema": "Einführung: Irrationale Zahlen und Wurzeln",
+                      "kompetenzbereich": [
+                        "Reelle Zahlen und Potenzen",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Wurzeln",
+                        "Zahlenbereichserweiterung zu reellen Zahlen",
+                        "Begriffsbildung: Wurzeln",
+                        "Gesetze und Regeln: Wurzelgesetze",
+                        "Lösungsverfahren und Algorithmen"
+                      ],
+                      "tags": [
+                        "begriffsbildung-wurzeln",
+                        "gesetze-und-regeln-wurzelgesetze",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "lernpfad",
+                        "loesungsverfahren-und-algorithmen",
+                        "mathematik",
+                        "reelle-zahlen",
+                        "sekundarstufe-i",
+                        "wurzeln",
+                        "zahlen-und-rechnen",
+                        "zahlenbereichserweiterung-zu-reellen-zahlen"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "dezimaldarstellungen-rational-irrational",
+                      "titel": "Dezimaldarstellungen untersuchen",
+                      "kurztitel": "Dezimaldarstellungen untersuchen",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Dezimaldarstellungen untersuchen. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "dezimaldarstellungen-rational-irrational.html",
+                      "pfad": "klasse-9/zahlen-und-rechnen/reelle-zahlen/dezimaldarstellungen-rational-irrational.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "zahlen-und-rechnen",
+                        "themaId": "reelle-zahlen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Reelle Zahlen und Potenzen",
+                      "thema": "Reelle Zahlen",
+                      "unterthema": "Dezimaldarstellungen untersuchen",
+                      "kompetenzbereich": [
+                        "Reelle Zahlen und Potenzen",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Dezimaldarstellungen",
+                        "Darstellungswechsel",
+                        "Zahlenbereichserweiterung zu reellen Zahlen",
+                        "Begriffsbildung: Wurzeln",
+                        "Gesetze und Regeln: Wurzelgesetze",
+                        "Lösungsverfahren und Algorithmen"
+                      ],
+                      "tags": [
+                        "begriffsbildung-wurzeln",
+                        "darstellungswechsel",
+                        "dezimaldarstellungen",
+                        "gesetze-und-regeln-wurzelgesetze",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "lernpfad",
+                        "loesungsverfahren-und-algorithmen",
+                        "mathematik",
+                        "reelle-zahlen",
+                        "sekundarstufe-i",
+                        "zahlen-und-rechnen",
+                        "zahlenbereichserweiterung-zu-reellen-zahlen"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "wurzeln-naehern-heron",
+                      "titel": "Wurzeln näherungsweise bestimmen",
+                      "kurztitel": "Wurzeln näherungsweise bestimmen",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Wurzeln näherungsweise bestimmen. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "wurzeln-naehern-heron.html",
+                      "pfad": "klasse-9/zahlen-und-rechnen/reelle-zahlen/wurzeln-naehern-heron.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "zahlen-und-rechnen",
+                        "themaId": "reelle-zahlen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Reelle Zahlen und Potenzen",
+                      "thema": "Reelle Zahlen",
+                      "unterthema": "Wurzeln näherungsweise bestimmen",
+                      "kompetenzbereich": [
+                        "Reelle Zahlen und Potenzen",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Wurzeln",
+                        "Zahlenbereichserweiterung zu reellen Zahlen",
+                        "Begriffsbildung: Wurzeln",
+                        "Gesetze und Regeln: Wurzelgesetze",
+                        "Lösungsverfahren und Algorithmen"
+                      ],
+                      "tags": [
+                        "begriffsbildung-wurzeln",
+                        "gesetze-und-regeln-wurzelgesetze",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "lernpfad",
+                        "loesungsverfahren-und-algorithmen",
+                        "mathematik",
+                        "reelle-zahlen",
+                        "sekundarstufe-i",
+                        "wurzeln",
+                        "zahlen-und-rechnen",
+                        "zahlenbereichserweiterung-zu-reellen-zahlen"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "wurzelgesetze-begruenden",
+                      "titel": "Wurzelgesetze begründen und anwenden",
+                      "kurztitel": "Wurzelgesetze begründen und anwenden",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Wurzelgesetze begründen und anwenden. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "wurzelgesetze-begruenden.html",
+                      "pfad": "klasse-9/zahlen-und-rechnen/reelle-zahlen/wurzelgesetze-begruenden.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "zahlen-und-rechnen",
+                        "themaId": "reelle-zahlen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Reelle Zahlen und Potenzen",
+                      "thema": "Reelle Zahlen",
+                      "unterthema": "Wurzelgesetze begründen und anwenden",
+                      "kompetenzbereich": [
+                        "Reelle Zahlen und Potenzen",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Wurzeln",
+                        "Zahlenbereichserweiterung zu reellen Zahlen",
+                        "Begriffsbildung: Wurzeln",
+                        "Gesetze und Regeln: Wurzelgesetze",
+                        "Lösungsverfahren und Algorithmen"
+                      ],
+                      "tags": [
+                        "begriffsbildung-wurzeln",
+                        "gesetze-und-regeln-wurzelgesetze",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "lernpfad",
+                        "loesungsverfahren-und-algorithmen",
+                        "mathematik",
+                        "reelle-zahlen",
+                        "sekundarstufe-i",
+                        "wurzeln",
+                        "zahlen-und-rechnen",
+                        "zahlenbereichserweiterung-zu-reellen-zahlen"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    }
+                  ],
                   "tags": [
                     "klasse-9",
                     "reelle-zahlen",
@@ -1162,7 +1409,258 @@
                     "Prozentuale Zusammenhänge",
                     "Rechnen mit Potenzen"
                   ],
-                  "materialien": [],
+                  "materialien": [
+                    {
+                      "id": "einfuehrung-potenzen-wurzeln",
+                      "titel": "Einführung: Potenzen und Wurzeln",
+                      "kurztitel": "Potenzen und Wurzeln",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Einführung: Potenzen und Wurzeln. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "einfuehrung-potenzen-wurzeln.html",
+                      "pfad": "klasse-9/zahlen-und-rechnen/prozente-potenzen-und-potenzgesetze/einfuehrung-potenzen-wurzeln.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "zahlen-und-rechnen",
+                        "themaId": "prozente-potenzen-und-potenzgesetze"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Reelle Zahlen und Potenzen",
+                      "thema": "Prozente, Potenzen und Potenzgesetze",
+                      "unterthema": "Einführung: Potenzen und Wurzeln",
+                      "kompetenzbereich": [
+                        "Reelle Zahlen und Potenzen",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Wurzeln",
+                        "Potenzen",
+                        "Begriffsbildung: Potenzen",
+                        "Gesetze und Regeln: Potenzgesetze",
+                        "Prozentuale Zusammenhänge",
+                        "Rechnen mit Potenzen"
+                      ],
+                      "tags": [
+                        "begriffsbildung-potenzen",
+                        "gesetze-und-regeln-potenzgesetze",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "lernpfad",
+                        "mathematik",
+                        "potenzen",
+                        "prozente-potenzen-und-potenzgesetze",
+                        "prozentuale-zusammenhaenge",
+                        "rechnen-mit-potenzen",
+                        "sekundarstufe-i",
+                        "wurzeln",
+                        "zahlen-und-rechnen"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "zehnerpotenzen-groessenordnungen",
+                      "titel": "Zehnerpotenzen und Größenordnungen",
+                      "kurztitel": "Zehnerpotenzen und Größenordnungen",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Zehnerpotenzen und Größenordnungen. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "zehnerpotenzen-groessenordnungen.html",
+                      "pfad": "klasse-9/zahlen-und-rechnen/prozente-potenzen-und-potenzgesetze/zehnerpotenzen-groessenordnungen.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "zahlen-und-rechnen",
+                        "themaId": "prozente-potenzen-und-potenzgesetze"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Reelle Zahlen und Potenzen",
+                      "thema": "Prozente, Potenzen und Potenzgesetze",
+                      "unterthema": "Zehnerpotenzen und Größenordnungen",
+                      "kompetenzbereich": [
+                        "Reelle Zahlen und Potenzen",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Potenzen",
+                        "Zehnerpotenzen",
+                        "Begriffsbildung: Potenzen",
+                        "Gesetze und Regeln: Potenzgesetze",
+                        "Prozentuale Zusammenhänge",
+                        "Rechnen mit Potenzen"
+                      ],
+                      "tags": [
+                        "begriffsbildung-potenzen",
+                        "gesetze-und-regeln-potenzgesetze",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "lernpfad",
+                        "mathematik",
+                        "potenzen",
+                        "prozente-potenzen-und-potenzgesetze",
+                        "prozentuale-zusammenhaenge",
+                        "rechnen-mit-potenzen",
+                        "sekundarstufe-i",
+                        "zahlen-und-rechnen",
+                        "zehnerpotenzen"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "potenzgesetze-negative-exponenten",
+                      "titel": "Potenzgesetze und negative Exponenten",
+                      "kurztitel": "Potenzgesetze und negative Exponenten",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Potenzgesetze und negative Exponenten. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "potenzgesetze-negative-exponenten.html",
+                      "pfad": "klasse-9/zahlen-und-rechnen/prozente-potenzen-und-potenzgesetze/potenzgesetze-negative-exponenten.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "zahlen-und-rechnen",
+                        "themaId": "prozente-potenzen-und-potenzgesetze"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Reelle Zahlen und Potenzen",
+                      "thema": "Prozente, Potenzen und Potenzgesetze",
+                      "unterthema": "Potenzgesetze und negative Exponenten",
+                      "kompetenzbereich": [
+                        "Reelle Zahlen und Potenzen",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Potenzen",
+                        "Begriffsbildung: Potenzen",
+                        "Gesetze und Regeln: Potenzgesetze",
+                        "Prozentuale Zusammenhänge",
+                        "Rechnen mit Potenzen"
+                      ],
+                      "tags": [
+                        "begriffsbildung-potenzen",
+                        "gesetze-und-regeln-potenzgesetze",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "lernpfad",
+                        "mathematik",
+                        "potenzen",
+                        "prozente-potenzen-und-potenzgesetze",
+                        "prozentuale-zusammenhaenge",
+                        "rechnen-mit-potenzen",
+                        "sekundarstufe-i",
+                        "zahlen-und-rechnen"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "potenz-wurzel-schreibweisen",
+                      "titel": "Zwischen Potenz- und Wurzelschreibweise wechseln",
+                      "kurztitel": "Zwischen Potenz- und Wurzelschreibweise wechseln",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Zwischen Potenz- und Wurzelschreibweise wechseln. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "potenz-wurzel-schreibweisen.html",
+                      "pfad": "klasse-9/zahlen-und-rechnen/prozente-potenzen-und-potenzgesetze/potenz-wurzel-schreibweisen.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "zahlen-und-rechnen",
+                        "themaId": "prozente-potenzen-und-potenzgesetze"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Reelle Zahlen und Potenzen",
+                      "thema": "Prozente, Potenzen und Potenzgesetze",
+                      "unterthema": "Zwischen Potenz- und Wurzelschreibweise wechseln",
+                      "kompetenzbereich": [
+                        "Reelle Zahlen und Potenzen",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Wurzeln",
+                        "Potenzen",
+                        "Begriffsbildung: Potenzen",
+                        "Gesetze und Regeln: Potenzgesetze",
+                        "Prozentuale Zusammenhänge",
+                        "Rechnen mit Potenzen"
+                      ],
+                      "tags": [
+                        "begriffsbildung-potenzen",
+                        "gesetze-und-regeln-potenzgesetze",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "lernpfad",
+                        "mathematik",
+                        "potenzen",
+                        "prozente-potenzen-und-potenzgesetze",
+                        "prozentuale-zusammenhaenge",
+                        "rechnen-mit-potenzen",
+                        "sekundarstufe-i",
+                        "wurzeln",
+                        "zahlen-und-rechnen"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    }
+                  ],
                   "tags": [
                     "klasse-9",
                     "potenzen",
@@ -1176,7 +1674,7 @@
                 "zahlen-und-rechnen"
               ],
               "anzahlThemen": 2,
-              "anzahlMaterialien": 0
+              "anzahlMaterialien": 8
             },
             {
               "id": "funktionen",
@@ -1200,7 +1698,250 @@
                     "Transformation der Normalparabel",
                     "Extremwertprobleme"
                   ],
-                  "materialien": [],
+                  "materialien": [
+                    {
+                      "id": "einfuehrung-quadratische-funktionen",
+                      "titel": "Einführung: Quadratische Zusammenhänge",
+                      "kurztitel": "Quadratische Zusammenhänge",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Einführung: Quadratische Zusammenhänge. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "einfuehrung-quadratische-funktionen.html",
+                      "pfad": "klasse-9/funktionen/quadratische-funktionen/einfuehrung-quadratische-funktionen.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "funktionen",
+                        "themaId": "quadratische-funktionen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Quadratische Funktionen",
+                      "thema": "Quadratische Funktionen",
+                      "unterthema": "Einführung: Quadratische Zusammenhänge",
+                      "kompetenzbereich": [
+                        "Quadratische Funktionen",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Term in Normalform, Scheitelpunktform und faktorisierter Form",
+                        "Graph",
+                        "Tabelle",
+                        "Scheitelpunkt"
+                      ],
+                      "tags": [
+                        "funktionen",
+                        "graph",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "lernpfad",
+                        "mathematik",
+                        "quadratische-funktionen",
+                        "scheitelpunkt",
+                        "sekundarstufe-i",
+                        "tabelle",
+                        "term-in-normalform-scheitelpunktform-und-faktorisierter-form"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "parabel-parameter",
+                      "titel": "Parabel-Parameter untersuchen",
+                      "kurztitel": "Parabel-Parameter untersuchen",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Parabel-Parameter untersuchen. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "parabel-parameter.html",
+                      "pfad": "klasse-9/funktionen/quadratische-funktionen/parabel-parameter.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "funktionen",
+                        "themaId": "quadratische-funktionen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Quadratische Funktionen",
+                      "thema": "Quadratische Funktionen",
+                      "unterthema": "Parabel-Parameter untersuchen",
+                      "kompetenzbereich": [
+                        "Quadratische Funktionen",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Parabeln",
+                        "Term in Normalform, Scheitelpunktform und faktorisierter Form",
+                        "Graph",
+                        "Tabelle",
+                        "Scheitelpunkt"
+                      ],
+                      "tags": [
+                        "funktionen",
+                        "graph",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "lernpfad",
+                        "mathematik",
+                        "parabeln",
+                        "quadratische-funktionen",
+                        "scheitelpunkt",
+                        "sekundarstufe-i",
+                        "tabelle",
+                        "term-in-normalform-scheitelpunktform-und-faktorisierter-form"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "darstellungen-wechseln-quadratisch",
+                      "titel": "Darstellungen quadratischer Funktionen wechseln",
+                      "kurztitel": "Darstellungen quadratischer Funktionen wechseln",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Darstellungen quadratischer Funktionen wechseln. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "darstellungen-wechseln-quadratisch.html",
+                      "pfad": "klasse-9/funktionen/quadratische-funktionen/darstellungen-wechseln-quadratisch.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "funktionen",
+                        "themaId": "quadratische-funktionen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Quadratische Funktionen",
+                      "thema": "Quadratische Funktionen",
+                      "unterthema": "Darstellungen quadratischer Funktionen wechseln",
+                      "kompetenzbereich": [
+                        "Quadratische Funktionen",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Darstellungswechsel",
+                        "Term in Normalform, Scheitelpunktform und faktorisierter Form",
+                        "Graph",
+                        "Tabelle",
+                        "Scheitelpunkt"
+                      ],
+                      "tags": [
+                        "darstellungswechsel",
+                        "funktionen",
+                        "graph",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "lernpfad",
+                        "mathematik",
+                        "quadratische-funktionen",
+                        "scheitelpunkt",
+                        "sekundarstufe-i",
+                        "tabelle",
+                        "term-in-normalform-scheitelpunktform-und-faktorisierter-form"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "extrempunkte-modellieren",
+                      "titel": "Extrempunkte modellieren",
+                      "kurztitel": "Extrempunkte modellieren",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Extrempunkte modellieren. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "extrempunkte-modellieren.html",
+                      "pfad": "klasse-9/funktionen/quadratische-funktionen/extrempunkte-modellieren.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "funktionen",
+                        "themaId": "quadratische-funktionen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Quadratische Funktionen",
+                      "thema": "Quadratische Funktionen",
+                      "unterthema": "Extrempunkte modellieren",
+                      "kompetenzbereich": [
+                        "Quadratische Funktionen",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Extremwertprobleme",
+                        "Term in Normalform, Scheitelpunktform und faktorisierter Form",
+                        "Graph",
+                        "Tabelle",
+                        "Scheitelpunkt"
+                      ],
+                      "tags": [
+                        "extremwertprobleme",
+                        "funktionen",
+                        "graph",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "lernpfad",
+                        "mathematik",
+                        "quadratische-funktionen",
+                        "scheitelpunkt",
+                        "sekundarstufe-i",
+                        "tabelle",
+                        "term-in-normalform-scheitelpunktform-und-faktorisierter-form"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    }
+                  ],
                   "tags": [
                     "klasse-9",
                     "quadratische-funktionen",
@@ -1218,7 +1959,7 @@
                 "quadratische-funktionen"
               ],
               "anzahlThemen": 1,
-              "anzahlMaterialien": 0
+              "anzahlMaterialien": 4
             },
             {
               "id": "geometrie",
@@ -1240,7 +1981,370 @@
                     "Oberflächeninhalt",
                     "Volumen"
                   ],
-                  "materialien": [],
+                  "materialien": [
+                    {
+                      "id": "einfuehrung-kreis-pi",
+                      "titel": "Einführung: Kreis, \\(\\pi\\), Umfang und Fläche",
+                      "kurztitel": "Kreis, \\(\\pi\\), Umfang und Fläche",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Einführung: Kreis, \\(\\pi\\), Umfang und Fläche. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "einfuehrung-kreis-pi.html",
+                      "pfad": "klasse-9/geometrie/kreise-prismen-und-zylinder/einfuehrung-kreis-pi.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "geometrie",
+                        "themaId": "kreise-prismen-und-zylinder"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Kreise und Körper",
+                      "thema": "Kreise, Prismen und Zylinder",
+                      "unterthema": "Einführung: Kreis, , Umfang und Fläche",
+                      "kompetenzbereich": [
+                        "Kreise und Körper",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Kreisberechnung",
+                        "Kreis: Umfang und Flächeninhalt",
+                        "Kreisbogen",
+                        "Kreissektor",
+                        "Tangente"
+                      ],
+                      "tags": [
+                        "geometrie",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "kreis-umfang-und-flaecheninhalt",
+                        "kreisberechnung",
+                        "kreisbogen",
+                        "kreise-prismen-und-zylinder",
+                        "kreissektor",
+                        "lernpfad",
+                        "mathematik",
+                        "sekundarstufe-i",
+                        "tangente"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "pi-experimentell-entdecken",
+                      "titel": "\\(\\pi\\) experimentell entdecken",
+                      "kurztitel": "\\(\\pi\\) experimentell entdecken",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu \\(\\pi\\) experimentell entdecken. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "pi-experimentell-entdecken.html",
+                      "pfad": "klasse-9/geometrie/kreise-prismen-und-zylinder/pi-experimentell-entdecken.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "geometrie",
+                        "themaId": "kreise-prismen-und-zylinder"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Kreise und Körper",
+                      "thema": "Kreise, Prismen und Zylinder",
+                      "unterthema": "experimentell entdecken",
+                      "kompetenzbereich": [
+                        "Kreise und Körper",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Kreis: Umfang und Flächeninhalt",
+                        "Kreisbogen",
+                        "Kreissektor",
+                        "Tangente"
+                      ],
+                      "tags": [
+                        "geometrie",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "kreis-umfang-und-flaecheninhalt",
+                        "kreisbogen",
+                        "kreise-prismen-und-zylinder",
+                        "kreissektor",
+                        "lernpfad",
+                        "mathematik",
+                        "sekundarstufe-i",
+                        "tangente"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "kreisbogen-kreissektor",
+                      "titel": "Kreisbogen und Kreissektor",
+                      "kurztitel": "Kreisbogen und Kreissektor",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Kreisbogen und Kreissektor. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "kreisbogen-kreissektor.html",
+                      "pfad": "klasse-9/geometrie/kreise-prismen-und-zylinder/kreisbogen-kreissektor.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "geometrie",
+                        "themaId": "kreise-prismen-und-zylinder"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Kreise und Körper",
+                      "thema": "Kreise, Prismen und Zylinder",
+                      "unterthema": "Kreisbogen und Kreissektor",
+                      "kompetenzbereich": [
+                        "Kreise und Körper",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Kreisberechnung",
+                        "Kreisbogen",
+                        "Kreissektor",
+                        "Kreis: Umfang und Flächeninhalt",
+                        "Tangente"
+                      ],
+                      "tags": [
+                        "geometrie",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "kreis-umfang-und-flaecheninhalt",
+                        "kreisberechnung",
+                        "kreisbogen",
+                        "kreise-prismen-und-zylinder",
+                        "kreissektor",
+                        "lernpfad",
+                        "mathematik",
+                        "sekundarstufe-i",
+                        "tangente"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "tangente-herleitung-kreis",
+                      "titel": "Tangente und Herleitungsideen",
+                      "kurztitel": "Tangente und Herleitungsideen",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Tangente und Herleitungsideen. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "tangente-herleitung-kreis.html",
+                      "pfad": "klasse-9/geometrie/kreise-prismen-und-zylinder/tangente-herleitung-kreis.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "geometrie",
+                        "themaId": "kreise-prismen-und-zylinder"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Kreise und Körper",
+                      "thema": "Kreise, Prismen und Zylinder",
+                      "unterthema": "Tangente und Herleitungsideen",
+                      "kompetenzbereich": [
+                        "Kreise und Körper",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Tangente",
+                        "Kreis: Umfang und Flächeninhalt",
+                        "Kreisbogen",
+                        "Kreissektor"
+                      ],
+                      "tags": [
+                        "geometrie",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "kreis-umfang-und-flaecheninhalt",
+                        "kreisbogen",
+                        "kreise-prismen-und-zylinder",
+                        "kreissektor",
+                        "lernpfad",
+                        "mathematik",
+                        "sekundarstufe-i",
+                        "tangente"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "netze-oberflaechen",
+                      "titel": "Netze und Oberflächen",
+                      "kurztitel": "Netze und Oberflächen",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Netze und Oberflächen. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "netze-oberflaechen.html",
+                      "pfad": "klasse-9/geometrie/kreise-prismen-und-zylinder/netze-oberflaechen.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "geometrie",
+                        "themaId": "kreise-prismen-und-zylinder"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Kreise und Körper",
+                      "thema": "Kreise, Prismen und Zylinder",
+                      "unterthema": "Netze und Oberflächen",
+                      "kompetenzbereich": [
+                        "Kreise und Körper",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Netze",
+                        "Oberflächeninhalt",
+                        "Kreis: Umfang und Flächeninhalt",
+                        "Kreisbogen",
+                        "Kreissektor",
+                        "Tangente"
+                      ],
+                      "tags": [
+                        "geometrie",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "kreis-umfang-und-flaecheninhalt",
+                        "kreisbogen",
+                        "kreise-prismen-und-zylinder",
+                        "kreissektor",
+                        "lernpfad",
+                        "mathematik",
+                        "netze",
+                        "oberflaecheninhalt",
+                        "sekundarstufe-i",
+                        "tangente"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "zusammengesetzte-koerper",
+                      "titel": "Zusammengesetzte Körper modellieren",
+                      "kurztitel": "Zusammengesetzte Körper modellieren",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Zusammengesetzte Körper modellieren. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "zusammengesetzte-koerper.html",
+                      "pfad": "klasse-9/geometrie/kreise-prismen-und-zylinder/zusammengesetzte-koerper.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "geometrie",
+                        "themaId": "kreise-prismen-und-zylinder"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Kreise und Körper",
+                      "thema": "Kreise, Prismen und Zylinder",
+                      "unterthema": "Zusammengesetzte Körper modellieren",
+                      "kompetenzbereich": [
+                        "Kreise und Körper",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Kreis: Umfang und Flächeninhalt",
+                        "Kreisbogen",
+                        "Kreissektor",
+                        "Tangente"
+                      ],
+                      "tags": [
+                        "geometrie",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "kreis-umfang-und-flaecheninhalt",
+                        "kreisbogen",
+                        "kreise-prismen-und-zylinder",
+                        "kreissektor",
+                        "lernpfad",
+                        "mathematik",
+                        "sekundarstufe-i",
+                        "tangente"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    }
+                  ],
                   "tags": [
                     "klasse-9",
                     "geometrie",
@@ -1264,7 +2368,380 @@
                     "Körperoberfläche und Volumen von Kegeln",
                     "Körperoberfläche und Volumen von Kugeln"
                   ],
-                  "materialien": [],
+                  "materialien": [
+                    {
+                      "id": "einfuehrung-pythagoras",
+                      "titel": "Einführung: Satz des Pythagoras",
+                      "kurztitel": "Satz des Pythagoras",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Einführung: Satz des Pythagoras. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "einfuehrung-pythagoras.html",
+                      "pfad": "klasse-9/geometrie/pythagoras-und-koerper/einfuehrung-pythagoras.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "geometrie",
+                        "themaId": "pythagoras-und-koerper"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Kreise und Körper",
+                      "thema": "Pythagoras und Berechnung von Körpern",
+                      "unterthema": "Einführung: Satz des Pythagoras",
+                      "kompetenzbereich": [
+                        "Kreise und Körper",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Satz des Pythagoras",
+                        "Geometrischer Satz: Satz des Pythagoras",
+                        "Körperoberfläche und Volumen von Pyramiden",
+                        "Körperoberfläche und Volumen von Kegeln",
+                        "Körperoberfläche und Volumen von Kugeln"
+                      ],
+                      "tags": [
+                        "geometrie",
+                        "geometrischer-satz-satz-des-pythagoras",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "koerperoberflaeche-und-volumen-von-kegeln",
+                        "koerperoberflaeche-und-volumen-von-kugeln",
+                        "koerperoberflaeche-und-volumen-von-pyramiden",
+                        "lernpfad",
+                        "mathematik",
+                        "pythagoras-und-koerper",
+                        "satz-des-pythagoras",
+                        "sekundarstufe-i"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "beweiswerkstatt-pythagoras",
+                      "titel": "Pythagoras-Beweiswerkstatt",
+                      "kurztitel": "Pythagoras-Beweiswerkstatt",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Pythagoras-Beweiswerkstatt. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "beweiswerkstatt-pythagoras.html",
+                      "pfad": "klasse-9/geometrie/pythagoras-und-koerper/beweiswerkstatt-pythagoras.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "geometrie",
+                        "themaId": "pythagoras-und-koerper"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Kreise und Körper",
+                      "thema": "Pythagoras und Berechnung von Körpern",
+                      "unterthema": "Pythagoras-Beweiswerkstatt",
+                      "kompetenzbereich": [
+                        "Kreise und Körper",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Satz des Pythagoras",
+                        "Begründen",
+                        "Geometrischer Satz: Satz des Pythagoras",
+                        "Körperoberfläche und Volumen von Pyramiden",
+                        "Körperoberfläche und Volumen von Kegeln",
+                        "Körperoberfläche und Volumen von Kugeln"
+                      ],
+                      "tags": [
+                        "begruenden",
+                        "geometrie",
+                        "geometrischer-satz-satz-des-pythagoras",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "koerperoberflaeche-und-volumen-von-kegeln",
+                        "koerperoberflaeche-und-volumen-von-kugeln",
+                        "koerperoberflaeche-und-volumen-von-pyramiden",
+                        "lernpfad",
+                        "mathematik",
+                        "pythagoras-und-koerper",
+                        "satz-des-pythagoras",
+                        "sekundarstufe-i"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "sachsituationen-pythagoras",
+                      "titel": "Pythagoras in Sachsituationen",
+                      "kurztitel": "Pythagoras in Sachsituationen",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Pythagoras in Sachsituationen. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "sachsituationen-pythagoras.html",
+                      "pfad": "klasse-9/geometrie/pythagoras-und-koerper/sachsituationen-pythagoras.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "geometrie",
+                        "themaId": "pythagoras-und-koerper"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Kreise und Körper",
+                      "thema": "Pythagoras und Berechnung von Körpern",
+                      "unterthema": "Pythagoras in Sachsituationen",
+                      "kompetenzbereich": [
+                        "Kreise und Körper",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Satz des Pythagoras",
+                        "Modellieren",
+                        "Geometrischer Satz: Satz des Pythagoras",
+                        "Körperoberfläche und Volumen von Pyramiden",
+                        "Körperoberfläche und Volumen von Kegeln",
+                        "Körperoberfläche und Volumen von Kugeln"
+                      ],
+                      "tags": [
+                        "geometrie",
+                        "geometrischer-satz-satz-des-pythagoras",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "koerperoberflaeche-und-volumen-von-kegeln",
+                        "koerperoberflaeche-und-volumen-von-kugeln",
+                        "koerperoberflaeche-und-volumen-von-pyramiden",
+                        "lernpfad",
+                        "mathematik",
+                        "modellieren",
+                        "pythagoras-und-koerper",
+                        "satz-des-pythagoras",
+                        "sekundarstufe-i"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "raumdiagonalen-messfehler",
+                      "titel": "Raumdiagonalen und Messfehler",
+                      "kurztitel": "Raumdiagonalen und Messfehler",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Raumdiagonalen und Messfehler. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "raumdiagonalen-messfehler.html",
+                      "pfad": "klasse-9/geometrie/pythagoras-und-koerper/raumdiagonalen-messfehler.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "geometrie",
+                        "themaId": "pythagoras-und-koerper"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Kreise und Körper",
+                      "thema": "Pythagoras und Berechnung von Körpern",
+                      "unterthema": "Raumdiagonalen und Messfehler",
+                      "kompetenzbereich": [
+                        "Kreise und Körper",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Raumgeometrie",
+                        "Geometrischer Satz: Satz des Pythagoras",
+                        "Körperoberfläche und Volumen von Pyramiden",
+                        "Körperoberfläche und Volumen von Kegeln",
+                        "Körperoberfläche und Volumen von Kugeln"
+                      ],
+                      "tags": [
+                        "geometrie",
+                        "geometrischer-satz-satz-des-pythagoras",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "koerperoberflaeche-und-volumen-von-kegeln",
+                        "koerperoberflaeche-und-volumen-von-kugeln",
+                        "koerperoberflaeche-und-volumen-von-pyramiden",
+                        "lernpfad",
+                        "mathematik",
+                        "pythagoras-und-koerper",
+                        "raumgeometrie",
+                        "sekundarstufe-i"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "einfuehrung-prismen-pyramiden",
+                      "titel": "Einführung: Prismen und Pyramiden",
+                      "kurztitel": "Prismen und Pyramiden",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Einführung: Prismen und Pyramiden. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "einfuehrung-prismen-pyramiden.html",
+                      "pfad": "klasse-9/geometrie/pythagoras-und-koerper/einfuehrung-prismen-pyramiden.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "geometrie",
+                        "themaId": "pythagoras-und-koerper"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Kreise und Körper",
+                      "thema": "Pythagoras und Berechnung von Körpern",
+                      "unterthema": "Einführung: Prismen und Pyramiden",
+                      "kompetenzbereich": [
+                        "Kreise und Körper",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Prismen",
+                        "Pyramiden",
+                        "Geometrischer Satz: Satz des Pythagoras",
+                        "Körperoberfläche und Volumen von Pyramiden",
+                        "Körperoberfläche und Volumen von Kegeln",
+                        "Körperoberfläche und Volumen von Kugeln"
+                      ],
+                      "tags": [
+                        "geometrie",
+                        "geometrischer-satz-satz-des-pythagoras",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "koerperoberflaeche-und-volumen-von-kegeln",
+                        "koerperoberflaeche-und-volumen-von-kugeln",
+                        "koerperoberflaeche-und-volumen-von-pyramiden",
+                        "lernpfad",
+                        "mathematik",
+                        "prismen",
+                        "pyramiden",
+                        "pythagoras-und-koerper",
+                        "sekundarstufe-i"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "volumen-faktor-ein-drittel",
+                      "titel": "Volumen und der Faktor \\(\frac13\\)",
+                      "kurztitel": "Volumen und der Faktor \\(\frac13\\)",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Volumen und der Faktor \\(\frac13\\). Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "volumen-faktor-ein-drittel.html",
+                      "pfad": "klasse-9/geometrie/pythagoras-und-koerper/volumen-faktor-ein-drittel.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "geometrie",
+                        "themaId": "pythagoras-und-koerper"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Kreise und Körper",
+                      "thema": "Pythagoras und Berechnung von Körpern",
+                      "unterthema": "Volumen und der Faktor \frac13",
+                      "kompetenzbereich": [
+                        "Kreise und Körper",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Volumen",
+                        "Geometrischer Satz: Satz des Pythagoras",
+                        "Körperoberfläche und Volumen von Pyramiden",
+                        "Körperoberfläche und Volumen von Kegeln",
+                        "Körperoberfläche und Volumen von Kugeln"
+                      ],
+                      "tags": [
+                        "geometrie",
+                        "geometrischer-satz-satz-des-pythagoras",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "koerperoberflaeche-und-volumen-von-kegeln",
+                        "koerperoberflaeche-und-volumen-von-kugeln",
+                        "koerperoberflaeche-und-volumen-von-pyramiden",
+                        "lernpfad",
+                        "mathematik",
+                        "pythagoras-und-koerper",
+                        "sekundarstufe-i",
+                        "volumen"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    }
+                  ],
                   "tags": [
                     "klasse-9",
                     "pythagoras",
@@ -1284,7 +2761,7 @@
                 "koerper"
               ],
               "anzahlThemen": 2,
-              "anzahlMaterialien": 0
+              "anzahlMaterialien": 12
             },
             {
               "id": "daten-und-wahrscheinlichkeiten",
@@ -1308,7 +2785,250 @@
                     "Baumdiagramme",
                     "Pfadregeln"
                   ],
-                  "materialien": [],
+                  "materialien": [
+                    {
+                      "id": "einfuehrung-statistik-diagrammkritik",
+                      "titel": "Einführung: Statistik und Diagrammkritik",
+                      "kurztitel": "Statistik und Diagrammkritik",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Einführung: Statistik und Diagrammkritik. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "einfuehrung-statistik-diagrammkritik.html",
+                      "pfad": "klasse-9/daten-und-wahrscheinlichkeiten/daten-und-wahrscheinlichkeiten/einfuehrung-statistik-diagrammkritik.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "daten-und-wahrscheinlichkeiten",
+                        "themaId": "daten-und-wahrscheinlichkeiten"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Daten und Wahrscheinlichkeiten",
+                      "thema": "Daten und Wahrscheinlichkeiten",
+                      "unterthema": "Einführung: Statistik und Diagrammkritik",
+                      "kompetenzbereich": [
+                        "Daten und Wahrscheinlichkeiten",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Statistik",
+                        "Diagramme",
+                        "Statistische Daten erheben",
+                        "Daten in Diagrammen darstellen",
+                        "Manipulation von Diagrammen und Daten",
+                        "Wahrscheinlichkeiten und Zufallsexperimente"
+                      ],
+                      "tags": [
+                        "daten-in-diagrammen-darstellen",
+                        "daten-und-wahrscheinlichkeiten",
+                        "diagramme",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "lernpfad",
+                        "manipulation-von-diagrammen-und-daten",
+                        "mathematik",
+                        "sekundarstufe-i",
+                        "statistik",
+                        "statistische-daten-erheben",
+                        "wahrscheinlichkeiten-und-zufallsexperimente"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "datenerhebungen-planen",
+                      "titel": "Datenerhebungen planen",
+                      "kurztitel": "Datenerhebungen planen",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Datenerhebungen planen. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "datenerhebungen-planen.html",
+                      "pfad": "klasse-9/daten-und-wahrscheinlichkeiten/daten-und-wahrscheinlichkeiten/datenerhebungen-planen.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "daten-und-wahrscheinlichkeiten",
+                        "themaId": "daten-und-wahrscheinlichkeiten"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Daten und Wahrscheinlichkeiten",
+                      "thema": "Daten und Wahrscheinlichkeiten",
+                      "unterthema": "Datenerhebungen planen",
+                      "kompetenzbereich": [
+                        "Daten und Wahrscheinlichkeiten",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Datenerhebung",
+                        "Statistische Daten erheben",
+                        "Daten in Diagrammen darstellen",
+                        "Manipulation von Diagrammen und Daten",
+                        "Wahrscheinlichkeiten und Zufallsexperimente"
+                      ],
+                      "tags": [
+                        "daten-in-diagrammen-darstellen",
+                        "daten-und-wahrscheinlichkeiten",
+                        "datenerhebung",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "lernpfad",
+                        "manipulation-von-diagrammen-und-daten",
+                        "mathematik",
+                        "sekundarstufe-i",
+                        "statistische-daten-erheben",
+                        "wahrscheinlichkeiten-und-zufallsexperimente"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "diagramme-erstellen-manipulieren",
+                      "titel": "Diagramme erstellen und manipulieren",
+                      "kurztitel": "Diagramme erstellen und manipulieren",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Diagramme erstellen und manipulieren. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "diagramme-erstellen-manipulieren.html",
+                      "pfad": "klasse-9/daten-und-wahrscheinlichkeiten/daten-und-wahrscheinlichkeiten/diagramme-erstellen-manipulieren.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "daten-und-wahrscheinlichkeiten",
+                        "themaId": "daten-und-wahrscheinlichkeiten"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Daten und Wahrscheinlichkeiten",
+                      "thema": "Daten und Wahrscheinlichkeiten",
+                      "unterthema": "Diagramme erstellen und manipulieren",
+                      "kompetenzbereich": [
+                        "Daten und Wahrscheinlichkeiten",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Diagramme",
+                        "Statistische Daten erheben",
+                        "Daten in Diagrammen darstellen",
+                        "Manipulation von Diagrammen und Daten",
+                        "Wahrscheinlichkeiten und Zufallsexperimente"
+                      ],
+                      "tags": [
+                        "daten-in-diagrammen-darstellen",
+                        "daten-und-wahrscheinlichkeiten",
+                        "diagramme",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "lernpfad",
+                        "manipulation-von-diagrammen-und-daten",
+                        "mathematik",
+                        "sekundarstufe-i",
+                        "statistische-daten-erheben",
+                        "wahrscheinlichkeiten-und-zufallsexperimente"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "authentische-aussagen-beurteilen",
+                      "titel": "Authentische Aussagen beurteilen",
+                      "kurztitel": "Authentische Aussagen beurteilen",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Authentische Aussagen beurteilen. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "authentische-aussagen-beurteilen.html",
+                      "pfad": "klasse-9/daten-und-wahrscheinlichkeiten/daten-und-wahrscheinlichkeiten/authentische-aussagen-beurteilen.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 9",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-9",
+                        "inhaltsfeldId": "daten-und-wahrscheinlichkeiten",
+                        "themaId": "daten-und-wahrscheinlichkeiten"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 9",
+                      "inhaltsfeld": "Daten und Wahrscheinlichkeiten",
+                      "thema": "Daten und Wahrscheinlichkeiten",
+                      "unterthema": "Authentische Aussagen beurteilen",
+                      "kompetenzbereich": [
+                        "Daten und Wahrscheinlichkeiten",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Diagrammkritik",
+                        "Statistische Daten erheben",
+                        "Daten in Diagrammen darstellen",
+                        "Manipulation von Diagrammen und Daten",
+                        "Wahrscheinlichkeiten und Zufallsexperimente"
+                      ],
+                      "tags": [
+                        "daten-in-diagrammen-darstellen",
+                        "daten-und-wahrscheinlichkeiten",
+                        "diagrammkritik",
+                        "html",
+                        "interaktiv",
+                        "klasse-9",
+                        "lernpfad",
+                        "manipulation-von-diagrammen-und-daten",
+                        "mathematik",
+                        "sekundarstufe-i",
+                        "statistische-daten-erheben",
+                        "wahrscheinlichkeiten-und-zufallsexperimente"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    }
+                  ],
                   "tags": [
                     "klasse-9",
                     "daten",
@@ -1328,11 +3048,11 @@
                 "stochastik"
               ],
               "anzahlThemen": 1,
-              "anzahlMaterialien": 0
+              "anzahlMaterialien": 4
             }
           ],
           "anzahlThemen": 6,
-          "anzahlMaterialien": 0,
+          "anzahlMaterialien": 28,
           "beschreibung": "Alltagstaugliche Übersicht der Themen in Klasse 9."
         },
         {
@@ -1401,7 +3121,252 @@
                     "p-q-Formel",
                     "Satz von Vieta"
                   ],
-                  "materialien": [],
+                  "materialien": [
+                    {
+                      "id": "einfuehrung-nullstellen",
+                      "titel": "Einführung: Nullstellen quadratischer Funktionen",
+                      "kurztitel": "Nullstellen quadratischer Funktionen",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Einführung: Nullstellen quadratischer Funktionen. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "einfuehrung-nullstellen.html",
+                      "pfad": "klasse-10/quadratische-gleichungen-und-funktionen/quadratische-gleichungen/einfuehrung-nullstellen.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 10",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-10",
+                        "inhaltsfeldId": "quadratische-gleichungen-und-funktionen",
+                        "themaId": "quadratische-gleichungen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 10",
+                      "inhaltsfeld": "Quadratische Gleichungen und Funktionen",
+                      "thema": "Quadratische Gleichungen",
+                      "unterthema": "Einführung: Nullstellen quadratischer Funktionen",
+                      "kompetenzbereich": [
+                        "Quadratische Gleichungen und Funktionen",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Nullstellen",
+                        "Lösungsverfahren für quadratische Gleichungen",
+                        "Ausklammern",
+                        "Wurzelziehen",
+                        "Faktorisieren"
+                      ],
+                      "tags": [
+                        "ausklammern",
+                        "faktorisieren",
+                        "html",
+                        "interaktiv",
+                        "klasse-10",
+                        "lernpfad",
+                        "loesungsverfahren-fuer-quadratische-gleichungen",
+                        "mathematik",
+                        "nullstellen",
+                        "quadratische-gleichungen",
+                        "quadratische-gleichungen-und-funktionen",
+                        "sekundarstufe-i",
+                        "wurzelziehen"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "quadratische-ergaenzung",
+                      "titel": "Quadratische Ergänzung verstehen",
+                      "kurztitel": "Quadratische Ergänzung verstehen",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Quadratische Ergänzung verstehen. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "quadratische-ergaenzung.html",
+                      "pfad": "klasse-10/quadratische-gleichungen-und-funktionen/quadratische-gleichungen/quadratische-ergaenzung.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 10",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-10",
+                        "inhaltsfeldId": "quadratische-gleichungen-und-funktionen",
+                        "themaId": "quadratische-gleichungen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 10",
+                      "inhaltsfeld": "Quadratische Gleichungen und Funktionen",
+                      "thema": "Quadratische Gleichungen",
+                      "unterthema": "Quadratische Ergänzung verstehen",
+                      "kompetenzbereich": [
+                        "Quadratische Gleichungen und Funktionen",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Quadratische Ergänzung",
+                        "Lösungsverfahren für quadratische Gleichungen",
+                        "Ausklammern",
+                        "Wurzelziehen",
+                        "Faktorisieren"
+                      ],
+                      "tags": [
+                        "ausklammern",
+                        "faktorisieren",
+                        "html",
+                        "interaktiv",
+                        "klasse-10",
+                        "lernpfad",
+                        "loesungsverfahren-fuer-quadratische-gleichungen",
+                        "mathematik",
+                        "quadratische-ergaenzung",
+                        "quadratische-gleichungen",
+                        "quadratische-gleichungen-und-funktionen",
+                        "sekundarstufe-i",
+                        "wurzelziehen"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "pq-formel-verfahrensvergleich",
+                      "titel": "pq-Formel und Verfahrensvergleich",
+                      "kurztitel": "pq-Formel und Verfahrensvergleich",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu pq-Formel und Verfahrensvergleich. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "pq-formel-verfahrensvergleich.html",
+                      "pfad": "klasse-10/quadratische-gleichungen-und-funktionen/quadratische-gleichungen/pq-formel-verfahrensvergleich.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 10",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-10",
+                        "inhaltsfeldId": "quadratische-gleichungen-und-funktionen",
+                        "themaId": "quadratische-gleichungen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 10",
+                      "inhaltsfeld": "Quadratische Gleichungen und Funktionen",
+                      "thema": "Quadratische Gleichungen",
+                      "unterthema": "pq-Formel und Verfahrensvergleich",
+                      "kompetenzbereich": [
+                        "Quadratische Gleichungen und Funktionen",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "p-q-Formel",
+                        "Lösungsverfahren für quadratische Gleichungen",
+                        "Ausklammern",
+                        "Wurzelziehen",
+                        "Faktorisieren"
+                      ],
+                      "tags": [
+                        "ausklammern",
+                        "faktorisieren",
+                        "html",
+                        "interaktiv",
+                        "klasse-10",
+                        "lernpfad",
+                        "loesungsverfahren-fuer-quadratische-gleichungen",
+                        "mathematik",
+                        "p-q-formel",
+                        "quadratische-gleichungen",
+                        "quadratische-gleichungen-und-funktionen",
+                        "sekundarstufe-i",
+                        "wurzelziehen"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "schnittpunkte-quadratische-kontexte",
+                      "titel": "Schnittpunkte und Kontexte",
+                      "kurztitel": "Schnittpunkte und Kontexte",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Schnittpunkte und Kontexte. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "schnittpunkte-quadratische-kontexte.html",
+                      "pfad": "klasse-10/quadratische-gleichungen-und-funktionen/quadratische-gleichungen/schnittpunkte-quadratische-kontexte.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 10",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-10",
+                        "inhaltsfeldId": "quadratische-gleichungen-und-funktionen",
+                        "themaId": "quadratische-gleichungen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 10",
+                      "inhaltsfeld": "Quadratische Gleichungen und Funktionen",
+                      "thema": "Quadratische Gleichungen",
+                      "unterthema": "Schnittpunkte und Kontexte",
+                      "kompetenzbereich": [
+                        "Quadratische Gleichungen und Funktionen",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Schnittpunkte",
+                        "Lösungsverfahren für quadratische Gleichungen",
+                        "Ausklammern",
+                        "Wurzelziehen",
+                        "Faktorisieren"
+                      ],
+                      "tags": [
+                        "ausklammern",
+                        "faktorisieren",
+                        "html",
+                        "interaktiv",
+                        "klasse-10",
+                        "lernpfad",
+                        "loesungsverfahren-fuer-quadratische-gleichungen",
+                        "mathematik",
+                        "quadratische-gleichungen",
+                        "quadratische-gleichungen-und-funktionen",
+                        "schnittpunkte",
+                        "sekundarstufe-i",
+                        "wurzelziehen"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    }
+                  ],
                   "tags": [
                     "klasse-10",
                     "quadratische-gleichungen",
@@ -1446,7 +3411,7 @@
                 "quadratische-funktionen"
               ],
               "anzahlThemen": 2,
-              "anzahlMaterialien": 0
+              "anzahlMaterialien": 4
             },
             {
               "id": "geometrie",
@@ -1466,7 +3431,250 @@
                     "Abbildungen",
                     "Strahlensätze"
                   ],
-                  "materialien": [],
+                  "materialien": [
+                    {
+                      "id": "einfuehrung-aehnlichkeit",
+                      "titel": "Einführung: Ähnlichkeit und zentrische Streckung",
+                      "kurztitel": "Ähnlichkeit und zentrische Streckung",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Einführung: Ähnlichkeit und zentrische Streckung. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "einfuehrung-aehnlichkeit.html",
+                      "pfad": "klasse-10/geometrie/aehnlichkeit/einfuehrung-aehnlichkeit.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 10",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-10",
+                        "inhaltsfeldId": "geometrie",
+                        "themaId": "aehnlichkeit"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 10",
+                      "inhaltsfeld": "Ähnlichkeit und Trigonometrie",
+                      "thema": "Ähnlichkeit",
+                      "unterthema": "Einführung: Ähnlichkeit und zentrische Streckung",
+                      "kompetenzbereich": [
+                        "Ähnlichkeit und Trigonometrie",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Ähnlichkeit",
+                        "Zentrische Streckung",
+                        "Geometrische Abbildungen",
+                        "Lagebeziehungen",
+                        "Abbildungen"
+                      ],
+                      "tags": [
+                        "abbildungen",
+                        "aehnlichkeit",
+                        "geometrie",
+                        "geometrische-abbildungen",
+                        "html",
+                        "interaktiv",
+                        "klasse-10",
+                        "lagebeziehungen",
+                        "lernpfad",
+                        "mathematik",
+                        "sekundarstufe-i",
+                        "zentrische-streckung"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "streckzentrum-streckfaktor",
+                      "titel": "Streckzentrum und Streckfaktor",
+                      "kurztitel": "Streckzentrum und Streckfaktor",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Streckzentrum und Streckfaktor. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "streckzentrum-streckfaktor.html",
+                      "pfad": "klasse-10/geometrie/aehnlichkeit/streckzentrum-streckfaktor.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 10",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-10",
+                        "inhaltsfeldId": "geometrie",
+                        "themaId": "aehnlichkeit"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 10",
+                      "inhaltsfeld": "Ähnlichkeit und Trigonometrie",
+                      "thema": "Ähnlichkeit",
+                      "unterthema": "Streckzentrum und Streckfaktor",
+                      "kompetenzbereich": [
+                        "Ähnlichkeit und Trigonometrie",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Zentrische Streckung",
+                        "Geometrische Abbildungen",
+                        "Lagebeziehungen",
+                        "Abbildungen"
+                      ],
+                      "tags": [
+                        "abbildungen",
+                        "aehnlichkeit",
+                        "geometrie",
+                        "geometrische-abbildungen",
+                        "html",
+                        "interaktiv",
+                        "klasse-10",
+                        "lagebeziehungen",
+                        "lernpfad",
+                        "mathematik",
+                        "sekundarstufe-i",
+                        "zentrische-streckung"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "messprojekt-unzugaengliche-laengen",
+                      "titel": "Messprojekt: unzugängliche Längen",
+                      "kurztitel": "Messprojekt: unzugängliche Längen",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Messprojekt: unzugängliche Längen. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "messprojekt-unzugaengliche-laengen.html",
+                      "pfad": "klasse-10/geometrie/aehnlichkeit/messprojekt-unzugaengliche-laengen.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 10",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-10",
+                        "inhaltsfeldId": "geometrie",
+                        "themaId": "aehnlichkeit"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 10",
+                      "inhaltsfeld": "Ähnlichkeit und Trigonometrie",
+                      "thema": "Ähnlichkeit",
+                      "unterthema": "Messprojekt: unzugängliche Längen",
+                      "kompetenzbereich": [
+                        "Ähnlichkeit und Trigonometrie",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Messen und Modellieren",
+                        "Geometrische Abbildungen",
+                        "Lagebeziehungen",
+                        "Zentrische Streckung",
+                        "Abbildungen"
+                      ],
+                      "tags": [
+                        "abbildungen",
+                        "aehnlichkeit",
+                        "geometrie",
+                        "geometrische-abbildungen",
+                        "html",
+                        "interaktiv",
+                        "klasse-10",
+                        "lagebeziehungen",
+                        "lernpfad",
+                        "mathematik",
+                        "messen-und-modellieren",
+                        "sekundarstufe-i",
+                        "zentrische-streckung"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "aehnlichkeit-flaeche-volumen",
+                      "titel": "Flächen- und Volumenfaktoren bei Ähnlichkeit",
+                      "kurztitel": "Flächen- und Volumenfaktoren bei Ähnlichkeit",
+                      "beschreibung": "Selbstständiger interaktiver Lernpfad zu Flächen- und Volumenfaktoren bei Ähnlichkeit. Enthält Einstieg, Erkundung, gesperrte Stationen, Kontrolle und gesperrten Merkzettel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "aehnlichkeit-flaeche-volumen.html",
+                      "pfad": "klasse-10/geometrie/aehnlichkeit/aehnlichkeit-flaeche-volumen.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 10",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-10",
+                        "inhaltsfeldId": "geometrie",
+                        "themaId": "aehnlichkeit"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 10",
+                      "inhaltsfeld": "Ähnlichkeit und Trigonometrie",
+                      "thema": "Ähnlichkeit",
+                      "unterthema": "Flächen- und Volumenfaktoren bei Ähnlichkeit",
+                      "kompetenzbereich": [
+                        "Ähnlichkeit und Trigonometrie",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Volumen",
+                        "Ähnlichkeit",
+                        "Geometrische Abbildungen",
+                        "Lagebeziehungen",
+                        "Zentrische Streckung",
+                        "Abbildungen"
+                      ],
+                      "tags": [
+                        "abbildungen",
+                        "aehnlichkeit",
+                        "geometrie",
+                        "geometrische-abbildungen",
+                        "html",
+                        "interaktiv",
+                        "klasse-10",
+                        "lagebeziehungen",
+                        "lernpfad",
+                        "mathematik",
+                        "sekundarstufe-i",
+                        "volumen",
+                        "zentrische-streckung"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    }
+                  ],
                   "tags": [
                     "klasse-10",
                     "aehnlichkeit",
@@ -1505,7 +3713,7 @@
                 "trigonometrie"
               ],
               "anzahlThemen": 2,
-              "anzahlMaterialien": 0
+              "anzahlMaterialien": 4
             },
             {
               "id": "exponentielles-wachstum",
@@ -1590,7 +3798,7 @@
             }
           ],
           "anzahlThemen": 7,
-          "anzahlMaterialien": 0,
+          "anzahlMaterialien": 8,
           "beschreibung": "Alltagstaugliche Übersicht der Themen in Klasse 10."
         },
         {
@@ -2196,7 +4404,7 @@
         }
       ],
       "anzahlThemen": 58,
-      "anzahlMaterialien": 5
+      "anzahlMaterialien": 41
     }
   ]
 }
