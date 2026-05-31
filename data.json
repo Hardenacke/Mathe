@@ -30,7 +30,77 @@
                     "Größen und Einheiten",
                     "Zahlen lesen, ordnen und darstellen"
                   ],
-                  "materialien": [],
+                  "materialien": [
+                    {
+                      "id": "mathequest-klasse-5",
+                      "titel": "Mathe-Quest Klasse 5",
+                      "kurztitel": "Mathe-Quest",
+                      "beschreibung": "Interaktives Lernspiel mit sechs Missionen zu Zahlen und Größen, Rechnen, Brüchen, Symmetrie, Flächen und Maßstab sowie Körpern und Volumen. Enthält freischaltbare Charaktere, visuelles Feedback, Lebenssystem, Tippkarten und Erklärungen bei falschen Antworten.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernspiel",
+                      "datei": "klasse5-lernspiele.html",
+                      "pfad": "klasse-5/klasse5-lernspiele.html",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "klasse-5-gesamt",
+                        "themaId": "mathequest-klasse-5"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Klasse 5 Gesamtwiederholung",
+                      "thema": "Mathe-Quest Klasse 5",
+                      "unterthema": "Lernspiel zu allen Missionen der Klasse 5",
+                      "kompetenzbereich": [
+                        "Zahlen und Größen",
+                        "Arithmetik / Algebra",
+                        "Geometrie",
+                        "Körper und Volumen",
+                        "Operieren",
+                        "Problemlösen"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Zahlen lesen, ordnen und darstellen",
+                        "Stellenwertsystem",
+                        "Grundrechenarten und Rechengesetze",
+                        "Größen und Einheiten",
+                        "Brüche als Anteile und Zahlen",
+                        "Symmetrie und ebene Figuren",
+                        "Umfang, Flächeninhalt und Maßstab",
+                        "Körper beschreiben und Volumen vergleichen"
+                      ],
+                      "tags": [
+                        "mathematik",
+                        "klasse-5",
+                        "sekundarstufe-i",
+                        "lernspiel",
+                        "mathequest",
+                        "zahlen-und-groessen",
+                        "rechnen",
+                        "brueche",
+                        "geometrie",
+                        "symmetrie",
+                        "flaechen",
+                        "massstab",
+                        "koerper",
+                        "volumen",
+                        "interaktiv",
+                        "html"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-05-31",
+                      "lizenz": "",
+                      "autor": ""
+                    }
+                  ],
                   "tags": [
                     "klasse-5",
                     "zahlen",
@@ -90,7 +160,7 @@
                 "zahlen-und-groessen"
               ],
               "anzahlThemen": 3,
-              "anzahlMaterialien": 0
+              "anzahlMaterialien": 1
             },
             {
               "id": "geometrie",
@@ -188,8 +258,79 @@
             }
           ],
           "anzahlThemen": 6,
-          "anzahlMaterialien": 0,
-          "beschreibung": "Alltagstaugliche Übersicht der Themen in Klasse 5."
+          "anzahlMaterialien": 1,
+          "beschreibung": "Alltagstaugliche Übersicht der Themen in Klasse 5.",
+          "materialien": [
+            {
+              "id": "mathequest-klasse-5",
+              "titel": "Mathe-Quest Klasse 5",
+              "kurztitel": "Mathe-Quest",
+              "beschreibung": "Interaktives Lernspiel mit sechs Missionen zu Zahlen und Größen, Rechnen, Brüchen, Symmetrie, Flächen und Maßstab sowie Körpern und Volumen. Enthält freischaltbare Charaktere, visuelles Feedback, Lebenssystem, Tippkarten und Erklärungen bei falschen Antworten.",
+              "typ": "html",
+              "format": "HTML",
+              "materialart": "Lernspiel",
+              "datei": "klasse5-lernspiele.html",
+              "pfad": "klasse-5/klasse5-lernspiele.html",
+              "zielgruppe": {
+                "fach": "Mathematik",
+                "jahrgang": "Klasse 5",
+                "stufe": "Sekundarstufe I"
+              },
+              "struktur": {
+                "fachId": "mathematik",
+                "klasseId": "klasse-5",
+                "inhaltsfeldId": "klasse-5-gesamt",
+                "themaId": "mathequest-klasse-5"
+              },
+              "fach": "Mathematik",
+              "klasse": "Klasse 5",
+              "inhaltsfeld": "Klasse 5 Gesamtwiederholung",
+              "thema": "Mathe-Quest Klasse 5",
+              "unterthema": "Lernspiel zu allen Missionen der Klasse 5",
+              "kompetenzbereich": [
+                "Zahlen und Größen",
+                "Arithmetik / Algebra",
+                "Geometrie",
+                "Körper und Volumen",
+                "Operieren",
+                "Problemlösen"
+              ],
+              "inhaltlicheSchwerpunkte": [
+                "Zahlen lesen, ordnen und darstellen",
+                "Stellenwertsystem",
+                "Grundrechenarten und Rechengesetze",
+                "Größen und Einheiten",
+                "Brüche als Anteile und Zahlen",
+                "Symmetrie und ebene Figuren",
+                "Umfang, Flächeninhalt und Maßstab",
+                "Körper beschreiben und Volumen vergleichen"
+              ],
+              "tags": [
+                "mathematik",
+                "klasse-5",
+                "sekundarstufe-i",
+                "lernspiel",
+                "mathequest",
+                "zahlen-und-groessen",
+                "rechnen",
+                "brueche",
+                "geometrie",
+                "symmetrie",
+                "flaechen",
+                "massstab",
+                "koerper",
+                "volumen",
+                "interaktiv",
+                "html"
+              ],
+              "status": "verfügbar",
+              "sichtbar": true,
+              "oeffnenIn": "neuer-tab",
+              "erstelltAm": "2026-05-31",
+              "lizenz": "",
+              "autor": ""
+            }
+          ]
         },
         {
           "id": "klasse-6",
@@ -4404,7 +4545,7 @@
         }
       ],
       "anzahlThemen": 58,
-      "anzahlMaterialien": 41
+      "anzahlMaterialien": 42
     }
   ]
 }
