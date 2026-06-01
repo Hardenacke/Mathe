@@ -1,0 +1,28 @@
+Mathe-Quest Klasse 5 – GitHub-Bilder-Version
+
+Diese Version lädt die Missionsbilder nicht mehr als Base64-Daten aus der HTML-Datei, sondern als externe Bilddateien aus demselben Ordner wie die HTML-Datei.
+
+Wichtig für GitHub:
+Lege diese Dateien alle gemeinsam in denselben Ordner:
+- klasse5-lernspiele.html
+- zahlen-groessen.webp
+- rechnen.webp
+- brueche.webp
+- symmetrie.webp
+- flaechen.webp
+- volumen.webp
+
+In der HTML-Datei steht nun z. B.:
+const missionImages = {
+  "zahlen-groessen": "zahlen-groessen.webp",
+  "rechnen": "rechnen.webp",
+  "brueche": "brueche.webp",
+  "symmetrie": "symmetrie.webp",
+  "flaechen": "flaechen.webp",
+  "volumen": "volumen.webp"
+};
+
+Ablauf im Lernspiel:
+Übersicht → Bild & Geschichte → Mission jetzt starten → Aufgaben
+
+Die Bilder erscheinen auf der Missionsvorschau und im Spielbereich. Wenn ein Bild nicht angezeigt wird, liegt die Bilddatei wahrscheinlich nicht im gleichen Ordner oder der Dateiname stimmt nicht exakt.
