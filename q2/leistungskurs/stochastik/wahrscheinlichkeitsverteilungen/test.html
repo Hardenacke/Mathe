@@ -1,0 +1,172 @@
+<!doctype html><html lang="de"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content" /><meta name="theme-color" content="#f8fafc" />
+<meta name="color-scheme" content="light" />
+<title>Test Wahrscheinlichkeitsverteilungen</title><style>body{font-family:system-ui;padding:2rem;line-height:1.5}a{font-weight:700}
+/* differenzierte-final-politur: visuelle Lernwege, altersgerechte Lesbarkeit, robuste Formen */
+:root{--basis:#0f766e;--standard:#2563eb;--sprinter:#9333ea;--accent-extra:#7c2d12}
+body{font-size:clamp(16px,1.25vw,18px)}
+.hero{border:1px solid rgba(255,255,255,.25)}
+.hero h1{letter-spacing:-.04em;text-wrap:balance}.subtitle,.work-note,.station-note,.discover,.task p,.level,.hint-card,.solution,.transfer-card{text-wrap:pretty}.work-note{font-size:1.02rem}.panel h2,.toolbox h2,.station h2,.finish h2{text-wrap:balance}.panel,.toolbox,.station,.finish{box-shadow:0 14px 32px rgba(18,32,51,.09)}
+.route-item{align-items:flex-start}.route-item span:first-child{box-shadow:0 8px 18px rgba(18,32,51,.12)}
+.toolbox{overflow:hidden}.toolbox::after{content:"Werkzeug · Beobachten · Prüfen";position:absolute;right:18px;top:18px;padding:.36rem .72rem;border-radius:999px;background:linear-gradient(135deg,var(--soft),#fff);border:1px solid var(--line);color:var(--accent);font-size:.82rem;font-weight:900}.canvas-wrap{min-height:320px;display:grid;place-items:center;background:linear-gradient(180deg,#fff,rgba(248,250,252,.85));border-radius:22px;border:1px dashed rgba(18,32,51,.14);overflow:hidden}canvas{width:100%;height:auto;max-height:62vh;touch-action:none;display:block}.visual-card svg,.visual-card svg *{vector-effect:non-scaling-stroke}.tool-readout .readout-card{border-left:6px solid var(--accent)}
+.station{position:relative;padding:clamp(16px,2.5vw,26px)}.station::before{content:"";position:absolute;inset:0 auto 0 0;width:8px;border-radius:var(--radius) 0 0 var(--radius);background:linear-gradient(180deg,var(--accent),var(--accent2))}.station.locked::before{background:#cbd5e1}.station .pill{box-shadow:0 6px 16px rgba(18,32,51,.09)}.station-note{border-left:5px solid var(--accent);padding:.7rem .9rem;background:var(--soft);border-radius:14px;color:#1e293b}.discover{background:linear-gradient(135deg,#fff,var(--soft));border:1px solid hsl(var(--hue) 72% 88%);border-radius:20px;padding:1rem 1.05rem;line-height:1.55}.discover strong:first-child::before{content:"🔎 ";}.task{background:linear-gradient(180deg,#fff,#fbfdff);border:2px solid #dbe7f2;border-radius:22px;padding:1rem;box-shadow:inset 0 1px 0 #fff}.task strong:first-child::before{content:"✅ ";}.answer-row{align-items:center}.answer{font-size:1.08rem}.feedback{min-height:1.4rem}.method-card{margin:.8rem 0;padding:.85rem 1rem;border-radius:18px;background:#f8fafc;border:1px solid #e2e8f0;line-height:1.5}.method-card strong{color:var(--accent)}
+.levels.differentiated{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.level{position:relative;overflow:hidden;padding:1rem;border-radius:20px;border:1px solid #d9e4f0;background:#fff;line-height:1.5}.level p{margin:.45rem 0 0}.level strong{display:block;font-size:1.05rem}.level-caption{display:inline-flex;margin:.18rem 0 .35rem;padding:.18rem .5rem;border-radius:999px;background:#f1f5f9;color:#475569;font-size:.78rem;font-weight:800}.basis-level{border-top:6px solid var(--basis)}.standard-level{border-top:6px solid var(--standard)}.sprinter-level{border-top:6px solid var(--sprinter)}.basis-level strong{color:var(--basis)}.standard-level strong{color:var(--standard)}.sprinter-level strong{color:var(--sprinter)}
+.hint-box{display:grid;gap:10px}.hint-card{border-left:7px solid var(--accent);background:linear-gradient(180deg,#fff,#fbfdff);border-radius:18px;padding:1rem;box-shadow:0 8px 18px rgba(18,32,51,.06)}.hint-card strong{color:var(--accent)}.hint-card:nth-child(2){border-left-color:var(--standard)}.hint-card:nth-child(3){border-left-color:var(--sprinter)}.hint-card:nth-child(4){border-left-color:#f59e0b}.solution{border-left:7px solid var(--ok);background:#f0fdf4;border-radius:18px;padding:1rem;line-height:1.55}.locked-box{background:#f8fafc;border:1px dashed #cbd5e1;border-radius:20px}.katex{line-height:1.25}.formula{overflow-wrap:anywhere}.transfer{display:grid;gap:14px}.transfer-head{background:linear-gradient(135deg,var(--soft),#fff);border-radius:22px;padding:14px;border:1px solid hsl(var(--hue) 72% 88%)}.transfer-icon{box-shadow:0 10px 20px rgba(18,32,51,.14)}.transfer-card{box-shadow:0 8px 18px rgba(18,32,51,.05)}.criteria-list li{padding:.15rem 0}.starter-chip:hover{transform:translateY(-1px)}
+@media(max-width:920px){.levels.differentiated{grid-template-columns:1fr}.toolbox::after{position:static;display:inline-flex;margin:0 0 10px 0}.canvas-wrap{min-height:260px}.answer-row{gap:8px}.answer-row button{width:auto}}
+@media(max-width:640px){.app{padding:10px}.hero{border-radius:28px}.station,.panel,.toolbox,.finish{border-radius:22px}.answer-row{display:grid;grid-template-columns:1fr}.answer-row .unit{min-height:0}.hero-actions button{width:100%}}
+
+
+/* Responsive-Größencheck 2026-06: dynamische Boxen, iPad- und Smartphone-tauglich */
+:root{
+  --page-pad:clamp(10px,2.6vw,22px);
+  --box-pad:clamp(14px,2.5vw,26px);
+  --box-gap:clamp(12px,2.2vw,20px);
+  --safe-left:env(safe-area-inset-left,0px);
+  --safe-right:env(safe-area-inset-right,0px);
+  --safe-bottom:env(safe-area-inset-bottom,0px);
+}
+html,body{max-width:100%;overflow-x:hidden;-webkit-text-size-adjust:100%;}
+body{min-width:0;}
+*,*::before,*::after{min-width:0;}
+.app{width:min(100%,1280px);max-width:100%;padding:var(--page-pad);margin-inline:auto;}
+.fullscreen-mode .app{width:min(100%,1480px);max-width:100%;}
+.hero,.layout,.side,.content,.panel,.toolbox,.station,.finish,.task,.discover,.hint-card,.solution,.level,.locked-box,.readout-card,.control-line,.student-start,.method-card,.transfer-card,.canvas-wrap,.visual-card{max-width:100%;min-width:0;}
+.hero{grid-template-columns:minmax(0,1fr) minmax(240px,390px);gap:var(--box-gap);padding:clamp(20px,4vw,48px);}
+.layout{grid-template-columns:minmax(260px,318px) minmax(0,1fr);gap:var(--box-gap);}
+.content{min-width:0;}
+.side{min-width:0;}
+.tool-grid{grid-template-columns:minmax(0,1.15fr) minmax(230px,.85fr);gap:var(--box-gap);}
+.levels{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:var(--box-gap);}
+.answer-row{display:flex;flex-wrap:wrap;align-items:stretch;gap:clamp(8px,1.5vw,12px);}
+.answer-row input,.answer-row textarea,.answer-row .answer{flex:1 1 min(100%,280px);min-width:0;width:100%;}
+.answer-row button{flex:0 1 auto;min-width:min(100%,150px);}
+.hero-actions,.hidden-admin-row{display:flex;flex-wrap:wrap;gap:10px;max-width:100%;}
+.hero-actions button,.hidden-admin-row button{flex:1 1 min(100%,170px);}
+button,input,textarea,select{max-width:100%;}
+input[type="range"]{width:100%;min-width:0;}
+img,svg,canvas,video{max-width:100%;height:auto;}
+svg{overflow:visible;}
+.visual-card{aspect-ratio:1.18/1;min-height:0;}
+.visual-card svg{width:100%;height:auto;max-height:100%;}
+.canvas-wrap{padding:clamp(8px,1.6vw,14px);}
+canvas{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;min-height:clamp(230px,38vw,330px);max-height:min(62vh,430px);}
+.panel,.toolbox,.station,.finish{padding:var(--box-pad);}
+.panel{padding:clamp(14px,2.2vw,18px);}
+.task,.discover,.hint-card,.solution,.level,.locked-box,.readout-card,.control-line,.transfer-card{overflow-wrap:anywhere;word-break:normal;hyphens:auto;}
+.task p,.discover,.hint-card,.solution,.mini,.station-note,.subtitle,.work-note,.readout-card,.level,.transfer-card{line-height:1.55;}
+.katex-display,.formula,.task,.solution,.hint-card,.readout-big{max-width:100%;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;}
+.katex-display{padding-bottom:.25rem;}
+.katex{max-width:100%;}
+table{width:100%;max-width:100%;border-collapse:collapse;display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+pre,code{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere;}
+.steps li{min-width:0;overflow-wrap:anywhere;}
+.dot{flex:0 0 auto;}
+.route-item{grid-template-columns:auto minmax(0,1fr);}
+.locked-box{grid-template-columns:auto minmax(0,1fr);}
+.student-start{grid-template-columns:auto minmax(0,1fr);}
+.transfer-head{grid-template-columns:auto minmax(0,1fr);}
+.readout-big{font-size:clamp(1.05rem,3.2vw,1.8rem);}
+.station h2,.toolbox h2,.panel h2,.finish h2{text-wrap:balance;}
+@media (max-width:1100px){
+  .layout{grid-template-columns:1fr;}
+  .side{position:static;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));align-items:start;}
+}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:auto;}
+  .tool-grid{grid-template-columns:1fr;}
+  .visual-card{max-height:300px;}
+  canvas{min-height:clamp(220px,52vw,320px);max-height:54vh;}
+}
+@media (max-width:620px){
+  :root{--page-pad:clamp(8px,3.5vw,14px);--box-pad:clamp(14px,4vw,18px);}
+  .app{padding-left:max(var(--page-pad),var(--safe-left));padding-right:max(var(--page-pad),var(--safe-right));padding-bottom:max(18px,var(--safe-bottom));}
+  .hero{border-radius:24px;padding:clamp(18px,5vw,24px);}
+  .hero h1{font-size:clamp(1.75rem,9.5vw,2.65rem);line-height:1.02;letter-spacing:-.04em;}
+  .subtitle{font-size:1rem;}
+  .hero-actions,.hidden-admin-row,.answer-row{display:grid;grid-template-columns:1fr;}
+  .hero-actions button,.hidden-admin-row button,.answer-row button{width:100%;min-width:0;}
+  .student-start,.transfer-head,.locked-box{grid-template-columns:1fr;}
+  .student-start .start-icon,.transfer-icon{display:none;}
+  .panel,.toolbox,.station,.finish{border-radius:20px;}
+  .task,.discover,.hint-card,.solution,.level,.locked-box,.readout-card,.control-line{border-radius:16px;}
+  .visual-card{aspect-ratio:1.55/1;max-height:240px;}
+  canvas{min-height:220px;max-height:48vh;}
+  .steps li{font-size:.96rem;}
+  .eyebrow{max-width:100%;white-space:normal;}
+}
+@media (max-width:390px){
+  .hero h1{font-size:clamp(1.55rem,9vw,2.15rem);}
+  .task p,.discover,.hint-card,.solution{font-size:.98rem;}
+  button{padding:.85rem .9rem;}
+  canvas{min-height:200px;}
+}
+@media (orientation:landscape) and (max-height:760px){
+  .hero{min-height:auto;}
+  .visual-card{max-height:220px;}
+  canvas{min-height:210px;max-height:52vh;}
+}
+
+
+/* Finale Optimierungsrunde: iPad, Lesbarkeit, Bedienbarkeit, Barrierearmut */
+:root{
+  --tap-size:56px;
+  --readable-width:78ch;
+  --card-min: min(100%, 280px);
+}
+.skip-link{position:absolute;left:12px;top:8px;z-index:9999;background:#fff;color:var(--accent);border:2px solid var(--accent);border-radius:14px;padding:.75rem 1rem;font-weight:900;transform:translateY(-140%);transition:.16s ease;box-shadow:0 12px 24px rgba(18,32,51,.18)}
+.skip-link:focus{transform:translateY(0)}
+button,.starter-chip,.steps li.unlocked,a{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+button,.answer,.pin,.transfer-answer,.starter-chip{min-height:var(--tap-size)}
+button{line-height:1.18;white-space:normal;text-wrap:balance}
+input,textarea,select{font-size:16px} /* verhindert iOS-Zoom beim Fokussieren */
+.hero,.student-start,.panel,.toolbox,.station,.finish{isolation:isolate}
+.hero-text,.content,.task,.discover,.solution,.hint-card,.level,.transfer-card,.method-card{overflow-wrap:break-word}
+.subtitle,.work-note,.task p,.discover,.hint-card,.solution,.transfer-card,.level,.mini{max-width:var(--readable-width)}
+.task p,.discover,.hint-card,.solution,.transfer-card{font-size:clamp(1rem,1.15vw + .72rem,1.14rem)}
+.hero h1{overflow-wrap:anywhere;text-wrap:balance}
+.panel h2,.toolbox h2,.station h2,.finish h2{line-height:1.1;text-wrap:balance;overflow-wrap:anywhere}
+.panel,.toolbox,.station,.finish,.task,.discover,.level,.hint-card,.solution,.transfer-card,.readout-card,.control-line,.locked-box{container-type:inline-size}
+@container (max-width: 420px){
+  .answer-row,.transfer-actions,.starter-row{display:grid!important;grid-template-columns:1fr!important}
+  .answer-row>* ,.transfer-actions>* ,.starter-row>*{width:100%;min-width:0}
+  .readout-big{font-size:clamp(1.05rem,6vw,1.45rem)}
+  .level{min-height:auto}
+}
+.transfer-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))!important}
+.starter-row{align-items:stretch}.starter-chip{justify-content:center;white-space:normal;text-align:center}
+.steps li.unlocked:active,button:active,.starter-chip:active{transform:scale(.99)}
+.scrollable-x{position:relative;box-shadow:inset -10px 0 10px -12px rgba(18,32,51,.45)}
+.katex-display,.formula,table,pre{scrollbar-width:thin}
+.katex-display::after,.formula::after{content:'';display:block;height:1px}
+img{height:auto;object-fit:contain}svg{max-inline-size:100%;block-size:auto}.visual-card svg{max-height:100%}
+canvas{contain:layout size style;touch-action:none;background-clip:padding-box}
+@media (hover:none){button:hover:not(:disabled){transform:none;filter:none}.steps li.unlocked:hover{filter:none}}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}
+  button:hover:not(:disabled){transform:none!important}
+}
+@media (max-width: 740px){
+  .subtitle,.work-note,.task p,.discover,.hint-card,.solution,.transfer-card,.level,.mini{max-width:100%}
+  .hero,.student-start,.panel,.toolbox,.station,.finish{box-shadow:0 8px 22px rgba(18,32,51,.08)}
+  .task,.discover,.hint-card,.solution,.level,.transfer-card{padding:clamp(12px,4vw,18px)}
+  .readout-card{min-height:auto}
+  .side .panel{padding:14px}
+}
+@media (max-width: 430px){
+  :root{--tap-size:58px}
+  .app{padding-inline:8px}.hero{border-radius:22px}.student-start,.panel,.toolbox,.station,.finish{border-radius:18px}
+  .hero h1{font-size:clamp(1.55rem,10vw,2.25rem)}
+  .eyebrow{font-size:.88rem}.work-note{font-size:.96rem}
+  .steps li{grid-template-columns:auto minmax(0,1fr);align-items:start}
+  .dot{width:30px;height:30px}
+  .answer,.pin,.transfer-answer{padding:.92rem}
+  canvas{min-height:190px;max-height:46vh}
+}
+@media print{
+  body{background:#fff!important;color:#111}.hero-actions,.side,.hint-box button,.skip-link{display:none!important}
+  .layout{display:block}.station,.toolbox,.finish,.student-start{break-inside:avoid;box-shadow:none;border:1px solid #ccc}
+}
+
+</style><h1>Test: Wahrscheinlichkeitsverteilungen</h1><ul><li><a target="_blank" rel="noopener noreferrer" href="lernpfad-einfuehrung-wahrscheinlichkeitsverteilungen.html">Einführung: Wahrscheinlichkeitsverteilungen</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="lernpfad-binomial-und-normalmodell.html">Binomial Und Normalmodell</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="lernpfad-hypothesentest.html">Hypothesentest</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="lernpfad-konfidenzintervalle-einordnen.html">Konfidenzintervalle Einordnen</a></li></ul></html>

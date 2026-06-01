@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content" />
+<meta name="theme-color" content="#f8fafc" />
+<meta name="color-scheme" content="light" />
+<title>Einführung: Vektoren und Geraden</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<style>
+:root{--hue:220;--accent:hsl(var(--hue) 76% 42%);--accent2:hsl(calc(var(--hue) + 54) 78% 48%);--accent3:hsl(calc(var(--hue) + 105) 70% 48%);--soft:hsl(var(--hue) 88% 95%);--soft2:hsl(calc(var(--hue) + 54) 88% 96%);--pale:hsl(var(--hue) 92% 98%);--ink:#122033;--muted:#526176;--paper:rgba(255,255,255,.94);--line:rgba(18,32,51,.13);--ok:#087443;--bad:#b42318;--warn:#9a5a00;--shadow:0 18px 46px rgba(18,32,51,.14);--radius:26px;--focus:0 0 0 4px hsl(var(--hue) 90% 85%)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:radial-gradient(circle at 0 0,hsl(var(--hue) 93% 90%) 0,transparent 32rem),radial-gradient(circle at 100% 2%,hsl(calc(var(--hue) + 70) 92% 92%) 0,transparent 34rem),linear-gradient(180deg,#fff 0,#f7f9fc 52%,#eef3f8 100%)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(90deg,rgba(18,32,51,.035) 1px,transparent 1px),linear-gradient(rgba(18,32,51,.035) 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(180deg,rgba(0,0,0,.45),transparent 62%)}
+button,input,textarea{font:inherit}button{border:0;border-radius:16px;padding:.85rem 1rem;min-height:46px;font-weight:850;cursor:pointer;transition:.16s ease}button:hover:not(:disabled){transform:translateY(-1px);filter:brightness(1.02)}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:none;box-shadow:var(--focus)}button:disabled{opacity:.48;cursor:not-allowed;transform:none}.app{width:min(1240px,100%);margin:0 auto;padding:18px}.fullscreen-mode .app{width:min(1480px,100%)}
+.hero{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,390px);gap:22px;align-items:center;min-height:clamp(260px,34vh,410px);padding:clamp(22px,4vw,48px);border-radius:38px;color:white;background:linear-gradient(135deg,hsl(var(--hue) 74% 34%),hsl(calc(var(--hue) + 42) 76% 35%));box-shadow:var(--shadow)}.hero:before{content:"";position:absolute;right:-140px;bottom:-205px;width:470px;height:470px;border-radius:40% 60% 55% 45%;background:rgba(255,255,255,.13);transform:rotate(24deg)}.hero:after{content:"";position:absolute;left:44%;top:-170px;width:340px;height:340px;border-radius:50%;background:rgba(255,255,255,.12)}.hero>*{position:relative;z-index:1}.eyebrow{display:inline-flex;gap:.55rem;align-items:center;padding:.45rem .85rem;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.15);font-weight:850}.hero h1{margin:.62rem 0;font-size:clamp(2.05rem,5.4vw,4.25rem);line-height:.96;letter-spacing:-.052em}.subtitle{max-width:78ch;line-height:1.58;font-size:clamp(1rem,2vw,1.18rem);opacity:.98}.work-note{margin-top:12px;padding:12px 14px;border-radius:18px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.22);line-height:1.45}.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.btn-light{background:#fff;color:var(--accent);box-shadow:0 10px 20px rgba(0,0,0,.12)}.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:white;box-shadow:0 12px 22px rgba(18,32,51,.14)}.btn-ghost{background:var(--soft);color:var(--accent)}.btn-warn{background:#fff6e8;color:var(--warn)}.btn-small{min-height:38px;padding:.62rem .78rem;border-radius:12px}.visual-card{width:100%;aspect-ratio:1.18/1;border-radius:30px;background:rgba(255,255,255,.17);border:1px solid rgba(255,255,255,.24);display:grid;place-items:center;padding:16px}.visual-card svg{width:100%;height:100%;filter:drop-shadow(0 12px 18px rgba(0,0,0,.14))}
+.layout{display:grid;grid-template-columns:318px minmax(0,1fr);gap:18px;align-items:start;margin-top:18px}.side{position:sticky;top:12px;display:grid;gap:12px}.panel,.toolbox,.station,.finish{background:var(--paper);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 10px 26px rgba(18,32,51,.07)}.panel{padding:16px}.panel h2,.toolbox h2,.station h2,.finish h2{margin:.1rem 0 .6rem}.mini{color:var(--muted);font-size:.94rem;line-height:1.45}.progressbar{height:14px;border-radius:999px;background:#e8edf4;overflow:hidden;margin:.7rem 0 .4rem}.progressfill{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:.35s ease}.steps{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px}.steps li{display:flex;gap:10px;align-items:center;padding:10px;border-radius:15px;background:#f3f6fa;color:var(--muted);font-weight:760}.steps li.unlocked{background:var(--soft);color:var(--ink);cursor:pointer}.steps li.done{background:#ecfdf3;color:var(--ok)}.dot{width:28px;height:28px;border-radius:50%;background:white;display:grid;place-items:center;flex:0 0 auto;font-size:.86rem;box-shadow:0 2px 6px rgba(18,32,51,.08)}.hidden-admin-row{display:flex;gap:8px}.hidden-admin-row .pin{min-width:0;flex:1;padding:.78rem;min-height:46px}.learn-route{display:grid;gap:8px}.route-item{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;padding:10px;border-radius:16px;background:#f8fafc;border:1px solid #e4ebf3}.route-item b{color:var(--accent)}
+.content{display:grid;gap:18px}.toolbox{padding:clamp(16px,3vw,24px);overflow:hidden}.tool-grid{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(250px,.82fr);gap:16px;align-items:start}.canvas-wrap{background:linear-gradient(180deg,#fff,var(--pale));border:1px solid #dce5f0;border-radius:22px;padding:12px;overflow:hidden}canvas{width:100%;max-width:100%;height:auto;min-height:310px;border-radius:18px;background:#fff;border:1px solid #dde6f2;touch-action:none}.tool-readout,.controls{display:grid;gap:10px}.readout-card{border-radius:18px;padding:14px;background:#f7fafc;border:1px solid #e1e8f2}.readout-big{font-size:clamp(1.22rem,2.2vw,1.8rem);font-weight:900;color:var(--accent);line-height:1.25}.control-line{display:grid;gap:6px;font-weight:780}input[type=range]{width:100%;accent-color:var(--accent)}
+.station{position:relative;overflow:hidden;padding:clamp(16px,3vw,26px);scroll-margin-top:16px}.station::before{content:"";position:absolute;inset:0 0 auto 0;height:7px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent3))}.station.locked{padding:22px;background:rgba(255,255,255,.72)}.locked-box{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;padding:18px;border-radius:20px;background:#f3f6fa;border:1px dashed #c8d3e2;color:var(--muted)}.lock-icon{font-size:2rem}.discover{padding:14px 16px;border-radius:18px;background:linear-gradient(135deg,var(--soft),#fff);border-left:7px solid var(--accent);line-height:1.55}.task{margin-top:14px;padding:16px;border-radius:18px;background:#fbfdff;border:1px solid #dfe8f3}.task p{font-size:1.06rem;line-height:1.6}.station-note{font-size:.94rem;color:var(--muted);margin:.35rem 0 0}.answer-row{display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap}.answer-row input{flex:1 1 260px}.answer,input.pin{width:100%;border:2px solid #d7e0ec;border-radius:16px;padding:1rem;min-height:54px;font-size:1.04rem;background:#fff}.feedback{margin-top:10px;font-weight:800}.feedback.ok{color:var(--ok)}.feedback.bad{color:var(--bad)}.levels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}.level{border-radius:18px;padding:12px;border:1px solid #dfe7f2;background:#fff;line-height:1.45}.level strong{display:block;color:var(--accent);margin-bottom:.25rem}.level:nth-child(2){background:linear-gradient(180deg,#fff,var(--soft2))}.level:nth-child(3){background:linear-gradient(180deg,#fff,#fff8e6)}.hint-box{margin-top:14px;display:grid;gap:9px}.hint-card{border-radius:16px;padding:13px 14px;background:#fff;border:1px solid #dbe4ef;box-shadow:0 4px 12px rgba(18,32,51,.05);line-height:1.5}.hint-card strong{color:var(--accent)}.solution{margin-top:14px;border-radius:18px;padding:14px;background:#ecfdf3;border:1px solid #b8ebcd;line-height:1.55}.finish{padding:clamp(16px,3vw,26px);background:linear-gradient(135deg,#fff,#f8fffb)}.finish.locked{opacity:.72}.hidden{display:none!important}.katex-display{overflow-x:auto;overflow-y:hidden;padding:.2rem 0}.formula{overflow-x:auto}.pill{display:inline-flex;align-items:center;gap:.45rem;padding:.32rem .62rem;border-radius:999px;background:#eef4ff;color:var(--accent);font-weight:850;font-size:.88rem}.unit{font-weight:800;color:var(--muted)}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:930px){.layout,.tool-grid,.hero{grid-template-columns:1fr}.side{position:static}.levels{grid-template-columns:1fr}.app{padding:12px}.hero{border-radius:28px}.hero h1{font-size:clamp(2rem,10vw,3.1rem)}canvas{min-height:270px}}@media(max-width:560px){.answer-row,.hero-actions,.hidden-admin-row{display:grid}.visual-card{aspect-ratio:1.55/1}.eyebrow{align-items:flex-start}.toolbox,.station,.panel{border-radius:21px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* final-polish: bessere Lesbarkeit, Formen und Tippkarten */
+.hero, .panel, .toolbox, .station, .finish { isolation:isolate; }
+.hero h1 { text-wrap:balance; }
+.subtitle, .work-note, .discover, .task p, .hint-card, .solution { text-wrap:pretty; }
+.toolbox { position:relative; }
+.toolbox::before { content:"Interaktiv erkunden"; position:absolute; right:18px; top:18px; padding:.34rem .7rem; border-radius:999px; background:var(--soft); color:var(--accent); font-weight:900; font-size:.82rem; }
+.canvas-wrap { min-height:330px; display:grid; place-items:center; }
+canvas { display:block; aspect-ratio:840/460; width:100%; height:auto; max-height:62vh; }
+.visual-card svg, .visual-card svg * { vector-effect:non-scaling-stroke; }
+.station h2 { text-wrap:balance; }
+.station .discover { position:relative; padding-left:18px; }
+.task { box-shadow:inset 0 1px 0 rgba(255,255,255,.9); }
+.task strong:first-child, .discover strong:first-child { color:var(--accent); }
+.answer-row .unit { min-width:2rem; }
+.hint-card { border-left:6px solid var(--accent); background:linear-gradient(180deg,#fff,#fbfdff); }
+.hint-card:nth-child(2) { border-left-color:var(--accent2); }
+.hint-card:nth-child(3) { border-left-color:var(--accent3); }
+.hint-card:nth-child(4) { border-left-color:#f59e0b; }
+.level { min-height:104px; }
+.level strong::before { margin-right:.35rem; }
+.level:nth-child(1) strong::before { content:"🌱"; }
+.level:nth-child(2) strong::before { content:"🧩"; }
+.level:nth-child(3) strong::before { content:"🚀"; }
+.solution { border-left:7px solid var(--ok); }
+.locked-box strong { color:var(--accent); }
+.katex { line-height:1.22; }
+.formula { max-width:100%; }
+input.answer::placeholder { color:#7b8798; }
+@media(max-width:760px){.toolbox::before{position:static;justify-self:start;display:inline-flex;margin-bottom:10px}.canvas-wrap{min-height:260px}.level{min-height:auto}.station{padding-bottom:22px}}
+
+
+/* anwendungsphase: Erkenntnisse aktiv übertragen */
+.transfer{margin-top:18px;display:grid;gap:14px;padding:18px;border-radius:22px;background:linear-gradient(135deg,#ffffff,var(--soft));border:1px solid #dbe6f3;box-shadow:0 10px 24px rgba(18,32,51,.08)}
+.transfer-head{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}.transfer-icon{width:46px;height:46px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:1.35rem;box-shadow:0 10px 18px rgba(18,32,51,.14)}
+.transfer-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(240px,.95fr);gap:14px}.transfer-card{border-radius:18px;padding:14px;background:#fff;border:1px solid #dde7f2;line-height:1.52}.transfer-card h3{margin:.1rem 0 .5rem;color:var(--accent)}.criteria-list{margin:.35rem 0 0;padding-left:1.1rem}.criteria-list li{margin:.25rem 0}.starter-row{display:flex;gap:8px;flex-wrap:wrap}.starter-chip{border-radius:999px;background:#eef4ff;color:var(--accent);padding:.5rem .72rem;font-weight:850;border:1px solid #dbe7ff;cursor:pointer}.transfer-answer{width:100%;min-height:132px;border:2px solid #d7e0ec;border-radius:18px;padding:1rem;background:#fff;resize:vertical;line-height:1.45}.transfer-actions{display:flex;gap:10px;flex-wrap:wrap}.transfer-status{font-weight:850}.transfer-status.ok{color:var(--ok)}.transfer-status.bad{color:var(--bad)}
+@media(max-width:760px){.transfer-grid,.transfer-head{grid-template-columns:1fr}.transfer-actions{display:grid}.starter-row{display:grid}.transfer-answer{min-height:150px}}
+
+
+/* differenzierte-final-politur: visuelle Lernwege, altersgerechte Lesbarkeit, robuste Formen */
+:root{--basis:#0f766e;--standard:#2563eb;--sprinter:#9333ea;--accent-extra:#7c2d12}
+body{font-size:clamp(16px,1.25vw,18px)}
+.hero{border:1px solid rgba(255,255,255,.25)}
+.hero h1{letter-spacing:-.04em;text-wrap:balance}.subtitle,.work-note,.station-note,.discover,.task p,.level,.hint-card,.solution,.transfer-card{text-wrap:pretty}.work-note{font-size:1.02rem}.panel h2,.toolbox h2,.station h2,.finish h2{text-wrap:balance}.panel,.toolbox,.station,.finish{box-shadow:0 14px 32px rgba(18,32,51,.09)}
+.route-item{align-items:flex-start}.route-item span:first-child{box-shadow:0 8px 18px rgba(18,32,51,.12)}
+.toolbox{overflow:hidden}.toolbox::after{content:"Werkzeug · Beobachten · Prüfen";position:absolute;right:18px;top:18px;padding:.36rem .72rem;border-radius:999px;background:linear-gradient(135deg,var(--soft),#fff);border:1px solid var(--line);color:var(--accent);font-size:.82rem;font-weight:900}.canvas-wrap{min-height:320px;display:grid;place-items:center;background:linear-gradient(180deg,#fff,rgba(248,250,252,.85));border-radius:22px;border:1px dashed rgba(18,32,51,.14);overflow:hidden}canvas{width:100%;height:auto;max-height:62vh;touch-action:none;display:block}.visual-card svg,.visual-card svg *{vector-effect:non-scaling-stroke}.tool-readout .readout-card{border-left:6px solid var(--accent)}
+.station{position:relative;padding:clamp(16px,2.5vw,26px)}.station::before{content:"";position:absolute;inset:0 auto 0 0;width:8px;border-radius:var(--radius) 0 0 var(--radius);background:linear-gradient(180deg,var(--accent),var(--accent2))}.station.locked::before{background:#cbd5e1}.station .pill{box-shadow:0 6px 16px rgba(18,32,51,.09)}.station-note{border-left:5px solid var(--accent);padding:.7rem .9rem;background:var(--soft);border-radius:14px;color:#1e293b}.discover{background:linear-gradient(135deg,#fff,var(--soft));border:1px solid hsl(var(--hue) 72% 88%);border-radius:20px;padding:1rem 1.05rem;line-height:1.55}.discover strong:first-child::before{content:"🔎 ";}.task{background:linear-gradient(180deg,#fff,#fbfdff);border:2px solid #dbe7f2;border-radius:22px;padding:1rem;box-shadow:inset 0 1px 0 #fff}.task strong:first-child::before{content:"✅ ";}.answer-row{align-items:center}.answer{font-size:1.08rem}.feedback{min-height:1.4rem}.method-card{margin:.8rem 0;padding:.85rem 1rem;border-radius:18px;background:#f8fafc;border:1px solid #e2e8f0;line-height:1.5}.method-card strong{color:var(--accent)}
+.levels.differentiated{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.level{position:relative;overflow:hidden;padding:1rem;border-radius:20px;border:1px solid #d9e4f0;background:#fff;line-height:1.5}.level p{margin:.45rem 0 0}.level strong{display:block;font-size:1.05rem}.level-caption{display:inline-flex;margin:.18rem 0 .35rem;padding:.18rem .5rem;border-radius:999px;background:#f1f5f9;color:#475569;font-size:.78rem;font-weight:800}.basis-level{border-top:6px solid var(--basis)}.standard-level{border-top:6px solid var(--standard)}.sprinter-level{border-top:6px solid var(--sprinter)}.basis-level strong{color:var(--basis)}.standard-level strong{color:var(--standard)}.sprinter-level strong{color:var(--sprinter)}
+.hint-box{display:grid;gap:10px}.hint-card{border-left:7px solid var(--accent);background:linear-gradient(180deg,#fff,#fbfdff);border-radius:18px;padding:1rem;box-shadow:0 8px 18px rgba(18,32,51,.06)}.hint-card strong{color:var(--accent)}.hint-card:nth-child(2){border-left-color:var(--standard)}.hint-card:nth-child(3){border-left-color:var(--sprinter)}.hint-card:nth-child(4){border-left-color:#f59e0b}.solution{border-left:7px solid var(--ok);background:#f0fdf4;border-radius:18px;padding:1rem;line-height:1.55}.locked-box{background:#f8fafc;border:1px dashed #cbd5e1;border-radius:20px}.katex{line-height:1.25}.formula{overflow-wrap:anywhere}.transfer{display:grid;gap:14px}.transfer-head{background:linear-gradient(135deg,var(--soft),#fff);border-radius:22px;padding:14px;border:1px solid hsl(var(--hue) 72% 88%)}.transfer-icon{box-shadow:0 10px 20px rgba(18,32,51,.14)}.transfer-card{box-shadow:0 8px 18px rgba(18,32,51,.05)}.criteria-list li{padding:.15rem 0}.starter-chip:hover{transform:translateY(-1px)}
+@media(max-width:920px){.levels.differentiated{grid-template-columns:1fr}.toolbox::after{position:static;display:inline-flex;margin:0 0 10px 0}.canvas-wrap{min-height:260px}.answer-row{gap:8px}.answer-row button{width:auto}}
+@media(max-width:640px){.app{padding:10px}.hero{border-radius:28px}.station,.panel,.toolbox,.finish{border-radius:22px}.answer-row{display:grid;grid-template-columns:1fr}.answer-row .unit{min-height:0}.hero-actions button{width:100%}}
+
+
+/* iPad-Motivations-Update: klare Touch-Bedienung, bessere Lesbarkeit, ruhigere Karten */
+:root{
+  --tap:58px;
+  --card-gap:clamp(12px,2vw,18px);
+  --student-yellow:#fffbeb;
+  --student-green:#ecfdf5;
+  --student-blue:#eff6ff;
+}
+html{font-size:clamp(16px,1.2vw,18px);-webkit-text-size-adjust:100%} 
+body{overflow-x:hidden;line-height:1.58;-webkit-font-smoothing:antialiased;touch-action:manipulation;background-attachment:fixed}
+body::selection{background:hsl(var(--hue) 90% 86%)}
+button,.starter-chip,.steps li.unlocked{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+button{min-height:var(--tap);padding:0.95rem 1.15rem;border-radius:18px;letter-spacing:.005em}
+.btn-small{min-height:48px}.answer,input.pin,textarea{font-size:16px;line-height:1.45;min-height:var(--tap)}
+.hero{box-shadow:0 20px 55px rgba(18,32,51,.18);border-radius:clamp(26px,3vw,42px)}
+.hero-actions .btn-light,.hero-actions .btn-warn{min-width:185px}.hero-actions button{box-shadow:0 10px 24px rgba(0,0,0,.15)}
+.student-start{margin:16px 0 0;padding:clamp(14px,2.4vw,20px);border-radius:28px;background:linear-gradient(135deg,rgba(255,255,255,.95),hsl(var(--hue) 90% 97%));border:1px solid var(--line);box-shadow:0 12px 28px rgba(18,32,51,.08);display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}
+.student-start .start-icon{width:48px;height:48px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:1.45rem;box-shadow:0 10px 20px rgba(18,32,51,.16)}
+.student-start h2{margin:.05rem 0 .3rem;font-size:clamp(1.2rem,2vw,1.55rem)}
+.student-start p{margin:.2rem 0;color:#334155}.student-start ul{margin:.55rem 0 0;padding-left:1.15rem;display:grid;gap:.25rem;color:#334155}.student-start li::marker{color:var(--accent)}
+.panel,.toolbox,.station,.finish{border:1px solid rgba(18,32,51,.11);box-shadow:0 14px 34px rgba(18,32,51,.09)}
+.side .panel{background:rgba(255,255,255,.97)}.progressbar{height:16px}.steps{gap:10px}.steps li{min-height:50px;padding:12px}.dot{width:32px;height:32px;font-weight:900}.route-item{min-height:64px}.route-item>span:first-child{width:32px;height:32px;border-radius:13px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:900}
+.toolbox{position:relative}.tool-grid{gap:var(--card-gap)}.canvas-wrap{box-shadow:inset 0 1px 0 #fff,0 8px 20px rgba(18,32,51,.06)}canvas{image-rendering:auto;max-height:58vh}.readout-card{min-height:112px}.controls label{font-size:.95rem}.control-line{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:.75rem}
+.station{margin-bottom:var(--card-gap)}.station h2{font-size:clamp(1.38rem,2.2vw,2rem)}.station-note{font-weight:680}.discover{font-size:1.02rem}.discover,.method-card,.task,.level,.hint-card,.solution,.transfer-card{box-shadow:0 8px 22px rgba(18,32,51,.055)}
+.task{border-color:hsl(var(--hue) 62% 86%)}.task p{font-size:clamp(1.04rem,1.6vw,1.17rem)}.answer-row{margin-top:14px}.feedback{padding:.35rem 0}.feedback.ok::before{content:'✓ ';}.feedback.bad::before{content:'Noch nicht ganz. ';}
+.levels.differentiated{align-items:stretch}.level{min-height:126px}.basis-level{background:linear-gradient(180deg,#fff,var(--student-green))}.standard-level{background:linear-gradient(180deg,#fff,var(--student-blue))}.sprinter-level{background:linear-gradient(180deg,#fff,#faf5ff)}
+.hint-card{font-size:1rem}.hint-card::before{content:'💡';float:right;font-size:1.25rem;opacity:.82}.solution{font-size:1rem}.locked-box{font-size:1rem}.lock-icon{filter:drop-shadow(0 5px 10px rgba(18,32,51,.12))}
+.transfer-head{display:grid;grid-template-columns:auto 1fr;gap:14px}.transfer-card{font-size:1rem}.transfer-answer{min-height:150px}.starter-chip{min-height:44px;display:inline-flex;align-items:center}.criteria-list{line-height:1.55}
+.katex-display{max-width:100%;overflow-x:auto;overflow-y:hidden}.katex{font-size:1.02em}.formula{overflow-x:auto;overflow-wrap:normal}.formula p{overflow-x:auto}.visual-card{box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 12px 26px rgba(18,32,51,.1)}.visual-card text{paint-order:stroke;stroke:rgba(255,255,255,.4);stroke-width:2px}
+@media (pointer:coarse){button,.answer,.starter-chip{min-height:60px}.steps li.unlocked{padding:14px}.control-line{padding:1rem}input[type=range]{height:34px}.answer-row{gap:12px}}
+@media (max-width:1024px){.layout{grid-template-columns:1fr}.side{position:static;display:grid;grid-template-columns:1fr 1fr;gap:12px}.hero{min-height:auto}.tool-grid{grid-template-columns:1fr}.canvas-wrap{min-height:300px}canvas{min-height:300px}.student-start{grid-template-columns:1fr}.student-start .start-icon{display:none}}
+@media (max-width:760px){.side{grid-template-columns:1fr}.hero-actions{display:grid;grid-template-columns:1fr}.hero-actions button{width:100%}.answer-row{display:grid;grid-template-columns:1fr}.answer-row button{width:100%}.transfer-head{grid-template-columns:1fr}.transfer-icon{display:none}.app{padding:max(10px,env(safe-area-inset-left)) max(10px,env(safe-area-inset-right)) max(18px,env(safe-area-inset-bottom))}.hero{padding:22px}.student-start{border-radius:22px}.canvas-wrap{min-height:250px}canvas{min-height:250px}.route-item{min-height:auto}.steps li{font-size:.98rem}}
+@media (orientation:landscape) and (max-height:760px){.hero{min-height:auto}.visual-card{max-height:250px}.canvas-wrap{min-height:240px}canvas{min-height:240px;max-height:54vh}.side{top:6px}}
+
+
+/* Responsive-Größencheck 2026-06: dynamische Boxen, iPad- und Smartphone-tauglich */
+:root{
+  --page-pad:clamp(10px,2.6vw,22px);
+  --box-pad:clamp(14px,2.5vw,26px);
+  --box-gap:clamp(12px,2.2vw,20px);
+  --safe-left:env(safe-area-inset-left,0px);
+  --safe-right:env(safe-area-inset-right,0px);
+  --safe-bottom:env(safe-area-inset-bottom,0px);
+}
+html,body{max-width:100%;overflow-x:hidden;-webkit-text-size-adjust:100%;}
+body{min-width:0;}
+*,*::before,*::after{min-width:0;}
+.app{width:min(100%,1280px);max-width:100%;padding:var(--page-pad);margin-inline:auto;}
+.fullscreen-mode .app{width:min(100%,1480px);max-width:100%;}
+.hero,.layout,.side,.content,.panel,.toolbox,.station,.finish,.task,.discover,.hint-card,.solution,.level,.locked-box,.readout-card,.control-line,.student-start,.method-card,.transfer-card,.canvas-wrap,.visual-card{max-width:100%;min-width:0;}
+.hero{grid-template-columns:minmax(0,1fr) minmax(240px,390px);gap:var(--box-gap);padding:clamp(20px,4vw,48px);}
+.layout{grid-template-columns:minmax(260px,318px) minmax(0,1fr);gap:var(--box-gap);}
+.content{min-width:0;}
+.side{min-width:0;}
+.tool-grid{grid-template-columns:minmax(0,1.15fr) minmax(230px,.85fr);gap:var(--box-gap);}
+.levels{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:var(--box-gap);}
+.answer-row{display:flex;flex-wrap:wrap;align-items:stretch;gap:clamp(8px,1.5vw,12px);}
+.answer-row input,.answer-row textarea,.answer-row .answer{flex:1 1 min(100%,280px);min-width:0;width:100%;}
+.answer-row button{flex:0 1 auto;min-width:min(100%,150px);}
+.hero-actions,.hidden-admin-row{display:flex;flex-wrap:wrap;gap:10px;max-width:100%;}
+.hero-actions button,.hidden-admin-row button{flex:1 1 min(100%,170px);}
+button,input,textarea,select{max-width:100%;}
+input[type="range"]{width:100%;min-width:0;}
+img,svg,canvas,video{max-width:100%;height:auto;}
+svg{overflow:visible;}
+.visual-card{aspect-ratio:1.18/1;min-height:0;}
+.visual-card svg{width:100%;height:auto;max-height:100%;}
+.canvas-wrap{padding:clamp(8px,1.6vw,14px);}
+canvas{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;min-height:clamp(230px,38vw,330px);max-height:min(62vh,430px);}
+.panel,.toolbox,.station,.finish{padding:var(--box-pad);}
+.panel{padding:clamp(14px,2.2vw,18px);}
+.task,.discover,.hint-card,.solution,.level,.locked-box,.readout-card,.control-line,.transfer-card{overflow-wrap:anywhere;word-break:normal;hyphens:auto;}
+.task p,.discover,.hint-card,.solution,.mini,.station-note,.subtitle,.work-note,.readout-card,.level,.transfer-card{line-height:1.55;}
+.katex-display,.formula,.task,.solution,.hint-card,.readout-big{max-width:100%;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;}
+.katex-display{padding-bottom:.25rem;}
+.katex{max-width:100%;}
+table{width:100%;max-width:100%;border-collapse:collapse;display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+pre,code{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere;}
+.steps li{min-width:0;overflow-wrap:anywhere;}
+.dot{flex:0 0 auto;}
+.route-item{grid-template-columns:auto minmax(0,1fr);}
+.locked-box{grid-template-columns:auto minmax(0,1fr);}
+.student-start{grid-template-columns:auto minmax(0,1fr);}
+.transfer-head{grid-template-columns:auto minmax(0,1fr);}
+.readout-big{font-size:clamp(1.05rem,3.2vw,1.8rem);}
+.station h2,.toolbox h2,.panel h2,.finish h2{text-wrap:balance;}
+@media (max-width:1100px){
+  .layout{grid-template-columns:1fr;}
+  .side{position:static;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));align-items:start;}
+}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:auto;}
+  .tool-grid{grid-template-columns:1fr;}
+  .visual-card{max-height:300px;}
+  canvas{min-height:clamp(220px,52vw,320px);max-height:54vh;}
+}
+@media (max-width:620px){
+  :root{--page-pad:clamp(8px,3.5vw,14px);--box-pad:clamp(14px,4vw,18px);}
+  .app{padding-left:max(var(--page-pad),var(--safe-left));padding-right:max(var(--page-pad),var(--safe-right));padding-bottom:max(18px,var(--safe-bottom));}
+  .hero{border-radius:24px;padding:clamp(18px,5vw,24px);}
+  .hero h1{font-size:clamp(1.75rem,9.5vw,2.65rem);line-height:1.02;letter-spacing:-.04em;}
+  .subtitle{font-size:1rem;}
+  .hero-actions,.hidden-admin-row,.answer-row{display:grid;grid-template-columns:1fr;}
+  .hero-actions button,.hidden-admin-row button,.answer-row button{width:100%;min-width:0;}
+  .student-start,.transfer-head,.locked-box{grid-template-columns:1fr;}
+  .student-start .start-icon,.transfer-icon{display:none;}
+  .panel,.toolbox,.station,.finish{border-radius:20px;}
+  .task,.discover,.hint-card,.solution,.level,.locked-box,.readout-card,.control-line{border-radius:16px;}
+  .visual-card{aspect-ratio:1.55/1;max-height:240px;}
+  canvas{min-height:220px;max-height:48vh;}
+  .steps li{font-size:.96rem;}
+  .eyebrow{max-width:100%;white-space:normal;}
+}
+@media (max-width:390px){
+  .hero h1{font-size:clamp(1.55rem,9vw,2.15rem);}
+  .task p,.discover,.hint-card,.solution{font-size:.98rem;}
+  button{padding:.85rem .9rem;}
+  canvas{min-height:200px;}
+}
+@media (orientation:landscape) and (max-height:760px){
+  .hero{min-height:auto;}
+  .visual-card{max-height:220px;}
+  canvas{min-height:210px;max-height:52vh;}
+}
+
+
+/* Finale Optimierungsrunde: iPad, Lesbarkeit, Bedienbarkeit, Barrierearmut */
+:root{
+  --tap-size:56px;
+  --readable-width:78ch;
+  --card-min: min(100%, 280px);
+}
+.skip-link{position:absolute;left:12px;top:8px;z-index:9999;background:#fff;color:var(--accent);border:2px solid var(--accent);border-radius:14px;padding:.75rem 1rem;font-weight:900;transform:translateY(-140%);transition:.16s ease;box-shadow:0 12px 24px rgba(18,32,51,.18)}
+.skip-link:focus{transform:translateY(0)}
+button,.starter-chip,.steps li.unlocked,a{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+button,.answer,.pin,.transfer-answer,.starter-chip{min-height:var(--tap-size)}
+button{line-height:1.18;white-space:normal;text-wrap:balance}
+input,textarea,select{font-size:16px} /* verhindert iOS-Zoom beim Fokussieren */
+.hero,.student-start,.panel,.toolbox,.station,.finish{isolation:isolate}
+.hero-text,.content,.task,.discover,.solution,.hint-card,.level,.transfer-card,.method-card{overflow-wrap:break-word}
+.subtitle,.work-note,.task p,.discover,.hint-card,.solution,.transfer-card,.level,.mini{max-width:var(--readable-width)}
+.task p,.discover,.hint-card,.solution,.transfer-card{font-size:clamp(1rem,1.15vw + .72rem,1.14rem)}
+.hero h1{overflow-wrap:anywhere;text-wrap:balance}
+.panel h2,.toolbox h2,.station h2,.finish h2{line-height:1.1;text-wrap:balance;overflow-wrap:anywhere}
+.panel,.toolbox,.station,.finish,.task,.discover,.level,.hint-card,.solution,.transfer-card,.readout-card,.control-line,.locked-box{container-type:inline-size}
+@container (max-width: 420px){
+  .answer-row,.transfer-actions,.starter-row{display:grid!important;grid-template-columns:1fr!important}
+  .answer-row>* ,.transfer-actions>* ,.starter-row>*{width:100%;min-width:0}
+  .readout-big{font-size:clamp(1.05rem,6vw,1.45rem)}
+  .level{min-height:auto}
+}
+.transfer-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))!important}
+.starter-row{align-items:stretch}.starter-chip{justify-content:center;white-space:normal;text-align:center}
+.steps li.unlocked:active,button:active,.starter-chip:active{transform:scale(.99)}
+.scrollable-x{position:relative;box-shadow:inset -10px 0 10px -12px rgba(18,32,51,.45)}
+.katex-display,.formula,table,pre{scrollbar-width:thin}
+.katex-display::after,.formula::after{content:'';display:block;height:1px}
+img{height:auto;object-fit:contain}svg{max-inline-size:100%;block-size:auto}.visual-card svg{max-height:100%}
+canvas{contain:layout size style;touch-action:none;background-clip:padding-box}
+@media (hover:none){button:hover:not(:disabled){transform:none;filter:none}.steps li.unlocked:hover{filter:none}}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}
+  button:hover:not(:disabled){transform:none!important}
+}
+@media (max-width: 740px){
+  .subtitle,.work-note,.task p,.discover,.hint-card,.solution,.transfer-card,.level,.mini{max-width:100%}
+  .hero,.student-start,.panel,.toolbox,.station,.finish{box-shadow:0 8px 22px rgba(18,32,51,.08)}
+  .task,.discover,.hint-card,.solution,.level,.transfer-card{padding:clamp(12px,4vw,18px)}
+  .readout-card{min-height:auto}
+  .side .panel{padding:14px}
+}
+@media (max-width: 430px){
+  :root{--tap-size:58px}
+  .app{padding-inline:8px}.hero{border-radius:22px}.student-start,.panel,.toolbox,.station,.finish{border-radius:18px}
+  .hero h1{font-size:clamp(1.55rem,10vw,2.25rem)}
+  .eyebrow{font-size:.88rem}.work-note{font-size:.96rem}
+  .steps li{grid-template-columns:auto minmax(0,1fr);align-items:start}
+  .dot{width:30px;height:30px}
+  .answer,.pin,.transfer-answer{padding:.92rem}
+  canvas{min-height:190px;max-height:46vh}
+}
+@media print{
+  body{background:#fff!important;color:#111}.hero-actions,.side,.hint-box button,.skip-link{display:none!important}
+  .layout{display:block}.station,.toolbox,.finish,.student-start{break-inside:avoid;box-shadow:none;border:1px solid #ccc}
+}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#mainContent">Direkt zum Lernbereich springen</a>
+<div class="app">
+<header class="hero">
+  <div class="hero-text">
+    <div class="eyebrow"><span id="heroIcon">•</span><span id="heroMeta"></span></div>
+    <h1 id="heroTitle"></h1>
+    <p class="subtitle"><strong>Leitfrage:</strong> <span id="bigQuestion"></span></p>
+    <p class="subtitle" id="contextText"></p>
+    <p class="work-note" id="workNote"></p>
+    <div class="hero-actions"><button class="btn-light" id="startBtn">Starten</button><button class="btn-light" id="fullscreenBtn">Großansicht öffnen</button><button class="btn-warn" id="resetBtn">Neu starten</button></div>
+  </div>
+  <div class="visual-card" id="heroVisual" aria-hidden="true"></div>
+</header>
+
+<section class="student-start" aria-label="Lernstart">
+  <div class="start-icon" aria-hidden="true">✨</div>
+  <div>
+    <h2>Dein Lernstart</h2>
+    <p>Bearbeite den Lernpfad Schritt für Schritt. Erst wenn eine Pflichtaufgabe stimmt, öffnet sich die nächste Station.</p>
+    <ul>
+      <li><strong>Erkunden:</strong> Probiere das Werkzeug aus und beobachte genau.</li>
+      <li><strong>Bearbeiten:</strong> Schreibe kurze Rechenwege, Skizzen oder Begründungen auf.</li>
+      <li><strong>Anwenden:</strong> Am Ende überträgst du die Idee auf eine neue Situation.</li>
+    </ul>
+  </div>
+</section>
+
+<div class="layout">
+<aside class="side">
+  <section class="panel"><h2>Fortschritt</h2><div class="progressbar"><div class="progressfill" id="progressFill"></div></div><p class="mini" id="progressText">0 Stationen gelöst</p><ol class="steps" id="steps"></ol></section>
+  <section class="panel"><h2>So arbeitest du</h2><div class="learn-route"><div class="route-item"><span>1</span><div><b>Erkunden</b><br><span class="mini">Nutze Werkzeug, Skizze oder Tabelle.</span></div></div><div class="route-item"><span>2</span><div><b>Pflichtaufgabe</b><br><span class="mini">Erst lösen, dann prüfen. Danach öffnet sich die nächste Station.</span></div></div><div class="route-item"><span>3</span><div><b>Tippkarten</b><br><span class="mini">Zwischen zwei Tipps liegen 30 Sekunden Wartezeit.</span></div></div><div class="route-item"><span>4</span><div><b>Anwenden</b><br><span class="mini">Am Ende überträgst du deine Erkenntnis auf eine neue Situation.</span></div></div></div></section>
+</aside>
+<main class="content">
+  <section class="toolbox" id="toolbox"><h2 id="toolTitle">Werkzeug</h2><p class="mini" id="toolIntro"></p><div class="tool-grid"><div class="canvas-wrap"><canvas id="toolCanvas" width="840" height="460" aria-label="Interaktives Werkzeug"></canvas></div><div class="tool-readout"><div class="readout-card"><div class="readout-big formula" id="toolMain"></div><p class="mini formula" id="toolSub"></p></div><div class="controls" id="controls"></div></div></div></section>
+  <section id="stations"></section>
+  <section class="finish locked" id="finishBox"><h2>Anwenden und sichern</h2><p id="finishText">Bearbeite alle Stationen, dann wird die Anwendungsphase freigeschaltet.</p><div id="transferBox" class="transfer hidden"></div></section>
+</main>
+</div>
+</div>
+<script id="lesson-data" type="application/json">{"path":"q2-gk/analytische-geometrie/vektoren-und-geraden/lernpfad-einfuehrung-vektoren-und-geraden.html","title":"Einführung: Vektoren und Geraden","short":"Vektoren und Geraden entdecken und die Relevanz verstehen","area":"Analytische Geometrie","course":"Q2 GK","themeTitle":"Vektoren und Geraden","duration":"ca. 30 Minuten","kind":"vector","theme":{"hue":222,"icon":"🧪","motif":"vektoren-und-geraden","pattern":"einfuehrung-vektoren-und-geraden"},"bigQuestion":"Wie rechnet man mit Richtung und Länge zugleich?","context":"Drohnenflug, Navigation und Kräfte brauchen Richtungen und Längen. Vektoren beschreiben Bewegung im Raum.","tool":{"type":"vector","x":3,"y":2,"z":1,"title":"Interaktives Werkzeug: Einführung: Vektoren und Geraden","intro":"Verändere die Werte, beobachte die Darstellung und nutze sie als Unterstützung für die Aufgaben."},"stations":[{"title":"Vektoren erkunden","discover":"Im Vektor-Labor kannst du Pfeile verschieben. Ein Vektor beschreibt eine Verschiebung, nicht nur einen Punkt. Begründe anschließend, welche mathematische Idee dahintersteckt.","prompt":"Berechne \\(\begin{pmatrix}2\\3\\end{pmatrix}+\begin{pmatrix}4\\1\\end{pmatrix}\\). Gib die erste Komponente an. Prüfe kurz, ob das Ergebnis plausibel ist.","type":"number","answers":[6],"unit":"","solution":"Komponentenweise: erste Komponente \\(2+4=6\\), zweite \\(3+1=4\\).","hints":["Addiere komponentenweise.","Erste Komponenten: 2 und 4.","2 + 4 = 6.","Die erste Komponente ist 6."],"basis":"Orientierung: Lege die Pfeile hintereinander. Trenne Modellannahme und Rechnung.","standard":"Klausurweg: Addiere komponentenweise. Dokumentiere Ansatz, Rechnung und Interpretation. Ergänze eine kurze Begründung.","sprinter":"Abiturtransfer: Gib den vollständigen Ergebnisvektor an. Diskutiere eine Verallgemeinerung, Einschränkung oder Validierung."},{"title":"Skalarmultiplikation","discover":"Ein Skalar streckt oder kehrt einen Vektor um. Begründe anschließend, welche mathematische Idee dahintersteckt.","prompt":"Berechne \\(3\\cdot\begin{pmatrix}2\\-1\\end{pmatrix}\\). Gib die zweite Komponente an. Prüfe kurz, ob das Ergebnis plausibel ist.","type":"number","answers":[-3],"unit":"","solution":"\\(3\\cdot(2,-1)=(6,-3)\\). Die zweite Komponente ist -3.","hints":["Multipliziere jede Komponente mit 3.","Die zweite Komponente ist -1.","3 · (-1) = ….","Also -3."],"basis":"Orientierung: Strecke den Pfeil dreifach. Trenne Modellannahme und Rechnung.","standard":"Klausurweg: Multipliziere komponentenweise. Dokumentiere Ansatz, Rechnung und Interpretation. Ergänze eine kurze Begründung.","sprinter":"Abiturtransfer: Was bewirkt der Faktor -2? Diskutiere eine Verallgemeinerung, Einschränkung oder Validierung."},{"title":"Betrag bestimmen","discover":"Die Länge eines Vektors wird mit Pythagoras berechnet. Begründe anschließend, welche mathematische Idee dahintersteckt.","prompt":"Wie lang ist \\(\begin{pmatrix}3\\4\\end{pmatrix}\\)? Prüfe kurz, ob das Ergebnis plausibel ist.","type":"number","answers":[5],"unit":"","solution":"\\(\\sqrt{3^2+4^2}=\\sqrt{25}=5\\).","hints":["Nutze Pythagoras.","Berechne \\(3^2+4^2\\).","Das ergibt 25.","Die Wurzel ist 5."],"basis":"Orientierung: Zeichne ein rechtwinkliges Dreieck. Trenne Modellannahme und Rechnung.","standard":"Klausurweg: Berechne den Betrag. Dokumentiere Ansatz, Rechnung und Interpretation. Ergänze eine kurze Begründung.","sprinter":"Abiturtransfer: Wie lang ist \\((6,8)\\)? Diskutiere eine Verallgemeinerung, Einschränkung oder Validierung."},{"title":"Kolinearität prüfen","discover":"Kolineare Vektoren sind Vielfache voneinander. Begründe anschließend, welche mathematische Idee dahintersteckt.","prompt":"Sind \\((2,4)\\) und \\((1,2)\\) kolinear? Gib 1 für ja, 0 für nein ein. Prüfe kurz, ob das Ergebnis plausibel ist.","type":"number","answers":[1],"unit":"","solution":"\\((2,4)=2\\cdot(1,2)\\). Die Vektoren sind kolinear.","hints":["Prüfe, ob ein Faktor beide Komponenten verbindet.","1 wird mit 2 zu 2.","2 wird mit 2 zu 4.","Ja, Faktor 2."],"basis":"Orientierung: Vergleiche die Richtungen. Trenne Modellannahme und Rechnung.","standard":"Klausurweg: Suche einen gemeinsamen Faktor. Dokumentiere Ansatz, Rechnung und Interpretation. Ergänze eine kurze Begründung.","sprinter":"Abiturtransfer: Finde einen nicht kolinearen Vektor. Diskutiere eine Verallgemeinerung, Einschränkung oder Validierung."},{"title":"Sicherung","discover":"Vektorrechnung verbindet Richtung, Länge und Lagebeziehungen. Begründe anschließend, welche mathematische Idee dahintersteckt.","prompt":"Ergänze den Merksatz sinnvoll: Vektoren werden komponentenweise ______.","type":"text","answers":["addiert","subtrahiert","gerechnet"],"unit":"","solution":"Vektoren werden komponentenweise addiert bzw. subtrahiert.","hints":["Man rechnet oben mit oben und unten mit unten.","Bei Addition heißt die Rechenart ...","Das Wort beginnt mit A.","Gesucht ist „addiert“."],"basis":"Orientierung: Notiere die Additionsregel. Trenne Modellannahme und Rechnung.","standard":"Klausurweg: Erkläre Skalarmultiplikation. Dokumentiere Ansatz, Rechnung und Interpretation. Ergänze eine kurze Begründung.","sprinter":"Abiturtransfer: Nenne einen Anwendungsbezug für Vektoren. Diskutiere eine Verallgemeinerung, Einschränkung oder Validierung."}],"workNote":"Mathematisiere die Situation, wähle ein geeignetes Verfahren, rechne nachvollziehbar und interpretiere das Ergebnis im Kontext.","stationNote":"Arbeite fachlich sauber: Ansatz, Rechnung, Interpretation und kurze Kontrolle.","level":13,"application":{"headline":"Anwendungs-Check: Erkenntnisse übertragen","situation":"Eine Drohne, ein Lichtstrahl oder ein Bauteil bewegt sich im Raum. Du beschreibst Lage, Richtung oder Schnitt mit Vektoren und prüfst die Deutung.","prompt":"Mathematisiere die Situation, wähle ein geeignetes Verfahren und interpretiere das Ergebnis fachlich sauber.","criteria":["Du formulierst einen tragfähigen mathematischen Ansatz.","Du nutzt ein passendes Verfahren nachvollziehbar.","Du interpretierst und validierst das Ergebnis im Kontext."],"starters":["Ich modelliere die Situation durch ...","Daraus folgt mathematisch ...","Im Kontext bedeutet das ...","Eine Grenze des Modells ist ..."],"hints":["Strukturiere die Situation: Modellannahmen, gegebene Größen und Zielgröße klären.","Mathematisiere die Situation mit Term, Funktion, Vektor, Gleichung, Integral oder Wahrscheinlichkeitsmodell.","Bearbeite das Modell rechnerisch und dokumentiere die entscheidenden Zwischenschritte.","Validiere das Ergebnis: Bedeutung, Grenzen des Modells und Plausibilität im Kontext prüfen."],"keywords":["einführung","vektoren","geraden","analytische","geometrie","erkunden","skalarmultiplikation","betrag","bestimmen","kolinearität","prüfen","sicherung","rechnen","zeichnen","begründen","modellieren","interpretieren","anwenden","vergleichen"]}}</script>
+<script>
+'use strict';
+const LESSON = JSON.parse(document.getElementById('lesson-data').textContent);
+const COOLDOWN = 30;
+const STORAGE_KEY = 'lp-visual-v5-final-' + LESSON.path;
+const $ = id => document.getElementById(id);
+let toolState = {};
+let countdownTimers = {};
+function loadState(){try{return Object.assign({solved:{},hints:{},hintTime:{},notes:{},transferDone:false,transferHints:0,transferHintTime:0,transferText:''}, JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}'));}catch(e){return {solved:{},hints:{},hintTime:{},notes:{},transferDone:false,transferHints:0,transferHintTime:0,transferText:''};}}
+let state = loadState();
+function save(){localStorage.setItem(STORAGE_KEY, JSON.stringify(state));}
+function escapeHtml(s){return String(s??'').replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
+function setFormula(el, html){el.innerHTML = html; scheduleMath(el);}
+function scheduleMath(root=document.body){const run=()=>{try{if(window.renderMathInElement){renderMathInElement(root,{delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true},{left:'$$',right:'$$',display:true}],ignoredTags:['script','noscript','style','textarea','pre','code'],throwOnError:false,errorColor:'#b42318'});}else{document.documentElement.classList.add('katex-pending');}}catch(e){console.warn('KaTeX render warning', e);}}; [0,160,420,1000,1800].forEach(t=>setTimeout(run,t));}
+function normalize(s){return String(s||'').trim().toLowerCase().replace(/,/g,'.').replace(/\s+/g,' ').replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss');}
+function parseNumber(s){s=normalize(s).replace(/%$/,'').replace(/[^0-9+\-*/.^()\/ ]/g,''); if(/^[-+]?\d+(\.\d+)?\s*\/\s*[-+]?\d+(\.\d+)?$/.test(s)){let [a,b]=s.split('/').map(Number); if(b!==0)return a/b;} return Number(s);}
+function checkAnswer(st, val){const typ=st.type||'number'; if(typ==='text'){const n=normalize(val); return (st.answers||[]).some(a=>n.includes(normalize(a)));} const x=parseNumber(val); if(!Number.isFinite(x)) return false; return (st.answers||[]).some(a=>Math.abs(x-Number(a))<=0.015*Math.max(1,Math.abs(Number(a))));}
+function unlocked(i){return false || i===0 || state.solved[i-1];}
+function allSolved(){return LESSON.stations.every((_,i)=>state.solved[i]);}
+function renderHero(){document.documentElement.style.setProperty('--hue', LESSON.theme?.hue || 220); $('heroIcon').textContent=LESSON.theme?.icon||'🧭'; $('heroMeta').textContent=[LESSON.course, LESSON.area, LESSON.duration].filter(Boolean).join(' · '); $('heroTitle').textContent=LESSON.title; $('bigQuestion').textContent=LESSON.bigQuestion||'Was kann man mit Mathematik herausfinden?'; $('contextText').textContent=LESSON.context||''; $('workNote').textContent=LESSON.workNote||''; $('heroVisual').innerHTML=heroSvg();}
+function heroSvg(){const icon=escapeHtml(LESSON.theme?.icon||'🧭'); const motif=escapeHtml(LESSON.themeTitle||LESSON.area||'Mathematik'); return `<svg viewBox="0 0 420 320" role="img" aria-label="${motif}"><defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="hsl(${LESSON.theme?.hue||220} 82% 94%)"/><stop offset="1" stop-color="hsl(${((LESSON.theme?.hue||220)+64)%360} 80% 78%)"/></linearGradient></defs><rect x="18" y="22" width="384" height="276" rx="34" fill="url(#g)"/><circle cx="318" cy="82" r="44" fill="hsl(${LESSON.theme?.hue||220} 72% 43%)" opacity=".72"/><path d="M58 226 C122 100,242 232,360 92" fill="none" stroke="rgba(18,32,51,.24)" stroke-width="13" stroke-linecap="round"/><g stroke="rgba(18,32,51,.16)" stroke-width="2">${Array.from({length:7},(_,i)=>`<line x1="${60+i*38}" y1="58" x2="${60+i*38}" y2="260"/>`).join('')}${Array.from({length:5},(_,i)=>`<line x1="54" y1="${75+i*38}" x2="365" y2="${75+i*38}"/>`).join('')}</g><text x="78" y="158" font-size="80" font-family="system-ui">${icon}</text><rect x="64" y="214" width="292" height="42" rx="18" fill="rgba(255,255,255,.70)"/><text x="86" y="242" font-size="18" font-family="system-ui" font-weight="850" fill="#132036">${motif.slice(0,28)}</text></svg>`;}
+function updateProgress(){let done=LESSON.stations.filter((_,i)=>state.solved[i]).length; $('progressFill').style.width=(100*done/LESSON.stations.length)+'%'; $('progressText').textContent=done+' von '+LESSON.stations.length+' Stationen gelöst'; const finish=$('finishBox'); const transfer=$('transferBox'); if(allSolved()||false){finish.classList.remove('locked'); $('finishText').innerHTML='Du hast die Stationen geschafft. Jetzt folgt der <strong>Anwendungs-Check</strong>: Übertrage eine Erkenntnis aus dem Lernpfad auf eine neue Situation.'; renderTransfer();} else {finish.classList.add('locked'); $('finishText').textContent='Bearbeite alle Stationen, dann wird die Anwendungsphase freigeschaltet.'; if(transfer) transfer.classList.add('hidden');}}
+
+function transferMinWords(){const lvl=Number(LESSON.level||8); return lvl<=6?18:(lvl<=8?24:32);}
+function transferKeywords(){const app=LESSON.application||{}; return (app.keywords||[]).map(normalize).filter(k=>k.length>3).slice(0,18);}
+function transferActionWords(){return ['rechne','berechne','zeichne','vergleiche','pruefe','bestimme','forme','modelliere','interpretiere','begründe','begrunde','nutze','teile','messe','erklaere','beschreibe','wandle','setze','lies','ordne'];}
+function renderTransfer(){const box=$('transferBox'); if(!box) return; const app=LESSON.application||{}; if(!(allSolved()||false)){box.classList.add('hidden'); return;} box.classList.remove('hidden'); const starters=(app.starters||['Ich erkenne ...','Ich nutze ...','Ich prüfe ...']).map((s,i)=>'<button type="button" class="starter-chip" data-starter="'+escapeHtml(s)+'">'+escapeHtml(s)+'</button>').join(''); const criteria=(app.criteria||[]).map(c=>'<li>'+escapeHtml(c)+'</li>').join(''); box.innerHTML='<div class="transfer-head"><div class="transfer-icon">↗</div><div><span class="pill">Anwendungsphase</span><h3>'+escapeHtml(app.headline||'Anwendungs-Check')+'</h3><p class="mini">Jetzt zeigst du, dass du die Erkenntnisse aus dem Lernpfad auf eine neue Aufgabe übertragen kannst.</p></div></div><div class="transfer-grid"><div class="transfer-card"><h3>Neue Situation</h3><p>'+escapeHtml(app.situation||'Du bekommst eine ähnliche Aufgabe in einem neuen Kontext.')+'</p><p><strong>Auftrag:</strong> '+escapeHtml(app.prompt||'Formuliere einen Lösungsplan und wende eine passende Idee aus dem Lernpfad an.')+'</p><div class="starter-row">'+starters+'</div></div><div class="transfer-card"><h3>So wird dein Transfer geprüft</h3><ul class="criteria-list">'+criteria+'</ul><p class="mini">Mindestumfang: '+transferMinWords()+' Wörter. Deine Antwort muss eine passende Idee aus dem Lernpfad und einen Handlungsschritt enthalten.</p></div></div><textarea id="transferAnswer" class="transfer-answer" placeholder="Schreibe hier deinen Lösungsplan oder deine Anwendung in eigenen Worten ..."></textarea><div class="transfer-actions"><button class="btn-primary" id="checkTransfer">Anwendung prüfen</button><button class="btn-ghost" id="transferHintBtn">Tippkarte öffnen</button></div><div id="transferHints" class="hint-box"></div><div id="transferFeedback" class="transfer-status"></div><div id="transferDone" class="solution hidden"><strong>Transfer geschafft.</strong> Du hast eine Erkenntnis aus dem Lernpfad auf eine neue Situation angewendet. Notiere diesen Lösungsweg nun in deinem Heft oder in deinem digitalen Notizblatt.</div>'; const old=state.transferText||''; $('transferAnswer').value=old; $('transferAnswer').oninput=e=>{state.transferText=e.target.value; save();}; document.querySelectorAll('.starter-chip').forEach(btn=>btn.onclick=()=>{const ta=$('transferAnswer'); ta.value=(ta.value?ta.value.trim()+' ':'')+btn.dataset.starter+' '; state.transferText=ta.value; save(); ta.focus();}); $('checkTransfer').onclick=checkTransfer; $('transferHintBtn').onclick=revealTransferHint; renderTransferHints(); updateTransferHintButton(); if(state.transferDone||false){$('transferDone').classList.remove('hidden');} scheduleMath(box);}
+function checkTransfer(){const ta=$('transferAnswer'), fb=$('transferFeedback'); const raw=ta.value||''; const txt=normalize(raw); const words=txt.split(/\s+/).filter(w=>w.length>1).length; const hasKeyword=transferKeywords().some(k=>txt.includes(k)); const hasAction=transferActionWords().some(w=>txt.includes(w)); const hasReason=txt.includes('weil')||txt.includes('deshalb')||txt.includes('daher')||txt.includes('also')||txt.includes('damit')||txt.includes('zuerst')||txt.includes('danach'); if(words>=transferMinWords() && hasKeyword && hasAction && hasReason){state.transferDone=true; state.transferText=raw; save(); fb.textContent='Stark: Du hast eine Idee aus dem Lernpfad passend angewendet.'; fb.className='transfer-status ok'; $('transferDone').classList.remove('hidden');}else{fb.textContent='Überarbeite noch: Nenne die passende Idee, beschreibe einen konkreten Schritt und begründe kurz, warum das passt.'; fb.className='transfer-status bad';}}
+function renderTransferHints(){const box=$('transferHints'); if(!box) return; box.innerHTML=''; const hints=(LESSON.application?.hints||[]); const n=false?hints.length:(state.transferHints||0); for(let k=0;k<n;k++){const div=document.createElement('div'); div.className='hint-card formula'; div.innerHTML='<strong>Transfer-Tipp '+(k+1)+':</strong> '+escapeHtml(hints[k]); box.appendChild(div);} scheduleMath(box);}
+function updateTransferHintButton(){const btn=$('transferHintBtn'); if(!btn) return; const hints=(LESSON.application?.hints||[]); const cur=state.transferHints||0; if(false){btn.disabled=false; btn.textContent='Alle Transfer-Tipps anzeigen'; return;} if(cur>=hints.length){btn.disabled=true; btn.textContent='Alle Transfer-Tipps geöffnet'; return;} if(cur>0){const elapsed=Math.floor((Date.now()-(state.transferHintTime||0))/1000); const rest=COOLDOWN-elapsed; if(rest>0){btn.disabled=true; btn.textContent='Nächster Transfer-Tipp in '+rest+' s'; clearTimeout(countdownTimers.transfer); countdownTimers.transfer=setTimeout(updateTransferHintButton,1000); return;}} btn.disabled=false; btn.textContent=cur===0?'Transfer-Tipp 1 öffnen':'Nächsten Transfer-Tipp öffnen';}
+function revealTransferHint(){const hints=(LESSON.application?.hints||[]); const cur=state.transferHints||0; if(false){state.transferHints=hints.length; renderTransferHints(); updateTransferHintButton(); return;} if(cur>=hints.length) return; const now=Date.now(); if(cur>0){const rest=COOLDOWN-Math.floor((now-(state.transferHintTime||0))/1000); if(rest>0){const fb=$('transferFeedback'); if(fb){fb.textContent='Nächster Transfer-Tipp in '+rest+' Sekunden verfügbar.'; fb.className='transfer-status bad';} updateTransferHintButton(); return;}} state.transferHints=cur+1; state.transferHintTime=now; save(); renderTransferHints(); updateTransferHintButton();}
+
+function renderSteps(){const ol=$('steps'); ol.innerHTML=''; LESSON.stations.forEach((s,i)=>{const li=document.createElement('li'); li.className=state.solved[i]?'done':(unlocked(i)?'unlocked':''); li.innerHTML='<span class="dot">'+(state.solved[i]?'✓':i+1)+'</span><span>'+escapeHtml(s.title)+'</span>'; if(unlocked(i)) li.onclick=()=>document.getElementById('station'+i)?.scrollIntoView({behavior:'smooth'}); ol.appendChild(li);});}
+function renderStations(){const wrap=$('stations'); wrap.innerHTML=''; LESSON.stations.forEach((st,i)=>{const sec=document.createElement('article'); sec.id='station'+i; sec.className='station '+(unlocked(i)?'':'locked'); if(!unlocked(i)){sec.innerHTML='<div class="locked-box"><div class="lock-icon">🔒</div><div><strong>Station gesperrt</strong><br>Bearbeite zuerst die vorherige Pflichtaufgabe korrekt. Nutze bei Bedarf die Tippkarten der vorherigen Station.</div></div>'; wrap.appendChild(sec); return;} const solved=!!state.solved[i]; sec.innerHTML=`<p class="pill">Station ${i+1}</p><h2>${escapeHtml(st.title)}</h2><p class="station-note">${escapeHtml(LESSON.stationNote||'Bearbeite die Station sorgfältig.')}</p><div class="discover formula"><strong>Erkunden:</strong> ${st.discover}</div><div class="method-card"><strong>Wähle deinen Lernweg:</strong> Starte mit dem Basisweg, arbeite dann am Standardweg und nutze den Sprinter, wenn du schneller fertig bist.</div><div class="task formula"><strong>Pflichtaufgabe:</strong><p>${st.prompt}</p><div class="answer-row"><input class="answer" id="ans${i}" placeholder="Antwort eingeben" autocomplete="off"><span class="unit">${escapeHtml(st.unit||'')}</span><button class="btn-primary" id="check${i}">Prüfen</button></div><div id="fb${i}" class="feedback ${solved?'ok':''}">${solved?'Bereits richtig gelöst.':''}</div></div><div class="levels differentiated" aria-label="Differenzierte Lernwege"><div class="level basis-level"><strong>Basisweg</strong><span class="level-caption">mit Struktur</span><p>${st.basis}</p></div><div class="level standard-level"><strong>Standardweg</strong><span class="level-caption">selbstständig</span><p>${st.standard}</p></div><div class="level sprinter-level"><strong>Sprinter</strong><span class="level-caption">weiterdenken</span><p>${st.sprinter}</p></div></div><div class="hint-box" id="hints${i}"></div><div class="answer-row"><button class="btn-ghost btn-small" id="hintBtn${i}">Tippkarte öffnen</button><button class="btn-ghost btn-small ${(false||state.solved[i])?'':'hidden'}" id="solBtn${i}">Lösung nach Bearbeitung anzeigen</button></div><div class="solution hidden formula" id="sol${i}"><strong>Lösung:</strong> ${st.solution}</div>`; wrap.appendChild(sec); setTimeout(()=>bindStation(st,i),0);}); scheduleMath(wrap);}
+function bindStation(st,i){const check=$('check'+i), ans=$('ans'+i), fb=$('fb'+i), hintBtn=$('hintBtn'+i), solBtn=$('solBtn'+i), sol=$('sol'+i); if(!check) return; check.onclick=()=>{if(checkAnswer(st, ans.value)){state.solved[i]=true;save();fb.textContent='Richtig. Die nächste Station wird freigeschaltet.';fb.className='feedback ok';setTimeout(rerender,500);}else{fb.textContent='Noch nicht richtig. Prüfe deinen Ansatz oder öffne eine Tippkarte.';fb.className='feedback bad';}}; ans.onkeydown=e=>{if(e.key==='Enter')check.click();}; hintBtn.onclick=()=>revealHint(i); solBtn.onclick=()=>{sol.classList.toggle('hidden'); scheduleMath(sol);}; renderHints(i); updateHintButton(i);}
+function renderHints(i){const box=$('hints'+i); if(!box) return; box.innerHTML=''; const n=false?LESSON.stations[i].hints.length:(state.hints[i]||0); for(let k=0;k<n;k++){const div=document.createElement('div'); div.className='hint-card formula'; div.innerHTML='<strong>Tippkarte '+(k+1)+':</strong> '+LESSON.stations[i].hints[k]; box.appendChild(div);} scheduleMath(box);}
+function updateHintButton(i){const btn=$('hintBtn'+i); if(!btn) return; const cur=state.hints[i]||0; const max=LESSON.stations[i].hints.length; if(false){btn.textContent='Alle Tippkarten anzeigen'; btn.disabled=false; return;} if(cur>=max){btn.textContent='Alle Tippkarten geöffnet'; btn.disabled=true; return;} if(cur>0){const elapsed=Math.floor((Date.now()-(state.hintTime[i]||0))/1000); const rest=COOLDOWN-elapsed; if(rest>0){btn.disabled=true; btn.textContent='Nächste Tippkarte in '+rest+' s'; clearTimeout(countdownTimers[i]); countdownTimers[i]=setTimeout(()=>updateHintButton(i),1000); return;}} btn.disabled=false; btn.textContent=cur===0?'Tippkarte 1 öffnen':'Nächste Tippkarte öffnen';}
+function revealHint(i){const st=LESSON.stations[i]; const cur=state.hints[i]||0; if(false){state.hints[i]=st.hints.length; renderHints(i); updateHintButton(i); return;} if(cur>=st.hints.length) return; const now=Date.now(); if(cur>0){const rest=COOLDOWN-Math.floor((now-(state.hintTime[i]||0))/1000); if(rest>0){const fb=$('fb'+i); fb.textContent='Nächster Tipp in '+rest+' Sekunden verfügbar.'; fb.className='feedback bad'; updateHintButton(i); return;}} state.hints[i]=cur+1; state.hintTime[i]=now; save(); renderHints(i); updateHintButton(i);}
+function rerender(){renderSteps(); renderStations(); updateProgress();}
+function addRange(key,label,min,max,step,initial){if(toolState[key]===undefined) toolState[key]=initial; const wrap=document.createElement('label');wrap.className='control-line';const val=Number(toolState[key]??initial??0);wrap.innerHTML='<span>'+label+': <b id="'+key+'Val">'+fmt(val)+'</b></span><input type="range" min="'+min+'" max="'+max+'" step="'+step+'" value="'+val+'" id="'+key+'Range">';$('controls').appendChild(wrap);$(key+'Range').oninput=e=>{toolState[key]=Number(e.target.value);$(key+'Val').textContent=fmt(toolState[key]);drawTool();};}
+function fmt(x){let n=Number(x); if(!Number.isFinite(n)) return String(x); return (Math.round(n*1000)/1000).toString().replace('.',',');}
+function setupTool(){toolState=Object.assign({}, LESSON.tool||{});$('toolTitle').textContent=LESSON.tool?.title||'Interaktives Werkzeug';$('toolIntro').textContent=LESSON.tool?.intro||'Verändere die Werte und beobachte, was passiert.';renderControls();drawTool();}
+function renderControls(){const c=$('controls'); c.innerHTML=''; const t=LESSON.tool?.type||'generic'; if(t==='linear'||t==='derivative'||t==='integral'){addRange('m','Steigung m',-5,5,.1,2);addRange('b','Startwert b',-10,10,.5,1);} else if(t==='quadratic'){addRange('a','Öffnung a',-3,3,.1,1);addRange('h','Scheitel x',-5,5,.5,0);addRange('k','Scheitel y',-8,8,.5,0);} else if(t==='exponential'){addRange('a','Startwert a',10,200,5,80);addRange('q','Faktor q',.4,2,.05,1.2);} else if(t==='lgs'){addRange('m1','m1',-4,4,.1,1);addRange('b1','b1',-12,12,.5,0);addRange('m2','m2',-4,4,.1,-1);addRange('b2','b2',-12,12,.5,4);} else if(['probability','bag_probability','bag','spinner_lab','dice_lab','counter','tree'].includes(t)){addRange('red','Treffer',1,10,1,3);addRange('blue','Andere',1,10,1,2);} else if(t==='binomial'){addRange('n','n',1,20,1,8);addRange('p','p',0,1,.05,.4);} else if(t==='normal'){addRange('mu','Mittelwert μ',50,150,1,100);addRange('sigma','Standardabweichung σ',5,30,1,15);} else if(t==='circle'||t==='circle_lab'){addRange('r','Radius r',1,10,.5,4);addRange('angle','Winkel',20,360,5,120);} else if(t==='pythagoras'){addRange('a','Kathete a',1,12,.5,3);addRange('b','Kathete b',1,12,.5,4);} else if(t==='trig'){addRange('angle','Winkel',10,80,1,35);addRange('hyp','Hypotenuse',4,20,.5,10);} else if(t==='fraction_lab'||t==='fraction_wall'||t==='measuring_cup'||t==='grid_multiply'){addRange('num','Zähler',1,12,1,1);addRange('den','Nenner',2,12,1,4);} else if(t==='decimal_line'||t==='numberline'){addRange('x','Zahl x',-10,10,.1,1.5);} else if(['angle_circle','protractor','angle_sorter'].includes(t)){addRange('angle','Winkel',0,180,1,60);} else if(t==='similarity'||t==='geometry'||t==='measure'){addRange('scale','Faktor',.5,3,.1,1.5);addRange('angle','Winkel',10,80,1,45);} else if(t==='vector'||t==='plane'){addRange('x','x',-6,6,.5,3);addRange('y','y',-6,6,.5,2);addRange('z','z',-6,6,.5,1);} else if(t==='bars'||t==='frequency_bars'){addRange('a','Wert A',0,20,1,6);addRange('b','Wert B',0,20,1,4);addRange('c','Wert C',0,20,1,8);} else if(t==='percent'||t==='proportion'){addRange('a','Grundwert',10,200,5,100);addRange('p','Prozentsatz',0,100,1,25);} else if(t==='balance'){addRange('x','Unbekannte x',-10,10,1,3);addRange('a','Zahl a',-10,10,1,2);} else {addRange('a','Wert A',-10,20,1,6);addRange('b','Wert B',-10,20,1,4);}}
+function canvasCtx(){const canvas=$('toolCanvas'); const wrap=canvas.parentElement||canvas; const rect=wrap.getBoundingClientRect(); const dpr=Math.min(window.devicePixelRatio||1,2); const cssW=Math.max(320,Math.floor(rect.width||840)); const cssH=Math.max(250,Math.round(cssW*460/840)); const pxW=Math.round(cssW*dpr), pxH=Math.round(cssH*dpr); if(canvas.width!==pxW||canvas.height!==pxH){canvas.width=pxW;canvas.height=pxH;canvas.style.height=cssH+'px';} const ctx=canvas.getContext('2d'); ctx.setTransform(dpr,0,0,dpr,0,0); ctx.lineCap='round'; ctx.lineJoin='round'; ctx.textBaseline='alphabetic'; return [canvas,ctx,cssW,cssH];}
+function clear(ctx,W,H){ctx.clearRect(0,0,W,H);ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);}function axes(ctx,W,H){const ox=W/2,oy=H/2,s=30;ctx.strokeStyle='#edf2f7';ctx.lineWidth=1;for(let x=ox%s;x<W;x+=s){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}for(let y=oy%s;y<H;y+=s){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}ctx.strokeStyle='#475569';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(30,oy);ctx.lineTo(W-30,oy);ctx.stroke();ctx.beginPath();ctx.moveTo(ox,28);ctx.lineTo(ox,H-30);ctx.stroke();return{ox,oy,s};}
+function drawTool(){const [canvas,ctx,W,H]=canvasCtx(); clear(ctx,W,H); const t=LESSON.tool?.type||'generic'; if(['linear','quadratic','exponential','derivative','integral'].includes(t)) drawGraph(ctx,W,H,t); else if(t==='lgs') drawLgs(ctx,W,H); else if(['probability','bag_probability','bag','spinner_lab','dice_lab','counter','tree'].includes(t)) drawProb(ctx,W,H,t); else if(t==='binomial') drawBinomial(ctx,W,H); else if(t==='normal') drawNormal(ctx,W,H); else if(t==='circle'||t==='circle_lab') drawCircle(ctx,W,H); else if(t==='pythagoras') drawPyth(ctx,W,H); else if(t==='trig') drawTrig(ctx,W,H); else if(t==='vector'||t==='plane') drawVector(ctx,W,H,t); else if(['fraction_lab','fraction_wall','measuring_cup','grid_multiply'].includes(t)) drawFraction(ctx,W,H,t); else if(t==='numberline'||t==='decimal_line') drawNumberline(ctx,W,H); else if(['angle_circle','protractor','angle_sorter'].includes(t)) drawAngle(ctx,W,H); else if(t==='bars'||t==='frequency_bars') drawBars(ctx,W,H); else if(t==='percent'||t==='proportion') drawPercent(ctx,W,H); else if(t==='similarity'||t==='geometry'||t==='measure') drawGeometry(ctx,W,H); else if(t==='balance') drawBalance(ctx,W,H); else drawGeneric(ctx,W,H,t);}
+function drawLine(ctx,g,m,b,color){const {ox,oy,s}=g;ctx.strokeStyle=color;ctx.lineWidth=4;ctx.beginPath();for(let xi=-20;xi<=20;xi+=.2){let x=ox+xi*s,y=oy-(m*xi+b)*s;if(xi===-20)ctx.moveTo(x,y);else ctx.lineTo(x,y);}ctx.stroke();}
+function drawGraph(ctx,W,H,t){const g=axes(ctx,W,H);const hue=LESSON.theme?.hue||220;ctx.strokeStyle='hsl('+hue+' 72% 42%)';ctx.lineWidth=4;ctx.beginPath();let first=true;for(let xi=-10;xi<=10;xi+=.05){let y;if(t==='quadratic')y=Number(toolState.a||1)*(xi-Number(toolState.h||0))**2+Number(toolState.k||0);else if(t==='exponential')y=Number(toolState.a||80)/40*Math.pow(Number(toolState.q||1.2),xi);else if(t==='derivative')y=(xi*xi)/5;else if(t==='integral')y=Number(toolState.m||2)*xi/4+Number(toolState.b||1);else y=Number(toolState.m||2)*xi+Number(toolState.b||0);let x=g.ox+xi*g.s, yy=g.oy-y*g.s;if(first){ctx.moveTo(x,yy);first=false;}else ctx.lineTo(x,yy);}ctx.stroke(); if(t==='quadratic')setFormula($('toolMain'),'\\(f(x)='+fmt(toolState.a||1)+'(x-'+fmt(toolState.h||0)+')^2'+((toolState.k||0)>=0?'+':'')+fmt(toolState.k||0)+'\\)'); else if(t==='exponential')setFormula($('toolMain'),'\\(f(x)='+fmt(toolState.a||80)+'\\cdot '+fmt(toolState.q||1.2)+'^x\\)'); else if(t==='derivative')setFormula($('toolMain'),'Lokale Änderung: \\(f\\prime(x)\\)'); else if(t==='integral')setFormula($('toolMain'),'Integral: Fläche / Bestand sammeln'); else setFormula($('toolMain'),'\\(y='+fmt(toolState.m||2)+'x'+((toolState.b||0)>=0?'+':'')+fmt(toolState.b||0)+'\\)'); $('toolSub').innerHTML=t==='integral'?'Viele kleine Beiträge werden zu einer Gesamtgröße.':(t==='derivative'?'Die Steigung beschreibt die momentane Änderung.':'Verändere die Regler und beschreibe die Wirkung.'); scheduleMath($('toolSub'));}
+function drawLgs(ctx,W,H){const g=axes(ctx,W,H);drawLine(ctx,g,Number(toolState.m1||1),Number(toolState.b1||0),'hsl('+(LESSON.theme?.hue||220)+' 72% 42%)');drawLine(ctx,g,Number(toolState.m2||-1),Number(toolState.b2||4),'hsl('+(((LESSON.theme?.hue||220)+100)%360)+' 72% 42%)');setFormula($('toolMain'),'Zwei Bedingungen – ein gemeinsamer Punkt?');$('toolSub').innerHTML='Der Schnittpunkt erfüllt beide Gleichungen.';}
+function drawProb(ctx,W,H,t){const red=Number(toolState.red||3),blue=Number(toolState.blue||2),tot=red+blue;let cx=W/2,cy=H/2;if(t==='spinner_lab'){let start=0;ctx.lineWidth=4;ctx.strokeStyle='#fff';ctx.beginPath();ctx.moveTo(cx,cy);ctx.fillStyle='hsl('+(LESSON.theme?.hue||220)+' 72% 48%)';ctx.arc(cx,cy,130,start,start+2*Math.PI*red/tot);ctx.closePath();ctx.fill();ctx.beginPath();ctx.moveTo(cx,cy);ctx.fillStyle='hsl('+(((LESSON.theme?.hue||220)+180)%360)+' 72% 48%)';ctx.arc(cx,cy,130,start+2*Math.PI*red/tot,start+2*Math.PI);ctx.closePath();ctx.fill();} else {let x=95,y=115;for(let i=0;i<tot;i++){ctx.fillStyle=i<red?'hsl('+(LESSON.theme?.hue||220)+' 72% 48%)':'hsl('+(((LESSON.theme?.hue||220)+180)%360)+' 72% 48%)';ctx.beginPath();ctx.arc(x+(i%10)*58,y+Math.floor(i/10)*62,24,0,Math.PI*2);ctx.fill();}} setFormula($('toolMain'),'\\(P(\\text{Treffer})='+red+'/'+tot+'='+fmt(red/tot)+'\\)');$('toolSub').innerHTML='Günstige Ergebnisse geteilt durch mögliche Ergebnisse.';scheduleMath($('toolSub'));}
+function drawBinomial(ctx,W,H){const n=Number(toolState.n||8),p=Number(toolState.p||.4);ctx.strokeStyle='#d7e0ec';ctx.strokeRect(80,70,W-160,270);for(let k=0;k<=n;k++){let comb=1;for(let i=1;i<=k;i++)comb=comb*(n+1-i)/i;let prob=comb*Math.pow(p,k)*Math.pow(1-p,n-k);let bar=(W-190)/(n+1);ctx.fillStyle='hsl('+(LESSON.theme?.hue||220)+' 72% 45%)';ctx.fillRect(95+k*bar,330-prob*720,bar*.7,prob*720);ctx.fillStyle='#334155';ctx.fillText(k,100+k*bar,355);}setFormula($('toolMain'),'\\(E(X)=np='+fmt(n*p)+'\\)');$('toolSub').innerHTML='Binomialmodell mit n='+n+', p='+fmt(p);scheduleMath($('toolSub'));}
+function drawNormal(ctx,W,H){axes(ctx,W,H);ctx.strokeStyle='hsl('+(LESSON.theme?.hue||220)+' 72% 42%)';ctx.lineWidth=4;ctx.beginPath();let first=true;for(let x=40;x<W-40;x++){let z=(x-W/2)/115;let y=Math.exp(-z*z/2);let yy=H-70-y*235;if(first){ctx.moveTo(x,yy);first=false;}else ctx.lineTo(x,yy);}ctx.stroke();setFormula($('toolMain'),'\\(\\mu='+fmt(toolState.mu||100)+',\\;\\sigma='+fmt(toolState.sigma||15)+'\\)');$('toolSub').innerHTML='Zentrum und Streuung von Messwerten.';scheduleMath($('toolSub'));}
+function drawCircle(ctx,W,H){const r=Number(toolState.r||4),ang=Number(toolState.angle||120),R=r*24,cx=W/2,cy=H/2;ctx.strokeStyle='hsl('+(LESSON.theme?.hue||220)+' 72% 42%)';ctx.lineWidth=5;ctx.beginPath();ctx.arc(cx,cy,R,0,Math.PI*2);ctx.stroke();ctx.fillStyle='hsla('+(LESSON.theme?.hue||220)+' 72% 72%/.35)';ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,R,-Math.PI/2,-Math.PI/2+ang*Math.PI/180);ctx.closePath();ctx.fill();ctx.strokeStyle='#334155';ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx+R,cy);ctx.stroke();setFormula($('toolMain'),'Radius \\(r='+fmt(r)+'\\), Winkel \\('+fmt(ang)+'^\\circ\\)');$('toolSub').innerHTML='Umfang: \\(U=2\\pi r\\), Fläche: \\(A=\\pi r^2\\).';scheduleMath($('toolSub'));}
+function drawPyth(ctx,W,H){const a=Number(toolState.a||3),b=Number(toolState.b||4),s=27;let x=190,y=330;ctx.strokeStyle='hsl('+(LESSON.theme?.hue||220)+' 72% 42%)';ctx.fillStyle='hsl('+(LESSON.theme?.hue||220)+' 72% 92%)';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+a*s,y);ctx.lineTo(x+a*s,y-b*s);ctx.closePath();ctx.fill();ctx.stroke();setFormula($('toolMain'),'\\(c=\\sqrt{'+fmt(a)+'^2+'+fmt(b)+'^2}='+fmt(Math.sqrt(a*a+b*b))+'\\)');$('toolSub').innerHTML='Pythagoras gilt im rechtwinkligen Dreieck.';scheduleMath($('toolSub'));}
+function drawTrig(ctx,W,H){const ang=Number(toolState.angle||35),hyp=Number(toolState.hyp||10),rad=ang*Math.PI/180;const adj=hyp*Math.cos(rad),opp=hyp*Math.sin(rad),s=24;let x=165,y=330;ctx.strokeStyle='hsl('+(LESSON.theme?.hue||220)+' 72% 42%)';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+adj*s,y);ctx.lineTo(x+adj*s,y-opp*s);ctx.closePath();ctx.stroke();setFormula($('toolMain'),'\\(\\sin('+fmt(ang)+'^\\circ)\\approx '+fmt(Math.sin(rad))+'\\)');$('toolSub').innerHTML='Gegenkathete bei Hypotenuse '+fmt(hyp)+': '+fmt(opp);scheduleMath($('toolSub'));}
+function drawVector(ctx,W,H,t){const g=axes(ctx,W,H);let vx=Number(toolState.x||3),vy=Number(toolState.y||2),vz=Number(toolState.z||1);ctx.strokeStyle='hsl('+(LESSON.theme?.hue||220)+' 72% 42%)';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(g.ox,g.oy);ctx.lineTo(g.ox+vx*g.s,g.oy-vy*g.s);ctx.stroke();ctx.fillStyle='hsl('+(LESSON.theme?.hue||220)+' 72% 42%)';ctx.beginPath();ctx.arc(g.ox+vx*g.s,g.oy-vy*g.s,7,0,Math.PI*2);ctx.fill();setFormula($('toolMain'), t==='plane'?'Ebene/Raumdarstellung':'Vektor \\(\\begin{pmatrix}'+fmt(vx)+'\\\\'+fmt(vy)+'\\\\'+fmt(vz)+'\\end{pmatrix}\\)');$('toolSub').innerHTML='Richtung, Länge und Lage werden gemeinsam beschrieben.';scheduleMath($('toolSub'));}
+function drawFraction(ctx,W,H,t){let num=Math.max(1,Math.round(Number(toolState.num||1))), den=Math.max(2,Math.round(Number(toolState.den||4))); if(num>den) num=den; const x=100,y=160,w=W-200,h=90;ctx.strokeStyle='#cbd5e1';ctx.lineWidth=2;for(let i=0;i<den;i++){ctx.fillStyle=i<num?'hsl('+(LESSON.theme?.hue||220)+' 72% 58%)':'#f1f5f9';ctx.fillRect(x+i*w/den,y,w/den,h);ctx.strokeRect(x+i*w/den,y,w/den,h);}if(t==='measuring_cup'){ctx.strokeStyle='#334155';ctx.lineWidth=5;ctx.strokeRect(W/2-70,80,140,260);ctx.fillStyle='hsla('+(LESSON.theme?.hue||220)+' 72% 58%/.55)';ctx.fillRect(W/2-65,80+260*(1-num/den),130,260*num/den);}setFormula($('toolMain'),'\\(\\frac{'+num+'}{'+den+'}='+fmt(num/den)+'\\)');$('toolSub').innerHTML='Zähler: gewählte Teile. Nenner: alle gleich großen Teile.';scheduleMath($('toolSub'));}
+function drawNumberline(ctx,W,H){const xval=Number(toolState.x||0);const y=H/2, left=70,right=W-70;ctx.strokeStyle='#334155';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(left,y);ctx.lineTo(right,y);ctx.stroke();for(let i=-10;i<=10;i++){let x=left+(i+10)*(right-left)/20;ctx.beginPath();ctx.moveTo(x,y-10);ctx.lineTo(x,y+10);ctx.stroke();if(i%2===0)ctx.fillText(i,x-6,y+30);}let px=left+(xval+10)*(right-left)/20;ctx.fillStyle='hsl('+(LESSON.theme?.hue||220)+' 72% 42%)';ctx.beginPath();ctx.arc(px,y,12,0,Math.PI*2);ctx.fill();setFormula($('toolMain'),'Zahl: \\('+fmt(xval)+'\\)');$('toolSub').innerHTML='Die Lage auf dem Zahlenstrahl zeigt Ordnung und Abstand.';scheduleMath($('toolSub'));}
+function drawAngle(ctx,W,H){const ang=Number(toolState.angle||60),rad=ang*Math.PI/180,cx=W/2,cy=H/2+80,R=170;ctx.strokeStyle='#cbd5e1';ctx.lineWidth=2;ctx.beginPath();ctx.arc(cx,cy,R,Math.PI,2*Math.PI);ctx.stroke();ctx.strokeStyle='hsl('+(LESSON.theme?.hue||220)+' 72% 42%)';ctx.lineWidth=6;ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx+R,cy);ctx.moveTo(cx,cy);ctx.lineTo(cx+R*Math.cos(-rad),cy+R*Math.sin(-rad));ctx.stroke();ctx.fillStyle='hsla('+(LESSON.theme?.hue||220)+' 72% 58%/.25)';ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,80,0,-rad,true);ctx.closePath();ctx.fill();setFormula($('toolMain'),'Winkel \\('+fmt(ang)+'^\\circ\\)');$('toolSub').innerHTML='Ein Winkel beschreibt eine Drehung.';scheduleMath($('toolSub'));}
+function drawBars(ctx,W,H){const vals=[Number(toolState.a||6),Number(toolState.b||4),Number(toolState.c||8)], labels=['A','B','C'];const max=Math.max(1,...vals);ctx.strokeStyle='#cbd5e1';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(100,360);ctx.lineTo(W-80,360);ctx.moveTo(100,70);ctx.lineTo(100,360);ctx.stroke();vals.forEach((v,i)=>{let h=260*v/max,x=160+i*150;ctx.fillStyle='hsl('+((LESSON.theme?.hue||220)+i*42)+' 72% 48%)';ctx.fillRect(x,360-h,80,h);ctx.fillStyle='#334155';ctx.fillText(labels[i]+': '+fmt(v),x+16,390);});setFormula($('toolMain'),'Gesamt: \\('+fmt(vals.reduce((a,b)=>a+b,0))+'\\)');$('toolSub').innerHTML='Vergleiche Balkenhöhen und Werte.';scheduleMath($('toolSub'));}
+function drawPercent(ctx,W,H){const a=Number(toolState.a||100),p=Number(toolState.p||25),w=W-180;ctx.fillStyle='#e2e8f0';ctx.fillRect(90,180,w,80);ctx.fillStyle='hsl('+(LESSON.theme?.hue||220)+' 72% 48%)';ctx.fillRect(90,180,w*p/100,80);setFormula($('toolMain'),'\\('+fmt(p)+'\\%\\) von \\('+fmt(a)+'\\) = \\('+fmt(a*p/100)+'\\)');$('toolSub').innerHTML='Prozent bedeutet von hundert.';scheduleMath($('toolSub'));}
+function drawGeometry(ctx,W,H){const s=Number(toolState.scale||1.5),ang=Number(toolState.angle||45)*Math.PI/180;ctx.strokeStyle='hsl('+(LESSON.theme?.hue||220)+' 72% 42%)';ctx.lineWidth=4;ctx.strokeRect(130,120,120,80);ctx.strokeStyle='hsl('+(((LESSON.theme?.hue||220)+80)%360)+' 72% 42%)';ctx.strokeRect(360,120,120*s,80*s);ctx.beginPath();ctx.moveTo(130,120);ctx.lineTo(360,120);ctx.stroke();setFormula($('toolMain'),'Streckfaktor \\(k='+fmt(s)+'\\)');$('toolSub').innerHTML='Form bleibt ähnlich, Größen ändern sich im gleichen Verhältnis.';scheduleMath($('toolSub'));}
+function drawBalance(ctx,W,H){const x=Number(toolState.x||3),a=Number(toolState.a||2);ctx.strokeStyle='#334155';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(W/2,120);ctx.lineTo(W/2,330);ctx.moveTo(W/2-220,180);ctx.lineTo(W/2+220,180);ctx.stroke();ctx.fillStyle='hsl('+(LESSON.theme?.hue||220)+' 72% 58%)';ctx.fillRect(W/2-260,205,110,70);ctx.fillStyle='hsl('+(((LESSON.theme?.hue||220)+90)%360)+' 72% 58%)';ctx.fillRect(W/2+150,205,110,70);setFormula($('toolMain'),'Waage: \\(x+'+fmt(a)+'\\)');$('toolSub').innerHTML='Gleichungen löst man, indem beide Seiten im Gleichgewicht bleiben.';scheduleMath($('toolSub'));}
+function drawGeneric(ctx,W,H,t){ctx.fillStyle='hsl('+(LESSON.theme?.hue||220)+' 72% 92%)';ctx.fillRect(80,80,W-160,H-160);ctx.strokeStyle='hsl('+(LESSON.theme?.hue||220)+' 72% 42%)';ctx.lineWidth=5;ctx.strokeRect(80,80,W-160,H-160);setFormula($('toolMain'),'Erkundungswerkzeug');$('toolSub').textContent='Nutze die Regler und beobachte die Veränderung.';}
+function init(){if(new URLSearchParams(location.search).get('fullscreen')==='1')document.body.classList.add('fullscreen-mode');renderHero();$('fullscreenBtn').onclick=()=>{const url=location.href.split('#')[0].split('?')[0]+'?fullscreen=1';window.open(url,'_blank','noopener,noreferrer');};$('startBtn').onclick=()=>document.getElementById('station0')?.scrollIntoView({behavior:'smooth'});$('resetBtn').onclick=()=>{if(confirm('Fortschritt für diesen Lernpfad wirklich zurücksetzen?')){localStorage.removeItem(STORAGE_KEY);location.reload();}};setupTool();rerender();scheduleMath();}
+window.addEventListener('DOMContentLoaded',init);window.addEventListener('load',()=>scheduleMath());
+window.addEventListener('resize',()=>setTimeout(drawTool,120)); window.addEventListener('orientationchange',()=>setTimeout(drawTool,260)); if(window.visualViewport){visualViewport.addEventListener('resize',()=>setTimeout(drawTool,120));}
+window.addEventListener('orientationchange',()=>setTimeout(drawTool,180));
+</script>
+
+<script>
+(function(){
+  function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
+  function enhance(){
+    try{
+      const dataEl=document.getElementById('lesson-data');
+      if(dataEl){
+        const L=JSON.parse(dataEl.textContent||'{}');
+        document.body.classList.add('level-'+(L.level||'x'));
+        document.documentElement.style.setProperty('--lesson-level', L.level||8);
+      }
+      document.querySelectorAll('button').forEach(b=>{b.setAttribute('type','button'); b.setAttribute('aria-live','polite');});
+      document.querySelectorAll('input.answer').forEach((inp,i)=>{
+        const dataEl=document.getElementById('lesson-data'); let station=null;
+        try{station=JSON.parse(dataEl.textContent).stations[i];}catch(e){}
+        inp.setAttribute('enterkeyhint','done');
+        inp.setAttribute('autocapitalize','off');
+        inp.setAttribute('spellcheck','false');
+        if(station && station.type==='number') inp.setAttribute('inputmode','decimal');
+        else inp.setAttribute('inputmode','text');
+        inp.setAttribute('aria-label','Antwort für Station '+(i+1));
+      });
+      document.querySelectorAll('canvas').forEach(c=>{c.setAttribute('role','img'); c.setAttribute('aria-label', c.getAttribute('aria-label')||'Interaktive Darstellung');});
+      if(window.renderMathInElement){ setTimeout(()=>{try{renderMathInElement(document.body,{delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true},{left:'$$',right:'$$',display:true}],ignoredTags:['script','noscript','style','textarea','pre','code'],throwOnError:false});}catch(e){}},500); }
+    }catch(e){console.warn('Lernpfad-Verbesserung konnte nicht vollständig angewendet werden.',e);}
+  }
+  ready(()=>{ enhance(); const obs=new MutationObserver(()=>enhance()); obs.observe(document.body,{childList:true,subtree:true}); setTimeout(enhance,700); setTimeout(enhance,1600); });
+})();
+</script>
+
+
+<script>
+(function(){
+  function fitInteractiveElements(){
+    document.querySelectorAll('canvas').forEach(function(c){
+      var wrap=c.closest('.canvas-wrap')||c.parentElement;
+      if(!wrap) return;
+      var w=Math.max(260, Math.floor(wrap.clientWidth - 2));
+      var h=Math.max(200, Math.min(Math.round(w*0.56), Math.floor((window.innerHeight||720)*0.56)));
+      c.style.width='100%';
+      c.style.height=h+'px';
+    });
+    if(typeof window.drawTool==='function'){
+      try{ window.drawTool(); }catch(e){}
+    }
+    if(typeof window.scheduleMath==='function'){
+      try{ window.scheduleMath(document.body); }catch(e){ try{ window.scheduleMath(); }catch(_){} }
+    }
+  }
+  function ready(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn); else fn(); }
+  ready(function(){
+    fitInteractiveElements();
+    setTimeout(fitInteractiveElements,250);
+    setTimeout(fitInteractiveElements,900);
+    if('ResizeObserver' in window){
+      var ro=new ResizeObserver(function(){ clearTimeout(window.__fitTimer); window.__fitTimer=setTimeout(fitInteractiveElements,80); });
+      document.querySelectorAll('.canvas-wrap,.toolbox,.station,.app').forEach(function(el){ ro.observe(el); });
+    }
+    window.addEventListener('resize',function(){ setTimeout(fitInteractiveElements,80); });
+    window.addEventListener('orientationchange',function(){ setTimeout(fitInteractiveElements,250); });
+  });
+})();
+</script>
+
+
+<script>
+/* Finale Optimierungsrunde: dynamische Größen, iPad-Touch und Render-Nacharbeit */
+(function(){
+  function debounce(fn,ms){var t;return function(){clearTimeout(t);var args=arguments;t=setTimeout(function(){fn.apply(null,args)},ms||120)}}
+  function fitNow(){
+    document.querySelectorAll('canvas').forEach(function(c){
+      var parent=c.parentElement; if(!parent) return;
+      var w=Math.max(220, Math.floor(parent.clientWidth - 2));
+      var ratio = window.innerWidth < 620 ? 0.62 : 0.56;
+      var h=Math.max(window.innerWidth < 620 ? 190 : 230, Math.min(Math.floor(w*ratio), Math.floor(window.innerHeight*0.58)));
+      if(c.style){ c.style.width='100%'; c.style.height=h+'px'; }
+    });
+    document.querySelectorAll('.katex-display,.formula,table,pre,.task,.solution,.hint-card').forEach(function(el){
+      if(el.scrollWidth > el.clientWidth + 4){ el.classList.add('scrollable-x'); el.setAttribute('tabindex','0'); el.setAttribute('aria-label', el.getAttribute('aria-label') || 'Dieser Bereich kann seitlich gescrollt werden.'); }
+    });
+    document.querySelectorAll('.feedback,.transfer-status').forEach(function(el){ el.setAttribute('aria-live','polite'); });
+    document.querySelectorAll('input.answer,input.pin').forEach(function(el){ el.setAttribute('autocomplete','off'); el.setAttribute('autocapitalize','off'); el.setAttribute('spellcheck','false'); });
+    document.querySelectorAll('textarea').forEach(function(el){ el.setAttribute('autocomplete','off'); el.setAttribute('spellcheck','true'); });
+    document.querySelectorAll('img').forEach(function(img){ if(!img.hasAttribute('loading')) img.setAttribute('loading','lazy'); if(!img.hasAttribute('decoding')) img.setAttribute('decoding','async'); });
+    try{ if(typeof drawTool==='function') drawTool(); }catch(e){}
+    try{ if(typeof scheduleMath==='function') scheduleMath(document.body); }catch(e){}
+  }
+  var run=debounce(fitNow,90);
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fitNow); else fitNow();
+  window.addEventListener('resize',run,{passive:true});
+  window.addEventListener('orientationchange',function(){setTimeout(fitNow,280)},{passive:true});
+  if(window.visualViewport){ window.visualViewport.addEventListener('resize',run,{passive:true}); }
+  if('ResizeObserver' in window){
+    var ro=new ResizeObserver(run);
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.canvas-wrap,.toolbox,.station,.visual-card').forEach(function(el){ro.observe(el)})});
+    else document.querySelectorAll('.canvas-wrap,.toolbox,.station,.visual-card').forEach(function(el){ro.observe(el)});
+  }
+})();
+</script>
+
+</body>
+</html>
