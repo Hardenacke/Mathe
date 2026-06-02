@@ -133,6 +133,45 @@
     .math-inline{max-width:100%;}
     .math-fallback{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background:#fff7ed; border:1px solid #fdba74; border-radius:8px; padding:1px 5px;}
     .katex{font-size:1.05em;}
+
+    /* Dynamische Seitenanpassung und gut lesbare Vollbreiten-Karten */
+    html, body{min-height:100dvh; overflow-x:hidden;}
+    .app{min-height:calc(var(--vh, 1vh) * 100); display:flex; flex-direction:column;}
+    main{flex:1; display:block;}
+    section.page.active{min-height:max(540px, calc((var(--vh, 1vh) * 100) - var(--chrome-height, 260px)));}
+    .grid{align-items:stretch; width:100%;}
+    .card{width:100%; overflow:visible;}
+    .full-width-page .grid{grid-template-columns:minmax(0,1fr);}
+    .full-width-page .card{grid-column:1 / -1; width:100%;}
+    .readable-card{padding:clamp(22px,3.2vw,34px);}
+    .readable-card p,.readable-card li{font-size:clamp(1rem,1.2vw,1.12rem); line-height:1.68;}
+    .statement-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; margin:14px 0; width:100%;}
+    .statement-box{border:1px solid var(--line); background:#fff; border-radius:18px; padding:16px; min-height:100%; box-shadow:0 8px 22px rgba(30,41,59,.05);}
+    .statement-box strong{display:block; margin-bottom:6px;}
+    .wide-task{width:100%; padding:clamp(16px,2.4vw,24px);}
+    .formula-panel{width:100%; display:grid; place-items:center; padding:clamp(16px,3vw,28px); border-radius:22px; background:#ffffff; border:1px solid #bbf7d0; margin:12px 0; overflow-x:auto;}
+    .formula-panel .katex{font-size:clamp(1.25rem,4vw,2.05rem);}
+    .order-list{display:grid; grid-template-columns:1fr; gap:12px; margin:14px 0; width:100%;}
+    .order-item{display:grid; grid-template-columns:auto minmax(0,1fr); gap:12px; align-items:start; border:1px solid var(--line); background:#fff; border-radius:18px; padding:15px 16px;}
+    .order-letter{width:38px; height:38px; border-radius:14px; display:grid; place-items:center; background:var(--green2); color:#166534; font-weight:1000; flex:0 0 auto;}
+    .order-input-row{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin:16px 0 8px; width:100%;}
+    .order-input-row .inline-input{width:clamp(54px,10vw,80px); min-height:48px; font-size:1.15rem; font-weight:900; text-transform:uppercase;}
+    .arrow{font-weight:1000; color:var(--muted);}
+    .sicherung-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:14px; width:100%; margin:14px 0;}
+    .sicherung-box{border:1px solid var(--line); border-radius:20px; background:#fff; padding:16px; min-height:100%;}
+    .sicherung-box h4{margin:0 0 8px;}
+    .dynamic-textarea{min-height:clamp(92px,18vh,180px);}
+    @media (max-width:900px){
+      section.page.active{min-height:auto;}
+      #page-satz .card,#page-ordnen .card,#page-sicherung .card{grid-column:span 12!important;}
+    }
+    @media (max-width:640px){
+      .statement-grid,.sicherung-grid{grid-template-columns:1fr;}
+      .order-item{grid-template-columns:1fr;}
+      .order-letter{width:auto; justify-content:center;}
+      .formula-panel .katex{font-size:1.18rem;}
+    }
+
     @media (max-width:900px){
       .hero-grid{grid-template-columns:1fr}.span-8,.span-6,.span-4{grid-column:span 12}.topbar-inner{align-items:flex-start}.top-actions{max-width:48%;}
       .two-col{columns:1}.brand small{display:none}
@@ -203,7 +242,8 @@
             </div>
             <h4>Dein Lernweg</h4>
             <label class="checkrow"><input type="checkbox" data-progress="start"> Ich weiß, welches Material ich brauche.</label>
-            <label class="checkrow"><input type="checkbox" data-progress="start2"> Ich weiß: Der Satz wird erst nach der Zerreißprobe formuliert.</label></div>
+            <label class="checkrow"><input type="checkbox" data-progress="start2"> Ich weiß: Der Satz wird erst nach der Zerreißprobe formuliert.</label>
+          </div>
           <div class="card span-4">
             <span class="pill green">Vorwissen</span>
             <h3>Kurzer Check</h3>
@@ -264,7 +304,7 @@
             <div class="task violet">
               <p><strong>Gemessene Winkel:</strong></p>
               <p><span class="katex-inline-math" data-tex="\alpha\approx">\(\alpha\approx\)</span> <span id="angA">?</span>°, <span class="katex-inline-math" data-tex="\beta\approx">\(\beta\approx\)</span> <span id="angB">?</span>°, <span class="katex-inline-math" data-tex="\gamma\approx">\(\gamma\approx\)</span> <span id="angC">?</span>°</p>
-              <p><strong>Forscherauftrag:</strong> Vergleiche verschiedene Dreiecke. Was könnte bei allen Dreiecken gleich sein?</p>
+              <p><strong>Summe:</strong> <span id="angSum">?</span>°</p>
             </div>
           </div>
         </div>
@@ -282,12 +322,10 @@
                 <li>Lege die drei Winkelecken so aneinander, dass die Winkelspitzen in einem Punkt zusammentreffen.</li>
                 <li>Ordne die drei Winkel an einen gestreckten Winkel an.</li>
                 <li>Klebe deine drei Winkelecken ins Heft.</li>
-                <li>Vergleiche mit einer Partnerin oder einem Partner: Ist die Beobachtung bei einem anderen Dreieck ähnlich?</li>
               </ol>
             </div>
             <label class="checkrow"><input type="checkbox" data-progress="tear1"> Ich habe die drei Winkelecken angeordnet.</label>
             <label class="checkrow"><input type="checkbox" data-progress="tear2"> Ich habe meine Beobachtung notiert.</label>
-            <label class="checkrow"><input type="checkbox" data-progress="tear3"> Ich habe meine Beobachtung mit einem zweiten Dreieck verglichen.</label>
             <h4>Beobachtung</h4>
             <p>Was fällt dir auf?</p>
             <textarea id="obs" placeholder="Meine Beobachtung ..."></textarea>
@@ -304,7 +342,7 @@
               <svg id="tearSvg" viewBox="0 0 620 350" role="img" aria-label="Virtuelle Zerreißprobe mit drei Winkelecken">
                 <rect width="620" height="350" rx="20" fill="#fffaf5"/>
                 <line x1="70" y1="245" x2="550" y2="245" stroke="#0f172a" stroke-width="5" stroke-linecap="round"/>
-                <text x="310" y="292" text-anchor="middle" fill="#475569" font-weight="800">gestreckter Winkel</text>
+                <text x="310" y="292" text-anchor="middle" fill="#475569" font-weight="800">gestreckter Winkel: 180°</text>
                 <g id="piecesBefore">
                   <polygon points="170,80 370,115 235,245" fill="#dbeafe" stroke="#2563eb" stroke-width="4"/>
                   <text x="160" y="75" fill="#1d4ed8" font-size="28" font-weight="900">α</text>
@@ -319,13 +357,13 @@
                   <text x="205" y="198" fill="#1d4ed8" font-size="30" font-weight="900">α</text>
                   <text x="303" y="162" fill="#f97316" font-size="30" font-weight="900">γ</text>
                   <text x="420" y="198" fill="#15803d" font-size="30" font-weight="900">β</text>
-                  <text x="310" y="40" text-anchor="middle" fill="#64748b" font-weight="800">Nach dem Anlegen: Die drei Winkel bilden eine Gerade</text>
+                  <text x="310" y="40" text-anchor="middle" fill="#64748b" font-weight="800">Nach dem Anlegen: α + γ + β bilden eine Gerade</text>
                 </g>
               </svg>
             </div>
             <button class="warning" id="arrangeBtn">Winkelecken anlegen</button>
             <div class="task green">
-              <p>Ergänze erst nach dem Anlegen deine Vermutung:</p>
+              <p>Ergänze deine Vermutung:</p>
               <p><span class="katex-inline-math" data-tex="\alpha+\beta+\gamma=">\(\alpha+\beta+\gamma=\)</span> <input class="inline-input" id="sumGuess" type="number" inputmode="numeric"> <span class="katex-inline-math" data-tex="^\circ">\(^\circ\)</span></p>
               <button class="small success" onclick="checkSingle('sumGuess',180,'sumGuessFb')">Prüfen</button>
               <div class="feedback" id="sumGuessFb"></div>
@@ -335,32 +373,46 @@
         <div class="footer-nav"><button class="secondary" onclick="showPage('page-schneiden')">← Zurück</button><button onclick="showPage('page-satz')">Weiter zu Station 3 →</button></div>
       </section>
 
-      <section class="page" id="page-satz" data-title="3 Satz">
+      <section class="page full-width-page" id="page-satz" data-title="3 Satz">
         <div class="grid">
-          <div class="card span-7">
+          <div class="card span-12 readable-card">
             <span class="pill green">Station 3</span>
             <h3>Vom Experiment zum Satz</h3>
-            <div class="task green">
-              <p>Jetzt erst wird aus deiner Beobachtung ein mathematischer Satz:</p>
-              <div class="math-scroll"><div class="katex-display-math" data-tex="\boxed{\alpha+\beta+\gamma=180^\circ}">\[\boxed{\alpha+\beta+\gamma=180^\circ}\]</div></div>
+            <div class="task green wide-task">
+              <p><strong>Jetzt erst</strong> wird aus deiner Beobachtung eine mathematische Aussage. Vergleiche deine Zerreißprobe mit der Formel:</p>
+              <div class="formula-panel"><div class="katex-display-math" data-tex="\boxed{\alpha+\beta+\gamma=180^\circ}">\[\boxed{\alpha+\beta+\gamma=180^\circ}\]</div></div>
               <p><strong>In Worten:</strong> Die Innenwinkelsumme in jedem Dreieck beträgt <span class="katex-inline-math" data-tex="180^\circ">\(180^\circ\)</span>.</p>
             </div>
+
+            <div class="statement-grid">
+              <div class="statement-box">
+                <strong>Beobachtung</strong>
+                <p>Die drei abgerissenen Winkelecken passen zusammen an eine gerade Linie.</p>
+              </div>
+              <div class="statement-box">
+                <strong>Vermutung</strong>
+                <p>Bei unterschiedlichen Dreiecken entsteht immer wieder ein gestreckter Winkel.</p>
+              </div>
+              <div class="statement-box">
+                <strong>Satz</strong>
+                <p>Die Summe der drei Innenwinkel ist bei jedem Dreieck gleich groß.</p>
+              </div>
+            </div>
+
             <h4>Warum reicht das Experiment noch nicht als Beweis?</h4>
-            <label class="checkrow"><input type="checkbox" class="expCheck" data-correct="true"> Weil man beim Schneiden ungenau arbeiten kann.</label>
-            <label class="checkrow"><input type="checkbox" class="expCheck" data-correct="true"> Weil man nur ein oder wenige Dreiecke untersucht.</label>
-            <label class="checkrow"><input type="checkbox" class="expCheck" data-correct="true"> Weil ein mathematischer Satz für alle Dreiecke gelten muss.</label>
-            <label class="checkrow"><input type="checkbox" class="expCheck" data-correct="false"> Weil Winkel nicht gemessen werden können.</label>
+            <div class="statement-grid">
+              <label class="checkrow"><input type="checkbox" class="expCheck" data-correct="true"> Weil man beim Schneiden ungenau arbeiten kann.</label>
+              <label class="checkrow"><input type="checkbox" class="expCheck" data-correct="true"> Weil man nur ein oder wenige Dreiecke untersucht.</label>
+              <label class="checkrow"><input type="checkbox" class="expCheck" data-correct="true"> Weil ein mathematischer Satz für alle Dreiecke gelten muss.</label>
+              <label class="checkrow"><input type="checkbox" class="expCheck" data-correct="false"> Weil Winkel nicht gemessen werden können.</label>
+            </div>
             <button class="small success" onclick="checkExperiment()">Auswahl prüfen</button>
             <div class="feedback" id="expFb"></div>
             <label class="checkrow"><input type="checkbox" data-progress="satz1"> Ich kann den selbst entdeckten Satz nennen.</label>
-          </div>
-          <div class="card span-5">
-            <span class="pill violet">Merksatz</span>
-            <h3>In dein Heft</h3>
-            <p>Schreibe den Merksatz vollständig ab und zeichne ein kleines Dreieck dazu.</p>
+
             <details>
-              <summary>Formulierungshilfe</summary>
-              <p>In jedem Dreieck beträgt die Summe der drei Innenwinkel <span class="katex-inline-math" data-tex="180^\circ">\(180^\circ\)</span>.</p>
+              <summary>Formulierungshilfe für dein Heft</summary>
+              <p>In jedem Dreieck beträgt die Summe der drei Innenwinkel <span class="katex-inline-math" data-tex="180^\circ">\(180^\circ\)</span>. Kurz: <span class="katex-inline-math" data-tex="\alpha+\beta+\gamma=180^\circ">\(\alpha+\beta+\gamma=180^\circ\)</span>.</p>
             </details>
             <div class="hintbox" data-hints="satz">
               <strong>Tipps</strong>
@@ -413,11 +465,11 @@
                   <text x="570" y="92" text-anchor="end" fill="#7c3aed" font-weight="900">g ∥ AB</text>
                 </g>
                 <g id="proofAlpha" style="display:none">
-                  <path d="M320 105 L246 105 A74 74 0 0 1 270 51 Z" fill="rgba(37,99,235,.18)" stroke="#2563eb" stroke-width="4"/>
+                  <path d="M320 105 L246 105 A74 74 0 0 1 270 51" fill="rgba(37,99,235,.18)" stroke="#2563eb" stroke-width="4"/>
                   <text x="247" y="91" fill="#2563eb" font-size="27" font-weight="900">α</text>
                 </g>
                 <g id="proofBeta" style="display:none">
-                  <path d="M320 105 L370 51 A74 74 0 0 1 394 105 Z" fill="rgba(22,163,74,.18)" stroke="#16a34a" stroke-width="4"/>
+                  <path d="M320 105 L370 51 A74 74 0 0 1 394 105" fill="rgba(22,163,74,.18)" stroke="#16a34a" stroke-width="4"/>
                   <text x="376" y="91" fill="#16a34a" font-size="27" font-weight="900">β</text>
                 </g>
                 <g id="proofStraight" style="display:none">
@@ -437,36 +489,41 @@
         <div class="footer-nav"><button class="secondary" onclick="showPage('page-satz')">← Zurück</button><button onclick="showPage('page-ordnen')">Weiter zu Station 5 →</button></div>
       </section>
 
-      <section class="page" id="page-ordnen" data-title="5 Ordnen">
+      <section class="page full-width-page" id="page-ordnen" data-title="5 Ordnen">
         <div class="grid">
-          <div class="card span-7">
+          <div class="card span-12 readable-card">
             <span class="pill green">Station 5</span>
             <h3>Begründung ordnen</h3>
-            <p>Bringe die Begründung in die richtige Reihenfolge. Trage die Buchstaben ein.</p>
-            <div class="task green">
-              <p><strong>A:</strong> Die drei Winkel an der Hilfslinie bilden zusammen einen gestreckten Winkel.</p>
-              <p><strong>B:</strong> Durch <span class="katex-inline-math" data-tex="C">\(C\)</span> zeichnen wir eine Gerade <span class="katex-inline-math" data-tex="g">\(g\)</span>, die parallel zu <span class="katex-inline-math" data-tex="AB">\(AB\)</span> ist.</p>
-              <p><strong>C:</strong> Deshalb gilt <span class="katex-inline-math" data-tex="\alpha+\beta+\gamma=180^\circ">\(\alpha+\beta+\gamma=180^\circ\)</span>.</p>
-              <p><strong>D:</strong> Wegen der parallelen Geraden sind die entsprechenden Stufen- bzw. Wechselwinkel gleich groß.</p>
-              <p><strong>E:</strong> Die Winkel <span class="katex-inline-math" data-tex="\alpha">\(\alpha\)</span> und <span class="katex-inline-math" data-tex="\beta">\(\beta\)</span> können dadurch an die Hilfslinie bei <span class="katex-inline-math" data-tex="C">\(C\)</span> übertragen werden.</p>
+            <p>Bringe die Begründung in die richtige Reihenfolge. Alle Karten nutzen die volle Textbreite, damit du jeden Schritt gut lesen kannst.</p>
+            <div class="order-list">
+              <div class="order-item"><div class="order-letter">A</div><div>Die drei Winkel an der Hilfslinie bilden zusammen einen gestreckten Winkel.</div></div>
+              <div class="order-item"><div class="order-letter">B</div><div>Durch <span class="katex-inline-math" data-tex="C">\(C\)</span> zeichnen wir eine Gerade <span class="katex-inline-math" data-tex="g">\(g\)</span>, die parallel zu <span class="katex-inline-math" data-tex="AB">\(AB\)</span> ist.</div></div>
+              <div class="order-item"><div class="order-letter">C</div><div>Deshalb gilt <span class="katex-inline-math" data-tex="\alpha+\beta+\gamma=180^\circ">\(\alpha+\beta+\gamma=180^\circ\)</span>.</div></div>
+              <div class="order-item"><div class="order-letter">D</div><div>Wegen der parallelen Geraden sind die entsprechenden Stufen- bzw. Wechselwinkel gleich groß.</div></div>
+              <div class="order-item"><div class="order-letter">E</div><div>Die Winkel <span class="katex-inline-math" data-tex="\alpha">\(\alpha\)</span> und <span class="katex-inline-math" data-tex="\beta">\(\beta\)</span> können dadurch an die Hilfslinie bei <span class="katex-inline-math" data-tex="C">\(C\)</span> übertragen werden.</div></div>
             </div>
-            <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center">
+
+            <h4>Deine Reihenfolge</h4>
+            <div class="order-input-row" aria-label="Reihenfolge der Begründung eingeben">
               <input class="inline-input" maxlength="1" id="ord1" aria-label="Schritt 1">
-              <span>→</span><input class="inline-input" maxlength="1" id="ord2" aria-label="Schritt 2">
-              <span>→</span><input class="inline-input" maxlength="1" id="ord3" aria-label="Schritt 3">
-              <span>→</span><input class="inline-input" maxlength="1" id="ord4" aria-label="Schritt 4">
-              <span>→</span><input class="inline-input" maxlength="1" id="ord5" aria-label="Schritt 5">
+              <span class="arrow">→</span><input class="inline-input" maxlength="1" id="ord2" aria-label="Schritt 2">
+              <span class="arrow">→</span><input class="inline-input" maxlength="1" id="ord3" aria-label="Schritt 3">
+              <span class="arrow">→</span><input class="inline-input" maxlength="1" id="ord4" aria-label="Schritt 4">
+              <span class="arrow">→</span><input class="inline-input" maxlength="1" id="ord5" aria-label="Schritt 5">
             </div>
             <button class="small success" style="margin-top:12px" onclick="checkOrder()">Reihenfolge prüfen</button>
             <div class="feedback" id="orderFb"></div>
             <label class="checkrow"><input type="checkbox" data-progress="order1"> Ich kann die Begründung in eigenen Worten erklären.</label>
           </div>
-          <div class="card span-5">
+
+          <div class="card span-12 readable-card">
             <span class="pill violet">Sprachhilfe</span>
             <h3>So kannst du argumentieren</h3>
-            <p>Da <span class="katex-inline-math" data-tex="g\parallel AB">\(g\parallel AB\)</span> gilt, sind passende Stufen- oder Wechselwinkel gleich groß.</p>
-            <p>Die Winkel <span class="katex-inline-math" data-tex="\alpha">\(\alpha\)</span>, <span class="katex-inline-math" data-tex="\gamma">\(\gamma\)</span> und <span class="katex-inline-math" data-tex="\beta">\(\beta\)</span> liegen an der Hilfslinie nebeneinander auf einer Geraden.</p>
-            <p>Ein gestreckter Winkel hat <span class="katex-inline-math" data-tex="180^\circ">\(180^\circ\)</span>. Also gilt <span class="katex-inline-math" data-tex="\alpha+\beta+\gamma=180^\circ">\(\alpha+\beta+\gamma=180^\circ\)</span>.</p>
+            <div class="statement-grid">
+              <div class="statement-box"><strong>1. Parallele nutzen</strong><p>Da <span class="katex-inline-math" data-tex="g\parallel AB">\(g\parallel AB\)</span> gilt, sind passende Stufen- oder Wechselwinkel gleich groß.</p></div>
+              <div class="statement-box"><strong>2. Winkel übertragen</strong><p>Die Winkel <span class="katex-inline-math" data-tex="\alpha">\(\alpha\)</span> und <span class="katex-inline-math" data-tex="\beta">\(\beta\)</span> liegen dadurch auch an der Hilfslinie bei <span class="katex-inline-math" data-tex="C">\(C\)</span>.</p></div>
+              <div class="statement-box"><strong>3. Gestreckter Winkel</strong><p><span class="katex-inline-math" data-tex="\alpha">\(\alpha\)</span>, <span class="katex-inline-math" data-tex="\gamma">\(\gamma\)</span> und <span class="katex-inline-math" data-tex="\beta">\(\beta\)</span> bilden dort zusammen einen gestreckten Winkel.</p></div>
+            </div>
             <details>
               <summary>Lösung anzeigen</summary>
               <p>Richtige Reihenfolge: <strong>B → D → E → A → C</strong></p>
@@ -522,35 +579,53 @@
         <div class="footer-nav"><button class="secondary" onclick="showPage('page-ordnen')">← Zurück</button><button onclick="showPage('page-sicherung')">Weiter zur Sicherung →</button></div>
       </section>
 
-      <section class="page" id="page-sicherung" data-title="Sicherung">
+      <section class="page full-width-page" id="page-sicherung" data-title="Sicherung">
         <div class="grid">
-          <div class="card span-7">
+          <div class="card span-12 readable-card">
             <span class="pill green">Sicherung</span>
             <h3>Das nehme ich mit</h3>
-            <div class="task green">
-              <div class="math-scroll"><div class="katex-display-math" data-tex="\boxed{\alpha+\beta+\gamma=180^\circ}">\[\boxed{\alpha+\beta+\gamma=180^\circ}\]</div></div>
+            <div class="task green wide-task">
+              <div class="formula-panel"><div class="katex-display-math" data-tex="\boxed{\alpha+\beta+\gamma=180^\circ}">\[\boxed{\alpha+\beta+\gamma=180^\circ}\]</div></div>
               <p>In jedem Dreieck beträgt die Innenwinkelsumme <span class="katex-inline-math" data-tex="180^\circ">\(180^\circ\)</span>.</p>
             </div>
-            <h4>Reflexion</h4>
+            <div class="sicherung-grid">
+              <div class="sicherung-box">
+                <h4>1. Zerreißprobe</h4>
+                <p>Wenn man die drei Winkelecken eines Dreiecks abreißt und aneinanderlegt, bilden sie einen gestreckten Winkel.</p>
+              </div>
+              <div class="sicherung-box">
+                <h4>2. Begründung</h4>
+                <p>Mit einer Hilfslinie parallel zu einer Dreiecksseite können Stufenwinkel und Wechselwinkel genutzt werden.</p>
+              </div>
+              <div class="sicherung-box">
+                <h4>3. Anwendung</h4>
+                <p>Fehlt ein Winkel, ziehst du die beiden bekannten Winkel von <span class="katex-inline-math" data-tex="180^\circ">\(180^\circ\)</span> ab.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card span-12 readable-card">
+            <span class="pill violet">Reflexion</span>
+            <h3>Erkläre es in eigenen Worten</h3>
             <p>Die Zerreißprobe zeigt mir, dass ...</p>
-            <textarea id="ref1"></textarea>
+            <textarea class="dynamic-textarea" id="ref1"></textarea>
             <p>Die Skizzenbegründung erklärt mir, warum ...</p>
-            <textarea id="ref2"></textarea>
+            <textarea class="dynamic-textarea" id="ref2"></textarea>
             <label class="checkrow"><input type="checkbox" data-progress="reflect1"> Ich habe die Reflexion ausgefüllt.</label>
           </div>
-          <div class="card span-5">
+
+          <div class="card span-12 readable-card">
             <span class="pill violet">GitHub Pages</span>
             <h3>Diese Datei online hosten</h3>
             <div class="hosting">
               <p><strong>So veröffentlichst du den Lernpfad auf GitHub Pages:</strong></p>
               <div class="steps">
-                <div class="step">Erstelle auf GitHub ein neues Repository, z. B. <code>innenwinkelsumme-dreieck</code>.</div>
-                <div class="step">Lade diese Datei als <code>index.html</code> in das Repository hoch.</div>
-                <div class="step">Öffne <code>Settings → Pages</code>.</div>
-                <div class="step">Wähle <code>Deploy from a branch</code>, Branch <code>main</code>, Ordner <code>/root</code>.</div>
-                <div class="step">Nach kurzer Zeit ist der Lernpfad unter <code>https://BENUTZERNAME.github.io/innenwinkelsumme-dreieck/</code> erreichbar.</div>
+                <div class="step">Lege die Datei unter <code>klasse-7/geometrie/innenwinkelsumme/lernpfad-innenwinkelsumme.html</code> ab.</div>
+                <div class="step">Achte darauf, dass die <code>data.json</code> exakt auf diesen Pfad verweist.</div>
+                <div class="step">Aktiviere in GitHub <code>Settings → Pages</code> und veröffentliche den Branch.</div>
+                <div class="step">Nach kurzer Zeit ist der Lernpfad über deine GitHub-Pages-Seite erreichbar.</div>
               </div>
-              <p>Für Google Sites kannst du diesen GitHub-Pages-Link anschließend über <code>Einfügen → Einbetten → URL</code> einbinden.</p>
+              <p>Für Google Sites kannst du den GitHub-Pages-Link anschließend über <code>Einfügen → Einbetten → URL</code> einbinden.</p>
             </div>
           </div>
         </div>
@@ -566,6 +641,21 @@
   // unabhängig von Auto-Render-Delimiter-Problemen und funktioniert zuverlässig auf GitHub Pages.
   let katexLoadPromise = null;
   let katexAlreadyRendered = false;
+
+
+  function updateViewportVars(){
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', vh + 'px');
+    const topbar = document.querySelector('.topbar')?.offsetHeight || 0;
+    const nav = document.querySelector('.navwrap')?.offsetHeight || 0;
+    const progress = document.querySelector('.progress-card')?.offsetHeight || 0;
+    const heroVisible = document.querySelector('.hero')?.offsetHeight || 0;
+    const chrome = topbar + nav + progress + Math.min(heroVisible, 180) + 70;
+    document.documentElement.style.setProperty('--chrome-height', chrome + 'px');
+  }
+  updateViewportVars();
+  window.addEventListener('resize', updateViewportVars);
+  window.addEventListener('orientationchange', () => setTimeout(updateViewportVars, 250));
 
   function loadStylesheetOnce(url){
     return new Promise(resolve => {
@@ -697,6 +787,7 @@
     Array.from(document.querySelectorAll('.tab')).forEach((t,i)=>t.classList.toggle('active', pages[i].id===id));
     window.scrollTo({top:0, behavior:'smooth'});
     localStorage.setItem('iw-page', id);
+    updateViewportVars();
     renderMath();
   };
 
@@ -757,17 +848,7 @@
     const val = Number(document.getElementById(id).value);
     const fb = document.getElementById(fbId);
     if(val === expected){ fb.textContent = 'Richtig.'; fb.className = 'feedback ok'; }
-    else {
-      const messages = {
-        preFb: 'Noch nicht. Ein gestreckter Winkel ist eine gerade Linie.',
-        sumGuessFb: 'Noch nicht. Lege die Winkelecken noch einmal an eine gerade Linie.',
-        a1Fb: 'Noch nicht. Nutze den entdeckten Satz und ziehe die beiden bekannten Winkel ab.',
-        a2Fb: 'Noch nicht. Nutze den entdeckten Satz und ziehe die beiden bekannten Winkel ab.',
-        a3Fb: 'Noch nicht. Ziehe zuerst den Spitzenwinkel ab und teile dann durch 2.'
-      };
-      fb.textContent = messages[fbId] || 'Noch nicht richtig. Prüfe deine Rechnung.';
-      fb.className = 'feedback no';
-    }
+    else { fb.textContent = 'Noch nicht richtig. Prüfe die Innenwinkelsumme.'; fb.className = 'feedback no'; }
   };
   window.checkExperiment = function(){
     const boxes = Array.from(document.querySelectorAll('.expCheck'));
@@ -881,8 +962,7 @@
     document.getElementById('angA').textContent = a.toFixed(1);
     document.getElementById('angB').textContent = b.toFixed(1);
     document.getElementById('angC').textContent = c.toFixed(1);
-    const sumEl = document.getElementById('angSum');
-    if(sumEl) sumEl.textContent = (a+b+c).toFixed(1);
+    document.getElementById('angSum').textContent = (a+b+c).toFixed(1);
     const center = {x:(A.x+B.x+C.x)/3, y:(A.y+B.y+C.y)/3};
     [[A,'α',a,'#2563eb'],[B,'β',b,'#16a34a'],[C,'γ',c,'#f97316']].forEach(([p,lab,ang,col])=>{
       const tx = p.x + (center.x-p.x)*0.26; const ty = p.y + (center.y-p.y)*0.26;
