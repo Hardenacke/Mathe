@@ -3833,7 +3833,12 @@
                   "beschreibung": "Lernpfade und Materialien zu Innenwinkelsumme.",
                   "inhaltlicheSchwerpunkte": [
                     "Innenwinkelsumme",
-                    "Innenwinkelsumme im Dreieck"
+                    "Innenwinkelsumme im Dreieck",
+                    "Zerreißprobe",
+                    "Stufenwinkel",
+                    "Wechselwinkel",
+                    "Hilfslinie",
+                    "Begründen"
                   ],
                   "materialien": [
                     {
@@ -3886,6 +3891,131 @@
                       "erstelltAm": "2026-05-31",
                       "lizenz": "",
                       "autor": ""
+                    },
+                    {
+                      "id": "arbeitsblatt-innenwinkelsumme-pdf",
+                      "titel": "Arbeitsblatt: Innenwinkelsumme im Dreieck",
+                      "kurztitel": "AB Innenwinkelsumme",
+                      "beschreibung": "Einfaches Arbeitsblatt zur Sicherung der wichtigsten Erkenntnisse des Lernpfads: Zerreißprobe, Innenwinkelsumme, Hilfslinie, Stufenwinkel und Wechselwinkel.",
+                      "typ": "pdf",
+                      "format": "PDF",
+                      "materialart": "Arbeitsblatt",
+                      "datei": "arbeitsblatt-innenwinkelsumme.pdf",
+                      "pfad": "klasse-7/geometrie/innenwinkelsumme/arbeitsblatt-innenwinkelsumme.pdf",
+                      "url": "klasse-7/geometrie/innenwinkelsumme/arbeitsblatt-innenwinkelsumme.pdf",
+                      "dauer": "ca. 15–25 Minuten",
+                      "klasse": "Klasse 7",
+                      "inhaltsfeld": "Geometrie",
+                      "thema": "Innenwinkelsumme",
+                      "unterthema": "Innenwinkelsumme im Dreieck",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 7",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-7",
+                        "inhaltsfeldId": "geometrie",
+                        "themaId": "innenwinkelsumme"
+                      },
+                      "fach": "Mathematik",
+                      "kompetenzbereich": [
+                        "Geometrie",
+                        "Argumentieren",
+                        "Begründen",
+                        "Operieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Innenwinkelsumme",
+                        "Innenwinkelsumme im Dreieck",
+                        "Zerreißprobe",
+                        "Stufenwinkel",
+                        "Wechselwinkel",
+                        "Hilfslinie"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-02",
+                      "lizenz": "",
+                      "autor": "",
+                      "tags": [
+                        "arbeitsblatt",
+                        "pdf",
+                        "innenwinkelsumme",
+                        "dreieck",
+                        "winkel",
+                        "stufenwinkel",
+                        "wechselwinkel",
+                        "hilfslinie",
+                        "geometrie",
+                        "klasse-7",
+                        "mathematik"
+                      ]
+                    },
+                    {
+                      "id": "arbeitsblatt-innenwinkelsumme-tex",
+                      "titel": "LaTeX-Quelle: Arbeitsblatt Innenwinkelsumme",
+                      "kurztitel": "AB Innenwinkelsumme TeX",
+                      "beschreibung": "LaTeX-Quelle des Arbeitsblatts zur Innenwinkelsumme im Dreieck.",
+                      "typ": "tex",
+                      "format": "LaTeX",
+                      "materialart": "Arbeitsblatt",
+                      "datei": "arbeitsblatt-innenwinkelsumme.tex",
+                      "pfad": "klasse-7/geometrie/innenwinkelsumme/arbeitsblatt-innenwinkelsumme.tex",
+                      "url": "klasse-7/geometrie/innenwinkelsumme/arbeitsblatt-innenwinkelsumme.tex",
+                      "dauer": "variabel",
+                      "klasse": "Klasse 7",
+                      "inhaltsfeld": "Geometrie",
+                      "thema": "Innenwinkelsumme",
+                      "unterthema": "Innenwinkelsumme im Dreieck",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 7",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-7",
+                        "inhaltsfeldId": "geometrie",
+                        "themaId": "innenwinkelsumme"
+                      },
+                      "fach": "Mathematik",
+                      "kompetenzbereich": [
+                        "Geometrie",
+                        "Argumentieren",
+                        "Begründen",
+                        "Operieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Innenwinkelsumme",
+                        "Innenwinkelsumme im Dreieck",
+                        "Zerreißprobe",
+                        "Stufenwinkel",
+                        "Wechselwinkel",
+                        "Hilfslinie"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-02",
+                      "lizenz": "",
+                      "autor": "",
+                      "tags": [
+                        "arbeitsblatt",
+                        "latex",
+                        "tex",
+                        "innenwinkelsumme",
+                        "dreieck",
+                        "winkel",
+                        "stufenwinkel",
+                        "wechselwinkel",
+                        "hilfslinie",
+                        "geometrie",
+                        "klasse-7",
+                        "mathematik"
+                      ]
                     }
                   ],
                   "tags": [
@@ -3895,9 +4025,17 @@
                     "klasse-7",
                     "lernpfad",
                     "mathematik",
-                    "pdf"
+                    "pdf",
+                    "latex",
+                    "tex",
+                    "dreieck",
+                    "winkel",
+                    "stufenwinkel",
+                    "wechselwinkel",
+                    "hilfslinie",
+                    "geometrie"
                   ],
-                  "anzahlMaterialien": 2
+                  "anzahlMaterialien": 3
                 }
               ],
               "tags": [
@@ -3905,12 +4043,12 @@
                 "geometrie"
               ],
               "anzahlThemen": 2,
-              "anzahlMaterialien": 7
+              "anzahlMaterialien": 8
             }
           ],
           "materialien": [],
           "anzahlThemen": 5,
-          "anzahlMaterialien": 25
+          "anzahlMaterialien": 26
         },
         {
           "id": "klasse-8",
@@ -12472,7 +12610,7 @@
         }
       ],
       "anzahlThemen": 40,
-      "anzahlMaterialien": 183
+      "anzahlMaterialien": 184
     }
   ],
   "aktualisiertAm": "2026-06-01"
