@@ -1,939 +1,3 @@
-ChatGPT
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10E392D4-0804-47C5-895A-A9734E0C734A.jpeg
-A9F4AF07-8760-4994-BFEA-57EFC8111A4A.jpeg
-Erstelle einen digitalen Lernpfad für eine EF. Diese soll jetzt nach dem Bereich Vektoren nun gerade im Raum kennenlernen. Erstelle dazu einen digitalen Lernpfad, wo es darum geht, dass man ein Flugzeug hat, welches man mittels Linearkombination hin zu gerade parametrisieren soll. Erstelle dazu einen sehr kleinschrittigen digitalen Lernpfad, der auch diese Geraden visualisieren kann.
-
-Lernpfad: Fluglotsen im Einsatz – Geraden im Raum entdecken (EF)
-Leitfrage:
-Zwei Flugzeuge fliegen auf geraden Flugbahnen durch den Luftraum. Wie kann man ihre Flugbahn mathematisch beschreiben?
-
-Story-Einstieg
-
-https://images.openai.com/static-rsc-4/fYxqPtVw3ayPtXC6h2TIHLZVYDVtEm_tTNp5IU0itu8Tg-Cwcz28b4QY6u8UnLPQ0zVR6A4IGzr_JxVSOGrB_Zv5iiW_VjCtuvIfrG4LGF8A-etLol2SF2rXS2DRWGEFLYqtQESd6dUdZ_uhBoUGkREa0rYqJTDNrekKtW6PeLz96i-vQAqQzT8df_ZWTX-X?purpose=fullsize
-
-https://images.openai.com/static-rsc-4/bp9lMy2KrxHwkYeP2mg3WKLEQQRmBlz4ZlE4aXhN4_xPGG22QVV_8ZZfIyANLHPNiaOA2O5uRz2YJEYBDtxxf67r45ZtQuu4Dk0onkDjc7j8fz0LdbSTC3xnWcki_U3zimyYCr2uCUWBvpsnHvZ2iEvTzr23yEoOLggexmdTHU9nGdrC9-bgbbfJ7fsF_9o5?purpose=fullsize
-
-https://images.openai.com/static-rsc-4/KxCsg7dOLY9LOtkcvkTRnuFXy6JbAoihFfX9veK2oVN4tT7Mq0c82oe0GYtsQcKE3_kXaBSrse1E6Yoxl7-mqo-BTOKKgWXBx3_UKB3UrnnAT6g0SaxZXHCMKon2psYM49KRsxYiTfoDL4R6B49SRaoNEJg30v2_C6ncEi3MmMTG7rtQ2Ki9YbZbZ9KHfaie?purpose=fullsize
-7
-Du arbeitest heute als Fluglotse.
-
-Ein Flugzeug befindet sich im Punkt
-
-A
-(
-4
-∣
-2
-∣
-1
-)
-A(4∣2∣1)
-und fliegt nach 1 Minute zum Punkt
-
-B
-(
-7
-∣
-4
-∣
-3
-)
-.
-B(7∣4∣3).
-Deine Aufgabe ist es, die Flugbahn so zu beschreiben, dass man jeden zukünftigen Flugzeugstandort berechnen kann.
-
-Station 1 – Wo befindet sich das Flugzeug?
-Aufgabe 1
-Bestimme die Bewegung des Flugzeugs von A nach B.
-
-A
-(
-4
-∣
-2
-∣
-1
-)
-A(4∣2∣1)
-B
-(
-7
-∣
-4
-∣
-3
-)
-B(7∣4∣3)
-Berechne den Vektor
-
-A
-B
-→
-AB
- 
-Eingabe
-A
-B
-→
-=
-(
-?
-?
-?
-)
-AB
- = 
-​
-  
-?
-?
-?
-​
-  
-​
- 
-Tipp 1
-Ziehe die Koordinaten von A von den Koordinaten von B ab.
-
-Lösung
-A
-B
-→
-=
-(
-7
-−
-4
-4
-−
-2
-3
-−
-1
-)
-=
-(
-3
-2
-2
-)
-AB
- = 
-​
-  
-7−4
-4−2
-3−1
-​
-  
-​
- = 
-​
-  
-3
-2
-2
-​
-  
-​
- 
-Erkenntnis
-Der Vektor
-
-(
-3
-2
-2
-)
-​
-  
-3
-2
-2
-​
-  
-​
- 
-beschreibt die Flugrichtung.
-
-Station 2 – Wohin fliegt das Flugzeug?
-Ein Flugzeug startet bei
-
-A
-(
-4
-∣
-2
-∣
-1
-)
-A(4∣2∣1)
-und bewegt sich immer um
-
-(
-3
-2
-2
-)
-.
-​
-  
-3
-2
-2
-​
-  
-​
- .
-Aufgabe
-Vervollständige die Tabelle.
-
-Parameter t	Position
-0	?
-1	?
-2	?
-3	?
-Hilfestellung
-Für
-
-t
-=
-1
-t=1
-addierst du den Richtungsvektor einmal.
-
-Für
-
-t
-=
-2
-t=2
-addierst du ihn zweimal.
-
-Kontrolle
-t
-=
-0
-:
-(
-4
-∣
-2
-∣
-1
-)
-t=0:(4∣2∣1)
-t
-=
-1
-:
-(
-7
-∣
-4
-∣
-3
-)
-t=1:(7∣4∣3)
-t
-=
-2
-:
-(
-10
-∣
-6
-∣
-5
-)
-t=2:(10∣6∣5)
-t
-=
-3
-:
-(
-13
-∣
-8
-∣
-7
-)
-t=3:(13∣8∣7)
-Erkenntnis
-Jeder Punkt entsteht nach dem Muster
-
-Startpunkt
-+
-t
-⋅
-Richtungsvektor
-Startpunkt+t⋅Richtungsvektor
-Station 3 – Die Geradengleichung entsteht
-Betrachte erneut die Flugbahn.
-
-Startpunkt:
-
-A
-(
-4
-∣
-2
-∣
-1
-)
-A(4∣2∣1)
-Richtung:
-
-(
-3
-2
-2
-)
-​
-  
-3
-2
-2
-​
-  
-​
- 
-Auftrag
-Vervollständige die Gleichung:
-
-x
-⃗
-=
-(
-4
-2
-1
-)
-+
-t
-⋅
-(
-?
-?
-?
-)
-x
- = 
-​
-  
-4
-2
-1
-​
-  
-​
- +t⋅ 
-​
-  
-?
-?
-?
-​
-  
-​
- 
-Lösung
-x
-⃗
-=
-(
-4
-2
-1
-)
-+
-t
-⋅
-(
-3
-2
-2
-)
-x
- = 
-​
-  
-4
-2
-1
-​
-  
-​
- +t⋅ 
-​
-  
-3
-2
-2
-​
-  
-​
- 
-​
- 
-Merkkasten
-Eine Gerade im Raum wird beschrieben durch
-
-x
-⃗
-=
-p
-⃗
-+
-t
-⋅
-u
-⃗
-x
- = 
-p
-​
- +t⋅ 
-u
- 
-​
- 
-mit
-
-Stützvektor 
-p
-⃗
-p
-​
- 
-
-Richtungsvektor 
-u
-⃗
-u
- 
-
-Parameter 
-t
-t
-
-Die Idee entspricht exakt der Linearkombination aus dem Vektorkapitel.
-
-Station 4 – Interaktive Flugbahn
-Die Lernenden sehen nun ein 3D-Koordinatensystem.
-
-Ein Schieberegler verändert den Parameter
-
-t
-t
-zwischen
-
-−
-3
-−3
-und
-
-5.
-5.
-Das Flugzeug bewegt sich entlang der Geraden.
-
-Vorhersage
-Bevor du den Regler bewegst:
-
-Frage
-Was passiert bei
-
-t
-<
-0
-t<0
-?
-
-○ Das Flugzeug bleibt stehen.
-
-○ Das Flugzeug fliegt rückwärts.
-
-○ Das Flugzeug verschwindet.
-
-Beobachtung
-Der Flugpunkt bewegt sich auf derselben Geraden in die entgegengesetzte Richtung.
-
-Erklärung
-Negative Parameterwerte beschreiben dieselbe Gerade in Gegenrichtung.
-
-Station 5 – Flugzeug orten
-Die Flugbahn lautet
-
-x
-⃗
-=
-(
-4
-2
-1
-)
-+
-t
-(
-3
-2
-2
-)
-x
- = 
-​
-  
-4
-2
-1
-​
-  
-​
- +t 
-​
-  
-3
-2
-2
-​
-  
-​
- 
-Aufgabe
-Berechne den Punkt für
-
-t
-=
-4
-t=4
-Lösung
-x
-⃗
-=
-(
-4
-2
-1
-)
-+
-4
-(
-3
-2
-2
-)
-x
- = 
-​
-  
-4
-2
-1
-​
-  
-​
- +4 
-​
-  
-3
-2
-2
-​
-  
-​
- 
-=
-(
-16
-10
-9
-)
-= 
-​
-  
-16
-10
-9
-​
-  
-​
- 
-Station 6 – Liegt das Flugzeug dort?
-Radar meldet den Punkt
-
-P
-(
-19
-∣
-12
-∣
-11
-)
-P(19∣12∣11)
-Auftrag
-Liegt P auf der Flugbahn?
-
-x
-⃗
-=
-(
-4
-2
-1
-)
-+
-t
-(
-3
-2
-2
-)
-x
- = 
-​
-  
-4
-2
-1
-​
-  
-​
- +t 
-​
-  
-3
-2
-2
-​
-  
-​
- 
-Hilfen
-Tipp 1
-
-Setze die Koordinaten von P ein.
-
-Tipp 2
-
-Löse die Gleichungen nach 
-t
-t.
-
-Tipp 3
-
-Alle drei Gleichungen müssen denselben Wert liefern.
-
-Lösung
-4
-+
-3
-t
-=
-19
-4+3t=19
-t
-=
-5
-t=5
-Prüfen:
-
-2
-+
-2
-⋅
-5
-=
-12
-2+2⋅5=12
-1
-+
-2
-⋅
-5
-=
-11
-1+2⋅5=11
-stimmt.
-
-P
- liegt auf der Geraden
-P liegt auf der Geraden
-​
- 
-Station 7 – Flugstrecke statt Flugbahn
-Zwischen
-
-A
-(
-4
-∣
-2
-∣
-1
-)
-A(4∣2∣1)
-und
-
-B
-(
-7
-∣
-4
-∣
-3
-)
-B(7∣4∣3)
-liegt nur ein Teil der Geraden.
-
-Aufgabe
-Welches Intervall beschreibt die Strecke AB?
-
-○ 
-t
-∈
-R
-t∈R
-
-○ 
-0
-≤
-t
-≤
-1
-0≤t≤1
-
-○ 
-t
-≥
-0
-t≥0
-
-Lösung
-0
-≤
-t
-≤
-1
-0≤t≤1
-​
- 
-Erkenntnis
-Gerade:
-
-t
-∈
-R
-t∈R
-Strahl:
-
-t
-≥
-0
-t≥0
-Strecke:
-
-0
-≤
-t
-≤
-1
-0≤t≤1
-Mission: Landebahn anfliegen
-Ein Flugzeug befindet sich bei
-
-A
-(
-2
-∣
-1
-∣
-2
-)
-A(2∣1∣2)
-und fliegt in Richtung
-
-(
-4
-2
-−
-1
-)
-​
-  
-4
-2
-−1
-​
-  
-​
- 
-Auftrag
-Stelle die Geradengleichung auf.
-
-Berechne den Punkt für 
-t
-=
-3
-t=3.
-
-Prüfe, ob
-
-P
-(
-14
-∣
-7
-∣
-−
-1
-)
-P(14∣7∣−1)
-auf der Flugbahn liegt.
-
-Sicherung
-Vervollständige:
-
-Eine Gerade im Raum besteht aus
-
-\boxed{\text{____________}}
-und
-
-\boxed{\text{____________}}
-Jeder Punkt der Geraden entsteht durch
-
-x
-⃗
-=
-p
-⃗
-+
-t
-⋅
-u
-⃗
-x
- = 
-p
-​
- +t⋅ 
-u
- 
-​
- 
-Interaktive Elemente für die HTML-Version
-Für die spätere HTML-Datei würde ich zusätzlich einbauen:
-
-echtes drehbares 3D-Koordinatensystem (Three.js)
-
-Flugzeugmodell auf der Geraden
-
-Schieberegler für den Parameter 
-t
-t
-
-automatische Darstellung von Stütz- und Richtungsvektor
-
-Tap-to-Pair-Aufgabe „Punkt ↔ Geradengleichung“
-
-Fehlerdiagnose-Station
-
-Lehrerzugang (PIN 1607)
-
-gestufte Hilfen mit 30-s-Cooldown
-
-Vollbildmodus für Google Sites
-
-Fortschrittsanzeige
-
-KaTeX-Rendering aller Formeln
-
-iPad-optimierte Touch-Steuerung
-
-Die Leitidee des Lernpfads orientiert sich am Modellieren einer realen Flugbahn und führt schrittweise von der bekannten Linearkombination zur Parameterform einer Geraden im Raum. Dies entspricht dem Gedanken eines realitätsbezogenen Mathematikunterrichts mit Modellierungsbezug.
-
-
-
-Eingefügter Text.txt
-Dokument
-Ergänze den Eintrag und gib den vollständigen Code für die data.json Datei heraus
-
-Nachgedacht für 15s
-Erledigt. Die data.json ist vollständig und enthält den EF-Eintrag für:
-
-ef/geraden-und-ebenen/geraden-im-raum/lernpfad-geraden-im-raum-flugzeug.html
-Geupdatete vollständige data.json herunterladen
-
-Die Datei ist zu lang, um sie hier zuverlässig vollständig in eine Chatnachricht zu kopieren.
-
-
-Ich möchte von dir Folgendes: Es soll eine neue Version der Ordnerstruktur geben. Dabei kannst du die Ordnerstruktur, die gerade vorgelegt wurde, verwenden. Sprich, Analysis-Funktion, Vektoren, Gerade und Ebenen und Stochastik. Diese Struktur kannst du beibehalten. Liegen in allen Ordnern entsprechend des Lehrplans Unterthemen an. Daran kannst du dich an der aktuellen Version von GitHub gut orientieren. Liegen in jedem Unterordner eine kleine Testdatei an. Andernfalls kann man die Ordnerstrukturen nicht auf GitHub hochladen. Dementsprechend ist es sehr wichtig, dass in jedem Ordner eine Testdatei drin ist. Wenn du das gemacht hast, lade dir dann die aktuelle data.json-Datei von GitHub herunter und ergänze für den Lernpfad einen passenden Eintrag. Gib alle Dateien zum Download bereit.
-
-Nachgedacht für 3m 58s
-Erledigt. Ich habe eine neue EF-Ordnerstruktur erstellt, überall test.html und README.md eingefügt, den Lernpfad unter ef/geraden-und-ebenen/geraden-im-raum/ ergänzt und eine vollständige data.json mit passendem Eintrag erstellt.
-
-Die Struktur orientiert sich an den EF-Schwerpunkten im NRW-Kernlehrplan: Funktionen/Analysis mit Funktionen, Transformationen und Ableitung sowie analytische Geometrie mit Koordinatisierung, Vektoren, Geraden/Strecken und Lagebeziehungen. 
-
- 
-
- Die GitHub-Seite lädt ihre Übersicht laut Startseite aus der data.json. 
-
-Downloads:
-
-Komplettpaket mit EF-Struktur, Lernpfad und data.json
-
-Nur der neue EF-Ordner
-
-Aktualisierte data.json
-
-Strukturübersicht als TXT
-
-Der Lernpfad liegt hier:
-
-ef/geraden-und-ebenen/geraden-im-raum/lernpfad-geraden-im-raum-flugzeug.html
-Hinweis: Den direkten Raw-Download der data.json von GitHub konnte ich über das Web-Tool nicht abrufen; ich habe deshalb die zuletzt bereitgestellte vollständige Arbeitsversion der data.json verwendet und den Eintrag dort ergänzt.
-
-
-Überrabiet den lernpfad das auch pmatrix Elemente richtig gerendertw erdne
-
-Nachgedacht für 3m 18s
-Erledigt. Ich habe den Lernpfad so überarbeitet, dass pmatrix-Elemente zuverlässig gerendert werden.
-
-Geändert wurde insbesondere:
-
-keine getrennten \begin{pmatrix} / \end{pmatrix}-Formelteile mehr bei Eingabefeldern
-
-Vektoreingaben werden jetzt als eigene HTML-/CSS-Vektorbox dargestellt
-
-alle pmatrix-Formeln liegen vollständig innerhalb eines KaTeX-Blocks
-
-KaTeX rendert beim Laden, Seitenwechsel und erneut nach kurzer Verzögerung
-
-throwOnError: false ergänzt, damit eine fehlerhafte Formel nicht das gesamte Rendering blockiert
-
-Downloads:
-
-Überarbeiteter Lernpfad als HTML
-
-Codeversion als TXT
-
-Komplettes GitHub-Paket mit EF-Struktur
-
-Nur EF-Ordnerstruktur mit überarbeitetem Lernpfad
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -953,6 +17,9 @@ Nur EF-Ordnerstruktur mit überarbeitetem Lernpfad
     button,input{font:inherit}.topbar{position:sticky;top:0;z-index:50;background:rgba(248,252,255,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
     .topbar-inner{max-width:1220px;margin:auto;padding:.7rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap}.brand{font-weight:950;letter-spacing:-.03em}.actions{display:flex;gap:.5rem;flex-wrap:wrap}.btn{border:0;border-radius:999px;padding:.75rem 1rem;min-height:46px;font-weight:850;cursor:pointer;background:#e8f2ff;color:#0f3468;box-shadow:0 3px 0 rgba(15,52,104,.12)}.btn.primary{background:var(--blue);color:white}.btn.good{background:var(--green);color:white}.btn.warn{background:#fff3e8;color:#8a3a00}.btn.ghost{background:white;border:1px solid var(--line);color:var(--ink)}.btn:disabled{opacity:.45;cursor:not-allowed}.progressbar{height:12px;width:210px;background:#dbeafe;border-radius:999px;overflow:hidden}.progressbar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--sky));transition:.35s}.wrap{max-width:1220px;margin:auto;padding:1rem}.nav{display:flex;gap:.45rem;overflow:auto;padding:.5rem 0 1rem}.nav button{white-space:nowrap;border:1px solid var(--line);background:white;border-radius:999px;padding:.62rem .82rem;font-weight:850;cursor:pointer}.nav button.active{background:var(--blue);color:white;border-color:var(--blue)}.nav button.locked{opacity:.45}.page{display:none}.page.active{display:block;animation:fade .25s ease}@keyframes fade{from{opacity:.3;transform:translateY(8px)}to{opacity:1;transform:none}}
     .hero{margin:.8rem auto 1.1rem;background:radial-gradient(circle at 80% 8%,rgba(14,165,233,.36),transparent 38%),linear-gradient(135deg,#0f2b55,#164e8d 58%,#0ea5e9);border-radius:32px;color:white;box-shadow:var(--shadow);overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:1rem;align-items:center;padding:2rem}.eyebrow{font-weight:950;text-transform:uppercase;letter-spacing:.13em;color:#c7eeff}.hero h1{font-size:clamp(2.2rem,5vw,5rem);line-height:.92;margin:.25rem 0 1rem;letter-spacing:-.06em}.hero p{font-size:1.1rem;max-width:68ch}.plane-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:26px;padding:1rem;min-height:280px;display:grid;place-items:center}.plane-svg{width:100%;max-width:430px}.section{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem;margin:1rem 0;box-shadow:0 12px 32px rgba(36,72,112,.08)}.section h2{font-size:clamp(1.45rem,3.3vw,2.35rem);margin:.1rem 0 .75rem;letter-spacing:-.04em}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}.mini{background:#f8fbff;border:1px solid var(--line);border-radius:18px;padding:1rem}.mission{border-left:8px solid var(--orange)}.formula{background:#0b1830;color:white;border-radius:18px;padding:1rem;overflow:auto}.formula .katex{color:white}.input-row{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}.vector-entry{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:.6rem 0}.vector-input{position:relative;display:grid;grid-template-rows:repeat(3,auto);gap:.35rem;padding:.35rem .75rem}.vector-input:before,.vector-input:after{content:'';position:absolute;top:.08rem;bottom:.08rem;width:.55rem;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}.vector-input:before{left:0;border-left:2px solid var(--ink);border-radius:12px 0 0 12px}.vector-input:after{right:0;border-right:2px solid var(--ink);border-radius:0 12px 12px 0}.formula .vector-input:before,.formula .vector-input:after{border-color:white}.num{width:78px;min-height:48px;border:2px solid #c9dbed;border-radius:14px;padding:.6rem;font-size:1.05rem;text-align:center}.checkline{margin-top:.6rem;font-weight:850}.ok{color:var(--green)}.bad{color:var(--red)}.info{color:var(--muted)}.canvas-wrap{background:linear-gradient(180deg,#fafdff,#eef7ff);border:1px solid var(--line);border-radius:20px;padding:1rem}.canvas-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}.plane-space{width:100%;height:430px;border-radius:18px;background:linear-gradient(180deg,#dff4ff,#fff);border:1px solid #c7dff2;touch-action:none}.slider{width:min(100%,560px);accent-color:var(--blue)}.pill{display:inline-flex;align-items:center;gap:.35rem;border-radius:999px;padding:.35rem .65rem;background:#eaf4ff;font-weight:900;color:#17426e}.choice,.card-select{display:block;width:100%;text-align:left;margin:.45rem 0;padding:.95rem 1rem;border-radius:16px;border:2px solid var(--line);background:white;font-weight:850;cursor:pointer}.choice.correct,.card-select.correct{border-color:var(--green);background:#ecfdf5}.choice.wrong,.card-select.wrong{border-color:var(--red);background:#fff1f2}.card-select.selected{border-color:var(--blue);background:#eff6ff}.hintbox{border-radius:18px;border:1px solid #ffd8a8;background:#fff8ed;padding:1rem;margin-top:.75rem}.hint-content{display:none;margin-top:.75rem}.solution{display:none;background:#eefcf3;border:1px solid #bbf7d0;border-radius:18px;padding:1rem;margin-top:.8rem}.teacher .solution,.teacher .hint-content,.teacher .teacher-panel{display:block!important}.teacher-panel{display:none}.unlock{display:none;background:#ecfdf5;border:1px solid #bbf7d0;border-radius:18px;padding:.85rem;margin-top:.8rem}.page-footer{display:flex;justify-content:space-between;gap:.75rem;flex-wrap:wrap;margin:1rem 0 2rem}.sort-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem}.dropzone{min-height:100px;border:2px dashed #b7cde1;border-radius:18px;padding:1rem;background:#fbfdff}.tag{display:inline-block;background:#eef6ff;border:1px solid var(--line);border-radius:999px;padding:.5rem .7rem;margin:.25rem;font-weight:850;cursor:pointer}.tag.selected{background:#dbeafe;border-color:var(--blue)}.code-box{font-size:2rem;letter-spacing:.16em;font-weight:950;color:var(--blue)}.footer{padding:2rem 1rem;text-align:center;color:var(--muted)}
+
+.perspective-tools{margin-bottom:.8rem;padding:.65rem .75rem;background:rgba(255,255,255,.82);border:1px solid var(--line);border-radius:18px}.perspective-buttons{display:flex;gap:.45rem;flex-wrap:wrap}.perspective-note{font-size:.92rem;color:var(--muted);flex-basis:100%}.plane-space.perspective-enabled{outline:3px solid rgba(37,99,235,.25);box-shadow:0 0 0 6px rgba(37,99,235,.08);cursor:grab}.plane-space.perspective-enabled:active{cursor:grabbing}
+
     @media(max-width:760px){.hero-grid{grid-template-columns:1fr;padding:1.15rem}.topbar-inner{justify-content:center}.plane-space{height:360px}.num{width:68px}.section{padding:1rem}.wrap{padding:.7rem}.progressbar{width:150px}}
   </style>
 </head>
@@ -1022,11 +89,78 @@ const compulsory=[1,2,3,4,5,6,7,8,9,10];
 let current=Number(localStorage.getItem('flug_page')||0);
 let done=new Set(JSON.parse(localStorage.getItem('flug_done')||'[]'));
 let teacher=false; let puzzle=[]; let chosenTag=null; let missionAnswer=null;
+let perspectiveMode=false;
+let viewYaw=Number(localStorage.getItem('flug_view_yaw')||0.75);
+let viewPitch=Number(localStorage.getItem('flug_view_pitch')||0.58);
+let dragState=null;
+
+function installPerspectiveControls(){
+  document.querySelectorAll('.canvas-wrap').forEach((wrap,idx)=>{
+    if(wrap.dataset.perspectiveReady==='1') return;
+    const canvas=wrap.querySelector('canvas.plane-space');
+    if(!canvas) return;
+    const head=document.createElement('div');
+    head.className='canvas-head perspective-tools';
+    head.innerHTML=`
+      <span class="pill">3D-Koordinatensystem</span>
+      <div class="perspective-buttons">
+        <button class="btn ghost perspective-toggle" type="button" onclick="togglePerspectiveMode()">Perspektive ändern: aus</button>
+        <button class="btn ghost" type="button" onclick="resetPerspective()">Ansicht zurücksetzen</button>
+      </div>
+      <span class="perspective-note">Wenn „Perspektive ändern“ aktiv ist, kannst du das Koordinatensystem mit Finger oder Maus drehen.</span>`;
+    wrap.insertBefore(head, canvas);
+    canvas.addEventListener('pointerdown',perspectivePointerDown);
+    canvas.addEventListener('pointermove',perspectivePointerMove);
+    canvas.addEventListener('pointerup',perspectivePointerUp);
+    canvas.addEventListener('pointercancel',perspectivePointerUp);
+    wrap.dataset.perspectiveReady='1';
+  });
+  syncPerspectiveButtons();
+}
+function togglePerspectiveMode(){
+  perspectiveMode=!perspectiveMode;
+  syncPerspectiveButtons();
+}
+function syncPerspectiveButtons(){
+  document.querySelectorAll('.perspective-toggle').forEach(btn=>{
+    btn.textContent=perspectiveMode?'Perspektive ändern: an':'Perspektive ändern: aus';
+    btn.classList.toggle('primary',perspectiveMode);
+    btn.classList.toggle('ghost',!perspectiveMode);
+  });
+  document.querySelectorAll('.plane-space').forEach(c=>c.classList.toggle('perspective-enabled',perspectiveMode));
+}
+function resetPerspective(){
+  viewYaw=0.75; viewPitch=0.58;
+  localStorage.setItem('flug_view_yaw',String(viewYaw));
+  localStorage.setItem('flug_view_pitch',String(viewPitch));
+  drawAll();
+}
+function perspectivePointerDown(e){
+  if(!perspectiveMode) return;
+  dragState={id:e.pointerId,x:e.clientX,y:e.clientY,yaw:viewYaw,pitch:viewPitch};
+  e.currentTarget.setPointerCapture?.(e.pointerId);
+  e.preventDefault();
+}
+function perspectivePointerMove(e){
+  if(!perspectiveMode || !dragState || dragState.id!==e.pointerId) return;
+  const dx=e.clientX-dragState.x;
+  const dy=e.clientY-dragState.y;
+  viewYaw=dragState.yaw+dx*0.012;
+  viewPitch=Math.max(0.22,Math.min(1.22,dragState.pitch+dy*0.006));
+  localStorage.setItem('flug_view_yaw',String(viewYaw));
+  localStorage.setItem('flug_view_pitch',String(viewPitch));
+  drawAll();
+  e.preventDefault();
+}
+function perspectivePointerUp(e){
+  if(dragState && dragState.id===e.pointerId) dragState=null;
+}
+
 function save(){localStorage.setItem('flug_done',JSON.stringify([...done]));localStorage.setItem('flug_page',current)}
 function complete(n){done.add(n);save();buildNav();updateProgress();}
 function updateProgress(){let count=compulsory.filter(n=>done.has(n)).length;document.getElementById('progressFill').style.width=(count/compulsory.length*100)+'%'}
 function buildNav(){const nav=document.getElementById('nav');nav.innerHTML='';pages.forEach((p,i)=>{let b=document.createElement('button');b.textContent=p.dataset.title;b.className=i===current?'active':'';let locked=!teacher && i>1 && !done.has(i-1); if(locked)b.classList.add('locked');b.onclick=()=>{if(locked){alert('Bearbeite zuerst die vorherige Station.');return}goPage(i)};nav.appendChild(b)})}
-function goPage(i){if(!teacher && i>1 && !done.has(i-1)){alert('Bearbeite zuerst die vorherige Station.');return} current=i; pages.forEach(p=>p.classList.toggle('active',Number(p.dataset.page)===i)); save(); buildNav(); setTimeout(()=>{renderMath(document.querySelector('.page.active')||document.body); drawAll();},80); window.scrollTo({top:0,behavior:'smooth'});}
+function goPage(i){if(!teacher && i>1 && !done.has(i-1)){alert('Bearbeite zuerst die vorherige Station.');return} current=i; pages.forEach(p=>p.classList.toggle('active',Number(p.dataset.page)===i)); save(); buildNav(); installPerspectiveControls(); setTimeout(()=>{renderMath(document.querySelector('.page.active')||document.body); drawAll();},80); window.scrollTo({top:0,behavior:'smooth'});}
 function renderMath(root=document.body){
   if(!window.renderMathInElement) return;
   const target = root instanceof Element ? root : document.body;
@@ -1047,7 +181,7 @@ function renderMath(root=document.body){
     setTimeout(()=>renderMath(target),150);
   }
 }
-window.addEventListener('load',()=>{buildNav();updateProgress();goPage(current);renderMath(document.body);drawAll();setTimeout(()=>renderMath(document.body),300);});
+window.addEventListener('load',()=>{installPerspectiveControls();buildNav();updateProgress();goPage(current);renderMath(document.body);drawAll();setTimeout(()=>renderMath(document.body),300);});
 function teacherLogin(){let pin=prompt('PIN für Lehrerzugang:'); if(pin==='1607'){teacher=true;document.body.classList.add('teacher');done=new Set(compulsory);save();buildNav();updateProgress();alert('Lehrerzugang aktiviert.')}else if(pin!==null){alert('PIN nicht korrekt.')}}
 function resetAll(){if(confirm('Lernstand wirklich löschen?')){localStorage.removeItem('flug_done');localStorage.removeItem('flug_page');location.reload();}}
 function openFullscreenCopy(){const url=location.href.split('#')[0]+'?fullscreen=1';window.open(url,'_blank','noopener,noreferrer')}
@@ -1066,9 +200,21 @@ let sorted=0;function dropTag(key,zone){if(!chosenTag)return; if(chosenTag.key==
 function missionChoice(btn,ok){missionAnswer=ok;choice(btn,ok)}
 function checkMission(){let coords=val('m1')===11&&val('m2')===7&&val('m3')===1; let ok=coords && missionAnswer===true; fb('mfb',ok,'Mission gelöst. Code: 322','Prüfe den Punkt für t=3 und die Punktprobe für P noch einmal.'); if(ok)complete(9)}
 function updateT(){document.getElementById('tVal').textContent=Number(document.getElementById('tSlider').value).toFixed(1);drawAll()}
-function project(pt,w,h,rot=0.75){const [x,y,z]=pt;let X=(x-y)*28*Math.cos(rot);let Y=(x+y)*13- z*32;return [w/2+X,h*0.62-Y]}
+function project(pt,w,h){
+  const [x,y,z]=pt;
+  const cy=Math.cos(viewYaw), sy=Math.sin(viewYaw);
+  const rx=x*cy-y*sy;
+  const ry=x*sy+y*cy;
+  const scale=Math.min(w,h)*0.057;
+  const X=rx*scale;
+  const Y=ry*scale*Math.sin(viewPitch)-z*scale*Math.cos(viewPitch);
+  return [w/2+X,h*0.64-Y];
+}
 function drawScene(id,opts={}){let c=document.getElementById(id); if(!c)return; let dpr=window.devicePixelRatio||1; let rect=c.getBoundingClientRect(); c.width=rect.width*dpr;c.height=rect.height*dpr;let ctx=c.getContext('2d');ctx.scale(dpr,dpr);let w=rect.width,h=rect.height;ctx.clearRect(0,0,w,h);ctx.lineWidth=1;ctx.strokeStyle='#c8dff1';ctx.fillStyle='#0f2b55';ctx.font='13px system-ui';
   for(let i=-2;i<=14;i++){let a=project([i,-2,0],w,h),b=project([i,12,0],w,h);ctx.beginPath();ctx.moveTo(...a);ctx.lineTo(...b);ctx.stroke();let c1=project([-2,i,0],w,h),d=project([14,i,0],w,h);ctx.beginPath();ctx.moveTo(...c1);ctx.lineTo(...d);ctx.stroke();}
+  function axis(to,label,col){let a=project([0,0,0],w,h),b=project(to,w,h);ctx.strokeStyle=col;ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(...a);ctx.lineTo(...b);ctx.stroke();ctx.fillStyle=col;ctx.font='700 14px system-ui';ctx.fillText(label,b[0]+6,b[1]-6)}
+  axis([14,0,0],'x₁','#1d4ed8');axis([0,12,0],'x₂','#0f766e');axis([0,0,8],'x₃','#b45309');
+  if(perspectiveMode){ctx.fillStyle='rgba(15,23,42,.72)';ctx.font='12px system-ui';ctx.fillText('Perspektive aktiv: Ziehe im Koordinatensystem.',16,24)}
   function line(p,u,col){ctx.strokeStyle=col;ctx.lineWidth=4;let a=project([p[0]-4*u[0],p[1]-4*u[1],p[2]-4*u[2]],w,h),b=project([p[0]+6*u[0],p[1]+6*u[1],p[2]+6*u[2]],w,h);ctx.beginPath();ctx.moveTo(...a);ctx.lineTo(...b);ctx.stroke();}
   let p=[4,2,1],u=[3,2,2];line(p,u,'#2563eb'); if(opts.double)line(p,[6,4,4],'#f97316');
   function point(pt,col,label){let q=project(pt,w,h);ctx.fillStyle=col;ctx.beginPath();ctx.arc(q[0],q[1],7,0,Math.PI*2);ctx.fill();ctx.fillStyle='#102033';ctx.fillText(label,q[0]+10,q[1]-8)}
@@ -1079,5 +225,3 @@ window.addEventListener('resize',drawAll);
 </script>
 </body>
 </html>
-
-Code-Datei heruntergeladen.
