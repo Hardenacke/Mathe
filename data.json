@@ -8786,29 +8786,33 @@
                   "beschreibung": "Lernpfade und Materialien zu Geraden im Raum.",
                   "inhaltlicheSchwerpunkte": [
                     "Geraden im Raum",
-                    "Parametergleichung",
+                    "Parameterform von Geraden",
+                    "Stützvektor und Richtungsvektor",
+                    "Punktprobe",
+                    "Strecken und Parameterintervalle",
+                    "Flugbahn als Sachkontext",
+                    "interaktive 3D-Visualisierung",
+                    "gestufte Hilfen",
+                    "Parameterform einer Geraden",
                     "Stützvektor",
                     "Richtungsvektor",
-                    "Linearkombination",
-                    "Punktprobe",
                     "Parameter",
-                    "Strecke, Strahl und Gerade",
-                    "3D-Visualisierung",
-                    "Flugbahn modellieren"
+                    "Gerade durch zwei Punkte",
+                    "verschiedene Parametergleichungen derselben Geraden"
                   ],
                   "materialien": [
                     {
                       "id": "lernpfad-geraden-im-raum-flugzeug",
                       "titel": "Geraden im Raum – Fluglotsenmission",
                       "kurztitel": "Geraden im Raum",
-                      "beschreibung": "Mehrseitiger interaktiver Lernpfad zur Parametergleichung einer Geraden im Raum am Kontext einer Flugbahn. Mit 3D-Visualisierung, Parameter-Schieberegler, Punktprobe, Fehlerdetektiv, gestuften Hilfen und Sicherung.",
+                      "beschreibung": "Interaktiver EF-Lernpfad zur Parameterform von Geraden im Raum. Eine Flugbahn wird schrittweise aus Startpunkt, Richtungsvektor und Parameter modelliert und in einem 3D-Flugraum visualisiert.",
                       "typ": "html",
                       "format": "HTML",
                       "materialart": "Lernpfad",
                       "datei": "lernpfad-geraden-im-raum-flugzeug.html",
                       "pfad": "ef/geraden-und-ebenen/geraden-im-raum/lernpfad-geraden-im-raum-flugzeug.html",
                       "url": "ef/geraden-und-ebenen/geraden-im-raum/lernpfad-geraden-im-raum-flugzeug.html",
-                      "dauer": "ca. 45–60 Minuten",
+                      "dauer": "45–60 Minuten",
                       "zielgruppe": {
                         "fach": "Mathematik",
                         "jahrgang": "EF",
@@ -8824,28 +8828,92 @@
                       "klasse": "EF",
                       "inhaltsfeld": "Geraden und Ebenen",
                       "thema": "Geraden im Raum",
-                      "unterthema": "Parametergleichung einer Geraden aus Stützvektor und Richtungsvektor",
+                      "unterthema": "Parameterform von Geraden im Raum",
                       "kompetenzbereich": [
                         "Analytische Geometrie",
-                        "Vektoren",
+                        "Lineare Algebra",
                         "Operieren",
-                        "Modellieren",
                         "Problemlösen",
-                        "Darstellen"
+                        "Modellieren"
                       ],
                       "inhaltlicheSchwerpunkte": [
                         "Geraden im Raum",
-                        "Parametergleichung",
+                        "Parameterform",
                         "Stützvektor",
                         "Richtungsvektor",
-                        "Linearkombination",
                         "Punktprobe",
-                        "Parameter",
-                        "Strecke, Strahl und Gerade",
-                        "3D-Visualisierung",
-                        "Flugbahn modellieren"
+                        "Strecke",
+                        "Parameterintervall",
+                        "3D-Visualisierung"
                       ],
                       "tags": [
+                        "ef",
+                        "analytische-geometrie",
+                        "geraden-und-ebenen",
+                        "geraden-im-raum",
+                        "vektoren",
+                        "parameterform",
+                        "flugzeug",
+                        "flugbahn",
+                        "html",
+                        "interaktiv",
+                        "lernpfad",
+                        "mathematik"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-06",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "arbeitsblatt-geradengleichung-parameterform-pdf",
+                      "titel": "Arbeitsblatt: Geradengleichungen in Parameterform",
+                      "kurztitel": "AB Parameterform",
+                      "beschreibung": "Knappes Arbeitsblatt zur Sicherung der Parameterform einer Geraden im Raum: Stützvektor, Richtungsvektor, Parameter, Gerade durch zwei Punkte, Punktprobe und verschiedene Parametergleichungen derselben Geraden.",
+                      "typ": "pdf",
+                      "format": "PDF",
+                      "materialart": "Arbeitsblatt",
+                      "datei": "EF_M_Geradengleichung_Parameterform.pdf",
+                      "pfad": "ef/geraden-und-ebenen/geraden-im-raum/EF_M_Geradengleichung_Parameterform.pdf",
+                      "url": "ef/geraden-und-ebenen/geraden-im-raum/EF_M_Geradengleichung_Parameterform.pdf",
+                      "dauer": "ca. 20–30 Minuten",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "EF",
+                        "stufe": "Sekundarstufe II"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "ef",
+                        "inhaltsfeldId": "geraden-und-ebenen",
+                        "themaId": "geraden-im-raum"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "EF",
+                      "inhaltsfeld": "Geraden und Ebenen",
+                      "thema": "Geraden im Raum",
+                      "unterthema": "Geradengleichungen in Parameterform",
+                      "kompetenzbereich": [
+                        "Analytische Geometrie",
+                        "Vektoren",
+                        "Geraden im Raum",
+                        "Operieren",
+                        "Argumentieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Parameterform einer Geraden",
+                        "Stützvektor",
+                        "Richtungsvektor",
+                        "Parameter",
+                        "Gerade durch zwei Punkte",
+                        "Punktprobe",
+                        "verschiedene Parametergleichungen derselben Geraden"
+                      ],
+                      "tags": [
+                        "arbeitsblatt",
+                        "pdf",
                         "ef",
                         "sekundarstufe-ii",
                         "mathematik",
@@ -8853,15 +8921,10 @@
                         "vektoren",
                         "geraden-und-ebenen",
                         "geraden-im-raum",
-                        "parametergleichung",
-                        "flugzeug",
-                        "flugbahn",
-                        "3d",
-                        "html",
-                        "interaktiv",
-                        "lernpfad",
-                        "katex",
-                        "github-pages"
+                        "parameterform",
+                        "stuetzvektor",
+                        "richtungsvektor",
+                        "punktprobe"
                       ],
                       "status": "verfügbar",
                       "sichtbar": true,
@@ -8872,24 +8935,119 @@
                     }
                   ],
                   "tags": [
-                    "3d",
                     "analytische-geometrie",
+                    "arbeitsblatt",
                     "ef",
-                    "flugbahn",
-                    "flugzeug",
                     "geraden-im-raum",
                     "geraden-und-ebenen",
-                    "github-pages",
                     "html",
                     "interaktiv",
-                    "katex",
                     "lernpfad",
                     "mathematik",
-                    "parametergleichung",
+                    "parameterform",
+                    "pdf",
+                    "punktprobe",
+                    "richtungsvektor",
                     "sekundarstufe-ii",
+                    "stuetzvektor",
                     "vektoren"
                   ],
-                  "anzahlMaterialien": 1
+                  "anzahlMaterialien": 2
+                },
+                {
+                  "id": "strecken-und-parameterintervalle",
+                  "titel": "Strecken und Parameterintervalle",
+                  "pfad": "ef/geraden-und-ebenen/strecken-und-parameterintervalle/",
+                  "beschreibung": "Lernpfade und Materialien zu Strecken und Parameterintervalle.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Strecken",
+                    "Parameterintervalle",
+                    "Geradenabschnitte"
+                  ],
+                  "materialien": [],
+                  "tags": [
+                    "analytische-geometrie",
+                    "ef",
+                    "geraden-und-ebenen",
+                    "mathematik",
+                    "strecken-und-parameterintervalle"
+                  ]
+                },
+                {
+                  "id": "lagebeziehungen-von-geraden",
+                  "titel": "Lagebeziehungen von Geraden",
+                  "pfad": "ef/geraden-und-ebenen/lagebeziehungen-von-geraden/",
+                  "beschreibung": "Lernpfade und Materialien zu Lagebeziehungen von Geraden.",
+                  "inhaltlicheSchwerpunkte": [
+                    "identisch",
+                    "parallel",
+                    "windschief",
+                    "sich schneidend"
+                  ],
+                  "materialien": [],
+                  "tags": [
+                    "analytische-geometrie",
+                    "ef",
+                    "geraden-und-ebenen",
+                    "lagebeziehungen-von-geraden",
+                    "mathematik"
+                  ]
+                },
+                {
+                  "id": "schnittpunkte-von-geraden",
+                  "titel": "Schnittpunkte von Geraden",
+                  "pfad": "ef/geraden-und-ebenen/schnittpunkte-von-geraden/",
+                  "beschreibung": "Lernpfade und Materialien zu Schnittpunkte von Geraden.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Schnittpunkte",
+                    "lineare Gleichungssysteme",
+                    "Interpretation der Lösungsmenge"
+                  ],
+                  "materialien": [],
+                  "tags": [
+                    "analytische-geometrie",
+                    "ef",
+                    "geraden-und-ebenen",
+                    "mathematik",
+                    "schnittpunkte-von-geraden"
+                  ]
+                },
+                {
+                  "id": "lgs-im-kontext-von-geraden",
+                  "titel": "LGS im Kontext von Geraden",
+                  "pfad": "ef/geraden-und-ebenen/lgs-im-kontext-von-geraden/",
+                  "beschreibung": "Lernpfade und Materialien zu LGS im Kontext von Geraden.",
+                  "inhaltlicheSchwerpunkte": [
+                    "LGS",
+                    "Lagebeziehungen",
+                    "Schnittpunkte"
+                  ],
+                  "materialien": [],
+                  "tags": [
+                    "analytische-geometrie",
+                    "ef",
+                    "geraden-und-ebenen",
+                    "lgs-im-kontext-von-geraden",
+                    "mathematik"
+                  ]
+                },
+                {
+                  "id": "ebenen-vorschau",
+                  "titel": "Ebenen Vorschau",
+                  "pfad": "ef/geraden-und-ebenen/ebenen-vorschau/",
+                  "beschreibung": "Lernpfade und Materialien zu Ebenen Vorschau.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Orientierung für spätere Ebenen",
+                    "Parameterdarstellungen als Ausblick"
+                  ],
+                  "materialien": [],
+                  "tags": [
+                    "analytische-geometrie",
+                    "ebenen-vorschau",
+                    "ef",
+                    "geraden-und-ebenen",
+                    "mathematik"
+                  ]
                 }
               ],
               "tags": [
@@ -8910,13 +9068,122 @@
                 "sekundarstufe-ii",
                 "vektoren"
               ],
-              "anzahlThemen": 1,
-              "anzahlMaterialien": 1
+              "anzahlThemen": 6,
+              "anzahlMaterialien": 2
+            },
+            {
+              "id": "vektoren",
+              "titel": "Vektoren",
+              "pfad": "ef/vektoren/",
+              "beschreibung": "Bereich Vektoren in der EF.",
+              "themen": [
+                {
+                  "id": "koordinatisierung-des-raumes",
+                  "titel": "Koordinatisierung des Raumes",
+                  "pfad": "ef/vektoren/koordinatisierung-des-raumes/",
+                  "beschreibung": "Lernpfade und Materialien zu Koordinatisierung des Raumes.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Punkte",
+                    "Koordinatensysteme",
+                    "Ortsvektoren"
+                  ],
+                  "materialien": [],
+                  "tags": [
+                    "analytische-geometrie",
+                    "ef",
+                    "koordinatisierung-des-raumes",
+                    "mathematik",
+                    "vektoren"
+                  ]
+                },
+                {
+                  "id": "ortsvektoren-und-vektoren",
+                  "titel": "Ortsvektoren und Vektoren",
+                  "pfad": "ef/vektoren/ortsvektoren-und-vektoren/",
+                  "beschreibung": "Lernpfade und Materialien zu Ortsvektoren und Vektoren.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Punkte",
+                    "Ortsvektoren",
+                    "Vektoren als Verschiebungen"
+                  ],
+                  "materialien": [],
+                  "tags": [
+                    "analytische-geometrie",
+                    "ef",
+                    "mathematik",
+                    "ortsvektoren-und-vektoren",
+                    "vektoren"
+                  ]
+                },
+                {
+                  "id": "vektoroperationen",
+                  "titel": "Vektoroperationen",
+                  "pfad": "ef/vektoren/vektoroperationen/",
+                  "beschreibung": "Lernpfade und Materialien zu Vektoroperationen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Addition von Vektoren",
+                    "Multiplikation mit einem Skalar"
+                  ],
+                  "materialien": [],
+                  "tags": [
+                    "analytische-geometrie",
+                    "ef",
+                    "mathematik",
+                    "vektoren",
+                    "vektoroperationen"
+                  ]
+                },
+                {
+                  "id": "laenge-und-abstand",
+                  "titel": "Länge und Abstand",
+                  "pfad": "ef/vektoren/laenge-und-abstand/",
+                  "beschreibung": "Lernpfade und Materialien zu Länge und Abstand.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Vektorlänge",
+                    "Abstand zwischen Punkten",
+                    "Satz des Pythagoras"
+                  ],
+                  "materialien": [],
+                  "tags": [
+                    "analytische-geometrie",
+                    "ef",
+                    "laenge-und-abstand",
+                    "mathematik",
+                    "vektoren"
+                  ]
+                },
+                {
+                  "id": "kollinearitaet",
+                  "titel": "Kollinearität",
+                  "pfad": "ef/vektoren/kollinearitaet/",
+                  "beschreibung": "Lernpfade und Materialien zu Kollinearität.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Kollinearität",
+                    "Vielfache von Vektoren",
+                    "Richtungen vergleichen"
+                  ],
+                  "materialien": [],
+                  "tags": [
+                    "analytische-geometrie",
+                    "ef",
+                    "kollinearitaet",
+                    "mathematik",
+                    "vektoren"
+                  ]
+                }
+              ],
+              "tags": [
+                "ef",
+                "vektoren",
+                "analytische-geometrie"
+              ],
+              "anzahlThemen": 5,
+              "anzahlMaterialien": 0
             }
           ],
           "materialien": [],
-          "anzahlThemen": 5,
-          "anzahlMaterialien": 20
+          "anzahlThemen": 15,
+          "anzahlMaterialien": 21
         },
         {
           "id": "q1",
