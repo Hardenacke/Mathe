@@ -90,8 +90,11 @@ let current=Number(localStorage.getItem('flug_page')||0);
 let done=new Set(JSON.parse(localStorage.getItem('flug_done')||'[]'));
 let teacher=false; let puzzle=[]; let chosenTag=null; let missionAnswer=null;
 let perspectiveMode=false;
-let viewYaw=Number(localStorage.getItem('flug_view_yaw')||0.75);
-let viewPitch=Number(localStorage.getItem('flug_view_pitch')||0.58);
+const DEFAULT_VIEW_YAW=-2.35;
+const DEFAULT_VIEW_PITCH=0.62;
+const VIEW_KEY_PREFIX='flug_view_positive_axes_v1';
+let viewYaw=Number(localStorage.getItem(VIEW_KEY_PREFIX+'_yaw') ?? DEFAULT_VIEW_YAW);
+let viewPitch=Number(localStorage.getItem(VIEW_KEY_PREFIX+'_pitch') ?? DEFAULT_VIEW_PITCH);
 let dragState=null;
 
 function installPerspectiveControls(){
@@ -105,9 +108,9 @@ function installPerspectiveControls(){
       <span class="pill">3D-Koordinatensystem</span>
       <div class="perspective-buttons">
         <button class="btn ghost perspective-toggle" type="button" onclick="togglePerspectiveMode()">Perspektive ändern: aus</button>
-        <button class="btn ghost" type="button" onclick="resetPerspective()">Ansicht zurücksetzen</button>
+        <button class="btn ghost" type="button" onclick="resetPerspective()">Positive Standardansicht</button>
       </div>
-      <span class="perspective-note">Wenn „Perspektive ändern“ aktiv ist, kannst du das Koordinatensystem mit Finger oder Maus drehen.</span>`;
+      <span class="perspective-note">Standardansicht: x₁, x₂ und x₃ zeigen in positive Richtung. Wenn „Perspektive ändern“ aktiv ist, kannst du das Koordinatensystem mit Finger oder Maus drehen.</span>`;
     wrap.insertBefore(head, canvas);
     canvas.addEventListener('pointerdown',perspectivePointerDown);
     canvas.addEventListener('pointermove',perspectivePointerMove);
@@ -130,9 +133,9 @@ function syncPerspectiveButtons(){
   document.querySelectorAll('.plane-space').forEach(c=>c.classList.toggle('perspective-enabled',perspectiveMode));
 }
 function resetPerspective(){
-  viewYaw=0.75; viewPitch=0.58;
-  localStorage.setItem('flug_view_yaw',String(viewYaw));
-  localStorage.setItem('flug_view_pitch',String(viewPitch));
+  viewYaw=DEFAULT_VIEW_YAW; viewPitch=DEFAULT_VIEW_PITCH;
+  localStorage.setItem(VIEW_KEY_PREFIX+'_yaw',String(viewYaw));
+  localStorage.setItem(VIEW_KEY_PREFIX+'_pitch',String(viewPitch));
   drawAll();
 }
 function perspectivePointerDown(e){
@@ -147,8 +150,8 @@ function perspectivePointerMove(e){
   const dy=e.clientY-dragState.y;
   viewYaw=dragState.yaw+dx*0.012;
   viewPitch=Math.max(0.22,Math.min(1.22,dragState.pitch+dy*0.006));
-  localStorage.setItem('flug_view_yaw',String(viewYaw));
-  localStorage.setItem('flug_view_pitch',String(viewPitch));
+  localStorage.setItem(VIEW_KEY_PREFIX+'_yaw',String(viewYaw));
+  localStorage.setItem(VIEW_KEY_PREFIX+'_pitch',String(viewPitch));
   drawAll();
   e.preventDefault();
 }
@@ -207,13 +210,18 @@ function project(pt,w,h){
   const ry=x*sy+y*cy;
   const scale=Math.min(w,h)*0.057;
   const X=rx*scale;
-  const Y=ry*scale*Math.sin(viewPitch)-z*scale*Math.cos(viewPitch);
+  const Y=ry*scale*Math.sin(viewPitch)+z*scale*Math.cos(viewPitch);
   return [w/2+X,h*0.64-Y];
 }
 function drawScene(id,opts={}){let c=document.getElementById(id); if(!c)return; let dpr=window.devicePixelRatio||1; let rect=c.getBoundingClientRect(); c.width=rect.width*dpr;c.height=rect.height*dpr;let ctx=c.getContext('2d');ctx.scale(dpr,dpr);let w=rect.width,h=rect.height;ctx.clearRect(0,0,w,h);ctx.lineWidth=1;ctx.strokeStyle='#c8dff1';ctx.fillStyle='#0f2b55';ctx.font='13px system-ui';
   for(let i=-2;i<=14;i++){let a=project([i,-2,0],w,h),b=project([i,12,0],w,h);ctx.beginPath();ctx.moveTo(...a);ctx.lineTo(...b);ctx.stroke();let c1=project([-2,i,0],w,h),d=project([14,i,0],w,h);ctx.beginPath();ctx.moveTo(...c1);ctx.lineTo(...d);ctx.stroke();}
   function axis(to,label,col){let a=project([0,0,0],w,h),b=project(to,w,h);ctx.strokeStyle=col;ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(...a);ctx.lineTo(...b);ctx.stroke();ctx.fillStyle=col;ctx.font='700 14px system-ui';ctx.fillText(label,b[0]+6,b[1]-6)}
+  function tickMark(center,offset,col,num,dx=0,dy=0){let p1=project([center[0]-offset[0],center[1]-offset[1],center[2]-offset[2]],w,h),p2=project([center[0]+offset[0],center[1]+offset[1],center[2]+offset[2]],w,h);ctx.strokeStyle=col;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(...p1);ctx.lineTo(...p2);ctx.stroke();if(num!==null&&num!==undefined){let lbl=project(center,w,h);ctx.fillStyle=col;ctx.font='12px system-ui';ctx.fillText(String(num),lbl[0]+dx,lbl[1]+dy)}}
   axis([14,0,0],'x₁','#1d4ed8');axis([0,12,0],'x₂','#0f766e');axis([0,0,8],'x₃','#b45309');
+  tickMark([0,0,0],[0.18,0.18,0],'0',null);ctx.fillStyle='#334155';ctx.font='12px system-ui';let o=project([0,0,0],w,h);ctx.fillText('0',o[0]-14,o[1]+16);
+  for(let i=1;i<=12;i++){tickMark([i,0,0],[0,0.22,0],'#1d4ed8',i,-4,18)}
+  for(let i=1;i<=10;i++){tickMark([0,i,0],[0.22,0,0],'#0f766e',i,8,5)}
+  for(let i=1;i<=7;i++){tickMark([0,0,i],[0.22,0,0],'#b45309',i,8,-8)}
   if(perspectiveMode){ctx.fillStyle='rgba(15,23,42,.72)';ctx.font='12px system-ui';ctx.fillText('Perspektive aktiv: Ziehe im Koordinatensystem.',16,24)}
   function line(p,u,col){ctx.strokeStyle=col;ctx.lineWidth=4;let a=project([p[0]-4*u[0],p[1]-4*u[1],p[2]-4*u[2]],w,h),b=project([p[0]+6*u[0],p[1]+6*u[1],p[2]+6*u[2]],w,h);ctx.beginPath();ctx.moveTo(...a);ctx.lineTo(...b);ctx.stroke();}
   let p=[4,2,1],u=[3,2,2];line(p,u,'#2563eb'); if(opts.double)line(p,[6,4,4],'#f97316');
