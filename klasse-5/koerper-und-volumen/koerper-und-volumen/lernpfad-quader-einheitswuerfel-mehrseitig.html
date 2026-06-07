@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quader-Werkstatt: Volumen verstehen</title>
+  <style>
+    :root{
+      --bg:#f4f8ff;
+      --card:#ffffff;
+      --ink:#1f2937;
+      --muted:#596579;
+      --line:#d8e3f2;
+      --blue:#2563eb;
+      --blue2:#1d4ed8;
+      --blueSoft:#dbeafe;
+      --green:#15803d;
+      --greenSoft:#dcfce7;
+      --yellowSoft:#fff7d6;
+      --orangeSoft:#ffedd5;
+      --red:#b91c1c;
+      --redSoft:#fee2e2;
+      --purpleSoft:#ede9fe;
+      --shadow:0 14px 32px rgba(30,41,59,.10);
+      --radius:20px;
+      --touch:50px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--bg)}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(37,99,235,.16), transparent 32rem),
+        linear-gradient(180deg,#fbfdff 0%, var(--bg) 42%, #eef5ff 100%);
+      line-height:1.5;
+      min-height:100vh;
+    }
+    button,input,textarea{font:inherit}
+    .app{width:min(1120px, calc(100% - 22px));margin:0 auto;padding:14px 0 42px}
+    .hero{
+      margin:12px 0 16px;
+      border-radius:24px;
+      padding:clamp(18px,3vw,30px);
+      color:#fff;
+      background:linear-gradient(135deg,#1d4ed8,#3b82f6 58%,#7dd3fc);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero:after{content:"";position:absolute;right:-70px;bottom:-90px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.16)}
+    .heroGrid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:22px;align-items:center}
+    .eyebrow{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;font-weight:850;opacity:.94;margin:0 0 4px}
+    h1{font-size:clamp(1.65rem,4.5vw,2.55rem);line-height:1.08;margin:.1rem 0 .55rem}
+    h2{font-size:clamp(1.28rem,2.6vw,1.65rem);line-height:1.18;margin:.1rem 0 .5rem}
+    h3{font-size:1.04rem;margin:.9rem 0 .4rem}
+    p{margin:.42rem 0}
+    .hero p{max-width:700px}
+    .blockPicture{height:160px;position:relative;filter:drop-shadow(0 15px 24px rgba(0,0,0,.18))}
+    .cube{position:absolute;width:44px;height:44px;border-radius:10px;background:#fff;box-shadow:inset -7px -7px 0 rgba(0,0,0,.08), 0 4px 0 rgba(0,0,0,.11)}
+    .cube:before{content:"";position:absolute;left:13px;top:10px;width:18px;height:10px;border-radius:50%;background:rgba(255,255,255,.55);box-shadow:0 2px 0 rgba(0,0,0,.1)}
+    .c1{left:18px;bottom:18px;background:#f97316}.c2{left:66px;bottom:18px;background:#22c55e}.c3{left:114px;bottom:18px;background:#3b82f6}
+    .c4{left:42px;bottom:66px;background:#facc15}.c5{left:90px;bottom:66px;background:#a855f7}.c6{left:66px;bottom:114px;background:#ef4444}
+    .page{display:none}.page.active-page{display:block}
+    .topbar{position:sticky;top:0;z-index:50;margin:10px 0 16px;padding:9px;border:1px solid rgba(216,227,242,.95);background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-radius:20px;box-shadow:0 8px 24px rgba(30,41,59,.08)}
+    .topRow{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+    .nav{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .pill,.btn{min-height:var(--touch);padding:0 15px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:800;text-decoration:none;cursor:pointer;touch-action:manipulation}
+    .pill.current{background:var(--blue);border-color:transparent;color:#fff}.pill.done{background:var(--greenSoft);border-color:#86efac;color:#166534}.pill.locked{opacity:.55}
+    .btn.primary{background:var(--blue);border-color:transparent;color:#fff}.btn.primary:hover{background:var(--blue2)}
+    .btn.ok{background:var(--green);border-color:transparent;color:#fff}.btn.warn{background:var(--orangeSoft);border-color:#fed7aa;color:#9a3412}.btn.bad{background:var(--redSoft);border-color:#fecaca;color:#991b1b}.btn:disabled{opacity:.55;cursor:not-allowed}
+    .tools{display:flex;gap:8px;flex-wrap:wrap}.pageMeta{display:flex;gap:9px;align-items:center;flex-wrap:wrap;color:var(--muted);font-weight:800;font-size:.94rem}.miniProgress{width:130px;height:12px;border-radius:999px;background:#e5edf8;overflow:hidden}.miniProgress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#86efac,#22c55e);transition:width .35s ease}
+    .progressShell{margin-top:16px;max-width:620px;background:rgba(255,255,255,.52);border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:5px}.progressBar{height:15px;border-radius:999px;background:linear-gradient(90deg,#86efac,#22c55e);width:0;transition:width .35s ease}.progressText{font-weight:850;margin-top:8px}
+    .station{border-radius:var(--radius);background:rgba(255,255,255,.94);border:1px solid rgba(216,227,242,.95);padding:clamp(15px,3vw,24px);margin:16px 0;box-shadow:0 12px 30px rgba(30,41,59,.08);scroll-margin-top:90px}
+    .stationHeader{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:15px}
+    .stationTag{display:inline-flex;align-items:center;border-radius:999px;padding:7px 11px;font-size:.84rem;font-weight:850;background:var(--blueSoft);color:#1e40af}.station.done .stationTag{background:var(--greenSoft);color:#166534}.completion{display:inline-flex;border-radius:999px;padding:8px 12px;background:var(--greenSoft);color:#166534;font-weight:850}.hidden{display:none!important}
+    .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;align-items:start}.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:15px;box-shadow:0 8px 18px rgba(30,41,59,.05)}
+    .softBlue{background:linear-gradient(180deg,#eff6ff,#fff)}.softGreen{background:linear-gradient(180deg,#f0fdf4,#fff)}.softYellow{background:linear-gradient(180deg,var(--yellowSoft),#fff)}.softPurple{background:linear-gradient(180deg,var(--purpleSoft),#fff)}
+    .startGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:18px}.startCard{border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.16);border-radius:18px;padding:14px}.startCard strong{display:block;font-size:1.08rem;margin-bottom:4px}
+    .feedback{min-height:44px;border-radius:16px;padding:11px 13px;background:#f8fafc;border:1px solid var(--line);margin-top:10px;font-weight:700}.feedback.ok{background:var(--greenSoft);border-color:#86efac;color:#14532d}.feedback.warn{background:var(--orangeSoft);border-color:#fdba74;color:#7c2d12}.feedback.bad{background:var(--redSoft);border-color:#fca5a5;color:#7f1d1d}
+    .inputRow{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin:.6rem 0}input[type="number"],textarea{border:1px solid var(--line);border-radius:14px;min-height:var(--touch);padding:10px 12px;background:#fff;width:min(100%,230px)}textarea{width:100%;min-height:95px;resize:vertical}.answerLine{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:10px}.answerLine label{font-weight:800}.answerLine input{width:120px}.sign{font-weight:900;font-size:1.25rem}
+    .layerDemo{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:center}.layerControls{display:flex;gap:8px;flex-wrap:wrap}.layerVisual{min-height:230px;position:relative;background:linear-gradient(180deg,#f8fafc,#eaf2ff);border:1px solid var(--line);border-radius:18px;overflow:hidden;padding:14px}.layerSvg{width:100%;height:220px;display:block}.counterRow{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:11px}.counter{background:#f8fafc;border:1px solid var(--line);border-radius:16px;padding:10px;text-align:center}.counter span{display:block;color:var(--muted);font-size:.85rem}.counter b{font-size:1.35rem}
+    .matchArea{display:grid;grid-template-columns:1fr 1fr;gap:12px}.matchCol{display:grid;gap:8px}.matchCard{border:1px solid var(--line);background:#fff;border-radius:16px;padding:12px;min-height:58px;text-align:left;font-weight:750;cursor:pointer}.matchCard.selected{outline:3px solid rgba(37,99,235,.35);border-color:var(--blue)}.matchCard.correct{background:var(--greenSoft);border-color:#86efac}.matchCard.wrong{background:var(--redSoft);border-color:#fca5a5}
+    .sortList{display:grid;gap:9px}.sortItem{display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px}.sortItem button{min-width:42px;min-height:42px;border-radius:12px;border:1px solid var(--line);background:#fff;font-weight:900;cursor:pointer}
+    .hintPanel{margin-top:14px;border:1px solid #fed7aa;background:#fff7ed;border-radius:18px;padding:12px}.hintList{display:grid;gap:8px;margin-top:8px}.hintItem{background:#fff;border:1px solid #fed7aa;border-radius:14px;padding:10px;color:#7c2d12;font-weight:650}
+    .pageControls{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}.pageHint{color:var(--muted);font-weight:750}.unlockNote{margin:10px 0;padding:12px 14px;border-radius:16px;background:var(--orangeSoft);border:1px solid #fdba74;color:#7c2d12;font-weight:800}
+    @media(max-width:760px){.heroGrid{grid-template-columns:1fr}.blockPicture{display:none}.topbar{position:relative}.tools,.nav{width:100%}.pill,.btn{flex:1 1 auto}.station{scroll-margin-top:20px}.layerDemo{grid-template-columns:1fr}.matchArea{grid-template-columns:1fr}.counterRow{grid-template-columns:1fr}.miniProgress{width:100%}}
+    @media print{.topbar,.tools,.hintPanel,.btn,.pageControls{display:none!important}.page{display:block!important}.station,.hero{box-shadow:none}.hero{color:#000;background:#fff;border:1px solid #000}.app{width:100%;padding:0}}
+  </style>
+</head>
+<body>
+  <main class="app" id="app">
+    <section class="hero page active-page" id="start" data-page="start">
+      <div class="heroGrid">
+        <div>
+          <p class="eyebrow">Klasse 5 · Volumen</p>
+          <h1>Quader-Werkstatt: Volumen verstehen</h1>
+          <p>Du untersuchst Quader aus kleinen Einheitswürfeln. Dabei lernst du, wie man die Anzahl der Würfel schnell berechnet.</p>
+        </div>
+        <div class="blockPicture" aria-hidden="true"><span class="cube c1"></span><span class="cube c2"></span><span class="cube c3"></span><span class="cube c4"></span><span class="cube c5"></span><span class="cube c6"></span></div>
+      </div>
+      <div class="startGrid" aria-label="Ablauf des Lernpfads">
+        <div class="startCard"><strong>1. Schichten erkennen</strong>Du findest heraus, wie viele Würfel in einer Schicht liegen.</div>
+        <div class="startCard"><strong>2. Formel nutzen</strong>Du rechnest mit Länge, Breite und Höhe.</div>
+        <div class="startCard"><strong>Sprinter</strong>Du denkst dir eigene Quader aus.</div>
+      </div>
+      <div class="progressShell" aria-label="Pflichtfortschritt"><div class="progressBar" id="progressBar"></div></div>
+      <p class="progressText" id="progressText">0 von 2 Pflichtstationen geschafft</p>
+    </section>
+
+    <div class="topbar" role="navigation" aria-label="Lernpfadnavigation">
+      <div class="topRow">
+        <nav class="nav" id="navButtons">
+          <a class="pill" href="#start" data-page-link="start">Start</a>
+          <a class="pill" href="#station1" data-page-link="station1" data-nav="s1">1 Schichten</a>
+          <a class="pill" href="#station2" data-page-link="station2" data-nav="s2">2 Anwenden</a>
+          <a class="pill" href="#sprinter" data-page-link="sprinter" data-nav="sprinter">Sprinter</a>
+        </nav>
+        <div class="pageMeta" aria-label="Seiten- und Lernfortschritt">
+          <span class="pageCounter" id="pageCounter">Seite 1 von 4</span>
+          <div class="miniProgress" aria-hidden="true"><span id="progressBarMini"></span></div>
+          <span class="pageCounter" id="progressTextMini">0/2 Pflichtstationen</span>
+        </div>
+        <div class="tools"><button class="btn" id="fullscreenBtn" type="button">Großansicht</button></div>
+      </div>
+    </div>
+
+    <section class="station page" id="station1" data-page="station1" data-station="s1">
+      <div class="stationHeader">
+        <div>
+          <span class="stationTag">Station 1</span>
+          <h2>Schichten erkennen</h2>
+          <p>Ein Quader kann aus mehreren gleichen Schichten bestehen. Wir schauen uns ein Beispiel an.</p>
+        </div>
+        <span class="completion hidden" data-completion="s1">✓ geschafft</span>
+      </div>
+
+      <div class="grid2">
+        <div class="card softBlue">
+          <h3>Beispielquader</h3>
+          <p>Der Quader ist <b>4 Würfel lang</b>, <b>3 Würfel breit</b> und <b>2 Schichten hoch</b>.</p>
+          <div class="layerDemo">
+            <div>
+              <p>Tippe auf die Buttons und beobachte, wie aus einer Schicht ein Quader wird.</p>
+              <div class="layerControls">
+                <button class="btn primary" type="button" data-show-layer="1">1 Schicht zeigen</button>
+                <button class="btn primary" type="button" data-show-layer="2">2 Schichten zeigen</button>
+              </div>
+              <div class="counterRow">
+                <div class="counter"><span>Länge</span><b>4</b></div>
+                <div class="counter"><span>Breite</span><b>3</b></div>
+                <div class="counter"><span>Höhe</span><b id="shownLayers">1</b></div>
+              </div>
+            </div>
+            <div class="layerVisual"><svg class="layerSvg" id="layerSvg" viewBox="0 0 420 230" role="img" aria-label="Quader aus Einheitswürfeln"></svg></div>
+          </div>
+        </div>
+
+        <div class="card softGreen">
+          <h3>Rechenweg ergänzen</h3>
+          <p>Trage die passenden Zahlen ein.</p>
+          <div class="answerLine"><label>Würfel pro Schicht</label><input type="number" id="layerInput" min="1" /></div>
+          <div class="answerLine"><span class="sign">·</span><label>Anzahl der Schichten</label><input type="number" id="heightInput" min="1" /></div>
+          <div class="answerLine"><span class="sign">=</span><label>Würfel insgesamt</label><input type="number" id="volumeInput" min="1" /></div>
+          <button class="btn primary" type="button" id="checkFormulaBtn">Rechenweg prüfen</button>
+          <div class="feedback" id="formulaFeedback">Trage zuerst deine Zahlen ein.</div>
+        </div>
+      </div>
+
+      <div class="grid2" style="margin-top:14px">
+        <div class="card softPurple">
+          <h3>Begriffe zuordnen</h3>
+          <p>Tippe links einen Begriff an. Tippe danach rechts die passende Erklärung an.</p>
+          <div class="matchArea" id="matchArea">
+            <div class="matchCol" id="matchLeft"></div>
+            <div class="matchCol" id="matchRight"></div>
+          </div>
+          <div class="feedback" id="matchFeedback">Noch keine Zuordnung geprüft.</div>
+        </div>
+        <div class="card softYellow">
+          <h3>Schritte ordnen</h3>
+          <p>Bringe die Schritte in eine gute Reihenfolge.</p>
+          <div class="sortList" id="sortList"></div>
+          <button class="btn primary" type="button" id="checkSortBtn">Reihenfolge prüfen</button>
+          <div class="feedback" id="sortFeedback">Beginne mit einer einzelnen Schicht.</div>
+        </div>
+      </div>
+
+      <div class="hintPanel" data-hints='["Tipp 1: Eine Schicht ist wie ein Rechteck aus kleinen Quadraten.","Tipp 2: Rechne zuerst Länge mal Breite.","Tipp 3: Danach nimmst du die Anzahl der Schichten dazu.","Lösung: 4 · 3 = 12 Würfel pro Schicht. 12 · 2 = 24 Würfel insgesamt."]'>
+        <button class="btn warn hintBtn" type="button">Tipp anzeigen</button>
+        <div class="hintList"></div>
+      </div>
+    </section>
+
+    <section class="station page" id="station2" data-page="station2" data-station="s2">
+      <div class="stationHeader">
+        <div>
+          <span class="stationTag">Station 2</span>
+          <h2>Auf neue Quader anwenden</h2>
+          <p>Nutze die Schichtidee. Du musst nicht jeden Würfel einzeln zählen.</p>
+        </div>
+        <span class="completion hidden" data-completion="s2">✓ geschafft</span>
+      </div>
+
+      <div class="grid3">
+        <div class="card softBlue">
+          <h3>Aufgabe A</h3>
+          <p>Ein Quader ist 5 Einheitswürfel lang, 3 Einheitswürfel breit und 2 Einheitswürfel hoch. Wie viele Einheitswürfel enthält er?</p>
+          <div class="inputRow"><input id="applyA" type="number" min="1" placeholder="Anzahl" /><button class="btn primary" type="button" data-check-apply="A">Prüfen</button></div>
+          <div class="feedback" id="applyFbA">Noch nicht geprüft.</div>
+        </div>
+        <div class="card softGreen">
+          <h3>Aufgabe B</h3>
+          <p>Ein Quader hat 4 mal 3 Würfel in jeder Schicht. Insgesamt wurden 36 Einheitswürfel gezählt. Wie hoch ist der Quader?</p>
+          <div class="inputRow"><input id="applyB" type="number" min="1" placeholder="Höhe" /><button class="btn primary" type="button" data-check-apply="B">Prüfen</button></div>
+          <div class="feedback" id="applyFbB">Noch nicht geprüft.</div>
+        </div>
+        <div class="card softPurple">
+          <h3>Aufgabe C</h3>
+          <p>Lina rechnet bei einem Quader mit Länge 6, Breite 2, Höhe 4 so: <b>6 + 2 + 4 = 12</b>. Was ist der Fehler?</p>
+          <div class="grid3" id="errorOptions">
+            <button class="matchCard" type="button" data-error="false">Sie hat die Oberfläche berechnet.</button>
+            <button class="matchCard" type="button" data-error="true">Sie hat addiert. Beim Volumen muss man vervielfachen.</button>
+            <button class="matchCard" type="button" data-error="false">Sie hat die Länge vergessen.</button>
+          </div>
+          <div class="feedback" id="errorFeedback">Tippe die passende Erklärung an.</div>
+        </div>
+      </div>
+
+      <div class="inputRow" style="margin-top:14px"><button class="btn ok" id="checkApplyAllBtn" type="button">Station prüfen</button></div>
+      <div class="feedback" id="applyAllFeedback">Bearbeite die Aufgaben A, B und C.</div>
+      <div class="hintPanel" data-hints='["Tipp 1: Rechne zuerst eine Schicht aus.","Tipp 2: Eine Schicht hat Länge mal Breite Würfel.","Tipp 3: Multipliziere danach mit der Höhe oder teile durch die Würfel pro Schicht.","Lösungsidee: Volumen = Länge · Breite · Höhe."]'>
+        <button class="btn warn hintBtn" type="button">Tipp anzeigen</button>
+        <div class="hintList"></div>
+      </div>
+    </section>
+
+    <section class="station page" id="sprinter" data-page="sprinter" data-station="sprinter">
+      <div class="stationHeader">
+        <div>
+          <span class="stationTag">Sprinter</span>
+          <h2>Eigener Quader</h2>
+          <p>Diese Aufgaben sind freiwillig.</p>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="card softYellow">
+          <h3>Auftrag 1</h3>
+          <p>Denke dir einen eigenen Quader aus. Schreibe Länge, Breite, Höhe und Volumen auf.</p>
+          <textarea id="sprinterText" placeholder="Mein Quader: Länge ..., Breite ..., Höhe ..."></textarea>
+          <button class="btn primary" id="saveSprinterBtn" type="button">Speichern</button>
+          <div class="feedback" id="sprinterFeedback">Noch nicht gespeichert.</div>
+        </div>
+        <div class="card softBlue">
+          <h3>Auftrag 2</h3>
+          <p>Ergänze den Satz:</p>
+          <p><b>Ich kann das Volumen eines Quaders bestimmen, ohne jeden Würfel einzeln zu zählen, weil ...</b></p>
+          <textarea id="reflectionText" placeholder="... weil"></textarea>
+          <button class="btn primary" id="saveReflectionBtn" type="button">Speichern</button>
+          <div class="feedback" id="reflectionFeedback">Noch nicht gespeichert.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+  (() => {
+    "use strict";
+    const STORAGE_KEY = "lp_quader_ohne_bauen_v1";
+    const defaults = { progress:{s1:false,s2:false}, shownLayers:1, match:{}, sortOrder:["step2","step1","step3"], apply:{A:false,B:false,C:false} };
+    let state = loadState();
+    let currentPageId = "start";
+    let selectedMatchLeft = null;
+    const pages = [
+      {id:"start", label:"Start"},
+      {id:"station1", label:"Schichten", requires:null, stationKey:"s1"},
+      {id:"station2", label:"Anwenden", requires:"s1", stationKey:"s2"},
+      {id:"sprinter", label:"Sprinter", requires:"s2"}
+    ];
+    const matchPairs = {
+      length:"Wie viele Würfel in einer Reihe liegen.",
+      width:"Wie viele Reihen eine Schicht hat.",
+      height:"Wie viele gleiche Schichten übereinander liegen."
+    };
+    const matchLabels = {length:"Länge", width:"Breite", height:"Höhe"};
+    const sortTexts = {
+      step1:"Zuerst: Würfel in einer Schicht bestimmen.",
+      step2:"Danach: Anzahl der Schichten anschauen.",
+      step3:"Zum Schluss: Würfel pro Schicht mal Schichten rechnen."
+    };
+    const correctSort = ["step1","step2","step3"];
+
+    function $(sel){ return document.querySelector(sel); }
+    function $$(sel){ return Array.from(document.querySelectorAll(sel)); }
+    function clone(o){ return JSON.parse(JSON.stringify(o)); }
+    function loadState(){ try{ return Object.assign(clone(defaults), JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}")); }catch(e){ return clone(defaults); } }
+    function saveState(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+    function setFeedback(el,text,type=""){ if(!el) return; el.textContent=text; el.className="feedback"+(type?" "+type:""); }
+
+    function canOpenPage(id){ const page = pages.find(p=>p.id===id); return !page || !page.requires || state.progress[page.requires]; }
+    function pageIndex(id){ return Math.max(0, pages.findIndex(p=>p.id===id)); }
+    function lockedText(id){ const p=pages.find(x=>x.id===id); return p && p.requires ? `${p.label} wird freigeschaltet, wenn die vorherige Station geschafft ist.` : ""; }
+    function showPage(id,push=true){
+      if(!pages.some(p=>p.id===id)) id="start";
+      if(!canOpenPage(id)){ showMessage(lockedText(id)); id=currentPageId || "start"; }
+      currentPageId=id;
+      $$(".page").forEach(p=>p.classList.toggle("active-page",p.id===id));
+      $$("[data-page-link]").forEach(a=>{ const t=a.dataset.pageLink; a.classList.toggle("current",t===id); a.classList.toggle("locked",!canOpenPage(t)); a.setAttribute("aria-current",t===id?"page":"false"); });
+      const counter=$("#pageCounter"); if(counter) counter.textContent=`Seite ${pageIndex(id)+1} von ${pages.length}: ${pages[pageIndex(id)].label}`;
+      renderPageControls();
+      if(push && location.hash !== `#${id}`) history.pushState(null,"",`#${id}`);
+      window.scrollTo({top:0,behavior:"smooth"});
+    }
+    function showMessage(text){
+      let msg=$("#pageUnlockMessage");
+      if(!msg){ msg=document.createElement("div"); msg.id="pageUnlockMessage"; msg.className="unlockNote"; $(".topbar").insertAdjacentElement("afterend",msg); }
+      msg.textContent=text; msg.classList.remove("hidden"); clearTimeout(showMessage.timer); showMessage.timer=setTimeout(()=>msg.classList.add("hidden"),3200);
+    }
+    function renderPageControls(){
+      $$(".pageControls").forEach(el=>el.remove());
+      $$(".page").forEach(page=>{
+        const i=pageIndex(page.id), prev=pages[i-1], next=pages[i+1];
+        const controls=document.createElement("div"); controls.className="pageControls";
+        const prevBtn=document.createElement("button"); prevBtn.type="button"; prevBtn.className="btn"; prevBtn.textContent=prev?`← ${prev.label}`:"← Zurück"; prevBtn.disabled=!prev; prevBtn.onclick=()=>prev&&showPage(prev.id,true);
+        const hint=document.createElement("span"); hint.className="pageHint"; hint.textContent=next&&!canOpenPage(next.id)?lockedText(next.id):(page.id==="sprinter"?"Freiwilliger Bereich":"Bearbeite die Seite und gehe dann weiter.");
+        const nextBtn=document.createElement("button"); nextBtn.type="button"; nextBtn.className="btn primary"; nextBtn.textContent=next?`${next.label} →`:"Ende"; nextBtn.disabled=!next; nextBtn.onclick=()=>next&&showPage(next.id,true);
+        controls.append(prevBtn,hint,nextBtn); page.appendChild(controls);
+      });
+    }
+    function renderProgress(){
+      const keys=["s1","s2"]; const done=keys.filter(k=>state.progress[k]).length;
+      $("#progressBar").style.width=(done/keys.length*100)+"%"; $("#progressText").textContent=`${done} von ${keys.length} Pflichtstationen geschafft`;
+      $("#progressBarMini").style.width=(done/keys.length*100)+"%"; $("#progressTextMini").textContent=`${done}/${keys.length} Pflichtstationen`;
+      keys.forEach(k=>{ const st=$(`[data-station="${k}"]`), nav=$(`[data-nav="${k}"]`), badge=$(`[data-completion="${k}"]`); if(st) st.classList.toggle("done",!!state.progress[k]); if(nav) nav.classList.toggle("done",!!state.progress[k]); if(badge) badge.classList.toggle("hidden",!state.progress[k]); });
+      $$("[data-page-link]").forEach(a=>a.classList.toggle("locked",!canOpenPage(a.dataset.pageLink)));
+    }
+
+    function drawCube(svg,x,y,size,color,opacity=1){
+      const s=size, dx=s*.5, dy=s*.28;
+      const top=`${x},${y} ${x+dx},${y-dy} ${x+s+dx},${y-dy} ${x+s},${y}`;
+      const left=`${x},${y} ${x+s},${y} ${x+s},${y+s} ${x},${y+s}`;
+      const right=`${x+s},${y} ${x+s+dx},${y-dy} ${x+s+dx},${y+s-dy} ${x+s},${y+s}`;
+      svg.insertAdjacentHTML("beforeend",`<polygon points="${left}" fill="${color}" opacity="${opacity}" stroke="#334155" stroke-opacity=".22"/><polygon points="${right}" fill="#1d4ed8" opacity="${opacity*.42}" stroke="#334155" stroke-opacity=".18"/><polygon points="${top}" fill="#ffffff" opacity="${opacity*.50}" stroke="#334155" stroke-opacity=".16"/>`);
+    }
+    function renderLayerSvg(){
+      const svg=$("#layerSvg"); if(!svg) return; svg.innerHTML="";
+      const layers=state.shownLayers || 1; $("#shownLayers").textContent=layers;
+      const size=24, startX=70, startY=82, gap=2;
+      const colors=["#60a5fa","#34d399"];
+      for(let z=0; z<layers; z++){
+        for(let y=0; y<3; y++){
+          for(let x=0; x<4; x++){
+            const isoX=startX + (x-y)*15;
+            const isoY=startY + (x+y)*9 - z*34;
+            drawCube(svg, isoX, isoY, size, colors[z], .96);
+          }
+        }
+      }
+      svg.insertAdjacentHTML("beforeend",`<text x="18" y="205" fill="#334155" font-size="15" font-weight="800">${layers===1?"Eine Schicht: 4 · 3 = 12 Würfel":"Zwei Schichten: 12 · 2 = 24 Würfel"}</text>`);
+    }
+
+    function checkFormula(){
+      const layer=parseInt($("#layerInput").value,10), height=parseInt($("#heightInput").value,10), volume=parseInt($("#volumeInput").value,10);
+      const ok=layer===12 && height===2 && volume===24;
+      if(ok) setFeedback($("#formulaFeedback"),"Richtig: 4 · 3 = 12 Würfel pro Schicht und 12 · 2 = 24 Würfel insgesamt.","ok");
+      else setFeedback($("#formulaFeedback"),"Noch nicht richtig. Die richtige Antwort ist: 12 Würfel pro Schicht, 2 Schichten, 24 Würfel insgesamt.","bad");
+      maybeCompleteStation1();
+    }
+    function renderMatch(){
+      const left=$("#matchLeft"), right=$("#matchRight"); if(!left||!right) return; left.innerHTML=""; right.innerHTML="";
+      Object.keys(matchPairs).forEach(key=>{ const b=document.createElement("button"); b.type="button"; b.className="matchCard"+(selectedMatchLeft===key?" selected":"")+(state.match[key]?" correct":""); b.textContent=matchLabels[key]; b.onclick=()=>{ selectedMatchLeft=key; renderMatch(); }; left.appendChild(b); });
+      Object.entries(matchPairs).forEach(([key,text])=>{ const b=document.createElement("button"); b.type="button"; b.className="matchCard"; b.textContent=text; b.onclick=()=>checkMatch(key,b); right.appendChild(b); });
+    }
+    function checkMatch(rightKey,btn){
+      if(!selectedMatchLeft){ setFeedback($("#matchFeedback"),"Tippe zuerst links einen Begriff an.","warn"); return; }
+      const ok=selectedMatchLeft===rightKey;
+      if(ok){ state.match[selectedMatchLeft]=rightKey; saveState(); btn.classList.add("correct"); setFeedback($("#matchFeedback"),"Das passt.","ok"); }
+      else{ btn.classList.add("wrong"); setFeedback($("#matchFeedback"),`Das passt noch nicht. Richtig wäre: ${matchLabels[selectedMatchLeft]} bedeutet: ${matchPairs[selectedMatchLeft]}`,"bad"); }
+      selectedMatchLeft=null; renderMatch(); maybeCompleteStation1();
+    }
+    function renderSort(){
+      const list=$("#sortList"); if(!list) return; list.innerHTML="";
+      state.sortOrder.forEach((id,idx)=>{ const row=document.createElement("div"); row.className="sortItem"; const txt=document.createElement("div"); txt.textContent=sortTexts[id]; const up=document.createElement("button"); up.type="button"; up.textContent="↑"; up.disabled=idx===0; up.onclick=()=>moveSort(idx,-1); const down=document.createElement("button"); down.type="button"; down.textContent="↓"; down.disabled=idx===state.sortOrder.length-1; down.onclick=()=>moveSort(idx,1); row.append(txt,up,down); list.appendChild(row); });
+    }
+    function moveSort(idx,delta){ const n=idx+delta; if(n<0||n>=state.sortOrder.length) return; [state.sortOrder[idx],state.sortOrder[n]]=[state.sortOrder[n],state.sortOrder[idx]]; saveState(); renderSort(); }
+    function checkSort(){
+      const ok=state.sortOrder.every((id,i)=>id===correctSort[i]);
+      if(ok) setFeedback($("#sortFeedback"),"Richtig: Schicht bestimmen, Schichten zählen, dann vervielfachen.","ok");
+      else setFeedback($("#sortFeedback"),"Noch nicht richtig. Die passende Reihenfolge ist: 1. Würfel in einer Schicht bestimmen. 2. Schichten anschauen. 3. Würfel pro Schicht mal Schichten rechnen.","bad");
+      maybeCompleteStation1();
+    }
+    function maybeCompleteStation1(){
+      const formulaOk=parseInt($("#layerInput").value,10)===12 && parseInt($("#heightInput").value,10)===2 && parseInt($("#volumeInput").value,10)===24;
+      const matchOk=Object.keys(state.match).length===3;
+      const sortOk=state.sortOrder.every((id,i)=>id===correctSort[i]);
+      if(formulaOk && matchOk && sortOk){ state.progress.s1=true; saveState(); renderProgress(); }
+    }
+    function checkApply(which){
+      if(which==="A"){
+        const val=parseInt($("#applyA").value,10); const ok=val===30; state.apply.A=ok; saveState();
+        setFeedback($("#applyFbA"), ok?"Richtig: 5 · 3 · 2 = 30 Einheitswürfel.":"Noch nicht richtig. Die richtige Rechnung ist: 5 · 3 = 15 und 15 · 2 = 30. Antwort: 30 Einheitswürfel.", ok?"ok":"bad");
+      }
+      if(which==="B"){
+        const val=parseInt($("#applyB").value,10); const ok=val===3; state.apply.B=ok; saveState();
+        setFeedback($("#applyFbB"), ok?"Richtig: Eine Schicht hat 12 Würfel. 36 : 12 = 3 Schichten.":"Noch nicht richtig. Eine Schicht hat 4 · 3 = 12 Würfel. 36 : 12 = 3. Antwort: 3 Schichten.", ok?"ok":"bad");
+      }
+    }
+    function checkApplyAll(){
+      if(state.apply.A && state.apply.B && state.apply.C){ state.progress.s2=true; saveState(); renderProgress(); setFeedback($("#applyAllFeedback"),"Station geschafft. Du kannst die Schichtidee anwenden.","ok"); }
+      else setFeedback($("#applyAllFeedback"),"Noch nicht vollständig. Prüfe die Aufgaben A, B und C.","warn");
+    }
+    function initHints(){
+      $$(".hintPanel").forEach(panel=>{ panel.dataset.index="0"; panel.dataset.last="0"; panel.querySelector(".hintBtn").onclick=()=>showNextHint(panel); });
+    }
+    function showNextHint(panel){
+      const hints=JSON.parse(panel.dataset.hints||"[]"), list=panel.querySelector(".hintList"); let idx=parseInt(panel.dataset.index||"0",10); const last=parseInt(panel.dataset.last||"0",10), now=Date.now(), cooldown=30000;
+      if(idx>0 && now-last<cooldown){ const item=document.createElement("div"); item.className="hintItem"; item.textContent=`Der nächste Tipp ist in ${Math.ceil((cooldown-(now-last))/1000)} Sekunden verfügbar.`; list.appendChild(item); setTimeout(()=>item.remove(),1500); return; }
+      if(idx>=hints.length){ const item=document.createElement("div"); item.className="hintItem"; item.textContent="Alle Tipps wurden angezeigt."; list.appendChild(item); return; }
+      const item=document.createElement("div"); item.className="hintItem"; item.textContent=hints[idx]; list.appendChild(item); panel.dataset.index=String(idx+1); panel.dataset.last=String(now);
+    }
+    function init(){
+      $$("[data-page-link]").forEach(link=>link.onclick=e=>{ e.preventDefault(); showPage(link.dataset.pageLink,true); });
+      window.addEventListener("popstate",()=>showPage((location.hash||"#start").slice(1),false));
+      $$("[data-show-layer]").forEach(btn=>btn.onclick=()=>{ state.shownLayers=parseInt(btn.dataset.showLayer,10); saveState(); renderLayerSvg(); });
+      $("#checkFormulaBtn").onclick=checkFormula; $("#checkSortBtn").onclick=checkSort;
+      $$("[data-check-apply]").forEach(btn=>btn.onclick=()=>checkApply(btn.dataset.checkApply));
+      $$("#errorOptions [data-error]").forEach(btn=>btn.onclick=()=>{ const ok=btn.dataset.error==="true"; state.apply.C=ok; saveState(); $$("#errorOptions .matchCard").forEach(b=>b.classList.remove("correct","wrong")); btn.classList.add(ok?"correct":"wrong"); setFeedback($("#errorFeedback"), ok?"Richtig: Beim Volumen werden Länge, Breite und Höhe vervielfacht. 6 · 2 · 4 = 48.":"Das ist noch nicht richtig. Die richtige Erklärung ist: Sie hat addiert. Beim Volumen muss man vervielfachen.", ok?"ok":"bad"); });
+      $("#checkApplyAllBtn").onclick=checkApplyAll;
+      $("#saveSprinterBtn").onclick=()=>{ const txt=$("#sprinterText").value.trim(); setFeedback($("#sprinterFeedback"), txt.length>12?"Gespeichert.":"Schreibe Länge, Breite, Höhe und Volumen auf.", txt.length>12?"ok":"warn"); };
+      $("#saveReflectionBtn").onclick=()=>{ const txt=$("#reflectionText").value.trim(); setFeedback($("#reflectionFeedback"), txt.length>10?"Gespeichert.":"Ergänze den Satz mit einer eigenen Begründung.", txt.length>10?"ok":"warn"); };
+      $("#fullscreenBtn").onclick=async()=>{ try{ if(window.top!==window.self){ window.open(window.location.href,"_blank","noopener,noreferrer"); return; } if(document.documentElement.requestFullscreen) await document.documentElement.requestFullscreen(); else window.open(window.location.href,"_blank","noopener,noreferrer"); }catch(e){ window.open(window.location.href,"_blank","noopener,noreferrer"); } };
+      document.addEventListener("keydown",e=>{ if(e.target && ["INPUT","TEXTAREA"].includes(e.target.tagName)) return; if(e.key==="ArrowRight") goPage(1); if(e.key==="ArrowLeft") goPage(-1); });
+      initHints(); renderLayerSvg(); renderMatch(); renderSort(); renderProgress(); showPage((location.hash||"#start").slice(1),false);
+    }
+    function goPage(delta){ const i=pageIndex(currentPageId), next=pages[Math.min(pages.length-1,Math.max(0,i+delta))]; if(next) showPage(next.id,true); }
+    init();
+  })();
+  </script>
+</body>
+</html>
