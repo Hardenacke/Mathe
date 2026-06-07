@@ -754,7 +754,12 @@
                     "Umfang und Fläche Rechteck",
                     "gestufte Hilfen",
                     "interaktive Aufgaben",
-                    "selbstständige Erarbeitung"
+                    "selbstständige Erarbeitung",
+                    "Quader und Würfel",
+                    "Einheitswürfel",
+                    "Volumen vergleichen und bestimmen",
+                    "Schichtenmodell",
+                    "Volumenformel für Quader und Würfel"
                   ],
                   "materialien": [
                     {
@@ -1046,6 +1051,72 @@
                       "erstelltAm": "2026-05-31",
                       "lizenz": "",
                       "autor": ""
+                    },
+                    {
+                      "id": "lernpfad-quader-einheitswuerfel",
+                      "titel": "Quader mit Einheitswürfeln",
+                      "kurztitel": "Quader-Volumen",
+                      "beschreibung": "Interaktiver Lernpfad zur Volumenberechnung von Quader und Würfel: Lernende erkennen Schichten aus Einheitswürfeln, legen bzw. analysieren Quader im Klemmbaustein-Stil und leiten die Formel Länge · Breite · Höhe her.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "lernpfad-quader-einheitswuerfel.html",
+                      "pfad": "klasse-5/geometrie/figuren-und-koerper/lernpfad-quader-einheitswuerfel.html",
+                      "url": "klasse-5/geometrie/figuren-und-koerper/lernpfad-quader-einheitswuerfel.html",
+                      "dauer": "ca. 30–45 Minuten",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "geometrie",
+                        "themaId": "figuren-und-koerper"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Geometrie",
+                      "thema": "Figuren und Koerper",
+                      "unterthema": "Volumen von Quader und Würfel mit Einheitswürfeln",
+                      "kompetenzbereich": [
+                        "Geometrie",
+                        "Größen und Messen",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Quader und Würfel",
+                        "Einheitswürfel",
+                        "Volumen vergleichen und bestimmen",
+                        "Schichtenmodell",
+                        "Volumenformel für Quader und Würfel",
+                        "selbstständige Erarbeitung",
+                        "interaktive Aufgaben",
+                        "gestufte Hilfen"
+                      ],
+                      "tags": [
+                        "figuren-und-koerper",
+                        "geometrie",
+                        "groessen-und-messen",
+                        "html",
+                        "interaktiv",
+                        "klasse-5",
+                        "lernpfad",
+                        "lernpfad-quader-einheitswuerfel",
+                        "mathematik",
+                        "quader",
+                        "volumen",
+                        "wuerfel"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-07",
+                      "lizenz": "",
+                      "autor": ""
                     }
                   ],
                   "tags": [
@@ -1060,17 +1131,26 @@
                     "lernpfad-koerper-und-netze",
                     "lernpfad-symmetrie-entdecken",
                     "lernpfad-umfang-und-flaeche-rechteck",
-                    "mathematik"
+                    "mathematik",
+                    "groessen-und-messen",
+                    "lernpfad-quader-einheitswuerfel",
+                    "quader",
+                    "volumen",
+                    "wuerfel"
                   ],
-                  "anzahlMaterialien": 5
+                  "anzahlMaterialien": 6
                 }
               ],
               "tags": [
                 "klasse-5",
-                "geometrie"
+                "geometrie",
+                "figuren-und-koerper",
+                "volumen",
+                "quader",
+                "wuerfel"
               ],
               "anzahlThemen": 1,
-              "anzahlMaterialien": 5
+              "anzahlMaterialien": 6
             },
             {
               "id": "daten",
@@ -1413,7 +1493,7 @@
           ],
           "materialien": [],
           "anzahlThemen": 5,
-          "anzahlMaterialien": 20
+          "anzahlMaterialien": 21
         },
         {
           "id": "klasse-6",
@@ -12986,9 +13066,9 @@
           "anzahlMaterialien": 26
         }
       ],
-      "anzahlThemen": 40,
-      "anzahlMaterialien": 183
+      "anzahlThemen": 51,
+      "anzahlMaterialien": 186
     }
   ],
-  "aktualisiertAm": "2026-06-02"
+  "aktualisiertAm": "2026-06-07"
 }
