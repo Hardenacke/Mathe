@@ -1153,6 +1153,181 @@
               "anzahlMaterialien": 6
             },
             {
+              "id": "koerper-und-volumen",
+              "titel": "Körper und Volumen",
+              "pfad": "klasse-5/koerper-und-volumen/",
+              "beschreibung": "Bereich Körper und Volumen in Klasse 5.",
+              "themen": [
+                {
+                  "id": "oberflaecheninhalt",
+                  "titel": "Oberflächeninhalt",
+                  "pfad": "klasse-5/koerper-und-volumen/oberflaecheninhalt/",
+                  "beschreibung": "Lernpfad und Arbeitsblatt zum Oberflächeninhalt von Quadern.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Oberflächeninhalt von Quadern",
+                    "Quadernetze",
+                    "Flächenpaare eines Quaders",
+                    "Gruppenpuzzle",
+                    "allgemeine Formel für den Oberflächeninhalt",
+                    "Anwendung auf eine Geschenkbox",
+                    "selbstständige Erarbeitung",
+                    "interaktive Aufgaben",
+                    "gestufte Hilfen"
+                  ],
+                  "materialien": [
+                    {
+                      "id": "lernpfad-oberflaecheninhalt-quader",
+                      "titel": "Oberflächeninhalt von Quadern",
+                      "kurztitel": "Oberflächeninhalt Quader",
+                      "beschreibung": "Interaktiver Lernpfad zur Herleitung des Oberflächeninhalts eines Quaders. Die Lernenden schätzen zunächst den Papierbedarf für eine Geschenkbox, arbeiten in Expertengruppen mit Quadernetzen, tauschen ihre Ergebnisse aus, erkennen Flächenpaare und entwickeln daraus eine allgemeine Regel.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "lernpfad-oberflaecheninhalt-quader.html",
+                      "pfad": "klasse-5/koerper-und-volumen/oberflaecheninhalt/lernpfad-oberflaecheninhalt-quader.html",
+                      "url": "klasse-5/koerper-und-volumen/oberflaecheninhalt/lernpfad-oberflaecheninhalt-quader.html",
+                      "dauer": "ca. 60–90 Minuten",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "koerper-und-volumen",
+                        "themaId": "oberflaecheninhalt"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Körper und Volumen",
+                      "thema": "Oberflächeninhalt",
+                      "unterthema": "Oberflächeninhalt eines Quaders",
+                      "kompetenzbereich": [
+                        "Geometrie",
+                        "Größen und Messen",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren",
+                        "Kommunizieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Oberflächeninhalt von Quadern",
+                        "Quadernetze",
+                        "Flächenpaare eines Quaders",
+                        "Gruppenpuzzle",
+                        "allgemeine Formel für den Oberflächeninhalt",
+                        "Anwendung auf eine Geschenkbox",
+                        "selbstständige Erarbeitung",
+                        "interaktive Aufgaben",
+                        "gestufte Hilfen"
+                      ],
+                      "tags": [
+                        "html",
+                        "interaktiv",
+                        "klasse-5",
+                        "koerper-und-volumen",
+                        "lernpfad",
+                        "mathematik",
+                        "oberflaecheninhalt",
+                        "quader",
+                        "quadernetze",
+                        "gruppenpuzzle"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-14",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "arbeitsblatt-quadernetze",
+                      "titel": "Arbeitsblatt: Quadernetze zum Ausschneiden",
+                      "kurztitel": "AB Quadernetze",
+                      "beschreibung": "Vier Quadernetze im Maßstab 1:1 mit trapezförmigen Klebekanten für die Expertengruppen A bis D.",
+                      "typ": "pdf",
+                      "format": "PDF",
+                      "materialart": "Arbeitsblatt",
+                      "datei": "arbeitsblatt-quadernetze.pdf",
+                      "pfad": "klasse-5/koerper-und-volumen/oberflaecheninhalt/arbeitsblatt-quadernetze.pdf",
+                      "url": "klasse-5/koerper-und-volumen/oberflaecheninhalt/arbeitsblatt-quadernetze.pdf",
+                      "dauer": "ca. 30–45 Minuten",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "koerper-und-volumen",
+                        "themaId": "oberflaecheninhalt"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Körper und Volumen",
+                      "thema": "Oberflächeninhalt",
+                      "unterthema": "Quadernetze zum Ausschneiden und Zusammenbauen",
+                      "kompetenzbereich": [
+                        "Geometrie",
+                        "Größen und Messen",
+                        "Operieren",
+                        "Problemlösen",
+                        "Kommunizieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Quadernetze",
+                        "Oberflächeninhalt von Quadern",
+                        "Ausschneiden und Zusammenbauen",
+                        "Flächeninhalte von Rechtecken",
+                        "Expertengruppen"
+                      ],
+                      "tags": [
+                        "arbeitsblatt",
+                        "pdf",
+                        "klasse-5",
+                        "koerper-und-volumen",
+                        "mathematik",
+                        "oberflaecheninhalt",
+                        "quader",
+                        "quadernetze",
+                        "ausschneiden"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-14",
+                      "lizenz": "",
+                      "autor": ""
+                    }
+                  ],
+                  "tags": [
+                    "arbeitsblatt",
+                    "html",
+                    "interaktiv",
+                    "klasse-5",
+                    "koerper-und-volumen",
+                    "lernpfad",
+                    "mathematik",
+                    "oberflaecheninhalt",
+                    "pdf",
+                    "quader",
+                    "quadernetze"
+                  ],
+                  "anzahlMaterialien": 2
+                }
+              ],
+              "tags": [
+                "klasse-5",
+                "koerper-und-volumen",
+                "oberflaecheninhalt",
+                "quader"
+              ],
+              "anzahlThemen": 1,
+              "anzahlMaterialien": 2
+            },
+            {
               "id": "daten",
               "titel": "Daten",
               "pfad": "klasse-5/daten/",
@@ -1492,8 +1667,8 @@
             }
           ],
           "materialien": [],
-          "anzahlThemen": 5,
-          "anzahlMaterialien": 21
+          "anzahlThemen": 6,
+          "anzahlMaterialien": 23
         },
         {
           "id": "klasse-6",
@@ -13066,9 +13241,9 @@
           "anzahlMaterialien": 26
         }
       ],
-      "anzahlThemen": 51,
-      "anzahlMaterialien": 186
+      "anzahlThemen": 52,
+      "anzahlMaterialien": 188
     }
   ],
-  "aktualisiertAm": "2026-06-07"
+  "aktualisiertAm": "2026-06-14"
 }
