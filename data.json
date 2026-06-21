@@ -4226,19 +4226,141 @@
                     "geometrie"
                   ],
                   "anzahlMaterialien": 2
+                },
+                {
+                  "id": "dreiecke",
+                  "titel": "Dreiecke",
+                  "pfad": "klasse-7/geometrie/dreiecke/",
+                  "beschreibung": "Lernpfade und Materialien zu Dreiecken und Dreieckskonstruktionen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Dreiecke konstruieren",
+                    "Angaben untersuchen",
+                    "Planfigur zeichnen",
+                    "Konstruktionsschritte planen",
+                    "Konstruktion mit Zirkel und Geodreieck",
+                    "Winkelarten",
+                    "Winkel zeichnen",
+                    "Kreise und Kreisbögen",
+                    "selbstständige Erarbeitung",
+                    "interaktive Aufgaben",
+                    "gestufte Hilfen"
+                  ],
+                  "materialien": [
+                    {
+                      "id": "lernpfad-dreiecke-konstruieren-klasse7",
+                      "titel": "Dreiecke konstruieren",
+                      "kurztitel": "Dreiecke konstruieren",
+                      "beschreibung": "Interaktiver 30-Minuten-Lernpfad für Klasse 7: Die Lernenden untersuchen gegebene Seiten und Winkel, erstellen eine Planfigur, ordnen Konstruktionsschritte und konstruieren ein Dreieck mit Zirkel und Geodreieck. Der Lernpfad ist für iPads optimiert und enthält eine einklappbare Kopfzeile sowie eine Drag-and-Drop-Sicherung zur Reihenfolge.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "lernpfad-dreiecke-konstruieren-klasse7.html",
+                      "pfad": "klasse-7/geometrie/dreiecke/lernpfad-dreiecke-konstruieren-klasse7.html",
+                      "url": "klasse-7/geometrie/dreiecke/lernpfad-dreiecke-konstruieren-klasse7.html",
+                      "dauer": "ca. 30 Minuten",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 7",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-7",
+                        "inhaltsfeldId": "geometrie",
+                        "themaId": "dreiecke"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 7",
+                      "inhaltsfeld": "Geometrie",
+                      "thema": "Dreiecke",
+                      "unterthema": "Dreiecke konstruieren",
+                      "kompetenzbereich": [
+                        "Geometrie",
+                        "Operieren",
+                        "Problemlösen",
+                        "Argumentieren",
+                        "Kommunizieren",
+                        "Modellieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Dreiecke konstruieren",
+                        "Angaben untersuchen",
+                        "Planfigur zeichnen",
+                        "Konstruktionsschritte planen",
+                        "Konstruktion mit Zirkel und Geodreieck",
+                        "Winkelarten",
+                        "Winkel zeichnen",
+                        "Kreise und Kreisbögen",
+                        "selbstständige Erarbeitung",
+                        "interaktive Aufgaben",
+                        "gestufte Hilfen"
+                      ],
+                      "tags": [
+                        "dreiecke",
+                        "dreiecke-konstruieren",
+                        "dreieckskonstruktion",
+                        "geometrie",
+                        "html",
+                        "interaktiv",
+                        "ipad",
+                        "klasse-7",
+                        "lernpfad",
+                        "mathematik",
+                        "planfigur",
+                        "zirkel",
+                        "geodreieck",
+                        "drag-and-drop"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-21",
+                      "lizenz": "",
+                      "autor": ""
+                    }
+                  ],
+                  "tags": [
+                    "dreiecke",
+                    "dreiecke-konstruieren",
+                    "dreieckskonstruktion",
+                    "geometrie",
+                    "html",
+                    "interaktiv",
+                    "ipad",
+                    "klasse-7",
+                    "lernpfad",
+                    "mathematik",
+                    "planfigur",
+                    "zirkel",
+                    "geodreieck",
+                    "drag-and-drop"
+                  ],
+                  "anzahlMaterialien": 1
                 }
               ],
               "tags": [
+                "drag-and-drop",
+                "dreiecke",
+                "dreiecke-konstruieren",
+                "dreieckskonstruktion",
+                "geodreieck",
+                "geometrie",
+                "html",
+                "interaktiv",
+                "ipad",
                 "klasse-7",
-                "geometrie"
+                "lernpfad",
+                "mathematik",
+                "planfigur",
+                "zirkel"
               ],
-              "anzahlThemen": 2,
-              "anzahlMaterialien": 7
+              "anzahlThemen": 3,
+              "anzahlMaterialien": 8
             }
           ],
           "materialien": [],
-          "anzahlThemen": 5,
-          "anzahlMaterialien": 25
+          "anzahlThemen": 6,
+          "anzahlMaterialien": 26
         },
         {
           "id": "klasse-8",
