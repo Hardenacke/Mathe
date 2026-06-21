@@ -9226,7 +9226,8 @@
                     "geraden-und-ebenen",
                     "mathematik",
                     "strecken-und-parameterintervalle"
-                  ]
+                  ],
+                  "anzahlMaterialien": 0
                 },
                 {
                   "id": "lagebeziehungen-von-geraden",
@@ -9246,7 +9247,8 @@
                     "geraden-und-ebenen",
                     "lagebeziehungen-von-geraden",
                     "mathematik"
-                  ]
+                  ],
+                  "anzahlMaterialien": 0
                 },
                 {
                   "id": "schnittpunkte-von-geraden",
@@ -9256,16 +9258,177 @@
                   "inhaltlicheSchwerpunkte": [
                     "Schnittpunkte",
                     "lineare Gleichungssysteme",
-                    "Interpretation der Lösungsmenge"
+                    "Interpretation der Lösungsmenge",
+                    "Schnittpunkte zweier Geraden",
+                    "Geraden in Parameterform",
+                    "Stützvektor und Richtungsvektor",
+                    "Gleichsetzen von Ortsvektoren",
+                    "Einsetzungsverfahren",
+                    "Additionsverfahren",
+                    "Modellieren im Raum"
                   ],
-                  "materialien": [],
+                  "materialien": [
+                    {
+                      "id": "lernpfad-schnittpunkt-geraden-kopfballtor",
+                      "titel": "Schnittpunkt zweier Geraden: Kopfballtor",
+                      "kurztitel": "Kopfballtor",
+                      "beschreibung": "Interaktiver EF-Lernpfad zur Bestimmung des Schnittpunkts zweier Geraden im Raum. Aus Browns Ecke und Schlotterbecks Laufweg werden Geradengleichungen in Parameterform aufgestellt, gleichgesetzt und über ein lineares Gleichungssystem ausgewertet. Mit iPad-optimierter Oberfläche, 3D-Experiment, Sportschau-Kontext, Sicherung und LGS-Verfahren.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "lernpfad-schnittpunkt-geraden-kopfballtor.html",
+                      "pfad": "ef/geraden-und-ebenen/schnittpunkte-von-geraden/lernpfad-schnittpunkt-geraden-kopfballtor.html",
+                      "url": "ef/geraden-und-ebenen/schnittpunkte-von-geraden/lernpfad-schnittpunkt-geraden-kopfballtor.html",
+                      "dauer": "60-75 Minuten",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "EF",
+                        "stufe": "Sekundarstufe II"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "ef",
+                        "inhaltsfeldId": "geraden-und-ebenen",
+                        "themaId": "schnittpunkte-von-geraden"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "EF",
+                      "inhaltsfeld": "Geraden und Ebenen",
+                      "thema": "Schnittpunkte von Geraden",
+                      "unterthema": "Schnittpunkt zweier Geraden im Raum im Kontext eines Kopfballtors",
+                      "kompetenzbereich": [
+                        "Analytische Geometrie",
+                        "Lineare Algebra",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren",
+                        "Argumentieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Geraden in Parameterform",
+                        "Stützvektor und Richtungsvektor",
+                        "Gleichsetzen zweier Geraden",
+                        "Lineare Gleichungssysteme",
+                        "Einsetzungsverfahren",
+                        "Additionsverfahren",
+                        "Schnittpunktberechnung",
+                        "Interpretation des Schnittpunkts",
+                        "Modellieren im Raum"
+                      ],
+                      "tags": [
+                        "ef",
+                        "sekundarstufe-ii",
+                        "mathematik",
+                        "analytische-geometrie",
+                        "geraden-und-ebenen",
+                        "schnittpunkte-von-geraden",
+                        "lgs",
+                        "einsetzungsverfahren",
+                        "additionsverfahren",
+                        "modellieren",
+                        "kopfballtor",
+                        "sportschau",
+                        "html",
+                        "interaktiv",
+                        "ipad"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-21",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "arbeitsblatt-schnittpunkte-zweier-geraden-sicherung",
+                      "titel": "Arbeitsblatt: Schnittpunkte zweier Geraden sichern",
+                      "kurztitel": "AB Schnittpunkte Geraden",
+                      "beschreibung": "Sicherungsarbeitsblatt zur Bestimmung des Schnittpunkts zweier Geraden: Geradengleichungen in Parameterform notieren, unterschiedliche Parameter verwenden, Gleichsetzen in ein lineares Gleichungssystem überführen, LGS lösen und den Schnittpunkt interpretieren.",
+                      "typ": "pdf",
+                      "format": "PDF",
+                      "materialart": "Arbeitsblatt",
+                      "datei": "AB-schnittpunkte-zweier-geraden-sicherung.pdf",
+                      "pfad": "ef/geraden-und-ebenen/schnittpunkte-von-geraden/AB-schnittpunkte-zweier-geraden-sicherung.pdf",
+                      "url": "ef/geraden-und-ebenen/schnittpunkte-von-geraden/AB-schnittpunkte-zweier-geraden-sicherung.pdf",
+                      "dauer": "30-45 Minuten",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "EF",
+                        "stufe": "Sekundarstufe II"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "ef",
+                        "inhaltsfeldId": "geraden-und-ebenen",
+                        "themaId": "schnittpunkte-von-geraden"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "EF",
+                      "inhaltsfeld": "Geraden und Ebenen",
+                      "thema": "Schnittpunkte von Geraden",
+                      "unterthema": "Sicherung: Schnittpunkte zweier Geraden bestimmen",
+                      "kompetenzbereich": [
+                        "Analytische Geometrie",
+                        "Lineare Algebra",
+                        "Operieren",
+                        "Modellieren",
+                        "Argumentieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Parameterform von Geraden",
+                        "Stützvektor",
+                        "Richtungsvektor",
+                        "unterschiedliche Parameter",
+                        "Gleichsetzen von Ortsvektoren",
+                        "Lineare Gleichungssysteme",
+                        "Einsetzungsverfahren",
+                        "Additionsverfahren",
+                        "Schnittpunktberechnung",
+                        "Interpretation der Lösungsmenge"
+                      ],
+                      "tags": [
+                        "arbeitsblatt",
+                        "pdf",
+                        "ef",
+                        "sekundarstufe-ii",
+                        "mathematik",
+                        "analytische-geometrie",
+                        "geraden-und-ebenen",
+                        "schnittpunkte-von-geraden",
+                        "lgs",
+                        "parameterform",
+                        "einsetzungsverfahren",
+                        "additionsverfahren",
+                        "sicherung"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-21",
+                      "lizenz": "",
+                      "autor": ""
+                    }
+                  ],
                   "tags": [
                     "analytische-geometrie",
                     "ef",
                     "geraden-und-ebenen",
                     "mathematik",
-                    "schnittpunkte-von-geraden"
-                  ]
+                    "schnittpunkte-von-geraden",
+                    "html",
+                    "interaktiv",
+                    "ipad",
+                    "arbeitsblatt",
+                    "pdf",
+                    "lgs",
+                    "parameterform",
+                    "einsetzungsverfahren",
+                    "additionsverfahren",
+                    "modellieren",
+                    "kopfballtor",
+                    "sicherung"
+                  ],
+                  "anzahlMaterialien": 2
                 },
                 {
                   "id": "lgs-im-kontext-von-geraden",
@@ -9284,7 +9447,8 @@
                     "geraden-und-ebenen",
                     "lgs-im-kontext-von-geraden",
                     "mathematik"
-                  ]
+                  ],
+                  "anzahlMaterialien": 0
                 },
                 {
                   "id": "ebenen-vorschau",
@@ -9302,7 +9466,8 @@
                     "ef",
                     "geraden-und-ebenen",
                     "mathematik"
-                  ]
+                  ],
+                  "anzahlMaterialien": 0
                 }
               ],
               "tags": [
@@ -9321,10 +9486,15 @@
                 "mathematik",
                 "parametergleichung",
                 "sekundarstufe-ii",
-                "vektoren"
+                "vektoren",
+                "schnittpunkte-von-geraden",
+                "lgs",
+                "arbeitsblatt",
+                "pdf",
+                "kopfballtor"
               ],
               "anzahlThemen": 6,
-              "anzahlMaterialien": 2
+              "anzahlMaterialien": 4
             },
             {
               "id": "vektoren",
@@ -9349,7 +9519,8 @@
                     "koordinatisierung-des-raumes",
                     "mathematik",
                     "vektoren"
-                  ]
+                  ],
+                  "anzahlMaterialien": 0
                 },
                 {
                   "id": "ortsvektoren-und-vektoren",
@@ -9368,7 +9539,8 @@
                     "mathematik",
                     "ortsvektoren-und-vektoren",
                     "vektoren"
-                  ]
+                  ],
+                  "anzahlMaterialien": 0
                 },
                 {
                   "id": "vektoroperationen",
@@ -9386,7 +9558,8 @@
                     "mathematik",
                     "vektoren",
                     "vektoroperationen"
-                  ]
+                  ],
+                  "anzahlMaterialien": 0
                 },
                 {
                   "id": "laenge-und-abstand",
@@ -9405,7 +9578,8 @@
                     "laenge-und-abstand",
                     "mathematik",
                     "vektoren"
-                  ]
+                  ],
+                  "anzahlMaterialien": 0
                 },
                 {
                   "id": "kollinearitaet",
@@ -9424,7 +9598,8 @@
                     "kollinearitaet",
                     "mathematik",
                     "vektoren"
-                  ]
+                  ],
+                  "anzahlMaterialien": 0
                 }
               ],
               "tags": [
@@ -9438,7 +9613,11 @@
           ],
           "materialien": [],
           "anzahlThemen": 15,
-          "anzahlMaterialien": 21
+          "anzahlMaterialien": 23,
+          "tags": [
+            "schnittpunkte-von-geraden",
+            "lgs"
+          ]
         },
         {
           "id": "q1",
@@ -13242,7 +13421,12 @@
         }
       ],
       "anzahlThemen": 52,
-      "anzahlMaterialien": 188
+      "anzahlMaterialien": 190,
+      "tags": [
+        "schnittpunkte-von-geraden",
+        "lgs"
+      ],
+      "anzahlKlassen": 9
     }
   ],
   "aktualisiertAm": "2026-06-14"
