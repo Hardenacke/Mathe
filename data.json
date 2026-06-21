@@ -9254,17 +9254,17 @@
                   "id": "schnittpunkte-von-geraden",
                   "titel": "Schnittpunkte von Geraden",
                   "pfad": "ef/geraden-und-ebenen/schnittpunkte-von-geraden/",
-                  "beschreibung": "Lernpfade und Materialien zu Schnittpunkte von Geraden.",
+                  "beschreibung": "Lernpfade und Materialien zur Bestimmung von Schnittpunkten zweier Geraden im Raum.",
                   "inhaltlicheSchwerpunkte": [
-                    "Schnittpunkte",
-                    "lineare Gleichungssysteme",
-                    "Interpretation der Lösungsmenge",
                     "Schnittpunkte zweier Geraden",
                     "Geraden in Parameterform",
                     "Stützvektor und Richtungsvektor",
                     "Gleichsetzen von Ortsvektoren",
+                    "Lineare Gleichungssysteme",
                     "Einsetzungsverfahren",
                     "Additionsverfahren",
+                    "Interpretation der Lösungsmenge",
+                    "Lagebeziehungen von Geraden",
                     "Modellieren im Raum"
                   ],
                   "materialien": [
@@ -9340,17 +9340,17 @@
                       "autor": ""
                     },
                     {
-                      "id": "arbeitsblatt-schnittpunkte-zweier-geraden-sicherung",
-                      "titel": "Arbeitsblatt: Schnittpunkte zweier Geraden sichern",
-                      "kurztitel": "AB Schnittpunkte Geraden",
-                      "beschreibung": "Sicherungsarbeitsblatt zur Bestimmung des Schnittpunkts zweier Geraden: Geradengleichungen in Parameterform notieren, unterschiedliche Parameter verwenden, Gleichsetzen in ein lineares Gleichungssystem überführen, LGS lösen und den Schnittpunkt interpretieren.",
+                      "id": "arbeitsblatt-schnittpunkt-geraden-kopfballtor",
+                      "titel": "Arbeitsblatt: Schnittpunkt zweier Geraden – Kopfballtor",
+                      "kurztitel": "AB Kopfballtor",
+                      "beschreibung": "Sicherungsarbeitsblatt zum Lernpfad „Schnittpunkt zweier Geraden: Kopfballtor“. Die Lernenden halten die Geradengleichungen und den Schnittpunkt fest, sichern das Gleichsetzen zweier Geraden, überführen die Vektorgleichung in ein lineares Gleichungssystem und ordnen Lagebeziehungen zweier Geraden im Raum.",
                       "typ": "pdf",
                       "format": "PDF",
                       "materialart": "Arbeitsblatt",
-                      "datei": "AB-schnittpunkte-zweier-geraden-sicherung.pdf",
-                      "pfad": "ef/geraden-und-ebenen/schnittpunkte-von-geraden/AB-schnittpunkte-zweier-geraden-sicherung.pdf",
-                      "url": "ef/geraden-und-ebenen/schnittpunkte-von-geraden/AB-schnittpunkte-zweier-geraden-sicherung.pdf",
-                      "dauer": "30-45 Minuten",
+                      "datei": "AB-schnittpunkt-geraden-kopfballtor.pdf",
+                      "pfad": "ef/geraden-und-ebenen/schnittpunkte-von-geraden/AB-schnittpunkt-geraden-kopfballtor.pdf",
+                      "url": "ef/geraden-und-ebenen/schnittpunkte-von-geraden/AB-schnittpunkt-geraden-kopfballtor.pdf",
+                      "dauer": "25-35 Minuten",
                       "zielgruppe": {
                         "fach": "Mathematik",
                         "jahrgang": "EF",
@@ -9366,7 +9366,7 @@
                       "klasse": "EF",
                       "inhaltsfeld": "Geraden und Ebenen",
                       "thema": "Schnittpunkte von Geraden",
-                      "unterthema": "Sicherung: Schnittpunkte zweier Geraden bestimmen",
+                      "unterthema": "Sicherung zum Schnittpunkt zweier Geraden und zu Lagebeziehungen",
                       "kompetenzbereich": [
                         "Analytische Geometrie",
                         "Lineare Algebra",
@@ -9375,16 +9375,16 @@
                         "Argumentieren"
                       ],
                       "inhaltlicheSchwerpunkte": [
-                        "Parameterform von Geraden",
+                        "Geraden in Parameterform",
                         "Stützvektor",
                         "Richtungsvektor",
-                        "unterschiedliche Parameter",
                         "Gleichsetzen von Ortsvektoren",
                         "Lineare Gleichungssysteme",
                         "Einsetzungsverfahren",
                         "Additionsverfahren",
                         "Schnittpunktberechnung",
-                        "Interpretation der Lösungsmenge"
+                        "Interpretation der Lösungsmenge",
+                        "Lagebeziehungen von Geraden"
                       ],
                       "tags": [
                         "arbeitsblatt",
@@ -9395,11 +9395,13 @@
                         "analytische-geometrie",
                         "geraden-und-ebenen",
                         "schnittpunkte-von-geraden",
+                        "lagebeziehungen-von-geraden",
                         "lgs",
                         "parameterform",
                         "einsetzungsverfahren",
                         "additionsverfahren",
-                        "sicherung"
+                        "sicherung",
+                        "kopfballtor"
                       ],
                       "status": "verfügbar",
                       "sichtbar": true,
@@ -9413,20 +9415,16 @@
                     "analytische-geometrie",
                     "ef",
                     "geraden-und-ebenen",
-                    "mathematik",
                     "schnittpunkte-von-geraden",
+                    "lineare-gleichungssysteme",
+                    "lgs",
+                    "lagebeziehungen-von-geraden",
                     "html",
                     "interaktiv",
-                    "ipad",
-                    "arbeitsblatt",
                     "pdf",
-                    "lgs",
-                    "parameterform",
-                    "einsetzungsverfahren",
-                    "additionsverfahren",
+                    "arbeitsblatt",
                     "modellieren",
-                    "kopfballtor",
-                    "sicherung"
+                    "kopfballtor"
                   ],
                   "anzahlMaterialien": 2
                 },
@@ -13429,5 +13427,5 @@
       "anzahlKlassen": 9
     }
   ],
-  "aktualisiertAm": "2026-06-14"
+  "aktualisiertAm": "2026-06-21"
 }
