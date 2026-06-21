@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lernpfad: Dreiecke konstruieren</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+:root{
+  --bg1:#eaf6ff;
+  --bg2:#f9fcff;
+  --paper:#fffefa;
+  --ink:#182536;
+  --muted:#617083;
+  --blue:#164e83;
+  --blue2:#2586bd;
+  --cyan:#68d2ff;
+  --accent:#f9a826;
+  --accent2:#ffd66b;
+  --ok:#18866a;
+  --bad:#cc3d3d;
+  --violet:#6f5bd7;
+  --line:#c8daea;
+  --soft:#f3f9ff;
+  --shadow:0 18px 44px rgba(22,78,131,.18);
+  --shadow2:0 8px 18px rgba(22,78,131,.12);
+  --radius:26px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;min-height:100%;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--ink);font-size:18px;line-height:1.48;
+  background:
+    radial-gradient(circle at 10% 5%,rgba(104,210,255,.42),transparent 25rem),
+    radial-gradient(circle at 88% 8%,rgba(249,168,38,.22),transparent 22rem),
+    linear-gradient(135deg,var(--bg1),var(--bg2));
+  overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;opacity:.45;
+  background-image:linear-gradient(rgba(22,78,131,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(22,78,131,.055) 1px,transparent 1px);
+  background-size:34px 34px;
+}
+body::after{
+  content:"△  ◯  ∠  ✎  ⊙";position:fixed;right:-50px;bottom:24px;z-index:-1;
+  font-size:88px;letter-spacing:18px;color:rgba(22,78,131,.06);transform:rotate(-8deg);font-weight:900;
+}
+.app{max-width:1180px;margin:0 auto;padding:18px}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(234,246,255,.82);backdrop-filter:blur(16px);padding:14px 0 16px;border-bottom:1px solid rgba(22,78,131,.12)}
+.header{display:flex;gap:14px;align-items:center;justify-content:space-between}
+.brand{display:flex;gap:14px;align-items:center}.logo{width:60px;height:60px;border-radius:20px;background:linear-gradient(135deg,var(--blue),var(--blue2) 70%,var(--cyan));display:grid;place-items:center;color:white;font-weight:1000;font-size:2rem;box-shadow:var(--shadow2);position:relative}.logo::after{content:"";position:absolute;inset:7px;border:2px solid rgba(255,255,255,.55);border-radius:15px}
+h1{font-size:clamp(1.45rem,3.7vw,2.45rem);margin:0;letter-spacing:-.03em}.subtitle{margin:2px 0 0;color:var(--muted);font-size:.98rem}.tools{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+button,.btn{border:0;border-radius:17px;padding:12px 16px;background:linear-gradient(135deg,var(--blue),var(--blue2));color:white;font-weight:800;font-size:1rem;cursor:pointer;min-height:48px;touch-action:manipulation;box-shadow:0 9px 18px rgba(30,96,145,.2);transition:.16s transform,.16s box-shadow,.16s opacity}
+button:hover,.btn:hover{transform:translateY(-1px);box-shadow:0 13px 22px rgba(30,96,145,.22)}button.secondary{background:#e7f0f8;color:var(--blue);box-shadow:none}button.ghost{background:rgba(255,255,255,.55);color:var(--blue);box-shadow:none;border:1px solid var(--line)}button:disabled{opacity:.45;cursor:not-allowed;transform:none}.progressWrap{margin-top:13px;background:#dce9f4;border-radius:999px;overflow:hidden;height:15px;box-shadow:inset 0 1px 3px rgba(0,0,0,.08)}.progress{height:100%;width:20%;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--blue2));transition:.35s;position:relative}.progress::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);animation:shine 2s infinite}@keyframes shine{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+.tabs{display:flex;gap:8px;margin-top:12px;overflow-x:auto;padding-bottom:4px}.tab{white-space:nowrap;border:1px solid var(--line);background:white;color:var(--muted);border-radius:999px;padding:9px 13px;font-size:.94rem;box-shadow:none}.tab.active{background:linear-gradient(135deg,var(--blue),var(--blue2));color:white;border-color:transparent}.tab:not(.active)::before{content:"○ ";color:var(--blue2)}.tab.active::before{content:"● ";color:white}
+main{margin-top:20px}.page{display:none;animation:fade .25s ease}.page.active{display:block}@keyframes fade{from{opacity:.2;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.card{background:rgba(255,254,250,.96);border:1px solid rgba(42,96,145,.15);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(18px,3vw,30px);margin-bottom:18px;position:relative;overflow:hidden}.card::before{content:"";position:absolute;left:0;top:0;right:0;height:7px;background:linear-gradient(90deg,var(--blue),var(--cyan),var(--accent));opacity:.9}.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:22px;align-items:center}.hero h2,.card h2{font-size:clamp(1.38rem,3vw,2rem);margin:.15rem 0 .65rem;letter-spacing:-.02em}.heroText{position:relative;z-index:1}.badge{display:inline-flex;align-items:center;gap:7px;background:#fff1cf;border:1px solid #ffd98a;color:#77500a;border-radius:999px;padding:6px 11px;font-weight:900;font-size:.9rem}.goalRow{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:14px 0}.goal{background:linear-gradient(180deg,#ffffff,#f3f9ff);border:1px solid var(--line);border-radius:18px;padding:12px 13px;box-shadow:0 5px 14px rgba(22,78,131,.07)}.goal strong{display:block;color:var(--blue);font-size:.92rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:14px}.choice,.miniCard,.stepCard{background:linear-gradient(180deg,#fff,#f9fcff);border:2px solid var(--line);border-radius:19px;padding:16px;min-height:58px;cursor:pointer;touch-action:manipulation;transition:.15s;box-shadow:0 6px 16px rgba(22,78,131,.07)}.choice:hover,.miniCard:hover,.stepCard:hover{transform:translateY(-2px);border-color:#9cc9e6}.choice::before{content:"□";font-weight:900;color:var(--blue2);margin-right:8px}.choice.selected::before{content:"▣"}.choice.selected,.miniCard.selected,.stepCard.selected{border-color:var(--blue2);background:#e8f7ff}.ok{border-color:var(--ok)!important;background:#eafff8!important}.bad{border-color:var(--bad)!important;background:#fff0f0!important}.feedback{margin-top:12px;padding:14px 16px;border-radius:17px;background:#eff7ff;border-left:7px solid var(--blue2);display:none}.feedback.show{display:block}.feedback.ok{background:#ebfff7;border-left-color:var(--ok)}.feedback.bad{background:#fff1f1;border-left-color:var(--bad)}.notice,.warning{padding:14px 16px;border-radius:18px;margin:14px 0}.notice{background:#eefaf5;border-left:7px solid var(--ok)}.warning{background:#fff7e6;border-left:7px solid var(--accent)}.svgBox{background:linear-gradient(180deg,#fbfdff,#f3f9ff);border:1px solid var(--line);border-radius:22px;padding:10px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)}.svgBox svg{width:100%;height:auto;display:block}.drawArea{background-image:linear-gradient(#dde9f5 1px,transparent 1px),linear-gradient(90deg,#dde9f5 1px,transparent 1px);background-size:24px 24px;background-color:#fff;border:1px solid var(--line);border-radius:22px;min-height:280px;padding:10px;box-shadow:inset 0 0 0 4px rgba(255,255,255,.7)}.markBtn{display:inline-flex;align-items:center;margin:6px 6px 6px 0;gap:7px}.pill{display:inline-block;border-radius:999px;background:#edf3f8;color:var(--blue);padding:5px 10px;font-weight:900}.steps{display:grid;gap:10px}.stepCard{display:flex;align-items:center;justify-content:space-between;gap:12px}.stepCard .num{background:#edf3f8;border-radius:50%;width:34px;height:34px;display:grid;place-items:center;font-weight:1000;color:var(--blue)}.stepCard.picked{opacity:.52}.ordered{min-height:190px;background:#f7fbff;border:2px dashed var(--line);border-radius:22px;padding:12px}.ordered .stepCard{cursor:default}.hintPanel{display:grid;gap:10px}.hint{background:#f7fbff;border:1px solid var(--line);border-radius:17px;padding:14px;display:none}.hint.visible{display:block}.teacher{display:none}.teacher.on{display:block}.teacherBox{background:#eff7ff;border:1px solid #b8daf2;border-radius:18px;padding:14px;margin-top:12px}.nav{display:flex;justify-content:space-between;gap:12px;margin:18px 0 32px}.inputLine{width:100%;border:2px solid var(--line);border-radius:15px;padding:12px;font-size:1.05rem;min-height:50px;background:white}.small{font-size:.94rem;color:var(--muted)}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}.timeItem{padding:12px;border-radius:17px;background:#f6fbff;border:1px solid var(--line);text-align:center;font-weight:900;color:var(--blue)}.timeItem span{display:block;font-size:.8rem;color:var(--muted);font-weight:700}.memoDnd{display:grid;grid-template-columns:1fr 1.1fr;gap:14px;margin-top:14px}.dragBank,.dropSequence{background:#f7fbff;border:2px dashed var(--line);border-radius:22px;padding:12px;min-height:245px}.dragItem{background:white;border:2px solid var(--line);border-radius:17px;padding:13px 14px;margin:8px 0;cursor:grab;touch-action:none;user-select:none;font-weight:800;box-shadow:0 5px 12px rgba(30,96,145,.08)}.dragItem.selected{border-color:var(--accent);background:#fff7e6}.dragItem.dragging{opacity:.45}.dropSlot{display:flex;align-items:center;gap:10px;background:white;border:2px solid var(--line);border-radius:17px;padding:10px;margin:8px 0;min-height:62px;transition:.15s}.dropSlot.over{border-color:var(--blue2);background:#e8f7ff}.dropSlot .slotNum{flex:0 0 34px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#edf3f8;color:var(--blue);font-weight:1000}.dropSlot .slotText{flex:1;color:var(--muted)}.dropSlot.filled .slotText{color:var(--ink);font-weight:900}.confetti{position:fixed;pointer-events:none;inset:0;overflow:hidden;z-index:80}.dot{position:absolute;width:10px;height:10px;border-radius:99px;background:var(--accent);animation:fall 900ms linear forwards}@keyframes fall{to{transform:translateY(100vh) rotate(720deg);opacity:0}}
+
+.heroPhoto{position:relative;border-radius:24px;overflow:hidden;border:1px solid rgba(42,96,145,.18);box-shadow:var(--shadow);background:#fff}.heroPhoto img{width:100%;height:100%;min-height:280px;object-fit:cover;display:block}.heroPhoto::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(10,24,40,.62));pointer-events:none}.heroCaption{position:absolute;left:14px;right:14px;bottom:14px;color:white;font-weight:900;text-shadow:0 2px 8px rgba(0,0,0,.35);background:rgba(22,78,131,.42);backdrop-filter:blur(6px);border-radius:16px;padding:10px 12px}.heroCaption span{display:block;font-size:.88rem;font-weight:700;opacity:.94}
+@media(max-width:780px){body{font-size:16px}.hero{grid-template-columns:1fr}.header{align-items:flex-start;flex-direction:column}.tools{justify-content:flex-start}.app{padding:10px}.card{border-radius:21px}.memoDnd{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}.nav{position:sticky;bottom:0;background:rgba(234,246,255,.94);backdrop-filter:blur(12px);padding:10px;margin-left:-10px;margin-right:-10px;z-index:12}.nav button{flex:1}.dragBank,.dropSequence{min-height:auto}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div class="header">
+    <div class="brand"><div class="logo">△</div><div><h1>Dreiecke konstruieren</h1><p class="subtitle">30-Minuten-Lernpfad · Klasse 7 · Angaben → Planfigur → Konstruktion</p></div></div>
+    <div class="tools"><button class="secondary" id="fullBtn">Vollbild</button><button class="ghost" id="teacherBtn">Lehrerzugang</button></div>
+  </div>
+  <div class="progressWrap"><div class="progress" id="progress"></div></div>
+  <div class="tabs" id="tabs"></div>
+</header>
+<main>
+<section class="page active" data-title="Start">
+  <div class="card hero">
+    <div class="heroText">
+      <span class="badge">⏱ ca. 3 Minuten</span>
+      <h2>Schulhofgestaltung</h2>
+      <p>Auf dem Schulhof soll ein großes buntes Dreieck entstehen. Im Bauplan stehen nur wenige Angaben. Wie gehst du vor, damit das Dreieck genau wird?</p>
+      <div class="goalRow">
+        <div class="goal"><strong>1. Prüfen</strong>Welche Angaben sind gegeben?</div>
+        <div class="goal"><strong>2. Planen</strong>Wie finde ich den fehlenden Punkt?</div>
+        <div class="goal"><strong>3. Zeichnen</strong>Sauber mit Zirkel und Lineal.</div>
+      </div>
+      <div class="warning"><strong>Leitfrage:</strong> Wie können wir aus wenigen Angaben ein genaues Dreieck zeichnen?</div>
+      <div class="grid" id="startChoices">
+        <div class="choice" data-good="0">Einfach loszeichnen</div>
+        <div class="choice" data-good="1">Erst die Angaben genau anschauen</div>
+        <div class="choice" data-good="1">Erst eine Planfigur skizzieren</div>
+      </div>
+      <div class="feedback" id="startFeedback"></div>
+    </div>
+    <figure class="heroPhoto" aria-label="Buntes Dreieck auf einem Schulhof">
+      <img src="wide_outdoor_scene_of_a_school_or_courtyard_paved.png" alt="Großes buntes Dreieck auf dem Schulhof als Einstieg in das Konstruieren von Dreiecken">
+      <figcaption class="heroCaption">Schulhofgestaltung mit Dreiecken<span>Aus wenigen Maßen soll eine genaue Konstruktion entstehen.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="page" data-title="Planfigur">
+  <div class="card">
+    <span class="badge">⏱ ca. 7 Minuten</span><h2>1. Die Planfigur</h2>
+    <p>Bei einer Planfigur geht es nicht um Schönheit. Sie hilft dir, die Angaben zu ordnen. Markiere hier die gegebenen Größen.</p>
+    <div class="grid">
+      <div class="svgBox">
+        <svg viewBox="0 0 420 300" id="triSvg">
+          <rect width="420" height="300" rx="18" fill="#fff"/>
+          <path d="M0 0H420V300H0Z" fill="url(#gridPattern)" opacity=".65"/>
+          <defs><pattern id="gridPattern" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M 24 0 L 0 0 0 24" fill="none" stroke="#dbe8f4" stroke-width="1"/></pattern></defs>
+          <line x1="75" y1="230" x2="335" y2="230" stroke="#164e83" stroke-width="5"/>
+          <line x1="75" y1="230" x2="245" y2="70" stroke="#164e83" stroke-width="5"/>
+          <line x1="245" y1="70" x2="335" y2="230" stroke="#164e83" stroke-width="5"/>
+          <text x="60" y="255" font-size="22" font-weight="900">A</text><text x="340" y="255" font-size="22" font-weight="900">B</text><text x="250" y="62" font-size="22" font-weight="900">C</text>
+          <text class="markable" data-id="c" x="190" y="259" font-size="24" fill="#182536">c = 6 cm</text>
+          <text class="markable" data-id="b" x="118" y="142" font-size="24" fill="#182536">b = 5 cm</text>
+          <text class="markable" data-id="a" x="300" y="143" font-size="24" fill="#182536">a = 4 cm</text>
+          <path d="M300 230 A35 35 0 0 0 318 199" fill="none" stroke="#9aa" stroke-width="3"/>
+        </svg>
+      </div>
+      <div>
+        <p><strong>Gegeben:</strong> \(a=4\,\mathrm{cm}\), \(b=5\,\mathrm{cm}\), \(c=6\,\mathrm{cm}\)</p>
+        <button class="markBtn secondary" data-mark="a">Seite a markieren</button>
+        <button class="markBtn secondary" data-mark="b">Seite b markieren</button>
+        <button class="markBtn secondary" data-mark="c">Seite c markieren</button>
+        <div class="feedback" id="planFeedback"></div>
+        <div class="notice"><strong>Merke:</strong> Eine Planfigur zeigt, wo die gegebenen Seiten und Winkel ungefähr liegen. Sie muss nicht maßstabsgetreu sein.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page" data-title="Schritte">
+  <div class="card">
+    <span class="badge">⏱ ca. 10 Minuten</span><h2>2. Konstruktion planen</h2>
+    <p>Bringe die Schritte in die richtige Reihenfolge. Tippe die Karten nacheinander an.</p>
+    <div class="timeline"><div class="timeItem">1<span>Grundseite</span></div><div class="timeItem">2<span>Kreis um A</span></div><div class="timeItem">3<span>Kreis um B</span></div><div class="timeItem">4<span>Punkt C</span></div></div>
+    <div class="grid">
+      <div><h3>Schrittkarten</h3><div class="steps" id="stepBank"></div></div>
+      <div><h3>Deine Reihenfolge</h3><div class="ordered" id="ordered"></div><button id="checkOrder" style="margin-top:12px">Reihenfolge prüfen</button><button class="secondary" id="resetOrder" style="margin-top:12px">Zurücksetzen</button><div class="feedback" id="orderFeedback"></div></div>
+    </div>
+  </div>
+  <div class="card">
+    <h2>Animation der Konstruktion</h2>
+    <p class="small">Nach richtiger Reihenfolge kannst du die Konstruktion Schritt für Schritt abspielen.</p>
+    <button id="nextAnim" disabled>Nächsten Schritt zeigen</button>
+    <div class="drawArea" style="margin-top:12px"><svg viewBox="0 0 640 350" id="constructSvg"><rect width="640" height="350" fill="transparent"/></svg></div>
+  </div>
+</section>
+
+<section class="page" data-title="Selbst bauen">
+  <div class="card">
+    <span class="badge">⏱ ca. 8 Minuten</span><h2>3. Jetzt selbst konstruieren</h2>
+    <p>Konstruiere ein Dreieck mit \(a=5\,\mathrm{cm}\), \(b=6\,\mathrm{cm}\), \(c=7\,\mathrm{cm}\).</p>
+    <div class="grid">
+      <div class="miniCard"><strong>1. Angaben</strong><br><span class="small">Welche drei Größen sind gegeben?</span><br><input class="inputLine" id="own1" placeholder="z. B. a = ..." /></div>
+      <div class="miniCard"><strong>2. Planfigur</strong><br><span class="small">Skizziere im Heft ein Dreieck und markiere a, b, c.</span><br><button class="secondary" id="planDone">Planfigur erledigt</button></div>
+      <div class="miniCard"><strong>3. Konstruktion</strong><br><span class="small">Starte mit der längsten Seite und arbeite mit zwei Kreisbögen.</span><br><button class="secondary" id="constructDone">Konstruktion erledigt</button></div>
+    </div>
+    <div class="hintPanel" style="margin-top:16px">
+      <button id="hintBtn">Tippkarte öffnen</button>
+      <div class="hint" data-hint="1"><strong>Tipp 1:</strong> Zeichne zuerst eine Seite als Grundseite. Praktisch ist \(c=7\,\mathrm{cm}\).</div>
+      <div class="hint" data-hint="2"><strong>Tipp 2:</strong> Um Punkt C zu finden, brauchst du zwei Kreise: einen um A und einen um B.</div>
+      <div class="hint" data-hint="3"><strong>Tipp 3:</strong> Wenn \(c=AB\) ist, dann gilt: Kreis um A mit Radius \(b=6\,\mathrm{cm}\), Kreis um B mit Radius \(a=5\,\mathrm{cm}\).</div>
+      <div class="hint" data-hint="4"><strong>Tipp 4:</strong> Der Schnittpunkt der beiden Kreise ist C. Verbinde C mit A und B.</div>
+    </div>
+    <div class="feedback" id="ownFeedback"></div>
+    <div class="teacher teacherBox" id="teacherOwn"><strong>Lehrerlösung:</strong> Start mit AB = c = 7 cm. Kreis um A mit Radius b = 6 cm, Kreis um B mit Radius a = 5 cm. Schnittpunkt ist C. Verbinden ergibt das Dreieck.</div>
+  </div>
+</section>
+
+<section class="page" data-title="Sicherung">
+  <div class="card">
+    <span class="badge">⏱ ca. 2 Minuten</span><h2>4. Sicherung</h2>
+    <p>Ordne die Schritte. Ziehe die Karten in die richtige Reihenfolge oder tippe erst eine Karte und dann ein Feld an.</p>
+    <div class="memoDnd">
+      <div><h3>Schritte</h3><div class="dragBank" id="memoBank"></div></div>
+      <div><h3>Richtige Reihenfolge</h3><div class="dropSequence" id="dropSequence">
+        <div class="dropSlot" data-slot="0"><span class="slotNum">1</span><span class="slotText">Hier ablegen</span></div>
+        <div class="dropSlot" data-slot="1"><span class="slotNum">2</span><span class="slotText">Hier ablegen</span></div>
+        <div class="dropSlot" data-slot="2"><span class="slotNum">3</span><span class="slotText">Hier ablegen</span></div>
+        <div class="dropSlot" data-slot="3"><span class="slotNum">4</span><span class="slotText">Hier ablegen</span></div>
+      </div></div>
+    </div>
+    <button id="checkMemo" style="margin-top:14px">Reihenfolge prüfen</button>
+    <button class="secondary" id="resetMemo" style="margin-top:14px">Zurücksetzen</button>
+    <div class="feedback" id="memoFeedback"></div>
+    <div class="teacher teacherBox"><strong>Muster:</strong> 1. Angaben anschauen. 2. Planfigur zeichnen. 3. Konstruktion planen. 4. Dreieck konstruieren.</div>
+    <div class="notice"><strong>Reflexion:</strong> Warum hilft dir eine Planfigur beim Konstruieren? Notiere einen Satz in dein Heft.</div>
+  </div>
+</section>
+
+<div class="nav"><button class="secondary" id="prevBtn">Zurück</button><button id="nextBtn">Weiter</button></div>
+</main>
+</div>
+<div class="confetti" id="confetti"></div>
+<script>
+const pages=[...document.querySelectorAll('.page')];let current=0;const done=new Set([0]);const tabs=document.getElementById('tabs');
+pages.forEach((p,i)=>{const b=document.createElement('button');b.className='tab'+(i===0?' active':'');b.textContent=(i+1)+'. '+p.dataset.title;b.onclick=()=>{if(done.has(i)||i<=current)show(i)};tabs.appendChild(b)});
+function show(i){current=Math.max(0,Math.min(i,pages.length-1));pages.forEach((p,k)=>p.classList.toggle('active',k===current));[...tabs.children].forEach((t,k)=>t.classList.toggle('active',k===current));document.getElementById('progress').style.width=((current+1)/pages.length*100)+'%';document.getElementById('prevBtn').disabled=current===0;document.getElementById('nextBtn').textContent=current===pages.length-1?'Fertig':'Weiter';window.scrollTo({top:0,behavior:'smooth'});renderMath();}
+document.getElementById('prevBtn').onclick=()=>show(current-1);document.getElementById('nextBtn').onclick=()=>{done.add(current+1); if(current===pages.length-1){celebrate()} else show(current+1)};
+function fb(id,msg,type=''){const e=document.getElementById(id);e.innerHTML=msg;e.className='feedback show '+type;}
+function renderMath(){if(window.renderMathInElement)renderMathInElement(document.body,{delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});}
+window.addEventListener('load',renderMath);
+document.getElementById('fullBtn').onclick=()=>{if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.();};
+document.getElementById('teacherBtn').onclick=()=>{const pin=prompt('PIN eingeben');if(pin==='1607'){document.querySelectorAll('.teacher').forEach(e=>e.classList.add('on'));document.querySelectorAll('.hint').forEach(e=>e.classList.add('visible'));alert('Lehrerzugang aktiviert.')}};
+
+document.querySelectorAll('#startChoices .choice').forEach(c=>c.onclick=()=>{document.querySelectorAll('#startChoices .choice').forEach(x=>x.classList.remove('selected','ok','bad'));c.classList.add('selected');if(c.dataset.good==='1'){c.classList.add('ok');fb('startFeedback','Richtig: Vor dem genauen Zeichnen brauchst du einen Plan. Die Planfigur hilft dir dabei.','ok');done.add(1)}else{c.classList.add('bad');fb('startFeedback','Noch nicht: Einfach loszeichnen führt oft zu falschen Winkeln oder Seiten. Besser: erst Angaben prüfen und eine Planfigur nutzen.','bad')}});
+const marked=new Set();document.querySelectorAll('.markBtn').forEach(btn=>btn.onclick=()=>{const id=btn.dataset.mark;marked.add(id);document.querySelectorAll(`.markable[data-id="${id}"]`).forEach(t=>{t.setAttribute('fill',id==='a'?'#cc3d3d':id==='b'?'#18866a':'#f59e0b');t.setAttribute('font-weight','900')});btn.classList.add('ok');if(marked.size===3){fb('planFeedback','Alle gegebenen Seiten sind markiert. Jetzt erkennst du, welche Kreisbögen du für die Konstruktion brauchst.','ok');done.add(2)}});
+const correctSteps=['Strecke c = 6 cm zeichnen','Kreis um A mit Radius b = 5 cm zeichnen','Kreis um B mit Radius a = 4 cm zeichnen','Schnittpunkt C markieren','A mit C und B mit C verbinden'];let picked=[];const bank=document.getElementById('stepBank');function shuffle(a){return a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(x=>x[1])}function buildSteps(){bank.innerHTML='';shuffle(correctSteps).forEach((s)=>{const card=document.createElement('div');card.className='stepCard';card.innerHTML=`<span>${s}</span><span class="num">+</span>`;card.onclick=()=>{if(card.classList.contains('picked'))return;card.classList.add('picked');picked.push(s);renderPicked()};bank.appendChild(card)});}function renderPicked(){const o=document.getElementById('ordered');o.innerHTML='';picked.forEach((s,i)=>{const c=document.createElement('div');c.className='stepCard';c.innerHTML=`<span>${s}</span><span class="num">${i+1}</span>`;o.appendChild(c)})}buildSteps();
+document.getElementById('resetOrder').onclick=()=>{picked=[];renderPicked();buildSteps();document.getElementById('orderFeedback').className='feedback'};
+document.getElementById('checkOrder').onclick=()=>{const right=JSON.stringify(picked)===JSON.stringify(correctSteps);if(right){fb('orderFeedback','Genau. Jetzt kannst du die Konstruktion animieren.','ok');document.getElementById('nextAnim').disabled=false;done.add(3)}else fb('orderFeedback','Prüfe noch einmal: Zuerst brauchst du eine Grundseite, danach findest du C mit zwei Kreisbögen.','bad')};
+let anim=0;document.getElementById('nextAnim').onclick=()=>{anim++;draw(anim)};function draw(n){const svg=document.getElementById('constructSvg');let html='<rect width="640" height="350" fill="transparent"/>';if(n>=1)html+='<line x1="130" y1="250" x2="490" y2="250" stroke="#164e83" stroke-width="6"/><text x="120" y="283" font-size="22" font-weight="800">A</text><text x="492" y="283" font-size="22" font-weight="800">B</text><text x="290" y="283" font-size="20" font-weight="800">c = 6 cm</text>';if(n>=2)html+='<circle cx="130" cy="250" r="300" fill="none" stroke="#18866a" stroke-width="3" stroke-dasharray="8 8"/><text x="68" y="96" font-size="18" fill="#18866a" font-weight="800">r = b</text>';if(n>=3)html+='<circle cx="490" cy="250" r="240" fill="none" stroke="#cc3d3d" stroke-width="3" stroke-dasharray="8 8"/><text x="520" y="126" font-size="18" fill="#cc3d3d" font-weight="800">r = a</text>';if(n>=4)html+='<circle cx="340" cy="16" r="9" fill="#f9a826"/><text x="354" y="30" font-size="22" font-weight="900">C</text>';if(n>=5)html+='<line x1="130" y1="250" x2="340" y2="16" stroke="#164e83" stroke-width="6"/><line x1="490" y1="250" x2="340" y2="16" stroke="#164e83" stroke-width="6"/>';svg.innerHTML=html;if(n>=5){document.getElementById('nextAnim').disabled=true;celebrate();}};
+let hintIndex=0,lastHint=0;document.getElementById('hintBtn').onclick=()=>{const now=Date.now();if(hintIndex>0 && now-lastHint<30000 && !document.querySelector('.teacher.on')){const rest=Math.ceil((30000-(now-lastHint))/1000);alert('Der nächste Tipp wird in '+rest+' Sekunden freigeschaltet.');return;}hintIndex=Math.min(4,hintIndex+1);lastHint=now;document.querySelector(`.hint[data-hint="${hintIndex}"]`)?.classList.add('visible');if(hintIndex===4)document.getElementById('hintBtn').textContent='Alle Tipps geöffnet';};
+document.getElementById('planDone').onclick=e=>{e.target.classList.add('ok');checkOwn()};document.getElementById('constructDone').onclick=e=>{e.target.classList.add('ok');checkOwn()};document.getElementById('own1').addEventListener('input',checkOwn);function checkOwn(){const val=document.getElementById('own1').value.toLowerCase();const a=val.includes('5')&&val.includes('6')&&val.includes('7');const p=document.getElementById('planDone').classList.contains('ok');const c=document.getElementById('constructDone').classList.contains('ok');if(a&&p&&c){fb('ownFeedback','Sehr gut. Du hast Angaben, Planfigur und Konstruktion bearbeitet.','ok');done.add(4)}}
+const memoSteps=[{id:'angaben',txt:'Angaben genau anschauen'},{id:'planfigur',txt:'Planfigur zeichnen und Gegebenes markieren'},{id:'planen',txt:'Konstruktionsschritte planen'},{id:'konstruieren',txt:'Dreieck mit Geodreieck und Zirkel konstruieren'}];let memoOrder=[null,null,null,null];let draggedMemo=null;let selectedMemo=null;
+function buildMemoDnd(){const memoBank=document.getElementById('memoBank');memoBank.innerHTML='';memoOrder=[null,null,null,null];document.querySelectorAll('.dropSlot').forEach(slot=>{slot.classList.remove('filled','ok','bad','over');slot.querySelector('.slotText').textContent='Hier ablegen';slot.dataset.item='';});shuffle(memoSteps).forEach(step=>memoBank.appendChild(makeMemoItem(step)));}
+function makeMemoItem(step){const item=document.createElement('div');item.className='dragItem';item.draggable=true;item.dataset.item=step.id;item.textContent=step.txt;item.addEventListener('dragstart',e=>{draggedMemo=item;item.classList.add('dragging');e.dataTransfer.setData('text/plain',step.id);});item.addEventListener('dragend',()=>item.classList.remove('dragging'));item.addEventListener('click',()=>{document.querySelectorAll('.dragItem').forEach(x=>x.classList.remove('selected'));selectedMemo=item;item.classList.add('selected');});return item;}
+document.querySelectorAll('.dropSlot').forEach(slot=>{slot.addEventListener('dragover',e=>{e.preventDefault();slot.classList.add('over')});slot.addEventListener('dragleave',()=>slot.classList.remove('over'));slot.addEventListener('drop',e=>{e.preventDefault();slot.classList.remove('over');const id=e.dataTransfer.getData('text/plain');const item=draggedMemo||document.querySelector(`.dragItem[data-item="${id}"]`);placeMemoItem(slot,item);});slot.addEventListener('click',()=>{if(selectedMemo)placeMemoItem(slot,selectedMemo);});});
+function placeMemoItem(slot,item){if(!item)return;const oldId=slot.dataset.item;if(oldId){document.getElementById('memoBank').appendChild(makeMemoItem(memoSteps.find(s=>s.id===oldId)));}const id=item.dataset.item;const index=Number(slot.dataset.slot);memoOrder=memoOrder.map(x=>x===id?null:x);memoOrder[index]=id;slot.dataset.item=id;slot.classList.add('filled');slot.classList.remove('ok','bad');slot.querySelector('.slotText').textContent=item.textContent;item.remove();draggedMemo=null;selectedMemo=null;}
+document.getElementById('resetMemo').onclick=()=>{buildMemoDnd();document.getElementById('memoFeedback').className='feedback'};document.getElementById('checkMemo').onclick=()=>{const right=['angaben','planfigur','planen','konstruieren'];const ok=JSON.stringify(memoOrder)===JSON.stringify(right);document.querySelectorAll('.dropSlot').forEach((slot,i)=>{slot.classList.remove('ok','bad');if(slot.dataset.item)slot.classList.add(slot.dataset.item===right[i]?'ok':'bad')});if(ok){fb('memoFeedback','Richtig. Genau diese Reihenfolge hilft dir bei jeder Dreieckskonstruktion.','ok');celebrate()}else fb('memoFeedback','Prüfe noch einmal: Erst musst du verstehen, was gegeben ist. Danach hilft die Planfigur beim Planen der Konstruktion.','bad')};buildMemoDnd();
+function celebrate(){const box=document.getElementById('confetti');for(let i=0;i<38;i++){const d=document.createElement('div');d.className='dot';d.style.left=Math.random()*100+'%';d.style.top='-20px';d.style.background=['#f9a826','#68d2ff','#18866a','#164e83','#6f5bd7'][i%5];d.style.animationDelay=Math.random()*250+'ms';box.appendChild(d);setTimeout(()=>d.remove(),1300)}}
+show(0);
+</script>
+</body>
+</html>
