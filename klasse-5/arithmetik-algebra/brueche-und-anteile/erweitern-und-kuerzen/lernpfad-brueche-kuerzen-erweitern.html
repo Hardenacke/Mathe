@@ -234,7 +234,8 @@
             <a href="#station5" title="Station 5: Fehler" aria-label="Station 5: Fehler">5</a>
             <a href="#station6" title="Station 6: Prüfung" aria-label="Station 6: Prüfung">6</a>
             <a href="#sicherung" title="Station 7: Sicherung" aria-label="Station 7: Sicherung">7</a>
-            <a href="#sprinter" title="Station 8: Sprinter" aria-label="Station 8: Sprinter">8</a>
+            <a href="#sprinter" title="Sprinteraufgabe" aria-label="Sprinteraufgabe">S</a>
+            <a href="#erklaervideo-station" title="Letzte Station: Erklärvideo" aria-label="Letzte Station: Erklärvideo">8</a>
           </div>
           <div class="progress-wrap" aria-label="Fortschritt">
             <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
@@ -248,21 +249,8 @@
         <div class="station-status"><span id="dot-start" class="status-dot"></span><span class="pill">Gruppenstart</span></div>
         <h2>0 · Rollen klären</h2>
         <p class="station-intro">Arbeitet als Gruppe. Jede Person übernimmt eine Aufgabe. Tragt eure Namen ein und startet dann gemeinsam.</p>
-        <div class="video-card" id="erklaervideo">
-          <div class="video-head">
-            <div>
-              <span class="pill">Erklärvideo</span>
-              <h3>Brüche erweitern und kürzen</h3>
-              <p>Schaut euch das Video an. Achtet besonders darauf, wo die Zahl zum Erweitern oder Kürzen steht und warum der Anteil gleich groß bleibt.</p>
-            </div>
-          </div>
-          <div class="video-wrap">
-            <video controls preload="metadata" playsinline>
-              <source src="erklaervideo-brueche-erweitern-kuerzen.mp4" type="video/mp4">
-              Dein Browser kann dieses Video nicht direkt abspielen.
-            </video>
-          </div>
-          <p class="video-fallback">Falls das Video nicht startet: <a href="erklaervideo-brueche-erweitern-kuerzen.mp4" target="_blank" rel="noopener">Video in einem neuen Tab öffnen</a>.</p>
+        <div class="callout subtle">
+          <strong>Hinweis:</strong> Das Erklärvideo kommt am Ende des Lernpfads als letzte Station. Bearbeitet zuerst die Stationen und vergleicht eure Ergebnisse danach mit dem Video.
         </div>
         <div class="grid">
           <div class="role-card">
@@ -437,14 +425,41 @@
         <textarea id="sprinterText" data-save="sprinterText" placeholder="Unsere drei Brüche sind ..."></textarea>
         <div class="callout success"><strong>Extra-Frage:</strong> Könnt ihr erklären, warum es unendlich viele gleichwertige Brüche gibt?</div>
       </section>
+
+      <section id="erklaervideo-station" class="card station">
+        <div class="station-status"><span id="dot-video" class="status-dot"></span><span class="pill">Letzte Station</span></div>
+        <h2>8 · Erklärvideo anschauen</h2>
+        <p class="station-intro">Schaut euch zum Abschluss das Erklärvideo an. Achtet darauf, ob eure eigenen Merksätze zu den Erklärungen im Video passen.</p>
+        <div class="video-card" id="erklaervideo">
+          <div class="video-head">
+            <div>
+              <span class="pill">Erklärvideo</span>
+              <h3>Brüche erweitern und kürzen</h3>
+              <p>Schaut euch das Video zum Abschluss an. Vergleicht dabei eure Merksätze und Aufgaben mit den Erklärungen im Video.</p>
+            </div>
+          </div>
+          <div class="video-wrap">
+            <video controls preload="metadata" playsinline>
+              <source src="erklaervideo-brueche-erweitern-kuerzen.mp4" type="video/mp4">
+              Dein Browser kann dieses Video nicht direkt abspielen.
+            </video>
+          </div>
+          <p class="video-fallback">Falls das Video nicht startet: <a href="erklaervideo-brueche-erweitern-kuerzen.mp4" target="_blank" rel="noopener">Video in einem neuen Tab öffnen</a>.</p>
+        </div>
+        <div class="checkline"><input type="checkbox" id="videoCheck1" data-save-check="videoCheck1"><span>Wir haben das Video angeschaut.</span></div>
+        <div class="checkline"><input type="checkbox" id="videoCheck2" data-save-check="videoCheck2"><span>Wir können erklären, warum der Anteil beim Erweitern und Kürzen gleich groß bleibt.</span></div>
+        <label for="videoReflection">Unser Vergleich mit dem Video</label>
+        <textarea id="videoReflection" data-save="videoReflection" placeholder="Im Video wurde erklärt, dass ... Unser Merksatz passt, weil ..."></textarea>
+        <div class="button-row"><button type="button" onclick="completeStation('video')">Video-Station fertig</button></div>
+      </section>
     </div>
   </div>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script>
-    const STORAGE_KEY = 'lp_brueche_kuerzen_erweitern_v8';
-    const TOTAL_REQUIRED = 8;
+    const STORAGE_KEY = 'lp_brueche_kuerzen_erweitern_v9';
+    const TOTAL_REQUIRED = 9;
     const HINT_COOLDOWN_MS = 30000;
     const hints = {
       s2:['Schau nur auf die blaue Fläche. Sie soll gleich groß bleiben.','Der Nenner sagt: In so viele Teile wird die Figur geteilt.','Wenn der Nenner größer wird, brauchst du auch mehr blaue Teile.'],
@@ -784,11 +799,11 @@
       state.done[id]=true; saveState(); updateProgress(); toast('Gespeichert.');
     }
     function updateProgress(){
-      const ids=['start','s2','s3','s35','s4','s5','s6','sec'];
+      const ids=['start','s2','s3','s35','s4','s5','s6','sec','video'];
       const done=ids.filter(id=>state.done[id]).length;
       document.getElementById('progressBar').style.width=(done/TOTAL_REQUIRED*100)+'%';
       document.getElementById('progressLabel').textContent=`${done}/${TOTAL_REQUIRED}`;
-      const map={start:'dot-start',s2:'dot-s2',s3:'dot-s3',s35:'dot-s35',s4:'dot-s4',s5:'dot-s5',s6:'dot-s6',sec:'dot-sec'};
+      const map={start:'dot-start',s2:'dot-s2',s3:'dot-s3',s35:'dot-s35',s4:'dot-s4',s5:'dot-s5',s6:'dot-s6',sec:'dot-sec',video:'dot-video'};
       ids.forEach(id=>{const dot=document.getElementById(map[id]); if(dot) dot.classList.toggle('done',!!state.done[id]);});
     }
     const PAGE_ORDER = [
@@ -800,7 +815,8 @@
       {id:'station5', short:'5', title:'Fehler finden'},
       {id:'station6', short:'6', title:'Üben'},
       {id:'sicherung', short:'7', title:'Merksatz'},
-      {id:'sprinter', short:'8', title:'Sprinter'}
+      {id:'sprinter', short:'S', title:'Sprinter'},
+      {id:'erklaervideo-station', short:'8', title:'Erklärvideo'}
     ];
     let currentPageId = 'gruppenstart';
 
