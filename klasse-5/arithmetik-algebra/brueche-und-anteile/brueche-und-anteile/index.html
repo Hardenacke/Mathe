@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brüche und Anteile</title>
+  <style>
+:root{
+  --bg:#f6f8fb;--card:#ffffff;--text:#172033;--muted:#5b6475;--line:#dfe5ee;
+  --accent:#2458d3;--accent2:#0f766e;--warn:#8a5a00;--soft:#eef5ff;--soft2:#ecfdf5;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+main{max-width:1080px;margin:0 auto;padding:32px 18px 52px}
+header{background:linear-gradient(135deg,#e8f0ff,#fff);border:1px solid var(--line);border-radius:24px;padding:26px;margin-bottom:18px;box-shadow:0 10px 24px rgba(20,35,70,.06)}
+.badge{display:inline-block;font-size:.88rem;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 10px;color:var(--muted);margin-bottom:10px}
+h1{margin:0 0 8px;font-size:clamp(1.8rem,4vw,2.65rem);line-height:1.1} h2{font-size:1.25rem;margin:.35rem 0 .45rem} h3{font-size:1.05rem;margin:.25rem 0 .25rem}
+p{margin:.4rem 0;color:var(--muted)}
+.back{display:inline-block;margin-bottom:14px;color:var(--accent);font-weight:750;text-decoration:none}.back:hover{text-decoration:underline}
+.nav{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 0}.pill{display:inline-block;text-decoration:none;color:var(--accent);font-weight:750;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 12px}
+.section{margin-top:22px}.section-title{display:flex;align-items:center;gap:10px;margin:4px 0 10px}.num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:999px;background:var(--accent);color:white;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:14px;margin-top:14px}.grid.two{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;text-decoration:none;color:var(--text);box-shadow:0 8px 18px rgba(20,35,70,.05);transition:.16s ease}.card:hover{border-color:var(--accent);transform:translateY(-1px)}
+.type{font-size:.78rem;text-transform:uppercase;letter-spacing:.065em;color:var(--accent);font-weight:800}.small{font-size:.92rem;color:var(--muted)}
+.status{display:inline-block;font-size:.78rem;border-radius:999px;padding:3px 9px;margin-left:6px;border:1px solid var(--line);color:var(--muted)}.ready{color:var(--accent2);background:#ecfdf5;border-color:#a7f3d0}.prep{color:var(--warn);background:#fffbeb;border-color:#fde68a}
+.info{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;margin-top:14px}.info strong{color:var(--text)}
+ul.clean{margin:8px 0 0 1.1rem;color:var(--muted)} li{margin:.25rem 0}.timeline{counter-reset:step;display:grid;gap:12px}.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}.step:before{counter-increment:step;content:counter(step);display:grid;place-items:center;width:34px;height:34px;border-radius:999px;background:var(--soft);color:var(--accent);font-weight:850}
+</style>
+</head>
+<body>
+<main>
+
+
+<header>
+  <span class="badge">Mathematik · Klasse 5 · Arithmetik/Algebra</span>
+  <h1>Brüche und Anteile</h1>
+  <p>Die Materialien sind nach Teilthemen und Materialarten sortiert. So findest du schneller den passenden Lernpfad, das passende Arbeitsblatt oder das Video.</p>
+  <nav class="nav" aria-label="Schnellzugriff">
+    <a class="pill" href="uebersicht-teilthemen.html">Teilthemen</a>
+    <a class="pill" href="materialuebersicht.html">Materialübersicht</a>
+    <a class="pill" href="lernreihenfolge.html">Lernreihenfolge</a>
+  </nav>
+</header>
+<section class="section">
+  <div class="section-title"><span class="num">1</span><h2>Grundlagen</h2></div>
+  <div class="grid two">
+    <a class="card" href="brueche-als-anteile/index.html"><span class="type">Teilthema</span><span class="status ready">verfügbar</span><h2>Brüche als Anteile</h2><p class="small">Faire Aufteilungen, Zähler und Nenner, Anteile zeichnen.</p></a>
+    <a class="card" href="brueche-am-zahlenstrahl/index.html"><span class="type">Teilthema</span><span class="status prep">vorbereitet</span><h2>Brüche am Zahlenstrahl</h2><p class="small">Brüche als Zahlen verstehen und auf dem Zahlenstrahl einordnen.</p></a>
+  </div>
+</section>
+<section class="section">
+  <div class="section-title"><span class="num">2</span><h2>Gleichwertige Brüche</h2></div>
+  <div class="grid two">
+    <a class="card" href="erweitern-und-kuerzen/index.html"><span class="type">Teilthema</span><span class="status ready">verfügbar</span><h2>Brüche erweitern und kürzen</h2><p class="small">Fertiger Lernpfad, Sicherungs-PDF und Erklärvideo.</p></a>
+    <a class="card" href="brueche-vergleichen/index.html"><span class="type">Teilthema</span><span class="status prep">vorbereitet</span><h2>Brüche vergleichen</h2><p class="small">Brüche mit Darstellungen, gemeinsamen Nennern und Begründungen vergleichen.</p></a>
+  </div>
+</section>
+<section class="section">
+  <div class="section-title"><span class="num">3</span><h2>Sortieren und sichern</h2></div>
+  <div class="grid two">
+    <a class="card" href="brueche-ordnen/index.html"><span class="type">Teilthema</span><span class="status prep">vorbereitet</span><h2>Brüche ordnen</h2><p class="small">Mehrere Brüche sinnvoll sortieren und Strategien vergleichen.</p></a>
+    <a class="card" href="materialuebersicht.html"><span class="type">Übersicht</span><span class="status ready">verfügbar</span><h2>Alle Materialien nach Art</h2><p class="small">Lernpfade, Arbeitsblätter und Videos getrennt anzeigen.</p></a>
+  </div>
+</section>
+
+</main>
+</body>
+</html>
