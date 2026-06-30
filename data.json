@@ -721,7 +721,8 @@
                         "html",
                         "uebersicht"
                       ],
-                      "sichtbar": true
+                      "sichtbar": false,
+                      "nurIntern": true
                     },
                     {
                       "zielgruppe": {
@@ -747,14 +748,14 @@
                       "id": "lernpfad-brueche-kuerzen-erweitern-klasse5",
                       "titel": "Brüche erweitern und kürzen",
                       "kurztitel": "Erweitern und Kürzen",
-                      "beschreibung": "Interaktiver Lernpfad für Klasse 5: Die Lernenden erkunden gleichwertige Brüche mithilfe von Darstellungen, Fachwörtern, Fehlerdiagnose, Arbeitsblatt und eingebundenem Erklärvideo.",
+                      "beschreibung": "Interaktiver Lernpfad für Klasse 5: Die Lernenden erkunden, dass Brüche unterschiedlich aussehen können, aber denselben Anteil darstellen. Sie erweitern und kürzen Brüche mithilfe von Darstellungen, Fachwörtern, Fehlerdiagnose und Sicherung; das Erklärvideo ist am Ende als letzte Station eingebunden.",
                       "typ": "html",
                       "format": "HTML",
                       "materialart": "Lernpfad",
                       "datei": "lernpfad-brueche-kuerzen-erweitern.html",
                       "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/lernpfad-brueche-kuerzen-erweitern.html",
                       "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/lernpfad-brueche-kuerzen-erweitern.html",
-                      "dauer": "ca. 35–45 Minuten",
+                      "dauer": "ca. 40–55 Minuten",
                       "unterthema": "Brüche erweitern und kürzen",
                       "kompetenzbereich": [
                         "Arithmetik Algebra",
@@ -871,7 +872,7 @@
                       "id": "erklaervideo-brueche-erweitern-kuerzen-klasse5",
                       "titel": "Erklärvideo: Brüche erweitern und kürzen",
                       "kurztitel": "Video Erweitern/Kürzen",
-                      "beschreibung": "Erklärvideo zum Erweitern und Kürzen von Brüchen mit gesprochenen Erklärungen, Visualisierungen, Aufgaben und Denkpausen.",
+                      "beschreibung": "Erklärvideo zum Erweitern und Kürzen von Brüchen mit gesprochenen Erklärungen, Visualisierungen, Aufgaben und Denkpausen. Das Video ist zusätzlich im Lernpfad als letzte Station eingebunden.",
                       "typ": "video",
                       "format": "MP4",
                       "materialart": "Erklärvideo",
@@ -961,7 +962,8 @@
                         "code",
                         "erklaervideo"
                       ],
-                      "sichtbar": true
+                      "sichtbar": false,
+                      "nurIntern": true
                     },
                     {
                       "zielgruppe": {
@@ -1017,7 +1019,8 @@
                         "txt",
                         "erklaervideo"
                       ],
-                      "sichtbar": true
+                      "sichtbar": false,
+                      "nurIntern": true
                     },
                     {
                       "zielgruppe": {
@@ -1069,7 +1072,8 @@
                         "erklaervideo",
                         "asset"
                       ],
-                      "sichtbar": false
+                      "sichtbar": false,
+                      "nurIntern": true
                     },
                     {
                       "zielgruppe": {
@@ -1250,7 +1254,7 @@
                     "manim",
                     "audio"
                   ],
-                  "anzahlMaterialien": 13
+                  "anzahlMaterialien": 9
                 }
               ],
               "tags": [
@@ -1273,7 +1277,7 @@
                 "audio"
               ],
               "anzahlThemen": 1,
-              "anzahlMaterialien": 13
+              "anzahlMaterialien": 9
             },
             {
               "id": "groessen-und-messen",
@@ -2524,7 +2528,7 @@
           ],
           "materialien": [],
           "anzahlThemen": 7,
-          "anzahlMaterialien": 36,
+          "anzahlMaterialien": 32,
           "tags": [
             "klasse-5-gesamt",
             "klasse-5",
