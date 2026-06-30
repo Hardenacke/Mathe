@@ -1,0 +1,863 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lernpfad: Brüche kürzen und erweitern</title>
+  <style>
+    :root{
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --ink:#172033;
+      --muted:#5b6475;
+      --brand:#2563eb;
+      --brand2:#0ea5e9;
+      --accent:#10b981;
+      --warn:#f59e0b;
+      --bad:#ef4444;
+      --soft:#eaf2ff;
+      --line:#d9e2ef;
+      --shadow:0 10px 30px rgba(18,32,59,.10);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:linear-gradient(180deg,#eff6ff 0%,var(--bg) 42%,#f8fafc 100%);
+      color:var(--ink);
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .wrap{max-width:1180px;margin:0 auto;padding:18px clamp(14px,3vw,28px) 60px}
+    header.hero{
+      position:relative;
+      overflow:hidden;
+      border-radius:28px;
+      background:radial-gradient(circle at 10% 5%,#dbeafe 0,#dbeafe 22%,transparent 23%),linear-gradient(135deg,#1d4ed8,#0ea5e9 58%,#14b8a6);
+      color:#fff;
+      padding:clamp(22px,4vw,42px);
+      box-shadow:var(--shadow);
+    }
+    .hero:after{
+      content:"";
+      position:absolute;right:-80px;top:-80px;width:300px;height:300px;border-radius:50%;
+      background:rgba(255,255,255,.15);
+    }
+    .topline{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;position:relative;z-index:2}
+    .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.16);padding:8px 12px;border-radius:999px;font-weight:700;font-size:.92rem;backdrop-filter:blur(8px)}
+    h1{font-size:clamp(2rem,6vw,4rem);line-height:1.02;margin:20px 0 12px;letter-spacing:-.04em;position:relative;z-index:2}
+    .hero p{max-width:760px;font-size:clamp(1rem,2.4vw,1.25rem);margin:0;position:relative;z-index:2;color:#eef7ff}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;position:relative;z-index:2}
+    button,.button{
+      border:0;
+      min-height:48px;
+      padding:12px 16px;
+      border-radius:15px;
+      background:var(--brand);
+      color:white;
+      font-weight:800;
+      cursor:pointer;
+      box-shadow:0 4px 12px rgba(37,99,235,.25);
+      font-size:1rem;
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      text-decoration:none;
+      transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
+      touch-action:manipulation;
+    }
+    button:hover,.button:hover{transform:translateY(-1px);box-shadow:0 7px 18px rgba(37,99,235,.28)}
+    button:active,.button:active{transform:translateY(0)}
+    button.secondary,.button.secondary{background:#eef2ff;color:#1e3a8a;box-shadow:none;border:1px solid #c7d2fe}
+    button.ghost,.button.ghost{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.3);box-shadow:none}
+    button.good{background:var(--accent)}
+    button.warn{background:var(--warn);color:#111827}
+    button.small{min-height:38px;padding:8px 12px;border-radius:12px;font-size:.92rem}
+    button:focus,input:focus,textarea:focus,select:focus{outline:3px solid rgba(37,99,235,.25);outline-offset:2px}
+    .sticky-nav{position:sticky;top:0;z-index:20;margin:8px 0;padding:6px 8px;border:1px solid var(--line);background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-radius:16px;box-shadow:0 5px 14px rgba(15,23,42,.07)}
+    .navrow{display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:nowrap}
+    .navlinks{display:flex;gap:5px;flex-wrap:nowrap;overflow-x:auto;max-width:100%;padding-bottom:1px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+    .navlinks a{display:inline-flex;align-items:center;justify-content:center;min-height:30px;min-width:30px;width:30px;padding:0;border-radius:999px;text-decoration:none;background:#f8fafc;border:1px solid #e2e8f0;color:#1f2937;font-weight:900;font-size:.9rem;line-height:1;flex:0 0 auto}
+    .progress-wrap{display:flex;align-items:center;gap:6px;min-width:110px;width:clamp(110px,18vw,180px);flex:0 0 auto}
+    .progress-track{height:8px;flex:1;border-radius:999px;background:#e5e7eb;overflow:hidden}
+    .progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--accent),#06b6d4);transition:width .25s ease}
+    .progress-label{font-weight:900;color:#1e3a8a;white-space:nowrap;font-size:.8rem}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(18px,3vw,28px);margin:18px 0}
+    .station{scroll-margin-top:110px}
+
+    /* Mehrseiten-Struktur: Jede Station ist eine eigene Seite innerhalb derselben HTML-Datei. */
+    body.paged .station{display:none;margin-top:0}
+    body.paged .station.active-page{display:block;animation:pageFade .18s ease-out}
+    body.paged header.hero{display:none}
+    body.paged header.hero.active-page{display:block;animation:pageFade .18s ease-out}
+    @keyframes pageFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+    .navlinks a.active{background:#dbeafe;border-color:#93c5fd;color:#1e40af;box-shadow:inset 0 0 0 1px rgba(37,99,235,.18)}
+    .page-topline{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:2px 0 14px;padding:10px 12px;border:1px solid #dbeafe;background:#f8fbff;border-radius:16px;color:#1e3a8a;font-weight:850}
+    .page-switcher{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:22px;padding-top:16px;border-top:1px solid #e2e8f0}
+    .page-switcher .page-count{font-weight:900;color:#1e3a8a;background:#eff6ff;border:1px solid #bfdbfe;border-radius:999px;padding:8px 12px}
+    .page-switcher button[disabled]{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+    .page-help{display:none}
+    @media (max-width:720px){
+      body.paged .sticky-nav{position:sticky;top:0}
+      .page-switcher{display:grid;grid-template-columns:1fr;align-items:stretch}
+      .page-switcher button{width:100%}
+      .page-switcher .page-count{text-align:center}
+    }
+    .station h2{margin:.1rem 0 .6rem;font-size:clamp(1.45rem,3.2vw,2.2rem);letter-spacing:-.025em}
+    .station-intro{font-size:1.08rem;color:#374151;max-width:850px}
+    .subtle{color:var(--muted);font-size:.95rem}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:16px}
+    .mini-card{border:1px solid #e2e8f0;border-radius:18px;padding:16px;background:#fbfdff}
+    .role-card{position:relative;overflow:hidden;border:1px solid #dbeafe;background:linear-gradient(180deg,#ffffff,#f0f9ff);border-radius:18px;padding:16px;min-height:180px}
+    .role-card .emoji{font-size:2rem}
+    .role-card h3{margin:4px 0 8px}
+    input,textarea,select{
+      width:100%;
+      min-height:48px;
+      border:1.5px solid #cbd5e1;
+      border-radius:14px;
+      padding:11px 12px;
+      font:inherit;
+      background:white;
+      color:var(--ink);
+    }
+    textarea{min-height:92px;resize:vertical}
+    label{font-weight:800;display:block;margin:10px 0 6px}
+    .input-row{display:grid;grid-template-columns:1fr auto 1fr;gap:9px;align-items:center;max-width:360px}
+    .input-row .slash{font-size:1.7rem;font-weight:900;color:#475569;text-align:center}
+    .fraction{display:inline-grid;grid-template-rows:auto auto;align-items:center;justify-items:center;min-width:1.75em;vertical-align:middle;font-weight:900;color:#111827;margin:0 .08em}
+    .fraction .top{border-bottom:2px solid currentColor;line-height:1;padding:0 .2em .1em}
+    .fraction .bottom{line-height:1;padding:.12em .2em 0}
+    .fraction.large{font-size:1.55rem}
+    .barbox{padding:14px;border-radius:16px;background:#f8fafc;border:1px dashed #cbd5e1}
+    .fraction-bar{display:grid;gap:3px;height:34px;margin:8px 0 4px;border:2px solid #1e3a8a;border-radius:10px;overflow:hidden;background:white}
+    .fraction-bar span{background:#e2e8f0;min-width:12px}
+    .fraction-bar span.fill{background:linear-gradient(180deg,#93c5fd,#2563eb)}
+    .compare-card,.choice-card,.task-card{border:1px solid #d8e1ef;border-radius:18px;background:#fff;padding:14px;min-height:120px}
+    .choice-card button{width:100%;margin-top:8px;justify-content:center}
+    .feedback{border-radius:16px;padding:12px 14px;background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a8a;font-weight:750;margin-top:12px;min-height:48px}
+    .feedback.good{background:#ecfdf5;border-color:#a7f3d0;color:#065f46}
+    .feedback.bad{background:#fef2f2;border-color:#fecaca;color:#991b1b}
+    .feedback.warn{background:#fffbeb;border-color:#fde68a;color:#92400e}
+    .button-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+    .hint-card{border:1px solid #fde68a;background:#fffbeb;border-radius:18px;padding:14px;margin-top:12px}
+    .hint-list{display:grid;gap:8px;margin:8px 0 0;padding:0;list-style:none}
+    .hint-list li{background:#fff7ed;border:1px solid #fed7aa;padding:10px;border-radius:12px;color:#7c2d12}
+    .checkline{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #eef2f7}
+    .checkline input{width:24px;min-height:24px;margin-top:3px}
+    .callout{border-left:6px solid var(--brand2);background:#f0f9ff;border-radius:16px;padding:16px;margin:14px 0}
+    .success{border-left-color:var(--accent);background:#ecfdf5}
+    .warning{border-left-color:var(--warn);background:#fffbeb}
+    .danger{border-left-color:var(--bad);background:#fef2f2}
+    .pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;background:#eef2ff;color:#1e3a8a;padding:5px 10px;font-weight:850;font-size:.9rem}
+    .locked{opacity:.55;filter:saturate(.55)}
+    .station-status{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+    .status-dot{width:12px;height:12px;border-radius:50%;background:#cbd5e1;display:inline-block}
+    .status-dot.done{background:var(--accent)}
+    .sort-select{margin-top:8px}
+    .print-only{display:none}
+    .toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:100;background:#111827;color:white;padding:12px 16px;border-radius:999px;font-weight:850;box-shadow:0 10px 24px rgba(0,0,0,.24);opacity:0;pointer-events:none;transition:opacity .2s ease}
+    .toast.show{opacity:1}
+    @media (max-width:720px){
+      .wrap{padding-left:12px;padding-right:12px}
+      .sticky-nav{position:relative;top:auto}
+      .navrow{flex-wrap:nowrap}
+      .navlinks{display:flex;flex-wrap:nowrap;width:auto;flex:1 1 auto}
+      .navlinks a{justify-content:center;min-width:28px;width:28px;min-height:28px;font-size:.82rem}
+      .progress-wrap{width:92px;min-width:92px}
+      .input-row{grid-template-columns:1fr auto 1fr}
+      .hero-actions .button,.hero-actions button{width:100%}
+    }
+
+    .range-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}
+    .range-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}
+    .range-row label{font-weight:700}
+    input[type="range"]{width:100%;min-height:44px}
+    .range-value{font-weight:800;color:#1d4ed8;background:#eef2ff;border:1px solid #c7d2fe;border-radius:999px;padding:5px 10px;min-width:48px;text-align:center}
+    .slider-task .barbox{gap:10px}
+    .slider-task .task-note{margin-top:10px;color:var(--muted);font-size:.96rem}
+    .live-frac{font-size:1.1rem;font-weight:700}
+    .task-card .feedback{margin-top:12px}
+
+    .shape-set{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:8px 0 4px}
+    .shape-card{border:1px solid var(--line);border-radius:16px;padding:10px;background:#fff}
+    .shape-title{font-size:.85rem;font-weight:700;color:var(--muted);margin-bottom:6px}
+    .shape-card svg{display:block;margin:0 auto}
+    .point-grid{display:grid;gap:4px;justify-content:center;margin:8px auto 4px}
+    .point-grid span{width:16px;height:16px;border-radius:50%;background:#e2e8f0;display:block;border:1px solid #cbd5e1}
+    .point-grid span.fill{background:linear-gradient(180deg,#93c5fd,#2563eb);border-color:#1d4ed8}
+
+    .triangle-svg,.circle-svg,.pyramid-wrap svg{display:block;margin:0 auto}
+    .shape-card.single-shape{max-width:220px;margin:0 auto}
+
+    @media print{
+      body{background:#fff;color:#000}
+      .sticky-nav,.hero-actions,.button-row button,.toast{display:none!important}
+      .card{box-shadow:none;border:1px solid #bbb;break-inside:avoid}
+      .print-only{display:block}
+    }
+  </style>
+</head>
+<body>
+  <div id="learning-view">
+    <div class="wrap">
+      <header class="hero">
+        <div class="topline">
+          <span class="badge">Mathematik · Klasse 5</span>
+          <span class="badge">Brüche entdecken</span>
+        </div>
+        <h1>Brüche verändern – der Anteil bleibt gleich</h1>
+        <p>Ihr findet heraus: Ein Anteil kann gleich groß bleiben, auch wenn der Bruch anders aussieht. Später heißen die beiden Wege <strong>erweitern</strong> und <strong>kürzen</strong>.</p>
+        <div class="hero-actions">
+          <a class="button ghost" href="#gruppenstart">Mit Rollen starten</a>
+          <a class="button ghost" href="#station2">Direkt zur ersten Station</a>
+        </div>
+      </header>
+
+      <nav class="sticky-nav" aria-label="Lernpfad Navigation">
+        <div class="navrow">
+          <div class="navlinks">
+            <a href="#gruppenstart" title="Start: Rollen klären" aria-label="Start: Rollen klären">0</a>
+            <a href="#station2" title="Station 1: Mehr Teile" aria-label="Station 1: Mehr Teile">1</a>
+            <a href="#station3" title="Station 2: Weniger Teile" aria-label="Station 2: Weniger Teile">2</a>
+            <a href="#station35" title="Station 3: Erweitern beschreiben" aria-label="Station 3: Erweitern beschreiben">3</a>
+            <a href="#station4" title="Station 4: Fachwörter" aria-label="Station 4: Fachwörter">4</a>
+            <a href="#station5" title="Station 5: Fehler" aria-label="Station 5: Fehler">5</a>
+            <a href="#station6" title="Station 6: Prüfung" aria-label="Station 6: Prüfung">6</a>
+            <a href="#sicherung" title="Station 7: Sicherung" aria-label="Station 7: Sicherung">7</a>
+            <a href="#sprinter" title="Station 8: Sprinter" aria-label="Station 8: Sprinter">8</a>
+          </div>
+          <div class="progress-wrap" aria-label="Fortschritt">
+            <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+            <div id="progressLabel" class="progress-label">0/8</div>
+          </div>
+        </div>
+        <p id="pageHint" class="page-help">Seitennavigation</p>
+      </nav>
+
+      <section id="gruppenstart" class="card station">
+        <div class="station-status"><span id="dot-start" class="status-dot"></span><span class="pill">Gruppenstart</span></div>
+        <h2>0 · Rollen klären</h2>
+        <p class="station-intro">Arbeitet als Gruppe. Jede Person übernimmt eine Aufgabe. Tragt eure Namen ein und startet dann gemeinsam.</p>
+        <div class="grid">
+          <div class="role-card">
+            <div class="emoji">🕒</div><h3>Zeitwächterin oder Zeitwächter</h3>
+            <p>Achte auf die Zeit und erinnere an den nächsten Schritt.</p>
+            <label for="roleTime">Name</label><input id="roleTime" data-save="roleTime" placeholder="z. B. Aylin">
+          </div>
+          <div class="role-card">
+            <div class="emoji">🎙️</div><h3>Gesprächsleitung</h3>
+            <p>Sorge dafür, dass alle zu Wort kommen.</p>
+            <label for="roleMod">Name</label><input id="roleMod" data-save="roleMod" placeholder="z. B. Ben">
+          </div>
+          <div class="role-card">
+            <div class="emoji">✍️</div><h3>Schreiberin oder Schreiber</h3>
+            <p>Schreibe wichtige Ergebnisse auf.</p>
+            <label for="roleWrite">Name</label><input id="roleWrite" data-save="roleWrite" placeholder="z. B. Cem">
+          </div>
+          <div class="role-card">
+            <div class="emoji">🔎</div><h3>Prüferin oder Prüfer</h3>
+            <p>Prüfe: Wurde oben und unten das Gleiche gemacht?</p>
+            <label for="roleCheck">Name</label><input id="roleCheck" data-save="roleCheck" placeholder="z. B. Dana">
+          </div>
+        </div>
+        <div class="grid-2">
+          <div>
+            <label for="groupName">Gruppenname</label>
+            <input id="groupName" data-save="groupName" placeholder="z. B. Die Bruchprofis">
+          </div>
+          <div>
+            <label for="teamRule">Unsere Regel für die Gruppe</label>
+            <input id="teamRule" data-save="teamRule" placeholder="z. B. Erst erklären, dann prüfen.">
+          </div>
+        </div>
+        <div class="callout">
+          <strong>Arbeitsregel:</strong> Am Ende jeder Station sagt jede Person einen Satz: „Ich habe verstanden, dass …“ oder „Ich brauche noch Hilfe bei …“.
+        </div>
+        <div class="button-row"><button type="button" onclick="completeStation('start')">Weiter</button></div>
+      </section>
+
+      <section id="station2" class="card station">
+        <div class="station-status"><span id="dot-s2" class="status-dot"></span><span class="pill">Station 1</span></div>
+        <h2>1 · Mehr Teile – gleicher Anteil</h2>
+        <p class="station-intro">Schaut euch den blauen Anteil an. Teilt die Figur in <strong>mehr gleich große Teile</strong>. Der blaue Anteil soll gleich groß bleiben.</p>
+        <div class="callout"><strong>Aufgabe:</strong> Findet zu jedem Startbruch einen neuen Bruch. Der neue Bruch soll gleich groß sein, aber einen <strong>größeren Nenner</strong> haben. Nutzt dafür die Regler.</div>
+        <div class="grid" id="sliderTasks"></div>
+        <div id="fbSliderEq" class="feedback">Bearbeitet alle drei Beispiele. Die blaue Fläche muss gleich groß bleiben.</div>
+        <label for="observeMoreParts">Was fällt euch auf?</label>
+        <textarea id="observeMoreParts" data-save="observeMoreParts" placeholder="Wenn der Nenner größer wird, ..."></textarea>
+        <div class="hint-card" data-hintbox="s2"><strong>Tipps für Station 1</strong><div class="button-row"><button class="warn small" onclick="showHint('s2')">Tipp anzeigen</button></div><ul class="hint-list" id="hints-s2"></ul></div>
+        <div class="button-row"><button type="button" onclick="completeStation('s2')">Station 1 fertig</button></div>
+      </section>
+
+      <section id="station3" class="card station">
+        <div class="station-status"><span id="dot-s3" class="status-dot"></span><span class="pill">Station 2</span></div>
+        <h2>2 · Weniger Teile – gleicher Anteil</h2>
+        <p class="station-intro">Jetzt nehmt ihr <strong>weniger Teile</strong>. Der blaue Anteil soll gleich groß bleiben. Der neue Nenner muss <strong>kleiner</strong> sein als beim Startbruch.</p>
+        <div class="callout"><strong>So geht ihr vor:</strong> 1. Schaut auf den Startbruch. 2. Wählt mit dem <strong>Nenner-Regler</strong> eine kleinere Zahl. 3. Bewegt den <strong>Zähler-Regler</strong>. 4. Prüft: Ist die blaue Fläche gleich groß?</div>
+        <div class="grid" id="reduceTasks"></div>
+        <div id="fbReduce" class="feedback">Stellt mit den Reglern einen gleich großen Bruch ein. Der neue Nenner muss kleiner sein.</div>
+        <label for="reduceRule">Unser Satz</label>
+        <textarea id="reduceRule" data-save="reduceRule" placeholder="Ich wähle zuerst einen kleineren Nenner. Dann wähle ich den Zähler so, dass ..."></textarea>
+        <div class="hint-card" data-hintbox="s3"><strong>Tipps für Station 2</strong><div class="button-row"><button class="warn small" onclick="showHint('s3')">Tipp anzeigen</button></div><ul class="hint-list" id="hints-s3"></ul></div>
+        <div class="button-row"><button onclick="checkReduce()">Einstellung prüfen</button><button type="button" onclick="completeStation('s3')">Station 2 fertig</button></div>
+      </section>
+
+      <section id="station35" class="card station">
+        <div class="station-status"><span id="dot-s35" class="status-dot"></span><span class="pill">Station 3</span></div>
+        <h2>3 · Einen erweiterten Bruch finden</h2>
+        <p class="station-intro">Ihr kennt schon einen Bruch. Findet dazu einen neuen Bruch mit größerem Nenner. Der Anteil soll gleich groß bleiben.</p>
+        <div class="grid-2">
+          <div class="mini-card">
+            <h3>Aufgabe</h3>
+            <p>Wir starten mit dem Bruch <span class="fraction"><span class="top">2</span><span class="bottom">3</span></span>.</p>
+            <p>Findet einen gleich großen Bruch mit dem Nenner 6.</p>
+            <div class="input-row"><input id="bridgeNum" data-save="bridgeNum" inputmode="numeric" placeholder="Zähler"><span class="slash">/</span><input id="bridgeDen" data-save="bridgeDen" inputmode="numeric" placeholder="Nenner"></div>
+          </div>
+          <div class="mini-card">
+            <h3>Fülle die Lücken</h3>
+            <p>Damit der Bruch gleich groß bleibt, müssen wir den Nenner mit <input id="bridgeFactorDen" data-save="bridgeFactorDen" inputmode="numeric" style="width:72px;display:inline-block"> malnehmen. So wird aus 3 eine 6.</p>
+            <p>Das Gleiche machen wir beim Zähler: Wir nehmen 2 auch mal <input id="bridgeFactorNum" data-save="bridgeFactorNum" inputmode="numeric" style="width:72px;display:inline-block">. Dann wird daraus <input id="bridgeNewNum" data-save="bridgeNewNum" inputmode="numeric" style="width:72px;display:inline-block">.</p>
+          </div>
+        </div>
+        <div class="button-row"><button onclick="checkBridgeTask()">Aufgabe prüfen</button></div>
+        <div id="fbBridge" class="feedback">Tragt den neuen Bruch ein. Füllt dann die Lücken aus.</div>
+        <div class="hint-card" data-hintbox="s35"><strong>Tipps für Station 3</strong><div class="button-row"><button class="warn small" onclick="showHint('s35')">Tipp anzeigen</button></div><ul class="hint-list" id="hints-s35"></ul></div>
+        <div class="button-row"><button type="button" onclick="completeStation('s35')">Station 3 fertig</button></div>
+      </section>
+
+      <section id="station4" class="card station">
+        <div class="station-status"><span id="dot-s4" class="status-dot"></span><span class="pill">Station 4</span></div>
+        <h2>4 · Die Fachwörter</h2>
+        <p class="station-intro">Ihr habt zwei Wege entdeckt. Jetzt bekommen sie Namen: <strong>erweitern</strong> und <strong>kürzen</strong>. Sortiert die Karten. Sprecht dazu: „Oben und unten wird …“</p>
+        <div class="callout"><strong>Merke:</strong> Beim <strong>Erweitern</strong> multiplizierst du Zähler und Nenner mit derselben Zahl. Beim <strong>Kürzen</strong> teilst du Zähler und Nenner durch dieselbe Zahl. Der Anteil bleibt gleich groß.</div>
+        <div class="grid" id="sortGrid"></div>
+        <div class="button-row"><button onclick="checkSortTask()">Sortieren prüfen</button></div>
+        <div id="fbSort" class="feedback">Wählt bei jeder Karte: erweitert, gekürzt oder falsch.</div>
+        <div class="hint-card" data-hintbox="s4"><strong>Tipps für Station 4</strong><div class="button-row"><button class="warn small" onclick="showHint('s4')">Tipp anzeigen</button></div><ul class="hint-list" id="hints-s4"></ul></div>
+        <div class="button-row"><button type="button" onclick="completeStation('s4')">Station 4 fertig</button></div>
+      </section>
+
+      <section id="station5" class="card station">
+        <div class="station-status"><span id="dot-s5" class="status-dot"></span><span class="pill">Station 5</span></div>
+        <h2>5 · Fehler finden</h2>
+        <p class="station-intro">Findet den Fehler und verbessert ihn. Achtet genau auf Zähler und Nenner.</p>
+        <div class="grid-2">
+          <div class="mini-card">
+            <h3>Falsche Lösung</h3>
+            <p>Jemand rechnet so:</p>
+            <p><span class="fraction large"><span class="top">6</span><span class="bottom">8</span></span> = <span class="fraction large"><span class="top">6 : 2</span><span class="bottom">8 : 4</span></span> = <span class="fraction large"><span class="top">3</span><span class="bottom">2</span></span></p>
+            <label for="errorChoice">Was ist der Fehler?</label>
+            <select id="errorChoice" data-save="errorChoice">
+              <option value="">Bitte auswählen</option>
+              <option value="same">Zähler und Nenner wurden nicht durch dieselbe Zahl geteilt.</option>
+              <option value="order">Man darf beim Kürzen nicht teilen.</option>
+              <option value="bigger">Beim Kürzen muss der Bruch größer werden.</option>
+            </select>
+            <label for="errorExplain">Schreibt den Fehler in einem Satz auf.</label>
+            <textarea id="errorExplain" data-save="errorExplain" placeholder="Der Fehler ist ..."></textarea>
+          </div>
+          <div class="mini-card">
+            <h3>Richtige Lösung</h3>
+            <p>Kürzt <span class="fraction"><span class="top">6</span><span class="bottom">8</span></span> richtig.</p>
+            <div class="input-row"><input id="errNum" data-save="errNum" inputmode="numeric" placeholder="Zähler"><span class="slash">/</span><input id="errDen" data-save="errDen" inputmode="numeric" placeholder="Nenner"></div>
+            <div class="button-row"><button onclick="checkErrorTask()">Lösung prüfen</button></div>
+            <div id="fbError" class="feedback">Tipp: 6 und 8 kann man beide durch 2 teilen.</div>
+          </div>
+        </div>
+        <div class="hint-card" data-hintbox="s5"><strong>Tipps für Station 5</strong><div class="button-row"><button class="warn small" onclick="showHint('s5')">Tipp anzeigen</button></div><ul class="hint-list" id="hints-s5"></ul></div>
+        <div class="button-row"><button type="button" onclick="completeStation('s5')">Station 5 fertig</button></div>
+      </section>
+
+      <section id="station6" class="card station">
+        <div class="station-status"><span id="dot-s6" class="status-dot"></span><span class="pill">Station 6</span></div>
+        <h2>6 · Gemeinsam üben</h2>
+        <p class="station-intro">Löst die Aufgaben zusammen. Achtet darauf: Oben und unten muss immer das Gleiche passieren.</p>
+        <div class="grid">
+          <div class="task-card"><h3>A</h3><p>Erweitere <span class="fraction"><span class="top">3</span><span class="bottom">7</span></span> auf den Nenner 21.</p><div class="input-row"><input id="testA1" data-save="testA1" inputmode="numeric"><span class="slash">/</span><input id="testA2" data-save="testA2" inputmode="numeric"></div></div>
+          <div class="task-card"><h3>B</h3><p>Kürze <span class="fraction"><span class="top">12</span><span class="bottom">20</span></span> vollständig.</p><div class="input-row"><input id="testB1" data-save="testB1" inputmode="numeric"><span class="slash">/</span><input id="testB2" data-save="testB2" inputmode="numeric"></div></div>
+          <div class="task-card"><h3>C</h3><p>Welche zwei Brüche sind gleich groß?</p><label><input type="checkbox" id="c46" data-save-check="c46"> 4/6</label><label><input type="checkbox" id="c610" data-save-check="c610"> 6/10</label><label><input type="checkbox" id="c23" data-save-check="c23"> 2/3</label><label><input type="checkbox" id="c45" data-save-check="c45"> 4/5</label></div>
+          <div class="task-card"><h3>D</h3><p>Finde einen Bruch mit Nenner 24, der gleich groß ist wie <span class="fraction"><span class="top">1</span><span class="bottom">4</span></span>.</p><div class="input-row"><input id="testD1" data-save="testD1" inputmode="numeric"><span class="slash">/</span><input id="testD2" data-save="testD2" inputmode="numeric"></div></div>
+        </div>
+        <label for="groupExplain">Unser wichtigster Satz</label>
+        <textarea id="groupExplain" data-save="groupExplain" placeholder="Zwei Brüche sind gleich groß, wenn ..."></textarea>
+        <div class="button-row"><button onclick="checkGroupTest()">Aufgaben prüfen</button><button type="button" onclick="completeStation('s6')">Station 6 fertig</button></div>
+        <div id="fbGroup" class="feedback">Löst zuerst alle vier Aufgaben.</div>
+        <div class="hint-card" data-hintbox="s6"><strong>Tipps für Station 6</strong><div class="button-row"><button class="warn small" onclick="showHint('s6')">Tipp anzeigen</button></div><ul class="hint-list" id="hints-s6"></ul></div>
+      </section>
+
+      <section id="sicherung" class="card station">
+        <div class="station-status"><span id="dot-sec" class="status-dot"></span><span class="pill">Sicherung</span></div>
+        <h2>7 · Das merken wir uns</h2>
+        <p class="station-intro">Füllt die Lücken aus. Schreibt danach einen eigenen Merksatz.</p>
+        <div class="mini-card">
+          <p>Beim <strong>Erweitern</strong> werden Zähler und Nenner mit der <input id="gap1" data-save="gap1" style="max-width:180px;display:inline-block" placeholder="..."> Zahl <input id="gap2" data-save="gap2" style="max-width:180px;display:inline-block" placeholder="...">.</p>
+          <p>Beim <strong>Kürzen</strong> werden Zähler und Nenner durch die <input id="gap3" data-save="gap3" style="max-width:180px;display:inline-block" placeholder="..."> Zahl <input id="gap4" data-save="gap4" style="max-width:180px;display:inline-block" placeholder="...">.</p>
+          <p>Der Wert des Bruchs bleibt dabei <input id="gap5" data-save="gap5" style="max-width:180px;display:inline-block" placeholder="...">.</p>
+          <div class="button-row"><button onclick="checkGaps()">Sicherung prüfen</button></div>
+          <div id="fbGaps" class="feedback">Wortbank: gleiche · multipliziert · gleiche · dividiert · gleich</div>
+        </div>
+        <label for="finalRule">Unser Merksatz</label>
+        <textarea id="finalRule" data-save="finalRule" placeholder="Schreibt euren Merksatz in eigenen Worten."></textarea>
+        <div class="checkline"><input type="checkbox" id="reflect1" data-save-check="reflect1"><span>Wir können ein Beispiel zum Erweitern erklären.</span></div>
+        <div class="checkline"><input type="checkbox" id="reflect2" data-save-check="reflect2"><span>Wir können ein Beispiel zum Kürzen erklären.</span></div>
+        <div class="checkline"><input type="checkbox" id="reflect3" data-save-check="reflect3"><span>Wir wissen: Der Bruch sieht anders aus. Der Anteil bleibt gleich groß.</span></div>
+        <div class="button-row"><button type="button" onclick="completeStation('sec')">Fertig</button></div>
+      </section>
+
+      <section id="sprinter" class="card station">
+        <div class="station-status"><span class="status-dot"></span><span class="pill">Sprinter · freiwillig</span></div>
+        <h2>Sprinteraufgabe</h2>
+        <p class="station-intro">Findet drei Brüche, die gleich groß sind wie <span class="fraction"><span class="top">3</span><span class="bottom">4</span></span>. Ein Bruch soll einen Nenner über 20 haben.</p>
+        <textarea id="sprinterText" data-save="sprinterText" placeholder="Unsere drei Brüche sind ..."></textarea>
+        <div class="callout success"><strong>Extra-Frage:</strong> Könnt ihr erklären, warum es unendlich viele gleichwertige Brüche gibt?</div>
+      </section>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const STORAGE_KEY = 'lp_brueche_kuerzen_erweitern_v8';
+    const TOTAL_REQUIRED = 8;
+    const HINT_COOLDOWN_MS = 30000;
+    const hints = {
+      s2:['Schau nur auf die blaue Fläche. Sie soll gleich groß bleiben.','Der Nenner sagt: In so viele Teile wird die Figur geteilt.','Wenn der Nenner größer wird, brauchst du auch mehr blaue Teile.'],
+      s3:['Der neue Nenner muss kleiner sein als beim Startbruch.','Stelle zuerst den Nenner ein. Danach stellst du den Zähler ein.','Die blaue Fläche soll gleich groß bleiben.','Beispiel: Aus 6/8 kann 3/4 werden.'],
+      s35:['Frage zuerst: Womit wird aus 3 die 6?','Die Antwort ist 2. Deshalb rechnest du oben auch mal 2.','Aus 2/3 wird 4/6.'],
+      s4:['Erweitern: Zähler und Nenner werden größer.','Kürzen: Zähler und Nenner werden kleiner.','Wichtig: Oben und unten muss die gleiche Rechnung stehen.'],
+      s5:['Beim Kürzen teilst du oben und unten durch dieselbe Zahl.','In der falschen Lösung wird oben durch 2 und unten durch 4 geteilt. Das geht nicht.','6 und 8 sind beide durch 2 teilbar.'],
+      s6:['A: Womit wird aus 7 die 21?','B: Suche eine Zahl, durch die 12 und 20 teilbar sind.','C: Brüche sind gleich groß, wenn der Anteil gleich groß ist.']
+    };
+    const state = loadState();
+
+    function loadState(){
+      try{return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {done:{},inputs:{},checks:{},hints:{}};}catch(e){return {done:{},inputs:{},checks:{},hints:{}};}
+    }
+    function saveState(){localStorage.setItem(STORAGE_KEY, JSON.stringify(state));}
+    function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200);}
+    function norm(v){return String(v||'').trim().toLowerCase().replace(/ü/g,'ue').replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ß/g,'ss');}
+    function num(id){return Number(document.getElementById(id)?.value.replace(',','.') || NaN);}
+    function setFeedback(id,msg,type=''){
+      const el=document.getElementById(id); if(!el)return;
+      el.className='feedback '+type; el.innerHTML=msg;
+    }
+    function fracHTML(n,d,cls=''){return `<span class="fraction ${cls}"><span class="top">${n}</span><span class="bottom">${d}</span></span>`;}
+    function barHTML(n,d){
+      const parts=[];
+      for(let i=1;i<=d;i++) parts.push(`<span class="${i<=n?'fill':''}"></span>`);
+      return `<div class="fraction-bar" style="grid-template-columns:repeat(${d},1fr)" aria-label="${n} von ${d} Teilen gefärbt">${parts.join('')}</div>`;
+    }
+    function polar(cx,cy,r,angle){
+      const rad=(angle-90)*Math.PI/180;
+      return {x:cx+r*Math.cos(rad), y:cy+r*Math.sin(rad)};
+    }
+    function sectorPath(cx,cy,r,startAngle,endAngle){
+      const start=polar(cx,cy,r,endAngle), end=polar(cx,cy,r,startAngle);
+      const large=endAngle-startAngle<=180?0:1;
+      return `M ${cx} ${cy} L ${start.x} ${start.y} A ${r} ${r} 0 ${large} 0 ${end.x} ${end.y} Z`;
+    }
+    function circleHTML(n,d){
+      const cx=54, cy=54, r=42;
+      const seg=[];
+      for(let i=0;i<d;i++){
+        const start=(360/d)*i;
+        const end=(360/d)*(i+1);
+        const fill=i<n ? '#2563eb' : '#e2e8f0';
+        seg.push(`<path d="${sectorPath(cx,cy,r,start,end)}" fill="${fill}" stroke="#1e3a8a" stroke-width="1.2"></path>`);
+      }
+      return `<svg width="108" height="108" viewBox="0 0 108 108" aria-label="Kreis mit ${n} von ${d} gefärbten Teilen">${seg.join('')}</svg>`;
+    }
+    function pointsHTML(n,d){
+      const cols=Math.min(6,Math.ceil(Math.sqrt(d)));
+      const parts=[];
+      for(let i=1;i<=d;i++) parts.push(`<span class="${i<=n?'fill':''}"></span>`);
+      return `<div class="point-grid" style="grid-template-columns:repeat(${cols},16px)" aria-label="Punktefeld mit ${n} von ${d} gefärbten Punkten">${parts.join('')}</div>`;
+    }
+    function triangleHTML(n,d){
+      const width=130, height=110, xLeft=10, xRight=120, apexX=65, apexY=10, baseY=100;
+      const slices=[];
+      for(let i=0;i<d;i++){
+        const x1=xLeft + (i/d)*(xRight-xLeft);
+        const x2=xLeft + ((i+1)/d)*(xRight-xLeft);
+        const fill=i<n ? '#2563eb' : '#e2e8f0';
+        slices.push(`<rect x="${x1}" y="${apexY}" width="${Math.max(0.8,x2-x1)}" height="${baseY-apexY}" fill="${fill}" stroke="#ffffff" stroke-width="1"></rect>`);
+      }
+      return `<svg class="triangle-svg" width="130" height="110" viewBox="0 0 130 110" aria-label="Dreieck mit ${n} von ${d} gefärbten Teilen"><defs><clipPath id="tri-${d}-${n}"><polygon points="${apexX},${apexY} ${xRight},${baseY} ${xLeft},${baseY}"></polygon></clipPath></defs><g clip-path="url(#tri-${d}-${n})">${slices.join('')}</g><polygon points="${apexX},${apexY} ${xRight},${baseY} ${xLeft},${baseY}" fill="none" stroke="#1e3a8a" stroke-width="2"></polygon></svg>`;
+    }
+    function pyramidHTML(n,d){
+      let rows=1;
+      while(rows*(rows+1)/2<d) rows++;
+      const cell=22, margin=10, width=rows*cell+20, height=rows*cell+20;
+      let count=0;
+      const circles=[];
+      for(let r=0;r<rows;r++){
+        const items=r+1;
+        const rowWidth=(items-1)*cell;
+        const startX=(width-rowWidth)/2;
+        const y=margin + r*cell + 8;
+        for(let c=0;c<items;c++){
+          count++;
+          if(count>d) continue;
+          const x=startX + c*cell;
+          const fill=count<=n ? '#2563eb' : '#e2e8f0';
+          circles.push(`<circle cx="${x}" cy="${y}" r="7.5" fill="${fill}" stroke="#1e3a8a" stroke-width="1.2"></circle>`);
+        }
+      }
+      return `<div class="pyramid-wrap"><svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" aria-label="Pyramidenform mit ${n} von ${d} gefärbten Teilen">${circles.join('')}</svg></div>`;
+    }
+    function renderShapeByType(type,n,d){
+      if(type==='triangle') return triangleHTML(n,d);
+      if(type==='circle') return circleHTML(n,d);
+      if(type==='pyramid') return pyramidHTML(n,d);
+      if(type==='rectangle') return barHTML(n,d);
+      return barHTML(n,d);
+    }
+    function singleShapeHTML(type,label,n,d){
+      return `<div class="shape-card single-shape"><div class="shape-title">${label}</div>${renderShapeByType(type,n,d)}</div><div class="subtle">${n} von ${d} Teilen</div>`;
+    }
+    function shapeSetHTML(n,d){
+      return `<div class="shape-set"><div class="shape-card"><div class="shape-title">Rechteck</div>${barHTML(n,d)}</div><div class="shape-card"><div class="shape-title">Kreis</div>${circleHTML(n,d)}</div><div class="shape-card"><div class="shape-title">Punktebild</div>${pointsHTML(n,d)}</div></div><div class="subtle">${n} von ${d} Teilen</div>`;
+    }
+    function gcd(a,b){a=Math.abs(a);b=Math.abs(b);while(b){[a,b]=[b,a%b];}return a||1;}
+    function equivalent(a,b,c,d){return a*d===b*c;}
+
+    function initSaveFields(){
+      document.querySelectorAll('[data-save]').forEach(el=>{
+        if(state.inputs[el.id]!==undefined) el.value=state.inputs[el.id];
+        el.addEventListener('input',()=>{state.inputs[el.id]=el.value;saveState();});
+        el.addEventListener('change',()=>{state.inputs[el.id]=el.value;saveState();});
+      });
+      document.querySelectorAll('[data-save-check]').forEach(el=>{
+        if(state.checks[el.id]!==undefined) el.checked=!!state.checks[el.id];
+        el.addEventListener('change',()=>{state.checks[el.id]=el.checked;saveState();});
+      });
+    }
+
+    function renderCompare(){
+      const data=[{a:[1,2],b:[2,4],ans:true},{a:[2,3],b:[3,6],ans:false},{a:[3,5],b:[6,10],ans:true}];
+      const box=document.getElementById('compareGrid');
+      if(!box) return;
+      box.innerHTML=data.map((it,i)=>`<div class="compare-card"><h3>Karte ${i+1}</h3><p>${fracHTML(it.a[0],it.a[1],'large')} und ${fracHTML(it.b[0],it.b[1],'large')}</p><div class="barbox">${barHTML(it.a[0],it.a[1])}${barHTML(it.b[0],it.b[1])}</div><div class="button-row"><button class="small" onclick="answerCompare(${i},true)">gleich groß</button><button class="small secondary" onclick="answerCompare(${i},false)">nicht gleich</button></div></div>`).join('');
+      window.compareData=data;
+    }
+    function answerCompare(i,val){
+      const ok=window.compareData[i].ans===val;
+      state.checks['compare'+i]=ok; saveState();
+      const solved=[0,1,2].filter(k=>state.checks['compare'+k]).length;
+      setFeedback('fbCompare', ok ? `Richtig. Karte ${i+1} ist ${val?'gleich groß':'nicht gleich groß'}. Ihr habt ${solved}/3 Karten richtig.` : 'Noch nicht. Vergleicht die gefärbte Länge im Balken und nicht nur die Anzahl der gefärbten Teilstücke.', ok?'good':'bad');
+    }
+
+    function renderSliderTasks(){
+      const tasks=[
+        {id:'eq1',label:'Dreieck',shape:'triangle',target:[1,2],minDen:3,maxDen:12,startN:1,startD:3},
+        {id:'eq2',label:'Kreis',shape:'circle',target:[2,3],minDen:4,maxDen:12,startN:2,startD:4},
+        {id:'eq3',label:'Rechteck',shape:'rectangle',target:[3,4],minDen:5,maxDen:12,startN:3,startD:5}
+      ];
+      window.sliderTasks=tasks;
+      const box=document.getElementById('sliderTasks');
+      box.innerHTML=tasks.map((t,i)=>`<div class="task-card slider-task"><h3>Beispiel ${i+1}: ${t.label}</h3><p>Startbruch: ${fracHTML(t.target[0],t.target[1],'large')}</p><div class="barbox"><strong>Vorgegeben</strong><div>${singleShapeHTML(t.shape,t.label,t.target[0],t.target[1])}</div><strong>Dein neuer Bruch</strong><div id="${t.id}-figure"></div></div><div class="range-grid"><div class="range-row"><label for="${t.id}den">Nenner</label><span id="${t.id}denv" class="range-value"></span></div><input id="${t.id}den" data-save="${t.id}den" type="range" min="${t.minDen}" max="${t.maxDen}" step="1" value="${t.startD}" oninput="syncSliderTask('${t.id}')"><div class="range-row"><label for="${t.id}num">Zähler</label><span id="${t.id}numv" class="range-value"></span></div><input id="${t.id}num" data-save="${t.id}num" type="range" min="0" max="${t.startD}" step="1" value="${t.startN}" oninput="syncSliderTask('${t.id}')"></div><p class="live-frac">Jetzt eingestellt: <span id="${t.id}-live"></span></p><p class="task-note">Stelle einen gleich großen Bruch mit <strong>größerem Nenner</strong> ein.</p><div class="button-row"><button class="small" onclick="checkSliderTask('${t.id}')">Einstellung prüfen</button></div><div id="${t.id}fb" class="feedback">Schiebt die Regler. Die blaue Fläche soll gleich groß bleiben.</div></div>`).join('');
+      initSaveFields();
+      tasks.forEach(t=>syncSliderTask(t.id));
+      updateSliderStationFeedback();
+    }
+    function syncSliderTask(id){
+      const denEl=document.getElementById(id+'den');
+      const numEl=document.getElementById(id+'num');
+      if(!denEl || !numEl) return;
+      const task=(window.sliderTasks||[]).find(t=>t.id===id);
+      let d=Number(denEl.value||1); let n=Number(numEl.value||0);
+      numEl.max=String(d);
+      if(n>d){n=d; numEl.value=String(n);}      
+      document.getElementById(id+'denv').textContent=String(d);
+      document.getElementById(id+'numv').textContent=String(n);
+      document.getElementById(id+'-figure').innerHTML=singleShapeHTML(task.shape, task.label, n, d);
+      document.getElementById(id+'-live').innerHTML=fracHTML(n,d,'large');
+      state.inputs[id+'den']=denEl.value; state.inputs[id+'num']=numEl.value; saveState();
+    }
+    function checkSliderTask(id){
+      const task=(window.sliderTasks||[]).find(t=>t.id===id);
+      if(!task) return;
+      const n=Number(document.getElementById(id+'num').value||0);
+      const d=Number(document.getElementById(id+'den').value||1);
+      const ok=d>task.target[1] && equivalent(n,d,task.target[0],task.target[1]);
+      state.checks[id]=ok; saveState();
+      const msg= ok
+        ? `Richtig: ${fracHTML(n,d)} ist gleich groß wie ${fracHTML(task.target[0],task.target[1])}. Zeichnet beide Bilder in euer Heft.`
+        : 'Noch nicht. Der Nenner muss größer sein. Die blaue Fläche muss gleich groß bleiben.';
+      const el=document.getElementById(id+'fb');
+      el.className='feedback '+(ok?'good':'warn');
+      el.innerHTML=msg;
+      updateSliderStationFeedback();
+    }
+    function updateSliderStationFeedback(){
+      const tasks=window.sliderTasks||[];
+      const solved=tasks.filter(t=>state.checks[t.id]).length;
+      setFeedback('fbSliderEq', solved===tasks.length && tasks.length>0
+        ? 'Alles richtig. Besprecht: Was wird größer? Was bleibt gleich?'
+        : `Richtig gelöst: ${solved}/${tasks.length}. Vergleicht die blaue Fläche.`
+      , solved===tasks.length && tasks.length>0 ? 'good' : '');
+    }
+
+    function renderReduce(){
+      const tasks=[
+        {id:'r1',n:6,d:8,a:[3,4],label:'Rechteck',shape:'rectangle',minDen:2,maxDen:7,startN:5,startD:7},
+        {id:'r2',n:8,d:12,a:[2,3],label:'Kreis',shape:'circle',minDen:2,maxDen:11,startN:7,startD:11},
+        {id:'r3',n:10,d:15,a:[2,3],label:'Dreieck',shape:'triangle',minDen:2,maxDen:14,startN:9,startD:14}
+      ];
+      const box=document.getElementById('reduceTasks');
+      box.innerHTML=tasks.map((t,i)=>`<div class="task-card slider-task">
+        <h3>Beispiel ${i+1}</h3>
+        <p>Startbruch: ${fracHTML(t.n,t.d,'large')}</p>
+        <div class="barbox">
+          <strong>Startbild</strong><div>${singleShapeHTML(t.shape,t.label,t.n,t.d)}</div>
+          <strong>Dein Bild</strong><div id="${t.id}-figure"></div>
+        </div>
+        <div class="range-grid">
+          <div class="range-row"><label for="${t.id}den">Nenner</label><span id="${t.id}denv" class="range-value"></span></div>
+          <input id="${t.id}den" data-save="${t.id}den" type="range" min="${t.minDen}" max="${t.maxDen}" step="1" value="${t.startD}" oninput="syncReduceTask('${t.id}')">
+          <div class="range-row"><label for="${t.id}num">Zähler</label><span id="${t.id}numv" class="range-value"></span></div>
+          <input id="${t.id}num" data-save="${t.id}num" type="range" min="0" max="${t.startD}" step="1" value="${t.startN}" oninput="syncReduceTask('${t.id}')">
+        </div>
+        <p class="live-frac">Jetzt eingestellt: <span id="${t.id}-live"></span></p>
+        <p class="task-note">Ziel: Stelle denselben Anteil mit kleinerem Nenner ein. Der Nenner muss kleiner als ${t.d} sein.</p>
+        <div class="callout subtle"><strong>Tipp:</strong> Stelle zuerst den Nenner ein. Danach stellst du den Zähler ein.</div>
+        <div class="button-row"><button class="small" onclick="checkSingleReduceTask('${t.id}')">Einstellung prüfen</button></div>
+        <div id="${t.id}fb" class="feedback">Stelle zuerst den Nenner ein. Danach stellst du mit dem Zähler die blauen Teile ein.</div>
+      </div>`).join('');
+      window.reduceTasks=tasks;
+      initSaveFields();
+      tasks.forEach(t=>syncReduceTask(t.id));
+      updateReduceFeedback();
+    }
+    function syncReduceTask(id){
+      const task=(window.reduceTasks||[]).find(t=>t.id===id);
+      const denEl=document.getElementById(id+'den');
+      const numEl=document.getElementById(id+'num');
+      if(!task || !denEl || !numEl) return;
+      let d=Number(denEl.value||1);
+      let n=Number(numEl.value||0);
+      numEl.max=String(d);
+      if(n>d){n=d; numEl.value=String(n);}
+      document.getElementById(id+'denv').textContent=String(d);
+      document.getElementById(id+'numv').textContent=String(n);
+      document.getElementById(id+'-figure').innerHTML=singleShapeHTML(task.shape,task.label,n,d);
+      document.getElementById(id+'-live').innerHTML=fracHTML(n,d,'large');
+      state.inputs[id+'den']=denEl.value;
+      state.inputs[id+'num']=numEl.value;
+      saveState();
+    }
+    function checkSingleReduceTask(id){
+      const task=(window.reduceTasks||[]).find(t=>t.id===id);
+      if(!task) return false;
+      const n=Number(document.getElementById(id+'num').value||0);
+      const d=Number(document.getElementById(id+'den').value||1);
+      const ok = n===task.a[0] && d===task.a[1];
+      const alsoEquivalent = equivalent(n,d,task.n,task.d) && d<task.d;
+      const el=document.getElementById(id+'fb');
+      if(ok){
+        el.className='feedback good';
+        el.innerHTML=`Richtig: ${fracHTML(task.n,task.d)} ist gleich groß wie ${fracHTML(n,d)}.`;
+        state.checks[id]=true; saveState();
+      }else if(alsoEquivalent){
+        el.className='feedback warn';
+        el.innerHTML=`Der Anteil ist gleich groß. Versucht jetzt noch die einfachste Schreibweise.`;
+        state.checks[id]=false; saveState();
+      }else{
+        el.className='feedback warn';
+        el.innerHTML='Noch nicht. Prüft: Ist der Nenner kleiner? Ist die blaue Fläche gleich groß?';
+        state.checks[id]=false; saveState();
+      }
+      updateReduceFeedback();
+      return ok;
+    }
+    function updateReduceFeedback(){
+      const tasks=window.reduceTasks||[];
+      const solved=tasks.filter(t=>state.checks[t.id]).length;
+      setFeedback('fbReduce', solved===tasks.length && tasks.length>0 ? 'Alles richtig. Schreibt jetzt euren Satz auf.' : `Richtig eingestellt: ${solved}/${tasks.length}. Der neue Nenner muss kleiner sein.`, solved===tasks.length && tasks.length>0?'good':'');
+    }
+    function checkReduce(){
+      let ok=0;
+      (window.reduceTasks||[]).forEach(t=>{ if(checkSingleReduceTask(t.id)) ok++; });
+      if(ok===3){state.checks.reduce=true;saveState();}
+    }
+
+    function checkBridgeTask(){
+      const n=num('bridgeNum'), d=num('bridgeDen');
+      const fDen=num('bridgeFactorDen'), fNum=num('bridgeFactorNum'), newNum=num('bridgeNewNum');
+      const ok = n===4 && d===6 && fDen===2 && fNum===2 && newNum===4;
+      setFeedback('fbBridge', ok ? `Richtig: ${fracHTML(2,3)} wird zu ${fracHTML(4,6)}. Der Anteil bleibt gleich groß.` : 'Noch nicht. Frage zuerst: Womit wird aus 3 die 6? Mit derselben Zahl rechnest du auch oben.', ok?'good':'warn');
+      if(ok){state.checks.bridge=true; saveState();}
+    }
+
+    function renderSort(){
+      const cards=[
+        {id:'sort1',text:`${fracHTML(2,5)} → ${fracHTML(6,15)}`,ans:'erweitert'},
+        {id:'sort2',text:`${fracHTML(12,18)} → ${fracHTML(2,3)}`,ans:'gekürzt'},
+        {id:'sort3',text:`${fracHTML(4,7)} → ${fracHTML(5,8)}`,ans:'falsch'},
+        {id:'sort4',text:`${fracHTML(3,6)} → ${fracHTML(1,2)}`,ans:'gekürzt'},
+        {id:'sort5',text:`${fracHTML(1,4)} → ${fracHTML(3,12)}`,ans:'erweitert'}
+      ];
+      const box=document.getElementById('sortGrid');
+      box.innerHTML=cards.map(c=>`<div class="choice-card"><h3>${c.text}</h3><select class="sort-select" id="${c.id}" data-save="${c.id}"><option value="">Auswählen</option><option value="erweitert">erweitert</option><option value="gekürzt">gekürzt</option><option value="falsch">falsch</option></select></div>`).join('');
+      window.sortCards=cards;
+      initSaveFields();
+    }
+    function checkSortTask(){
+      let ok=0;
+      window.sortCards.forEach(c=>{if(document.getElementById(c.id).value===c.ans) ok++;});
+      setFeedback('fbSort', ok===window.sortCards.length ? 'Sehr gut. Ihr könnt entscheiden, ob gekürzt, erweitert oder falsch gerechnet wurde.' : `${ok}/${window.sortCards.length} Karten passen. Sprecht jede Karte noch einmal mit „oben und unten …“ durch.`, ok===window.sortCards.length?'good':'warn');
+      if(ok===window.sortCards.length){state.checks.sort=true;saveState();}
+    }
+
+    function checkErrorTask(){
+      const choice=document.getElementById('errorChoice').value;
+      const ok=choice==='same' && num('errNum')===3 && num('errDen')===4;
+      setFeedback('fbError', ok ? 'Richtig. Beim Kürzen muss oben und unten durch dieselbe Zahl geteilt werden: 6/8 = 3/4.' : 'Noch nicht. Prüft zuerst den Fehler und kürzt 6 und 8 mit derselben Zahl.', ok?'good':'bad');
+      if(ok){state.checks.error=true;saveState();}
+    }
+    function checkGroupTest(){
+      let ok=0;
+      if(num('testA1')===9 && num('testA2')===21) ok++;
+      if(num('testB1')===3 && num('testB2')===5) ok++;
+      const cOk=document.getElementById('c46').checked && !document.getElementById('c610').checked && document.getElementById('c23').checked && !document.getElementById('c45').checked;
+      if(cOk) ok++;
+      if(num('testD1')===6 && num('testD2')===24) ok++;
+      setFeedback('fbGroup', ok===4 ? 'Alle Aufgaben stimmen. Bereitet euch darauf vor, eine Aufgabe mündlich zu erklären.' : `${ok}/4 Aufgaben stimmen. Prüft die übrigen Aufgaben gemeinsam.`, ok===4?'good':'warn');
+      if(ok===4){state.checks.group=true;saveState();}
+    }
+    function checkGaps(){
+      const ok = norm(document.getElementById('gap1').value).startsWith('gleich') && norm(document.getElementById('gap2').value).startsWith('mult') && norm(document.getElementById('gap3').value).startsWith('gleich') && norm(document.getElementById('gap4').value).startsWith('div') && norm(document.getElementById('gap5').value).startsWith('gleich');
+      setFeedback('fbGaps', ok ? 'Richtig. Das ist die wichtigste Regel dieser Stunde.' : 'Noch nicht ganz. Nutzt die Wortbank und achtet auf die Reihenfolge: Beim Erweitern wird multipliziert, beim Kürzen dividiert.', ok?'good':'warn');
+      if(ok){state.checks.gaps=true;saveState();}
+    }
+
+    function showHint(id){
+      if(!hints[id]) return;
+      if(!state.hints[id]) state.hints[id]={shown:0,last:0};
+      const now=Date.now();
+      if(state.hints[id].last && now-state.hints[id].last<HINT_COOLDOWN_MS){
+        const rest=Math.ceil((HINT_COOLDOWN_MS-(now-state.hints[id].last))/1000);
+        toast('Warte noch '+rest+' Sekunden.');
+        return;
+      }
+      const list=document.getElementById('hints-'+id);
+      const shown=Math.min((state.hints[id].shown||0)+1,hints[id].length);
+      state.hints[id].shown=shown; state.hints[id].last=now; saveState();
+      list.innerHTML=hints[id].slice(0,shown).map(h=>`<li>${h}</li>`).join('');
+      if(shown>=hints[id].length) toast('Alle Tipps sind sichtbar.');
+    }
+    function restoreHints(){
+      Object.keys(hints).forEach(id=>{
+        const list=document.getElementById('hints-'+id);
+        const shown=(state.hints[id]?.shown||0);
+        if(list) list.innerHTML=hints[id].slice(0,shown).map(h=>`<li>${h}</li>`).join('');
+      });
+    }
+
+    function completeStation(id){
+      state.done[id]=true; saveState(); updateProgress(); toast('Gespeichert.');
+    }
+    function updateProgress(){
+      const ids=['start','s2','s3','s35','s4','s5','s6','sec'];
+      const done=ids.filter(id=>state.done[id]).length;
+      document.getElementById('progressBar').style.width=(done/TOTAL_REQUIRED*100)+'%';
+      document.getElementById('progressLabel').textContent=`${done}/${TOTAL_REQUIRED}`;
+      const map={start:'dot-start',s2:'dot-s2',s3:'dot-s3',s35:'dot-s35',s4:'dot-s4',s5:'dot-s5',s6:'dot-s6',sec:'dot-sec'};
+      ids.forEach(id=>{const dot=document.getElementById(map[id]); if(dot) dot.classList.toggle('done',!!state.done[id]);});
+    }
+    const PAGE_ORDER = [
+      {id:'gruppenstart', short:'0', title:'Start'},
+      {id:'station2', short:'1', title:'Mehr Teile'},
+      {id:'station3', short:'2', title:'Weniger Teile'},
+      {id:'station35', short:'3', title:'Erweitern'},
+      {id:'station4', short:'4', title:'Fachwörter'},
+      {id:'station5', short:'5', title:'Fehler finden'},
+      {id:'station6', short:'6', title:'Üben'},
+      {id:'sicherung', short:'7', title:'Merksatz'},
+      {id:'sprinter', short:'8', title:'Sprinter'}
+    ];
+    let currentPageId = 'gruppenstart';
+
+    function getPageIndex(id){return PAGE_ORDER.findIndex(p=>p.id===id);}
+    function updatePageNav(){
+      const index=getPageIndex(currentPageId);
+      document.querySelectorAll('.navlinks a[href^="#"]').forEach(a=>{
+        const id=(a.getAttribute('href')||'').slice(1);
+        a.classList.toggle('active', id===currentPageId);
+      });
+      document.querySelectorAll('[data-page-count]').forEach(el=>{
+        el.textContent=`Seite ${index+1} von ${PAGE_ORDER.length}`;
+      });
+      document.querySelectorAll('[data-prev-page]').forEach(btn=>{
+        btn.disabled=index<=0;
+        btn.textContent=index>0 ? `← ${PAGE_ORDER[index-1].short}` : '← Zurück';
+      });
+      document.querySelectorAll('[data-next-page]').forEach(btn=>{
+        btn.disabled=index>=PAGE_ORDER.length-1;
+        btn.textContent=index<PAGE_ORDER.length-1 ? `${PAGE_ORDER[index+1].short} →` : 'Weiter →';
+      });
+    }
+    function showPage(pageId, options={}){
+      if(getPageIndex(pageId)<0) pageId='gruppenstart';
+      currentPageId=pageId;
+      document.body.classList.add('paged');
+      document.querySelectorAll('.station').forEach(sec=>sec.classList.remove('active-page'));
+      const active=document.getElementById(pageId);
+      if(active) active.classList.add('active-page');
+      const hero=document.querySelector('header.hero');
+      if(hero) hero.classList.toggle('active-page', pageId==='gruppenstart');
+      updatePageNav();
+      if(!options.skipHash){history.replaceState(null,'','#'+pageId);}
+      if(!options.noScroll){window.scrollTo({top:0,behavior:options.instant?'auto':'smooth'});}
+    }
+    function goPage(step){
+      const index=getPageIndex(currentPageId);
+      const next=PAGE_ORDER[index+step];
+      if(next) showPage(next.id);
+    }
+    function buildPageControls(){
+      PAGE_ORDER.forEach((page,index)=>{
+        const sec=document.getElementById(page.id);
+        if(!sec || sec.querySelector('.page-switcher')) return;
+        const top=document.createElement('div');
+        top.className='page-topline';
+        top.innerHTML=`<span>Seite ${index+1}: ${page.title}</span><span>${page.short}</span>`;
+        sec.insertBefore(top, sec.firstElementChild);
+        const footer=document.createElement('div');
+        footer.className='page-switcher';
+        footer.innerHTML=`<button type="button" class="secondary" data-prev-page onclick="goPage(-1)">← Zurück</button><span class="page-count" data-page-count>Seite ${index+1} von ${PAGE_ORDER.length}</span><button type="button" data-next-page onclick="goPage(1)">Weiter →</button>`;
+        sec.appendChild(footer);
+      });
+    }
+    function initPageNavigation(){
+      buildPageControls();
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        if(a.target) return;
+        a.addEventListener('click',ev=>{
+          const id=(a.getAttribute('href')||'').slice(1);
+          if(getPageIndex(id)>=0){ev.preventDefault();showPage(id);}
+        });
+      });
+      window.addEventListener('hashchange',()=>{
+        const id=(location.hash||'#gruppenstart').slice(1);
+        if(getPageIndex(id)>=0) showPage(id,{skipHash:true,instant:true});
+      });
+      const initial=(location.hash||'#gruppenstart').slice(1);
+      showPage(getPageIndex(initial)>=0 ? initial : 'gruppenstart', {skipHash:true,instant:true});
+    }
+
+    function init(){
+      renderSliderTasks();
+      renderReduce();
+      renderSort();
+      initSaveFields();
+      restoreHints();
+      updateProgress();
+      initPageNavigation();
+    }
+    init();
+  </script>
+</body>
+</html>
