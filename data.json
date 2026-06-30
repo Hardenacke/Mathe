@@ -112,14 +112,14 @@
                 }
               ],
               "tags": [
-                "klasse-5",
-                "klasse-5-gesamt",
-                "mathequest-klasse-5",
                 "html",
                 "interaktiv",
+                "klasse-5",
+                "klasse-5-gesamt",
                 "lernspiel",
                 "mathematik",
                 "mathequest",
+                "mathequest-klasse-5",
                 "sekundarstufe-i"
               ],
               "anzahlThemen": 1,
@@ -457,18 +457,18 @@
                 }
               ],
               "tags": [
-                "klasse-5",
-                "zahlen-und-rechnen",
-                "natuerliche-zahlen",
                 "html",
                 "interaktiv",
+                "klasse-5",
                 "lernpfad",
                 "lernpfad-einfuehrung-natuerliche-zahlen",
                 "lernpfad-rechenvorteile",
                 "lernpfad-runden-und-schaetzen",
                 "lernpfad-schriftlich-rechnen",
                 "lernpfad-zahlenstrahl-und-ordnung",
-                "mathematik"
+                "mathematik",
+                "natuerliche-zahlen",
+                "zahlen-und-rechnen"
               ],
               "anzahlThemen": 1,
               "anzahlMaterialien": 5
@@ -477,30 +477,36 @@
               "id": "arithmetik-algebra",
               "titel": "Arithmetik Algebra",
               "pfad": "klasse-5/arithmetik-algebra/",
-              "beschreibung": "Bereich Arithmetik Algebra in Klasse 5.",
+              "beschreibung": "Bereich Arithmetik Algebra in Klasse 5 mit gegliederten Seiten zum Thema Brüche und Anteile.",
               "themen": [
                 {
                   "id": "brueche-und-anteile",
                   "titel": "Brüche und Anteile",
                   "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/",
-                  "beschreibung": "Lernpfad und Materialien zu Brüchen als Anteile sowie zum Erweitern und Kürzen von Brüchen.",
+                  "beschreibung": "Übergeordnete Übersicht zum Thema Brüche. Die Inhalte sind über zusätzliche Seiten nach Teilthemen, Materialarten und Lernreihenfolge sortiert.",
                   "inhaltlicheSchwerpunkte": [
-                    "Brüche als Anteile deuten",
-                    "Zähler und Nenner verstehen",
-                    "gleichwertige Brüche erkennen",
+                    "Brüche als Anteile",
+                    "gleichwertige Brüche",
                     "Brüche erweitern",
                     "Brüche kürzen",
-                    "Anteile zeichnen und vergleichen",
-                    "Fehler beim Erweitern und Kürzen erkennen",
                     "Brüche vergleichen",
                     "Brüche ordnen",
-                    "Brüche am Zahlenstrahl darstellen",
-                    "selbstständige Erarbeitung",
-                    "interaktive Aufgaben",
-                    "Erklärvideo mit Denkpausen"
+                    "Brüche am Zahlenstrahl",
+                    "Materialübersicht"
                   ],
                   "materialien": [
                     {
+                      "id": "uebersicht-brueche-und-anteile-klasse5",
+                      "titel": "Übersicht: Brüche und Anteile",
+                      "kurztitel": "Übersicht Brüche",
+                      "beschreibung": "Startseite zum Thema Brüche und Anteile mit gegliederten Teilthemen und Schnellzugriffen.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Übersicht",
+                      "datei": "index.html",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/index.html",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/index.html",
+                      "dauer": "variabel",
                       "zielgruppe": {
                         "fach": "Mathematik",
                         "jahrgang": "Klasse 5",
@@ -516,34 +522,15 @@
                       "klasse": "Klasse 5",
                       "inhaltsfeld": "Arithmetik Algebra",
                       "thema": "Brüche und Anteile",
-                      "status": "verfügbar",
-                      "oeffnenIn": "neuer-tab",
-                      "erstelltAm": "2026-06-30",
-                      "lizenz": "",
-                      "autor": "",
-                      "id": "uebersicht-brueche-und-anteile-klasse5",
-                      "titel": "Übersicht: Brüche und Anteile",
-                      "kurztitel": "Übersicht Brüche",
-                      "beschreibung": "Startseite des Themenbereichs mit den Unterordnern Brüche als Anteile, Erweitern und Kürzen, Brüche vergleichen, Brüche ordnen und Brüche am Zahlenstrahl.",
-                      "typ": "html",
-                      "format": "HTML",
-                      "materialart": "Übersicht",
-                      "datei": "index.html",
-                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/index.html",
-                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/index.html",
-                      "dauer": "variabel",
                       "unterthema": "Materialübersicht",
                       "kompetenzbereich": [
                         "Arithmetik Algebra",
-                        "Darstellen",
                         "Kommunizieren"
                       ],
                       "inhaltlicheSchwerpunkte": [
                         "Brüche als Anteile",
                         "Erweitern und Kürzen",
-                        "Brüche vergleichen",
-                        "Brüche ordnen",
-                        "Zahlenstrahl"
+                        "Teilthemen sortieren"
                       ],
                       "tags": [
                         "mathematik",
@@ -554,9 +541,25 @@
                         "uebersicht",
                         "html"
                       ],
-                      "sichtbar": true
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-30",
+                      "lizenz": "",
+                      "autor": ""
                     },
                     {
+                      "id": "uebersicht-teilthemen-brueche-klasse5",
+                      "titel": "Teilthemen zu Brüchen",
+                      "kurztitel": "Teilthemen",
+                      "beschreibung": "Übersichtsseite, die das Thema Brüche in kleinere Teilthemen gliedert.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Übersicht",
+                      "datei": "uebersicht-teilthemen.html",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/uebersicht-teilthemen.html",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/uebersicht-teilthemen.html",
+                      "dauer": "variabel",
                       "zielgruppe": {
                         "fach": "Mathematik",
                         "jahrgang": "Klasse 5",
@@ -572,15 +575,178 @@
                       "klasse": "Klasse 5",
                       "inhaltsfeld": "Arithmetik Algebra",
                       "thema": "Brüche und Anteile",
+                      "unterthema": "Teilthemenübersicht",
+                      "kompetenzbereich": [
+                        "Arithmetik Algebra",
+                        "Kommunizieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Brüche als Anteile",
+                        "Erweitern und Kürzen",
+                        "Vergleichen",
+                        "Ordnen",
+                        "Zahlenstrahl"
+                      ],
+                      "tags": [
+                        "mathematik",
+                        "klasse-5",
+                        "arithmetik-algebra",
+                        "brueche",
+                        "anteile",
+                        "uebersicht",
+                        "html",
+                        "teilthemen"
+                      ],
                       "status": "verfügbar",
+                      "sichtbar": true,
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "materialuebersicht-brueche-klasse5",
+                      "titel": "Materialübersicht: Brüche",
+                      "kurztitel": "Materialübersicht",
+                      "beschreibung": "Übersichtsseite, die vorhandene Lernpfade, Arbeitsblätter und Videos nach Materialart sortiert.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Übersicht",
+                      "datei": "materialuebersicht.html",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/materialuebersicht.html",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/materialuebersicht.html",
+                      "dauer": "variabel",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "arithmetik-algebra",
+                        "themaId": "brueche-und-anteile"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Arithmetik Algebra",
+                      "thema": "Brüche und Anteile",
+                      "unterthema": "Materialien nach Art",
+                      "kompetenzbereich": [
+                        "Arithmetik Algebra",
+                        "Kommunizieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Lernpfade",
+                        "Arbeitsblätter",
+                        "Videos"
+                      ],
+                      "tags": [
+                        "mathematik",
+                        "klasse-5",
+                        "arithmetik-algebra",
+                        "brueche",
+                        "anteile",
+                        "uebersicht",
+                        "html",
+                        "materialien"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-30",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "lernreihenfolge-brueche-klasse5",
+                      "titel": "Lernreihenfolge: Brüche",
+                      "kurztitel": "Lernreihenfolge",
+                      "beschreibung": "Vorschlag für eine sinnvolle Reihenfolge der Teilthemen zu Brüchen.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Übersicht",
+                      "datei": "lernreihenfolge.html",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/lernreihenfolge.html",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/lernreihenfolge.html",
+                      "dauer": "variabel",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "arithmetik-algebra",
+                        "themaId": "brueche-und-anteile"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Arithmetik Algebra",
+                      "thema": "Brüche und Anteile",
+                      "unterthema": "Lernreihenfolge",
+                      "kompetenzbereich": [
+                        "Arithmetik Algebra",
+                        "Kommunizieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Brüche als Anteile",
+                        "gleichwertige Brüche",
+                        "Zahlenstrahl",
+                        "Vergleichen",
+                        "Ordnen"
+                      ],
+                      "tags": [
+                        "mathematik",
+                        "klasse-5",
+                        "arithmetik-algebra",
+                        "brueche",
+                        "anteile",
+                        "uebersicht",
+                        "html",
+                        "lernreihenfolge"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-30",
+                      "lizenz": "",
+                      "autor": ""
+                    }
+                  ],
+                  "tags": [
+                    "anteile",
+                    "arithmetik-algebra",
+                    "brueche",
+                    "html",
+                    "klasse-5",
+                    "lernreihenfolge",
+                    "materialien",
+                    "mathematik",
+                    "teilthemen",
+                    "uebersicht"
+                  ],
+                  "anzahlMaterialien": 4
+                },
+                {
+                  "id": "brueche-als-anteile",
+                  "titel": "Brüche als Anteile",
+                  "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-als-anteile/",
+                  "beschreibung": "Grundlagenbereich: Brüche als faire Aufteilungen und Anteile deuten.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Brüche als Anteile deuten",
+                    "Zähler und Nenner verstehen",
+                    "faire Aufteilungen",
+                    "Anteile zeichnen",
+                    "Kommunizieren in Expertengruppen"
+                  ],
+                  "materialien": [
+                    {
                       "id": "uebersicht-brueche-als-anteile-klasse5",
                       "titel": "Übersicht: Brüche als Anteile",
                       "kurztitel": "Brüche als Anteile",
-                      "beschreibung": "Unterseite zum Einstieg in Brüche als Anteile mit passendem Arbeitsmaterial.",
+                      "beschreibung": "Teilthemenseite zu Brüchen als Anteile mit Arbeitsmaterial.",
                       "typ": "html",
                       "format": "HTML",
                       "materialart": "Übersicht",
@@ -588,6 +754,21 @@
                       "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-als-anteile/index.html",
                       "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-als-anteile/index.html",
                       "dauer": "variabel",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "arithmetik-algebra",
+                        "themaId": "brueche-als-anteile"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Arithmetik Algebra",
+                      "thema": "Brüche als Anteile",
                       "unterthema": "Brüche als Anteile",
                       "kompetenzbereich": [
                         "Arithmetik Algebra",
@@ -596,40 +777,25 @@
                       ],
                       "inhaltlicheSchwerpunkte": [
                         "Brüche als Anteile",
-                        "Zähler und Nenner",
-                        "Anteile zeichnen"
+                        "faire Aufteilungen",
+                        "Zähler und Nenner"
                       ],
                       "tags": [
                         "mathematik",
                         "klasse-5",
                         "brueche",
                         "anteile",
-                        "html",
-                        "uebersicht"
+                        "uebersicht",
+                        "html"
                       ],
-                      "sichtbar": true
-                    },
-                    {
-                      "zielgruppe": {
-                        "fach": "Mathematik",
-                        "jahrgang": "Klasse 5",
-                        "stufe": "Sekundarstufe I"
-                      },
-                      "struktur": {
-                        "fachId": "mathematik",
-                        "klasseId": "klasse-5",
-                        "inhaltsfeldId": "arithmetik-algebra",
-                        "themaId": "brueche-und-anteile"
-                      },
-                      "fach": "Mathematik",
-                      "klasse": "Klasse 5",
-                      "inhaltsfeld": "Arithmetik Algebra",
-                      "thema": "Brüche und Anteile",
                       "status": "verfügbar",
+                      "sichtbar": true,
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": "",
+                      "autor": ""
+                    },
+                    {
                       "id": "arbeitsmaterial-brueche-und-anteile-klasse5",
                       "titel": "Arbeitsmaterial: Brüche und Anteile",
                       "kurztitel": "AB Brüche und Anteile",
@@ -641,6 +807,21 @@
                       "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-als-anteile/arbeitsblatt-brueche-und-anteile.pdf",
                       "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-als-anteile/arbeitsblatt-brueche-und-anteile.pdf",
                       "dauer": "ca. 45–90 Minuten",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "arithmetik-algebra",
+                        "themaId": "brueche-als-anteile"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Arithmetik Algebra",
+                      "thema": "Brüche als Anteile",
                       "unterthema": "Brüche als Anteile entdecken",
                       "kompetenzbereich": [
                         "Arithmetik Algebra",
@@ -666,96 +847,70 @@
                         "zaehler",
                         "nenner"
                       ],
-                      "sichtbar": true
-                    },
-                    {
-                      "zielgruppe": {
-                        "fach": "Mathematik",
-                        "jahrgang": "Klasse 5",
-                        "stufe": "Sekundarstufe I"
-                      },
-                      "struktur": {
-                        "fachId": "mathematik",
-                        "klasseId": "klasse-5",
-                        "inhaltsfeldId": "arithmetik-algebra",
-                        "themaId": "brueche-und-anteile"
-                      },
-                      "fach": "Mathematik",
-                      "klasse": "Klasse 5",
-                      "inhaltsfeld": "Arithmetik Algebra",
-                      "thema": "Brüche und Anteile",
                       "status": "verfügbar",
+                      "sichtbar": true,
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": "",
-                      "id": "uebersicht-erweitern-und-kuerzen-klasse5",
-                      "titel": "Übersicht: Erweitern und Kürzen",
-                      "kurztitel": "Erweitern/Kürzen Übersicht",
-                      "beschreibung": "Unterseite zum Ordner Erweitern und Kürzen mit Lernpfad, Arbeitsblatt, Erklärvideo, Transkript und Manim-Datei.",
-                      "typ": "html",
-                      "format": "HTML",
-                      "materialart": "Übersicht",
-                      "datei": "index.html",
-                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/index.html",
-                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/index.html",
-                      "dauer": "variabel",
-                      "unterthema": "Erweitern und Kürzen",
-                      "kompetenzbereich": [
-                        "Arithmetik Algebra",
-                        "Darstellen",
-                        "Kommunizieren"
-                      ],
-                      "inhaltlicheSchwerpunkte": [
-                        "gleichwertige Brüche",
-                        "Brüche erweitern",
-                        "Brüche kürzen",
-                        "Materialübersicht"
-                      ],
-                      "tags": [
-                        "mathematik",
-                        "klasse-5",
-                        "brueche",
-                        "erweitern",
-                        "kuerzen",
-                        "html",
-                        "uebersicht"
-                      ],
-                      "sichtbar": false,
-                      "nurIntern": true
-                    },
+                      "autor": ""
+                    }
+                  ],
+                  "tags": [
+                    "anteile",
+                    "arbeitsmaterial",
+                    "arithmetik-algebra",
+                    "brueche",
+                    "gruppenpuzzle",
+                    "html",
+                    "klasse-5",
+                    "mathematik",
+                    "nenner",
+                    "pdf",
+                    "uebersicht",
+                    "zaehler"
+                  ],
+                  "anzahlMaterialien": 2
+                },
+                {
+                  "id": "erweitern-und-kuerzen",
+                  "titel": "Erweitern und Kürzen",
+                  "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/",
+                  "beschreibung": "Teilthema zu gleichwertigen Brüchen: Erweitern und Kürzen. Sichtbar sind nur Lernpfad, PDF und Video.",
+                  "inhaltlicheSchwerpunkte": [
+                    "gleichwertige Brüche erkennen",
+                    "Brüche erweitern",
+                    "Brüche kürzen",
+                    "Fehler beim Erweitern und Kürzen erkennen",
+                    "Anteile visualisieren"
+                  ],
+                  "materialien": [
                     {
-                      "zielgruppe": {
-                        "fach": "Mathematik",
-                        "jahrgang": "Klasse 5",
-                        "stufe": "Sekundarstufe I"
-                      },
-                      "struktur": {
-                        "fachId": "mathematik",
-                        "klasseId": "klasse-5",
-                        "inhaltsfeldId": "arithmetik-algebra",
-                        "themaId": "brueche-und-anteile"
-                      },
-                      "fach": "Mathematik",
-                      "klasse": "Klasse 5",
-                      "inhaltsfeld": "Arithmetik Algebra",
-                      "thema": "Brüche und Anteile",
-                      "status": "verfügbar",
-                      "oeffnenIn": "neuer-tab",
-                      "erstelltAm": "2026-06-30",
-                      "lizenz": "",
-                      "autor": "",
                       "id": "lernpfad-brueche-kuerzen-erweitern-klasse5",
                       "titel": "Brüche erweitern und kürzen",
                       "kurztitel": "Erweitern und Kürzen",
-                      "beschreibung": "Interaktiver Lernpfad für Klasse 5: Die Lernenden erkunden, dass Brüche unterschiedlich aussehen können, aber denselben Anteil darstellen. Sie erweitern und kürzen Brüche mithilfe von Darstellungen, Fachwörtern, Fehlerdiagnose und Sicherung; das Erklärvideo ist am Ende als letzte Station eingebunden.",
+                      "beschreibung": "Interaktiver Lernpfad für Klasse 5: Die Lernenden erkennen gleichwertige Brüche, erweitern und kürzen mithilfe von Darstellungen, Fachwörtern, Fehlerdiagnose und Sicherung. Das Erklärvideo ist als letzte Station eingebunden.",
                       "typ": "html",
                       "format": "HTML",
                       "materialart": "Lernpfad",
                       "datei": "lernpfad-brueche-kuerzen-erweitern.html",
                       "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/lernpfad-brueche-kuerzen-erweitern.html",
                       "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/lernpfad-brueche-kuerzen-erweitern.html",
-                      "dauer": "ca. 40–55 Minuten",
+                      "dauer": "ca. 35–45 Minuten",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "arithmetik-algebra",
+                        "themaId": "erweitern-und-kuerzen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Arithmetik Algebra",
+                      "thema": "Erweitern und Kürzen",
                       "unterthema": "Brüche erweitern und kürzen",
                       "kompetenzbereich": [
                         "Arithmetik Algebra",
@@ -771,8 +926,7 @@
                         "Zähler und Nenner",
                         "Anteile darstellen",
                         "Fehlerdiagnose",
-                        "interaktive Aufgaben",
-                        "Erklärvideo"
+                        "Erklärvideo als letzte Station"
                       ],
                       "tags": [
                         "mathematik",
@@ -787,9 +941,25 @@
                         "html",
                         "interaktiv"
                       ],
-                      "sichtbar": true
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-30",
+                      "lizenz": "",
+                      "autor": ""
                     },
                     {
+                      "id": "arbeitsblatt-brueche-erweitern-kuerzen-klasse5",
+                      "titel": "Arbeitsblatt: Brüche erweitern und kürzen",
+                      "kurztitel": "AB Erweitern/Kürzen",
+                      "beschreibung": "Arbeitsblatt zur Sicherung des Lernpfads. Die Lernenden zeichnen Anteile selbst ein und halten zentrale Merksätze fest.",
+                      "typ": "pdf",
+                      "format": "PDF",
+                      "materialart": "Arbeitsblatt",
+                      "datei": "arbeitsblatt-brueche-erweitern-kuerzen.pdf",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/arbeitsblatt-brueche-erweitern-kuerzen.pdf",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/arbeitsblatt-brueche-erweitern-kuerzen.pdf",
+                      "dauer": "ca. 20–30 Minuten",
                       "zielgruppe": {
                         "fach": "Mathematik",
                         "jahrgang": "Klasse 5",
@@ -799,28 +969,12 @@
                         "fachId": "mathematik",
                         "klasseId": "klasse-5",
                         "inhaltsfeldId": "arithmetik-algebra",
-                        "themaId": "brueche-und-anteile"
+                        "themaId": "erweitern-und-kuerzen"
                       },
                       "fach": "Mathematik",
                       "klasse": "Klasse 5",
                       "inhaltsfeld": "Arithmetik Algebra",
-                      "thema": "Brüche und Anteile",
-                      "status": "verfügbar",
-                      "oeffnenIn": "neuer-tab",
-                      "erstelltAm": "2026-06-30",
-                      "lizenz": "",
-                      "autor": "",
-                      "id": "arbeitsblatt-brueche-erweitern-kuerzen-klasse5",
-                      "titel": "Arbeitsblatt: Brüche erweitern und kürzen",
-                      "kurztitel": "AB Erweitern/Kürzen",
-                      "beschreibung": "Arbeitsblatt zur Sicherung des Lernpfads. Die Lernenden zeichnen Anteile selbst ein und halten die zentralen Merksätze zum Erweitern und Kürzen fest.",
-                      "typ": "pdf",
-                      "format": "PDF",
-                      "materialart": "Arbeitsblatt",
-                      "datei": "arbeitsblatt-brueche-erweitern-kuerzen.pdf",
-                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/arbeitsblatt-brueche-erweitern-kuerzen.pdf",
-                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/arbeitsblatt-brueche-erweitern-kuerzen.pdf",
-                      "dauer": "ca. 20–30 Minuten",
+                      "thema": "Erweitern und Kürzen",
                       "unterthema": "Sicherung: Erweitern und Kürzen",
                       "kompetenzbereich": [
                         "Arithmetik Algebra",
@@ -846,9 +1000,25 @@
                         "kuerzen",
                         "anteile"
                       ],
-                      "sichtbar": true
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-30",
+                      "lizenz": "",
+                      "autor": ""
                     },
                     {
+                      "id": "erklaervideo-brueche-erweitern-kuerzen-klasse5",
+                      "titel": "Erklärvideo: Brüche erweitern und kürzen",
+                      "kurztitel": "Video Erweitern/Kürzen",
+                      "beschreibung": "Erklärvideo zum Erweitern und Kürzen von Brüchen mit gesprochenen Erklärungen, Visualisierungen, Aufgaben und Denkpausen.",
+                      "typ": "video",
+                      "format": "MP4",
+                      "materialart": "Erklärvideo",
+                      "datei": "erklaervideo-brueche-erweitern-kuerzen.mp4",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/erklaervideo-brueche-erweitern-kuerzen.mp4",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/erklaervideo-brueche-erweitern-kuerzen.mp4",
+                      "dauer": "ca. 10–15 Minuten",
                       "zielgruppe": {
                         "fach": "Mathematik",
                         "jahrgang": "Klasse 5",
@@ -858,28 +1028,12 @@
                         "fachId": "mathematik",
                         "klasseId": "klasse-5",
                         "inhaltsfeldId": "arithmetik-algebra",
-                        "themaId": "brueche-und-anteile"
+                        "themaId": "erweitern-und-kuerzen"
                       },
                       "fach": "Mathematik",
                       "klasse": "Klasse 5",
                       "inhaltsfeld": "Arithmetik Algebra",
-                      "thema": "Brüche und Anteile",
-                      "status": "verfügbar",
-                      "oeffnenIn": "neuer-tab",
-                      "erstelltAm": "2026-06-30",
-                      "lizenz": "",
-                      "autor": "",
-                      "id": "erklaervideo-brueche-erweitern-kuerzen-klasse5",
-                      "titel": "Erklärvideo: Brüche erweitern und kürzen",
-                      "kurztitel": "Video Erweitern/Kürzen",
-                      "beschreibung": "Erklärvideo zum Erweitern und Kürzen von Brüchen mit gesprochenen Erklärungen, Visualisierungen, Aufgaben und Denkpausen. Das Video ist zusätzlich im Lernpfad als letzte Station eingebunden.",
-                      "typ": "video",
-                      "format": "MP4",
-                      "materialart": "Erklärvideo",
-                      "datei": "erklaervideo-brueche-erweitern-kuerzen.mp4",
-                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/erklaervideo-brueche-erweitern-kuerzen.mp4",
-                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/erklaervideo-brueche-erweitern-kuerzen.mp4",
-                      "dauer": "ca. 10–15 Minuten",
+                      "thema": "Erweitern und Kürzen",
                       "unterthema": "Erweitern und Kürzen erklären",
                       "kompetenzbereich": [
                         "Arithmetik Algebra",
@@ -904,68 +1058,25 @@
                         "erklaervideo",
                         "anteile"
                       ],
-                      "sichtbar": true
-                    },
-                    {
-                      "zielgruppe": {
-                        "fach": "Mathematik",
-                        "jahrgang": "Klasse 5",
-                        "stufe": "Sekundarstufe I"
-                      },
-                      "struktur": {
-                        "fachId": "mathematik",
-                        "klasseId": "klasse-5",
-                        "inhaltsfeldId": "arithmetik-algebra",
-                        "themaId": "brueche-und-anteile"
-                      },
-                      "fach": "Mathematik",
-                      "klasse": "Klasse 5",
-                      "inhaltsfeld": "Arithmetik Algebra",
-                      "thema": "Brüche und Anteile",
                       "status": "verfügbar",
+                      "sichtbar": true,
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": "",
-                      "id": "manim-skript-brueche-erweitern-kuerzen-klasse5",
-                      "titel": "Manim-Skript: Erklärvideo Brüche erweitern und kürzen",
-                      "kurztitel": "Manim-Skript",
-                      "beschreibung": "Python-/Manim-Datei zur Erzeugung des Erklärvideos mit Ton, Denkpausen und Visualisierungen.",
-                      "typ": "code",
-                      "format": "PY",
-                      "materialart": "Quelldatei",
-                      "datei": "brueche_erweitern_kuerzen_mit_audio.py",
-                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/brueche_erweitern_kuerzen_mit_audio.py",
-                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/brueche_erweitern_kuerzen_mit_audio.py",
+                      "autor": ""
+                    },
+                    {
+                      "id": "uebersicht-erweitern-und-kuerzen-klasse5",
+                      "titel": "Übersicht: Erweitern und Kürzen",
+                      "kurztitel": "Übersicht Erweitern/Kürzen",
+                      "beschreibung": "Interne Teilthemenseite zu Erweitern und Kürzen.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Übersicht",
+                      "datei": "index.html",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/index.html",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/index.html",
                       "dauer": "variabel",
-                      "unterthema": "Erklärvideo selbst rendern",
-                      "kompetenzbereich": [
-                        "Arithmetik Algebra",
-                        "Darstellen",
-                        "Digitale Werkzeuge"
-                      ],
-                      "inhaltlicheSchwerpunkte": [
-                        "Manim",
-                        "Erklärvideo",
-                        "Brüche erweitern",
-                        "Brüche kürzen",
-                        "Audio-Erzeugung"
-                      ],
-                      "tags": [
-                        "mathematik",
-                        "klasse-5",
-                        "brueche",
-                        "erweitern",
-                        "kuerzen",
-                        "manim",
-                        "python",
-                        "code",
-                        "erklaervideo"
-                      ],
-                      "sichtbar": false,
-                      "nurIntern": true
-                    },
-                    {
                       "zielgruppe": {
                         "fach": "Mathematik",
                         "jahrgang": "Klasse 5",
@@ -975,54 +1086,47 @@
                         "fachId": "mathematik",
                         "klasseId": "klasse-5",
                         "inhaltsfeldId": "arithmetik-algebra",
-                        "themaId": "brueche-und-anteile"
+                        "themaId": "erweitern-und-kuerzen"
                       },
                       "fach": "Mathematik",
                       "klasse": "Klasse 5",
                       "inhaltsfeld": "Arithmetik Algebra",
-                      "thema": "Brüche und Anteile",
-                      "status": "verfügbar",
-                      "oeffnenIn": "neuer-tab",
-                      "erstelltAm": "2026-06-30",
-                      "lizenz": "",
-                      "autor": "",
-                      "id": "transkript-brueche-erweitern-kuerzen-klasse5",
-                      "titel": "Transkript: Erklärvideo Brüche erweitern und kürzen",
-                      "kurztitel": "Transkript",
-                      "beschreibung": "Sprechertext des Erklärvideos zum Nachlesen oder zur Überarbeitung der Tonspur.",
-                      "typ": "text",
-                      "format": "TXT",
-                      "materialart": "Transkript",
-                      "datei": "transkript_brueche_erweitern_kuerzen.txt",
-                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/transkript_brueche_erweitern_kuerzen.txt",
-                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/transkript_brueche_erweitern_kuerzen.txt",
-                      "dauer": "ca. 5 Minuten Lesezeit",
-                      "unterthema": "Sprechertext zum Erklärvideo",
+                      "thema": "Erweitern und Kürzen",
+                      "unterthema": "Teilthemenseite",
                       "kompetenzbereich": [
                         "Arithmetik Algebra",
                         "Kommunizieren"
                       ],
                       "inhaltlicheSchwerpunkte": [
-                        "Sprechertext",
-                        "Erklärvideo",
-                        "Brüche erweitern",
-                        "Brüche kürzen",
-                        "Denkpausen"
+                        "Erweitern und Kürzen",
+                        "Materialübersicht"
                       ],
                       "tags": [
                         "mathematik",
                         "klasse-5",
                         "brueche",
-                        "erweitern",
-                        "kuerzen",
-                        "transkript",
-                        "txt",
-                        "erklaervideo"
+                        "uebersicht",
+                        "html"
                       ],
+                      "status": "verfügbar",
                       "sichtbar": false,
-                      "nurIntern": true
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-30",
+                      "lizenz": "",
+                      "autor": ""
                     },
                     {
+                      "id": "manim-skript-brueche-erweitern-kuerzen-klasse5",
+                      "titel": "Manim-Skript: Brüche erweitern und kürzen",
+                      "kurztitel": "Manim-Skript",
+                      "beschreibung": "Quelldatei zur Erstellung des Erklärvideos.",
+                      "typ": "py",
+                      "format": "Python",
+                      "materialart": "Quelldatei",
+                      "datei": "brueche_erweitern_kuerzen_mit_audio.py",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/brueche_erweitern_kuerzen_mit_audio.py",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/brueche_erweitern_kuerzen_mit_audio.py",
+                      "dauer": "variabel",
                       "zielgruppe": {
                         "fach": "Mathematik",
                         "jahrgang": "Klasse 5",
@@ -1032,50 +1136,95 @@
                         "fachId": "mathematik",
                         "klasseId": "klasse-5",
                         "inhaltsfeldId": "arithmetik-algebra",
-                        "themaId": "brueche-und-anteile"
+                        "themaId": "erweitern-und-kuerzen"
                       },
                       "fach": "Mathematik",
                       "klasse": "Klasse 5",
                       "inhaltsfeld": "Arithmetik Algebra",
-                      "thema": "Brüche und Anteile",
+                      "thema": "Erweitern und Kürzen",
+                      "unterthema": "Videoproduktion",
+                      "kompetenzbereich": [
+                        "Medienproduktion"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Manim",
+                        "Erklärvideo",
+                        "Audio"
+                      ],
+                      "tags": [
+                        "python",
+                        "manim",
+                        "quelle",
+                        "video",
+                        "brueche"
+                      ],
                       "status": "verfügbar",
+                      "sichtbar": false,
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "transkript-brueche-erweitern-kuerzen-klasse5",
+                      "titel": "Transkript: Brüche erweitern und kürzen",
+                      "kurztitel": "Transkript",
+                      "beschreibung": "Transkript der gesprochenen Texte des Erklärvideos.",
+                      "typ": "txt",
+                      "format": "TXT",
+                      "materialart": "Transkript",
+                      "datei": "transkript_brueche_erweitern_kuerzen.txt",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/transkript_brueche_erweitern_kuerzen.txt",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/transkript_brueche_erweitern_kuerzen.txt",
+                      "dauer": "variabel",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "arithmetik-algebra",
+                        "themaId": "erweitern-und-kuerzen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Arithmetik Algebra",
+                      "thema": "Erweitern und Kürzen",
+                      "unterthema": "Videoproduktion",
+                      "kompetenzbereich": [
+                        "Medienproduktion"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Transkript",
+                        "Erklärvideo"
+                      ],
+                      "tags": [
+                        "transkript",
+                        "txt",
+                        "video",
+                        "brueche"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": false,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-30",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
                       "id": "audio-brueche-erweitern-kuerzen-klasse5",
-                      "titel": "Audio-Dateien: Erklärvideo Brüche erweitern und kürzen",
-                      "kurztitel": "Audio-Bausteine",
-                      "beschreibung": "Ordner mit den einzelnen WAV-Dateien für die gesprochenen Szenen des Manim-Erklärvideos.",
-                      "typ": "audio",
+                      "titel": "Audio-Dateien: Brüche erweitern und kürzen",
+                      "kurztitel": "Audio-Dateien",
+                      "beschreibung": "Audio-Assets für das Manim-Skript.",
+                      "typ": "asset",
                       "format": "WAV",
                       "materialart": "Asset-Paket",
                       "datei": "audio_brueche/",
                       "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/audio_brueche/",
                       "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/audio_brueche/",
                       "dauer": "variabel",
-                      "unterthema": "Tonbausteine zum Erklärvideo",
-                      "kompetenzbereich": [
-                        "Digitale Werkzeuge"
-                      ],
-                      "inhaltlicheSchwerpunkte": [
-                        "Audio",
-                        "Erklärvideo",
-                        "Tonspur",
-                        "Manim"
-                      ],
-                      "tags": [
-                        "audio",
-                        "wav",
-                        "manim",
-                        "brueche",
-                        "erklaervideo",
-                        "asset"
-                      ],
-                      "sichtbar": false,
-                      "nurIntern": true
-                    },
-                    {
                       "zielgruppe": {
                         "fach": "Mathematik",
                         "jahrgang": "Klasse 5",
@@ -1085,21 +1234,81 @@
                         "fachId": "mathematik",
                         "klasseId": "klasse-5",
                         "inhaltsfeldId": "arithmetik-algebra",
-                        "themaId": "brueche-und-anteile"
+                        "themaId": "erweitern-und-kuerzen"
                       },
                       "fach": "Mathematik",
                       "klasse": "Klasse 5",
                       "inhaltsfeld": "Arithmetik Algebra",
-                      "thema": "Brüche und Anteile",
+                      "thema": "Erweitern und Kürzen",
+                      "unterthema": "Videoproduktion",
+                      "kompetenzbereich": [
+                        "Medienproduktion"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Audio",
+                        "Erklärvideo"
+                      ],
+                      "tags": [
+                        "audio",
+                        "wav",
+                        "asset",
+                        "video",
+                        "brueche"
+                      ],
                       "status": "verfügbar",
+                      "sichtbar": false,
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": "",
+                      "autor": ""
+                    }
+                  ],
+                  "tags": [
+                    "anteile",
+                    "arbeitsblatt",
+                    "arithmetik-algebra",
+                    "asset",
+                    "audio",
+                    "brueche",
+                    "erklaervideo",
+                    "erweitern",
+                    "gleichwertige-brueche",
+                    "html",
+                    "interaktiv",
+                    "klasse-5",
+                    "kuerzen",
+                    "lernpfad",
+                    "manim",
+                    "mathematik",
+                    "mp4",
+                    "pdf",
+                    "python",
+                    "quelle",
+                    "transkript",
+                    "txt",
+                    "uebersicht",
+                    "video",
+                    "wav"
+                  ],
+                  "anzahlMaterialien": 3
+                },
+                {
+                  "id": "brueche-vergleichen",
+                  "titel": "Brüche vergleichen",
+                  "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-vergleichen/",
+                  "beschreibung": "Vorbereiteter Bereich: Brüche vergleichen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Brüche vergleichen",
+                    "Anteile vergleichen",
+                    "gemeinsame Nenner",
+                    "Begründen"
+                  ],
+                  "materialien": [
+                    {
                       "id": "uebersicht-brueche-vergleichen-klasse5",
                       "titel": "Übersicht: Brüche vergleichen",
                       "kurztitel": "Brüche vergleichen",
-                      "beschreibung": "Vorbereiteter Unterordner für Materialien zum Vergleichen von Brüchen.",
+                      "beschreibung": "Vorbereitete Teilthemenseite zu Brüche vergleichen.",
                       "typ": "html",
                       "format": "HTML",
                       "materialart": "Übersicht",
@@ -1107,28 +1316,6 @@
                       "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-vergleichen/index.html",
                       "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-vergleichen/index.html",
                       "dauer": "variabel",
-                      "unterthema": "Brüche vergleichen",
-                      "kompetenzbereich": [
-                        "Arithmetik Algebra",
-                        "Darstellen",
-                        "Argumentieren"
-                      ],
-                      "inhaltlicheSchwerpunkte": [
-                        "Brüche vergleichen",
-                        "Anteile vergleichen",
-                        "Vorbereiteter Materialordner"
-                      ],
-                      "tags": [
-                        "mathematik",
-                        "klasse-5",
-                        "brueche",
-                        "vergleichen",
-                        "html",
-                        "uebersicht"
-                      ],
-                      "sichtbar": true
-                    },
-                    {
                       "zielgruppe": {
                         "fach": "Mathematik",
                         "jahrgang": "Klasse 5",
@@ -1138,21 +1325,69 @@
                         "fachId": "mathematik",
                         "klasseId": "klasse-5",
                         "inhaltsfeldId": "arithmetik-algebra",
-                        "themaId": "brueche-und-anteile"
+                        "themaId": "brueche-vergleichen"
                       },
                       "fach": "Mathematik",
                       "klasse": "Klasse 5",
                       "inhaltsfeld": "Arithmetik Algebra",
-                      "thema": "Brüche und Anteile",
+                      "thema": "Brüche vergleichen",
+                      "unterthema": "Brüche vergleichen",
+                      "kompetenzbereich": [
+                        "Arithmetik Algebra",
+                        "Darstellen",
+                        "Kommunizieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Brüche vergleichen",
+                        "Anteile vergleichen",
+                        "gemeinsame Nenner",
+                        "Begründen"
+                      ],
+                      "tags": [
+                        "mathematik",
+                        "klasse-5",
+                        "arithmetik-algebra",
+                        "brueche",
+                        "brueche-vergleichen",
+                        "uebersicht",
+                        "html"
+                      ],
                       "status": "verfügbar",
+                      "sichtbar": true,
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": "",
+                      "autor": ""
+                    }
+                  ],
+                  "tags": [
+                    "arithmetik-algebra",
+                    "brueche",
+                    "brueche-vergleichen",
+                    "html",
+                    "klasse-5",
+                    "mathematik",
+                    "uebersicht"
+                  ],
+                  "anzahlMaterialien": 1
+                },
+                {
+                  "id": "brueche-ordnen",
+                  "titel": "Brüche ordnen",
+                  "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-ordnen/",
+                  "beschreibung": "Vorbereiteter Bereich: Brüche ordnen.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Brüche ordnen",
+                    "Sortierstrategien",
+                    "Größenvergleich",
+                    "Begründen"
+                  ],
+                  "materialien": [
+                    {
                       "id": "uebersicht-brueche-ordnen-klasse5",
                       "titel": "Übersicht: Brüche ordnen",
                       "kurztitel": "Brüche ordnen",
-                      "beschreibung": "Vorbereiteter Unterordner für Materialien zum Ordnen von Brüchen.",
+                      "beschreibung": "Vorbereitete Teilthemenseite zu Brüche ordnen.",
                       "typ": "html",
                       "format": "HTML",
                       "materialart": "Übersicht",
@@ -1160,28 +1395,6 @@
                       "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-ordnen/index.html",
                       "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-ordnen/index.html",
                       "dauer": "variabel",
-                      "unterthema": "Brüche ordnen",
-                      "kompetenzbereich": [
-                        "Arithmetik Algebra",
-                        "Darstellen",
-                        "Argumentieren"
-                      ],
-                      "inhaltlicheSchwerpunkte": [
-                        "Brüche ordnen",
-                        "Anteile ordnen",
-                        "Vorbereiteter Materialordner"
-                      ],
-                      "tags": [
-                        "mathematik",
-                        "klasse-5",
-                        "brueche",
-                        "ordnen",
-                        "html",
-                        "uebersicht"
-                      ],
-                      "sichtbar": true
-                    },
-                    {
                       "zielgruppe": {
                         "fach": "Mathematik",
                         "jahrgang": "Klasse 5",
@@ -1191,21 +1404,69 @@
                         "fachId": "mathematik",
                         "klasseId": "klasse-5",
                         "inhaltsfeldId": "arithmetik-algebra",
-                        "themaId": "brueche-und-anteile"
+                        "themaId": "brueche-ordnen"
                       },
                       "fach": "Mathematik",
                       "klasse": "Klasse 5",
                       "inhaltsfeld": "Arithmetik Algebra",
-                      "thema": "Brüche und Anteile",
+                      "thema": "Brüche ordnen",
+                      "unterthema": "Brüche ordnen",
+                      "kompetenzbereich": [
+                        "Arithmetik Algebra",
+                        "Darstellen",
+                        "Kommunizieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Brüche ordnen",
+                        "Sortierstrategien",
+                        "Größenvergleich",
+                        "Begründen"
+                      ],
+                      "tags": [
+                        "mathematik",
+                        "klasse-5",
+                        "arithmetik-algebra",
+                        "brueche",
+                        "brueche-ordnen",
+                        "uebersicht",
+                        "html"
+                      ],
                       "status": "verfügbar",
+                      "sichtbar": true,
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": "",
+                      "autor": ""
+                    }
+                  ],
+                  "tags": [
+                    "arithmetik-algebra",
+                    "brueche",
+                    "brueche-ordnen",
+                    "html",
+                    "klasse-5",
+                    "mathematik",
+                    "uebersicht"
+                  ],
+                  "anzahlMaterialien": 1
+                },
+                {
+                  "id": "brueche-am-zahlenstrahl",
+                  "titel": "Brüche am Zahlenstrahl",
+                  "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-am-zahlenstrahl/",
+                  "beschreibung": "Vorbereiteter Bereich: Brüche am Zahlenstrahl.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Brüche am Zahlenstrahl",
+                    "Brüche als Zahlen",
+                    "Einheiten einteilen",
+                    "Darstellen"
+                  ],
+                  "materialien": [
+                    {
                       "id": "uebersicht-brueche-am-zahlenstrahl-klasse5",
                       "titel": "Übersicht: Brüche am Zahlenstrahl",
                       "kurztitel": "Brüche am Zahlenstrahl",
-                      "beschreibung": "Vorbereiteter Unterordner für Materialien zur Darstellung von Brüchen am Zahlenstrahl.",
+                      "beschreibung": "Vorbereitete Teilthemenseite zu Brüche am Zahlenstrahl.",
                       "typ": "html",
                       "format": "HTML",
                       "materialart": "Übersicht",
@@ -1213,71 +1474,104 @@
                       "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-am-zahlenstrahl/index.html",
                       "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-am-zahlenstrahl/index.html",
                       "dauer": "variabel",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "arithmetik-algebra",
+                        "themaId": "brueche-am-zahlenstrahl"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Arithmetik Algebra",
+                      "thema": "Brüche am Zahlenstrahl",
                       "unterthema": "Brüche am Zahlenstrahl",
                       "kompetenzbereich": [
                         "Arithmetik Algebra",
                         "Darstellen",
-                        "Argumentieren"
+                        "Kommunizieren"
                       ],
                       "inhaltlicheSchwerpunkte": [
                         "Brüche am Zahlenstrahl",
-                        "Zahlenstrahl",
-                        "Anteile darstellen",
-                        "Vorbereiteter Materialordner"
+                        "Brüche als Zahlen",
+                        "Einheiten einteilen",
+                        "Darstellen"
                       ],
                       "tags": [
                         "mathematik",
                         "klasse-5",
+                        "arithmetik-algebra",
                         "brueche",
-                        "zahlenstrahl",
-                        "html",
-                        "uebersicht"
+                        "brueche-am-zahlenstrahl",
+                        "uebersicht",
+                        "html"
                       ],
-                      "sichtbar": true
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-30",
+                      "lizenz": "",
+                      "autor": ""
                     }
                   ],
                   "tags": [
-                    "mathematik",
-                    "klasse-5",
                     "arithmetik-algebra",
                     "brueche",
-                    "anteile",
-                    "erweitern",
-                    "kuerzen",
-                    "gleichwertige-brueche",
-                    "vergleichen",
-                    "ordnen",
-                    "zahlenstrahl",
+                    "brueche-am-zahlenstrahl",
                     "html",
-                    "pdf",
-                    "video",
-                    "manim",
-                    "audio"
+                    "klasse-5",
+                    "mathematik",
+                    "uebersicht"
                   ],
-                  "anzahlMaterialien": 9
+                  "anzahlMaterialien": 1
                 }
               ],
               "tags": [
                 "anteile",
+                "arbeitsblatt",
+                "arbeitsmaterial",
                 "arithmetik-algebra",
+                "asset",
+                "audio",
                 "brueche",
+                "brueche-am-zahlenstrahl",
+                "brueche-ordnen",
+                "brueche-vergleichen",
+                "erklaervideo",
                 "erweitern",
                 "gleichwertige-brueche",
+                "gruppenpuzzle",
                 "html",
+                "interaktiv",
                 "klasse-5",
                 "kuerzen",
-                "mathematik",
-                "pdf",
-                "video",
-                "brueche-und-anteile",
-                "vergleichen",
-                "ordnen",
-                "zahlenstrahl",
+                "lernpfad",
+                "lernreihenfolge",
                 "manim",
-                "audio"
+                "materialien",
+                "mathematik",
+                "mp4",
+                "nenner",
+                "ordnen",
+                "pdf",
+                "python",
+                "quelle",
+                "teilthemen",
+                "transkript",
+                "txt",
+                "uebersicht",
+                "vergleichen",
+                "video",
+                "wav",
+                "zaehler",
+                "zahlenstrahl"
               ],
-              "anzahlThemen": 1,
-              "anzahlMaterialien": 9
+              "anzahlThemen": 6,
+              "anzahlMaterialien": 12
             },
             {
               "id": "groessen-und-messen",
@@ -1551,11 +1845,11 @@
                 }
               ],
               "tags": [
-                "klasse-5",
-                "groessen-und-messen",
                 "groessen-im-alltag",
+                "groessen-und-messen",
                 "html",
                 "interaktiv",
+                "klasse-5",
                 "lernpfad",
                 "lernpfad-einfuehrung-groessen-im-alltag",
                 "lernpfad-laengen-umrechnen",
@@ -1954,6 +2248,7 @@
                   "tags": [
                     "figuren-und-koerper",
                     "geometrie",
+                    "groessen-und-messen",
                     "html",
                     "interaktiv",
                     "klasse-5",
@@ -1961,11 +2256,10 @@
                     "lernpfad-einfuehrung-figuren-und-koerper",
                     "lernpfad-grundfiguren-beschreiben",
                     "lernpfad-koerper-und-netze",
+                    "lernpfad-quader-einheitswuerfel",
                     "lernpfad-symmetrie-entdecken",
                     "lernpfad-umfang-und-flaeche-rechteck",
                     "mathematik",
-                    "groessen-und-messen",
-                    "lernpfad-quader-einheitswuerfel",
                     "quader",
                     "volumen",
                     "wuerfel"
@@ -1974,23 +2268,23 @@
                 }
               ],
               "tags": [
-                "klasse-5",
-                "geometrie",
                 "figuren-und-koerper",
-                "volumen",
-                "quader",
-                "wuerfel",
+                "geometrie",
+                "groessen-und-messen",
                 "html",
                 "interaktiv",
+                "klasse-5",
                 "lernpfad",
                 "lernpfad-einfuehrung-figuren-und-koerper",
                 "lernpfad-grundfiguren-beschreiben",
                 "lernpfad-koerper-und-netze",
+                "lernpfad-quader-einheitswuerfel",
                 "lernpfad-symmetrie-entdecken",
                 "lernpfad-umfang-und-flaeche-rechteck",
                 "mathematik",
-                "groessen-und-messen",
-                "lernpfad-quader-einheitswuerfel"
+                "quader",
+                "volumen",
+                "wuerfel"
               ],
               "anzahlThemen": 1,
               "anzahlMaterialien": 6
@@ -2147,6 +2441,8 @@
                   ],
                   "tags": [
                     "arbeitsblatt",
+                    "ausschneiden",
+                    "gruppenpuzzle",
                     "html",
                     "interaktiv",
                     "klasse-5",
@@ -2162,16 +2458,18 @@
                 }
               ],
               "tags": [
-                "klasse-5",
-                "koerper-und-volumen",
-                "oberflaecheninhalt",
-                "quader",
                 "arbeitsblatt",
+                "ausschneiden",
+                "gruppenpuzzle",
                 "html",
                 "interaktiv",
+                "klasse-5",
+                "koerper-und-volumen",
                 "lernpfad",
                 "mathematik",
+                "oberflaecheninhalt",
                 "pdf",
+                "quader",
                 "quadernetze"
               ],
               "anzahlThemen": 1,
@@ -2509,11 +2807,11 @@
                 }
               ],
               "tags": [
-                "klasse-5",
                 "daten",
                 "daten-und-diagramme",
                 "html",
                 "interaktiv",
+                "klasse-5",
                 "lernpfad",
                 "lernpfad-daten-sammeln",
                 "lernpfad-diagramme-erstellen",
@@ -2527,68 +2825,88 @@
             }
           ],
           "materialien": [],
-          "anzahlThemen": 7,
-          "anzahlMaterialien": 32,
+          "anzahlThemen": 12,
+          "anzahlMaterialien": 35,
           "tags": [
-            "klasse-5-gesamt",
-            "klasse-5",
-            "mathequest-klasse-5",
-            "html",
-            "interaktiv",
-            "lernspiel",
-            "mathematik",
-            "mathequest",
-            "sekundarstufe-i",
-            "zahlen-und-rechnen",
-            "natuerliche-zahlen",
-            "lernpfad",
-            "lernpfad-einfuehrung-natuerliche-zahlen",
-            "lernpfad-rechenvorteile",
-            "lernpfad-runden-und-schaetzen",
-            "lernpfad-schriftlich-rechnen",
-            "lernpfad-zahlenstrahl-und-ordnung",
-            "arithmetik-algebra",
             "anteile",
-            "brueche",
-            "erweitern",
-            "gleichwertige-brueche",
-            "kuerzen",
-            "pdf",
-            "video",
-            "brueche-und-anteile",
-            "vergleichen",
-            "ordnen",
-            "zahlenstrahl",
-            "manim",
-            "audio",
-            "groessen-und-messen",
-            "groessen-im-alltag",
-            "lernpfad-einfuehrung-groessen-im-alltag",
-            "lernpfad-laengen-umrechnen",
-            "lernpfad-massstab-einfach",
-            "lernpfad-zeit-und-geld",
-            "geometrie",
-            "figuren-und-koerper",
-            "volumen",
-            "quader",
-            "wuerfel",
-            "lernpfad-einfuehrung-figuren-und-koerper",
-            "lernpfad-grundfiguren-beschreiben",
-            "lernpfad-koerper-und-netze",
-            "lernpfad-symmetrie-entdecken",
-            "lernpfad-umfang-und-flaeche-rechteck",
-            "lernpfad-quader-einheitswuerfel",
-            "koerper-und-volumen",
-            "oberflaecheninhalt",
             "arbeitsblatt",
-            "quadernetze",
+            "arbeitsmaterial",
+            "arithmetik-algebra",
+            "asset",
+            "audio",
+            "ausschneiden",
+            "brueche",
+            "brueche-am-zahlenstrahl",
+            "brueche-ordnen",
+            "brueche-und-anteile",
+            "brueche-vergleichen",
             "daten",
             "daten-und-diagramme",
+            "erklaervideo",
+            "erweitern",
+            "figuren-und-koerper",
+            "geometrie",
+            "gleichwertige-brueche",
+            "groessen-im-alltag",
+            "groessen-und-messen",
+            "gruppenpuzzle",
+            "html",
+            "interaktiv",
+            "klasse-5",
+            "klasse-5-gesamt",
+            "koerper-und-volumen",
+            "kuerzen",
+            "lernpfad",
             "lernpfad-daten-sammeln",
             "lernpfad-diagramme-erstellen",
             "lernpfad-einfuehrung-daten-und-diagramme",
+            "lernpfad-einfuehrung-figuren-und-koerper",
+            "lernpfad-einfuehrung-groessen-im-alltag",
+            "lernpfad-einfuehrung-natuerliche-zahlen",
+            "lernpfad-grundfiguren-beschreiben",
+            "lernpfad-koerper-und-netze",
+            "lernpfad-laengen-umrechnen",
+            "lernpfad-massstab-einfach",
             "lernpfad-mittelwert-entdecken",
-            "lernpfad-saeulendiagramme-lesen"
+            "lernpfad-quader-einheitswuerfel",
+            "lernpfad-rechenvorteile",
+            "lernpfad-runden-und-schaetzen",
+            "lernpfad-saeulendiagramme-lesen",
+            "lernpfad-schriftlich-rechnen",
+            "lernpfad-symmetrie-entdecken",
+            "lernpfad-umfang-und-flaeche-rechteck",
+            "lernpfad-zahlenstrahl-und-ordnung",
+            "lernpfad-zeit-und-geld",
+            "lernreihenfolge",
+            "lernspiel",
+            "manim",
+            "materialien",
+            "mathematik",
+            "mathequest",
+            "mathequest-klasse-5",
+            "mp4",
+            "natuerliche-zahlen",
+            "nenner",
+            "oberflaecheninhalt",
+            "ordnen",
+            "pdf",
+            "python",
+            "quader",
+            "quadernetze",
+            "quelle",
+            "sekundarstufe-i",
+            "teilthemen",
+            "transkript",
+            "txt",
+            "uebersicht",
+            "vergleichen",
+            "video",
+            "volumen",
+            "wav",
+            "wuerfel",
+            "zaehler",
+            "zahlen-und-rechnen",
+            "zahlenstrahl"
           ]
         },
         {
@@ -2929,7 +3247,17 @@
                 }
               ],
               "tags": [
+                "brueche-und-dezimalzahlen",
+                "html",
+                "interaktiv",
                 "klasse-6",
+                "lernpfad",
+                "lernpfad-brueche-addieren-und-subtrahieren",
+                "lernpfad-brueche-darstellen-und-vergleichen",
+                "lernpfad-brueche-multiplizieren-und-dividieren",
+                "lernpfad-dezimalzahlen-und-brueche-verbinden",
+                "lernpfad-einfuehrung-brueche-und-dezimalzahlen",
+                "mathematik",
                 "zahlen-und-rechnen"
               ],
               "anzahlThemen": 1,
@@ -3207,8 +3535,17 @@
                 }
               ],
               "tags": [
+                "geometrie",
+                "html",
+                "interaktiv",
                 "klasse-6",
-                "geometrie"
+                "lernpfad",
+                "lernpfad-einfuehrung-winkel-und-kreis",
+                "lernpfad-kreise-zeichnen-und-beschreiben",
+                "lernpfad-winkel-messen-und-zeichnen",
+                "lernpfad-winkelarten-erkennen",
+                "mathematik",
+                "winkel-und-kreis"
               ],
               "anzahlThemen": 1,
               "anzahlMaterialien": 4
@@ -3485,8 +3822,17 @@
                 }
               ],
               "tags": [
+                "daten-und-zufall",
+                "html",
+                "interaktiv",
                 "klasse-6",
-                "daten-und-zufall"
+                "lernpfad",
+                "lernpfad-einfache-wahrscheinlichkeiten-berechnen",
+                "lernpfad-einfuehrung-zufall-und-wahrscheinlichkeit",
+                "lernpfad-relative-haeufigkeiten-vergleichen",
+                "lernpfad-zufallsversuche-durchfuehren",
+                "mathematik",
+                "zufall-und-wahrscheinlichkeit"
               ],
               "anzahlThemen": 1,
               "anzahlMaterialien": 4
@@ -3496,10 +3842,30 @@
           "anzahlThemen": 3,
           "anzahlMaterialien": 13,
           "tags": [
+            "brueche-und-dezimalzahlen",
             "daten-und-zufall",
             "geometrie",
+            "html",
+            "interaktiv",
             "klasse-6",
-            "zahlen-und-rechnen"
+            "lernpfad",
+            "lernpfad-brueche-addieren-und-subtrahieren",
+            "lernpfad-brueche-darstellen-und-vergleichen",
+            "lernpfad-brueche-multiplizieren-und-dividieren",
+            "lernpfad-dezimalzahlen-und-brueche-verbinden",
+            "lernpfad-einfache-wahrscheinlichkeiten-berechnen",
+            "lernpfad-einfuehrung-brueche-und-dezimalzahlen",
+            "lernpfad-einfuehrung-winkel-und-kreis",
+            "lernpfad-einfuehrung-zufall-und-wahrscheinlichkeit",
+            "lernpfad-kreise-zeichnen-und-beschreiben",
+            "lernpfad-relative-haeufigkeiten-vergleichen",
+            "lernpfad-winkel-messen-und-zeichnen",
+            "lernpfad-winkelarten-erkennen",
+            "lernpfad-zufallsversuche-durchfuehren",
+            "mathematik",
+            "winkel-und-kreis",
+            "zahlen-und-rechnen",
+            "zufall-und-wahrscheinlichkeit"
           ]
         },
         {
@@ -3840,7 +4206,17 @@
                 }
               ],
               "tags": [
+                "html",
+                "interaktiv",
                 "klasse-7",
+                "lernpfad",
+                "lernpfad-addieren-und-subtrahieren",
+                "lernpfad-einfuehrung-rationale-zahlen",
+                "lernpfad-koordinatensystem-mit-rationalen-zahlen",
+                "lernpfad-multiplizieren-und-dividieren",
+                "lernpfad-rationale-zahlen-vergleichen",
+                "mathematik",
+                "rationale-zahlen",
                 "zahlen-und-rechnen"
               ],
               "anzahlThemen": 1,
@@ -4334,8 +4710,19 @@
                 }
               ],
               "tags": [
+                "arithmetik-algebra",
+                "html",
+                "interaktiv",
                 "klasse-7",
-                "arithmetik-algebra"
+                "lernpfad",
+                "lernpfad-einfuehrung-terme-und-gleichungen",
+                "lernpfad-gleichungen-loesen",
+                "lernpfad-sachprobleme-mit-gleichungen",
+                "lernpfad-terme-aufstellen",
+                "lernpfad-terme-vereinfachen",
+                "lernspiel",
+                "mathematik",
+                "terme-und-gleichungen"
               ],
               "anzahlThemen": 1,
               "anzahlMaterialien": 8
@@ -4672,8 +5059,18 @@
                 }
               ],
               "tags": [
+                "funktionen",
+                "html",
+                "interaktiv",
                 "klasse-7",
-                "funktionen"
+                "lernpfad",
+                "lernpfad-antiproportionale-zuordnungen",
+                "lernpfad-einfuehrung-zuordnungen-und-prozent",
+                "lernpfad-proportionale-zuordnungen",
+                "lernpfad-prozentrechnung",
+                "lernpfad-zinsrechnung-einfach",
+                "mathematik",
+                "zuordnungen-und-prozent"
               ],
               "anzahlThemen": 1,
               "anzahlMaterialien": 5
@@ -5139,18 +5536,18 @@
                   ],
                   "tags": [
                     "arbeitsblatt",
+                    "dreieck",
+                    "geometrie",
+                    "hilfslinie",
                     "html",
                     "innenwinkelsumme",
                     "klasse-7",
                     "lernpfad",
                     "mathematik",
                     "pdf",
-                    "dreieck",
-                    "winkel",
                     "stufenwinkel",
                     "wechselwinkel",
-                    "hilfslinie",
-                    "geometrie"
+                    "winkel"
                   ],
                   "anzahlMaterialien": 2
                 },
@@ -5247,9 +5644,11 @@
                     }
                   ],
                   "tags": [
+                    "drag-and-drop",
                     "dreiecke",
                     "dreiecke-konstruieren",
                     "dreieckskonstruktion",
+                    "geodreieck",
                     "geometrie",
                     "html",
                     "interaktiv",
@@ -5258,27 +5657,39 @@
                     "lernpfad",
                     "mathematik",
                     "planfigur",
-                    "zirkel",
-                    "geodreieck",
-                    "drag-and-drop"
+                    "zirkel"
                   ],
                   "anzahlMaterialien": 1
                 }
               ],
               "tags": [
+                "arbeitsblatt",
                 "drag-and-drop",
+                "dreieck",
                 "dreiecke",
                 "dreiecke-konstruieren",
+                "dreiecke-und-winkel",
                 "dreieckskonstruktion",
                 "geodreieck",
                 "geometrie",
+                "hilfslinie",
                 "html",
+                "innenwinkelsumme",
                 "interaktiv",
                 "ipad",
                 "klasse-7",
                 "lernpfad",
+                "lernpfad-dreieckskonstruktionen",
+                "lernpfad-einfuehrung-dreiecke-und-winkel",
+                "lernpfad-innenwinkelsumme",
+                "lernpfad-kongruenzsaetze",
+                "lernpfad-winkelbeziehungen",
                 "mathematik",
+                "pdf",
                 "planfigur",
+                "stufenwinkel",
+                "wechselwinkel",
+                "winkel",
                 "zirkel"
               ],
               "anzahlThemen": 3,
@@ -5289,23 +5700,56 @@
           "anzahlThemen": 6,
           "anzahlMaterialien": 26,
           "tags": [
+            "arbeitsblatt",
             "arithmetik-algebra",
             "drag-and-drop",
+            "dreieck",
             "dreiecke",
             "dreiecke-konstruieren",
+            "dreiecke-und-winkel",
             "dreieckskonstruktion",
             "funktionen",
             "geodreieck",
             "geometrie",
+            "hilfslinie",
             "html",
+            "innenwinkelsumme",
             "interaktiv",
             "ipad",
             "klasse-7",
             "lernpfad",
+            "lernpfad-addieren-und-subtrahieren",
+            "lernpfad-antiproportionale-zuordnungen",
+            "lernpfad-dreieckskonstruktionen",
+            "lernpfad-einfuehrung-dreiecke-und-winkel",
+            "lernpfad-einfuehrung-rationale-zahlen",
+            "lernpfad-einfuehrung-terme-und-gleichungen",
+            "lernpfad-einfuehrung-zuordnungen-und-prozent",
+            "lernpfad-gleichungen-loesen",
+            "lernpfad-innenwinkelsumme",
+            "lernpfad-kongruenzsaetze",
+            "lernpfad-koordinatensystem-mit-rationalen-zahlen",
+            "lernpfad-multiplizieren-und-dividieren",
+            "lernpfad-proportionale-zuordnungen",
+            "lernpfad-prozentrechnung",
+            "lernpfad-rationale-zahlen-vergleichen",
+            "lernpfad-sachprobleme-mit-gleichungen",
+            "lernpfad-terme-aufstellen",
+            "lernpfad-terme-vereinfachen",
+            "lernpfad-winkelbeziehungen",
+            "lernpfad-zinsrechnung-einfach",
+            "lernspiel",
             "mathematik",
+            "pdf",
             "planfigur",
+            "rationale-zahlen",
+            "stufenwinkel",
+            "terme-und-gleichungen",
+            "wechselwinkel",
+            "winkel",
             "zahlen-und-rechnen",
-            "zirkel"
+            "zirkel",
+            "zuordnungen-und-prozent"
           ]
         },
         {
@@ -5586,8 +6030,17 @@
                 }
               ],
               "tags": [
+                "arithmetik-algebra",
+                "html",
+                "interaktiv",
                 "klasse-8",
-                "arithmetik-algebra"
+                "lernpfad",
+                "lernpfad-additionsverfahren",
+                "lernpfad-einfuehrung-lineare-gleichungssysteme",
+                "lernpfad-einsetzungsverfahren",
+                "lernpfad-gleichsetzungsverfahren",
+                "lineare-gleichungssysteme",
+                "mathematik"
               ],
               "anzahlThemen": 1,
               "anzahlMaterialien": 4
@@ -5924,8 +6377,18 @@
                 }
               ],
               "tags": [
+                "funktionen",
+                "html",
+                "interaktiv",
                 "klasse-8",
-                "funktionen"
+                "lernpfad",
+                "lernpfad-einfuehrung-lineare-funktionen",
+                "lernpfad-geradengleichungen-aufstellen",
+                "lernpfad-lineare-modelle-bewerten",
+                "lernpfad-schnittpunkte-interpretieren",
+                "lernpfad-steigung-und-y-achsenabschnitt",
+                "lineare-funktionen",
+                "mathematik"
               ],
               "anzahlThemen": 1,
               "anzahlMaterialien": 5
@@ -6202,8 +6665,17 @@
                 }
               ],
               "tags": [
+                "daten-und-zufall",
+                "html",
+                "interaktiv",
                 "klasse-8",
-                "daten-und-zufall"
+                "lernpfad",
+                "lernpfad-baumdiagramme-nutzen",
+                "lernpfad-einfuehrung-wahrscheinlichkeit-vertiefen",
+                "lernpfad-gegenwahrscheinlichkeit",
+                "lernpfad-mehrstufige-zufallsversuche",
+                "mathematik",
+                "wahrscheinlichkeit-vertiefen"
               ],
               "anzahlThemen": 1,
               "anzahlMaterialien": 4
@@ -6216,7 +6688,27 @@
             "arithmetik-algebra",
             "daten-und-zufall",
             "funktionen",
-            "klasse-8"
+            "html",
+            "interaktiv",
+            "klasse-8",
+            "lernpfad",
+            "lernpfad-additionsverfahren",
+            "lernpfad-baumdiagramme-nutzen",
+            "lernpfad-einfuehrung-lineare-funktionen",
+            "lernpfad-einfuehrung-lineare-gleichungssysteme",
+            "lernpfad-einfuehrung-wahrscheinlichkeit-vertiefen",
+            "lernpfad-einsetzungsverfahren",
+            "lernpfad-gegenwahrscheinlichkeit",
+            "lernpfad-geradengleichungen-aufstellen",
+            "lernpfad-gleichsetzungsverfahren",
+            "lernpfad-lineare-modelle-bewerten",
+            "lernpfad-mehrstufige-zufallsversuche",
+            "lernpfad-schnittpunkte-interpretieren",
+            "lernpfad-steigung-und-y-achsenabschnitt",
+            "lineare-funktionen",
+            "lineare-gleichungssysteme",
+            "mathematik",
+            "wahrscheinlichkeit-vertiefen"
           ]
         },
         {
@@ -6557,8 +7049,18 @@
                 }
               ],
               "tags": [
+                "funktionen",
+                "html",
+                "interaktiv",
                 "klasse-9",
-                "funktionen"
+                "lernpfad",
+                "lernpfad-einfuehrung-quadratische-funktionen",
+                "lernpfad-nullstellen-quadratischer-funktionen",
+                "lernpfad-parabeln-entdecken",
+                "lernpfad-quadratische-anwendungen",
+                "lernpfad-scheitelpunktform",
+                "mathematik",
+                "quadratische-funktionen"
               ],
               "anzahlThemen": 1,
               "anzahlMaterialien": 5
@@ -7483,8 +7985,29 @@
                 }
               ],
               "tags": [
+                "aehnlichkeit-und-strahlensaetze",
+                "geometrie",
+                "html",
+                "interaktiv",
                 "klasse-9",
-                "geometrie"
+                "lernpfad",
+                "lernpfad-aehnlichkeit-erkennen",
+                "lernpfad-einfuehrung-aehnlichkeit-und-strahlensaetze",
+                "lernpfad-einfuehrung-pythagoras-und-koerper",
+                "lernpfad-einfuehrung-trigonometrie",
+                "lernpfad-erster-strahlensatz",
+                "lernpfad-hoehenmessung-mit-schatten",
+                "lernpfad-koerperberechnungen",
+                "lernpfad-pythagoras-berechnen",
+                "lernpfad-pythagoras-umkehrung",
+                "lernpfad-raumdiagonalen",
+                "lernpfad-seiten-berechnen",
+                "lernpfad-sinus-kosinus-tangens",
+                "lernpfad-winkel-berechnen",
+                "lernpfad-zweiter-strahlensatz",
+                "mathematik",
+                "pythagoras-und-koerper",
+                "trigonometrie"
               ],
               "anzahlThemen": 3,
               "anzahlMaterialien": 14
@@ -7494,9 +8017,36 @@
           "anzahlThemen": 4,
           "anzahlMaterialien": 19,
           "tags": [
+            "aehnlichkeit-und-strahlensaetze",
             "funktionen",
             "geometrie",
-            "klasse-9"
+            "html",
+            "interaktiv",
+            "klasse-9",
+            "lernpfad",
+            "lernpfad-aehnlichkeit-erkennen",
+            "lernpfad-einfuehrung-aehnlichkeit-und-strahlensaetze",
+            "lernpfad-einfuehrung-pythagoras-und-koerper",
+            "lernpfad-einfuehrung-quadratische-funktionen",
+            "lernpfad-einfuehrung-trigonometrie",
+            "lernpfad-erster-strahlensatz",
+            "lernpfad-hoehenmessung-mit-schatten",
+            "lernpfad-koerperberechnungen",
+            "lernpfad-nullstellen-quadratischer-funktionen",
+            "lernpfad-parabeln-entdecken",
+            "lernpfad-pythagoras-berechnen",
+            "lernpfad-pythagoras-umkehrung",
+            "lernpfad-quadratische-anwendungen",
+            "lernpfad-raumdiagonalen",
+            "lernpfad-scheitelpunktform",
+            "lernpfad-seiten-berechnen",
+            "lernpfad-sinus-kosinus-tangens",
+            "lernpfad-winkel-berechnen",
+            "lernpfad-zweiter-strahlensatz",
+            "mathematik",
+            "pythagoras-und-koerper",
+            "quadratische-funktionen",
+            "trigonometrie"
           ]
         },
         {
@@ -8161,8 +8711,24 @@
                 }
               ],
               "tags": [
+                "exponentialfunktionen",
+                "funktionen",
+                "funktionen-vertiefen",
+                "html",
+                "interaktiv",
                 "klasse-10",
-                "funktionen"
+                "lernpfad",
+                "lernpfad-einfuehrung-exponentialfunktionen",
+                "lernpfad-einfuehrung-funktionen-vertiefen",
+                "lernpfad-exponentialgleichungen",
+                "lernpfad-funktionsvergleich",
+                "lernpfad-halbwertszeit",
+                "lernpfad-modellgrenzen-exponential",
+                "lernpfad-modellieren-mit-funktionen",
+                "lernpfad-parameter-deuten",
+                "lernpfad-schnittpunkte-und-nullstellen",
+                "lernpfad-wachstum-und-zerfall",
+                "mathematik"
               ],
               "anzahlThemen": 2,
               "anzahlMaterialien": 10
@@ -8499,8 +9065,18 @@
                 }
               ],
               "tags": [
+                "geometrie",
+                "html",
+                "interaktiv",
                 "klasse-10",
-                "geometrie"
+                "kreis-und-koerper",
+                "lernpfad",
+                "lernpfad-einfuehrung-kreis-und-koerper",
+                "lernpfad-kreissektor-und-bogen",
+                "lernpfad-kreisumfang-und-flaeche",
+                "lernpfad-kugel-und-volumen",
+                "lernpfad-zylinder-und-kegel",
+                "mathematik"
               ],
               "anzahlThemen": 1,
               "anzahlMaterialien": 5
@@ -8777,8 +9353,17 @@
                 }
               ],
               "tags": [
+                "daten-und-zufall",
+                "html",
+                "interaktiv",
                 "klasse-10",
-                "daten-und-zufall"
+                "lernpfad",
+                "lernpfad-bedingte-wahrscheinlichkeit",
+                "lernpfad-einfuehrung-stochastik",
+                "lernpfad-erwartungswert",
+                "lernpfad-vierfeldertafel",
+                "mathematik",
+                "stochastik"
               ],
               "anzahlThemen": 1,
               "anzahlMaterialien": 4
@@ -8789,9 +9374,36 @@
           "anzahlMaterialien": 19,
           "tags": [
             "daten-und-zufall",
+            "exponentialfunktionen",
             "funktionen",
+            "funktionen-vertiefen",
             "geometrie",
-            "klasse-10"
+            "html",
+            "interaktiv",
+            "klasse-10",
+            "kreis-und-koerper",
+            "lernpfad",
+            "lernpfad-bedingte-wahrscheinlichkeit",
+            "lernpfad-einfuehrung-exponentialfunktionen",
+            "lernpfad-einfuehrung-funktionen-vertiefen",
+            "lernpfad-einfuehrung-kreis-und-koerper",
+            "lernpfad-einfuehrung-stochastik",
+            "lernpfad-erwartungswert",
+            "lernpfad-exponentialgleichungen",
+            "lernpfad-funktionsvergleich",
+            "lernpfad-halbwertszeit",
+            "lernpfad-kreissektor-und-bogen",
+            "lernpfad-kreisumfang-und-flaeche",
+            "lernpfad-kugel-und-volumen",
+            "lernpfad-modellgrenzen-exponential",
+            "lernpfad-modellieren-mit-funktionen",
+            "lernpfad-parameter-deuten",
+            "lernpfad-schnittpunkte-und-nullstellen",
+            "lernpfad-vierfeldertafel",
+            "lernpfad-wachstum-und-zerfall",
+            "lernpfad-zylinder-und-kegel",
+            "mathematik",
+            "stochastik"
           ]
         },
         {
@@ -10278,6 +10890,8 @@
                     "analytische-geometrie",
                     "arbeitsblatt",
                     "ef",
+                    "flugbahn",
+                    "flugzeug",
                     "geraden-im-raum",
                     "geraden-und-ebenen",
                     "html",
@@ -10497,19 +11111,27 @@
                     }
                   ],
                   "tags": [
+                    "additionsverfahren",
                     "analytische-geometrie",
+                    "arbeitsblatt",
                     "ef",
+                    "einsetzungsverfahren",
                     "geraden-und-ebenen",
-                    "schnittpunkte-von-geraden",
-                    "lineare-gleichungssysteme",
-                    "lgs",
-                    "lagebeziehungen-von-geraden",
                     "html",
                     "interaktiv",
-                    "pdf",
-                    "arbeitsblatt",
+                    "ipad",
+                    "kopfballtor",
+                    "lagebeziehungen-von-geraden",
+                    "lgs",
+                    "lineare-gleichungssysteme",
+                    "mathematik",
                     "modellieren",
-                    "kopfballtor"
+                    "parameterform",
+                    "pdf",
+                    "schnittpunkte-von-geraden",
+                    "sekundarstufe-ii",
+                    "sicherung",
+                    "sportschau"
                   ],
                   "anzahlMaterialien": 2
                 },
@@ -10555,8 +11177,12 @@
               ],
               "tags": [
                 "3d",
+                "additionsverfahren",
                 "analytische-geometrie",
+                "arbeitsblatt",
+                "ebenen-vorschau",
                 "ef",
+                "einsetzungsverfahren",
                 "flugbahn",
                 "flugzeug",
                 "geraden-im-raum",
@@ -10564,17 +11190,28 @@
                 "github-pages",
                 "html",
                 "interaktiv",
+                "ipad",
                 "katex",
+                "kopfballtor",
+                "lagebeziehungen-von-geraden",
                 "lernpfad",
-                "mathematik",
-                "parametergleichung",
-                "sekundarstufe-ii",
-                "vektoren",
-                "schnittpunkte-von-geraden",
                 "lgs",
-                "arbeitsblatt",
+                "lgs-im-kontext-von-geraden",
+                "lineare-gleichungssysteme",
+                "mathematik",
+                "modellieren",
+                "parameterform",
+                "parametergleichung",
                 "pdf",
-                "kopfballtor"
+                "punktprobe",
+                "richtungsvektor",
+                "schnittpunkte-von-geraden",
+                "sekundarstufe-ii",
+                "sicherung",
+                "sportschau",
+                "strecken-und-parameterintervalle",
+                "stuetzvektor",
+                "vektoren"
               ],
               "anzahlThemen": 6,
               "anzahlMaterialien": 4
@@ -10686,9 +11323,15 @@
                 }
               ],
               "tags": [
+                "analytische-geometrie",
                 "ef",
+                "kollinearitaet",
+                "koordinatisierung-des-raumes",
+                "laenge-und-abstand",
+                "mathematik",
+                "ortsvektoren-und-vektoren",
                 "vektoren",
-                "analytische-geometrie"
+                "vektoroperationen"
               ],
               "anzahlThemen": 5,
               "anzahlMaterialien": 0
@@ -10700,10 +11343,13 @@
           "tags": [
             "3d",
             "ableitung-entdecken",
+            "additionsverfahren",
             "analysis",
             "analytische-geometrie",
             "arbeitsblatt",
+            "ebenen-vorschau",
             "ef",
+            "einsetzungsverfahren",
             "flugbahn",
             "flugzeug",
             "funktionen",
@@ -10714,8 +11360,13 @@
             "github-pages",
             "html",
             "interaktiv",
+            "ipad",
             "katex",
+            "kollinearitaet",
+            "koordinatisierung-des-raumes",
             "kopfballtor",
+            "laenge-und-abstand",
+            "lagebeziehungen-von-geraden",
             "lernpfad",
             "lernpfad-ableitungsfunktion",
             "lernpfad-baumdiagramme",
@@ -10737,13 +11388,25 @@
             "lernpfad-verschiebung-und-streckung",
             "lernpfad-wendepunkte-vorbereiten",
             "lgs",
+            "lgs-im-kontext-von-geraden",
+            "lineare-gleichungssysteme",
             "mathematik",
+            "modellieren",
+            "ortsvektoren-und-vektoren",
+            "parameterform",
             "parametergleichung",
             "pdf",
+            "punktprobe",
+            "richtungsvektor",
             "schnittpunkte-von-geraden",
             "sekundarstufe-ii",
+            "sicherung",
+            "sportschau",
             "stochastik",
+            "strecken-und-parameterintervalle",
+            "stuetzvektor",
             "vektoren",
+            "vektoroperationen",
             "zufall-und-modelle"
           ]
         },
@@ -11707,8 +12370,31 @@
                 }
               ],
               "tags": [
+                "analysis",
+                "differentialrechnung",
+                "exponentialfunktionen",
+                "grundkurs",
+                "html",
+                "integralrechnung",
+                "interaktiv",
+                "lernpfad",
+                "lernpfad-e-funktion-ableiten",
+                "lernpfad-einfuehrung-differentialrechnung",
+                "lernpfad-einfuehrung-exponentialfunktionen",
+                "lernpfad-einfuehrung-integralrechnung",
+                "lernpfad-extrema-bestimmen",
+                "lernpfad-flaechenbilanz",
+                "lernpfad-kettenregel-einfach",
+                "lernpfad-kurvendiskussion",
+                "lernpfad-mittelwert-von-funktionen",
+                "lernpfad-parameter-in-exponentialmodellen",
+                "lernpfad-produktregel",
+                "lernpfad-rekonstruktion",
+                "lernpfad-stammfunktionen",
+                "lernpfad-wachstumsmodelle",
+                "mathematik",
                 "q1",
-                "grundkurs"
+                "q1-gk"
               ],
               "anzahlThemen": 3,
               "anzahlMaterialien": 14
@@ -12729,8 +13415,32 @@
                 }
               ],
               "tags": [
+                "analysis",
+                "differentialrechnung-vertieft",
+                "html",
+                "integralrechnung-vertieft",
+                "interaktiv",
+                "leistungskurs",
+                "lernpfad",
+                "lernpfad-einfuehrung-differentialrechnung-vertieft",
+                "lernpfad-einfuehrung-integralrechnung-vertieft",
+                "lernpfad-einfuehrung-modellieren-mit-funktionen",
+                "lernpfad-exponentielle-modelle",
+                "lernpfad-extremwertprobleme",
+                "lernpfad-flaechen-zwischen-graphen",
+                "lernpfad-hauptsatz-der-analysis",
+                "lernpfad-integralanwendungen",
+                "lernpfad-logistisches-wachstum",
+                "lernpfad-modellvalidierung",
+                "lernpfad-parameterfunktionen",
+                "lernpfad-produkt-und-kettenregel",
+                "lernpfad-regression-und-parameter",
+                "lernpfad-rotationskoerper",
+                "lernpfad-zweite-ableitung-und-krummung",
+                "mathematik",
+                "modellieren-mit-funktionen",
                 "q1",
-                "leistungskurs"
+                "q1-lk"
               ],
               "anzahlThemen": 3,
               "anzahlMaterialien": 15
@@ -12740,9 +13450,51 @@
           "anzahlThemen": 6,
           "anzahlMaterialien": 29,
           "tags": [
+            "analysis",
+            "differentialrechnung",
+            "differentialrechnung-vertieft",
+            "exponentialfunktionen",
             "grundkurs",
+            "html",
+            "integralrechnung",
+            "integralrechnung-vertieft",
+            "interaktiv",
             "leistungskurs",
-            "q1"
+            "lernpfad",
+            "lernpfad-e-funktion-ableiten",
+            "lernpfad-einfuehrung-differentialrechnung",
+            "lernpfad-einfuehrung-differentialrechnung-vertieft",
+            "lernpfad-einfuehrung-exponentialfunktionen",
+            "lernpfad-einfuehrung-integralrechnung",
+            "lernpfad-einfuehrung-integralrechnung-vertieft",
+            "lernpfad-einfuehrung-modellieren-mit-funktionen",
+            "lernpfad-exponentielle-modelle",
+            "lernpfad-extrema-bestimmen",
+            "lernpfad-extremwertprobleme",
+            "lernpfad-flaechen-zwischen-graphen",
+            "lernpfad-flaechenbilanz",
+            "lernpfad-hauptsatz-der-analysis",
+            "lernpfad-integralanwendungen",
+            "lernpfad-kettenregel-einfach",
+            "lernpfad-kurvendiskussion",
+            "lernpfad-logistisches-wachstum",
+            "lernpfad-mittelwert-von-funktionen",
+            "lernpfad-modellvalidierung",
+            "lernpfad-parameter-in-exponentialmodellen",
+            "lernpfad-parameterfunktionen",
+            "lernpfad-produkt-und-kettenregel",
+            "lernpfad-produktregel",
+            "lernpfad-regression-und-parameter",
+            "lernpfad-rekonstruktion",
+            "lernpfad-rotationskoerper",
+            "lernpfad-stammfunktionen",
+            "lernpfad-wachstumsmodelle",
+            "lernpfad-zweite-ableitung-und-krummung",
+            "mathematik",
+            "modellieren-mit-funktionen",
+            "q1",
+            "q1-gk",
+            "q1-lk"
           ]
         },
         {
@@ -13643,8 +14395,31 @@
                 }
               ],
               "tags": [
+                "analytische-geometrie",
+                "daten-und-wahrscheinlichkeiten",
+                "ebenen",
+                "grundkurs",
+                "html",
+                "interaktiv",
+                "lernpfad",
+                "lernpfad-bedingte-wahrscheinlichkeit",
+                "lernpfad-binomialverteilung",
+                "lernpfad-ebenenformen",
+                "lernpfad-einfuehrung-daten-und-wahrscheinlichkeiten",
+                "lernpfad-einfuehrung-ebenen",
+                "lernpfad-einfuehrung-vektoren-und-geraden",
+                "lernpfad-erwartungswert-und-standardabweichung",
+                "lernpfad-gerade-ebene-schnitt",
+                "lernpfad-geraden-in-parameterform",
+                "lernpfad-lagebeziehung-von-geraden",
+                "lernpfad-schnittpunkte-im-raum",
+                "lernpfad-vektoroperationen",
+                "lernpfad-winkel-zwischen-objekten",
+                "mathematik",
                 "q2",
-                "grundkurs"
+                "q2-gk",
+                "stochastik",
+                "vektoren-und-geraden"
               ],
               "anzahlThemen": 3,
               "anzahlMaterialien": 13
@@ -14541,8 +15316,31 @@
                 }
               ],
               "tags": [
+                "analytische-geometrie",
+                "html",
+                "interaktiv",
+                "leistungskurs",
+                "lernpfad",
+                "lernpfad-abstaende-zwischen-objekten",
+                "lernpfad-abstandsberechnung",
+                "lernpfad-binomial-und-normalmodell",
+                "lernpfad-ebenenformen-vertieft",
+                "lernpfad-einfuehrung-lgs-und-projektionen",
+                "lernpfad-einfuehrung-raumgeometrie-vertieft",
+                "lernpfad-einfuehrung-wahrscheinlichkeitsverteilungen",
+                "lernpfad-hypothesentest",
+                "lernpfad-konfidenzintervalle-einordnen",
+                "lernpfad-lagebeziehungen-im-raum",
+                "lernpfad-lgs-geometrisch-interpretieren",
+                "lernpfad-orthogonale-projektion",
+                "lernpfad-schnittwinkel",
+                "lgs-und-projektionen",
+                "mathematik",
                 "q2",
-                "leistungskurs"
+                "q2-lk",
+                "raumgeometrie-vertieft",
+                "stochastik",
+                "wahrscheinlichkeitsverteilungen"
               ],
               "anzahlThemen": 3,
               "anzahlMaterialien": 13
@@ -14552,9 +15350,49 @@
           "anzahlThemen": 6,
           "anzahlMaterialien": 26,
           "tags": [
+            "analytische-geometrie",
+            "daten-und-wahrscheinlichkeiten",
+            "ebenen",
             "grundkurs",
+            "html",
+            "interaktiv",
             "leistungskurs",
-            "q2"
+            "lernpfad",
+            "lernpfad-abstaende-zwischen-objekten",
+            "lernpfad-abstandsberechnung",
+            "lernpfad-bedingte-wahrscheinlichkeit",
+            "lernpfad-binomial-und-normalmodell",
+            "lernpfad-binomialverteilung",
+            "lernpfad-ebenenformen",
+            "lernpfad-ebenenformen-vertieft",
+            "lernpfad-einfuehrung-daten-und-wahrscheinlichkeiten",
+            "lernpfad-einfuehrung-ebenen",
+            "lernpfad-einfuehrung-lgs-und-projektionen",
+            "lernpfad-einfuehrung-raumgeometrie-vertieft",
+            "lernpfad-einfuehrung-vektoren-und-geraden",
+            "lernpfad-einfuehrung-wahrscheinlichkeitsverteilungen",
+            "lernpfad-erwartungswert-und-standardabweichung",
+            "lernpfad-gerade-ebene-schnitt",
+            "lernpfad-geraden-in-parameterform",
+            "lernpfad-hypothesentest",
+            "lernpfad-konfidenzintervalle-einordnen",
+            "lernpfad-lagebeziehung-von-geraden",
+            "lernpfad-lagebeziehungen-im-raum",
+            "lernpfad-lgs-geometrisch-interpretieren",
+            "lernpfad-orthogonale-projektion",
+            "lernpfad-schnittpunkte-im-raum",
+            "lernpfad-schnittwinkel",
+            "lernpfad-vektoroperationen",
+            "lernpfad-winkel-zwischen-objekten",
+            "lgs-und-projektionen",
+            "mathematik",
+            "q2",
+            "q2-gk",
+            "q2-lk",
+            "raumgeometrie-vertieft",
+            "stochastik",
+            "vektoren-und-geraden",
+            "wahrscheinlichkeitsverteilungen"
           ]
         }
       ],
