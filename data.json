@@ -113,7 +113,14 @@
               ],
               "tags": [
                 "klasse-5",
-                "klasse-5-gesamt"
+                "klasse-5-gesamt",
+                "mathequest-klasse-5",
+                "html",
+                "interaktiv",
+                "lernspiel",
+                "mathematik",
+                "mathequest",
+                "sekundarstufe-i"
               ],
               "anzahlThemen": 1,
               "anzahlMaterialien": 1
@@ -451,7 +458,17 @@
               ],
               "tags": [
                 "klasse-5",
-                "zahlen-und-rechnen"
+                "zahlen-und-rechnen",
+                "natuerliche-zahlen",
+                "html",
+                "interaktiv",
+                "lernpfad",
+                "lernpfad-einfuehrung-natuerliche-zahlen",
+                "lernpfad-rechenvorteile",
+                "lernpfad-runden-und-schaetzen",
+                "lernpfad-schriftlich-rechnen",
+                "lernpfad-zahlenstrahl-und-ordnung",
+                "mathematik"
               ],
               "anzahlThemen": 1,
               "anzahlMaterialien": 5
@@ -475,23 +492,15 @@
                     "Brüche kürzen",
                     "Anteile zeichnen und vergleichen",
                     "Fehler beim Erweitern und Kürzen erkennen",
+                    "Brüche vergleichen",
+                    "Brüche ordnen",
+                    "Brüche am Zahlenstrahl darstellen",
                     "selbstständige Erarbeitung",
                     "interaktive Aufgaben",
                     "Erklärvideo mit Denkpausen"
                   ],
                   "materialien": [
                     {
-                      "id": "uebersicht-brueche-und-anteile-klasse5",
-                      "titel": "Übersicht: Brüche und Anteile",
-                      "kurztitel": "Übersicht Brüche",
-                      "beschreibung": "Startseite mit allen Materialien zum Thema Brüche und Anteile: Lernpfad, Arbeitsblatt, Arbeitsmaterial und Erklärvideo.",
-                      "typ": "html",
-                      "format": "HTML",
-                      "materialart": "Übersicht",
-                      "datei": "index.html",
-                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/index.html",
-                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/index.html",
-                      "dauer": "variabel",
                       "zielgruppe": {
                         "fach": "Mathematik",
                         "jahrgang": "Klasse 5",
@@ -507,16 +516,34 @@
                       "klasse": "Klasse 5",
                       "inhaltsfeld": "Arithmetik Algebra",
                       "thema": "Brüche und Anteile",
+                      "status": "verfügbar",
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-30",
+                      "lizenz": "",
+                      "autor": "",
+                      "id": "uebersicht-brueche-und-anteile-klasse5",
+                      "titel": "Übersicht: Brüche und Anteile",
+                      "kurztitel": "Übersicht Brüche",
+                      "beschreibung": "Startseite des Themenbereichs mit den Unterordnern Brüche als Anteile, Erweitern und Kürzen, Brüche vergleichen, Brüche ordnen und Brüche am Zahlenstrahl.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Übersicht",
+                      "datei": "index.html",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/index.html",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/index.html",
+                      "dauer": "variabel",
                       "unterthema": "Materialübersicht",
                       "kompetenzbereich": [
                         "Arithmetik Algebra",
-                        "Operieren",
+                        "Darstellen",
                         "Kommunizieren"
                       ],
                       "inhaltlicheSchwerpunkte": [
                         "Brüche als Anteile",
                         "Erweitern und Kürzen",
-                        "Materialübersicht"
+                        "Brüche vergleichen",
+                        "Brüche ordnen",
+                        "Zahlenstrahl"
                       ],
                       "tags": [
                         "mathematik",
@@ -527,89 +554,62 @@
                         "uebersicht",
                         "html"
                       ],
+                      "sichtbar": true
+                    },
+                    {
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "arithmetik-algebra",
+                        "themaId": "brueche-und-anteile"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Arithmetik Algebra",
+                      "thema": "Brüche und Anteile",
                       "status": "verfügbar",
-                      "sichtbar": true,
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": ""
-                    },
-                    {
-                      "id": "lernpfad-brueche-kuerzen-erweitern-klasse5",
-                      "titel": "Brüche erweitern und kürzen",
-                      "kurztitel": "Erweitern und Kürzen",
-                      "beschreibung": "Interaktiver Lernpfad für Klasse 5: Die Lernenden erkunden, dass Brüche unterschiedlich aussehen können, aber denselben Anteil darstellen. Sie erweitern und kürzen Brüche mithilfe von Darstellungen, Fachwörtern, Fehlerdiagnose und Sicherung.",
+                      "autor": "",
+                      "id": "uebersicht-brueche-als-anteile-klasse5",
+                      "titel": "Übersicht: Brüche als Anteile",
+                      "kurztitel": "Brüche als Anteile",
+                      "beschreibung": "Unterseite zum Einstieg in Brüche als Anteile mit passendem Arbeitsmaterial.",
                       "typ": "html",
                       "format": "HTML",
-                      "materialart": "Lernpfad",
-                      "datei": "lernpfad-brueche-kuerzen-erweitern.html",
-                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/lernpfad-brueche-kuerzen-erweitern.html",
-                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/lernpfad-brueche-kuerzen-erweitern.html",
-                      "dauer": "ca. 35–45 Minuten",
-                      "zielgruppe": {
-                        "fach": "Mathematik",
-                        "jahrgang": "Klasse 5",
-                        "stufe": "Sekundarstufe I"
-                      },
-                      "struktur": {
-                        "fachId": "mathematik",
-                        "klasseId": "klasse-5",
-                        "inhaltsfeldId": "arithmetik-algebra",
-                        "themaId": "brueche-und-anteile"
-                      },
-                      "fach": "Mathematik",
-                      "klasse": "Klasse 5",
-                      "inhaltsfeld": "Arithmetik Algebra",
-                      "thema": "Brüche und Anteile",
-                      "unterthema": "Brüche erweitern und kürzen",
+                      "materialart": "Übersicht",
+                      "datei": "index.html",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-als-anteile/index.html",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-als-anteile/index.html",
+                      "dauer": "variabel",
+                      "unterthema": "Brüche als Anteile",
                       "kompetenzbereich": [
                         "Arithmetik Algebra",
-                        "Operieren",
-                        "Problemlösen",
                         "Darstellen",
                         "Kommunizieren"
                       ],
                       "inhaltlicheSchwerpunkte": [
-                        "gleichwertige Brüche",
-                        "Brüche erweitern",
-                        "Brüche kürzen",
+                        "Brüche als Anteile",
                         "Zähler und Nenner",
-                        "Anteile darstellen",
-                        "Fehlerdiagnose",
-                        "interaktive Aufgaben"
+                        "Anteile zeichnen"
                       ],
                       "tags": [
                         "mathematik",
                         "klasse-5",
-                        "arithmetik-algebra",
                         "brueche",
                         "anteile",
-                        "erweitern",
-                        "kuerzen",
-                        "gleichwertige-brueche",
-                        "lernpfad",
                         "html",
-                        "interaktiv"
+                        "uebersicht"
                       ],
-                      "status": "verfügbar",
-                      "sichtbar": true,
-                      "oeffnenIn": "neuer-tab",
-                      "erstelltAm": "2026-06-30",
-                      "lizenz": "",
-                      "autor": ""
+                      "sichtbar": true
                     },
                     {
-                      "id": "arbeitsblatt-brueche-erweitern-kuerzen-klasse5",
-                      "titel": "Arbeitsblatt: Brüche erweitern und kürzen",
-                      "kurztitel": "AB Erweitern/Kürzen",
-                      "beschreibung": "Arbeitsblatt zur Sicherung des Lernpfads. Die Lernenden zeichnen Anteile selbst ein und halten die zentralen Merksätze zum Erweitern und Kürzen fest.",
-                      "typ": "pdf",
-                      "format": "PDF",
-                      "materialart": "Arbeitsblatt",
-                      "datei": "arbeitsblatt-brueche-erweitern-kuerzen.pdf",
-                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/arbeitsblatt-brueche-erweitern-kuerzen.pdf",
-                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/arbeitsblatt-brueche-erweitern-kuerzen.pdf",
-                      "dauer": "ca. 20–30 Minuten",
                       "zielgruppe": {
                         "fach": "Mathematik",
                         "jahrgang": "Klasse 5",
@@ -625,39 +625,11 @@
                       "klasse": "Klasse 5",
                       "inhaltsfeld": "Arithmetik Algebra",
                       "thema": "Brüche und Anteile",
-                      "unterthema": "Sicherung: Erweitern und Kürzen",
-                      "kompetenzbereich": [
-                        "Arithmetik Algebra",
-                        "Operieren",
-                        "Darstellen",
-                        "Kommunizieren"
-                      ],
-                      "inhaltlicheSchwerpunkte": [
-                        "Zähler und Nenner",
-                        "gleichwertige Brüche",
-                        "Brüche erweitern",
-                        "Brüche kürzen",
-                        "Anteile einzeichnen",
-                        "Merksätze sichern"
-                      ],
-                      "tags": [
-                        "mathematik",
-                        "klasse-5",
-                        "arbeitsblatt",
-                        "pdf",
-                        "brueche",
-                        "erweitern",
-                        "kuerzen",
-                        "anteile"
-                      ],
                       "status": "verfügbar",
-                      "sichtbar": true,
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": ""
-                    },
-                    {
+                      "autor": "",
                       "id": "arbeitsmaterial-brueche-und-anteile-klasse5",
                       "titel": "Arbeitsmaterial: Brüche und Anteile",
                       "kurztitel": "AB Brüche und Anteile",
@@ -666,24 +638,9 @@
                       "format": "PDF",
                       "materialart": "Arbeitsmaterial",
                       "datei": "arbeitsblatt-brueche-und-anteile.pdf",
-                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/arbeitsblatt-brueche-und-anteile.pdf",
-                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/arbeitsblatt-brueche-und-anteile.pdf",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-als-anteile/arbeitsblatt-brueche-und-anteile.pdf",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-als-anteile/arbeitsblatt-brueche-und-anteile.pdf",
                       "dauer": "ca. 45–90 Minuten",
-                      "zielgruppe": {
-                        "fach": "Mathematik",
-                        "jahrgang": "Klasse 5",
-                        "stufe": "Sekundarstufe I"
-                      },
-                      "struktur": {
-                        "fachId": "mathematik",
-                        "klasseId": "klasse-5",
-                        "inhaltsfeldId": "arithmetik-algebra",
-                        "themaId": "brueche-und-anteile"
-                      },
-                      "fach": "Mathematik",
-                      "klasse": "Klasse 5",
-                      "inhaltsfeld": "Arithmetik Algebra",
-                      "thema": "Brüche und Anteile",
                       "unterthema": "Brüche als Anteile entdecken",
                       "kompetenzbereich": [
                         "Arithmetik Algebra",
@@ -709,25 +666,9 @@
                         "zaehler",
                         "nenner"
                       ],
-                      "status": "verfügbar",
-                      "sichtbar": true,
-                      "oeffnenIn": "neuer-tab",
-                      "erstelltAm": "2026-06-30",
-                      "lizenz": "",
-                      "autor": ""
+                      "sichtbar": true
                     },
                     {
-                      "id": "erklaervideo-brueche-erweitern-kuerzen-klasse5",
-                      "titel": "Erklärvideo: Brüche erweitern und kürzen",
-                      "kurztitel": "Video Erweitern/Kürzen",
-                      "beschreibung": "Erklärvideo zum Erweitern und Kürzen von Brüchen mit gesprochenen Erklärungen, Visualisierungen, Aufgaben und Denkpausen.",
-                      "typ": "video",
-                      "format": "MP4",
-                      "materialart": "Erklärvideo",
-                      "datei": "erklaervideo-brueche-erweitern-kuerzen.mp4",
-                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/erklaervideo-brueche-erweitern-kuerzen.mp4",
-                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/erklaervideo-brueche-erweitern-kuerzen.mp4",
-                      "dauer": "ca. 10–15 Minuten",
                       "zielgruppe": {
                         "fach": "Mathematik",
                         "jahrgang": "Klasse 5",
@@ -743,6 +684,201 @@
                       "klasse": "Klasse 5",
                       "inhaltsfeld": "Arithmetik Algebra",
                       "thema": "Brüche und Anteile",
+                      "status": "verfügbar",
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-30",
+                      "lizenz": "",
+                      "autor": "",
+                      "id": "uebersicht-erweitern-und-kuerzen-klasse5",
+                      "titel": "Übersicht: Erweitern und Kürzen",
+                      "kurztitel": "Erweitern/Kürzen Übersicht",
+                      "beschreibung": "Unterseite zum Ordner Erweitern und Kürzen mit Lernpfad, Arbeitsblatt, Erklärvideo, Transkript und Manim-Datei.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Übersicht",
+                      "datei": "index.html",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/index.html",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/index.html",
+                      "dauer": "variabel",
+                      "unterthema": "Erweitern und Kürzen",
+                      "kompetenzbereich": [
+                        "Arithmetik Algebra",
+                        "Darstellen",
+                        "Kommunizieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "gleichwertige Brüche",
+                        "Brüche erweitern",
+                        "Brüche kürzen",
+                        "Materialübersicht"
+                      ],
+                      "tags": [
+                        "mathematik",
+                        "klasse-5",
+                        "brueche",
+                        "erweitern",
+                        "kuerzen",
+                        "html",
+                        "uebersicht"
+                      ],
+                      "sichtbar": true
+                    },
+                    {
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "arithmetik-algebra",
+                        "themaId": "brueche-und-anteile"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Arithmetik Algebra",
+                      "thema": "Brüche und Anteile",
+                      "status": "verfügbar",
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-30",
+                      "lizenz": "",
+                      "autor": "",
+                      "id": "lernpfad-brueche-kuerzen-erweitern-klasse5",
+                      "titel": "Brüche erweitern und kürzen",
+                      "kurztitel": "Erweitern und Kürzen",
+                      "beschreibung": "Interaktiver Lernpfad für Klasse 5: Die Lernenden erkunden gleichwertige Brüche mithilfe von Darstellungen, Fachwörtern, Fehlerdiagnose, Arbeitsblatt und eingebundenem Erklärvideo.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "lernpfad-brueche-kuerzen-erweitern.html",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/lernpfad-brueche-kuerzen-erweitern.html",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/lernpfad-brueche-kuerzen-erweitern.html",
+                      "dauer": "ca. 35–45 Minuten",
+                      "unterthema": "Brüche erweitern und kürzen",
+                      "kompetenzbereich": [
+                        "Arithmetik Algebra",
+                        "Operieren",
+                        "Problemlösen",
+                        "Darstellen",
+                        "Kommunizieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "gleichwertige Brüche",
+                        "Brüche erweitern",
+                        "Brüche kürzen",
+                        "Zähler und Nenner",
+                        "Anteile darstellen",
+                        "Fehlerdiagnose",
+                        "interaktive Aufgaben",
+                        "Erklärvideo"
+                      ],
+                      "tags": [
+                        "mathematik",
+                        "klasse-5",
+                        "arithmetik-algebra",
+                        "brueche",
+                        "anteile",
+                        "erweitern",
+                        "kuerzen",
+                        "gleichwertige-brueche",
+                        "lernpfad",
+                        "html",
+                        "interaktiv"
+                      ],
+                      "sichtbar": true
+                    },
+                    {
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "arithmetik-algebra",
+                        "themaId": "brueche-und-anteile"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Arithmetik Algebra",
+                      "thema": "Brüche und Anteile",
+                      "status": "verfügbar",
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-30",
+                      "lizenz": "",
+                      "autor": "",
+                      "id": "arbeitsblatt-brueche-erweitern-kuerzen-klasse5",
+                      "titel": "Arbeitsblatt: Brüche erweitern und kürzen",
+                      "kurztitel": "AB Erweitern/Kürzen",
+                      "beschreibung": "Arbeitsblatt zur Sicherung des Lernpfads. Die Lernenden zeichnen Anteile selbst ein und halten die zentralen Merksätze zum Erweitern und Kürzen fest.",
+                      "typ": "pdf",
+                      "format": "PDF",
+                      "materialart": "Arbeitsblatt",
+                      "datei": "arbeitsblatt-brueche-erweitern-kuerzen.pdf",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/arbeitsblatt-brueche-erweitern-kuerzen.pdf",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/arbeitsblatt-brueche-erweitern-kuerzen.pdf",
+                      "dauer": "ca. 20–30 Minuten",
+                      "unterthema": "Sicherung: Erweitern und Kürzen",
+                      "kompetenzbereich": [
+                        "Arithmetik Algebra",
+                        "Operieren",
+                        "Darstellen",
+                        "Kommunizieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Zähler und Nenner",
+                        "gleichwertige Brüche",
+                        "Brüche erweitern",
+                        "Brüche kürzen",
+                        "Anteile einzeichnen",
+                        "Merksätze sichern"
+                      ],
+                      "tags": [
+                        "mathematik",
+                        "klasse-5",
+                        "arbeitsblatt",
+                        "pdf",
+                        "brueche",
+                        "erweitern",
+                        "kuerzen",
+                        "anteile"
+                      ],
+                      "sichtbar": true
+                    },
+                    {
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "arithmetik-algebra",
+                        "themaId": "brueche-und-anteile"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Arithmetik Algebra",
+                      "thema": "Brüche und Anteile",
+                      "status": "verfügbar",
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-30",
+                      "lizenz": "",
+                      "autor": "",
+                      "id": "erklaervideo-brueche-erweitern-kuerzen-klasse5",
+                      "titel": "Erklärvideo: Brüche erweitern und kürzen",
+                      "kurztitel": "Video Erweitern/Kürzen",
+                      "beschreibung": "Erklärvideo zum Erweitern und Kürzen von Brüchen mit gesprochenen Erklärungen, Visualisierungen, Aufgaben und Denkpausen.",
+                      "typ": "video",
+                      "format": "MP4",
+                      "materialart": "Erklärvideo",
+                      "datei": "erklaervideo-brueche-erweitern-kuerzen.mp4",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/erklaervideo-brueche-erweitern-kuerzen.mp4",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/erklaervideo-brueche-erweitern-kuerzen.mp4",
+                      "dauer": "ca. 10–15 Minuten",
                       "unterthema": "Erweitern und Kürzen erklären",
                       "kompetenzbereich": [
                         "Arithmetik Algebra",
@@ -767,12 +903,333 @@
                         "erklaervideo",
                         "anteile"
                       ],
+                      "sichtbar": true
+                    },
+                    {
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "arithmetik-algebra",
+                        "themaId": "brueche-und-anteile"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Arithmetik Algebra",
+                      "thema": "Brüche und Anteile",
                       "status": "verfügbar",
-                      "sichtbar": true,
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": ""
+                      "autor": "",
+                      "id": "manim-skript-brueche-erweitern-kuerzen-klasse5",
+                      "titel": "Manim-Skript: Erklärvideo Brüche erweitern und kürzen",
+                      "kurztitel": "Manim-Skript",
+                      "beschreibung": "Python-/Manim-Datei zur Erzeugung des Erklärvideos mit Ton, Denkpausen und Visualisierungen.",
+                      "typ": "code",
+                      "format": "PY",
+                      "materialart": "Quelldatei",
+                      "datei": "brueche_erweitern_kuerzen_mit_audio.py",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/brueche_erweitern_kuerzen_mit_audio.py",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/brueche_erweitern_kuerzen_mit_audio.py",
+                      "dauer": "variabel",
+                      "unterthema": "Erklärvideo selbst rendern",
+                      "kompetenzbereich": [
+                        "Arithmetik Algebra",
+                        "Darstellen",
+                        "Digitale Werkzeuge"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Manim",
+                        "Erklärvideo",
+                        "Brüche erweitern",
+                        "Brüche kürzen",
+                        "Audio-Erzeugung"
+                      ],
+                      "tags": [
+                        "mathematik",
+                        "klasse-5",
+                        "brueche",
+                        "erweitern",
+                        "kuerzen",
+                        "manim",
+                        "python",
+                        "code",
+                        "erklaervideo"
+                      ],
+                      "sichtbar": true
+                    },
+                    {
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "arithmetik-algebra",
+                        "themaId": "brueche-und-anteile"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Arithmetik Algebra",
+                      "thema": "Brüche und Anteile",
+                      "status": "verfügbar",
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-30",
+                      "lizenz": "",
+                      "autor": "",
+                      "id": "transkript-brueche-erweitern-kuerzen-klasse5",
+                      "titel": "Transkript: Erklärvideo Brüche erweitern und kürzen",
+                      "kurztitel": "Transkript",
+                      "beschreibung": "Sprechertext des Erklärvideos zum Nachlesen oder zur Überarbeitung der Tonspur.",
+                      "typ": "text",
+                      "format": "TXT",
+                      "materialart": "Transkript",
+                      "datei": "transkript_brueche_erweitern_kuerzen.txt",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/transkript_brueche_erweitern_kuerzen.txt",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/transkript_brueche_erweitern_kuerzen.txt",
+                      "dauer": "ca. 5 Minuten Lesezeit",
+                      "unterthema": "Sprechertext zum Erklärvideo",
+                      "kompetenzbereich": [
+                        "Arithmetik Algebra",
+                        "Kommunizieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Sprechertext",
+                        "Erklärvideo",
+                        "Brüche erweitern",
+                        "Brüche kürzen",
+                        "Denkpausen"
+                      ],
+                      "tags": [
+                        "mathematik",
+                        "klasse-5",
+                        "brueche",
+                        "erweitern",
+                        "kuerzen",
+                        "transkript",
+                        "txt",
+                        "erklaervideo"
+                      ],
+                      "sichtbar": true
+                    },
+                    {
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "arithmetik-algebra",
+                        "themaId": "brueche-und-anteile"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Arithmetik Algebra",
+                      "thema": "Brüche und Anteile",
+                      "status": "verfügbar",
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-30",
+                      "lizenz": "",
+                      "autor": "",
+                      "id": "audio-brueche-erweitern-kuerzen-klasse5",
+                      "titel": "Audio-Dateien: Erklärvideo Brüche erweitern und kürzen",
+                      "kurztitel": "Audio-Bausteine",
+                      "beschreibung": "Ordner mit den einzelnen WAV-Dateien für die gesprochenen Szenen des Manim-Erklärvideos.",
+                      "typ": "audio",
+                      "format": "WAV",
+                      "materialart": "Asset-Paket",
+                      "datei": "audio_brueche/",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/audio_brueche/",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/audio_brueche/",
+                      "dauer": "variabel",
+                      "unterthema": "Tonbausteine zum Erklärvideo",
+                      "kompetenzbereich": [
+                        "Digitale Werkzeuge"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Audio",
+                        "Erklärvideo",
+                        "Tonspur",
+                        "Manim"
+                      ],
+                      "tags": [
+                        "audio",
+                        "wav",
+                        "manim",
+                        "brueche",
+                        "erklaervideo",
+                        "asset"
+                      ],
+                      "sichtbar": false
+                    },
+                    {
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "arithmetik-algebra",
+                        "themaId": "brueche-und-anteile"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Arithmetik Algebra",
+                      "thema": "Brüche und Anteile",
+                      "status": "verfügbar",
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-30",
+                      "lizenz": "",
+                      "autor": "",
+                      "id": "uebersicht-brueche-vergleichen-klasse5",
+                      "titel": "Übersicht: Brüche vergleichen",
+                      "kurztitel": "Brüche vergleichen",
+                      "beschreibung": "Vorbereiteter Unterordner für Materialien zum Vergleichen von Brüchen.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Übersicht",
+                      "datei": "index.html",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-vergleichen/index.html",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-vergleichen/index.html",
+                      "dauer": "variabel",
+                      "unterthema": "Brüche vergleichen",
+                      "kompetenzbereich": [
+                        "Arithmetik Algebra",
+                        "Darstellen",
+                        "Argumentieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Brüche vergleichen",
+                        "Anteile vergleichen",
+                        "Vorbereiteter Materialordner"
+                      ],
+                      "tags": [
+                        "mathematik",
+                        "klasse-5",
+                        "brueche",
+                        "vergleichen",
+                        "html",
+                        "uebersicht"
+                      ],
+                      "sichtbar": true
+                    },
+                    {
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "arithmetik-algebra",
+                        "themaId": "brueche-und-anteile"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Arithmetik Algebra",
+                      "thema": "Brüche und Anteile",
+                      "status": "verfügbar",
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-30",
+                      "lizenz": "",
+                      "autor": "",
+                      "id": "uebersicht-brueche-ordnen-klasse5",
+                      "titel": "Übersicht: Brüche ordnen",
+                      "kurztitel": "Brüche ordnen",
+                      "beschreibung": "Vorbereiteter Unterordner für Materialien zum Ordnen von Brüchen.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Übersicht",
+                      "datei": "index.html",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-ordnen/index.html",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-ordnen/index.html",
+                      "dauer": "variabel",
+                      "unterthema": "Brüche ordnen",
+                      "kompetenzbereich": [
+                        "Arithmetik Algebra",
+                        "Darstellen",
+                        "Argumentieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Brüche ordnen",
+                        "Anteile ordnen",
+                        "Vorbereiteter Materialordner"
+                      ],
+                      "tags": [
+                        "mathematik",
+                        "klasse-5",
+                        "brueche",
+                        "ordnen",
+                        "html",
+                        "uebersicht"
+                      ],
+                      "sichtbar": true
+                    },
+                    {
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "arithmetik-algebra",
+                        "themaId": "brueche-und-anteile"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Arithmetik Algebra",
+                      "thema": "Brüche und Anteile",
+                      "status": "verfügbar",
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-06-30",
+                      "lizenz": "",
+                      "autor": "",
+                      "id": "uebersicht-brueche-am-zahlenstrahl-klasse5",
+                      "titel": "Übersicht: Brüche am Zahlenstrahl",
+                      "kurztitel": "Brüche am Zahlenstrahl",
+                      "beschreibung": "Vorbereiteter Unterordner für Materialien zur Darstellung von Brüchen am Zahlenstrahl.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Übersicht",
+                      "datei": "index.html",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-am-zahlenstrahl/index.html",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-am-zahlenstrahl/index.html",
+                      "dauer": "variabel",
+                      "unterthema": "Brüche am Zahlenstrahl",
+                      "kompetenzbereich": [
+                        "Arithmetik Algebra",
+                        "Darstellen",
+                        "Argumentieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Brüche am Zahlenstrahl",
+                        "Zahlenstrahl",
+                        "Anteile darstellen",
+                        "Vorbereiteter Materialordner"
+                      ],
+                      "tags": [
+                        "mathematik",
+                        "klasse-5",
+                        "brueche",
+                        "zahlenstrahl",
+                        "html",
+                        "uebersicht"
+                      ],
+                      "sichtbar": true
                     }
                   ],
                   "tags": [
@@ -784,11 +1241,16 @@
                     "erweitern",
                     "kuerzen",
                     "gleichwertige-brueche",
+                    "vergleichen",
+                    "ordnen",
+                    "zahlenstrahl",
                     "html",
                     "pdf",
-                    "video"
+                    "video",
+                    "manim",
+                    "audio"
                   ],
-                  "anzahlMaterialien": 5
+                  "anzahlMaterialien": 13
                 }
               ],
               "tags": [
@@ -802,10 +1264,16 @@
                 "kuerzen",
                 "mathematik",
                 "pdf",
-                "video"
+                "video",
+                "brueche-und-anteile",
+                "vergleichen",
+                "ordnen",
+                "zahlenstrahl",
+                "manim",
+                "audio"
               ],
               "anzahlThemen": 1,
-              "anzahlMaterialien": 5
+              "anzahlMaterialien": 13
             },
             {
               "id": "groessen-und-messen",
@@ -1080,7 +1548,16 @@
               ],
               "tags": [
                 "klasse-5",
-                "groessen-und-messen"
+                "groessen-und-messen",
+                "groessen-im-alltag",
+                "html",
+                "interaktiv",
+                "lernpfad",
+                "lernpfad-einfuehrung-groessen-im-alltag",
+                "lernpfad-laengen-umrechnen",
+                "lernpfad-massstab-einfach",
+                "lernpfad-zeit-und-geld",
+                "mathematik"
               ],
               "anzahlThemen": 1,
               "anzahlMaterialien": 4
@@ -1498,7 +1975,18 @@
                 "figuren-und-koerper",
                 "volumen",
                 "quader",
-                "wuerfel"
+                "wuerfel",
+                "html",
+                "interaktiv",
+                "lernpfad",
+                "lernpfad-einfuehrung-figuren-und-koerper",
+                "lernpfad-grundfiguren-beschreiben",
+                "lernpfad-koerper-und-netze",
+                "lernpfad-symmetrie-entdecken",
+                "lernpfad-umfang-und-flaeche-rechteck",
+                "mathematik",
+                "groessen-und-messen",
+                "lernpfad-quader-einheitswuerfel"
               ],
               "anzahlThemen": 1,
               "anzahlMaterialien": 6
@@ -1673,7 +2161,14 @@
                 "klasse-5",
                 "koerper-und-volumen",
                 "oberflaecheninhalt",
-                "quader"
+                "quader",
+                "arbeitsblatt",
+                "html",
+                "interaktiv",
+                "lernpfad",
+                "mathematik",
+                "pdf",
+                "quadernetze"
               ],
               "anzahlThemen": 1,
               "anzahlMaterialien": 2
@@ -2011,7 +2506,17 @@
               ],
               "tags": [
                 "klasse-5",
-                "daten"
+                "daten",
+                "daten-und-diagramme",
+                "html",
+                "interaktiv",
+                "lernpfad",
+                "lernpfad-daten-sammeln",
+                "lernpfad-diagramme-erstellen",
+                "lernpfad-einfuehrung-daten-und-diagramme",
+                "lernpfad-mittelwert-entdecken",
+                "lernpfad-saeulendiagramme-lesen",
+                "mathematik"
               ],
               "anzahlThemen": 1,
               "anzahlMaterialien": 5
@@ -2019,30 +2524,67 @@
           ],
           "materialien": [],
           "anzahlThemen": 7,
-          "anzahlMaterialien": 28,
+          "anzahlMaterialien": 36,
           "tags": [
-            "anteile",
-            "arithmetik-algebra",
-            "brueche",
-            "daten",
-            "erweitern",
-            "figuren-und-koerper",
-            "geometrie",
-            "gleichwertige-brueche",
-            "groessen-und-messen",
-            "html",
-            "klasse-5",
             "klasse-5-gesamt",
-            "koerper-und-volumen",
-            "kuerzen",
+            "klasse-5",
+            "mathequest-klasse-5",
+            "html",
+            "interaktiv",
+            "lernspiel",
             "mathematik",
-            "oberflaecheninhalt",
+            "mathequest",
+            "sekundarstufe-i",
+            "zahlen-und-rechnen",
+            "natuerliche-zahlen",
+            "lernpfad",
+            "lernpfad-einfuehrung-natuerliche-zahlen",
+            "lernpfad-rechenvorteile",
+            "lernpfad-runden-und-schaetzen",
+            "lernpfad-schriftlich-rechnen",
+            "lernpfad-zahlenstrahl-und-ordnung",
+            "arithmetik-algebra",
+            "anteile",
+            "brueche",
+            "erweitern",
+            "gleichwertige-brueche",
+            "kuerzen",
             "pdf",
-            "quader",
             "video",
+            "brueche-und-anteile",
+            "vergleichen",
+            "ordnen",
+            "zahlenstrahl",
+            "manim",
+            "audio",
+            "groessen-und-messen",
+            "groessen-im-alltag",
+            "lernpfad-einfuehrung-groessen-im-alltag",
+            "lernpfad-laengen-umrechnen",
+            "lernpfad-massstab-einfach",
+            "lernpfad-zeit-und-geld",
+            "geometrie",
+            "figuren-und-koerper",
             "volumen",
+            "quader",
             "wuerfel",
-            "zahlen-und-rechnen"
+            "lernpfad-einfuehrung-figuren-und-koerper",
+            "lernpfad-grundfiguren-beschreiben",
+            "lernpfad-koerper-und-netze",
+            "lernpfad-symmetrie-entdecken",
+            "lernpfad-umfang-und-flaeche-rechteck",
+            "lernpfad-quader-einheitswuerfel",
+            "koerper-und-volumen",
+            "oberflaecheninhalt",
+            "arbeitsblatt",
+            "quadernetze",
+            "daten",
+            "daten-und-diagramme",
+            "lernpfad-daten-sammeln",
+            "lernpfad-diagramme-erstellen",
+            "lernpfad-einfuehrung-daten-und-diagramme",
+            "lernpfad-mittelwert-entdecken",
+            "lernpfad-saeulendiagramme-lesen"
           ]
         },
         {
