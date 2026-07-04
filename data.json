@@ -546,7 +546,9 @@
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": ""
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
                     },
                     {
                       "id": "uebersicht-teilthemen-brueche-klasse5",
@@ -602,7 +604,9 @@
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": ""
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
                     },
                     {
                       "id": "materialuebersicht-brueche-klasse5",
@@ -656,7 +660,9 @@
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": ""
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
                     },
                     {
                       "id": "lernreihenfolge-brueche-klasse5",
@@ -712,7 +718,9 @@
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": ""
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
                     }
                   ],
                   "tags": [
@@ -727,7 +735,10 @@
                     "teilthemen",
                     "uebersicht"
                   ],
-                  "anzahlMaterialien": 4
+                  "anzahlMaterialien": 4,
+                  "oeffnenIn": "neuer-tab",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer"
                 },
                 {
                   "id": "brueche-als-anteile",
@@ -793,7 +804,9 @@
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": ""
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
                     },
                     {
                       "id": "arbeitsmaterial-brueche-und-anteile-klasse5",
@@ -852,7 +865,9 @@
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": ""
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
                     }
                   ],
                   "tags": [
@@ -869,7 +884,10 @@
                     "uebersicht",
                     "zaehler"
                   ],
-                  "anzahlMaterialien": 2
+                  "anzahlMaterialien": 2,
+                  "oeffnenIn": "neuer-tab",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer"
                 },
                 {
                   "id": "erweitern-und-kuerzen",
@@ -946,7 +964,9 @@
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": ""
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
                     },
                     {
                       "id": "arbeitsblatt-brueche-erweitern-kuerzen-klasse5",
@@ -1005,7 +1025,9 @@
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": ""
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
                     },
                     {
                       "id": "erklaervideo-brueche-erweitern-kuerzen-klasse5",
@@ -1063,7 +1085,9 @@
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": ""
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
                     },
                     {
                       "id": "uebersicht-erweitern-und-kuerzen-klasse5",
@@ -1113,7 +1137,9 @@
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": ""
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
                     },
                     {
                       "id": "manim-skript-brueche-erweitern-kuerzen-klasse5",
@@ -1163,7 +1189,9 @@
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": ""
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
                     },
                     {
                       "id": "transkript-brueche-erweitern-kuerzen-klasse5",
@@ -1211,7 +1239,9 @@
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": ""
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
                     },
                     {
                       "id": "audio-brueche-erweitern-kuerzen-klasse5",
@@ -1260,7 +1290,9 @@
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": ""
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
                     }
                   ],
                   "tags": [
@@ -1290,18 +1322,29 @@
                     "video",
                     "wav"
                   ],
-                  "anzahlMaterialien": 3
+                  "anzahlMaterialien": 3,
+                  "oeffnenIn": "neuer-tab",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer"
                 },
                 {
                   "id": "brueche-vergleichen",
                   "titel": "Brüche vergleichen",
                   "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-vergleichen/",
-                  "beschreibung": "Vorbereiteter Bereich: Brüche vergleichen.",
+                  "beschreibung": "Teilthema Brüche vergleichen mit digitalem Lernassistenten und Arbeitsblatt für ein Gruppenpuzzle in Stammgruppen und Expertengruppen.",
                   "inhaltlicheSchwerpunkte": [
-                    "Brüche vergleichen",
+                    "Anteile auf einem 12-cm-Streifen darstellen",
                     "Anteile vergleichen",
+                    "Begründen",
+                    "Brüche vergleichen",
+                    "Erweitern auf einen gemeinsamen Nenner",
                     "gemeinsame Nenner",
-                    "Begründen"
+                    "gleiche Nenner vergleichen",
+                    "gleiche Zähler vergleichen",
+                    "Gruppenpuzzle mit Stammgruppen und Expertengruppen",
+                    "Strategien zum Bruchvergleich formulieren",
+                    "Vergleichszeichen begründen",
+                    "Zähler und Nenner fachsprachlich nutzen"
                   ],
                   "materialien": [
                     {
@@ -1357,19 +1400,172 @@
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
+                    },
+                    {
+                      "id": "lernassistent-brueche-vergleichen-klasse5",
+                      "titel": "Lernassistent: Brüche vergleichen",
+                      "kurztitel": "Lernassistent",
+                      "beschreibung": "Digitaler Lernassistent zum Gruppenpuzzle Brüche vergleichen: Rollenzuteilung, Stammgruppen A–D, interaktiver 12-cm-Bruchstreifen, gestufte Hilfen mit Cooldown, Fachsprache-Check, Kontrolllösung und Expertengruppenphase.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernassistent",
+                      "datei": "lernassistent_brueche_vergleichen.html",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-vergleichen/lernassistent_brueche_vergleichen.html",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-vergleichen/lernassistent_brueche_vergleichen.html",
+                      "dauer": "ca. 30–45 Minuten",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "arithmetik-algebra",
+                        "themaId": "brueche-vergleichen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Arithmetik Algebra",
+                      "thema": "Brüche vergleichen",
+                      "unterthema": "Gruppenpuzzle: Brüche vergleichen mit digitalem Lernassistenten",
+                      "kompetenzbereich": [
+                        "Arithmetik Algebra",
+                        "Darstellen",
+                        "Kommunizieren",
+                        "Argumentieren",
+                        "Problemlösen"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Brüche vergleichen",
+                        "Anteile auf einem 12-cm-Streifen darstellen",
+                        "Zähler und Nenner fachsprachlich nutzen",
+                        "gleiche Nenner vergleichen",
+                        "gleiche Zähler vergleichen",
+                        "Erweitern auf einen gemeinsamen Nenner",
+                        "Vergleichszeichen begründet setzen",
+                        "Strategien zum Bruchvergleich formulieren",
+                        "Gruppenpuzzle mit Stammgruppen und Expertengruppen"
+                      ],
+                      "tags": [
+                        "mathematik",
+                        "klasse-5",
+                        "arithmetik-algebra",
+                        "brueche",
+                        "anteile",
+                        "brueche-vergleichen",
+                        "lernassistent",
+                        "gruppenpuzzle",
+                        "html",
+                        "interaktiv",
+                        "zaehler",
+                        "nenner",
+                        "erweitern",
+                        "vergleichszeichen"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer",
+                      "erstelltAm": "2026-07-04",
+                      "lizenz": "",
+                      "autor": ""
+                    },
+                    {
+                      "id": "arbeitsblatt-brueche-vergleichen-klasse5",
+                      "titel": "Arbeitsblatt: Brüche vergleichen",
+                      "kurztitel": "AB Brüche vergleichen",
+                      "beschreibung": "Arbeitsblatt zum Gruppenpuzzle Brüche vergleichen mit Stammgruppen A–D, 12-cm-Streifen zum Einteilen und Markieren, Begründungsfeldern, Sammelblatt, Strategieaufgabe und Zusatzaufgabe zum Ordnen von Brüchen.",
+                      "typ": "pdf",
+                      "format": "PDF",
+                      "materialart": "Arbeitsblatt",
+                      "datei": "5b_M_Brueche_vergleichen_AB.pdf",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-vergleichen/5b_M_Brueche_vergleichen_AB.pdf",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/brueche-vergleichen/5b_M_Brueche_vergleichen_AB.pdf",
+                      "dauer": "ca. 30–45 Minuten",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "arithmetik-algebra",
+                        "themaId": "brueche-vergleichen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Arithmetik Algebra",
+                      "thema": "Brüche vergleichen",
+                      "unterthema": "Arbeitsblatt zum Gruppenpuzzle Brüche vergleichen",
+                      "kompetenzbereich": [
+                        "Arithmetik Algebra",
+                        "Darstellen",
+                        "Kommunizieren",
+                        "Argumentieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Brüche vergleichen",
+                        "Anteile einteilen und markieren",
+                        "12-cm-Streifen als Darstellung",
+                        "Vergleichszeichen setzen",
+                        "Begründungen mit Zähler und Nenner formulieren",
+                        "Sammelblatt zu Stammgruppen A–D",
+                        "Strategie zum Vergleich von Brüchen",
+                        "Brüche ordnen"
+                      ],
+                      "tags": [
+                        "mathematik",
+                        "klasse-5",
+                        "arithmetik-algebra",
+                        "brueche",
+                        "anteile",
+                        "brueche-vergleichen",
+                        "arbeitsblatt",
+                        "pdf",
+                        "gruppenpuzzle",
+                        "zaehler",
+                        "nenner",
+                        "vergleichszeichen"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer",
+                      "erstelltAm": "2026-07-04",
+                      "lizenz": "",
                       "autor": ""
                     }
                   ],
                   "tags": [
+                    "arbeitsblatt",
+                    "argumentieren",
                     "arithmetik-algebra",
                     "brueche",
                     "brueche-vergleichen",
+                    "erweitern",
+                    "gruppenpuzzle",
                     "html",
+                    "interaktiv",
                     "klasse-5",
+                    "lernassistent",
                     "mathematik",
-                    "uebersicht"
+                    "nenner",
+                    "pdf",
+                    "uebersicht",
+                    "vergleichszeichen",
+                    "zaehler"
                   ],
-                  "anzahlMaterialien": 1
+                  "anzahlMaterialien": 3,
+                  "oeffnenIn": "neuer-tab",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer"
                 },
                 {
                   "id": "brueche-ordnen",
@@ -1436,7 +1632,9 @@
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": ""
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
                     }
                   ],
                   "tags": [
@@ -1448,7 +1646,10 @@
                     "mathematik",
                     "uebersicht"
                   ],
-                  "anzahlMaterialien": 1
+                  "anzahlMaterialien": 1,
+                  "oeffnenIn": "neuer-tab",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer"
                 },
                 {
                   "id": "brueche-am-zahlenstrahl",
@@ -1515,7 +1716,9 @@
                       "oeffnenIn": "neuer-tab",
                       "erstelltAm": "2026-06-30",
                       "lizenz": "",
-                      "autor": ""
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
                     }
                   ],
                   "tags": [
@@ -1527,13 +1730,17 @@
                     "mathematik",
                     "uebersicht"
                   ],
-                  "anzahlMaterialien": 1
+                  "anzahlMaterialien": 1,
+                  "oeffnenIn": "neuer-tab",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer"
                 }
               ],
               "tags": [
                 "anteile",
                 "arbeitsblatt",
                 "arbeitsmaterial",
+                "argumentieren",
                 "arithmetik-algebra",
                 "asset",
                 "audio",
@@ -1549,6 +1756,7 @@
                 "interaktiv",
                 "klasse-5",
                 "kuerzen",
+                "lernassistent",
                 "lernpfad",
                 "lernreihenfolge",
                 "manim",
@@ -1565,13 +1773,14 @@
                 "txt",
                 "uebersicht",
                 "vergleichen",
+                "vergleichszeichen",
                 "video",
                 "wav",
                 "zaehler",
                 "zahlenstrahl"
               ],
               "anzahlThemen": 6,
-              "anzahlMaterialien": 12
+              "anzahlMaterialien": 14
             },
             {
               "id": "groessen-und-messen",
@@ -2826,11 +3035,12 @@
           ],
           "materialien": [],
           "anzahlThemen": 12,
-          "anzahlMaterialien": 35,
+          "anzahlMaterialien": 37,
           "tags": [
             "anteile",
             "arbeitsblatt",
             "arbeitsmaterial",
+            "argumentieren",
             "arithmetik-algebra",
             "asset",
             "audio",
@@ -2856,6 +3066,7 @@
             "klasse-5-gesamt",
             "koerper-und-volumen",
             "kuerzen",
+            "lernassistent",
             "lernpfad",
             "lernpfad-daten-sammeln",
             "lernpfad-diagramme-erstellen",
@@ -2900,6 +3111,7 @@
             "txt",
             "uebersicht",
             "vergleichen",
+            "vergleichszeichen",
             "video",
             "volumen",
             "wav",
@@ -15487,5 +15699,5 @@
       "anzahlKlassen": 9
     }
   ],
-  "aktualisiertAm": "2026-06-30"
+  "aktualisiertAm": "2026-07-04"
 }
