@@ -155,6 +155,9 @@
     button.danger{background:var(--red);}
     button:disabled{opacity:.45;cursor:not-allowed;box-shadow:none;}
     .button-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;align-items:center;}
+    .nav-footer{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;margin:18px 0 0;}
+    .nav-footer .secondary{min-width:190px;}
+    .lock-button{font-size:1.08rem;min-width:48px;padding-inline:14px;}
     .full{width:100%;}
 
     input, select, textarea{
@@ -318,7 +321,7 @@
         <span class="quiet-pill">🤫 Leise arbeiten · kurz melden · nacheinander sprechen</span>
         <span id="teacherBadge" class="teacher-badge">🔓 Vollzugang aktiv</span>
         <span id="solutionBadge" class="teacher-badge">🧾 Kontrolllösung aktiv</span>
-        <button class="secondary" id="btnTeacher">Zugang</button>
+        <button class="secondary lock-button" id="btnTeacher" title="Lehrerzugang" aria-label="Lehrerzugang öffnen">🔒</button>
       </div>
     </div>
   </header>
@@ -326,28 +329,23 @@
   <main class="app-shell">
     <section class="screen active" id="screen-start">
       <div class="hero">
-        <h2>Willkommen im Brüche-Team</h2>
-        <p>Ihr vergleicht Brüche, erklärt eure Idee mit Fachwörtern und helft später eurer gemischten Gruppe.</p>
+        <h2>Herzlich willkommen!</h2>
+        <p>Dies ist euer Lernassistent zum Vergleich von Brüchen.</p>
+        <h3 style="margin:18px 0 8px;font-size:clamp(1.25rem,2.4vw,1.65rem);color:#fff;">Hinweise zum Gruppenpuzzle und zum Ablauf</h3>
+        <p>Ihr arbeitet zuerst in eurer Stammgruppe. Danach wechselt ihr in eine gemischte Expertengruppe und erklärt euch die Ergebnisse gegenseitig.</p>
         <div class="button-row">
           <button id="startPhase1">Phase 1 starten</button>
-          <button class="secondary" id="startTeacherHero">Zugang</button>
         </div>
       </div>
-      <div class="grid two mt">
+      <div class="grid mt">
         <div class="card soft-primary">
-          <h3>So arbeitet ihr heute</h3>
+          <h3>Ablauf des Gruppenpuzzles</h3>
           <div class="phase-list">
             <div class="phase-step"><div><strong>Rollen verteilen</strong><br><span class="muted">Jede Person übernimmt eine Aufgabe für ruhiges Arbeiten.</span></div></div>
             <div class="phase-step"><div><strong>Stammgruppe A, B, C oder D</strong><br><span class="muted">Ihr bearbeitet euren Brüche-Vergleich mit dem 12-cm-Streifen.</span></div></div>
             <div class="phase-step"><div><strong>Phasenwechsel</strong><br><span class="muted">Ihr geht in eine gemischte Gruppe.</span></div></div>
             <div class="phase-step"><div><strong>Expertengruppe</strong><br><span class="muted">Ihr füllt das Sammelblatt aus und formuliert eine Strategie.</span></div></div>
           </div>
-        </div>
-        <div class="card soft-green">
-          <h3>Mathe-Sprache</h3>
-          <p>In euren Begründungen nutzt ihr die Fachwörter:</p>
-          <p class="mathline">Zähler · Nenner · Bruch · Erweitern · Kürzen</p>
-          <p>Vor der Musterlösung prüft ihr, ob eure Begründung diese Fachwörter wirklich benutzt.</p>
         </div>
       </div>
     </section>
@@ -375,8 +373,7 @@
     <section class="screen" id="screen-group-select">
       <div class="card">
         <p class="section-label">Stammgruppe auswählen</p>
-        <h2>Welche Stammgruppe seid ihr?</h2>
-        <p class="lead">Wählt eure Aufgabe aus. Danach startet eure Arbeitszeit von 7 Minuten.</p>
+        <h2>Welche Aufgabe habt ihr?</h2>
       </div>
       <div class="grid two" id="groupCards"></div>
       <div class="button-row">
@@ -402,7 +399,6 @@
           <strong>Reihenfolge:</strong> Lest die Aufgabe. Teilt zuerst die 12-cm-Rechtecke auf dem Arbeitsblatt passend ein. Nutzt dann den interaktiven Streifen, wenn ihr unsicher seid. Danach markiert ihr, setzt das Vergleichszeichen und schreibt eine Begründung mit Fachwörtern.
         </div>
         <div class="button-row">
-          <button id="startTimerBtn">Arbeitszeit starten</button>
           <button class="secondary" id="goBackGroupSelect">Andere Stammgruppe wählen</button>
         </div>
       </div>
@@ -448,6 +444,15 @@
         </div>
       </div>
 
+      <div class="card soft-green" id="solutionAccessCard" style="display:none;">
+        <p class="section-label">Kontrolle</p>
+        <h2>Kontrolllösung ansehen</h2>
+        <p>Am Ende der Stammgruppenphase könnt ihr die Kontrolllösung freischalten.</p>
+        <div class="button-row">
+          <button id="btnSolutionAccess" class="success">Kontrolllösung freischalten</button>
+        </div>
+      </div>
+
       <div class="solution" id="workSolution"></div>
 
       <div class="card" id="afterSolutionCard" style="display:none;">
@@ -462,6 +467,9 @@
         <div class="button-row">
           <button id="toPhaseSwitch">Weiter zum Phasenwechsel</button>
         </div>
+      </div>
+      <div class="card compact nav-footer">
+        <button class="secondary" id="workBackBottom">Zurück zur Stammgruppenauswahl</button>
       </div>
     </section>
 
@@ -490,6 +498,9 @@
       </div>
       <div class="button-row">
         <button id="switchNext">Ich bin in meiner neuen Gruppe angekommen</button>
+      </div>
+      <div class="card compact nav-footer">
+        <button class="secondary" data-go="screen-work">Zurück zur Stammgruppenarbeit</button>
       </div>
     </section>
 
@@ -520,6 +531,7 @@
         <p class="muted small mt" id="roles2Info">Füllt die Rollen aus und wählt eure Expertengruppe.</p>
         <div class="button-row">
           <button id="roles2Next" disabled>Expertengruppe starten</button>
+          <button class="secondary" data-go="screen-switch">Zurück zum Phasenwechsel</button>
         </div>
       </div>
     </section>
@@ -619,15 +631,18 @@
           <div class="option-card">Das möchte ich mir merken.</div>
         </div>
       </div>
+      <div class="card compact nav-footer">
+        <button class="secondary" data-go="screen-roles2">Zurück zur Rollenzuteilung</button>
+      </div>
     </section>
   </main>
 
   <div class="modal-backdrop" id="teacherModal">
     <div class="modal">
-      <h2>Zugang freischalten</h2>
-      <p class="muted">Gib den Zugangscode ein.</p>
-      <label for="pinInput">PIN</label>
-      <input id="pinInput" autocomplete="off" placeholder="PIN oder Fachwort" />
+      <h2 id="modalTitle">Zugang freischalten</h2>
+      <p class="muted" id="modalText">Gib den Zugangscode ein.</p>
+      <label for="pinInput" id="pinLabel">PIN</label>
+      <input id="pinInput" autocomplete="off" placeholder="Zugangscode" />
       <div id="pinFeedback" class="feedback"></div>
       <div class="button-row">
         <button id="unlockTeacherBtn">Zugang freischalten</button>
@@ -786,7 +801,8 @@
       hintNextTime:0,
       expertHintNextTime:0,
       selectedOrderChip:null,
-      order:[null,null,null,null,null]
+      order:[null,null,null,null,null],
+      modalMode:"teacher"
     };
 
     function $(id){ return document.getElementById(id); }
@@ -809,6 +825,12 @@
     function updateTeacherUI(){
       $("teacherBadge").classList.toggle("visible", state.teacher);
       $("solutionBadge").classList.toggle("visible", state.solutionAccess && !state.teacher);
+      const solBtn=$("btnSolutionAccess");
+      if(solBtn){
+        solBtn.textContent = (state.solutionAccess && !state.teacher) ? "Kontrollmodus aktiv – deaktivieren" : "Kontrolllösung freischalten";
+        solBtn.classList.toggle("warning", state.solutionAccess && !state.teacher);
+        solBtn.classList.toggle("success", !(state.solutionAccess && !state.teacher));
+      }
       if(state.teacher){
         unlockAllVisibleHints();
         unlockSolutionsIfVisible();
@@ -872,11 +894,10 @@
     function renderGroupCards(){
       const container=$("groupCards");
       container.innerHTML = Object.entries(groups).map(([key,g])=>`
-        <button class="secondary group-card full" data-group="${key}" style="justify-content:flex-start;text-align:left;min-height:132px;">
+        <button class="secondary group-card full" data-group="${key}" style="justify-content:flex-start;text-align:left;min-height:118px;">
           <span style="font-size:2.2rem;font-weight:950;background:var(--primary-soft);color:var(--primary-dark);border-radius:18px;min-width:64px;height:64px;display:grid;place-items:center;">${key}</span>
-          <span><strong style="font-size:1.18rem;">${g.label}</strong><br>
-          <span style="font-size:1.42rem;display:inline-block;margin:7px 0;">${frac(g.first.n,g.first.d)} und ${frac(g.second.n,g.second.d)}</span><br>
-          <span class="muted">${g.special}</span></span>
+          <span><strong style="font-size:1.18rem;">Aufgabe ${key}</strong><br>
+          <span style="font-size:1.42rem;display:inline-block;margin:7px 0;">${frac(g.first.n,g.first.d)} und ${frac(g.second.n,g.second.d)}</span></span>
         </button>
       `).join("");
       container.querySelectorAll("button[data-group]").forEach(btn=>btn.addEventListener("click",()=>selectGroup(btn.dataset.group)));
@@ -891,6 +912,10 @@
       clearInterval(state.timerInterval);
       setupWorkScreen();
       showScreen("screen-work");
+      startWork(state.teacher);
+      if(state.teacher || state.solutionAccess){
+        unlockGroupSolution();
+      }
     }
 
     function setupWorkScreen(){
@@ -900,11 +925,10 @@
       $("workHeading").textContent = `${g.label}: Brüche vergleichen`;
       $("workTask").innerHTML = `${frac(g.first.n,g.first.d)} <span>□</span> ${frac(g.second.n,g.second.d)}`;
       $("timerDisplay").textContent = "⏱ 07:00";
-      $("startTimerBtn").style.display = "inline-flex";
-      $("startTimerBtn").disabled=false;
       $("workMainTools").style.display="none";
       $("hintsCard").style.display="none";
       $("languageCheckCard").style.display="none";
+      $("solutionAccessCard").style.display="none";
       $("workSolution").classList.remove("visible");
       $("afterSolutionCard").style.display="none";
       $("showSolutionBtn").disabled=true;
@@ -917,12 +941,7 @@
       document.querySelectorAll("#lengthCompareOptions .option-card").forEach(o=>o.classList.remove("selected","correct","wrong"));
       $("lengthCompareFeedback").className="feedback";
       $("lengthCompareFeedback").textContent="";
-      if(state.teacher){
-        startWork(true);
-        unlockGroupSolution();
-      }else if(state.solutionAccess){
-        unlockGroupSolution();
-      }
+
     }
 
     function renderStripTool(containerId, title, n, d){
@@ -1013,13 +1032,13 @@
     function startWork(skipTimer=false){
       $("workMainTools").style.display="block";
       $("hintsCard").style.display="block";
-      $("startTimerBtn").style.display="none";
       state.timerStarted=true;
       if(skipTimer || state.teacher){
         state.timerRemaining=0;
         updateTimerDisplay();
         $("languageCheckCard").style.display="block";
-        toast(state.teacher ? "Timer übersprungen." : "Kontrolllösung freigeschaltet.");
+        $("solutionAccessCard").style.display="block";
+        toast(state.teacher ? "Timer übersprungen." : "Die Kontrollphase ist bereit.");
         return;
       }
       clearInterval(state.timerInterval);
@@ -1030,6 +1049,7 @@
         if(state.timerRemaining<=0){
           clearInterval(state.timerInterval);
           $("languageCheckCard").style.display="block";
+          $("solutionAccessCard").style.display="block";
           toast("Die 7 Minuten sind vorbei. Prüft jetzt eure Fachsprache.");
         }
       },1000);
@@ -1130,6 +1150,7 @@
 
     function unlockGroupSolution(){
       $("languageCheckCard").style.display="block";
+      $("solutionAccessCard").style.display="block";
       $("showSolutionBtn").disabled=false;
       $("workSolution").classList.add("visible");
       $("afterSolutionCard").style.display="block";
@@ -1219,14 +1240,14 @@
     function setupEvents(){
       document.querySelectorAll("[data-go]").forEach(btn=>btn.addEventListener("click",()=>showScreen(btn.dataset.go)));
       $("startPhase1").addEventListener("click",()=>showScreen("screen-roles1"));
-      $("startTeacherHero").addEventListener("click",openTeacherModal);
-      $("btnTeacher").addEventListener("click",openTeacherModal);
+      $("btnTeacher").addEventListener("click",()=>openTeacherModal("teacher"));
       $("closeTeacherModal").addEventListener("click",closeTeacherModal);
       $("unlockTeacherBtn").addEventListener("click",unlockTeacher);
       $("pinInput").addEventListener("keydown",e=>{ if(e.key==="Enter") unlockTeacher(); });
       $("roles1Next").addEventListener("click",()=>showScreen("screen-group-select"));
-      $("startTimerBtn").addEventListener("click",()=>startWork(false));
       $("goBackGroupSelect").addEventListener("click",()=>{clearInterval(state.timerInterval); showScreen("screen-group-select");});
+      $("workBackBottom").addEventListener("click",()=>{clearInterval(state.timerInterval); showScreen("screen-group-select");});
+      $("btnSolutionAccess").addEventListener("click",openSolutionAccess);
       $("checkLanguageBtn").addEventListener("click",checkLanguage);
       $("showSolutionBtn").addEventListener("click",unlockGroupSolution);
       $("toPhaseSwitch").addEventListener("click",()=>showScreen("screen-switch"));
@@ -1260,28 +1281,77 @@
       }));
     }
 
-    function openTeacherModal(){
+    function openTeacherModal(mode="teacher"){
+      state.modalMode=mode;
+      $("modalTitle").textContent = mode==="teacher" ? "Lehrerzugang" : "Kontrolllösung";
+      $("modalText").textContent = mode==="teacher" ? "Gib den Lehrer-PIN ein." : "Gib das Passwort für die Kontrolllösung ein.";
+      $("pinLabel").textContent = mode==="teacher" ? "Lehrer-PIN" : "Passwort";
+      $("pinInput").placeholder = mode==="teacher" ? "PIN" : "Passwort";
+      $("unlockTeacherBtn").textContent = mode==="teacher" ? "Lehrerzugang freischalten" : "Kontrolllösung freischalten";
       $("teacherModal").classList.add("visible");
       $("pinInput").value="";
       $("pinFeedback").className="feedback";
+      $("pinFeedback").textContent="";
       setTimeout(()=>$("pinInput").focus(),80);
     }
+
+    function openSolutionAccess(){
+      if(state.solutionAccess && !state.teacher){
+        const off = confirm("Der Kontrollmodus ist aktiv. Möchtet ihr ihn deaktivieren?");
+        if(off){
+          state.solutionAccess=false;
+          hideControlSolutions();
+          updateTeacherUI();
+          toast("Kontrollmodus deaktiviert.");
+        }
+        return;
+      }
+      if(state.teacher){
+        toast("Der Lehrerzugang ist aktiv. Alle Lösungen sind freigeschaltet.");
+        return;
+      }
+      openTeacherModal("solution");
+    }
+
+    function hideControlSolutions(){
+      if(state.currentScreen==="screen-work"){
+        $("workSolution").classList.remove("visible");
+        $("afterSolutionCard").style.display="none";
+        $("showSolutionBtn").disabled=true;
+        state.solutionUnlocked=false;
+      }
+      if(state.currentScreen==="screen-expert"){
+        $("expertSolution").classList.remove("visible");
+        checkExpertSolutionButton();
+      }
+    }
+
     function closeTeacherModal(){ $("teacherModal").classList.remove("visible"); }
+
     function unlockTeacher(){
       const entered = $("pinInput").value.trim();
-      if(entered===PIN){
-        state.teacher=true;
-        state.solutionAccess=true;
-        closeTeacherModal();
-        updateTeacherUI();
-        toast("Vollzugang freigeschaltet: alle Tipps und Lösungen sind sichtbar.");
-      }else if(entered.toLowerCase()===SOLUTION_PIN.toLowerCase()){
-        state.solutionAccess=true;
-        closeTeacherModal();
-        updateTeacherUI();
-        toast("Kontrolllösung freigeschaltet.");
-      }else{
-        setFeedback("pinFeedback", false, "Die PIN stimmt nicht.");
+      if(state.modalMode==="teacher"){
+        if(entered===PIN){
+          state.teacher=true;
+          state.solutionAccess=true;
+          closeTeacherModal();
+          updateTeacherUI();
+          toast("Lehrerzugang freigeschaltet.");
+        }else{
+          setFeedback("pinFeedback", false, "Die PIN stimmt nicht.");
+        }
+        return;
+      }
+      if(state.modalMode==="solution"){
+        if(entered.toLowerCase()===SOLUTION_PIN.toLowerCase()){
+          state.solutionAccess=true;
+          closeTeacherModal();
+          updateTeacherUI();
+          unlockGroupSolution();
+          toast("Kontrolllösung freigeschaltet.");
+        }else{
+          setFeedback("pinFeedback", false, "Das Passwort stimmt nicht.");
+        }
       }
     }
 
