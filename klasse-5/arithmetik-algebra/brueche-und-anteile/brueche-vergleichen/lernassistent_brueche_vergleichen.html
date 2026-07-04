@@ -191,6 +191,49 @@
     .teacher-badge{display:none;align-items:center;gap:7px;background:var(--orange-soft);color:#7c2d12;border:1px solid #fdba74;border-radius:999px;padding:7px 10px;font-weight:850;}
     .teacher-badge.visible{display:inline-flex;}
 
+    .station-overview{
+      margin-top:12px;
+      padding:10px;
+      border:1px solid rgba(255,255,255,.22);
+      border-radius:20px;
+      background:rgba(255,255,255,.72);
+      backdrop-filter:blur(10px);
+      box-shadow:0 8px 18px rgba(31,41,55,.06);
+      overflow-x:auto;
+      -webkit-overflow-scrolling:touch;
+    }
+    .station-overview-inner{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      min-width:max-content;
+    }
+    .station-overview-label{
+      font-size:.82rem;
+      font-weight:900;
+      color:var(--muted);
+      padding:0 6px 0 2px;
+      white-space:nowrap;
+    }
+    .station-nav-btn{
+      min-height:42px;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.9rem;
+      box-shadow:none;
+      background:#fff;
+      color:var(--ink);
+      border:1px solid var(--line);
+      white-space:nowrap;
+    }
+    .station-nav-btn:hover{background:var(--primary-soft);color:var(--primary-dark);}
+    .station-nav-btn.active{
+      background:var(--primary);
+      color:#fff;
+      border-color:var(--primary);
+      box-shadow:0 8px 18px rgba(79,70,229,.18);
+    }
+
     .fraction-task{
       display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;
       font-size:1.6rem;font-weight:800;padding:16px;border-radius:22px;background:#f8fafc;border:1px solid var(--line);
@@ -343,6 +386,19 @@
         <button class="secondary lock-button" id="btnTeacher" title="Lehrerzugang" aria-label="Lehrerzugang öffnen">🔒</button>
       </div>
     </div>
+
+    <nav class="station-overview" aria-label="Stationsübersicht">
+      <div class="station-overview-inner">
+        <span class="station-overview-label">Stationen:</span>
+        <button type="button" class="station-nav-btn" data-station-go="screen-start">Start</button>
+        <button type="button" class="station-nav-btn" data-station-go="screen-roles1">Rollen 1</button>
+        <button type="button" class="station-nav-btn" data-station-go="screen-group-select">Aufgabe wählen</button>
+        <button type="button" class="station-nav-btn" data-station-go="screen-work">Stammgruppe</button>
+        <button type="button" class="station-nav-btn" data-station-go="screen-switch">Gruppenwechsel</button>
+        <button type="button" class="station-nav-btn" data-station-go="screen-roles2">Rollen 2</button>
+        <button type="button" class="station-nav-btn" data-station-go="screen-expert">Sammelblatt</button>
+      </div>
+    </nav>
   </header>
 
   <main class="app-shell">
@@ -404,7 +460,7 @@
       <div class="top-status">
         <div>
           <strong id="workGroupTitle">Stammgruppe</strong><br>
-          <span class="muted" id="workSpecial">Besonderheit</span>
+          <span class="muted" id="workSpecial">Vergleicht Zähler und Nenner.</span>
         </div>
         <div class="timer" id="timerDisplay">⏱ 07:00</div>
         <button class="secondary" id="btnFullscreen">Vollbild</button>
@@ -432,30 +488,34 @@
         <div class="hint-area" id="hintArea"></div>
       </div>
 
+      <div class="card soft-green" id="solutionAccessCard" style="display:none;">
+        <p class="section-label">Ergebnisse kontrollieren</p>
+        <h2>Ergebnisse kontrollieren</h2>
+        <p>Klickt erst hier, wenn ihr eure Aufgabe vollständig bearbeitet habt. Danach wird das Passwort verlangt.</p>
+        <div class="button-row">
+          <button id="showSolutionPinBtn" class="success">Ergebnisse kontrollieren</button>
+        </div>
+        <div id="solutionPinPanel" class="subtle-card soft-primary mt hidden">
+          <div class="name-input" style="max-width:360px;">
+            <label for="solutionPinInput">Passwort</label>
+            <input id="solutionPinInput" type="password" autocomplete="off" placeholder="Passwort eingeben" />
+          </div>
+          <div id="solutionDirectFeedback" class="feedback"></div>
+          <div class="button-row">
+            <button id="btnSolutionAccess" class="success">Musterlösung anzeigen</button>
+          </div>
+        </div>
+      </div>
+
       <div class="card" id="languageCheckCard" style="display:none;">
-        <p class="section-label">Kontrolle vor der Musterlösung</p>
-        <h2>Ist eure Begründung vollständig?</h2>
-        <p>Prüft zuerst eure Mathe-Sprache. Danach geht ihr zum Bereich <strong>Ergebnisse kontrollieren</strong>.</p>
+        <p class="section-label">Begründung prüfen</p>
+        <h2>Was fällt bei euren Brüchen auf?</h2>
+        <p>Vergleicht zuerst die <strong>Zähler</strong> und die <strong>Nenner</strong> der beiden Brüche. Formuliert dann selbst, was an eurem Zahlenbeispiel besonders ist.</p>
         <div id="specialQuestion" class="subtle-card soft-blue"></div>
         <div class="check-list" id="languageChecklist"></div>
         <div id="languageFeedback" class="feedback"></div>
         <div class="button-row">
-          <button id="checkLanguageBtn">Fachsprache prüfen</button>
-          <button id="showSolutionBtn" class="success" disabled>Weiter: Ergebnisse kontrollieren</button>
-        </div>
-      </div>
-
-      <div class="card soft-green" id="solutionAccessCard" style="display:none;">
-        <p class="section-label">Ergebnisse kontrollieren</p>
-        <h2>Ergebnisse kontrollieren</h2>
-        <p>Gebt das Passwort ein, um die Kontrolllösung zu sehen.</p>
-        <div class="name-input" style="max-width:360px;">
-          <label for="solutionPinInput">Passwort</label>
-          <input id="solutionPinInput" type="password" autocomplete="off" placeholder="Passwort eingeben" />
-        </div>
-        <div id="solutionDirectFeedback" class="feedback"></div>
-        <div class="button-row">
-          <button id="btnSolutionAccess" class="success">Kontrolllösung anzeigen</button>
+          <button id="checkLanguageBtn">Unsere Überlegung prüfen</button>
         </div>
       </div>
 
@@ -467,7 +527,7 @@
           <label class="check-item"><input type="checkbox"><span>Die 12-cm-Streifen sind passend eingeteilt.</span></label>
           <label class="check-item"><input type="checkbox"><span>Die Anteile sind markiert.</span></label>
           <label class="check-item"><input type="checkbox"><span>Das Vergleichszeichen ist eingetragen.</span></label>
-          <label class="check-item"><input type="checkbox"><span>Die Besonderheit steht auf dem Blatt.</span></label>
+          <label class="check-item"><input type="checkbox"><span>Ihr habt Zähler und Nenner miteinander verglichen.</span></label>
           <label class="check-item"><input type="checkbox"><span>Die Begründung nutzt <strong>Zähler</strong> und <strong>Nenner</strong>.</span></label>
         </div>
         <div class="button-row">
@@ -627,13 +687,12 @@
         ],
         specialOptions:["gleicher Nenner 4", "gleicher Zähler", "Zähler und Nenner verschieden"],
         correctSpecial:"gleicher Nenner 4",
-        checks:["Wir haben den Zähler genannt.","Wir haben den Nenner genannt.","Wir haben die Besonderheit „gleicher Nenner 4“ notiert.","Wir haben ein Vergleichszeichen eingetragen.","Wir haben einen Satz geschrieben, warum der eine Bruch größer oder kleiner ist."],
+        checks:["Wir haben die Zähler miteinander verglichen.","Wir haben die Nenner miteinander verglichen.","Wir haben selbst eine Beobachtung zu diesem Zahlenbeispiel formuliert.","Wir haben ein Vergleichszeichen eingetragen.","Wir haben einen Satz mit Zähler und Nenner geschrieben."],
         solution:`<h3>Musterlösung Stammgruppe A</h3>
           <p class="mathline"><span class="frac"><span class="top">2</span><span class="bottom">4</span></span> &lt; <span class="frac"><span class="top">3</span><span class="bottom">4</span></span></p>
           <p>Bei beiden Brüchen ist der <strong>Nenner</strong> 4. Das Ganze wird also bei beiden Brüchen in 4 gleich große Teile geteilt. Die Teile sind gleich groß.</p>
           <p>Der <strong>Zähler</strong> ist bei <span class="frac"><span class="top">2</span><span class="bottom">4</span></span> gleich 2 und bei <span class="frac"><span class="top">3</span><span class="bottom">4</span></span> gleich 3. Drei Teile sind mehr als zwei Teile. Deshalb ist <span class="frac"><span class="top">3</span><span class="bottom">4</span></span> größer.</p>
-          <p>Mit dem 12-cm-Streifen: <strong>2 · 3 cm = 6 cm</strong> und <strong>3 · 3 cm = 9 cm</strong>. Also gilt 6 cm &lt; 9 cm.</p>
-          <p><strong>Besonderheit für das Sammelblatt:</strong> gleicher Nenner 4</p>`
+          <p>Mit dem 12-cm-Streifen: <strong>2 · 3 cm = 6 cm</strong> und <strong>3 · 3 cm = 9 cm</strong>. Also gilt 6 cm &lt; 9 cm.</p>`
       },
       B: {
         label:"Stammgruppe B",
@@ -648,14 +707,13 @@
         ],
         specialOptions:["gleicher Zähler 1", "gleicher Nenner", "Zähler und Nenner verschieden"],
         correctSpecial:"gleicher Zähler 1",
-        checks:["Wir haben den Zähler genannt.","Wir haben den Nenner genannt.","Wir haben die Besonderheit „gleicher Zähler 1“ notiert.","Wir haben ein Vergleichszeichen eingetragen.","Wir haben einen Satz geschrieben, warum der eine Bruch größer oder kleiner ist."],
+        checks:["Wir haben die Zähler miteinander verglichen.","Wir haben die Nenner miteinander verglichen.","Wir haben selbst eine Beobachtung zu diesem Zahlenbeispiel formuliert.","Wir haben ein Vergleichszeichen eingetragen.","Wir haben einen Satz mit Zähler und Nenner geschrieben."],
         solution:`<h3>Musterlösung Stammgruppe B</h3>
           <p class="mathline"><span class="frac"><span class="top">1</span><span class="bottom">3</span></span> &gt; <span class="frac"><span class="top">1</span><span class="bottom">4</span></span></p>
           <p>Bei beiden Brüchen ist der <strong>Zähler gleich 1</strong>. Es wird also jeweils ein Teil genommen.</p>
           <p>Die <strong>Nenner</strong> sind verschieden: 3 und 4. Bei <span class="frac"><span class="top">1</span><span class="bottom">3</span></span> wird das Ganze in 3 gleich große Teile geteilt. Bei <span class="frac"><span class="top">1</span><span class="bottom">4</span></span> wird das Ganze in 4 gleich große Teile geteilt.</p>
           <p>Ein Teil von 3 gleich großen Teilen ist größer als ein Teil von 4 gleich großen Teilen. Deshalb gilt <span class="frac"><span class="top">1</span><span class="bottom">3</span></span> &gt; <span class="frac"><span class="top">1</span><span class="bottom">4</span></span>.</p>
-          <p>Mit dem 12-cm-Streifen: <strong>12 : 3 = 4 cm</strong> und <strong>12 : 4 = 3 cm</strong>. Also gilt 4 cm &gt; 3 cm.</p>
-          <p><strong>Besonderheit für das Sammelblatt:</strong> gleicher Zähler 1</p>`
+          <p>Mit dem 12-cm-Streifen: <strong>12 : 3 = 4 cm</strong> und <strong>12 : 4 = 3 cm</strong>. Also gilt 4 cm &gt; 3 cm.</p>`
       },
       C: {
         label:"Stammgruppe C",
@@ -670,14 +728,13 @@
         ],
         specialOptions:["gleicher Zähler 2", "gleicher Nenner", "beide Brüche sind gleich groß"],
         correctSpecial:"gleicher Zähler 2",
-        checks:["Wir haben den Zähler genannt.","Wir haben den Nenner genannt.","Wir haben die Besonderheit „gleicher Zähler 2“ notiert.","Wir haben ein Vergleichszeichen eingetragen.","Wir haben einen Satz geschrieben, warum der eine Bruch größer oder kleiner ist."],
+        checks:["Wir haben die Zähler miteinander verglichen.","Wir haben die Nenner miteinander verglichen.","Wir haben selbst eine Beobachtung zu diesem Zahlenbeispiel formuliert.","Wir haben ein Vergleichszeichen eingetragen.","Wir haben einen Satz mit Zähler und Nenner geschrieben."],
         solution:`<h3>Musterlösung Stammgruppe C</h3>
           <p class="mathline"><span class="frac"><span class="top">2</span><span class="bottom">3</span></span> &gt; <span class="frac"><span class="top">2</span><span class="bottom">4</span></span></p>
           <p>Bei beiden Brüchen ist der <strong>Zähler gleich 2</strong>. Es werden also jeweils zwei Teile genommen.</p>
           <p>Die <strong>Nenner</strong> sind verschieden: 3 und 4. Drittelstücke sind größer als Viertelstücke, weil das Ganze bei Dritteln in weniger Teile geteilt wird.</p>
           <p>Deshalb sind zwei Drittelstücke größer als zwei Viertelstücke.</p>
-          <p>Mit dem 12-cm-Streifen: <strong>2 · 4 cm = 8 cm</strong> und <strong>2 · 3 cm = 6 cm</strong>. Also gilt 8 cm &gt; 6 cm.</p>
-          <p><strong>Besonderheit für das Sammelblatt:</strong> gleicher Zähler 2</p>`
+          <p>Mit dem 12-cm-Streifen: <strong>2 · 4 cm = 8 cm</strong> und <strong>2 · 3 cm = 6 cm</strong>. Also gilt 8 cm &gt; 6 cm.</p>`
       },
       D: {
         label:"Stammgruppe D",
@@ -692,15 +749,14 @@
         ],
         specialOptions:["Zähler und Nenner verschieden; Erweitern hilft", "gleicher Zähler", "gleicher Nenner"],
         correctSpecial:"Zähler und Nenner verschieden; Erweitern hilft",
-        checks:["Wir haben den Zähler genannt.","Wir haben den Nenner genannt.","Wir haben die Besonderheit „Zähler und Nenner verschieden“ notiert.","Wir haben die Brüche erweitert.","Wir haben beide Brüche mit gleichem Nenner verglichen.","Wir haben ein Vergleichszeichen eingetragen."],
+        checks:["Wir haben die Zähler miteinander verglichen.","Wir haben die Nenner miteinander verglichen.","Wir haben selbst eine Beobachtung zu diesem Zahlenbeispiel formuliert.","Wir haben überlegt, ob Erweitern hilft.","Wir haben ein Vergleichszeichen eingetragen."],
         solution:`<h3>Musterlösung Stammgruppe D</h3>
           <p class="mathline"><span class="frac"><span class="top">2</span><span class="bottom">3</span></span> &lt; <span class="frac"><span class="top">3</span><span class="bottom">4</span></span></p>
           <p>Bei <span class="frac"><span class="top">2</span><span class="bottom">3</span></span> und <span class="frac"><span class="top">3</span><span class="bottom">4</span></span> sind <strong>Zähler</strong> und <strong>Nenner</strong> verschieden. Deshalb erweitern wir beide Brüche auf den gleichen <strong>Nenner</strong> 12.</p>
           <p class="mathline"><span class="frac"><span class="top">2</span><span class="bottom">3</span></span> = <span class="frac"><span class="top">2 · 4</span><span class="bottom">3 · 4</span></span> = <span class="frac"><span class="top">8</span><span class="bottom">12</span></span></p>
           <p class="mathline"><span class="frac"><span class="top">3</span><span class="bottom">4</span></span> = <span class="frac"><span class="top">3 · 3</span><span class="bottom">4 · 3</span></span> = <span class="frac"><span class="top">9</span><span class="bottom">12</span></span></p>
           <p>Jetzt haben beide Brüche den gleichen <strong>Nenner</strong> 12. Nun vergleichen wir die <strong>Zähler</strong>: 8 &lt; 9. Deshalb gilt <span class="frac"><span class="top">2</span><span class="bottom">3</span></span> &lt; <span class="frac"><span class="top">3</span><span class="bottom">4</span></span>.</p>
-          <p>Mit dem 12-cm-Streifen: <strong>2 · 4 cm = 8 cm</strong> und <strong>3 · 3 cm = 9 cm</strong>.</p>
-          <p><strong>Besonderheit für das Sammelblatt:</strong> Zähler und Nenner verschieden; Erweitern hilft</p>`
+          <p>Mit dem 12-cm-Streifen: <strong>2 · 4 cm = 8 cm</strong> und <strong>3 · 3 cm = 9 cm</strong>.</p>`
       }
     };
 
@@ -798,6 +854,28 @@
     function frac(n,d){ return `<span class="frac"><span class="top">${n}</span><span class="bottom">${d}</span></span>`; }
     function toast(msg){ const t=$("toast"); t.textContent=msg; t.classList.add("show"); setTimeout(()=>t.classList.remove("show"),2600); }
 
+    function updateStationNav(){
+      document.querySelectorAll("[data-station-go]").forEach(btn=>{
+        const active = btn.dataset.stationGo === state.currentScreen;
+        btn.classList.toggle("active", active);
+        if(active) btn.setAttribute("aria-current", "page");
+        else btn.removeAttribute("aria-current");
+      });
+    }
+
+    function goToStation(id){
+      if(id === "screen-work" && !state.currentGroup){
+        showScreen("screen-group-select");
+        toast("Wählt zuerst eure Stammgruppe aus.");
+        return;
+      }
+      showScreen(id);
+      if(id === "screen-expert" && state.teacher){
+        unlockAllVisibleHints();
+        updateExpertHintButtons();
+      }
+    }
+
     function showScreen(id){
       document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
       $(id).classList.add("active");
@@ -810,6 +888,7 @@
         unlockSolutionsIfVisible();
       }
       updateTeacherUI();
+      updateStationNav();
     }
 
     function updateTeacherUI(){
@@ -817,9 +896,15 @@
       $("solutionBadge").classList.toggle("visible", state.solutionAccess && !state.teacher && state.currentScreen==="screen-work");
       const solBtn=$("btnSolutionAccess");
       if(solBtn){
-        solBtn.textContent = (state.solutionAccess && !state.teacher) ? "Kontrollmodus aktiv – deaktivieren" : "Kontrolllösung anzeigen";
+        solBtn.textContent = (state.solutionAccess && !state.teacher) ? "Kontrollmodus deaktivieren" : "Musterlösung anzeigen";
         solBtn.classList.toggle("warning", state.solutionAccess && !state.teacher);
         solBtn.classList.toggle("success", !(state.solutionAccess && !state.teacher));
+      }
+      const solOpenBtn=$("showSolutionPinBtn");
+      if(solOpenBtn){
+        solOpenBtn.textContent = (state.solutionAccess && !state.teacher) ? "Kontrollmodus aktiv – deaktivieren" : "Ergebnisse kontrollieren";
+        solOpenBtn.classList.toggle("warning", state.solutionAccess && !state.teacher);
+        solOpenBtn.classList.toggle("success", !(state.solutionAccess && !state.teacher));
       }
       if(state.teacher){
         unlockAllVisibleHints();
@@ -911,7 +996,7 @@
     function setupWorkScreen(){
       const g=groups[state.currentGroup];
       $("workGroupTitle").textContent = g.label;
-      $("workSpecial").textContent = `Besonderheit: ${g.special}`;
+      $("workSpecial").textContent = "Vergleicht zuerst Zähler und Nenner. Was fällt euch auf?";
       $("workHeading").textContent = `${g.label}: Brüche vergleichen`;
       $("workTask").innerHTML = `${frac(g.first.n,g.first.d)} <span>□</span> ${frac(g.second.n,g.second.d)}`;
       $("timerDisplay").textContent = "⏱ 07:00";
@@ -921,9 +1006,9 @@
       $("solutionAccessCard").style.display="none";
       $("workSolution").classList.remove("visible");
       $("afterSolutionCard").style.display="none";
-      $("showSolutionBtn").disabled=true;
       $("languageFeedback").className="feedback";
       if($("solutionPinInput")) $("solutionPinInput").value="";
+      if($("solutionPinPanel")) $("solutionPinPanel").classList.add("hidden");
       if($("solutionDirectFeedback")){ $("solutionDirectFeedback").className="feedback"; $("solutionDirectFeedback").textContent=""; }
       renderHints();
       renderStripTool("stripOne", "Erster Bruch", g.first.n, g.first.d);
@@ -1035,8 +1120,8 @@
       if(skipTimer || state.teacher){
         state.timerRemaining=0;
         updateTimerDisplay();
+        $("solutionAccessCard").style.display="block";
         $("languageCheckCard").style.display="block";
-        $("solutionAccessCard").style.display= state.teacher ? "block" : "none";
         toast(state.teacher ? "Timer übersprungen." : "Die Kontrollphase ist bereit.");
         return;
       }
@@ -1047,9 +1132,9 @@
         updateTimerDisplay();
         if(state.timerRemaining<=0){
           clearInterval(state.timerInterval);
+          $("solutionAccessCard").style.display="block";
           $("languageCheckCard").style.display="block";
-          $("solutionAccessCard").style.display="none";
-          toast("Die 7 Minuten sind vorbei. Prüft jetzt eure Fachsprache.");
+          toast("Die 7 Minuten sind vorbei. Ihr könnt nun eure Ergebnisse kontrollieren.");
         }
       },1000);
     }
@@ -1146,43 +1231,44 @@
     function renderLanguageCheck(){
       const g=groups[state.currentGroup];
       $("specialQuestion").innerHTML = `
-        <h3>Welche Besonderheit hat eure Aufgabe?</h3>
-        <div class="option-grid" id="specialOptions">
-          ${g.specialOptions.map(o=>`<div class="option-card" data-special="${o}">${o}</div>`).join("")}
+        <h3>Vergleicht die beiden Brüche genau</h3>
+        <p>Tragt nicht sofort eine fertige Regel ein. Schaut zuerst: Was ist bei den Zählern gleich oder verschieden? Was ist bei den Nennern gleich oder verschieden?</p>
+        <div class="visual-rule">
+          <div class="rule-box"><strong>Erster Bruch</strong><span>Zähler: ${g.first.n}</span><span>Nenner: ${g.first.d}</span></div>
+          <div class="rule-box"><strong>Zweiter Bruch</strong><span>Zähler: ${g.second.n}</span><span>Nenner: ${g.second.d}</span></div>
         </div>
+        <label for="specialNote" class="mt">Unsere eigene Beobachtung zu diesem Zahlenbeispiel:</label>
+        <textarea id="specialNote" placeholder="Schreibt z. B.: Bei den Zählern fällt auf ..., bei den Nennern fällt auf ..."></textarea>
       `;
-      $("specialOptions").querySelectorAll(".option-card").forEach(card=>{
-        card.addEventListener("click",()=>{
-          $("specialOptions").querySelectorAll(".option-card").forEach(c=>c.classList.remove("selected","correct","wrong"));
-          card.classList.add("selected");
-        });
-      });
-      $("languageChecklist").innerHTML = g.checks.map((c,i)=>`
+      const checks = [
+        "Wir haben die Zähler der beiden Brüche miteinander verglichen.",
+        "Wir haben die Nenner der beiden Brüche miteinander verglichen.",
+        "Wir haben selbst formuliert, was an diesem Zahlenbeispiel auffällt.",
+        "Wir haben ein Vergleichszeichen eingetragen.",
+        "Unsere Begründung nutzt die Wörter Zähler und Nenner."
+      ];
+      $("languageChecklist").innerHTML = checks.map((c,i)=>`
         <label class="check-item"><input type="checkbox" data-lang-check="${i}"><span>${c}</span></label>
       `).join("");
     }
 
     function checkLanguage(){
-      const g=groups[state.currentGroup];
-      const selected=document.querySelector("#specialOptions .option-card.selected");
       const checks=[...document.querySelectorAll('input[data-lang-check]')];
       const allChecked=checks.every(c=>c.checked);
-      const specialOK=selected && selected.dataset.special===g.correctSpecial;
-      document.querySelectorAll("#specialOptions .option-card").forEach(c=>c.classList.remove("correct","wrong"));
-      if(selected) selected.classList.add(specialOK?"correct":"wrong");
-      if(allChecked && specialOK){
-        setFeedback("languageFeedback", true, "Super. Jetzt geht es zum Bereich Ergebnisse kontrollieren. Dort gebt ihr das Passwort ein.");
-        $("showSolutionBtn").disabled=false;
+      const note=$("specialNote") ? $("specialNote").value.trim() : "";
+      const noteOK=note.length>=12 && /zähler/i.test(note) && /nenner/i.test(note);
+      if(allChecked && noteOK){
+        setFeedback("languageFeedback", true, "Gut. Ihr habt Zähler und Nenner verglichen und eine eigene Beobachtung formuliert.");
+      }else if(!noteOK){
+        setFeedback("languageFeedback", false, "Ergänzt eure Beobachtung. Vergleicht dabei ausdrücklich Zähler und Nenner.");
       }else{
-        setFeedback("languageFeedback", false, "Prüft noch einmal: Ist die Besonderheit richtig gewählt und sind alle Punkte auf eurem Arbeitsblatt erfüllt?");
-        $("showSolutionBtn").disabled=true;
+        setFeedback("languageFeedback", false, "Hakt erst alle Prüfpunkte ab, wenn sie wirklich auf eurem Arbeitsblatt erfüllt sind.");
       }
     }
 
     function unlockGroupSolution(){
-      $("languageCheckCard").style.display="block";
       $("solutionAccessCard").style.display="block";
-      $("showSolutionBtn").disabled=false;
+      $("languageCheckCard").style.display="block";
       $("workSolution").classList.add("visible");
       $("afterSolutionCard").style.display="block";
       state.solutionUnlocked=true;
@@ -1261,6 +1347,7 @@
 
     function setupEvents(){
       document.querySelectorAll("[data-go]").forEach(btn=>btn.addEventListener("click",()=>showScreen(btn.dataset.go)));
+      document.querySelectorAll("[data-station-go]").forEach(btn=>btn.addEventListener("click",()=>goToStation(btn.dataset.stationGo)));
       $("startPhase1").addEventListener("click",()=>showScreen("screen-roles1"));
       $("btnTeacher").addEventListener("click",()=>openTeacherModal("teacher"));
       $("closeTeacherModal").addEventListener("click",closeTeacherModal);
@@ -1269,13 +1356,21 @@
       $("roles1Next").addEventListener("click",()=>showScreen("screen-group-select"));
       $("goBackGroupSelect").addEventListener("click",()=>{clearInterval(state.timerInterval); showScreen("screen-group-select");});
       $("workBackBottom").addEventListener("click",()=>{clearInterval(state.timerInterval); showScreen("screen-group-select");});
+      $("showSolutionPinBtn").addEventListener("click",()=>{
+        if(state.solutionAccess && !state.teacher){
+          openSolutionAccess();
+          return;
+        }
+        if(state.teacher){
+          openSolutionAccess();
+          return;
+        }
+        $("solutionPinPanel").classList.remove("hidden");
+        setTimeout(()=>$("solutionPinInput").focus(),80);
+      });
       $("btnSolutionAccess").addEventListener("click",openSolutionAccess);
       $("solutionPinInput").addEventListener("keydown",e=>{ if(e.key==="Enter") openSolutionAccess(); });
       $("checkLanguageBtn").addEventListener("click",checkLanguage);
-      $("showSolutionBtn").addEventListener("click",()=>{
-        $("solutionAccessCard").style.display="block";
-        $("solutionAccessCard").scrollIntoView({behavior:"smooth", block:"start"});
-      });
       $("toPhaseSwitch").addEventListener("click",()=>showScreen("screen-switch"));
       $("switchNext").addEventListener("click",()=>showScreen("screen-roles2"));
       $("expertGroupName").addEventListener("change",()=>{
@@ -1330,12 +1425,14 @@
       }
       const entered = ($("solutionPinInput")?.value || "").trim();
       if(entered.toLowerCase()===SOLUTION_PIN.toLowerCase()){
+        if($("solutionPinPanel")) $("solutionPinPanel").classList.remove("hidden");
         state.solutionAccess=true;
         updateTeacherUI();
         unlockGroupSolution();
         setFeedback("solutionDirectFeedback", true, "Kontrolllösung freigeschaltet.");
         toast("Kontrolllösung freigeschaltet.");
       }else{
+        if($("solutionPinPanel")) $("solutionPinPanel").classList.remove("hidden");
         setFeedback("solutionDirectFeedback", false, "Das Passwort stimmt nicht.");
       }
     }
@@ -1392,6 +1489,7 @@
       checkRoles1();
       checkRoles2();
       checkExpertSolutionButton();
+      updateStationNav();
     }
 
     init();
