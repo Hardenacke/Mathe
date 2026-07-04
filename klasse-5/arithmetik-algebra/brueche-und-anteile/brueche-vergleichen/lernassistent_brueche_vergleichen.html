@@ -286,16 +286,15 @@
     .rule-arrow{display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--primary-dark);font-size:1.1rem;}
     .mini-parts{display:grid;gap:4px;}
     .mini-strip{height:26px;border:1px solid #94a3b8;border-radius:10px;overflow:hidden;display:grid;background:#fff;}
-    .mini-strip.four{grid-template-columns:repeat(4,1fr);} 
-    .mini-strip.three{grid-template-columns:repeat(3,1fr);} 
-    .mini-strip.twelve{grid-template-columns:repeat(12,1fr);} 
+    .mini-strip.four{grid-template-columns:repeat(4,1fr);}
+    .mini-strip.three{grid-template-columns:repeat(3,1fr);}
+    .mini-strip.twelve{grid-template-columns:repeat(12,1fr);}
     .mini-strip span{border-right:1px solid #cbd5e1;background:#f8fafc;}
     .mini-strip span:last-child{border-right:0;}
     .mini-strip .mark{background:#bfdbfe;}
     .sentence-inline{border-left:5px solid var(--primary);background:var(--primary-soft);padding:10px 12px;border-radius:14px;font-weight:800;}
     .hint-card.waiting{opacity:.62;background:#f8fafc;}
     .hint-card.waiting .hint-body{display:none;}
-
 
     .check-list{display:grid;gap:10px;margin:12px 0;}
     .check-item{
@@ -1043,7 +1042,6 @@
         compareFeedback.className="feedback";
         compareFeedback.textContent="";
       }
-
     }
 
     function renderStripTool(containerId, title, n, d){
