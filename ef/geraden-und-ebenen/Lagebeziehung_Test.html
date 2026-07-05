@@ -280,6 +280,7 @@ h2{font-size:1.2rem;margin:0 0 12px}.subtitle{text-align:center;color:var(--mute
     <ol class="steps">
       <li>Trage den Fobizz-Code ein, den du von der Lehrkraft erhalten hast.</li>
       <li>Kopiere den Exporttext. Er enthält deine Testergebnisse und einen KI-Prompt für gezielte Unterstützung.</li>
+      <li>Falls du nur den Link brauchst, kannst du den GitHub-Link separat kopieren und in Fobizz einfügen.</li>
       <li>Öffne Fobizz und melde dich mit dem Code an.</li>
       <li>Füge den Exporttext dort in die Abgabe oder den Chat ein.</li>
     </ol>
@@ -289,8 +290,12 @@ h2{font-size:1.2rem;margin:0 0 12px}.subtitle{text-align:center;color:var(--mute
     </div>
     <div class="choice-card">
       <div class="label">Link zu dieser HTML-Datei</div>
-      <input class="text-input" id="html-link" value="https://hardenacke.github.io/Mathe/ef/geraden-und-ebenen/Lagebeziehung_Test.html" placeholder="Link zur GitHub-HTML-Datei">
-      <p class="tiny">Der GitHub-Link zur HTML-Datei ist voreingetragen und wird automatisch in den Fobizz-Export übernommen.</p>
+      <input class="text-input" id="html-link" value="https://hardenacke.github.io/Mathe/#/ef/geraden-und-ebenen/Lagebeziehung_Test.html" placeholder="Link zur GitHub-HTML-Datei" readonly>
+      <p class="tiny">Der GitHub-Link zur HTML-Datei ist voreingetragen und wird automatisch in den Fobizz-Export übernommen. Du kannst ihn zusätzlich einzeln kopieren und in Fobizz einfügen.</p>
+      <div class="copy-status" id="link-copy-status"></div>
+      <div class="action-row">
+        <button class="secondary-btn" id="copy-link-btn">GitHub-Link für Fobizz kopieren</button>
+      </div>
     </div>
     <div class="choice-card">
       <div class="label">Exporttext für Fobizz mit Testergebnissen und KI-Prompt</div>
@@ -334,7 +339,7 @@ h2{font-size:1.2rem;margin:0 0 12px}.subtitle{text-align:center;color:var(--mute
    Konfiguration
    ============================================================ */
 const FOBIZZ_URL = "https://app.fobizz.com/go";
-const GITHUB_HTML_URL = "https://hardenacke.github.io/Mathe/ef/geraden-und-ebenen/Lagebeziehung_Test.html";
+const GITHUB_HTML_URL = "https://hardenacke.github.io/Mathe/#/ef/geraden-und-ebenen/Lagebeziehung_Test.html";
 const STORE_KEY = "lgs_lage_fobizz_results_v1";
 const R = (min,max)=>Math.floor(Math.random()*(max-min+1))+min;
 const C = arr=>arr[Math.floor(Math.random()*arr.length)];
@@ -797,6 +802,10 @@ async function copyText(text, statusId){
   catch(e){if(statusId)$(statusId).textContent='Kopieren wurde blockiert. Bitte Text markieren und manuell kopieren.';}
 }
 $('copy-export-btn').addEventListener('click',()=>copyText(updateExportText(),'copy-status'));
+$('copy-link-btn').addEventListener('click',()=>{
+  const link=$('html-link')?.value.trim() || GITHUB_HTML_URL;
+  copyText(link,'link-copy-status');
+});
 $('download-export-btn').addEventListener('click',()=>{
   const blob=new Blob([updateExportText()],{type:'text/plain;charset=utf-8'});const a=document.createElement('a');
   a.href=URL.createObjectURL(blob);a.download='lgs-lagebeziehungen-fobizz-export.txt';a.click();URL.revokeObjectURL(a.href);
