@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>LGS & Lagebeziehungen von Geraden</title>
+<style>
+:root{
+  --bg-deep:#15172e;
+  --bg-soft:#1d2148;
+  --card:#242955;
+  --card2:#2c3369;
+  --line:#3c4484;
+  --text:#eef1ff;
+  --muted:#aeb5df;
+  --blue:#4f7cff;
+  --violet:#775cff;
+  --green:#2ecc71;
+  --yellow:#ffd166;
+  --orange:#f4a623;
+  --red:#e84c4c;
+  --shadow:0 18px 50px rgba(0,0,0,.35);
+  --radius:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+  background:radial-gradient(circle at top,#23285d 0%,var(--bg-deep) 62%);
+  color:var(--text);
+  min-height:100vh;
+  padding:16px;
+}
+body.fullscreen-open{overflow:hidden}
+button,input,textarea{font:inherit}
+button{touch-action:manipulation}
+.app{width:min(980px,100%);margin:0 auto;padding:56px 0 22px}
+.topbar{
+  position:fixed;top:10px;right:10px;left:10px;z-index:50;
+  display:flex;justify-content:space-between;align-items:center;gap:10px;pointer-events:none;
+}
+.brand-mini{
+  pointer-events:auto;
+  background:rgba(36,41,85,.72);border:1px solid rgba(255,255,255,.10);
+  backdrop-filter:blur(10px);color:var(--muted);border-radius:999px;padding:8px 12px;font-size:.85rem;
+}
+.top-actions{display:flex;gap:8px;pointer-events:auto;flex-wrap:wrap;justify-content:flex-end}
+.mini-btn,.icon-btn{
+  border:1px solid rgba(255,255,255,.15);background:rgba(44,51,105,.78);color:var(--text);
+  border-radius:999px;padding:8px 12px;cursor:pointer;text-decoration:none;font-weight:700;font-size:.86rem;
+}
+.mini-btn:hover,.icon-btn:hover{border-color:var(--blue);background:#313b7c}
+.card{
+  background:linear-gradient(180deg,rgba(36,41,85,.98),rgba(31,36,78,.98));
+  border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);
+}
+.section{display:none}.section.active{display:block}
+h1{font-size:clamp(1.45rem,3.5vw,2.2rem);margin:0 0 6px;text-align:center;line-height:1.12}
+h2{font-size:1.2rem;margin:0 0 12px}.subtitle{text-align:center;color:var(--muted);margin:0 0 22px;line-height:1.5}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.choice-card,.info-card,.result-card{
+  background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px;
+}
+.choice-card h3,.info-card h3{margin:0 0 8px;font-size:1rem}.small{font-size:.9rem;color:var(--muted);line-height:1.45}.tiny{font-size:.78rem;color:var(--muted)}
+.label{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin:0 0 8px;font-weight:800}
+.name-input,.text-input,.export-textarea,.answer-input{
+  width:100%;border:1px solid var(--line);border-radius:12px;background:#1a1e40;color:var(--text);padding:13px 14px;outline:none;
+}
+.name-input:focus,.text-input:focus,.export-textarea:focus,.answer-input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(79,124,255,.12)}
+.export-textarea{min-height:220px;resize:vertical;line-height:1.45}
+.pill-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.pill-row.two{grid-template-columns:repeat(2,1fr)}
+.pill{
+  min-height:48px;background:#30366d;border:1px solid var(--line);color:var(--text);border-radius:12px;padding:10px 8px;
+  cursor:pointer;text-align:center;font-weight:800;display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.pill:hover{border-color:var(--blue)}.pill.selected{background:linear-gradient(135deg,var(--blue),var(--violet));border-color:transparent;color:#fff}.pill-sub{display:block;font-size:.72rem;font-weight:700;opacity:.82;margin-top:2px;line-height:1.15}
+.action-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.action-row>*{flex:1 1 180px}
+.start-btn,.primary-btn,.secondary-btn,.danger-btn,.ghost-btn{
+  border:none;border-radius:13px;min-height:52px;padding:13px 16px;cursor:pointer;font-weight:900;text-align:center;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+}
+.start-btn,.primary-btn{background:linear-gradient(135deg,var(--blue),var(--violet));color:white}.secondary-btn{background:var(--card2);border:1px solid var(--line);color:var(--text)}
+.ghost-btn{background:transparent;border:1px solid var(--line);color:var(--muted)}.danger-btn{background:rgba(232,76,76,.15);border:1px solid var(--red);color:#ffd8d8}
+.start-btn:hover,.primary-btn:hover,.secondary-btn:hover,.ghost-btn:hover,.danger-btn:hover{transform:translateY(-1px);filter:brightness(1.08)}
+.start-btn:disabled,.primary-btn:disabled,.secondary-btn:disabled,.ghost-btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.mode-panel{display:none}.mode-panel.active{display:block}
+.quiz-top{display:flex;align-items:center;justify-content:space-between;gap:10px;color:var(--muted);font-size:.93rem;margin-bottom:14px;flex-wrap:wrap}.score{font-weight:900;color:var(--yellow);font-size:1.05rem}
+.progress-track{height:8px;background:#171b3a;border-radius:99px;border:1px solid var(--line);overflow:hidden;margin:0 0 20px}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--violet));transition:width .25s ease}
+.task-box{background:var(--card2);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:18px;overflow:auto}.task-title{font-weight:900;color:var(--yellow);margin-bottom:8px}.equations{font-size:clamp(1.05rem,2.4vw,1.35rem);line-height:1.75;text-align:center;white-space:nowrap}.eq-line{display:block;margin:4px 0}.lgs-method{margin-top:10px;color:var(--muted);font-size:.88rem;text-align:center}
+.answer-labels,.answer-row{display:grid;gap:10px}.answer-labels{margin-bottom:6px;color:var(--muted);font-size:.82rem;text-align:center}.answer-row{margin-bottom:12px}.cols2{grid-template-columns:repeat(2,1fr)}.cols3{grid-template-columns:repeat(3,1fr)}
+.answer-input{font-size:1.05rem;text-align:center;min-height:52px}.hint-line{text-align:center;color:var(--muted);font-size:.84rem;margin:2px 0 14px}
+.feedback{display:none;margin-top:14px;border-radius:14px;padding:16px;line-height:1.55}.feedback.show{display:block}.feedback.good{background:rgba(46,204,113,.12);border:1px solid var(--green)}.feedback.bad{background:rgba(232,76,76,.12);border:1px solid var(--red)}.feedback h3{margin:0 0 8px}.feedback.good h3{color:var(--green)}.feedback.bad h3{color:#ffabab}.feedback ul{margin:8px 0 0;padding-left:20px;color:var(--muted)}
+.lines-box{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}.line-card{background:var(--card2);border:1px solid var(--line);border-radius:16px;padding:16px;overflow:auto}.line-name{font-weight:900;color:var(--yellow);margin-bottom:8px}.line-eq{display:flex;align-items:center;gap:8px;white-space:nowrap;min-height:92px;justify-content:center}.vec-symbol{font-weight:900;font-size:1.08rem;display:inline-flex;align-items:center;gap:4px;line-height:1}.vec-symbol .vec-letter{position:relative;display:inline-block;padding-top:.22em;min-width:.62em;text-align:center}.vec-symbol .vec-letter:before{content:"\2192";position:absolute;left:-.12em;right:-.12em;top:-.52em;font-size:.78em;line-height:1;transform:scaleX(1.35);transform-origin:center;text-align:center}.matrix{display:inline-grid;grid-template-rows:repeat(3,1fr);gap:2px;position:relative;padding:6px 10px;margin:0 2px;font-weight:750}.matrix:before,.matrix:after{content:"";position:absolute;top:0;bottom:0;width:7px;border:2px solid var(--muted)}.matrix:before{left:0;border-right:none;border-radius:9px 0 0 9px}.matrix:after{right:0;border-left:none;border-radius:0 9px 9px 0}.matrix span{text-align:center;min-width:2ch}.param{font-style:italic;color:#dce3ff}.times{color:var(--muted)}
+.answer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.answer-btn{min-height:66px;border:2px solid transparent;border-radius:14px;color:white;font-weight:900;cursor:pointer;padding:12px 8px}.answer-btn.parallel{background:var(--blue)}.answer-btn.identisch{background:var(--green)}.answer-btn.schneiden{background:var(--orange);color:#271800}.answer-btn.windschief{background:var(--red)}.answer-btn:disabled{opacity:.55;cursor:not-allowed}.answer-btn.correct-highlight{outline:3px solid white;opacity:1}.answer-btn.wrong-highlight{outline:3px solid #ffd1d1;opacity:1}
+.bonus-box{display:none;margin-top:14px;background:rgba(255,209,102,.09);border:1px solid var(--yellow);border-radius:14px;padding:16px}.bonus-box.show{display:block}.bonus-inputs{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.bonus-inputs input{width:76px;background:#1a1e40;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center}.bonus-result{margin-top:10px}.bonus-result.good{color:var(--green)}.bonus-result.bad{color:#ffb2b2}
+.history-box{background:rgba(44,51,105,.75);border:1px solid var(--line);border-radius:14px;padding:14px;margin-top:16px;max-height:210px;overflow:auto}.history-title{font-size:.78rem;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);font-weight:900;margin-bottom:8px}.history-row{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed rgba(255,255,255,.08);padding:7px 0;font-size:.88rem}.history-row:last-child{border-bottom:none}.history-score{font-weight:900;color:var(--yellow);white-space:nowrap}.empty{color:var(--muted);text-align:center;font-size:.9rem;padding:8px 0}
+.result-hero{text-align:center}.result-badge{font-size:3.5rem;margin-bottom:4px}.result-score{font-size:2.5rem;font-weight:950;color:var(--yellow);margin:4px 0}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}.stat{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}.stat .num{font-size:1.55rem;font-weight:950}.stat .lbl{font-size:.78rem;color:var(--muted)}.stat.good .num{color:var(--green)}.stat.bad .num{color:#ff9c9c}.stat.bonus .num{color:var(--yellow)}
+.drawer-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:90;display:none}.drawer-backdrop.show{display:block}.drawer{position:fixed;top:0;right:0;bottom:0;width:min(620px,100%);background:#20254f;border-left:1px solid var(--line);box-shadow:-18px 0 50px rgba(0,0,0,.42);z-index:100;transform:translateX(105%);transition:transform .22s ease;display:flex;flex-direction:column}.drawer.show{transform:translateX(0)}.drawer-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line);background:#242955}.drawer-body{padding:16px;overflow:auto}.drawer h2{margin:0}.steps{counter-reset:step;margin:0 0 16px;padding:0;list-style:none}.steps li{counter-increment:step;margin:8px 0;padding-left:34px;position:relative;color:var(--muted);line-height:1.4}.steps li:before{content:counter(step);position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:var(--blue);color:white;display:grid;place-items:center;font-weight:900;font-size:.82rem}.copy-status{min-height:22px;color:var(--yellow);font-weight:800;margin-top:8px}.iframe-wrap{display:none;margin-top:14px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#121631}.iframe-wrap.show{display:block}.iframe-tools{display:flex;gap:8px;padding:8px;background:var(--card2);flex-wrap:wrap;align-items:center}.iframe-status{flex:1 1 220px;color:var(--yellow);font-weight:900;font-size:.86rem}.iframe-hint{padding:10px 12px;background:rgba(255,209,102,.09);border-top:1px solid rgba(255,209,102,.25);color:var(--muted);font-size:.88rem;line-height:1.4}.fobizz-frame{width:100%;height:580px;border:0;background:white}.iframe-wrap.big{position:fixed;inset:12px;z-index:140}.iframe-wrap.big .fobizz-frame{height:calc(100vh - 112px)}
+.toast{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);background:#121631;border:1px solid var(--line);color:var(--text);padding:10px 14px;border-radius:999px;box-shadow:var(--shadow);display:none;z-index:200}.toast.show{display:block}
+@media(max-width:760px){body{padding:10px}.app{padding-top:64px}.card{padding:18px}.grid2,.lines-box,.answer-grid,.stats{grid-template-columns:1fr}.grid3,.grid4{grid-template-columns:1fr}.pill-row{grid-template-columns:1fr 1fr}.topbar{align-items:flex-start}.brand-mini{display:none}.line-eq{justify-content:flex-start}.fobizz-frame{height:520px}.answer-btn{min-height:58px}}
+@media(max-width:420px){.pill-row.two,.pill-row{grid-template-columns:1fr}.cols2,.cols3{grid-template-columns:1fr}.top-actions{gap:6px}.mini-btn{padding:8px 10px}.history-row{flex-direction:column}.stats{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="brand-mini">LGS · Geraden · Fobizz</div>
+  <div class="top-actions">
+    <button class="mini-btn" id="open-export-top">⬆ Fobizz/Export</button>
+    <button class="mini-btn" id="fullscreen-btn">⛶ Vollbild</button>
+  </div>
+</div>
+
+<main class="app">
+  <div class="card">
+    <section class="section active" id="screen-start">
+      <h1>📐 LGS & Lagebeziehungen von Geraden</h1>
+      <p class="subtitle">Übe zuerst lineare Gleichungssysteme oder starte direkt mit Geraden im Raum.</p>
+
+      <div class="choice-card">
+        <div class="label">Name</div>
+        <input class="name-input" id="student-name" placeholder="Dein Name oder Kürzel" maxlength="24">
+      </div>
+
+      <div class="choice-card">
+        <h3>1. Möchtest du zuerst üben, lineare Gleichungssysteme zu lösen?</h3>
+        <p class="small">Das ist sinnvoll, wenn du beim Schnittpunkt zweier Geraden noch unsicher bist.</p>
+        <div class="pill-row two" id="route-row">
+          <button class="pill selected" data-route="practice">Ja, erst LGS üben</button>
+          <button class="pill" data-route="lage">Nein, direkt Lagebeziehungen</button>
+        </div>
+      </div>
+
+      <div class="mode-panel active" id="practice-panel">
+        <div class="grid2">
+          <div class="choice-card">
+            <div class="label">LGS-Modus</div>
+            <div class="pill-row" id="lgs-mode-row">
+              <button class="pill selected" data-mode="2">2 Gleichungen<span class="pill-sub">2 Unbekannte</span></button>
+              <button class="pill" data-mode="23">3 Gleichungen<span class="pill-sub">2 Unbekannte</span></button>
+              <button class="pill" data-mode="3">3 Gleichungen<span class="pill-sub">3 Unbekannte</span></button>
+            </div>
+            <p class="small">Der Modus „3 Gleichungen“ passt besonders zur Schnittpunktprüfung von Geraden: Aus den drei Komponenten entstehen drei Gleichungen für die Parameter.</p>
+          </div>
+          <div class="choice-card">
+            <div class="label">Anzahl Aufgaben</div>
+            <div class="pill-row" id="lgs-count-row">
+              <button class="pill" data-count="5">5</button>
+              <button class="pill selected" data-count="10">10</button>
+              <button class="pill" data-count="15">15</button>
+            </div>
+          </div>
+        </div>
+        <div class="choice-card">
+          <div class="label">Schwierigkeit</div>
+          <div class="pill-row" id="lgs-level-row">
+            <button class="pill selected" data-level="1">Level 1</button>
+            <button class="pill" data-level="2">Level 2</button>
+            <button class="pill" data-level="3">Level 3</button>
+          </div>
+        </div>
+        <button class="start-btn" id="start-lgs-btn">LGS-Übung starten</button>
+      </div>
+
+      <div class="mode-panel" id="lage-panel">
+        <div class="grid2">
+          <div class="choice-card">
+            <div class="label">Level</div>
+            <div class="pill-row" id="lage-level-row">
+              <button class="pill selected" data-level="1">Level 1</button>
+              <button class="pill" data-level="2">Level 2</button>
+              <button class="pill" data-level="3">Level 3</button>
+            </div>
+          </div>
+          <div class="choice-card">
+            <div class="label">Anzahl Aufgaben</div>
+            <div class="pill-row" id="lage-count-row">
+              <button class="pill" data-count="8">8</button>
+              <button class="pill selected" data-count="12">12</button>
+              <button class="pill" data-count="16">16</button>
+            </div>
+          </div>
+        </div>
+        <button class="start-btn" id="start-lage-btn">Lagebeziehungen starten</button>
+      </div>
+
+      <div class="history-box">
+        <div class="history-title">Letzte lokale Ergebnisse</div>
+        <div id="history-list"><div class="empty">Noch keine Einträge</div></div>
+      </div>
+    </section>
+
+    <section class="section" id="screen-lgs">
+      <div class="quiz-top">
+        <button class="ghost-btn" id="back-from-lgs" style="min-height:38px;padding:8px 12px;flex:0 0 auto">← Start</button>
+        <span id="lgs-progress">Aufgabe 1 / 10</span>
+        <span class="score" id="lgs-score">0 Punkte</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="lgs-progress-fill"></div></div>
+      <div class="task-box">
+        <div class="task-title" id="lgs-task-title">Lineares Gleichungssystem</div>
+        <div class="equations" id="lgs-equations"></div>
+        <div class="lgs-method" id="lgs-method">Tipp: Notiere zuerst, welche Variable du eliminieren möchtest.</div>
+      </div>
+      <div class="answer-labels" id="lgs-answer-labels"></div>
+      <div class="answer-row" id="lgs-answer-row"></div>
+      <div class="hint-line" id="lgs-special-hint">Bei Sonderfällen kannst du „keine“ oder „unendlich“ eintragen.</div>
+      <button class="primary-btn" id="check-lgs-btn">Antwort prüfen</button>
+      <div class="feedback" id="lgs-feedback"></div>
+      <div class="action-row">
+        <button class="secondary-btn" id="next-lgs-btn" disabled>Weiter →</button>
+        <button class="ghost-btn" id="go-lage-after-lgs">Zu den Lagebeziehungen</button>
+      </div>
+    </section>
+
+    <section class="section" id="screen-lage">
+      <div class="quiz-top">
+        <button class="ghost-btn" id="back-from-lage" style="min-height:38px;padding:8px 12px;flex:0 0 auto">← Start</button>
+        <span id="lage-progress">Aufgabe 1 / 12</span>
+        <span class="score" id="lage-score">0 Punkte</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="lage-progress-fill"></div></div>
+      <div class="task-box">
+        <div class="task-title">Welche Lagebeziehung haben die beiden Geraden?</div>
+        <p class="small" style="margin:0;text-align:center">Prüfe zuerst die Richtungsvektoren. Wenn nötig, löse das Gleichungssystem der Komponenten.</p>
+      </div>
+      <div class="lines-box" id="lines-box"></div>
+      <div class="answer-grid">
+        <button class="answer-btn parallel" data-answer="parallel">🟦 echt parallel</button>
+        <button class="answer-btn identisch" data-answer="identisch">🟩 identisch</button>
+        <button class="answer-btn schneiden" data-answer="schneiden">🟨 schneiden sich</button>
+        <button class="answer-btn windschief" data-answer="windschief">🟥 windschief</button>
+      </div>
+      <div class="feedback" id="lage-feedback"></div>
+      <div class="bonus-box" id="bonus-box">
+        <div class="task-title">🎯 Bonus: Bestimme den Schnittpunkt (+10 Punkte)</div>
+        <div class="bonus-inputs">
+          <span>S = (</span><input id="bonus-x" placeholder="x"><span>|</span><input id="bonus-y" placeholder="y"><span>|</span><input id="bonus-z" placeholder="z"><span>)</span>
+          <button class="secondary-btn" id="check-bonus-btn" style="min-height:42px;padding:8px 12px;flex:0 0 auto">prüfen</button>
+        </div>
+        <div class="bonus-result" id="bonus-result"></div>
+      </div>
+      <div class="action-row">
+        <button class="secondary-btn" id="next-lage-btn" disabled>Weiter →</button>
+        <button class="ghost-btn" id="open-help-lage">Fragevorlage für Fobizz</button>
+      </div>
+    </section>
+
+    <section class="section" id="screen-result">
+      <div class="result-hero">
+        <div class="result-badge" id="result-badge">🎯</div>
+        <h1>Auswertung</h1>
+        <p class="subtitle" id="result-subtitle">Dein Ergebnis ist bereit.</p>
+        <div class="result-score" id="result-score">0 Punkte</div>
+      </div>
+      <div class="stats">
+        <div class="stat good"><div class="num" id="stat-correct">0</div><div class="lbl">richtig</div></div>
+        <div class="stat bad"><div class="num" id="stat-wrong">0</div><div class="lbl">falsch</div></div>
+        <div class="stat bonus"><div class="num" id="stat-bonus">0</div><div class="lbl">Bonus</div></div>
+        <div class="stat"><div class="num" id="stat-total">0</div><div class="lbl">Aufgaben</div></div>
+      </div>
+      <div class="result-card">
+        <h2>Nächster Schritt</h2>
+        <p class="small" id="recommendation">Kopiere deinen Lernstand und füge ihn nach dem Login in Fobizz ein.</p>
+        <div class="action-row">
+          <button class="primary-btn" id="open-export-result">Ergebnis für Fobizz sichern</button>
+          <button class="secondary-btn" id="restart-btn">Zurück zum Start</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div class="drawer-backdrop" id="drawer-backdrop"></div>
+<aside class="drawer" id="export-drawer" aria-label="Fobizz und Export">
+  <div class="drawer-head">
+    <h2>⬆ Fobizz / Export</h2>
+    <button class="icon-btn" id="close-export">Schließen</button>
+  </div>
+  <div class="drawer-body">
+    <ol class="steps">
+      <li>Trage den Fobizz-Code ein, den du von der Lehrkraft erhalten hast.</li>
+      <li>Kopiere den Exporttext. Er enthält deine Testergebnisse und einen KI-Prompt für gezielte Unterstützung.</li>
+      <li>Öffne Fobizz und melde dich mit dem Code an.</li>
+      <li>Füge den Exporttext dort in die Abgabe oder den Chat ein.</li>
+    </ol>
+    <div class="choice-card">
+      <div class="label">Fobizz-Code / Login-Code</div>
+      <input class="text-input" id="fobizz-code" placeholder="Code eingeben">
+    </div>
+    <div class="choice-card">
+      <div class="label">Link zu dieser HTML-Datei</div>
+      <input class="text-input" id="html-link" value="https://hardenacke.github.io/Mathe/ef/geraden-und-ebenen/Lagebeziehung_Test.html" placeholder="Link zur GitHub-HTML-Datei">
+      <p class="tiny">Der GitHub-Link zur HTML-Datei ist voreingetragen und wird automatisch in den Fobizz-Export übernommen.</p>
+    </div>
+    <div class="choice-card">
+      <div class="label">Exporttext für Fobizz mit Testergebnissen und KI-Prompt</div>
+      <p class="tiny">Dieser Text enthält die Zusammenfassung, alle Einzelergebnisse, deine Eingaben und eine klare Anleitung für die Fobizz-KI.</p>
+      <textarea class="export-textarea" id="export-text" readonly></textarea>
+      <div class="copy-status" id="copy-status"></div>
+      <div class="action-row">
+        <button class="primary-btn" id="copy-export-btn">Exporttext kopieren</button>
+        <button class="secondary-btn" id="download-export-btn">als TXT speichern</button>
+      </div>
+    </div>
+    <div class="choice-card">
+      <h3>KI-Hilfe / Fobizz öffnen</h3>
+      <p class="small">Die KI soll Hinweise geben, aber nicht direkt die vollständige Lösung verraten. Öffne Fobizz direkt in diesem Tab. Falls das eingebettete Fenster wegen Sicherheitseinstellungen leer bleibt oder der Login nicht reagiert, kannst du Fobizz separat öffnen.</p>
+      <div class="action-row">
+        <button class="secondary-btn" id="make-help-prompt">Fragevorlage erstellen</button>
+        <button class="primary-btn" id="open-fobizz-frame">Fobizz hier im Tab öffnen</button>
+        <a class="ghost-btn" id="open-fobizz-tab" href="https://app.fobizz.com/go" target="_blank" rel="noopener noreferrer">Fobizz separat öffnen</a>
+      </div>
+      <textarea class="export-textarea" id="help-prompt" style="min-height:160px;margin-top:12px" readonly></textarea>
+      <div class="action-row">
+        <button class="secondary-btn" id="copy-help-prompt">Fragevorlage kopieren</button>
+      </div>
+      <div class="iframe-wrap" id="iframe-wrap">
+        <div class="iframe-tools">
+          <span class="iframe-status" id="iframe-status">Fobizz-Fenster bereit.</span>
+          <button class="secondary-btn" id="iframe-big" style="min-height:40px;padding:8px 12px">Fenster vergrößern</button>
+          <a class="ghost-btn" id="iframe-open-external" href="https://app.fobizz.com/go" target="_blank" rel="noopener noreferrer" style="min-height:40px;padding:8px 12px">separat öffnen</a>
+          <button class="ghost-btn" id="iframe-close" style="min-height:40px;padding:8px 12px">Fenster schließen</button>
+        </div>
+        <div class="iframe-hint" id="iframe-hint">Hinweis: Fobizz öffnet im Fenster innerhalb dieses Tabs. Bei Problemen nutze den Button „separat öffnen“.</div>
+        <iframe class="fobizz-frame" id="fobizz-frame" title="Fobizz-Zugang" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</aside>
+<div class="toast" id="toast">Kopiert.</div>
+
+<script>
+/* ============================================================
+   Konfiguration
+   ============================================================ */
+const FOBIZZ_URL = "https://app.fobizz.com/go";
+const GITHUB_HTML_URL = "https://hardenacke.github.io/Mathe/ef/geraden-und-ebenen/Lagebeziehung_Test.html";
+const STORE_KEY = "lgs_lage_fobizz_results_v1";
+const R = (min,max)=>Math.floor(Math.random()*(max-min+1))+min;
+const C = arr=>arr[Math.floor(Math.random()*arr.length)];
+const EPS = 1e-9;
+
+const session = {
+  name:"",
+  startedAt:new Date(),
+  lgs:{done:false,mode:2,level:1,total:0,index:0,score:0,correct:0,wrong:0,history:[],current:null,answered:false},
+  lage:{done:false,level:1,total:0,index:0,score:0,correct:0,wrong:0,bonus:0,history:[],questions:[],current:null,answered:false}
+};
+
+/* ============================================================
+   Basis-UI
+   ============================================================ */
+const $ = id => document.getElementById(id);
+function showScreen(id){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));$(id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+function selectedNumber(rowId, attr){return Number(document.querySelector(`#${rowId} .pill.selected`).dataset[attr]);}
+function lgsModeLabel(mode){
+  if(Number(mode)===23)return '3 Gleichungen / 2 Unbekannte';
+  if(Number(mode)===3)return '3 Gleichungen / 3 Unbekannte';
+  return '2 Gleichungen / 2 Unbekannte';
+}
+function setName(){session.name = $('student-name').value.trim() || 'ohne Namen';}
+function toast(msg="Kopiert."){const t=$('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1700);}
+function escapeHtml(str){const div=document.createElement('div');div.textContent=String(str);return div.innerHTML;}
+function formatNum(n){if(Math.abs(n)<EPS)n=0;if(Number.isInteger(n))return String(n);return String(Math.round(n*1000)/1000).replace('.',',');}
+function parseInput(s){s=String(s||'').trim().replace(',', '.').replace('−','-');if(s.includes('/')){const [a,b]=s.split('/').map(Number);return b? a/b : NaN;}return Number(s);}
+function dateStr(){return new Date().toLocaleString('de-DE',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'});}
+
+function setupPills(rowId, callback){
+  document.querySelectorAll(`#${rowId} .pill`).forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll(`#${rowId} .pill`).forEach(b=>b.classList.remove('selected'));
+      btn.classList.add('selected');
+      if(callback)callback(btn);
+    });
+  });
+}
+setupPills('route-row', btn=>{
+  const route=btn.dataset.route;
+  $('practice-panel').classList.toggle('active', route==='practice');
+  $('lage-panel').classList.toggle('active', route==='lage');
+});
+['lgs-mode-row','lgs-count-row','lgs-level-row','lage-level-row','lage-count-row'].forEach(id=>setupPills(id));
+
+$('start-lgs-btn').addEventListener('click', startLgs);
+$('start-lage-btn').addEventListener('click', startLage);
+$('back-from-lgs').addEventListener('click',()=>showScreen('screen-start'));
+$('back-from-lage').addEventListener('click',()=>showScreen('screen-start'));
+$('go-lage-after-lgs').addEventListener('click',()=>startLage());
+$('restart-btn').addEventListener('click',()=>{renderHistory();showScreen('screen-start');});
+$('open-export-top').addEventListener('click',openExport);
+$('open-export-result').addEventListener('click',openExport);
+$('open-help-lage').addEventListener('click',()=>{openExport();makeHelpPrompt();});
+
+$('fullscreen-btn').addEventListener('click',()=>{
+  if(!document.fullscreenElement){document.documentElement.requestFullscreen?.();}
+  else{document.exitFullscreen?.();}
+});
+
+/* ============================================================
+   LGS-Aufgaben
+   ============================================================ */
+function det2(a,b,c,d){return a*d-b*c;}
+function det3(m){
+  return m[0][0]*(m[1][1]*m[2][2]-m[1][2]*m[2][1])
+       - m[0][1]*(m[1][0]*m[2][2]-m[1][2]*m[2][0])
+       + m[0][2]*(m[1][0]*m[2][1]-m[1][1]*m[2][0]);
+}
+function coeffRange(level){return level===1?4:(level===2?7:10);}
+function solRange(level){return level===1?5:(level===2?9:12);}
+function term(coef, variable, first=false){
+  if(coef===0)return first?'0':'';
+  const abs=Math.abs(coef);
+  const core=(abs===1? '' : abs)+variable;
+  if(first)return coef<0?'-'+core:core;
+  return coef<0?' - '+core:' + '+core;
+}
+function equation2(a,b,r){
+  const variants=[
+    `${term(a,'x',true)}${term(b,'y')} = ${r}`,
+    `${term(b,'y',true)}${term(a,'x')} = ${r}`,
+    `${term(a,'x',true)} = ${r}${term(-b,'y')}`,
+    `${r} = ${term(a,'x',true)}${term(b,'y')}`
+  ];
+  return C(variants);
+}
+function equationRS(a,b,r){
+  const variants=[
+    `${term(a,'r',true)}${term(b,'s')} = ${r}`,
+    `${term(b,'s',true)}${term(a,'r')} = ${r}`,
+    `${term(a,'r',true)} = ${r}${term(-b,'s')}`,
+    `${r} = ${term(a,'r',true)}${term(b,'s')}`
+  ];
+  return C(variants);
+}
+function equation3(a,b,c,r){
+  const variants=[
+    `${term(a,'x',true)}${term(b,'y')}${term(c,'z')} = ${r}`,
+    `${term(c,'z',true)}${term(a,'x')}${term(b,'y')} = ${r}`,
+    `${term(a,'x',true)}${term(b,'y')} = ${r}${term(-c,'z')}`
+  ];
+  return C(variants);
+}
+function genLgs2(level){
+  const mx=solRange(level), cf=coeffRange(level), roll=Math.random();
+  if(roll<0.12){
+    const a=R(1,cf), b=R(-cf,cf)||1, r=R(-18,18), k=C([2,-2,3]);
+    return {kind:'none',vars:['x','y'],text:[equation2(a,b,r),equation2(a*k,b*k,r*k+R(1,5))],solution:'Keine Lösung'};
+  }
+  if(roll<0.22){
+    const a=R(1,cf), b=R(-cf,cf)||1, r=R(-18,18), k=C([2,-2,3]);
+    return {kind:'infinite',vars:['x','y'],text:[equation2(a,b,r),equation2(a*k,b*k,r*k)],solution:'Unendlich viele Lösungen'};
+  }
+  let a,b,c,d;
+  do{a=R(-cf,cf)||1;b=R(-cf,cf)||1;c=R(-cf,cf)||1;d=R(-cf,cf)||1;}while(det2(a,b,c,d)===0);
+  const x=R(-mx,mx), y=R(-mx,mx);
+  const r1=a*x+b*y, r2=c*x+d*y;
+  return {kind:'unique',vars:['x','y'],values:[x,y],text:[equation2(a,b,r1),equation2(c,d,r2)],solution:`x = ${x}, y = ${y}`};
+}
+function genLgs23(level){
+  const mx=solRange(level), cf=coeffRange(level), roll=Math.random();
+  const rv=R(-mx,mx), sv=R(-mx,mx);
+  if(roll<0.12){
+    let a,b,c,d;
+    do{a=R(-cf,cf)||1;b=R(-cf,cf)||1;c=R(-cf,cf)||1;d=R(-cf,cf)||1;}while(det2(a,b,c,d)===0);
+    const e=R(-cf,cf)||1, f=R(-cf,cf)||1;
+    return {
+      kind:'none', vars:['r','s'],
+      text:[equationRS(a,b,a*rv+b*sv), equationRS(c,d,c*rv+d*sv), equationRS(e,f,e*rv+f*sv+R(1,5))],
+      solution:'Keine Lösung'
+    };
+  }
+  if(roll<0.22){
+    const a=R(1,cf), b=R(-cf,cf)||1, rhs=R(-18,18), ks=[1,C([2,-2,3]),C([-3,4,-4])];
+    return {
+      kind:'infinite', vars:['r','s'],
+      text:ks.map(k=>equationRS(a*k,b*k,rhs*k)),
+      solution:'Unendlich viele Lösungen'
+    };
+  }
+  let a,b,c,d;
+  do{a=R(-cf,cf)||1;b=R(-cf,cf)||1;c=R(-cf,cf)||1;d=R(-cf,cf)||1;}while(det2(a,b,c,d)===0);
+  const e=R(-cf,cf)||1, f=R(-cf,cf)||1;
+  return {
+    kind:'unique', vars:['r','s'], values:[rv,sv],
+    text:[equationRS(a,b,a*rv+b*sv), equationRS(c,d,c*rv+d*sv), equationRS(e,f,e*rv+f*sv)],
+    solution:`r = ${rv}, s = ${sv}`
+  };
+}
+function genLgs3(level){
+  const mx=solRange(level), cf=coeffRange(level);
+  let m;
+  do{m=Array.from({length:3},()=>Array.from({length:3},()=>R(-cf,cf)||1));}while(det3(m)===0 || Math.abs(det3(m))>1800);
+  const sol=[R(-mx,mx),R(-mx,mx),R(-mx,mx)];
+  const rhs=m.map(row=>row[0]*sol[0]+row[1]*sol[1]+row[2]*sol[2]);
+  return {kind:'unique',vars:['x','y','z'],values:sol,text:m.map((row,i)=>equation3(row[0],row[1],row[2],rhs[i])),solution:`x = ${sol[0]}, y = ${sol[1]}, z = ${sol[2]}`};
+}
+function startLgs(){
+  setName();
+  const lgs=session.lgs;
+  lgs.done=false;lgs.mode=selectedNumber('lgs-mode-row','mode');lgs.level=selectedNumber('lgs-level-row','level');lgs.total=selectedNumber('lgs-count-row','count');lgs.index=0;lgs.score=0;lgs.correct=0;lgs.wrong=0;lgs.history=[];lgs.current=null;lgs.answered=false;
+  showScreen('screen-lgs');loadLgs();
+}
+function loadLgs(){
+  const lgs=session.lgs;
+  if(lgs.index>=lgs.total){finishLgs();return;}
+  lgs.current = lgs.mode===3 ? genLgs3(lgs.level) : (lgs.mode===23 ? genLgs23(lgs.level) : genLgs2(lgs.level));
+  lgs.answered=false;
+  $('lgs-progress').textContent=`Aufgabe ${lgs.index+1} / ${lgs.total}`;
+  $('lgs-score').textContent=`${lgs.score} Punkte`;
+  $('lgs-progress-fill').style.width=`${(lgs.index/lgs.total)*100}%`;
+  $('lgs-task-title').textContent=lgs.mode===3?'LGS mit drei Gleichungen und drei Unbekannten':(lgs.mode===23?'LGS mit drei Gleichungen und zwei Unbekannten':'LGS mit zwei Gleichungen und zwei Unbekannten');
+  $('lgs-equations').innerHTML=lgs.current.text.map((e,i)=>`<span class="eq-line">${i+1}) ${escapeHtml(e)}</span>`).join('');
+  $('lgs-method').textContent=lgs.mode===3?'Tipp: Arbeite schrittweise. Eliminiere zuerst eine Variable aus zwei Gleichungspaaren.':(lgs.mode===23?'Tipp: Löse zuerst zwei Gleichungen nach r und s. Prüfe danach, ob diese Werte auch die dritte Gleichung erfüllen.':'Tipp: Nutze Einsetzungs-, Gleichsetzungs- oder Additionsverfahren.');
+  $('lgs-special-hint').style.display=(lgs.mode===2 || lgs.mode===23)?'block':'none';
+  const cls=lgs.mode===3?'cols3':'cols2';
+  $('lgs-answer-labels').className=`answer-labels ${cls}`;
+  $('lgs-answer-row').className=`answer-row ${cls}`;
+  $('lgs-answer-labels').innerHTML=lgs.current.vars.map(v=>`<span>${v} =</span>`).join('');
+  $('lgs-answer-row').innerHTML=lgs.current.vars.map(v=>`<input class="answer-input" id="lgs-answer-${v}" placeholder="${v}" autocomplete="off" inputmode="text">`).join('');
+  lgs.current.vars.forEach(v=>{$(`lgs-answer-${v}`).addEventListener('keydown',e=>{if(e.key==='Enter')checkLgs();});});
+  $('check-lgs-btn').disabled=false;$('next-lgs-btn').disabled=true;
+  $('lgs-feedback').className='feedback';$('lgs-feedback').innerHTML='';
+  setTimeout(()=>{$(`lgs-answer-${lgs.current.vars[0]}`)?.focus();},60);
+}
+function checkLgs(){
+  const lgs=session.lgs;if(lgs.answered)return;
+  const task=lgs.current;let ok=false;let given='';
+  if(task.kind==='unique'){
+    const vals=task.vars.map(v=>parseInput($(`lgs-answer-${v}`).value));
+    given=task.vars.map((v,i)=>`${v}=${$(`lgs-answer-${v}`).value.trim()||'–'}`).join(', ');
+    ok=vals.every((val,i)=>!Number.isNaN(val) && Math.abs(val-task.values[i])<0.01);
+  }else{
+    const all=task.vars.map(v=>($(`lgs-answer-${v}`).value||'').toLowerCase()).join(' ');
+    given=all.trim()||'–';
+    ok=(task.kind==='none' && all.includes('keine')) || (task.kind==='infinite' && all.includes('unendlich'));
+  }
+  lgs.answered=true;
+  if(ok){lgs.score+=10;lgs.correct++;}else{lgs.score-=5;lgs.wrong++;}
+  lgs.history.push({
+    nr:lgs.index+1,
+    mode:lgsModeLabel(lgs.mode),
+    correct:ok,
+    solution:task.solution,
+    given,
+    kind:task.kind,
+    equations:[...task.text]
+  });
+  $('lgs-score').textContent=`${lgs.score} Punkte`;
+  $('check-lgs-btn').disabled=true;$('next-lgs-btn').disabled=false;
+  document.querySelectorAll('#lgs-answer-row input').forEach(i=>i.disabled=true);
+  const fb=$('lgs-feedback');fb.className=`feedback show ${ok?'good':'bad'}`;
+  fb.innerHTML=`<h3>${ok?'✅ Richtig!':'❌ Noch nicht richtig.'}</h3><div>Richtige Lösung: <strong>${escapeHtml(task.solution)}</strong></div><ul><li>Prüfe, ob du beim Umformen auf beiden Seiten dasselbe getan hast.</li><li>Setze deine Lösung zur Kontrolle in alle Gleichungen ein.</li></ul>`;
+  updateExportText();
+}
+$('check-lgs-btn').addEventListener('click',checkLgs);
+$('next-lgs-btn').addEventListener('click',()=>{session.lgs.index++;loadLgs();});
+function finishLgs(){
+  const lgs=session.lgs;lgs.done=true;
+  $('lgs-progress-fill').style.width='100%';
+  saveLocalResult('LGS-Übung',lgs.score,lgs.correct,lgs.wrong,lgs.total);
+  renderResult('LGS-Übung beendet',lgs.score,lgs.correct,lgs.wrong,0,lgs.total,'Du kannst jetzt mit den Lagebeziehungen weitermachen oder dein Ergebnis exportieren.');
+}
+
+/* ============================================================
+   Geraden / Lagebeziehungen
+   ============================================================ */
+function vAdd(a,b){return a.map((x,i)=>x+b[i]);}
+function vSub(a,b){return a.map((x,i)=>x-b[i]);}
+function vScale(v,k){return v.map(x=>x*k);}
+function randVec(range,nonZero=false){let v;do{v=[R(-range,range),R(-range,range),R(-range,range)];}while(nonZero && v.every(x=>x===0));return v;}
+function isCollinear(a,b){
+  const cross=[a[1]*b[2]-a[2]*b[1], a[2]*b[0]-a[0]*b[2], a[0]*b[1]-a[1]*b[0]];
+  return cross.every(x=>Math.abs(x)<EPS);
+}
+function pointOnLine(point,P,v){
+  let t=null;
+  for(let i=0;i<3;i++){
+    const diff=point[i]-P[i], dir=v[i];
+    if(Math.abs(dir)<EPS){if(Math.abs(diff)>EPS)return false;}
+    else{const cand=diff/dir;if(t===null)t=cand;else if(Math.abs(cand-t)>1e-6)return false;}
+  }
+  return true;
+}
+function solveIntersection(P,v,Q,w){
+  const d=vSub(Q,P);const rows=[[0,1],[0,2],[1,2]];
+  let sol=null;
+  for(const [i,j] of rows){
+    const a11=v[i],a12=-w[i],b1=d[i];
+    const a21=v[j],a22=-w[j],b2=d[j];
+    const det=a11*a22-a12*a21;
+    if(Math.abs(det)>EPS){
+      const r=(b1*a22-a12*b2)/det;
+      const s=(a11*b2-b1*a21)/det;
+      sol={r,s};break;
+    }
+  }
+  if(!sol)return null;
+  for(let i=0;i<3;i++){
+    const lhs=P[i]+sol.r*v[i], rhs=Q[i]+sol.s*w[i];
+    if(Math.abs(lhs-rhs)>1e-6)return null;
+  }
+  return sol;
+}
+function lineRange(level){return level===1?4:(level===2?7:10);}
+function factorFor(level){return C(level===1?[2,-2,3,-1]:level===2?[2,-2,3,-3,4]:[2,-2,3,-3,4,-4,5]);}
+function genLineTask(level,type){
+  const range=lineRange(level);let P,v,Q,w,info={};
+  if(type==='parallel'){
+    v=randVec(range,true);w=vScale(v,factorFor(level));P=randVec(range);let tries=0;do{Q=randVec(range);tries++;}while(tries<50 && pointOnLine(Q,P,v));
+  }else if(type==='identisch'){
+    v=randVec(range,true);w=vScale(v,factorFor(level));P=randVec(range);Q=vAdd(P,vScale(v,R(-3,3)||2));
+  }else if(type==='schneiden'){
+    v=randVec(range,true);do{w=randVec(range,true);}while(isCollinear(v,w));
+    const S=randVec(range);const r0=R(-3,3)||1,s0=R(-3,3)||-2;
+    P=vSub(S,vScale(v,r0));Q=vSub(S,vScale(w,s0));info.schnittpunkt=S;
+  }else{
+    let sol,attempts=0;
+    do{v=randVec(range,true);do{w=randVec(range,true);}while(isCollinear(v,w));P=randVec(range);Q=randVec(range);sol=solveIntersection(P,v,Q,w);attempts++;}while(sol && attempts<100);
+  }
+  return {type,g:{P,v},h:{P:Q,v:w},info};
+}
+function buildLineQuestions(level,total){
+  const types=['parallel','identisch','schneiden','windschief'];
+  const list=[];for(let i=0;i<total;i++)list.push(types[i%4]);
+  for(let i=list.length-1;i>0;i--){const j=R(0,i);[list[i],list[j]]=[list[j],list[i]];}
+  return list.map(t=>genLineTask(level,t));
+}
+function vecHtml(v){return `<span class="matrix">${v.map(n=>`<span>${formatNum(n)}</span>`).join('')}</span>`;}
+function vecSymbolHtml(){return `<span class="vec-symbol" data-tex="\\vec{x}=" aria-label="Vektor x gleich"><span class="vec-letter">x</span><span>=</span></span>`;}
+function lineHtml(name,param,line){return `<div class="line-card"><div class="line-name">${name}</div><div class="line-eq">${vecSymbolHtml()}${vecHtml(line.P)}<span>+</span><span class="param">${param}</span><span class="times">·</span>${vecHtml(line.v)}</div></div>`;}
+function startLage(){
+  setName();
+  const lage=session.lage;
+  lage.done=false;lage.level=selectedNumber('lage-level-row','level');lage.total=selectedNumber('lage-count-row','count');lage.index=0;lage.score=0;lage.correct=0;lage.wrong=0;lage.bonus=0;lage.history=[];lage.questions=buildLineQuestions(lage.level,lage.total);lage.current=null;lage.answered=false;
+  showScreen('screen-lage');loadLage();
+}
+function loadLage(){
+  const l=session.lage;if(l.index>=l.total){finishLage();return;}
+  l.current=l.questions[l.index];l.answered=false;
+  $('lage-progress').textContent=`Aufgabe ${l.index+1} / ${l.total}`;
+  $('lage-score').textContent=`${l.score} Punkte`;
+  $('lage-progress-fill').style.width=`${(l.index/l.total)*100}%`;
+  $('lines-box').innerHTML=lineHtml('g','r',l.current.g)+lineHtml('h','s',l.current.h);
+  document.querySelectorAll('.answer-btn').forEach(btn=>{btn.disabled=false;btn.classList.remove('correct-highlight','wrong-highlight');});
+  $('lage-feedback').className='feedback';$('lage-feedback').innerHTML='';$('next-lage-btn').disabled=true;
+  $('bonus-box').classList.remove('show');$('bonus-result').textContent='';['bonus-x','bonus-y','bonus-z'].forEach(id=>{$(id).value='';$(id).disabled=false;});$('check-bonus-btn').disabled=false;
+}
+function labelFor(type){return {parallel:'echt parallel',identisch:'identisch',schneiden:'schneiden sich',windschief:'windschief'}[type];}
+function reasonsFor(task){
+  if(task.type==='parallel')return ['Die Richtungsvektoren sind Vielfache voneinander.','Ein Stützpunkt der einen Geraden liegt nicht auf der anderen Geraden.'];
+  if(task.type==='identisch')return ['Die Richtungsvektoren sind Vielfache voneinander.','Ein Stützpunkt der einen Geraden liegt auf der anderen Geraden.'];
+  if(task.type==='schneiden')return ['Die Richtungsvektoren sind nicht kollinear.','Das Gleichungssystem der drei Komponenten besitzt genau eine gemeinsame Lösung für r und s.'];
+  return ['Die Richtungsvektoren sind nicht kollinear.','Das Gleichungssystem der drei Komponenten besitzt keine gemeinsame Lösung.'];
+}
+function handleLineAnswer(chosen){
+  const l=session.lage;if(l.answered)return;const task=l.current;const ok=chosen===task.type;l.answered=true;
+  document.querySelectorAll('.answer-btn').forEach(btn=>btn.disabled=true);
+  document.querySelector(`.answer-btn[data-answer="${chosen}"]`)?.classList.add(ok?'correct-highlight':'wrong-highlight');
+  document.querySelector(`.answer-btn[data-answer="${task.type}"]`)?.classList.add('correct-highlight');
+  if(ok){l.score+=10;l.correct++;}else{l.score-=5;l.wrong++;}
+  l.history.push({
+    nr:l.index+1,
+    correct:ok,
+    chosen:labelFor(chosen),
+    solution:labelFor(task.type),
+    lines:{g:{P:[...task.g.P],v:[...task.g.v]},h:{P:[...task.h.P],v:[...task.h.v]}},
+    reasons:reasonsFor(task)
+  });
+  $('lage-score').textContent=`${l.score} Punkte`;
+  const fb=$('lage-feedback');fb.className=`feedback show ${ok?'good':'bad'}`;
+  fb.innerHTML=`<h3>${ok?'✅ Richtig!':'❌ Noch nicht richtig.'}</h3><div>Die Geraden sind <strong>${labelFor(task.type)}</strong>.</div><ul>${reasonsFor(task).map(r=>`<li>${escapeHtml(r)}</li>`).join('')}</ul>`;
+  if(task.type==='schneiden' && ok)$('bonus-box').classList.add('show');
+  $('next-lage-btn').disabled=false;
+  updateExportText();
+}
+document.querySelectorAll('.answer-btn').forEach(btn=>btn.addEventListener('click',()=>handleLineAnswer(btn.dataset.answer)));
+$('next-lage-btn').addEventListener('click',()=>{session.lage.index++;loadLage();});
+$('check-bonus-btn').addEventListener('click',()=>{
+  const task=session.lage.current;if(!task?.info?.schnittpunkt)return;
+  const given=['bonus-x','bonus-y','bonus-z'].map(id=>parseInput($(id).value));
+  const ok=given.every((v,i)=>!Number.isNaN(v)&&Math.abs(v-task.info.schnittpunkt[i])<0.05);
+  ['bonus-x','bonus-y','bonus-z'].forEach(id=>$(id).disabled=true);$('check-bonus-btn').disabled=true;
+  const sol=`S = (${task.info.schnittpunkt.map(formatNum).join(' | ')})`;
+  $('bonus-result').className=`bonus-result ${ok?'good':'bad'}`;
+  if(ok){session.lage.score+=10;session.lage.bonus+=10;$('lage-score').textContent=`${session.lage.score} Punkte`;$('bonus-result').textContent=`✅ Genau richtig. +10 Bonuspunkte. ${sol}`;}else{$('bonus-result').textContent=`❌ Nicht ganz. Richtig wäre: ${sol}`;}
+  const last=session.lage.history[session.lage.history.length-1];
+  if(last && last.nr===session.lage.index+1){
+    last.bonusCorrect=ok;
+    last.bonusGiven=`S = (${given.map(formatNum).join(' | ')})`;
+    last.bonusSolution=sol;
+  }
+  updateExportText();
+});
+function finishLage(){
+  const l=session.lage;l.done=true;$('lage-progress-fill').style.width='100%';
+  saveLocalResult('Lagebeziehungen',l.score,l.correct,l.wrong,l.total);
+  renderResult('Lagebeziehungen beendet',l.score,l.correct,l.wrong,l.bonus,l.total,recommendationText());
+}
+
+/* ============================================================
+   Ergebnis und Verlauf
+   ============================================================ */
+function renderResult(title,score,correct,wrong,bonus,total,recommendation){
+  $('result-badge').textContent=score>=100?'🥇':score>=60?'🥈':score>=20?'🥉':'🧭';
+  $('result-subtitle').textContent=title;
+  $('result-score').textContent=`${score} Punkte`;
+  $('stat-correct').textContent=correct;
+  $('stat-wrong').textContent=wrong;
+  $('stat-bonus').textContent=bonus;
+  $('stat-total').textContent=total;
+  $('recommendation').textContent=recommendation;
+  updateExportText();showScreen('screen-result');
+}
+function recommendationText(){
+  const l=session.lage;const rate=l.total?l.correct/l.total:0;
+  if(rate>=.8)return 'Sehr sicher. Nutze Fobizz, um deine Strategie zur Fallunterscheidung kurz zu erklären.';
+  if(rate>=.55)return 'Solide Grundlage. Übe gezielt: kollineare Richtungsvektoren erkennen und anschließend den Stützpunkt prüfen.';
+  return 'Übe zuerst das Lösen der LGS und die Bedeutung von Richtungsvektoren. Starte danach ein kürzeres Lagebeziehungsquiz.';
+}
+function saveLocalResult(topic,score,correct,wrong,total){
+  const item={topic,score,correct,wrong,total,date:dateStr(),name:session.name};
+  const data=JSON.parse(localStorage.getItem(STORE_KEY)||'[]');data.unshift(item);localStorage.setItem(STORE_KEY,JSON.stringify(data.slice(0,8)));renderHistory();
+}
+function renderHistory(){
+  const data=JSON.parse(localStorage.getItem(STORE_KEY)||'[]');
+  $('history-list').innerHTML=data.length?data.map(h=>`<div class="history-row"><span>${escapeHtml(h.date)} · ${escapeHtml(h.topic)}</span><span class="history-score">${h.score} Pkt</span></div>`).join(''):'<div class="empty">Noch keine Einträge</div>';
+}
+renderHistory();
+
+/* ============================================================
+   Export und Fobizz
+   ============================================================ */
+function openExport(){
+  $('drawer-backdrop').classList.add('show');$('export-drawer').classList.add('show');
+  if(!$('html-link').value){$('html-link').value=GITHUB_HTML_URL;}updateExportText();
+}
+function closeExport(){ $('drawer-backdrop').classList.remove('show');$('export-drawer').classList.remove('show'); }
+$('close-export').addEventListener('click',closeExport);$('drawer-backdrop').addEventListener('click',closeExport);
+$('fobizz-code').addEventListener('input',updateExportText);$('html-link').addEventListener('input',updateExportText);
+$('open-fobizz-tab').href=FOBIZZ_URL;
+$('iframe-open-external').href=FOBIZZ_URL;
+function diagnosis(){
+  const l=session.lage, g=session.lgs;
+  if(g.done && g.wrong>g.correct)return '[DIAGNOSE:LGS_GRUNDLAGEN]';
+  if(l.done && l.wrong>l.correct)return '[DIAGNOSE:LAGEBEZIEHUNG_UNSICHER]';
+  if(l.done && l.correct>=Math.max(1,Math.ceil(l.total*.8)))return '[DIAGNOSE:SICHER]';
+  return '[DIAGNOSE:WEITER_UEBEN]';
+}
+function shortLineHistory(){
+  const l=session.lage;if(!l.history.length)return 'noch nicht bearbeitet';
+  return l.history.slice(-6).map(h=>`A${h.nr}: ${h.correct?'richtig':'falsch'} (Antwort: ${h.chosen}; richtig: ${h.solution})`).join('\n');
+}
+function shortLgsHistory(){
+  const g=session.lgs;if(!g.history.length)return 'noch nicht bearbeitet';
+  return g.history.slice(-6).map(h=>`A${h.nr}: ${h.correct?'richtig':'falsch'} (gegeben: ${h.given}; Lösung: ${h.solution})`).join('\n');
+}
+function vecText(v){
+  return Array.isArray(v)?`(${v.map(formatNum).join(' | ')})`:'(keine Daten)';
+}
+function detailedLgsHistory(){
+  const g=session.lgs;if(!g.history.length)return 'noch nicht bearbeitet';
+  return g.history.map(h=>{
+    const equations=(h.equations||[]).map((e,i)=>`  ${i+1}) ${e}`).join('\n') || '  keine Gleichungen gespeichert';
+    const status=h.correct?'richtig':'falsch';
+    return `A${h.nr} – ${h.mode} – ${status}\nGleichungen:\n${equations}\nEingabe der lernenden Person: ${h.given}\nRichtige Lösung / Lösungsmenge: ${h.solution}`;
+  }).join('\n\n');
+}
+function detailedLageHistory(){
+  const l=session.lage;if(!l.history.length)return 'noch nicht bearbeitet';
+  return l.history.map(h=>{
+    const lines=h.lines;
+    const gLine=lines?`g: vec(x) = ${vecText(lines.g.P)} + r · ${vecText(lines.g.v)}`:'g: keine Geradendaten gespeichert';
+    const hLine=lines?`h: vec(x) = ${vecText(lines.h.P)} + s · ${vecText(lines.h.v)}`:'h: keine Geradendaten gespeichert';
+    const reasons=(h.reasons||[]).map(r=>`  - ${r}`).join('\n') || '  - keine Begründung gespeichert';
+    const bonus=h.bonusSolution?`\nSchnittpunkt-Bonus: ${h.bonusCorrect?'richtig':'falsch'} | Eingabe: ${h.bonusGiven || '–'} | Lösung: ${h.bonusSolution}`:'';
+    return `A${h.nr} – ${h.correct?'richtig':'falsch'}\n${gLine}\n${hLine}\nAntwort der lernenden Person: ${h.chosen}\nRichtige Lagebeziehung: ${h.solution}\nFachliche Begründung:\n${reasons}${bonus}`;
+  }).join('\n\n');
+}
+function percentText(correct,total){
+  if(!total)return 'nicht berechenbar';
+  return `${Math.round((correct/total)*100)} %`;
+}
+function fobizzAiPrompt(){
+  return `PROMPT FÜR DIE FOBIZZ-KI\n\nRolle:\nDu bist eine unterstützende Mathe-KI für eine EF-Lerngruppe. Du wertest den Lernstand zu linearen Gleichungssystemen und Lagebeziehungen von Geraden im Raum aus.\n\nAuftrag:\n1. Nutze ausschließlich die unten exportierten Testergebnisse und Eingaben der lernenden Person.\n2. Gib zuerst eine kurze, motivierende Rückmeldung zum Lernstand.\n3. Benenne maximal zwei konkrete Fehlerschwerpunkte, zum Beispiel LGS lösen, Parameter richtig deuten, Richtungsvektoren auf Kollinearität prüfen, Stützpunktprobe, Schnittpunkt-LGS oder Unterscheidung parallel/identisch/windschief.\n4. Gib gezielte Unterstützung, aber keine vollständigen Musterlösungen zu neuen Aufgaben. Stelle stattdessen Rückfragen, gib einen kleinen Tipp oder zeige einen nächsten Teilschritt.\n5. Leite die lernende Person dazu an, ihre Strategie in eigenen Worten zu erklären.\n6. Schlage am Ende genau eine passende nächste Übung vor.\n7. Gib am Ende einen Diagnose-Code aus.\n\nMögliche Diagnose-Codes:\n[DIAGNOSE:LGS_GRUNDLAGEN]\n[DIAGNOSE:LGS_3_GLEICHUNGEN]\n[DIAGNOSE:KOLLINEARITAET]\n[DIAGNOSE:STUETZPUNKTPROBE]\n[DIAGNOSE:SCHNITTPUNKT_LGS]\n[DIAGNOSE:LAGEBEZIEHUNG_DEUTEN]\n[DIAGNOSE:SICHER]\n\nWichtig:\nWenn Ergebnisse falsch sind, erkläre zuerst, welche Entscheidung oder welcher Rechenschritt überprüft werden sollte. Verrate nicht direkt alles. Arbeite kleinschrittig und fachsprachlich sauber.`;
+}
+function updateExportText(){
+  const name=$('student-name')?.value.trim() || session.name || 'ohne Namen';
+  const code=$('fobizz-code')?.value.trim() || 'nicht eingetragen';
+  const link=$('html-link')?.value.trim() || GITHUB_HTML_URL;
+  const g=session.lgs,l=session.lage;
+  const text=`${fobizzAiPrompt()}\n\n========================================\nEXPORTIERTE TESTERGEBNISSE\n========================================\n\nName/Kürzel: ${name}\nZeitpunkt: ${dateStr()}\nFobizz-Code: ${code}\nHTML-Link: ${link}\nDiagnose-Code des Lernpfads: ${diagnosis()}\nNächster Übungshinweis des Lernpfads: ${recommendationText()}\n\n1) Zusammenfassung LGS-Übung\nStatus: ${g.done?'abgeschlossen':(g.history.length?'begonnen':'nicht bearbeitet')}\nModus: ${lgsModeLabel(g.mode)}\nLevel: ${g.level}\nAufgaben: ${g.history.length}/${g.total || 0}\nPunkte: ${g.score}\nRichtig/Falsch: ${g.correct}/${g.wrong}\nTrefferquote: ${percentText(g.correct,g.history.length)}\n\n2) Zusammenfassung Lagebeziehungen von Geraden\nStatus: ${l.done?'abgeschlossen':(l.history.length?'begonnen':'nicht bearbeitet')}\nLevel: ${l.level}\nAufgaben: ${l.history.length}/${l.total || 0}\nPunkte: ${l.score}\nRichtig/Falsch: ${l.correct}/${l.wrong}\nBonuspunkte Schnittpunkt: ${l.bonus}\nTrefferquote: ${percentText(l.correct,l.history.length)}\n\n3) Alle LGS-Einzelergebnisse\n${detailedLgsHistory()}\n\n4) Alle Einzelergebnisse zu den Lagebeziehungen\n${detailedLageHistory()}\n\n5) Kurzverlauf der letzten Einträge\nLGS:\n${shortLgsHistory()}\n\nLagebeziehungen:\n${shortLineHistory()}\n\nBitte werte diese Testergebnisse gemäß dem Prompt oben aus und unterstütze mich gezielt beim nächsten Lernschritt.`;
+  $('export-text').value=text;
+  return text;
+}
+async function copyText(text, statusId){
+  try{await navigator.clipboard.writeText(text);toast('Kopiert.');if(statusId)$(statusId).textContent='✅ Kopiert. Jetzt in Fobizz einfügen.';}
+  catch(e){if(statusId)$(statusId).textContent='Kopieren wurde blockiert. Bitte Text markieren und manuell kopieren.';}
+}
+$('copy-export-btn').addEventListener('click',()=>copyText(updateExportText(),'copy-status'));
+$('download-export-btn').addEventListener('click',()=>{
+  const blob=new Blob([updateExportText()],{type:'text/plain;charset=utf-8'});const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);a.download='lgs-lagebeziehungen-fobizz-export.txt';a.click();URL.revokeObjectURL(a.href);
+});
+function currentTaskText(){
+  const l=session.lage,g=session.lgs;
+  if(document.getElementById('screen-lage').classList.contains('active') && l.current){
+    return `Geradenaufgabe: g mit Stützvektor (${l.current.g.P.join('|')}) und Richtungsvektor (${l.current.g.v.join('|')}); h mit Stützvektor (${l.current.h.P.join('|')}) und Richtungsvektor (${l.current.h.v.join('|')}). Ich soll die Lagebeziehung bestimmen.`;
+  }
+  if(document.getElementById('screen-lgs').classList.contains('active') && g.current){
+    return `LGS-Aufgabe:\n${g.current.text.map((e,i)=>`${i+1}) ${e}`).join('\n')}`;
+  }
+  return 'Ich arbeite am Quiz zu linearen Gleichungssystemen und Lagebeziehungen von Geraden im Raum.';
+}
+function makeHelpPrompt(){
+  const prompt=`Du bist mein Lernbegleiter im Mathematikunterricht.
+
+Thema:
+Lineare Gleichungssysteme mit zwei oder drei Gleichungen und Lagebeziehungen von Geraden im Raum.
+
+Link zum Lernpfad:
+${GITHUB_HTML_URL}
+
+Aktuelle Aufgabe:
+${currentTaskText()}
+
+Mein Problem:
+Ich brauche einen kleinen Hinweis zum nächsten sinnvollen Schritt.
+
+Wichtig:
+- Verrate nicht sofort die vollständige Lösung.
+- Stelle zuerst eine kurze Rückfrage oder gib höchstens einen kleinen Tipp.
+- Erkläre kleinschrittig und fachsprachlich sauber.
+- Hilf mir besonders bei: Richtungsvektoren vergleichen, Kollinearität prüfen, LGS aufstellen, Lösungsmenge interpretieren.
+- Gib am Ende genau einen Diagnose-Code aus.
+
+Mögliche Diagnose-Codes:
+[HILFE:LGS_START]
+[HILFE:KOLLINEARITAET]
+[HILFE:STUETZPUNKT_PRUEFEN]
+[HILFE:SCHNITTPUNKT_LGS]
+[HILFE:RECHENFEHLER]
+[HILFE:LAGEBEZIEHUNG_DEUTEN]`;
+  $('help-prompt').value=prompt;return prompt;
+}
+$('make-help-prompt').addEventListener('click',makeHelpPrompt);
+$('copy-help-prompt').addEventListener('click',()=>copyText(makeHelpPrompt()));
+let fobizzLoadTimer=null;
+function openFobizzEmbedded(){
+  const wrap=$('iframe-wrap');
+  const frame=$('fobizz-frame');
+  const status=$('iframe-status');
+  const hint=$('iframe-hint');
+  wrap.classList.add('show');
+  status.textContent='Fobizz wird im Fenster geladen …';
+  hint.innerHTML='Fobizz sollte direkt hier im Tab erscheinen. Falls das Fenster leer bleibt oder der Login nicht reagiert, öffne Fobizz über „separat öffnen“.';
+  if(fobizzLoadTimer)clearTimeout(fobizzLoadTimer);
+  frame.onload=()=>{
+    status.textContent='Fobizz-Fenster geöffnet.';
+    hint.innerHTML='Melde dich mit deinem Fobizz-Code an. Anschließend kannst du den Exporttext oder die Fragevorlage dort einfügen.';
+  };
+  frame.src=FOBIZZ_URL;
+  fobizzLoadTimer=setTimeout(()=>{
+    status.textContent='Wenn Fobizz hier nicht sichtbar ist: separat öffnen.';
+    hint.innerHTML='Manche Browser oder Plattformen blockieren eingebettete Logins. Nutze dann den Button „separat öffnen“ im selben Kasten.';
+  },3500);
+}
+$('open-fobizz-frame').addEventListener('click',openFobizzEmbedded);
+$('iframe-big').addEventListener('click',()=>{
+  const wrap=$('iframe-wrap');
+  wrap.classList.toggle('big');
+  document.body.classList.toggle('fullscreen-open',wrap.classList.contains('big'));
+  $('iframe-big').textContent=wrap.classList.contains('big')?'Fenster verkleinern':'Fenster vergrößern';
+});
+$('iframe-close').addEventListener('click',()=>{$('iframe-wrap').classList.remove('big','show');document.body.classList.remove('fullscreen-open');$('iframe-big').textContent='Fenster vergrößern';});
+
+window.addEventListener('beforeunload',()=>{try{updateExportText();}catch(e){}});
+</script>
+</body>
+</html>
