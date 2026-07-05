@@ -11149,17 +11149,108 @@
                     "identisch",
                     "parallel",
                     "windschief",
-                    "sich schneidend"
+                    "sich schneidend",
+                    "Lagebeziehungen von Geraden im Raum",
+                    "Geraden in Parameterform",
+                    "Lineare Gleichungssysteme",
+                    "Schnittpunkte von Geraden",
+                    "parallel, identisch, schneidend oder windschief unterscheiden",
+                    "Fobizz-Export mit KI-Unterstützung"
                   ],
-                  "materialien": [],
+                  "materialien": [
+                    {
+                      "id": "lagebeziehung-test-ef",
+                      "titel": "Lagebeziehung Test",
+                      "kurztitel": "Lagebeziehung Test",
+                      "beschreibung": "Interaktiver Test zu Lagebeziehungen von Geraden im Raum mit vorgeschalteter LGS-Übung, LGS mit zwei bzw. drei Gleichungen, Testauswertung und Fobizz-Export. Die Lernenden können ihre Ergebnisse samt KI-Unterstützungs-Prompt exportieren.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Test",
+                      "datei": "Lagebeziehung_Test.html",
+                      "pfad": "ef/geraden-und-ebenen/Lagebeziehung_Test.html",
+                      "url": "ef/geraden-und-ebenen/Lagebeziehung_Test.html",
+                      "dauer": "ca. 20–30 Minuten",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "EF",
+                        "stufe": "Sekundarstufe II"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "ef",
+                        "inhaltsfeldId": "geraden-und-ebenen",
+                        "themaId": "lagebeziehungen-von-geraden"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "EF",
+                      "inhaltsfeld": "Geraden und Ebenen",
+                      "thema": "Lagebeziehungen von Geraden",
+                      "unterthema": "Lagebeziehungen und LGS im Raum testen",
+                      "kompetenzbereich": [
+                        "Analytische Geometrie",
+                        "Lineare Algebra",
+                        "Operieren",
+                        "Argumentieren",
+                        "Kommunizieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Lagebeziehungen von Geraden im Raum",
+                        "Geraden in Parameterform",
+                        "Richtungsvektoren vergleichen",
+                        "Lineare Gleichungssysteme",
+                        "LGS mit zwei Unbekannten",
+                        "LGS mit drei Gleichungen",
+                        "Schnittpunktberechnung",
+                        "parallel, identisch, schneidend oder windschief unterscheiden",
+                        "Testauswertung",
+                        "Fobizz-Export mit KI-Unterstützung"
+                      ],
+                      "tags": [
+                        "ef",
+                        "sekundarstufe-ii",
+                        "mathematik",
+                        "analytische-geometrie",
+                        "geraden-und-ebenen",
+                        "lagebeziehungen-von-geraden",
+                        "lgs",
+                        "lineare-gleichungssysteme",
+                        "schnittpunkt",
+                        "windschief",
+                        "parallel",
+                        "identisch",
+                        "test",
+                        "quiz",
+                        "fobizz",
+                        "ki-unterstuetzung",
+                        "html",
+                        "interaktiv",
+                        "ipad"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer",
+                      "erstelltAm": "2026-07-05",
+                      "lizenz": "",
+                      "autor": ""
+                    }
+                  ],
                   "tags": [
                     "analytische-geometrie",
                     "ef",
                     "geraden-und-ebenen",
                     "lagebeziehungen-von-geraden",
-                    "mathematik"
+                    "mathematik",
+                    "lgs",
+                    "lineare-gleichungssysteme",
+                    "schnittpunkt",
+                    "test",
+                    "quiz",
+                    "fobizz",
+                    "ki-unterstuetzung"
                   ],
-                  "anzahlMaterialien": 0
+                  "anzahlMaterialien": 1
                 },
                 {
                   "id": "schnittpunkte-von-geraden",
@@ -11423,10 +11514,20 @@
                 "sportschau",
                 "strecken-und-parameterintervalle",
                 "stuetzvektor",
-                "vektoren"
+                "vektoren",
+                "schnittpunkt",
+                "test",
+                "quiz",
+                "fobizz",
+                "ki-unterstuetzung"
               ],
               "anzahlThemen": 6,
-              "anzahlMaterialien": 4
+              "anzahlMaterialien": 5,
+              "inhaltlicheSchwerpunkte": [
+                "Lagebeziehungen von Geraden im Raum",
+                "Lineare Gleichungssysteme",
+                "Schnittpunkte von Geraden"
+              ]
             },
             {
               "id": "vektoren",
@@ -11551,7 +11652,7 @@
           ],
           "materialien": [],
           "anzahlThemen": 15,
-          "anzahlMaterialien": 23,
+          "anzahlMaterialien": 24,
           "tags": [
             "3d",
             "ableitung-entdecken",
@@ -11619,7 +11720,12 @@
             "stuetzvektor",
             "vektoren",
             "vektoroperationen",
-            "zufall-und-modelle"
+            "zufall-und-modelle",
+            "schnittpunkt",
+            "test",
+            "quiz",
+            "fobizz",
+            "ki-unterstuetzung"
           ]
         },
         {
@@ -15609,7 +15715,7 @@
         }
       ],
       "anzahlThemen": 54,
-      "anzahlMaterialien": 196,
+      "anzahlMaterialien": 197,
       "tags": [
         "3d",
         "ableitung-entdecken",
@@ -15694,10 +15800,17 @@
         "wuerfel",
         "zahlen-und-rechnen",
         "zirkel",
-        "zufall-und-modelle"
+        "zufall-und-modelle",
+        "lagebeziehungen-von-geraden",
+        "lineare-gleichungssysteme",
+        "schnittpunkt",
+        "test",
+        "quiz",
+        "fobizz",
+        "ki-unterstuetzung"
       ],
       "anzahlKlassen": 9
     }
   ],
-  "aktualisiertAm": "2026-07-04"
+  "aktualisiertAm": "2026-07-05"
 }
