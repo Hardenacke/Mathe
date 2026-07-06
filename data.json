@@ -1322,7 +1322,7 @@
                     "video",
                     "wav"
                   ],
-                  "anzahlMaterialien": 3,
+                  "anzahlMaterialien": 7,
                   "oeffnenIn": "neuer-tab",
                   "target": "_blank",
                   "rel": "noopener noreferrer"
@@ -1780,7 +1780,7 @@
                 "zahlenstrahl"
               ],
               "anzahlThemen": 6,
-              "anzahlMaterialien": 14
+              "anzahlMaterialien": 18
             },
             {
               "id": "groessen-und-messen",
@@ -3035,7 +3035,7 @@
           ],
           "materialien": [],
           "anzahlThemen": 12,
-          "anzahlMaterialien": 37,
+          "anzahlMaterialien": 41,
           "tags": [
             "anteile",
             "arbeitsblatt",
@@ -5906,29 +5906,854 @@
               ],
               "anzahlThemen": 3,
               "anzahlMaterialien": 8
+            },
+            {
+              "id": "daten-und-zufall",
+              "titel": "Daten und Zufall",
+              "pfad": "klasse-7/daten-und-zufall/",
+              "beschreibung": "Bereich Daten und Zufall in Klasse 7.",
+              "themen": [
+                {
+                  "id": "excel-tabellen",
+                  "titel": "Excel-Tabellen",
+                  "pfad": "klasse-7/daten-und-zufall/excel/",
+                  "beschreibung": "Lernpfade und Materialien zu Excel-Tabellen in Klasse 7. Die Lernenden lesen Tabellen, finden Zellen, tragen Messwerte ein, nutzen Zellbezüge, prüfen einfache Formeln und werten Daten mit Summen, Mittelwerten und Diagrammen aus.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Tabellen lesen",
+                    "Zellen, Zeilen und Spalten",
+                    "Zellbezüge",
+                    "Messwerte eintragen",
+                    "Formeln",
+                    "SUMME",
+                    "MITTELWERT",
+                    "Diagramme",
+                    "Daten auswerten",
+                    "Fehlerdiagnose",
+                    "interaktive Aufgaben",
+                    "gestufte Hilfen"
+                  ],
+                  "materialien": [
+                    {
+                      "id": "lernpfad-excel-tabellen-klasse-7",
+                      "titel": "Excel-Tabellen verstehen und auswerten",
+                      "kurztitel": "Excel-Tabellen",
+                      "beschreibung": "Mehrstufiger interaktiver Lernpfad zum Lesen, Füllen und Auswerten von Excel-Tabellen. Enthalten sind Excel-Grundlagen, zehn niedrigschwellige Aufgaben zum Ablesen von Zellen, prüfbare Eingaben, Lückentexte, Formel-Bausteine, Fehlerdiagnose, Kontrollfragen, Tipps, Lösungen und Reflexion.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "index.html",
+                      "pfad": "klasse-7/daten-und-zufall/excel/index.html",
+                      "url": "klasse-7/daten-und-zufall/excel/index.html",
+                      "dauer": "ca. 90 Minuten",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 7",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-7",
+                        "inhaltsfeldId": "daten-und-zufall",
+                        "themaId": "excel-tabellen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 7",
+                      "inhaltsfeld": "Daten und Zufall",
+                      "thema": "Excel-Tabellen",
+                      "unterthema": "Tabellen erstellen, lesen und auswerten",
+                      "kompetenzbereich": [
+                        "Daten und Zufall",
+                        "Operieren",
+                        "Problemlösen",
+                        "Modellieren",
+                        "Medienkompetenz"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Tabellen lesen",
+                        "Zellen, Zeilen und Spalten",
+                        "Zellbezüge",
+                        "Messwerte eintragen",
+                        "Formeln verstehen",
+                        "SUMME",
+                        "MITTELWERT",
+                        "Diagramme erstellen",
+                        "Daten auswerten",
+                        "Fehlerdiagnose",
+                        "prüfbare Aufgaben"
+                      ],
+                      "tags": [
+                        "excel",
+                        "tabellen",
+                        "daten-und-zufall",
+                        "klasse-7",
+                        "html",
+                        "interaktiv",
+                        "lernpfad",
+                        "mathematik",
+                        "zellen",
+                        "zellbezug",
+                        "formeln",
+                        "diagramme"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-07-06",
+                      "lizenz": "",
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
+                    },
+                    {
+                      "id": "excel-arbeitsdatei-schulfest-kiosk-klasse-7",
+                      "titel": "Excel-Arbeitsdatei: Schulfest-Kiosk",
+                      "kurztitel": "Excel-Datei",
+                      "beschreibung": "Arbeitsdatei zum Lernpfad mit Tabellenblättern für Messwerte, Schulfest-Kiosk, Formeln und Auswertung.",
+                      "typ": "xlsx",
+                      "format": "XLSX",
+                      "materialart": "Arbeitsdatei",
+                      "datei": "Excel_Tabelle_Klasse7_Schulfest_Kiosk_mehrstufig.xlsx",
+                      "pfad": "klasse-7/daten-und-zufall/excel/Excel_Tabelle_Klasse7_Schulfest_Kiosk_mehrstufig.xlsx",
+                      "url": "klasse-7/daten-und-zufall/excel/Excel_Tabelle_Klasse7_Schulfest_Kiosk_mehrstufig.xlsx",
+                      "dauer": "begleitend",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 7",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-7",
+                        "inhaltsfeldId": "daten-und-zufall",
+                        "themaId": "excel-tabellen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 7",
+                      "inhaltsfeld": "Daten und Zufall",
+                      "thema": "Excel-Tabellen",
+                      "unterthema": "Arbeitsdatei",
+                      "kompetenzbereich": [
+                        "Daten und Zufall",
+                        "Operieren",
+                        "Medienkompetenz"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Tabellen ausfüllen",
+                        "Zellbezüge",
+                        "Formeln",
+                        "SUMME",
+                        "MITTELWERT",
+                        "Diagramm"
+                      ],
+                      "tags": [
+                        "excel",
+                        "xlsx",
+                        "arbeitsdatei",
+                        "klasse-7",
+                        "daten-und-zufall",
+                        "tabellen",
+                        "formeln"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "download",
+                      "erstelltAm": "2026-07-06",
+                      "lizenz": "",
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
+                    },
+                    {
+                      "id": "arbeitsblatt-excel-lernpfad-klasse-7",
+                      "titel": "Arbeitsblatt: Excel-Tabellen",
+                      "kurztitel": "AB Excel",
+                      "beschreibung": "Arbeitsblatt zum Lernpfad mit Hilfeseite, Aufgaben, Eintragfeldern und Kontrollfragen.",
+                      "typ": "pdf",
+                      "format": "PDF",
+                      "materialart": "Arbeitsblatt",
+                      "datei": "Arbeitsblatt_Excel_Lernpfad_Klasse7_mit_Hilfe.pdf",
+                      "pfad": "klasse-7/daten-und-zufall/excel/material/Arbeitsblatt_Excel_Lernpfad_Klasse7_mit_Hilfe.pdf",
+                      "url": "klasse-7/daten-und-zufall/excel/material/Arbeitsblatt_Excel_Lernpfad_Klasse7_mit_Hilfe.pdf",
+                      "dauer": "begleitend",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 7",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-7",
+                        "inhaltsfeldId": "daten-und-zufall",
+                        "themaId": "excel-tabellen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 7",
+                      "inhaltsfeld": "Daten und Zufall",
+                      "thema": "Excel-Tabellen",
+                      "unterthema": "Arbeitsblatt",
+                      "kompetenzbereich": [
+                        "Daten und Zufall",
+                        "Operieren",
+                        "Kommunizieren",
+                        "Medienkompetenz"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Excel-Grundlagen",
+                        "Zellen ablesen",
+                        "Messwerte eintragen",
+                        "Formeln erklären",
+                        "Kontrollfragen",
+                        "Reflexion"
+                      ],
+                      "tags": [
+                        "arbeitsblatt",
+                        "pdf",
+                        "excel",
+                        "klasse-7",
+                        "daten-und-zufall",
+                        "tabellen"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-07-06",
+                      "lizenz": "",
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
+                    },
+                    {
+                      "id": "arbeitsblatt-excel-lernpfad-klasse-7-tex",
+                      "titel": "LaTeX-Quelle: Arbeitsblatt Excel-Tabellen",
+                      "kurztitel": "AB Excel TeX",
+                      "beschreibung": "LaTeX-Quelldatei zum Arbeitsblatt Excel-Tabellen.",
+                      "typ": "tex",
+                      "format": "TEX",
+                      "materialart": "Quelldatei",
+                      "datei": "Arbeitsblatt_Excel_Lernpfad_Klasse7_mit_Hilfe.tex",
+                      "pfad": "klasse-7/daten-und-zufall/excel/material/Arbeitsblatt_Excel_Lernpfad_Klasse7_mit_Hilfe.tex",
+                      "url": "klasse-7/daten-und-zufall/excel/material/Arbeitsblatt_Excel_Lernpfad_Klasse7_mit_Hilfe.tex",
+                      "dauer": "variabel",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 7",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-7",
+                        "inhaltsfeldId": "daten-und-zufall",
+                        "themaId": "excel-tabellen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 7",
+                      "inhaltsfeld": "Daten und Zufall",
+                      "thema": "Excel-Tabellen",
+                      "unterthema": "Arbeitsblatt-Quelle",
+                      "kompetenzbereich": [
+                        "Materialerstellung"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "LaTeX",
+                        "Arbeitsblatt",
+                        "Bearbeitung"
+                      ],
+                      "tags": [
+                        "tex",
+                        "latex",
+                        "quelle",
+                        "arbeitsblatt",
+                        "excel",
+                        "klasse-7"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": false,
+                      "oeffnenIn": "download",
+                      "erstelltAm": "2026-07-06",
+                      "lizenz": "",
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
+                    },
+                    {
+                      "id": "kontrollloesung-excel-lernpfad-klasse-7",
+                      "titel": "Kontrolllösung: Excel-Tabellen",
+                      "kurztitel": "Lösung Excel",
+                      "beschreibung": "Kontrolllösung zum Arbeitsblatt und Lernpfad mit Ergebnissen, Formeln und kurzen Erläuterungen.",
+                      "typ": "pdf",
+                      "format": "PDF",
+                      "materialart": "Kontrolllösung",
+                      "datei": "Arbeitsblatt_Excel_Lernpfad_Klasse7_mit_Hilfe_Loesungen.pdf",
+                      "pfad": "klasse-7/daten-und-zufall/excel/material/Arbeitsblatt_Excel_Lernpfad_Klasse7_mit_Hilfe_Loesungen.pdf",
+                      "url": "klasse-7/daten-und-zufall/excel/material/Arbeitsblatt_Excel_Lernpfad_Klasse7_mit_Hilfe_Loesungen.pdf",
+                      "dauer": "begleitend",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 7",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-7",
+                        "inhaltsfeldId": "daten-und-zufall",
+                        "themaId": "excel-tabellen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 7",
+                      "inhaltsfeld": "Daten und Zufall",
+                      "thema": "Excel-Tabellen",
+                      "unterthema": "Kontrolllösung",
+                      "kompetenzbereich": [
+                        "Daten und Zufall",
+                        "Operieren",
+                        "Kommunizieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Lösungen",
+                        "Formeln",
+                        "Zellbezüge",
+                        "Kontrolle"
+                      ],
+                      "tags": [
+                        "kontrollloesung",
+                        "loesung",
+                        "pdf",
+                        "excel",
+                        "klasse-7",
+                        "daten-und-zufall"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-07-06",
+                      "lizenz": "",
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
+                    },
+                    {
+                      "id": "kontrollloesung-excel-lernpfad-klasse-7-tex",
+                      "titel": "LaTeX-Quelle: Kontrolllösung Excel-Tabellen",
+                      "kurztitel": "Lösung Excel TeX",
+                      "beschreibung": "LaTeX-Quelldatei zur Kontrolllösung des Excel-Arbeitsblatts.",
+                      "typ": "tex",
+                      "format": "TEX",
+                      "materialart": "Quelldatei",
+                      "datei": "Arbeitsblatt_Excel_Lernpfad_Klasse7_mit_Hilfe_Loesungen.tex",
+                      "pfad": "klasse-7/daten-und-zufall/excel/material/Arbeitsblatt_Excel_Lernpfad_Klasse7_mit_Hilfe_Loesungen.tex",
+                      "url": "klasse-7/daten-und-zufall/excel/material/Arbeitsblatt_Excel_Lernpfad_Klasse7_mit_Hilfe_Loesungen.tex",
+                      "dauer": "variabel",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 7",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-7",
+                        "inhaltsfeldId": "daten-und-zufall",
+                        "themaId": "excel-tabellen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 7",
+                      "inhaltsfeld": "Daten und Zufall",
+                      "thema": "Excel-Tabellen",
+                      "unterthema": "Kontrolllösung-Quelle",
+                      "kompetenzbereich": [
+                        "Materialerstellung"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "LaTeX",
+                        "Kontrolllösung",
+                        "Bearbeitung"
+                      ],
+                      "tags": [
+                        "tex",
+                        "latex",
+                        "quelle",
+                        "kontrollloesung",
+                        "excel",
+                        "klasse-7"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": false,
+                      "oeffnenIn": "download",
+                      "erstelltAm": "2026-07-06",
+                      "lizenz": "",
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
+                    },
+                    {
+                      "id": "excel-einsteigeruebersicht-klasse-7",
+                      "titel": "Excel-Einsteigerübersicht",
+                      "kurztitel": "Excel-Hilfe",
+                      "beschreibung": "Kurze Übersicht zu Zeile, Spalte, Zelle, Zellbezug, Formel, SUMME, MITTELWERT und Bereichen.",
+                      "typ": "pdf",
+                      "format": "PDF",
+                      "materialart": "Hilfekarte",
+                      "datei": "Excel_Einsteigeruebersicht_Klasse7.pdf",
+                      "pfad": "klasse-7/daten-und-zufall/excel/material/Excel_Einsteigeruebersicht_Klasse7.pdf",
+                      "url": "klasse-7/daten-und-zufall/excel/material/Excel_Einsteigeruebersicht_Klasse7.pdf",
+                      "dauer": "begleitend",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 7",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-7",
+                        "inhaltsfeldId": "daten-und-zufall",
+                        "themaId": "excel-tabellen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 7",
+                      "inhaltsfeld": "Daten und Zufall",
+                      "thema": "Excel-Tabellen",
+                      "unterthema": "Einsteigerübersicht",
+                      "kompetenzbereich": [
+                        "Daten und Zufall",
+                        "Operieren",
+                        "Medienkompetenz"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Zeilen",
+                        "Spalten",
+                        "Zellen",
+                        "Zellbezüge",
+                        "Formeln",
+                        "SUMME",
+                        "MITTELWERT",
+                        "Bereiche"
+                      ],
+                      "tags": [
+                        "hilfekarte",
+                        "pdf",
+                        "excel",
+                        "klasse-7",
+                        "zellen",
+                        "zellbezug",
+                        "formeln"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-07-06",
+                      "lizenz": "",
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
+                    },
+                    {
+                      "id": "excel-einsteigeruebersicht-klasse-7-tex",
+                      "titel": "LaTeX-Quelle: Excel-Einsteigerübersicht",
+                      "kurztitel": "Excel-Hilfe TeX",
+                      "beschreibung": "LaTeX-Quelldatei zur kurzen Excel-Einsteigerübersicht.",
+                      "typ": "tex",
+                      "format": "TEX",
+                      "materialart": "Quelldatei",
+                      "datei": "Excel_Einsteigeruebersicht_Klasse7.tex",
+                      "pfad": "klasse-7/daten-und-zufall/excel/material/Excel_Einsteigeruebersicht_Klasse7.tex",
+                      "url": "klasse-7/daten-und-zufall/excel/material/Excel_Einsteigeruebersicht_Klasse7.tex",
+                      "dauer": "variabel",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 7",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-7",
+                        "inhaltsfeldId": "daten-und-zufall",
+                        "themaId": "excel-tabellen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 7",
+                      "inhaltsfeld": "Daten und Zufall",
+                      "thema": "Excel-Tabellen",
+                      "unterthema": "Einsteigerübersicht-Quelle",
+                      "kompetenzbereich": [
+                        "Materialerstellung"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "LaTeX",
+                        "Hilfekarte",
+                        "Bearbeitung"
+                      ],
+                      "tags": [
+                        "tex",
+                        "latex",
+                        "quelle",
+                        "hilfekarte",
+                        "excel",
+                        "klasse-7"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": false,
+                      "oeffnenIn": "download",
+                      "erstelltAm": "2026-07-06",
+                      "lizenz": "",
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
+                    },
+                    {
+                      "id": "bild-excel-grundlagen-klasse-7",
+                      "titel": "Bild: Excel-Grundlagen",
+                      "kurztitel": "Excel-Grundlagen",
+                      "beschreibung": "Visualisierung zu Spalte, Zeile, Zelle, Zellbezug und Formel.",
+                      "typ": "asset",
+                      "format": "PNG",
+                      "materialart": "Bilddatei",
+                      "datei": "excel_grundlagen.png",
+                      "pfad": "klasse-7/daten-und-zufall/excel/assets/bilder/excel_grundlagen.png",
+                      "url": "klasse-7/daten-und-zufall/excel/assets/bilder/excel_grundlagen.png",
+                      "dauer": "variabel",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 7",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-7",
+                        "inhaltsfeldId": "daten-und-zufall",
+                        "themaId": "excel-tabellen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 7",
+                      "inhaltsfeld": "Daten und Zufall",
+                      "thema": "Excel-Tabellen",
+                      "unterthema": "Visualisierung",
+                      "kompetenzbereich": [
+                        "Daten und Zufall",
+                        "Darstellen",
+                        "Medienkompetenz"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Visualisierung",
+                        "Excel",
+                        "Tabellen",
+                        "Diagramme"
+                      ],
+                      "tags": [
+                        "bild",
+                        "asset",
+                        "png",
+                        "excel",
+                        "klasse-7",
+                        "daten-und-zufall"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": false,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-07-06",
+                      "lizenz": "",
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
+                    },
+                    {
+                      "id": "bild-messwerte-eintragen-klasse-7",
+                      "titel": "Bild: Messwerte eintragen",
+                      "kurztitel": "Messwerte eintragen",
+                      "beschreibung": "Visualisierung zum Eintragen von Messwerten über Zeile und Spalte.",
+                      "typ": "asset",
+                      "format": "PNG",
+                      "materialart": "Bilddatei",
+                      "datei": "messwerte_eintragen.png",
+                      "pfad": "klasse-7/daten-und-zufall/excel/assets/bilder/messwerte_eintragen.png",
+                      "url": "klasse-7/daten-und-zufall/excel/assets/bilder/messwerte_eintragen.png",
+                      "dauer": "variabel",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 7",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-7",
+                        "inhaltsfeldId": "daten-und-zufall",
+                        "themaId": "excel-tabellen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 7",
+                      "inhaltsfeld": "Daten und Zufall",
+                      "thema": "Excel-Tabellen",
+                      "unterthema": "Visualisierung",
+                      "kompetenzbereich": [
+                        "Daten und Zufall",
+                        "Darstellen",
+                        "Medienkompetenz"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Visualisierung",
+                        "Excel",
+                        "Tabellen",
+                        "Diagramme"
+                      ],
+                      "tags": [
+                        "bild",
+                        "asset",
+                        "png",
+                        "excel",
+                        "klasse-7",
+                        "daten-und-zufall"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": false,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-07-06",
+                      "lizenz": "",
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
+                    },
+                    {
+                      "id": "bild-formeln-rechnen-klasse-7",
+                      "titel": "Bild: Mit Formeln rechnen",
+                      "kurztitel": "Mit Formeln rechnen",
+                      "beschreibung": "Visualisierung zu Zellbezügen und Formeln in Excel.",
+                      "typ": "asset",
+                      "format": "PNG",
+                      "materialart": "Bilddatei",
+                      "datei": "formeln_rechnen.png",
+                      "pfad": "klasse-7/daten-und-zufall/excel/assets/bilder/formeln_rechnen.png",
+                      "url": "klasse-7/daten-und-zufall/excel/assets/bilder/formeln_rechnen.png",
+                      "dauer": "variabel",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 7",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-7",
+                        "inhaltsfeldId": "daten-und-zufall",
+                        "themaId": "excel-tabellen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 7",
+                      "inhaltsfeld": "Daten und Zufall",
+                      "thema": "Excel-Tabellen",
+                      "unterthema": "Visualisierung",
+                      "kompetenzbereich": [
+                        "Daten und Zufall",
+                        "Darstellen",
+                        "Medienkompetenz"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Visualisierung",
+                        "Excel",
+                        "Tabellen",
+                        "Diagramme"
+                      ],
+                      "tags": [
+                        "bild",
+                        "asset",
+                        "png",
+                        "excel",
+                        "klasse-7",
+                        "daten-und-zufall"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": false,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-07-06",
+                      "lizenz": "",
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
+                    },
+                    {
+                      "id": "bild-summe-mittelwert-klasse-7",
+                      "titel": "Bild: SUMME und MITTELWERT",
+                      "kurztitel": "SUMME und MITTELWERT",
+                      "beschreibung": "Visualisierung zu SUMME, MITTELWERT und Zellbereichen.",
+                      "typ": "asset",
+                      "format": "PNG",
+                      "materialart": "Bilddatei",
+                      "datei": "summe_mittelwert.png",
+                      "pfad": "klasse-7/daten-und-zufall/excel/assets/bilder/summe_mittelwert.png",
+                      "url": "klasse-7/daten-und-zufall/excel/assets/bilder/summe_mittelwert.png",
+                      "dauer": "variabel",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 7",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-7",
+                        "inhaltsfeldId": "daten-und-zufall",
+                        "themaId": "excel-tabellen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 7",
+                      "inhaltsfeld": "Daten und Zufall",
+                      "thema": "Excel-Tabellen",
+                      "unterthema": "Visualisierung",
+                      "kompetenzbereich": [
+                        "Daten und Zufall",
+                        "Darstellen",
+                        "Medienkompetenz"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Visualisierung",
+                        "Excel",
+                        "Tabellen",
+                        "Diagramme"
+                      ],
+                      "tags": [
+                        "bild",
+                        "asset",
+                        "png",
+                        "excel",
+                        "klasse-7",
+                        "daten-und-zufall"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": false,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-07-06",
+                      "lizenz": "",
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
+                    },
+                    {
+                      "id": "bild-ergebnisse-auswerten-klasse-7",
+                      "titel": "Bild: Ergebnisse auswerten",
+                      "kurztitel": "Ergebnisse auswerten",
+                      "beschreibung": "Visualisierung zur Auswertung von Gewinnen im Säulendiagramm.",
+                      "typ": "asset",
+                      "format": "PNG",
+                      "materialart": "Bilddatei",
+                      "datei": "ergebnisse_auswerten.png",
+                      "pfad": "klasse-7/daten-und-zufall/excel/assets/bilder/ergebnisse_auswerten.png",
+                      "url": "klasse-7/daten-und-zufall/excel/assets/bilder/ergebnisse_auswerten.png",
+                      "dauer": "variabel",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 7",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-7",
+                        "inhaltsfeldId": "daten-und-zufall",
+                        "themaId": "excel-tabellen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 7",
+                      "inhaltsfeld": "Daten und Zufall",
+                      "thema": "Excel-Tabellen",
+                      "unterthema": "Visualisierung",
+                      "kompetenzbereich": [
+                        "Daten und Zufall",
+                        "Darstellen",
+                        "Medienkompetenz"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Visualisierung",
+                        "Excel",
+                        "Tabellen",
+                        "Diagramme"
+                      ],
+                      "tags": [
+                        "bild",
+                        "asset",
+                        "png",
+                        "excel",
+                        "klasse-7",
+                        "daten-und-zufall"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": false,
+                      "oeffnenIn": "neuer-tab",
+                      "erstelltAm": "2026-07-06",
+                      "lizenz": "",
+                      "autor": "",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer"
+                    }
+                  ],
+                  "tags": [
+                    "arbeitsblatt",
+                    "daten-und-zufall",
+                    "diagramme",
+                    "excel",
+                    "formeln",
+                    "hilfekarte",
+                    "html",
+                    "interaktiv",
+                    "klasse-7",
+                    "kontrollloesung",
+                    "lernpfad",
+                    "mathematik",
+                    "pdf",
+                    "tabellen",
+                    "xlsx",
+                    "zellbezug",
+                    "zellen"
+                  ],
+                  "anzahlMaterialien": 13,
+                  "oeffnenIn": "neuer-tab",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer"
+                }
+              ],
+              "tags": [
+                "arbeitsblatt",
+                "daten-und-zufall",
+                "diagramme",
+                "excel",
+                "formeln",
+                "hilfekarte",
+                "html",
+                "interaktiv",
+                "klasse-7",
+                "kontrollloesung",
+                "lernpfad",
+                "mathematik",
+                "pdf",
+                "tabellen",
+                "xlsx",
+                "zellbezug",
+                "zellen"
+              ],
+              "anzahlThemen": 1,
+              "anzahlMaterialien": 13
             }
           ],
           "materialien": [],
-          "anzahlThemen": 6,
-          "anzahlMaterialien": 26,
+          "anzahlThemen": 7,
+          "anzahlMaterialien": 39,
           "tags": [
             "arbeitsblatt",
             "arithmetik-algebra",
+            "daten-und-zufall",
+            "diagramme",
             "drag-and-drop",
             "dreieck",
             "dreiecke",
             "dreiecke-konstruieren",
             "dreiecke-und-winkel",
             "dreieckskonstruktion",
+            "excel",
+            "formeln",
             "funktionen",
             "geodreieck",
             "geometrie",
+            "hilfekarte",
             "hilfslinie",
             "html",
             "innenwinkelsumme",
             "interaktiv",
             "ipad",
             "klasse-7",
+            "kontrollloesung",
             "lernpfad",
             "lernpfad-addieren-und-subtrahieren",
             "lernpfad-antiproportionale-zuordnungen",
@@ -5956,10 +6781,14 @@
             "planfigur",
             "rationale-zahlen",
             "stufenwinkel",
+            "tabellen",
             "terme-und-gleichungen",
             "wechselwinkel",
             "winkel",
+            "xlsx",
             "zahlen-und-rechnen",
+            "zellbezug",
+            "zellen",
             "zirkel",
             "zuordnungen-und-prozent"
           ]
@@ -15714,8 +16543,8 @@
           ]
         }
       ],
-      "anzahlThemen": 54,
-      "anzahlMaterialien": 197,
+      "anzahlThemen": 60,
+      "anzahlMaterialien": 223,
       "tags": [
         "3d",
         "ableitung-entdecken",
@@ -15727,15 +16556,19 @@
         "brueche",
         "daten",
         "daten-und-zufall",
+        "diagramme",
         "drag-and-drop",
         "dreiecke",
         "dreiecke-konstruieren",
         "dreieckskonstruktion",
         "ef",
         "erweitern",
+        "excel",
         "figuren-und-koerper",
         "flugbahn",
         "flugzeug",
+        "fobizz",
+        "formeln",
         "funktionen",
         "funktionsbegriff-und-transformationen",
         "funktionsuntersuchung",
@@ -15747,10 +16580,12 @@
         "gleichwertige-brueche",
         "groessen-und-messen",
         "grundkurs",
+        "hilfekarte",
         "html",
         "interaktiv",
         "ipad",
         "katex",
+        "ki-unterstuetzung",
         "klasse-10",
         "klasse-5",
         "klasse-5-gesamt",
@@ -15759,8 +16594,10 @@
         "klasse-8",
         "klasse-9",
         "koerper-und-volumen",
+        "kontrollloesung",
         "kopfballtor",
         "kuerzen",
+        "lagebeziehungen-von-geraden",
         "leistungskurs",
         "lernpfad",
         "lernpfad-ableitungsfunktion",
@@ -15783,6 +16620,7 @@
         "lernpfad-verschiebung-und-streckung",
         "lernpfad-wendepunkte-vorbereiten",
         "lgs",
+        "lineare-gleichungssysteme",
         "mathematik",
         "oberflaecheninhalt",
         "parametergleichung",
@@ -15791,26 +16629,26 @@
         "q1",
         "q2",
         "quader",
+        "quiz",
+        "schnittpunkt",
         "schnittpunkte-von-geraden",
         "sekundarstufe-ii",
         "stochastik",
+        "tabellen",
+        "test",
         "vektoren",
         "video",
         "volumen",
         "wuerfel",
+        "xlsx",
         "zahlen-und-rechnen",
+        "zellbezug",
+        "zellen",
         "zirkel",
-        "zufall-und-modelle",
-        "lagebeziehungen-von-geraden",
-        "lineare-gleichungssysteme",
-        "schnittpunkt",
-        "test",
-        "quiz",
-        "fobizz",
-        "ki-unterstuetzung"
+        "zufall-und-modelle"
       ],
       "anzahlKlassen": 9
     }
   ],
-  "aktualisiertAm": "2026-07-05"
+  "aktualisiertAm": "2026-07-06"
 }
