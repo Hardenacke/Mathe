@@ -895,6 +895,120 @@
                   "rel": "noopener noreferrer"
                 },
                 {
+                  "id": "stammbrueche-aegyptische-bruchrechnung",
+                  "titel": "Stammbrüche und ägyptische Bruchrechnung",
+                  "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/stammbrueche-aegyptische-bruchrechnung/",
+                  "beschreibung": "Interaktiver Lernpfad zu Stammbrüchen und zur ägyptischen Bruchrechnung mit historischen Geschichten, Visualisierungen, Schiebereglern, Rechenaufgaben und einer fobizz-Mission mit Ahmes.",
+                  "inhaltlicheSchwerpunkte": [
+                    "Stammbrüche erkennen und benennen",
+                    "Zähler und Nenner sicher verwenden",
+                    "Brüche als Summe von Stammbrüchen darstellen",
+                    "Brüche schrittweise zerlegen und kürzen",
+                    "gerechte Verteilungen mit Broten, Fischen, Weizen und Vasen",
+                    "historischer Kontext der ägyptischen Bruchrechnung",
+                    "interaktive Kreisvisualisierung",
+                    "Stammbrüche mit Schiebereglern vergleichen",
+                    "Rechnungen auf Papyrus prüfen",
+                    "digitale Gesprächsmission mit Ahmes über fobizz",
+                    "selbstständige Erarbeitung",
+                    "interaktive Aufgaben"
+                  ],
+                  "materialien": [
+                    {
+                      "id": "lernpfad-brueche-am-nil-klasse5",
+                      "titel": "Brüche am Nil – Stammbrüche wie im Alten Ägypten",
+                      "kurztitel": "Brüche am Nil",
+                      "beschreibung": "Mehrseitiger interaktiver Lernpfad für Klasse 5. Die Lernenden entdecken Stammbrüche, zerlegen Brüche in Summen von Stammbrüchen, prüfen Rechnungen, bearbeiten gestufte Rechenaufgaben und helfen dem ägyptischen Verwalter Ahmes über fobizz beim gerechten Verteilen von Broten, Fischen, Weizen und Vasen.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Lernpfad",
+                      "datei": "lernpfad-brueche-am-nil.html",
+                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/stammbrueche-aegyptische-bruchrechnung/lernpfad-brueche-am-nil.html",
+                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/stammbrueche-aegyptische-bruchrechnung/lernpfad-brueche-am-nil.html",
+                      "dauer": "ca. 45–60 Minuten",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 5",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-5",
+                        "inhaltsfeldId": "arithmetik-algebra",
+                        "themaId": "stammbrueche-aegyptische-bruchrechnung"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 5",
+                      "inhaltsfeld": "Arithmetik Algebra",
+                      "thema": "Stammbrüche und ägyptische Bruchrechnung",
+                      "unterthema": "Brüche am Nil – Brüche als Summe von Stammbrüchen",
+                      "kompetenzbereich": [
+                        "Arithmetik Algebra",
+                        "Operieren",
+                        "Darstellen",
+                        "Problemlösen",
+                        "Modellieren",
+                        "Kommunizieren"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Stammbrüche erkennen",
+                        "Zähler und Nenner",
+                        "Brüche als Summe von Stammbrüchen",
+                        "Brüche zerlegen und kürzen",
+                        "gerechtes Teilen",
+                        "ägyptische Bruchrechnung",
+                        "Kreisdiagramme zu Brüchen",
+                        "interaktive Schieberegler",
+                        "Rechenaufgaben mit Zwischenschritten",
+                        "historische Rahmengeschichte mit Ahmes",
+                        "fobizz-Schülerzugang"
+                      ],
+                      "tags": [
+                        "mathematik",
+                        "klasse-5",
+                        "arithmetik-algebra",
+                        "brueche",
+                        "stammbrueche",
+                        "aegyptische-bruchrechnung",
+                        "brueche-am-nil",
+                        "gerechtes-teilen",
+                        "lernpfad",
+                        "html",
+                        "interaktiv",
+                        "fobizz",
+                        "ahmes"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab",
+                      "target": "_blank",
+                      "rel": "noopener noreferrer",
+                      "erstelltAm": "2026-07-10",
+                      "lizenz": "",
+                      "autor": ""
+                    }
+                  ],
+                  "tags": [
+                    "aegyptische-bruchrechnung",
+                    "ahmes",
+                    "arithmetik-algebra",
+                    "brueche",
+                    "brueche-am-nil",
+                    "fobizz",
+                    "gerechtes-teilen",
+                    "html",
+                    "interaktiv",
+                    "klasse-5",
+                    "lernpfad",
+                    "mathematik",
+                    "stammbrueche"
+                  ],
+                  "anzahlMaterialien": 1,
+                  "oeffnenIn": "neuer-tab",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer"
+                },
+                {
                   "id": "erweitern-und-kuerzen",
                   "titel": "Erweitern und Kürzen",
                   "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/erweitern-und-kuerzen/",
@@ -1748,6 +1862,8 @@
                 }
               ],
               "tags": [
+                "aegyptische-bruchrechnung",
+                "ahmes",
                 "anteile",
                 "arbeitsblatt",
                 "arbeitsmaterial",
@@ -1757,6 +1873,7 @@
                 "audio",
                 "brueche",
                 "brueche-als-anteile",
+                "brueche-am-nil",
                 "brueche-am-zahlenstrahl",
                 "brueche-ordnen",
                 "brueche-und-anteile",
@@ -1765,6 +1882,8 @@
                 "erklärvideo",
                 "erweitern",
                 "erweitern-und-kuerzen",
+                "fobizz",
+                "gerechtes-teilen",
                 "gleichwertige-brueche",
                 "gruppenpuzzle",
                 "html",
@@ -1783,6 +1902,7 @@
                 "pdf",
                 "python",
                 "quelle",
+                "stammbrueche",
                 "teilthemen",
                 "transkript",
                 "txt",
@@ -1795,8 +1915,8 @@
                 "zahlenstrahl",
                 "übersicht"
               ],
-              "anzahlThemen": 6,
-              "anzahlMaterialien": 14
+              "anzahlThemen": 7,
+              "anzahlMaterialien": 15
             },
             {
               "id": "groessen-und-messen",
@@ -3050,9 +3170,11 @@
             }
           ],
           "materialien": [],
-          "anzahlThemen": 12,
-          "anzahlMaterialien": 37,
+          "anzahlThemen": 13,
+          "anzahlMaterialien": 38,
           "tags": [
+            "aegyptische-bruchrechnung",
+            "ahmes",
             "anteile",
             "arbeitsblatt",
             "arbeitsmaterial",
@@ -3063,6 +3185,7 @@
             "ausschneiden",
             "brueche",
             "brueche-als-anteile",
+            "brueche-am-nil",
             "brueche-am-zahlenstrahl",
             "brueche-ordnen",
             "brueche-und-anteile",
@@ -3074,7 +3197,9 @@
             "erweitern",
             "erweitern-und-kuerzen",
             "figuren-und-koerper",
+            "fobizz",
             "geometrie",
+            "gerechtes-teilen",
             "gleichwertige-brueche",
             "groessen-im-alltag",
             "groessen-und-messen",
@@ -3125,6 +3250,7 @@
             "quadernetze",
             "quelle",
             "sekundarstufe-i",
+            "stammbrueche",
             "teilthemen",
             "transkript",
             "txt",
@@ -15969,13 +16095,15 @@
           ]
         }
       ],
-      "anzahlThemen": 60,
-      "anzahlMaterialien": 209,
+      "anzahlThemen": 61,
+      "anzahlMaterialien": 210,
       "tags": [
         "3d",
         "ableitung-entdecken",
         "additionsverfahren",
+        "aegyptische-bruchrechnung",
         "aehnlichkeit-und-strahlensaetze",
+        "ahmes",
         "analysis",
         "analytische-geometrie",
         "anteile",
@@ -15988,6 +16116,7 @@
         "ausschneiden",
         "brueche",
         "brueche-als-anteile",
+        "brueche-am-nil",
         "brueche-am-zahlenstrahl",
         "brueche-ordnen",
         "brueche-und-anteile",
@@ -16028,6 +16157,7 @@
         "geometrie",
         "geraden-im-raum",
         "geraden-und-ebenen",
+        "gerechtes-teilen",
         "github-pages",
         "gleichwertige-brueche",
         "groessen-im-alltag",
@@ -16285,6 +16415,7 @@
         "sekundarstufe-ii",
         "sicherung",
         "sportschau",
+        "stammbrueche",
         "stochastik",
         "strecken-und-parameterintervalle",
         "stuetzvektor",
@@ -16325,5 +16456,5 @@
       "anzahlKlassen": 9
     }
   ],
-  "aktualisiertAm": "2026-07-06"
+  "aktualisiertAm": "2026-07-10"
 }
