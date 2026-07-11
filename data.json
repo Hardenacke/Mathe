@@ -897,7 +897,7 @@
                 {
                   "id": "stammbrueche-aegyptische-bruchrechnung",
                   "titel": "Stammbrüche und ägyptische Bruchrechnung",
-                  "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/stammbrueche-aegyptische-bruchrechnung/",
+                  "pfad": "klasse-5/brueche-am-nil-github/brueche-am-nil/",
                   "beschreibung": "Interaktiver Lernpfad zu Stammbrüchen und zur ägyptischen Bruchrechnung mit historischen Geschichten, Visualisierungen, Schiebereglern, Rechenaufgaben und einer fobizz-Mission mit Ahmes.",
                   "inhaltlicheSchwerpunkte": [
                     "Stammbrüche erkennen und benennen",
@@ -923,8 +923,8 @@
                       "format": "HTML",
                       "materialart": "Lernpfad",
                       "datei": "lernpfad-brueche-am-nil.html",
-                      "pfad": "klasse-5/arithmetik-algebra/brueche-und-anteile/stammbrueche-aegyptische-bruchrechnung/lernpfad-brueche-am-nil.html",
-                      "url": "klasse-5/arithmetik-algebra/brueche-und-anteile/stammbrueche-aegyptische-bruchrechnung/lernpfad-brueche-am-nil.html",
+                      "pfad": "klasse-5/brueche-am-nil-github/brueche-am-nil/lernpfad-brueche-am-nil.html",
+                      "url": "klasse-5/brueche-am-nil-github/brueche-am-nil/lernpfad-brueche-am-nil.html",
                       "dauer": "ca. 45–60 Minuten",
                       "zielgruppe": {
                         "fach": "Mathematik",
