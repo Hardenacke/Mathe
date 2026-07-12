@@ -3,148 +3,453 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lernpfad Excel-Tabellen | Klasse 7</title>
+  <title>Lernpfad Excel-Tabelle | Klasse 7</title>
   <style>
     :root{
-      --bg:#f4f8f5; --bg2:#eaf5ef; --ink:#123022; --muted:#5d7168;
-      --green:#217346; --green2:#2c9a5b; --blue:#1d6cdf; --blue2:#e8f2ff;
-      --yellow:#f6c343; --yellow2:#fff6d8; --red:#c92a2a; --red2:#ffe2e2;
-      --card:#fff; --line:#cfddd5; --shadow:0 16px 40px rgba(18,48,34,.13);
-      --radius:22px; --max:1120px;
+      --bg:#f4f8f5;
+      --bg2:#e9f5ee;
+      --ink:#123022;
+      --muted:#5d7168;
+      --green:#217346;
+      --green2:#2c9a5b;
+      --blue:#1d6cdf;
+      --blue2:#d9ebff;
+      --yellow:#f6c343;
+      --yellow2:#fff4cc;
+      --red:#c92a2a;
+      --red2:#ffe0e0;
+      --card:#ffffff;
+      --line:#cbd8d1;
+      --shadow:0 16px 40px rgba(18,48,34,.12);
+      --radius:22px;
+      --max:1120px;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:linear-gradient(180deg,var(--bg),#fff 55%,var(--bg2));line-height:1.55}
-    header.hero{background:linear-gradient(135deg,#0f5132,#217346 65%,#39a96b);color:white;padding:30px 16px 26px;border-bottom-left-radius:34px;border-bottom-right-radius:34px;box-shadow:var(--shadow)}
-    .hero-inner,.wrap{max-width:var(--max);margin:0 auto}
-    .kicker{display:inline-flex;gap:.5rem;align-items:center;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.24);border-radius:999px;padding:.4rem .75rem;font-weight:750}
-    h1{font-size:clamp(2rem,5vw,3.8rem);line-height:1.05;margin:.8rem 0 .6rem}
-    .lead{font-size:clamp(1.05rem,2vw,1.25rem);max-width:840px;margin:0 0 1rem;color:rgba(255,255,255,.92)}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1rem}
-    main{padding:24px 14px 48px}
-    .topbar{position:sticky;top:0;z-index:5;background:rgba(244,248,245,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:.7rem 0;margin:0 -14px 18px}
-    .topbar-inner{max-width:var(--max);margin:0 auto;padding:0 14px;display:flex;gap:.75rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
-    .progress{height:12px;background:#dfeae4;border-radius:999px;overflow:hidden;min-width:220px;flex:1}
-    .progress span{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--green),var(--green2));border-radius:999px;transition:.3s}
-    .step-label{font-weight:800;color:var(--green)}
-    .step{display:none;animation:fade .25s ease-out}.step.active{display:block}@keyframes fade{from{opacity:.3;transform:translateY(8px)}to{opacity:1;transform:none}}
-    .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.15rem;margin-bottom:1rem}
-    .panel.blue{background:var(--blue2);border-color:#b9d6ff}.panel.yellow{background:var(--yellow2);border-color:#f2d37b}.panel.green{background:#eaf7ee;border-color:#b9dfc5}
-    h2{font-size:clamp(1.5rem,3vw,2.3rem);line-height:1.1;margin:.2rem 0 .65rem}h3{margin:.2rem 0 .7rem;font-size:1.35rem}
-    .badge{display:inline-block;background:#e6f5ec;color:var(--green);border:1px solid #b9dfc5;border-radius:999px;padding:.35rem .7rem;font-weight:800;margin-bottom:.4rem}
-    .two{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem}
-    figure.visual{margin:0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
-    figure.visual img{display:block;width:100%;height:auto}figcaption{font-size:.92rem;color:var(--muted);padding:.65rem .9rem;background:#fbfdfc;border-top:1px solid var(--line)}
-    .helpbox{border-left:6px solid var(--green);background:#f1faf4;border-radius:14px;padding:.85rem;margin:.7rem 0}.formula{font-size:1.4rem;font-weight:900;background:#fff;border:2px dashed var(--green);border-radius:16px;padding:.75rem;text-align:center;margin:.7rem 0}
-    .task{background:#fff;border:1px solid var(--line);border-radius:18px;padding:1rem;margin:.8rem 0}.task-title{font-weight:900;margin-bottom:.65rem;display:flex;align-items:center;gap:.5rem}.num{display:inline-grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:var(--green);color:#fff;font-weight:900;flex:0 0 auto}
-    label{display:block;font-weight:750;margin:.55rem 0 .25rem}input,select,textarea{width:100%;min-height:48px;border:2px solid #bdd0c7;border-radius:14px;padding:.7rem .85rem;font-size:1rem;background:#fff;color:var(--ink)}textarea{min-height:94px;resize:vertical}code{background:#eef4f1;border:1px solid #d5e3dc;border-radius:8px;padding:.08rem .32rem;font-weight:800}
-    button,.btn{appearance:none;border:0;border-radius:999px;padding:.75rem 1rem;font-size:1rem;font-weight:850;cursor:pointer;min-height:48px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:.45rem}button.green,.btn.green{background:var(--green);color:white}button.blue,.btn.blue{background:var(--blue);color:white}button.yellow{background:var(--yellow);color:#332500}button.ghost,.btn.ghost{background:#fff;color:var(--green);border:2px solid var(--green)}button:active{transform:translateY(1px)}.inline-actions{display:flex;gap:.65rem;flex-wrap:wrap;margin-top:.65rem}
-    .feedback{display:none;margin-top:.7rem;padding:.75rem;border-radius:14px;font-weight:800}.feedback.ok{display:block;background:#e6f6eb;border:1px solid #a5d6b4;color:#0f7035}.feedback.bad{display:block;background:var(--red2);border:1px solid #ffc0c0;color:var(--red)}
-    table.sheet{border-collapse:collapse;width:100%;background:#fff;font-size:.95rem}table.sheet th,table.sheet td{border:1px solid #aabbb2;padding:.45rem;text-align:center;min-width:70px}table.sheet .colhead,table.sheet .rowhead,table.sheet .corner{background:#edf4f0;font-weight:900}table.sheet .head{background:#dff1e6;font-weight:900}.mark-blue{background:#dcecff}.mark-green{background:#e1f3e3}.mark-yellow{background:#fff3c5}.excel-mini{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:white;padding:.4rem;margin:.8rem 0}
-    .navrow{display:flex;justify-content:space-between;gap:.75rem;flex-wrap:wrap;margin-top:1rem}.small{font-size:.92rem;color:var(--muted)}
-    .overview-row{display:grid;grid-template-columns:70px 1fr 1.5fr;gap:.7rem;align-items:start;border-bottom:1px solid var(--line);padding:.65rem 0}.overview-row:last-child{border-bottom:0}.pill{display:inline-block;background:#edf7f0;color:var(--green);border-radius:999px;padding:.25rem .55rem;font-weight:900;text-align:center}
-    @media (max-width:760px){.two{grid-template-columns:1fr}.hero-actions .btn{width:100%}.overview-row{grid-template-columns:1fr}.topbar-inner{display:block}.progress{margin:.5rem 0}.panel{padding:.9rem}table.sheet{font-size:.85rem}}
-    @media print{header.hero,.topbar,.navrow,.inline-actions,.btn,button{display:none!important}.step{display:block!important;page-break-inside:avoid}.panel,figure.visual{box-shadow:none}.wrap{max-width:none}}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(33,115,70,.12), transparent 30rem),
+        linear-gradient(180deg,var(--bg),#fff 56%,var(--bg2));
+      line-height:1.55;
+    }
+
+    header.hero{
+      position:relative;
+      overflow:hidden;
+      background:linear-gradient(135deg,#0f5132,#217346 60%,#39a96b);
+      color:white;
+      padding:34px 18px 28px;
+      border-bottom-left-radius:36px;
+      border-bottom-right-radius:36px;
+      box-shadow:var(--shadow);
+    }
+    header.hero::after{
+      content:"";
+      position:absolute;
+      inset:auto -10% -45% auto;
+      width:460px;
+      height:460px;
+      border-radius:50%;
+      background:rgba(255,255,255,.12);
+    }
+    .hero-inner{max-width:var(--max); margin:0 auto; position:relative; z-index:1;}
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      background:rgba(255,255,255,.16);
+      border:1px solid rgba(255,255,255,.24);
+      border-radius:999px;
+      padding:.45rem .8rem;
+      font-weight:700;
+      letter-spacing:.01em;
+    }
+    h1{font-size:clamp(2rem,5vw,4rem); line-height:1.05; margin:.9rem 0 .7rem;}
+    .lead{font-size:clamp(1.05rem,2.2vw,1.35rem); max-width:820px; opacity:.96; margin:0 0 1rem;}
+    .hero-actions{display:flex; flex-wrap:wrap; gap:.75rem; margin-top:1.35rem;}
+
+    button,.btn{
+      appearance:none;
+      border:none;
+      border-radius:999px;
+      min-height:48px;
+      padding:.78rem 1.05rem;
+      font-weight:800;
+      font-size:1rem;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.5rem;
+      transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+      touch-action:manipulation;
+    }
+    button:hover,.btn:hover{transform:translateY(-1px); box-shadow:0 10px 22px rgba(18,48,34,.14)}
+    button:active,.btn:active{transform:translateY(0)}
+    button.primary,.btn.primary{background:white;color:var(--green)}
+    button.secondary,.btn.secondary{background:rgba(255,255,255,.14);color:white;border:1px solid rgba(255,255,255,.34)}
+    button.green{background:var(--green);color:white}
+    button.blue{background:var(--blue);color:white}
+    button.yellow{background:var(--yellow2);color:#6a4c00;border:1px solid #f1d979}
+    button.ghost{background:#f3f7f4;color:var(--green);border:1px solid var(--line)}
+    button.danger{background:var(--red2); color:#791414; border:1px solid #ffb8b8;}
+    button:disabled{opacity:.55; cursor:not-allowed; transform:none; box-shadow:none}
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:rgba(244,248,245,.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(203,216,209,.9);
+    }
+    .topbar-inner{max-width:var(--max); margin:0 auto; padding:.7rem 18px; display:grid; gap:.7rem;}
+    .progress-wrap{display:flex; align-items:center; gap:.8rem;}
+    .progress-label{font-size:.92rem; color:var(--muted); font-weight:700; min-width:95px;}
+    .progress-track{height:12px; background:#dce8e1; border-radius:999px; flex:1; overflow:hidden;}
+    .progress-fill{height:100%; width:0%; background:linear-gradient(90deg,var(--green),#42b883); border-radius:999px; transition:width .3s ease;}
+    .tabs{display:flex; gap:.45rem; overflow-x:auto; padding-bottom:.1rem; scrollbar-width:thin;}
+    .tab{
+      min-height:42px;
+      white-space:nowrap;
+      padding:.55rem .8rem;
+      background:white;
+      color:var(--ink);
+      border:1px solid var(--line);
+      border-radius:999px;
+      font-size:.93rem;
+      box-shadow:none;
+    }
+    .tab.active{background:var(--green); color:white; border-color:var(--green)}
+
+    main{max-width:var(--max); margin:0 auto; padding:28px 18px 72px;}
+    .step{display:none; animation:fade .24s ease;}
+    .step.active{display:block;}
+    @keyframes fade{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
+
+    .panel{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:clamp(1rem,2.6vw,1.6rem);
+      box-shadow:var(--shadow);
+      margin-bottom:1rem;
+    }
+    .panel.soft{background:linear-gradient(180deg,#fff,#f7fbf8);}
+    .panel.blue{background:linear-gradient(180deg,#fff,#eef6ff); border-color:#bad7ff;}
+    .panel.yellow{background:linear-gradient(180deg,#fff,#fff8dc); border-color:#f2dc87;}
+    .panel.green{background:linear-gradient(180deg,#fff,#ecfbf1); border-color:#b7e0c6;}
+    .panel.red{background:linear-gradient(180deg,#fff,#fff1f1); border-color:#ffd0d0;}
+
+    h2{font-size:clamp(1.55rem,3vw,2.35rem); line-height:1.12; margin:.2rem 0 1rem; color:#123022;}
+    h3{font-size:1.22rem; margin:1rem 0 .65rem;}
+    p{margin:.6rem 0;}
+    .small{font-size:.95rem; color:var(--muted)}
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+      padding:.35rem .65rem;
+      border-radius:999px;
+      background:#ecfbf1;
+      color:#0f5132;
+      font-weight:800;
+      border:1px solid #b7e0c6;
+      font-size:.92rem;
+      margin-bottom:.65rem;
+    }
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(245px,1fr)); gap:1rem;}
+    .two{display:grid; grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr); gap:1rem; align-items:start;}
+    @media(max-width:860px){.two{grid-template-columns:1fr}.topbar-inner{padding-inline:12px} main{padding-inline:12px}}
+
+    .visual{
+      margin:0;
+      border-radius:20px;
+      overflow:hidden;
+      background:white;
+      border:1px solid var(--line);
+      box-shadow:0 8px 20px rgba(18,48,34,.08);
+    }
+    .visual img{display:block; width:100%; height:auto;}
+    .visual figcaption{padding:.75rem .9rem; font-size:.93rem; color:var(--muted); background:#f8faf9; border-top:1px solid var(--line);}
+
+    .helpbox{
+      border-radius:18px;
+      border:1px dashed #9fc9ae;
+      background:#f3fbf6;
+      padding:1rem;
+      margin:.9rem 0;
+    }
+    .task{
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:1rem;
+      background:#fff;
+      margin:.8rem 0;
+    }
+    .task-title{display:flex; align-items:center; gap:.7rem; font-weight:900; margin-bottom:.65rem;}
+    .num{
+      width:2.1rem;height:2.1rem;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;
+      background:var(--green);color:#fff;font-weight:900;flex:0 0 auto;
+    }
+    label{display:block; font-weight:800; margin:.5rem 0 .3rem;}
+    input,select,textarea{
+      width:100%;
+      min-height:50px;
+      border-radius:14px;
+      border:1.6px solid #b9c9c0;
+      padding:.75rem .85rem;
+      font:inherit;
+      background:white;
+      color:var(--ink);
+    }
+    textarea{min-height:92px; resize:vertical;}
+    input:focus,select:focus,textarea:focus{outline:3px solid rgba(29,108,223,.18); border-color:var(--blue)}
+    .inline-actions{display:flex; flex-wrap:wrap; gap:.65rem; align-items:center; margin-top:.75rem;}
+    .feedback{margin-top:.65rem; padding:.75rem .85rem; border-radius:14px; display:none; font-weight:750;}
+    .feedback.ok{display:block; background:#e8f8ed; border:1px solid #9bd3ac; color:#14532d;}
+    .feedback.no{display:block; background:#fff0f0; border:1px solid #ffb8b8; color:#7f1d1d;}
+    .feedback.info{display:block; background:#eef6ff; border:1px solid #bad7ff; color:#123a72;}
+
+    details.solution{
+      margin-top:.85rem;
+      border-radius:16px;
+      border:1px solid #d5e2da;
+      background:#f8fbf9;
+      overflow:hidden;
+    }
+    details.solution summary{
+      cursor:pointer;
+      padding:.85rem 1rem;
+      font-weight:900;
+      color:var(--green);
+      min-height:48px;
+      display:flex;
+      align-items:center;
+    }
+    .solution-content{padding:0 1rem 1rem;}
+    .teacher-tools{display:flex; flex-wrap:wrap; gap:.6rem; align-items:center;}
+    .teacher-on{display:none; background:#113a28; color:#fff; border-radius:12px; padding:.45rem .7rem; font-weight:800;}
+    body.teacher .teacher-on{display:inline-flex;}
+    body.teacher .teacher-only{display:block;}
+    .teacher-only{display:none;}
+
+    .hint-area{margin-top:.7rem;}
+    .hint-list{display:grid; gap:.5rem; margin-top:.65rem;}
+    .hint-card{
+      border:1px solid #f1d979;
+      background:#fffdf0;
+      color:#574000;
+      padding:.75rem .85rem;
+      border-radius:14px;
+      font-weight:700;
+    }
+    .cooldown{font-size:.92rem;color:var(--muted);margin-top:.4rem;}
+
+    .excel-mini{overflow:auto; border-radius:18px; border:1px solid var(--line); margin:.8rem 0; background:white;}
+    table.sheet{border-collapse:collapse; min-width:620px; width:100%; font-size:1rem;}
+    .sheet th,.sheet td{border:1px solid #b9c9c0; padding:.65rem; text-align:center; min-width:92px;}
+    .sheet .corner,.sheet .colhead,.sheet .rowhead{background:#e8eee9; font-weight:900; color:#2c4036;}
+    .sheet .head{background:#dff3e4; font-weight:900;}
+    .sheet .mark-blue{background:#e7f2ff; outline:3px solid var(--blue); outline-offset:-3px;}
+    .sheet .mark-green{background:#e8f8ed; outline:3px solid var(--green); outline-offset:-3px;}
+    .sheet .mark-yellow{background:#fff6cf; outline:3px solid var(--yellow); outline-offset:-3px;}
+
+    .pair-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:.75rem; margin:.8rem 0;}
+    .pair-card{border:2px solid var(--line); border-radius:16px; padding:.9rem; background:#fff; min-height:58px; font-weight:800; cursor:pointer;}
+    .pair-card.selected{border-color:var(--blue); background:#eef6ff;}
+    .pair-card.done{border-color:#9bd3ac; background:#e8f8ed; cursor:default;}
+
+    .navrow{display:flex; justify-content:space-between; flex-wrap:wrap; gap:.75rem; margin-top:1.25rem;}
+    .print-note{font-size:.9rem;color:var(--muted);}
+
+    @media print{
+      .topbar,.hero-actions,.navrow,.teacher-tools,.hint-area button,.inline-actions button{display:none!important}
+      header.hero{box-shadow:none;border-radius:0;color:#000;background:#fff;padding:1rem}
+      .step{display:block!important; break-inside:avoid;}
+      .panel{box-shadow:none; break-inside:avoid;}
+      details.solution{display:block;}
+      details.solution[open] .solution-content{display:block;}
+      main{max-width:none;padding:0}
+      body{background:#fff}
+    }
   </style>
 </head>
 <body>
-<header class="hero">
-  <div class="hero-inner">
-    <div class="kicker">📊 Klasse 7 · Excel-Tabellen</div>
-    <h1>Lernpfad: Excel-Tabellen</h1>
-    <p class="lead">Passend zum Arbeitsblatt: Grundbegriffe verstehen, Schulartikel-Daten eintragen, Gesamtpreise mit Formeln berechnen und Zinseszins mit festem Zellbezug untersuchen.</p>
-    <div class="hero-actions">
-      <a class="btn ghost" href="Excel_Vorlage_Klasse7_Aufgaben_Kontrollfelder_repariert.xlsx" download>⬇️ Excel-Vorlage herunterladen</a>
-      <button class="yellow" onclick="showStep(0)">Lernpfad starten</button>
-    </div>
-  </div>
-</header>
-
-<main>
-  <div class="topbar">
-    <div class="topbar-inner">
-      <div class="step-label" id="stepLabel">Start</div>
-      <div class="progress" aria-label="Fortschritt"><span id="progressBar"></span></div>
-      <div class="small" id="stepCount">0 / 5</div>
-    </div>
-  </div>
-
-  <div class="wrap">
-    <section class="step active" data-title="Start">
-      <div class="panel green">
-        <span class="badge">Start</span>
-        <h2>Was du in diesem Lernpfad übst</h2>
-        <p>Bearbeite die Etappen der Reihe nach. Nutze parallel die Excel-Vorlage und dein Arbeitsblatt.</p>
-        <div class="overview-row"><span class="pill">1</span><div><strong>Excel-Grundbegriffe</strong></div><div>Du kannst Spalte, Zeile, Zelle und Zellbezug erklären.</div></div>
-        <div class="overview-row"><span class="pill">2</span><div><strong>Daten eintragen</strong></div><div>Du trägst Schulartikel, Preise und Anzahlen in die passenden Zellen ein.</div></div>
-        <div class="overview-row"><span class="pill">3</span><div><strong>Formeln verwenden</strong></div><div>Du berechnest Gesamtpreise mit Zellbezügen und nutzt eine Summenformel.</div></div>
-        <div class="overview-row"><span class="pill">4</span><div><strong>Zinseszins</strong></div><div>Du verwendest eine Formel mit festem Zellbezug <code>$B$1</code>.</div></div>
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="kicker">📊 Klasse 7 · Mathematik · Excel</span>
+      <h1>Lernpfad: Excel-Tabellen verstehen und nutzen</h1>
+      <p class="lead">Du lernst Schritt für Schritt, wie du Daten richtig in Tabellen einträgst, Zellen findest, Formeln verwendest und Ergebnisse auswertest. Die neuen Visualisierungen helfen dir dabei, Spalten, Zeilen und Zellen fachlich korrekt zu unterscheiden.</p>
+      <div class="hero-actions">
+        <button class="primary" onclick="goTo(1)">Lernpfad starten</button>
+        <button class="secondary" onclick="window.print()">Drucken / als PDF sichern</button>
+        <button class="secondary" onclick="openTeacherPrompt()">🔒 Lehrkraftmodus</button>
+        <span class="teacher-on">Lehrkraftmodus aktiv</span>
       </div>
-      <div class="navrow"><span class="small">Starte mit Etappe 1.</span><button class="green" onclick="nextStep()">Weiter zu Etappe 1</button></div>
+    </div>
+  </header>
+
+  <div class="topbar" aria-label="Navigation im Lernpfad">
+    <div class="topbar-inner">
+      <div class="progress-wrap">
+        <span class="progress-label" id="progressText">Etappe 1 / 7</span>
+        <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+      <div class="tabs" id="tabs"></div>
+    </div>
+  </div>
+
+  <main>
+    <section class="step active" data-title="Start">
+      <div class="panel soft">
+        <span class="badge">🎯 Ziel der 90 Minuten</span>
+        <h2>So arbeitest du mit diesem Lernpfad</h2>
+        <div class="grid">
+          <div class="panel green">
+            <h3>1. Verstehen</h3>
+            <p>Nutze die Bilder, um Spalten, Zeilen, Zellen und Formeln zu verstehen.</p>
+          </div>
+          <div class="panel blue">
+            <h3>2. Anwenden</h3>
+            <p>Bearbeite die Aufgaben direkt im Lernpfad. Nach jeder Aufgabe bekommst du eine Rückmeldung.</p>
+          </div>
+          <div class="panel yellow">
+            <h3>3. Kontrollieren</h3>
+            <p>Öffne die Kontrolllösung erst nach deiner eigenen Antwort. So prüfst du deinen Denkweg.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Kurze Einsteigerübersicht</h2>
+        <div class="grid">
+          <div class="task"><strong>Spalte</strong><br>Eine Spalte verläuft senkrecht von oben nach unten. Spalten haben Buchstaben, zum Beispiel A, B, C.</div>
+          <div class="task"><strong>Zeile</strong><br>Eine Zeile verläuft waagerecht von links nach rechts. Zeilen haben Zahlen, zum Beispiel 1, 2, 3.</div>
+          <div class="task"><strong>Zelle</strong><br>Eine Zelle ist ein einzelnes Feld. Der Zellname entsteht aus Spalte und Zeile, zum Beispiel C3.</div>
+          <div class="task"><strong>Formel</strong><br>Eine Formel beginnt immer mit <code>=</code>. Beispiel: <code>=A2*B2</code> rechnet den Wert aus A2 mal den Wert aus B2.</div>
+        </div>
+      </div>
+
+      <div class="navrow">
+        <span class="print-note">Bearbeite die Etappen der Reihe nach.</span>
+        <button class="green" onclick="nextStep()">Weiter zu Etappe 1</button>
+      </div>
     </section>
 
-    <section class="step" data-title="Grundbegriffe">
+    <section class="step" data-title="Grundlagen">
       <div class="two">
         <div class="panel">
           <span class="badge">Etappe 1</span>
-          <h2>Spalten, Zeilen und Zellen</h2>
-          <p>Eine Excel-Tabelle besteht aus vielen Zellen. Jede Zelle hat einen Namen aus Spaltenbuchstabe und Zeilennummer.</p>
-          <div class="helpbox"><strong>Merke:</strong> <code>C4</code> bedeutet: Spalte C und Zeile 4. Erst kommt der Buchstabe, dann die Zahl.</div>
+          <h2>Spalten, Zeilen und Zellen sicher unterscheiden</h2>
+          <p>In Excel ist jede Zelle durch einen Buchstaben und eine Zahl beschrieben. Der Buchstabe steht für die Spalte, die Zahl steht für die Zeile.</p>
+          <div class="helpbox"><strong>Merke:</strong> Erst kommt der Spaltenbuchstabe, dann die Zeilennummer: <strong>C3</strong> bedeutet Spalte C und Zeile 3.</div>
         </div>
         <figure class="visual">
-          <img src="assets/bilder/excel-grundlagen.png" alt="Excel-Grundlagen: Spalte, Zeile und Zelle C3">
-          <figcaption>Neues Bild 1: Spalte senkrecht, Zeile waagerecht, Zelle als Schnittpunkt.</figcaption>
+          <img src="assets/bilder/excel-grundlagen.png" alt="Visualisierung: Spalte senkrecht, Zeile waagerecht, Zelle C3 als Schnittpunkt">
+          <figcaption>Visualisierung 1: Spalte senkrecht, Zeile waagerecht, Zelle als Schnittpunkt.</figcaption>
         </figure>
       </div>
+
       <div class="panel blue">
-        <h3>Kontrolle zu Etappe 1</h3>
+        <h3>Aufgaben zur Kontrolle</h3>
         <div class="task">
-          <div class="task-title"><span class="num">1</span> Spalte erkennen</div>
+          <div class="task-title"><span class="num">1</span> Lückentext: Spalte, Zeile, Zelle</div>
           <label for="q1">Eine Spalte verläuft ...</label>
-          <select id="q1" data-answer="senkrecht"><option value="">Bitte auswählen</option><option value="waagerecht">waagerecht von links nach rechts</option><option value="senkrecht">senkrecht von oben nach unten</option><option value="diagonal">diagonal</option></select>
-          <div class="inline-actions"><button class="blue" onclick="checkSelect('q1','fb1')">Prüfen</button></div><div class="feedback" id="fb1"></div>
+          <select id="q1" data-answer="senkrecht">
+            <option value="">Bitte auswählen</option>
+            <option value="waagerecht">waagerecht von links nach rechts</option>
+            <option value="senkrecht">senkrecht von oben nach unten</option>
+            <option value="diagonal">diagonal durch die Tabelle</option>
+          </select>
+          <div class="inline-actions"><button class="blue" onclick="checkSelect('q1','fb1')">Prüfen</button></div>
+          <div class="feedback" id="fb1"></div>
         </div>
+
         <div class="task">
-          <div class="task-title"><span class="num">2</span> Zellbezug erklären</div>
-          <label for="q2">Was bedeutet <code>C4</code>?</label>
-          <input id="q2" data-answers="spalte c zeile 4|c 4|spalte c und zeile 4|spalte c, zeile 4" placeholder="Deine Erklärung">
-          <div class="inline-actions"><button class="blue" onclick="checkText('q2','fb2')">Prüfen</button></div><div class="feedback" id="fb2"></div>
+          <div class="task-title"><span class="num">2</span> Zelle benennen</div>
+          <label for="q2">Wie heißt die Zelle im Schnittpunkt von Spalte C und Zeile 3?</label>
+          <input id="q2" data-answers="c3" placeholder="z. B. A1">
+          <div class="inline-actions"><button class="blue" onclick="checkText('q2','fb2')">Prüfen</button></div>
+          <div class="feedback" id="fb2"></div>
+        </div>
+
+        <div class="task">
+          <div class="task-title"><span class="num">3</span> Transfer</div>
+          <label for="q3">Wie heißt die Zelle in Spalte B und Zeile 4?</label>
+          <input id="q3" data-answers="b4" placeholder="Deine Antwort">
+          <div class="inline-actions"><button class="blue" onclick="checkText('q3','fb3')">Prüfen</button></div>
+          <div class="feedback" id="fb3"></div>
+          <details class="solution"><summary>Kontrolllösung anzeigen</summary><div class="solution-content">Spalte B und Zeile 4 treffen sich in der Zelle <strong>B4</strong>.</div></details>
+        </div>
+
+        <div class="hint-area" data-tip-id="t1">
+          <button class="yellow" onclick="showTip('t1')">Tipp anzeigen</button>
+          <div class="cooldown" id="cool-t1"></div>
+          <div class="hint-list" id="tips-t1"></div>
         </div>
       </div>
+
       <div class="navrow"><button class="ghost" onclick="prevStep()">Zurück</button><button class="green" onclick="nextStep()">Weiter zu Etappe 2</button></div>
     </section>
 
-    <section class="step" data-title="Daten eintragen">
+    <section class="step" data-title="Messwerte">
       <div class="two">
         <div class="panel">
           <span class="badge">Etappe 2</span>
-          <h2>Schulartikel-Daten eintragen</h2>
-          <p>Übertrage die Daten aus dem Arbeitsblatt in deine Excel-Datei. Spalte D bleibt zuerst leer.</p>
-          <div class="helpbox"><strong>Vorgehen:</strong> Suche zuerst die Zeile des Artikels. Suche dann die passende Spalte. Am Schnittpunkt trägst du den Wert ein.</div>
+          <h2>Messwerte korrekt in eine Tabelle eintragen</h2>
+          <p>Bei Tabellenaufgaben musst du genau lesen, in welcher Zeile und in welcher Spalte ein Wert stehen soll.</p>
+          <div class="helpbox"><strong>Vorgehen:</strong> Suche zuerst die passende Zeile. Suche dann die passende Spalte. Am Schnittpunkt trägst du den Wert ein.</div>
         </div>
         <figure class="visual">
-          <img src="assets/bilder/schulartikel-daten-eintragen.png" alt="Schulartikel-Daten in Excel eintragen">
-          <figcaption>Neues Bild 2: Schulartikel, Preise und Anzahlen werden passenden Zellen zugeordnet.</figcaption>
+          <img src="assets/bilder/messwerte-eintragen.png" alt="Visualisierung: Messwerte in Zelle C3 eintragen">
+          <figcaption>Visualisierung 2: Ein Messwert wird über Zeile und Spalte der richtigen Zelle zugeordnet.</figcaption>
         </figure>
       </div>
+
       <div class="panel blue">
-        <h3>Daten aus dem Arbeitsblatt</h3>
-        <div class="excel-mini"><table class="sheet" aria-label="Schulartikeltabelle">
-          <tr><th class="corner"></th><th class="colhead">A</th><th class="colhead">B</th><th class="colhead">C</th><th class="colhead">D</th></tr>
-          <tr><th class="rowhead">1</th><td class="head">Artikel</td><td class="head">Preis in €</td><td class="head">Anzahl</td><td class="head">Gesamtpreis</td></tr>
-          <tr><th class="rowhead">2</th><td>Bleistift</td><td>0,80</td><td>6</td><td></td></tr>
-          <tr><th class="rowhead">3</th><td>Heft</td><td class="mark-yellow">1,20</td><td>4</td><td></td></tr>
-          <tr><th class="rowhead">4</th><td>Radiergummi</td><td>0,70</td><td>3</td><td></td></tr>
-          <tr><th class="rowhead">5</th><td>Lineal</td><td>1,50</td><td>2</td><td></td></tr>
-          <tr><th class="rowhead">6</th><td>Klebestift</td><td>2,30</td><td class="mark-yellow">5</td><td></td></tr>
-        </table></div>
+        <h3>Übungstabelle</h3>
+        <div class="excel-mini">
+          <table class="sheet" aria-label="Messwerttabelle">
+            <tr><th class="corner"></th><th class="colhead">A</th><th class="colhead">B</th><th class="colhead">C</th><th class="colhead">D</th></tr>
+            <tr><th class="rowhead">1</th><td class="head">Versuch</td><td class="head">Messwert 1</td><td class="head">Messwert 2</td><td class="head">Mittel</td></tr>
+            <tr><th class="rowhead">2</th><td>1</td><td>12,4</td><td>12,6</td><td>12,5</td></tr>
+            <tr><th class="rowhead">3</th><td>2</td><td>15,1</td><td class="mark-blue">15,3</td><td>15,2</td></tr>
+            <tr><th class="rowhead">4</th><td>3</td><td>9,8</td><td>10,0</td><td>9,9</td></tr>
+          </table>
+        </div>
+
         <div class="task">
-          <div class="task-title"><span class="num">3</span> Zellen kontrollieren</div>
-          <label for="q3a">In welcher Zelle steht der Preis für das Heft?</label><input id="q3a" data-answers="b3" placeholder="z. B. A1">
-          <label for="q3b">In welcher Zelle steht die Anzahl der Klebestifte?</label><input id="q3b" data-answers="c6" placeholder="z. B. A1">
-          <div class="inline-actions"><button class="blue" onclick="checkText('q3a','fb3a'); checkText('q3b','fb3b')">Prüfen</button></div><div class="feedback" id="fb3a"></div><div class="feedback" id="fb3b"></div>
+          <div class="task-title"><span class="num">4</span> Zellinhalt bestimmen</div>
+          <label for="q4">Welcher Wert steht in der Zelle C3?</label>
+          <input id="q4" data-answers="15,3|15.3" placeholder="Wert eintragen">
+          <div class="inline-actions"><button class="blue" onclick="checkText('q4','fb4')">Prüfen</button></div>
+          <div class="feedback" id="fb4"></div>
+          <details class="solution"><summary>Kontrolllösung anzeigen</summary><div class="solution-content">C3 bedeutet: Spalte C und Zeile 3. Dort steht der Wert <strong>15,3</strong>.</div></details>
+        </div>
+
+        <div class="task">
+          <div class="task-title"><span class="num">5</span> Daten eintragen</div>
+          <p>In einem Experiment soll der Wert <strong>16,2</strong> als zweiter Messwert für Versuch 4 eingetragen werden.</p>
+          <label for="q5">In welche Zelle gehört der Wert?</label>
+          <input id="q5" data-answers="c5" placeholder="z. B. C3">
+          <div class="inline-actions"><button class="blue" onclick="checkText('q5','fb5')">Prüfen</button></div>
+          <div class="feedback" id="fb5"></div>
+          <details class="solution"><summary>Kontrolllösung anzeigen</summary><div class="solution-content">Versuch 4 steht in Zeile 5. Der zweite Messwert steht in Spalte C. Der Wert gehört also in <strong>C5</strong>.</div></details>
+        </div>
+
+        <div class="hint-area" data-tip-id="t2">
+          <button class="yellow" onclick="showTip('t2')">Tipp anzeigen</button>
+          <div class="cooldown" id="cool-t2"></div>
+          <div class="hint-list" id="tips-t2"></div>
         </div>
       </div>
+
       <div class="navrow"><button class="ghost" onclick="prevStep()">Zurück</button><button class="green" onclick="nextStep()">Weiter zu Etappe 3</button></div>
     </section>
 
@@ -152,97 +457,371 @@
       <div class="two">
         <div class="panel">
           <span class="badge">Etappe 3</span>
-          <h2>Gesamtpreise mit Formeln berechnen</h2>
-          <p>In Spalte D berechnet Excel den Gesamtpreis. Dazu multiplizierst du Preis und Anzahl.</p>
-          <div class="formula"><code>=B2*C2</code></div>
+          <h2>Mit Formeln rechnen</h2>
+          <p>Formeln machen eine Tabelle stark: Excel kann mit Zellbezügen rechnen. Wenn sich ein Wert ändert, passt sich das Ergebnis automatisch an.</p>
           <div class="helpbox"><strong>Wichtig:</strong> Eine Formel beginnt immer mit <code>=</code>. Das Zeichen <code>*</code> bedeutet „mal“.</div>
         </div>
         <figure class="visual">
-          <img src="assets/bilder/schulartikel-formeln.png" alt="Gesamtpreis mit Formel B2 mal C2 berechnen">
-          <figcaption>Neues Bild 3: Die Formel <code>=B2*C2</code> berechnet in D2 den ersten Gesamtpreis.</figcaption>
+          <img src="assets/bilder/formeln-rechnen.png" alt="Visualisierung: Formel in C2 mit A2 mal B2">
+          <figcaption>Visualisierung 3: Der Gesamtpreis wird mit der Formel <code>=A2*B2</code> berechnet.</figcaption>
         </figure>
       </div>
+
       <div class="panel blue">
-        <h3>Kontrolle zu Formeln</h3>
-        <div class="task">
-          <div class="task-title"><span class="num">4</span> Formel nach unten ziehen</div>
-          <label for="q4">Welche Formel steht nach dem Herunterziehen in <code>D4</code>?</label>
-          <input id="q4" data-answers="=b4*c4|b4*c4" placeholder="Formel">
-          <div class="inline-actions"><button class="blue" onclick="checkText('q4','fb4')">Prüfen</button></div><div class="feedback" id="fb4"></div>
+        <h3>Aufgaben zu Formeln</h3>
+        <div class="excel-mini">
+          <table class="sheet" aria-label="Preistabelle">
+            <tr><th class="corner"></th><th class="colhead">A</th><th class="colhead">B</th><th class="colhead">C</th></tr>
+            <tr><th class="rowhead">1</th><td class="head">Preis (€)</td><td class="head">Anzahl</td><td class="head">Gesamt (€)</td></tr>
+            <tr><th class="rowhead">2</th><td class="mark-blue">1,20</td><td class="mark-green">10</td><td class="mark-yellow">?</td></tr>
+            <tr><th class="rowhead">3</th><td>2,50</td><td>5</td><td></td></tr>
+          </table>
         </div>
+
         <div class="task">
-          <div class="task-title"><span class="num">5</span> Gesamtpreis aller Artikel</div>
-          <label for="q5a">Welche Summenformel passt?</label><input id="q5a" data-answers="=summe(d2:d6)|summe(d2:d6)|=sum(d2:d6)|sum(d2:d6)" placeholder="Summenformel">
-          <label for="q5b">Wie hoch ist die Summe aller Gesamtpreise?</label><input id="q5b" data-value="26.2" data-tolerance="0.05" placeholder="z. B. 26,20">
-          <div class="inline-actions"><button class="blue" onclick="checkText('q5a','fb5a'); checkNumber('q5b','fb5b')">Prüfen</button></div><div class="feedback" id="fb5a"></div><div class="feedback" id="fb5b"></div>
+          <div class="task-title"><span class="num">6</span> Formel angeben</div>
+          <label for="q6">Welche Formel berechnet den Gesamtpreis in C2?</label>
+          <input id="q6" data-answers="=a2*b2|a2*b2" placeholder="z. B. =A1+B1">
+          <div class="inline-actions"><button class="blue" onclick="checkText('q6','fb6')">Prüfen</button></div>
+          <div class="feedback" id="fb6"></div>
+          <details class="solution"><summary>Kontrolllösung anzeigen</summary><div class="solution-content">Der Gesamtpreis ist Preis mal Anzahl. In C2 steht daher <strong>=A2*B2</strong>.</div></details>
+        </div>
+
+        <div class="task">
+          <div class="task-title"><span class="num">7</span> Ergebnis berechnen</div>
+          <label for="q7">Welches Ergebnis liefert die Formel <code>=A2*B2</code>?</label>
+          <input id="q7" data-value="12" data-tolerance="0.05" placeholder="Ergebnis in Euro">
+          <div class="inline-actions"><button class="blue" onclick="checkNumber('q7','fb7')">Prüfen</button></div>
+          <div class="feedback" id="fb7"></div>
+          <details class="solution"><summary>Kontrolllösung anzeigen</summary><div class="solution-content"><strong>1,20 · 10 = 12,00</strong>. In C2 steht also 12,00 €.</div></details>
+        </div>
+
+        <div class="hint-area" data-tip-id="t3">
+          <button class="yellow" onclick="showTip('t3')">Tipp anzeigen</button>
+          <div class="cooldown" id="cool-t3"></div>
+          <div class="hint-list" id="tips-t3"></div>
         </div>
       </div>
+
       <div class="navrow"><button class="ghost" onclick="prevStep()">Zurück</button><button class="green" onclick="nextStep()">Weiter zu Etappe 4</button></div>
     </section>
 
-    <section class="step" data-title="Zinseszins">
+    <section class="step" data-title="Funktionen">
       <div class="two">
         <div class="panel">
           <span class="badge">Etappe 4</span>
-          <h2>Zinseszins mit festem Zellbezug</h2>
-          <p>Beim Zinseszins bleiben die Zinsen auf dem Konto. Im nächsten Jahr bekommst du auch Zinsen auf die alten Zinsen.</p>
-          <div class="formula"><code>=B4*(1+$B$1)</code></div>
-          <div class="helpbox"><strong>Merke:</strong> <code>$B$1</code> ist ein fester Zellbezug. Beim Herunterziehen bleibt der Zinssatz immer in Zelle B1.</div>
+          <h2>SUMME und MITTELWERT nutzen</h2>
+          <p>Excel kann ganze Bereiche berechnen. Ein Bereich wird mit einem Doppelpunkt geschrieben: <code>B2:B6</code> bedeutet alle Zellen von B2 bis B6.</p>
+          <div class="helpbox"><strong>Merke:</strong> <code>=SUMME(B2:B6)</code> addiert die Werte. <code>=MITTELWERT(B2:B6)</code> berechnet den Durchschnitt.</div>
         </div>
         <figure class="visual">
-          <img src="assets/bilder/zinseszins-excel.png" alt="Zinseszins-Tabelle mit festem Zellbezug B1">
-          <figcaption>Neues Bild 4: Der feste Zellbezug <code>$B$1</code> hält den Zinssatz beim Herunterziehen fest.</figcaption>
+          <img src="assets/bilder/funktionen-summe-mittelwert.png" alt="Visualisierung: SUMME und MITTELWERT im Bereich B2 bis B6">
+          <figcaption>Visualisierung 4: Die Funktionen SUMME und MITTELWERT arbeiten mit dem Bereich B2:B6.</figcaption>
         </figure>
       </div>
+
       <div class="panel blue">
-        <h3>Kontrolle zum Zinseszins</h3>
-        <div class="task">
-          <div class="task-title"><span class="num">6</span> Formel und Ergebnis</div>
-          <label for="q6a">Welche Formel steht in <code>B5</code>?</label><input id="q6a" data-answers="=b4*(1+$b$1)|b4*(1+$b$1)|=b4*(1+b$1)|=b4*(1+$b$1)" placeholder="Formel">
-          <label for="q6b">Wie hoch ist das Guthaben nach 3 Jahren?</label><input id="q6b" data-value="109.27" data-tolerance="0.05" placeholder="z. B. 109,27">
-          <div class="inline-actions"><button class="blue" onclick="checkText('q6a','fb6a'); checkNumber('q6b','fb6b')">Prüfen</button></div><div class="feedback" id="fb6a"></div><div class="feedback" id="fb6b"></div>
+        <h3>Rechne und kontrolliere</h3>
+        <div class="excel-mini">
+          <table class="sheet" aria-label="Zahlenliste">
+            <tr><th class="corner"></th><th class="colhead">A</th><th class="colhead">B</th><th class="colhead">C</th></tr>
+            <tr><th class="rowhead">1</th><td class="head">Nr.</td><td class="head">Zahlenliste</td><td class="head">Notizen</td></tr>
+            <tr><th class="rowhead">2</th><td>1</td><td class="mark-yellow">12</td><td></td></tr>
+            <tr><th class="rowhead">3</th><td>2</td><td class="mark-yellow">18</td><td></td></tr>
+            <tr><th class="rowhead">4</th><td>3</td><td class="mark-yellow">7</td><td></td></tr>
+            <tr><th class="rowhead">5</th><td>4</td><td class="mark-yellow">15</td><td></td></tr>
+            <tr><th class="rowhead">6</th><td>5</td><td class="mark-yellow">8</td><td></td></tr>
+          </table>
         </div>
+
         <div class="task">
-          <div class="task-title"><span class="num">7</span> Erklären</div>
-          <label for="q7">Warum ist <code>$B$1</code> hier sinnvoll?</label>
-          <textarea id="q7" placeholder="Deine Erklärung"></textarea>
-          <div class="inline-actions"><button class="blue" onclick="freeFeedback('q7','fb7')">Rückmeldung anzeigen</button></div><div class="feedback" id="fb7"></div>
+          <div class="task-title"><span class="num">8</span> SUMME</div>
+          <label for="q8">Berechne <code>=SUMME(B2:B6)</code>.</label>
+          <input id="q8" data-value="60" data-tolerance="0.01" placeholder="Summe">
+          <div class="inline-actions"><button class="blue" onclick="checkNumber('q8','fb8')">Prüfen</button></div>
+          <div class="feedback" id="fb8"></div>
+          <details class="solution"><summary>Kontrolllösung anzeigen</summary><div class="solution-content">12 + 18 + 7 + 15 + 8 = <strong>60</strong>.</div></details>
+        </div>
+
+        <div class="task">
+          <div class="task-title"><span class="num">9</span> MITTELWERT</div>
+          <label for="q9">Berechne <code>=MITTELWERT(B2:B6)</code>.</label>
+          <input id="q9" data-value="12" data-tolerance="0.01" placeholder="Durchschnitt">
+          <div class="inline-actions"><button class="blue" onclick="checkNumber('q9','fb9')">Prüfen</button></div>
+          <div class="feedback" id="fb9"></div>
+          <details class="solution"><summary>Kontrolllösung anzeigen</summary><div class="solution-content">Die Summe ist 60. Es gibt 5 Werte. 60 : 5 = <strong>12</strong>.</div></details>
+        </div>
+
+        <div class="hint-area" data-tip-id="t4">
+          <button class="yellow" onclick="showTip('t4')">Tipp anzeigen</button>
+          <div class="cooldown" id="cool-t4"></div>
+          <div class="hint-list" id="tips-t4"></div>
         </div>
       </div>
-      <div class="navrow"><button class="ghost" onclick="prevStep()">Zurück</button><button class="green" onclick="nextStep()">Zur Sicherung</button></div>
+
+      <div class="navrow"><button class="ghost" onclick="prevStep()">Zurück</button><button class="green" onclick="nextStep()">Weiter zu Etappe 5</button></div>
+    </section>
+
+    <section class="step" data-title="Auswerten">
+      <div class="two">
+        <div class="panel">
+          <span class="badge">Etappe 5</span>
+          <h2>Ergebnisse auswerten und begründen</h2>
+          <p>Tabellen helfen dir, Daten zu ordnen. Diagramme helfen dir, Muster schnell zu erkennen. Trotzdem musst du prüfen, ob deine Interpretation zur Tabelle passt.</p>
+          <div class="helpbox"><strong>Beispiel:</strong> Umsatz = Anzahl · Preis. Ein hoher Preis allein bedeutet nicht automatisch den höchsten Umsatz.</div>
+        </div>
+        <figure class="visual">
+          <img src="assets/bilder/ergebnisse-auswerten.png" alt="Visualisierung: Schulartikel-Analyse mit Tabelle und Säulendiagramm">
+          <figcaption>Visualisierung 5: Tabelle und Säulendiagramm zeigen dieselben Daten aus verschiedenen Blickwinkeln.</figcaption>
+        </figure>
+      </div>
+
+      <div class="panel blue">
+        <h3>Auswertungsaufgabe</h3>
+        <div class="task">
+          <div class="task-title"><span class="num">10</span> Daten interpretieren</div>
+          <label for="q10a">Welcher Artikel hat den höchsten Umsatz?</label>
+          <input id="q10a" data-answers="brezel|die brezel" placeholder="Artikel">
+          <label for="q10b">Wie hoch ist der gesamte Umsatz?</label>
+          <input id="q10b" data-value="59.2" data-tolerance="0.05" placeholder="z. B. 50,00">
+          <label for="q10c">Welche zwei Artikel bringen zusammen mehr als 25 € Umsatz?</label>
+          <select id="q10c" data-answer="brezel-muffin">
+            <option value="">Bitte auswählen</option>
+            <option value="wasser-apfelschorle">Wasser und Apfelschorle</option>
+            <option value="brezel-muffin">Brezel und Muffin</option>
+            <option value="wasser-eistee">Wasser und Eistee</option>
+          </select>
+          <div class="inline-actions"><button class="blue" onclick="checkAuswertung()">Prüfen</button></div>
+          <div class="feedback" id="fb10"></div>
+          <details class="solution"><summary>Kontrolllösung anzeigen</summary><div class="solution-content">Der höchste Umsatz entsteht bei der <strong>Brezel</strong> mit 18,00 €. Der Gesamtumsatz beträgt <strong>59,20 €</strong>. Brezel und Muffin ergeben zusammen 18,00 € + 14,00 € = <strong>32,00 €</strong> und liegen damit über 25 €.</div></details>
+        </div>
+
+        <div class="task">
+          <div class="task-title"><span class="num">⭐</span> Sprinter: Fehler finden</div>
+          <p>Eine Schülerin sagt: „Der Obstbecher wurde am häufigsten verkauft, weil er am teuersten ist.“</p>
+          <label for="sprinter">Erkläre den Fehler in einem Satz.</label>
+          <textarea id="sprinter" placeholder="Deine Erklärung"></textarea>
+          <div class="inline-actions"><button class="ghost" onclick="showSprinterFeedback()">Beispielrückmeldung anzeigen</button></div>
+          <div class="feedback info" id="sprinterFb" style="display:none">Achte darauf, zwischen <strong>Preis</strong>, <strong>Anzahl</strong> und <strong>Umsatz</strong> zu unterscheiden. Häufig verkauft wurde der Artikel mit der größten Anzahl.</div>
+        </div>
+
+        <div class="hint-area" data-tip-id="t5">
+          <button class="yellow" onclick="showTip('t5')">Tipp anzeigen</button>
+          <div class="cooldown" id="cool-t5"></div>
+          <div class="hint-list" id="tips-t5"></div>
+        </div>
+      </div>
+
+      <div class="navrow"><button class="ghost" onclick="prevStep()">Zurück</button><button class="green" onclick="nextStep()">Weiter zur Sicherung</button></div>
     </section>
 
     <section class="step" data-title="Sicherung">
       <div class="panel green">
-        <span class="badge">Sicherung</span>
-        <h2>Was du jetzt können solltest</h2>
+        <span class="badge">Etappe 6</span>
+        <h2>Sicherung: Das musst du können</h2>
         <div class="grid">
-          <div class="task"><strong>Grundbegriffe:</strong><br>Spalte, Zeile, Zelle und Zellbezug erklären.</div>
-          <div class="task"><strong>Daten:</strong><br>Werte korrekt in die passenden Zellen eintragen.</div>
-          <div class="task"><strong>Formeln:</strong><br>Mit <code>=</code>, <code>*</code> und Zellbezügen rechnen.</div>
-          <div class="task"><strong>Zinseszins:</strong><br>Den festen Zellbezug <code>$B$1</code> sinnvoll nutzen.</div>
+          <div class="task"><strong>Spalten erkennen</strong><br>Spalten verlaufen senkrecht und werden mit Buchstaben bezeichnet.</div>
+          <div class="task"><strong>Zeilen erkennen</strong><br>Zeilen verlaufen waagerecht und werden mit Zahlen bezeichnet.</div>
+          <div class="task"><strong>Zellen benennen</strong><br>Eine Zelle wird mit Spalte und Zeile benannt, zum Beispiel B4.</div>
+          <div class="task"><strong>Daten eintragen</strong><br>Suche zuerst die passende Zeile und Spalte. Trage dann den Wert in die Zelle ein.</div>
+          <div class="task"><strong>Formeln nutzen</strong><br>Formeln beginnen mit <code>=</code>. Zellbezüge machen Formeln flexibel.</div>
+          <div class="task"><strong>Daten auswerten</strong><br>Nutze Tabelle und Diagramm gemeinsam. Prüfe, was genau gefragt ist.</div>
         </div>
       </div>
-      <div class="panel yellow">
-        <h3>Reflexion</h3>
-        <label for="ref1">Notiere einen Satz: Warum sind Zellbezüge in Excel nützlich?</label>
-        <textarea id="ref1" placeholder="Meine Erklärung ..."></textarea>
-      </div>
-      <div class="navrow"><button class="ghost" onclick="prevStep()">Zurück</button><button class="green" onclick="showStep(0)">Zurück zum Start</button></div>
-    </section>
-  </div>
-</main>
 
-<script>
-  const steps=[...document.querySelectorAll('.step')];let current=0;
-  function showStep(i){current=Math.max(0,Math.min(i,steps.length-1));steps.forEach((s,idx)=>s.classList.toggle('active',idx===current));document.getElementById('stepLabel').textContent=steps[current].dataset.title;document.getElementById('stepCount').textContent=(current+1)+' / '+steps.length;document.getElementById('progressBar').style.width=((current+1)/steps.length*100)+'%';window.scrollTo({top:0,behavior:'smooth'});} 
-  function nextStep(){showStep(current+1)} function prevStep(){showStep(current-1)} showStep(0);
-  function norm(s){return String(s||'').toLowerCase().trim().replace(/\s+/g,' ').replace(/€/g,'').replace(/,/g,'.');}
-  function setFb(id,ok,msg){const el=document.getElementById(id);el.className='feedback '+(ok?'ok':'bad');el.textContent=msg;}
-  function checkSelect(inputId,fbId){const el=document.getElementById(inputId);const ok=el.value===el.dataset.answer;setFb(fbId,ok,ok?'Richtig.':'Prüfe die Richtung noch einmal: Spalten gehen von oben nach unten.');}
-  function checkText(inputId,fbId){const el=document.getElementById(inputId);const val=norm(el.value).replace(/\s/g,'');const answers=(el.dataset.answers||'').split('|').map(a=>norm(a).replace(/\s/g,''));const ok=answers.includes(val);setFb(fbId,ok,ok?'Richtig.':'Noch nicht ganz. Achte genau auf Spaltenbuchstaben und Zeilennummern.');}
-  function checkNumber(inputId,fbId){const el=document.getElementById(inputId);const val=parseFloat(norm(el.value));const target=parseFloat(el.dataset.value);const tol=parseFloat(el.dataset.tolerance||'0.01');const ok=!Number.isNaN(val)&&Math.abs(val-target)<=tol;setFb(fbId,ok,ok?'Richtig.':'Prüfe deine Rechnung und achte auf Dezimalkomma bzw. Dezimalpunkt.');}
-  function freeFeedback(inputId,fbId){const val=norm(document.getElementById(inputId).value);const ok=val.includes('fest')||val.includes('b1')||val.includes('zinssatz')||val.includes('herunterziehen');setFb(fbId,ok,ok?'Gute Erklärung: Der Zinssatz bleibt in B1 fest, wenn die Formel heruntergezogen wird.':'Ergänze in deiner Erklärung: Der Zinssatz steht in B1 und soll beim Herunterziehen nicht verrutschen.');}
-</script>
+      <div class="panel yellow">
+        <h2>Abschluss-Check</h2>
+        <p>Schätze dich selbst ein.</p>
+        <div class="grid">
+          <label><input type="checkbox"> Ich kann Spalten, Zeilen und Zellen unterscheiden.</label>
+          <label><input type="checkbox"> Ich kann einen Wert einer Zelle zuordnen.</label>
+          <label><input type="checkbox"> Ich kann eine einfache Formel mit Zellbezügen schreiben.</label>
+          <label><input type="checkbox"> Ich kann SUMME und MITTELWERT auf einen Bereich anwenden.</label>
+          <label><input type="checkbox"> Ich kann Tabellen und Diagramme auswerten.</label>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Fobizz-/KI-Reflexionsprompt</h2>
+        <p class="small">Diesen Prompt können Lernende nutzen, wenn sie ihre Lösung erklären lassen möchten.</p>
+        <textarea readonly>Ich bearbeite einen Lernpfad zu Excel-Tabellen in Klasse 7. Bitte hilf mir nur mit Hinweisen und erkläre mir Schritt für Schritt, wie ich selbst auf die Lösung komme. Prüfe besonders, ob ich Spalten, Zeilen, Zellen, Zellbezüge, Formeln, SUMME und MITTELWERT richtig verwende. Gib mir nicht sofort die vollständige Lösung.</textarea>
+      </div>
+
+      <div class="navrow"><button class="ghost" onclick="prevStep()">Zurück</button><button class="green" onclick="goTo(0)">Zur Startseite</button></div>
+    </section>
+  </main>
+
+  <script>
+    const steps = [...document.querySelectorAll('.step')];
+    const tabs = document.getElementById('tabs');
+    const progressText = document.getElementById('progressText');
+    const progressFill = document.getElementById('progressFill');
+    let current = Number(localStorage.getItem('excelLernpfadStep') || 0);
+    let teacherMode = localStorage.getItem('excelTeacherMode') === '1';
+
+    const TIP_DELAY_SECONDS = 30;
+    const tipState = {};
+    const tipSets = {
+      t1: [
+        'Tipp 1: Schaue zuerst auf die Buchstaben oben. Sie bezeichnen die Spalten.',
+        'Tipp 2: Schaue dann auf die Zahlen links. Sie bezeichnen die Zeilen.',
+        'Tipp 3: Ein Zellname besteht aus Spaltenbuchstabe und Zeilennummer.',
+        'Lösungsidee: Spalte C und Zeile 3 ergeben die Zelle C3.'
+      ],
+      t2: [
+        'Tipp 1: Lies zuerst, welcher Versuch gemeint ist. Das bestimmt meist die Zeile.',
+        'Tipp 2: Suche dann, ob Messwert 1, Messwert 2 oder Mittel gemeint ist.',
+        'Tipp 3: Messwert 2 steht in Spalte C.',
+        'Lösungsidee: Versuch 4 steht in Zeile 5, also gehört Messwert 2 in C5.'
+      ],
+      t3: [
+        'Tipp 1: Der Gesamtpreis entsteht aus Preis mal Anzahl.',
+        'Tipp 2: Preis steht in A2, Anzahl steht in B2.',
+        'Tipp 3: Das Malzeichen in Excel ist *.',
+        'Lösungsidee: Die Formel lautet =A2*B2.'
+      ],
+      t4: [
+        'Tipp 1: B2:B6 meint alle Zellen von B2 bis B6.',
+        'Tipp 2: SUMME addiert alle Werte in diesem Bereich.',
+        'Tipp 3: MITTELWERT teilt die Summe durch die Anzahl der Werte.',
+        'Lösungsidee: 60 : 5 = 12.'
+      ],
+      t5: [
+        'Tipp 1: Prüfe genau, ob nach Umsatz, Anzahl oder Preis gefragt wird.',
+        'Tipp 2: Der höchste Balken zeigt den höchsten Umsatz.',
+        'Tipp 3: Für zwei Artikel über 25 € addierst du zwei Umsatzwerte.',
+        'Lösungsidee: Brezel und Muffin ergeben 18,00 € + 14,00 €.'
+      ]
+    };
+
+    function init(){
+      steps.forEach((step,i)=>{
+        const b=document.createElement('button');
+        b.className='tab';
+        b.textContent=`${i+1}. ${step.dataset.title}`;
+        b.onclick=()=>goTo(i);
+        tabs.appendChild(b);
+      });
+      if(current<0 || current>=steps.length) current=0;
+      if(teacherMode) document.body.classList.add('teacher');
+      goTo(current,false);
+    }
+
+    function goTo(i, save=true){
+      current = Math.max(0, Math.min(i, steps.length-1));
+      steps.forEach((s,idx)=>s.classList.toggle('active',idx===current));
+      [...tabs.children].forEach((t,idx)=>t.classList.toggle('active',idx===current));
+      progressText.textContent = `Etappe ${current+1} / ${steps.length}`;
+      progressFill.style.width = `${((current+1)/steps.length)*100}%`;
+      if(save) localStorage.setItem('excelLernpfadStep',String(current));
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    function nextStep(){goTo(current+1)}
+    function prevStep(){goTo(current-1)}
+
+    function normalize(s){
+      return String(s||'').trim().toLowerCase().replace(/\s+/g,'').replace('€','').replace(/,/g,'.');
+    }
+    function rawNormalize(s){
+      return String(s||'').trim().toLowerCase().replace(/\s+/g,' ');
+    }
+    function setFeedback(id, ok, msg){
+      const fb=document.getElementById(id);
+      fb.className='feedback '+(ok?'ok':'no');
+      fb.innerHTML=msg;
+    }
+    function checkText(inputId, fbId){
+      const el=document.getElementById(inputId);
+      const given=normalize(el.value);
+      const answers=(el.dataset.answers||'').split('|').map(normalize);
+      const ok=answers.includes(given);
+      setFeedback(fbId, ok, ok ? 'Richtig. Deine Antwort passt.' : 'Noch nicht. Prüfe noch einmal Spalte, Zeile oder den Zellbezug.');
+    }
+    function checkSelect(inputId, fbId){
+      const el=document.getElementById(inputId);
+      const ok=normalize(el.value)===normalize(el.dataset.answer);
+      setFeedback(fbId, ok, ok ? 'Richtig. Eine Spalte verläuft senkrecht.' : 'Noch nicht. Vergleiche die Richtung mit der Visualisierung.');
+    }
+    function checkNumber(inputId, fbId){
+      const el=document.getElementById(inputId);
+      const value=parseFloat(normalize(el.value));
+      const target=parseFloat(el.dataset.value);
+      const tol=parseFloat(el.dataset.tolerance || '0.01');
+      const ok=Number.isFinite(value) && Math.abs(value-target)<=tol;
+      setFeedback(fbId, ok, ok ? 'Richtig. Das Ergebnis ist plausibel.' : 'Noch nicht. Prüfe die Rechenoperation und den Bereich der Zellen.');
+    }
+    function checkAuswertung(){
+      const a=normalize(document.getElementById('q10a').value);
+      const b=parseFloat(normalize(document.getElementById('q10b').value));
+      const c=normalize(document.getElementById('q10c').value);
+      const okA=['brezel','diebrezel'].includes(a);
+      const okB=Number.isFinite(b) && Math.abs(b-59.2)<=0.05;
+      const okC=c==='brezel-muffin';
+      const ok=okA && okB && okC;
+      let msg = ok ? 'Richtig. Du hast Tabelle und Diagramm passend ausgewertet.' : 'Prüfe noch einmal: höchster Umsatz, Gesamtumsatz und die Summe zweier Artikel.';
+      if(!ok){
+        msg += `<br><span class="small">Zwischenstand: höchster Umsatz ${okA?'✓':'✗'}, Gesamtumsatz ${okB?'✓':'✗'}, Artikelauswahl ${okC?'✓':'✗'}.</span>`;
+      }
+      setFeedback('fb10', ok, msg);
+    }
+    function showSprinterFeedback(){
+      const fb=document.getElementById('sprinterFb');
+      fb.style.display='block';
+    }
+
+    function showTip(id){
+      const list=document.getElementById('tips-'+id);
+      const cool=document.getElementById('cool-'+id);
+      const tips=tipSets[id] || [];
+      if(!tipState[id]) tipState[id]={shown:0,last:0};
+      const state=tipState[id];
+      const now=Date.now();
+      const teacher=document.body.classList.contains('teacher');
+      if(!teacher && state.shown>0){
+        const passed=(now-state.last)/1000;
+        if(passed<TIP_DELAY_SECONDS){
+          cool.textContent=`Nächster Tipp in ${Math.ceil(TIP_DELAY_SECONDS-passed)} Sekunden.`;
+          return;
+        }
+      }
+      if(state.shown>=tips.length){
+        cool.textContent='Alle Tipps sind sichtbar.';
+        return;
+      }
+      const card=document.createElement('div');
+      card.className='hint-card';
+      card.textContent=tips[state.shown];
+      list.appendChild(card);
+      state.shown++;
+      state.last=now;
+      cool.textContent= state.shown>=tips.length ? 'Alle Tipps sind sichtbar.' : (teacher ? 'Lehrkraftmodus: weiterer Tipp sofort möglich.' : `Warte ${TIP_DELAY_SECONDS} Sekunden bis zum nächsten Tipp.`);
+    }
+
+    function openTeacherPrompt(){
+      const pin=prompt('Lehrkraft-PIN eingeben:');
+      if(pin==='1607'){
+        teacherMode=true;
+        localStorage.setItem('excelTeacherMode','1');
+        document.body.classList.add('teacher');
+        document.querySelectorAll('details.solution').forEach(d=>d.open=true);
+        alert('Lehrkraftmodus aktiviert. Lösungen und Tipps können sofort genutzt werden.');
+      }else if(pin!==null){
+        alert('PIN nicht korrekt.');
+      }
+    }
+
+    function deactivateTeacher(){
+      teacherMode=false;
+      localStorage.removeItem('excelTeacherMode');
+      document.body.classList.remove('teacher');
+    }
+
+    document.addEventListener('keydown', (e)=>{
+      if(e.key==='ArrowRight') nextStep();
+      if(e.key==='ArrowLeft') prevStep();
+    });
+
+    init();
+  </script>
 </body>
 </html>
