@@ -4566,29 +4566,29 @@
                   "id": "excel-tabellen",
                   "titel": "Excel-Tabellen",
                   "pfad": "klasse-7/zahlen-und-rechnen/excel/",
-                  "beschreibung": "Interaktiver Lernpfad mit Excel-Arbeitsdatei und Arbeitsblatt zum Lesen, Auswerten und Berechnen von Tabellen.",
+                  "beschreibung": "Lernpfad, Arbeitsblatt und bearbeitbare Excel-Vorlage zur Einführung in Excel-Tabellen: Grundbegriffe, Daten eintragen, Formeln nutzen und Zinseszins berechnen.",
                   "inhaltlicheSchwerpunkte": [
-                    "Tabellen in Excel lesen",
-                    "Zellen, Zeilen und Spalten bestimmen",
+                    "Excel-Grundlagen",
+                    "Spalten, Zeilen und Zellen",
                     "Zellbezüge verwenden",
-                    "einfache Formeln eingeben",
-                    "SUMME und MITTELWERT nutzen",
-                    "Ergebnisse auswerten",
-                    "Schulfest-Kiosk als Anwendungskontext"
+                    "Daten zu Schulartikeln eintragen",
+                    "Gesamtpreise mit Formeln berechnen",
+                    "Summenformel nutzen",
+                    "Zinseszins mit festem Zellbezug"
                   ],
                   "materialien": [
                     {
                       "id": "lernpfad-excel-tabellen-klasse-7",
-                      "titel": "Excel-Tabellen verstehen und auswerten",
+                      "titel": "Lernpfad: Einführung in Excel-Tabellen",
                       "kurztitel": "Lernpfad Excel",
-                      "beschreibung": "Interaktiver Lernpfad für Klasse 7 zum Lesen, Auswerten und Berechnen von Excel-Tabellen. Die Aufgaben sind überprüfbar und arbeiten mit Zellbezügen, Formeln, SUMME, MITTELWERT und einer Schulfest-Kiosk-Tabelle.",
+                      "beschreibung": "Interaktiver Lernpfad passend zum Arbeitsblatt: Excel-Grundbegriffe, Schulartikel-Daten, Formeln für Gesamtpreise, Summenformel und Zinseszins mit festem Zellbezug.",
                       "typ": "html",
                       "format": "HTML",
                       "materialart": "Lernpfad",
                       "datei": "Lernpfad_Excel_Tabelle_Klasse7_final_interaktiv_pruefbar_10_aufgaben.html",
                       "pfad": "klasse-7/zahlen-und-rechnen/excel/Lernpfad_Excel_Tabelle_Klasse7_final_interaktiv_pruefbar_10_aufgaben.html",
                       "url": "klasse-7/zahlen-und-rechnen/excel/Lernpfad_Excel_Tabelle_Klasse7_final_interaktiv_pruefbar_10_aufgaben.html",
-                      "dauer": "ca. 90 Minuten",
+                      "dauer": "ca. 45–90 Minuten",
                       "zielgruppe": {
                         "fach": "Mathematik",
                         "jahrgang": "Klasse 7",
@@ -4604,29 +4604,30 @@
                       "klasse": "Klasse 7",
                       "inhaltsfeld": "Zahlen und Rechnen",
                       "thema": "Excel-Tabellen",
-                      "unterthema": "Tabellen lesen, Formeln nutzen und Ergebnisse auswerten",
+                      "unterthema": "Einführung in Excel-Tabellen",
                       "kompetenzbereich": [
-                        "Daten",
                         "Operieren",
-                        "Modellieren",
                         "Problemlösen",
-                        "Medienkompetenz"
+                        "Modellieren",
+                        "Digitale Werkzeuge"
                       ],
                       "inhaltlicheSchwerpunkte": [
-                        "Tabellen in Excel lesen",
-                        "Zellen, Zeilen und Spalten bestimmen",
-                        "Zellbezüge verwenden",
-                        "einfache Formeln eingeben",
-                        "SUMME und MITTELWERT nutzen",
-                        "Ergebnisse auswerten",
-                        "Schulfest-Kiosk als Anwendungskontext"
+                        "Excel-Grundlagen",
+                        "Zellbezüge",
+                        "Daten eintragen",
+                        "Formeln",
+                        "Summenformel",
+                        "Zinseszins"
                       ],
                       "tags": [
                         "mathematik",
                         "klasse-7",
                         "zahlen-und-rechnen",
                         "excel",
+                        "excel-tabellen",
                         "tabellen",
+                        "formeln",
+                        "zinseszins",
                         "lernpfad",
                         "html",
                         "interaktiv"
@@ -4636,78 +4637,22 @@
                       "oeffnenIn": "neuer-tab",
                       "target": "_blank",
                       "rel": "noopener noreferrer",
-                      "erstelltAm": "2026-07-06",
+                      "erstelltAm": "2026-07-12",
                       "lizenz": "",
-                      "autor": ""
+                      "autor": "Hardenacke"
                     },
                     {
-                      "id": "excel-arbeitsdatei-schulfest-kiosk-klasse-7",
-                      "titel": "Excel-Tabelle: Schulfest-Kiosk",
-                      "kurztitel": "Excel-Datei",
-                      "beschreibung": "Vorgefertigte Excel-Arbeitsdatei zum Lernpfad. Die Datei wird heruntergeladen und anschließend in Excel bearbeitet.",
-                      "typ": "xlsx",
-                      "format": "XLSX",
-                      "materialart": "Download",
-                      "datei": "Excel_Tabelle_Klasse7_Schulfest_Kiosk_mehrstufig.xlsx",
-                      "pfad": "klasse-7/zahlen-und-rechnen/excel/Excel_Tabelle_Klasse7_Schulfest_Kiosk_mehrstufig.xlsx",
-                      "url": "klasse-7/zahlen-und-rechnen/excel/Excel_Tabelle_Klasse7_Schulfest_Kiosk_mehrstufig.xlsx",
-                      "dauer": "begleitend",
-                      "zielgruppe": {
-                        "fach": "Mathematik",
-                        "jahrgang": "Klasse 7",
-                        "stufe": "Sekundarstufe I"
-                      },
-                      "struktur": {
-                        "fachId": "mathematik",
-                        "klasseId": "klasse-7",
-                        "inhaltsfeldId": "zahlen-und-rechnen",
-                        "themaId": "excel-tabellen"
-                      },
-                      "fach": "Mathematik",
-                      "klasse": "Klasse 7",
-                      "inhaltsfeld": "Zahlen und Rechnen",
-                      "thema": "Excel-Tabellen",
-                      "unterthema": "Arbeitsdatei zum Schulfest-Kiosk",
-                      "kompetenzbereich": [
-                        "Daten",
-                        "Operieren",
-                        "Medienkompetenz"
-                      ],
-                      "inhaltlicheSchwerpunkte": [
-                        "Excel-Datei bearbeiten",
-                        "Tabellenwerte eintragen",
-                        "Formeln berechnen",
-                        "Ergebnisse auswerten"
-                      ],
-                      "tags": [
-                        "mathematik",
-                        "klasse-7",
-                        "zahlen-und-rechnen",
-                        "excel",
-                        "xlsx",
-                        "download",
-                        "tabellen"
-                      ],
-                      "status": "verfügbar",
-                      "sichtbar": true,
-                      "oeffnenIn": "download",
-                      "download": true,
-                      "erstelltAm": "2026-07-06",
-                      "lizenz": "",
-                      "autor": ""
-                    },
-                    {
-                      "id": "arbeitsblatt-excel-lernpfad-klasse-7",
-                      "titel": "Arbeitsblatt: Excel-Tabellen",
-                      "kurztitel": "Arbeitsblatt",
-                      "beschreibung": "Arbeitsblatt zum Lernpfad Excel-Tabellen. Die PDF wird im Browser geöffnet und kann bei Bedarf ausgedruckt werden.",
+                      "id": "arbeitsblatt-excel-tabellen-klasse-7",
+                      "titel": "Arbeitsblatt: Einführung in Excel",
+                      "kurztitel": "AB Excel",
+                      "beschreibung": "Zweiseitiges Arbeitsblatt mit Arbeitsauftrag, QR-Code zum Lernpfad, Excel-Grundbegriffen, Datentabelle zu Schulartikeln, Formeln und Zinseszins-Aufgabe.",
                       "typ": "pdf",
                       "format": "PDF",
                       "materialart": "Arbeitsblatt",
-                      "datei": "Arbeitsblatt_Excel_Lernpfad_Klasse7_mit_Hilfe.pdf",
-                      "pfad": "klasse-7/zahlen-und-rechnen/excel/Arbeitsblatt_Excel_Lernpfad_Klasse7_mit_Hilfe.pdf",
-                      "url": "klasse-7/zahlen-und-rechnen/excel/Arbeitsblatt_Excel_Lernpfad_Klasse7_mit_Hilfe.pdf",
-                      "dauer": "begleitend",
+                      "datei": "7_M_Excel.pdf",
+                      "pfad": "klasse-7/zahlen-und-rechnen/excel/7_M_Excel.pdf",
+                      "url": "klasse-7/zahlen-und-rechnen/excel/7_M_Excel.pdf",
+                      "dauer": "ca. 20–30 Minuten",
                       "zielgruppe": {
                         "fach": "Mathematik",
                         "jahrgang": "Klasse 7",
@@ -4723,50 +4668,115 @@
                       "klasse": "Klasse 7",
                       "inhaltsfeld": "Zahlen und Rechnen",
                       "thema": "Excel-Tabellen",
-                      "unterthema": "Arbeitsblatt zum Lernpfad",
+                      "unterthema": "Arbeitsblatt Einführung in Excel",
                       "kompetenzbereich": [
-                        "Daten",
                         "Operieren",
-                        "Modellieren",
-                        "Kommunizieren"
+                        "Darstellen",
+                        "Digitale Werkzeuge"
                       ],
                       "inhaltlicheSchwerpunkte": [
-                        "Tabellen lesen",
-                        "Zellbezüge verstehen",
-                        "Formeln dokumentieren",
-                        "Ergebnisse sichern"
+                        "Excel-Grundlagen",
+                        "Daten eintragen",
+                        "Formeln",
+                        "Summenformel",
+                        "Zinseszins"
                       ],
                       "tags": [
                         "mathematik",
                         "klasse-7",
                         "zahlen-und-rechnen",
                         "excel",
+                        "excel-tabellen",
                         "arbeitsblatt",
-                        "pdf"
+                        "pdf",
+                        "zinseszins"
                       ],
                       "status": "verfügbar",
                       "sichtbar": true,
                       "oeffnenIn": "neuer-tab",
                       "target": "_blank",
                       "rel": "noopener noreferrer",
-                      "erstelltAm": "2026-07-06",
+                      "erstelltAm": "2026-07-12",
                       "lizenz": "",
-                      "autor": ""
+                      "autor": "Hardenacke"
+                    },
+                    {
+                      "id": "excel-vorlage-klasse-7",
+                      "titel": "Excel-Vorlage: Aufgaben bearbeiten",
+                      "kurztitel": "Excel-Vorlage",
+                      "beschreibung": "Bearbeitbare Excel-Datei zum Arbeitsblatt mit Aufgabenblättern zu Daten eintragen, Formeln, Summenformel und Zinseszins sowie Kontrollfeldern.",
+                      "typ": "xlsx",
+                      "format": "XLSX",
+                      "materialart": "Excel-Vorlage",
+                      "datei": "Excel_Vorlage_Klasse7_Aufgaben_Kontrollfelder_repariert.xlsx",
+                      "pfad": "klasse-7/zahlen-und-rechnen/excel/Excel_Vorlage_Klasse7_Aufgaben_Kontrollfelder_repariert.xlsx",
+                      "url": "klasse-7/zahlen-und-rechnen/excel/Excel_Vorlage_Klasse7_Aufgaben_Kontrollfelder_repariert.xlsx",
+                      "dauer": "begleitend",
+                      "zielgruppe": {
+                        "fach": "Mathematik",
+                        "jahrgang": "Klasse 7",
+                        "stufe": "Sekundarstufe I"
+                      },
+                      "struktur": {
+                        "fachId": "mathematik",
+                        "klasseId": "klasse-7",
+                        "inhaltsfeldId": "zahlen-und-rechnen",
+                        "themaId": "excel-tabellen"
+                      },
+                      "fach": "Mathematik",
+                      "klasse": "Klasse 7",
+                      "inhaltsfeld": "Zahlen und Rechnen",
+                      "thema": "Excel-Tabellen",
+                      "unterthema": "Excel-Vorlage zum Bearbeiten",
+                      "kompetenzbereich": [
+                        "Operieren",
+                        "Problemlösen",
+                        "Digitale Werkzeuge"
+                      ],
+                      "inhaltlicheSchwerpunkte": [
+                        "Daten eintragen",
+                        "Formeln",
+                        "Summenformel",
+                        "Zinseszins"
+                      ],
+                      "tags": [
+                        "mathematik",
+                        "klasse-7",
+                        "zahlen-und-rechnen",
+                        "excel",
+                        "excel-tabellen",
+                        "xlsx",
+                        "download",
+                        "vorlage",
+                        "tabellen",
+                        "zinseszins"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "download",
+                      "download": true,
+                      "erstelltAm": "2026-07-12",
+                      "lizenz": "",
+                      "autor": "Hardenacke"
                     }
                   ],
                   "tags": [
-                    "arbeitsblatt",
-                    "download",
-                    "excel",
-                    "html",
-                    "interaktiv",
-                    "klasse-7",
-                    "lernpfad",
                     "mathematik",
-                    "pdf",
+                    "klasse-7",
+                    "zahlen-und-rechnen",
+                    "excel",
+                    "excel-tabellen",
                     "tabellen",
+                    "zellbezug",
+                    "formeln",
+                    "summenformel",
+                    "zinseszins",
+                    "arbeitsblatt",
+                    "pdf",
                     "xlsx",
-                    "zahlen-und-rechnen"
+                    "download",
+                    "html",
+                    "interaktiv"
                   ],
                   "anzahlMaterialien": 3,
                   "oeffnenIn": "neuer-tab",
@@ -4792,7 +4802,13 @@
                 "rationale-zahlen",
                 "tabellen",
                 "xlsx",
-                "zahlen-und-rechnen"
+                "zahlen-und-rechnen",
+                "excel-tabellen",
+                "zellbezug",
+                "formeln",
+                "summenformel",
+                "zinseszins",
+                "vorlage"
               ],
               "anzahlThemen": 2,
               "anzahlMaterialien": 8
@@ -6328,7 +6344,13 @@
             "xlsx",
             "zahlen-und-rechnen",
             "zirkel",
-            "zuordnungen-und-prozent"
+            "zuordnungen-und-prozent",
+            "excel-tabellen",
+            "zellbezug",
+            "formeln",
+            "summenformel",
+            "zinseszins",
+            "vorlage"
           ]
         },
         {
@@ -16451,10 +16473,16 @@
         "zufall-und-modelle",
         "zufall-und-wahrscheinlichkeit",
         "zuordnungen-und-prozent",
-        "übersicht"
+        "übersicht",
+        "excel-tabellen",
+        "zellbezug",
+        "formeln",
+        "summenformel",
+        "zinseszins",
+        "vorlage"
       ],
       "anzahlKlassen": 9
     }
   ],
-  "aktualisiertAm": "2026-07-10"
+  "aktualisiertAm": "2026-07-12"
 }
