@@ -955,6 +955,18 @@ button{
   .five-fifteenths span{font-size:.82rem;padding:.2rem}
 }
 
+
+/* Überarbeitete Stations-Icons */
+.mission-icon{
+  font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;
+  line-height:1;
+}
+.mission-icon.ahmes-icon{
+  background:linear-gradient(135deg,#fff4d0,#e7fbff 58%,#f7c948);
+  border-color:rgba(184,107,59,.28);
+  font-size:2.25rem;
+}
+
 </style>
 </head>
 <body>
@@ -967,11 +979,11 @@ button{
 </div>
 <nav aria-label="Seitennavigation" class="navline">
 <button class="dot current" data-goto="0">🧭 Bildreise</button>
-<button class="dot" data-goto="1">𓏺 Station 1</button>
+<button class="dot" data-goto="1">🔢 Station 1</button>
 <button class="dot" data-goto="2">🍞 Station 2</button>
-<button class="dot" data-goto="3">📜 Station 3</button>
-<button class="dot" data-goto="4">✍️ Station 4</button>
-<button class="dot" data-goto="5">🤖 Station 5</button>
+<button class="dot" data-goto="3">🔎 Station 3</button>
+<button class="dot" data-goto="4">➗ Station 4</button>
+<button class="dot" data-goto="5">🧑🏽 Station 5</button>
 <button class="dot" data-goto="6">🏺 Sicherung</button>
 </nav>
 </header>
@@ -1038,8 +1050,8 @@ button{
 <!-- STATION 1 -->
 <section class="page" data-page="1">
 <div class="mission-card">
-<div class="mission-icon">𓏺</div>
-<div><h3>𓏺 Mission 1: Neue Mathe-Vokabel</h3><p>Du lernst das Wort <strong>Stammbruch</strong> kennen und übst, es sicher zu benutzen.</p><small>Mathe-Funke: Ihr kennt schon Zähler, Nenner und Bruchstrich. Neu ist jetzt der Name Stammbruch.</small></div>
+<div class="mission-icon" aria-label="Zahlen und Brüche">🔢</div>
+<div><h3>🔢 Mission 1: Neue Mathe-Vokabel</h3><p>Du lernst das Wort <strong>Stammbruch</strong> kennen und übst, es sicher zu benutzen.</p><small>Mathe-Funke: Ihr kennt schon Zähler, Nenner und Bruchstrich. Neu ist jetzt der Name Stammbruch.</small></div>
 </div>
 <div class="hero">
 <div class="card">
@@ -1095,7 +1107,7 @@ button{
 <!-- STATION 2 -->
 <section class="page" data-page="2">
 <div class="mission-card">
-<div class="mission-icon">🍞</div>
+<div class="mission-icon" aria-label="Brot teilen">🍞</div>
 <div><h3>🍞 Mission 2: Die ägyptische Idee</h3><p>Du entdeckst, warum ein Bruch wie <strong>2/5</strong> bei den Ägyptern aus Stammbrüchen gebaut wurde.</p><small>Mathe-Funke: Für unsere ägyptische Rechenregel benutzen wir nur Stammbrüche als Bausteine.</small></div>
 </div>
 <div class="hero">
@@ -1225,8 +1237,8 @@ button{
 <!-- STATION 3 -->
 <section class="page" data-page="3">
 <div class="mission-card">
-<div class="mission-icon">📜</div>
-<div><h3>📜 Mission 3: Papyrus prüfen</h3><p>Überprüfe wie ein Schreiber, ob die Bruchrechnung auf dem Papyrus stimmt.</p><small>Mathe-Funke: Mit gemeinsamen Nennern kannst du Brüche vergleichen und addieren.</small></div>
+<div class="mission-icon" aria-label="Rechnung prüfen">🔎</div>
+<div><h3>🔎 Mission 3: Papyrus prüfen</h3><p>Überprüfe wie ein Schreiber, ob die Bruchrechnung auf dem Papyrus stimmt.</p><small>Mathe-Funke: Mit gemeinsamen Nennern kannst du Brüche vergleichen und addieren.</small></div>
 </div>
 <div class="hero">
 <div class="card">
@@ -1267,8 +1279,8 @@ button{
 
 <section class="page" data-page="4">
 <div class="mission-card">
-<div class="mission-icon">✍️</div>
-<div><h3>✍️ Mission 4: Stammbrüche rechnerisch zerlegen</h3><p>Du lernst, wie man einen Bruch Schritt für Schritt in zwei Stammbrüche zerlegen kann.</p><small>Mathe-Funke: Erst zerlegen, dann kürzen.</small></div>
+<div class="mission-icon" aria-label="Brüche zerlegen">➗</div>
+<div><h3>➗ Mission 4: Stammbrüche rechnerisch zerlegen</h3><p>Du lernst, wie man einen Bruch Schritt für Schritt in zwei Stammbrüche zerlegen kann.</p><small>Mathe-Funke: Erst zerlegen, dann kürzen.</small></div>
 </div>
 
 <div class="card calc-idea-card">
@@ -1450,8 +1462,8 @@ button{
 </section>
 <section class="page" data-page="5">
 <div class="mission-card">
-<div class="mission-icon">🤖</div>
-<div><h3>🤖 Mission 5: Ahmes braucht dich</h3><p>Sprich über fobizz mit Ahmes und löse das Problem mit den Getreidesäcken.</p><small>Historischer Funke: Vorräte mussten sorgfältig verteilt und notiert werden.</small></div>
+<div class="mission-icon ahmes-icon" aria-label="Ahmes">🧑🏽</div>
+<div><h3>🧑🏽 Mission 5: Ahmes braucht dich</h3><p>Sprich über fobizz mit Ahmes und löse das Problem mit den Getreidesäcken.</p><small>Historischer Funke: Vorräte mussten sorgfältig verteilt und notiert werden.</small></div>
 </div>
 <div class="hero">
 <div class="card">
