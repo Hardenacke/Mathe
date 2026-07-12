@@ -852,6 +852,109 @@ button{
 .fobizz-url{font-size:.92rem;color:#52636b;overflow-wrap:anywhere}
 @media(max-width:620px){.fobizz-login{width:100%}}
 
+
+/* =========================================================
+   Station 2: klarere Visualisierung der Brotverteilung
+   ========================================================= */
+.thirds-overview{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(46px,1fr));
+  gap:.5rem;
+  margin:.8rem 0;
+}
+.third-piece{
+  min-height:72px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  border-radius:14px;
+  background:linear-gradient(180deg,#f3c878,#d99a42);
+  border:2px solid #9a5c1d;
+  color:#4d2b11;
+  font-weight:900;
+  box-shadow:0 6px 14px rgba(127,72,22,.13);
+}
+.third-piece.given{
+  background:linear-gradient(180deg,#6fd3dc,#22a9b8);
+  border-color:#167382;
+  color:white;
+}
+.third-piece.left{
+  background:linear-gradient(180deg,#fff2c6,#f4d374);
+  border-color:#b98321;
+  color:#6c4e27;
+}
+.thirds-caption{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem .8rem;
+  align-items:center;
+  margin-top:.65rem;
+  font-size:.96rem;
+  color:#5d4a32;
+}
+.legend-dot{
+  width:15px;height:15px;border-radius:50%;display:inline-block;vertical-align:middle;margin-right:.25rem;
+}
+.legend-dot.given{background:#22a9b8}
+.legend-dot.left{background:#f4d374;border:1px solid #b98321}
+
+.subdivision-visual{
+  display:grid;
+  grid-template-columns:minmax(180px,280px) auto minmax(220px,1fr);
+  gap:1rem;
+  align-items:center;
+  margin:.9rem 0;
+}
+.one-third{
+  height:92px;
+  border-radius:22px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(180deg,#f3c878,#d99a42);
+  border:3px solid #9a5c1d;
+  color:#4d2b11;
+  font-weight:900;
+  box-shadow:0 8px 18px rgba(127,72,22,.14);
+}
+.subdivision-arrow{
+  font-size:2rem;
+  color:#174c70;
+  font-weight:900;
+  text-align:center;
+}
+.five-fifteenths{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(42px,1fr));
+  overflow:hidden;
+  border:3px solid #9a5c1d;
+  border-radius:22px;
+  min-height:92px;
+  background:#f7d79c;
+}
+.five-fifteenths span{
+  display:grid;
+  place-items:center;
+  min-width:0;
+  padding:.35rem;
+  border-right:2px solid rgba(154,92,29,.7);
+  background:linear-gradient(180deg,#ffe2a7,#f0bd67);
+  color:#4d2b11;
+  font-weight:900;
+}
+.five-fifteenths span:last-child{border-right:0}
+
+@media(max-width:720px){
+  .thirds-overview{grid-template-columns:repeat(3,1fr)}
+  .subdivision-visual{grid-template-columns:1fr}
+  .subdivision-arrow{transform:rotate(90deg)}
+}
+@media(max-width:440px){
+  .thirds-overview{grid-template-columns:repeat(2,1fr)}
+  .five-fifteenths{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .five-fifteenths span{font-size:.82rem;padding:.2rem}
+}
+
 </style>
 </head>
 <body>
@@ -980,7 +1083,10 @@ button{
 <div class="bucket" data-bucket="unit"><h3>Stammbruch</h3></div>
 <div class="bucket" data-bucket="not"><h3>Kein Stammbruch</h3></div>
 </div>
-<button class="primary" id="checkSort" style="margin-top:.8rem">Prüfen</button>
+<div class="calc-check-buttons" style="margin-top:.8rem">
+<button class="primary" id="checkSort">Prüfen</button>
+<button class="secondary" id="resetSort" type="button">↺ Zuordnung zurücksetzen</button>
+</div>
 <div class="feedback" id="sortFeedback"></div>
 <div class="solution" id="sortSol"><strong>Lösung:</strong> Stammbrüche sind <span class="frac"><sup>1</sup><sub>2</sub></span>, <span class="frac"><sup>1</sup><sub>3</sub></span> und <span class="frac"><sup>1</sup><sub>10</sub></span>. Bei den anderen Brüchen steht oben nicht 1.</div>
 </div>
@@ -1067,12 +1173,34 @@ button{
 <div class="bread-row"><div class="bread thirds"><div class="piece">1/3</div><div class="piece">1/3</div><div class="piece">1/3</div></div><div class="bread thirds"><div class="piece">1/3</div><div class="piece">1/3</div><div class="piece">1/3</div></div></div>
 </div>
 <div class="step" data-step="1">
-<p><strong>Schritt 2:</strong> Es gibt 6 Drittel. Jede der 5 Personen bekommt zuerst <span class="frac"><sup>1</sup><sub>3</sub></span>. Ein Drittel bleibt übrig.</p>
-<div class="mini-piece-row"><span class="mini-piece">P1</span><span class="mini-piece">P2</span><span class="mini-piece">P3</span><span class="mini-piece">P4</span><span class="mini-piece">P5</span><span class="mini-piece">Rest</span></div>
+<p><strong>Schritt 2:</strong> Aus den beiden Broten entstehen insgesamt 6 Drittel. Fünf Drittel werden verteilt. Ein Drittel bleibt übrig.</p>
+<div class="thirds-overview" aria-label="Sechs Drittel: fünf verteilt, eines bleibt übrig">
+  <div class="third-piece given"><span class="frac"><sup>1</sup><sub>3</sub></span></div>
+  <div class="third-piece given"><span class="frac"><sup>1</sup><sub>3</sub></span></div>
+  <div class="third-piece given"><span class="frac"><sup>1</sup><sub>3</sub></span></div>
+  <div class="third-piece given"><span class="frac"><sup>1</sup><sub>3</sub></span></div>
+  <div class="third-piece given"><span class="frac"><sup>1</sup><sub>3</sub></span></div>
+  <div class="third-piece left"><span class="frac"><sup>1</sup><sub>3</sub></span><small>bleibt übrig</small></div>
+</div>
+<div class="thirds-caption">
+  <span><i class="legend-dot given"></i>verteilt</span>
+  <span><i class="legend-dot left"></i>noch übrig</span>
+</div>
 </div>
 <div class="step" data-step="2">
-<p><strong>Schritt 3:</strong> Das übrige Drittel wird in 5 gleiche Teile geteilt. Jedes kleine Teil ist <span class="frac"><sup>1</sup><sub>15</sub></span> eines ganzen Brotes.</p>
-<div class="mini-piece-row"><span class="mini-piece">1/15</span><span class="mini-piece">1/15</span><span class="mini-piece">1/15</span><span class="mini-piece">1/15</span><span class="mini-piece">1/15</span></div>
+<p><strong>Schritt 3:</strong> Das übrige Drittel wird noch einmal in 5 gleich große Teile geteilt. So entstehen 5 Stücke mit jeweils <span class="frac"><sup>1</sup><sub>15</sub></span> eines ganzen Brotes.</p>
+<div class="subdivision-visual">
+  <div class="one-third"><span class="frac"><sup>1</sup><sub>3</sub></span></div>
+  <div class="subdivision-arrow">→</div>
+  <div class="five-fifteenths" aria-label="Ein Drittel wird in fünf Fünfzehntel geteilt">
+    <span><span class="frac"><sup>1</sup><sub>15</sub></span></span>
+    <span><span class="frac"><sup>1</sup><sub>15</sub></span></span>
+    <span><span class="frac"><sup>1</sup><sub>15</sub></span></span>
+    <span><span class="frac"><sup>1</sup><sub>15</sub></span></span>
+    <span><span class="frac"><sup>1</sup><sub>15</sub></span></span>
+  </div>
+</div>
+<div class="notice"><strong>Warum Fünfzehntel?</strong> Ein Drittel wurde in 5 gleich große Teile geteilt. Deshalb gilt: <span class="frac"><sup>1</sup><sub>3</sub></span> = 5 · <span class="frac"><sup>1</sup><sub>15</sub></span>.</div>
 </div>
 <div class="step" data-step="3">
 <p><strong>Ergebnis:</strong> Jede Person bekommt zuerst <span class="frac"><sup>1</sup><sub>3</sub></span> und danach noch <span class="frac"><sup>1</sup><sub>15</sub></span>.</p>
@@ -1436,25 +1564,52 @@ button{
 
     document.getElementById('resetBtn').addEventListener('click',()=>{ if(confirm('Fortschritt und Eingaben zurücksetzen?')){ localStorage.removeItem('nilVisuellPage'); localStorage.removeItem('nilVisuellCompleted'); location.reload(); } });
 
-    // Station 1 sort
+    // Station 1: Stammbrüche zuordnen und vollständig zurücksetzen
     let selected=null;
-    document.querySelectorAll('.frac-card').forEach(c=>c.addEventListener('click',()=>{
+    const cardsStart=document.getElementById('cards1');
+    const sortCards=[...document.querySelectorAll('#cards1 .frac-card')];
+
+    sortCards.forEach(c=>c.addEventListener('click',()=>{
       document.querySelectorAll('.frac-card').forEach(x=>x.classList.remove('selected'));
-      selected=c; c.classList.add('selected');
+      selected=c;
+      c.classList.add('selected');
     }));
+
     document.querySelectorAll('.bucket').forEach(b=>b.addEventListener('click',()=>{
       if(!selected) return;
-      b.appendChild(selected); selected.classList.remove('selected'); selected=null;
+      b.appendChild(selected);
+      selected.classList.remove('selected');
+      selected=null;
     }));
+
     document.getElementById('checkSort').addEventListener('click',()=>{
-      let ok=true;
+      const assigned=[...document.querySelectorAll('.bucket .frac-card')];
+      let ok=assigned.length===sortCards.length;
       document.querySelectorAll('.bucket').forEach(bucket=>{
-        bucket.querySelectorAll('.frac-card').forEach(card=>{ if(card.dataset.type!==bucket.dataset.bucket) ok=false; });
+        bucket.querySelectorAll('.frac-card').forEach(card=>{
+          if(card.dataset.type!==bucket.dataset.bucket) ok=false;
+        });
       });
       const fb=document.getElementById('sortFeedback');
       fb.className='feedback '+(ok?'good':'bad');
-      fb.textContent=ok?'Richtig sortiert. Ein Stammbruch hat oben immer eine 1.':'Prüfe noch einmal: Bei Stammbrüchen steht oben eine 1.';
-      if(ok) document.getElementById('sortSol').style.display='block';
+      fb.textContent=ok
+        ? 'Richtig sortiert. Ein Stammbruch hat oben immer eine 1.'
+        : assigned.length<sortCards.length
+          ? 'Ordne zuerst alle Bruchkarten einem Kasten zu.'
+          : 'Prüfe noch einmal: Bei Stammbrüchen steht oben eine 1.';
+      document.getElementById('sortSol').style.display=ok?'block':'none';
+    });
+
+    document.getElementById('resetSort').addEventListener('click',()=>{
+      selected=null;
+      sortCards.forEach(card=>{
+        card.classList.remove('selected','correct','wrong');
+        cardsStart.appendChild(card);
+      });
+      const fb=document.getElementById('sortFeedback');
+      fb.className='feedback';
+      fb.textContent='';
+      document.getElementById('sortSol').style.display='none';
     });
 
     // Station 2 bread steps
